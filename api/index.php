@@ -1,7 +1,7 @@
 <?php
 // $path_root = ""; #ถ้า root อยู่ public
-$path_root = "/dev22-git/api"; #ถ้า root ไม่ได้อยู่ public
-$path_root_url = "/dev22-git"; #ถ้า root ไม่ได้อยู่ public
+$path_root = "/api"; #ถ้า root ไม่ได้อยู่ public
+$path_root_url = ""; #ถ้า root ไม่ได้อยู่ public
 
 define("_http", "https");
 header('Access-Control-Allow-Origin: *');
