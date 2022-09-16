@@ -3,17 +3,17 @@
 // die;
 $path_root = ""; #ถ้า root อยู่ public
 // $path_root = "/dev22-git"; #ถ้า root ไม่ได้อยู่ public
-define("_http", "https");
+define("_http", "http");
 
 
 
-if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
-  $protocol = 'https://';
-}else {
-    $redirect= _http."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    header("Location:$redirect");
-    exit();
-}
+// if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+//   $protocol = 'https://';
+// }else {
+//     $redirect= _http."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+//     header("Location:$redirect");
+//     exit();
+// }
 
 define("_DIR", str_replace("\\", '/', dirname(__FILE__)));
 define("_URI", basename($_SERVER["REQUEST_URI"]));
