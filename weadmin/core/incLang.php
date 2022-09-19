@@ -17,7 +17,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["login:price"] = "Save cost";
     $langTxt["login:priceDe"] = "You can change the information on the website itself. The user does not have to cost more in the long run. Whether it is the design of the meat. Add the meat to the site etc.";
     $langTxt["login:alert"] = "You enter your user name / password is incorrect.";
-    $langTxt["login:footecopy"] = "&copy; 2020 WEWEBPLUS CO., LTD.";
+    $langTxt["login:footecopy"] = "&copy; 2022 WEWEBPLUS CO., LTD.";
     $langTxt["login:footecontact"] = "Email: support@wewebplus.com Tel.: 080-590-9842, 086-920-7736";
 
     $langTxt["menu:logout"] = "Log out";
@@ -244,7 +244,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["login:price"] = "ประหยัดค่าใช้จ่าย";
     $langTxt["login:priceDe"] = "คุณสามารถเปลี่ยนข้อมูลบนเว็บไซตเองได้ โดยใช้ไม่ต้องมีค่าใช้จ่ายเพิ่มเติมในระยะยาว ไม่ว่าจะเป็นค่าออกแบบเนื้อ ค่าเพิ่มเนื้อในเว็บไซต์ ฯลฯ";
     $langTxt["login:alert"] = "คุณกรอกชื่อผู้ใช้งาน/รหัสผ่านไม่ถูกต้อง";
-    $langTxt["login:footecopy"] = "&copy; 2020 WEWEBPLUS CO., LTD.";
+    $langTxt["login:footecopy"] = "&copy; 2022 WEWEBPLUS CO., LTD.";
     $langTxt["login:footecontact"] = "Email: support@wewebplus.com Tel.: 080-590-9842, 086-920-7736";
 
     $langTxt["menu:logout"] = "ออกจากระบบ";

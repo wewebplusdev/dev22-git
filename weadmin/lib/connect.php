@@ -2,8 +2,7 @@
 include 'adodb5/adodb.inc.php';
 $dbConnect = NewADOConnection($coreLanguageSQL);
 
-// wewebConnect($coreLanguageSQL, decodeEnv($_ENV[$CORE_ENV]['hostname']), decodeEnv($_ENV[$CORE_ENV]['user']), decodeEnv($_ENV[$CORE_ENV]['pw']), decodeEnv($_ENV[$CORE_ENV]['dbname'])) or die("Warning !! N0 Connect DataBase");
-wewebConnect($coreLanguageSQL, '192.168.1.129', 'root', 'IySY?Pk7!!mH', '2022_git') or die("Warning !! N0 Connect DataBase");
+wewebConnect($coreLanguageSQL, decodeEnv($_ENV[$CORE_ENV]['hostname']), decodeEnv($_ENV[$CORE_ENV]['user']), decodeEnv($_ENV[$CORE_ENV]['pw']), decodeEnv($_ENV[$CORE_ENV]['dbname'])) or die("Warning !! N0 Connect DataBase");
 /* ADODB CONNECT */
 
 ############################################

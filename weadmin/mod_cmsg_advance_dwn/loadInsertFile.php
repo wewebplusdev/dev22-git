@@ -96,6 +96,7 @@ include("config.php");
 		$insert[$mod_tb_fileTemp . "_filename"] = "'" . $filenamedoc . "'";
 		$insert[$mod_tb_fileTemp . "_name"] = "'" . $nameToinput . "'";
 		$insert[$mod_tb_fileTemp . "_language"] = "'" . $_REQUEST['langt'] . "'";
+		$insert[$mod_tb_fileTemp . "_masterkey"] = "'" . $_REQUEST['masterkey'] . "'";
 
 		$sql = "INSERT INTO " . $mod_tb_fileTemp . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
 		$Query = wewebQueryDB($coreLanguageSQL, $sql);

@@ -441,6 +441,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
   </tr>
 </table>
   <br>-->
+			<br>
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 
 				<tr>

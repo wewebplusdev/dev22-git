@@ -122,6 +122,7 @@ if ($_REQUEST['execute'] == "insert") {
             $insert[$mod_tb_file . "_filename"] = "'" . $downloadFile . "'";
             $insert[$mod_tb_file . "_name"] = "'" . $downloadName . "'";
             $insert[$mod_tb_file . "_language"] = "'" . $_REQUEST['inputLt'] . "'";
+            $insert[$mod_tb_file . "_masterkey"] = "'" . $_REQUEST['masterkey'] . "'";
             $insert[$mod_tb_file . "_credate"] = "NOW()";
             
             $sql = "INSERT INTO " . $mod_tb_file . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
