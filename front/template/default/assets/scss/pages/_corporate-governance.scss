@@ -1,0 +1,142 @@
+.corporate-governance-main {
+    .graphic {
+        position: absolute;
+        z-index: 0;
+        &.-I {
+            top: 100px;
+            left: 90px;
+            transform: scale(0.8);
+        }
+        &.-II {
+            top: 300px;
+            left: 35px;
+            transform: scale(0.7);
+        }
+    }
+    .cg-content {
+        margin-bottom: 4rem;
+        .desc {
+            font-size: 30px;
+            line-height: 1.2em;
+            color: #888787;
+            margin: 3rem 0;
+        }
+        .pdf-viewer {
+            margin-bottom: 3rem;
+            iframe {
+                width: 100%;
+                height: 90vh;
+                border-radius: 12px;
+                border: 8px solid #ccc;
+            }
+        }
+        .cg-list {
+            ul.item-list {
+                margin: 0 -1rem;
+                li {
+                    width: calc(100% / 3);
+                    padding: 1rem 1rem;
+                }
+            }
+            .link.-wrapper {
+                display: block;
+                padding: 25px 30px;
+                background-color: #f0f0f0;
+            }
+            .link.download-icon {
+                position: absolute;
+                z-index: 1;
+                bottom: 30px;
+                right: 30px;
+                font-size: 24px;
+                color: $red;
+            }
+            .link:hover {
+                box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.16);
+            }
+            .content {
+                font-size: 30px;
+                line-height: 1.1em;
+                .txt {
+                    font-weight: 500;
+                    color: #053e88;
+                    margin-bottom: 1.2rem;
+                }
+                .date {
+                    color: #888787;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .corporate-governance-main .cg-content {
+        .desc,
+        .cg-list .content {
+            font-size: 28px;
+        }
+    }
+}
+@media (max-width: 1440px) {
+    .corporate-governance-main .cg-content {
+        .desc,
+        .cg-list .content {
+            font-size: 26px;
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .corporate-governance-main .cg-content {
+        .desc,
+        .cg-list .content {
+            font-size: 24px;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .corporate-governance-main .cg-content {
+        .desc,
+        .cg-list .content {
+            font-size: 22px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .corporate-governance-main .cg-content {
+        .desc,
+        .cg-list .content {
+            font-size: 20px;
+        }
+        .cg-list {
+            ul.item-list {
+                margin: 0 -0.6rem;
+                li {
+                    padding: 0.6rem;
+                    width: 50%;
+                }
+            }
+            .link.-wrapper {
+                padding: 20px 15px;
+            }
+        }
+        .pdf-viewer {
+            margin-bottom: 2rem;
+        }
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 480px;
+        }
+        .desc {
+            margin: 2rem 0;
+        }
+    }
+    .corporate-governance-main {
+        .graphic {
+            &.-I,
+            &.-II {
+                display: none;
+            }
+        }
+    }
+}

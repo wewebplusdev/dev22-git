@@ -1,0 +1,40 @@
+.cookie-tab{
+    background-color: rgba(150, 150, 150, 0.3);
+    backdrop-filter: blur(14px); 
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 98;
+    &.hide{display: none;}
+    .h-tap{height: 140px;}
+    .icon-pdpa{position: relative;}
+    .text{ font-weight: normal; font-size: 24px; font-style: italic; text-align: left;color:$color-light;line-height: 1.2em;}
+    .link.-cookie-policy{color: $color-lightgray; display: inline-block; vertical-align: middle; text-decoration: underline;
+        &:hover{color: $color-primary;}
+    }
+    .action{display: flex;
+        .btn{min-width: 160px;
+            +.btn{margin-left: 15px;}
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .cookie-tab .h-tap {height: 100px;}
+    .cookie-tab .icon-pdpa {width: 60px;}
+    .cookie-tab .action .btn { min-width: 120px; height: 40px; line-height: 36px; font-size: 20px;}
+    .cookie-tab .text {font-size: 20px;}
+}
+@media (max-width: 991px) { 
+    .cookie-tab .action{display: block;}
+    .cookie-tab .action .btn{display: block;}
+    .cookie-tab .action .btn + .btn {margin-left: 0px; margin-top: 5px;}
+}
+@media (max-width: 767px) {
+
+    .cookie-tab .h-tap {height: auto; padding: 15px 0 15px 60px; position: relative;}
+    .cookie-tab .h-tap > div:nth-child(1){position: absolute; top: 15px; left: 0px;}
+    .cookie-tab .icon-pdpa { width: 50px;}
+    .cookie-tab .text{font-size: 18px;}
+    .cookie-tab .action{display: flex;padding-top: 10px;}
+    .cookie-tab .action .btn {width: 100px;height: 30px;line-height: 28px; border-width: 1px; font-size: 18px;}
+    .cookie-tab .action .btn + .btn {margin-left: 10px; margin-top: 0px;}
+
+}

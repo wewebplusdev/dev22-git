@@ -41,18 +41,21 @@ switch ($getPageControlHeader) {
         break;
 
     case 'settingWebsite':
+        header('Content-Type: application/json; charset=utf-8');
         authorization_session();
         logs_usage('Logs settingWebsite API', $get_client_ip);
         require_once _DIR . '/controller/script/'.$menuActive.'/service/_website/index.php';
         break;
 
     case 'home':
+        header('Content-Type: application/json; charset=utf-8');
         authorization_session();
         logs_usage('Logs Home API', $get_client_ip);
         require_once _DIR . '/controller/script/'.$menuActive.'/service/home/index.php';
         break;
         
     default:
+        header('Content-Type: application/json; charset=utf-8');
         http_response_code(403);
         $arrJson = array(
             'status' => 403,

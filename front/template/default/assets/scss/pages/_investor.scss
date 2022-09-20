@@ -1,0 +1,238 @@
+// page - start
+.investor-main{overflow: hidden;
+    &.-inner{padding-bottom: 120px;}
+    .graphic{position: absolute; z-index: 0;
+        &.-L{top: 90px; left: -145px;}
+        &.-R{top: 50px; right: -30px;}
+        &.-I{top: 10%; left: 50px;}
+        &.-II{top: 40%; right: 70px;}
+        &.-III{top: 50%; left: 10px;}
+    }
+    .wg-investor-relations{padding-top: 0;
+        .whead{padding-bottom: 0; border-bottom: 0;}
+    }
+}
+.investor-nav-slider{position: relative; padding-bottom: 25px; margin-bottom: 35px; border-bottom: 1px solid $color-lightgray;
+    &.slick-dotted.slick-slider{margin-bottom: 40px;}
+    .slick-prev, 
+	.slick-next{top: 0; bottom: 0; margin-top: auto; margin-bottom: auto;}
+	.slick-prev {left: 0;}
+	.slick-next {right: 0;}
+    .slick-slide{@include transition(all 400ms ease-out);
+        &:nth-child(odd){padding-top: 0px;}
+        &:nth-child(even){padding-top: 60px;}
+    }
+    .item{
+        .link{position: relative; display: block;}
+        .thumb{
+            .cover{position: relative; z-index: 0; overflow: hidden; padding-bottom: 134%;
+                .lazy{@include transition(all 400ms ease-out); @include transform(scale(1));}
+            }
+        }
+        .font-sub{position: absolute; z-index: 1; left: 20px; bottom: 10px; right: 20px; margin: 0;
+            overflow: hidden; color: $color-light;
+			max-height: calc(1em*2); line-height: 1em;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+            @include text-shadow(0 3px 6px rgba(0,0,0,0.16));
+        }
+        .link:hover{
+            .thumb{
+                .cover{
+                    .lazy{@include transform(scale(1.1));}
+                }
+            }
+        }
+    }
+}
+.wg-investor-relations{
+    .investor-information{
+        &.-inner{margin-bottom: 0; margin-top: 50px; padding: 40px 0;
+            .box{text-align: center;
+                &.-auto{min-width: 450px;}
+            }
+        }
+    }
+}
+.investor-business-group{
+    .item-list{
+        li{width: 100%;
+            +li{margin-top: 75px;}
+        }
+    }
+    table{width: 100%;}
+    tbody{background-color: #EBF0F6; border-top: 10px solid $color-light;}
+    th{padding: 10px; text-align: center; vertical-align: middle;
+        .txt{color: $color-light;}
+    }
+    td{padding: 25px; text-align: center; vertical-align: middle;
+        .txt{color: $color-secondary;}
+    }
+    .txt{font-weight: 600; font-style: italic; line-height: 1em;}
+}
+
+.investor-news-list{padding-bottom: 50px;
+    .item-list{margin: -30px -15px;
+        li{width: calc(100%/3); padding: 30px 15px;}
+    }
+    .inner{position: relative;}
+    .link.download-icon{position: absolute; z-index: 1; top: 25px; right: 30px; font-size: 24px; color: $color-secondary;
+        &:hover{color: $color-primary; top: 30px;}
+    }
+    .link.-wrapper{display: block; padding: 25px 30px; background-color: #F9F9FA;
+        .content{position: relative; padding-right: 40px;}
+        .date{font-size: 28px; font-weight: normal; line-height: 1; color: $color-secondary; margin-bottom: 5px;}
+        .txt{font-size: 24px; font-weight: normal; color: $color-lightgray;
+            height: calc(1em*5); line-height: 1em; overflow: hidden; margin-bottom: 0.8em;
+			display: -webkit-box;
+			-webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            @include transition(all 400ms ease-out);
+        }
+        .more{font-size: 26px; font-weight: normal; line-height: 1; color: $color-primary;
+            @include transition(all 400ms ease-out);
+            .feather{margin-left: 5px; position: relative; top: 3px; left: 0;
+                @include transition(all 400ms ease-out);
+            }
+        }
+    }
+    .link.-wrapper:hover{background-color: $color-lightgray;
+        .txt{color: $color-gray;}
+        .more{
+            .feather{left: 3px;}
+        }
+    }
+}
+.investor-anti-corruption{padding-top: 40px;
+    .accordion{
+        > .card{border: 0; border-radius: 0; background-color: $color-none;
+            +.card{margin-top: 20px;}
+            .card-header {margin-bottom: 0px;}
+        }
+    }
+    .card-header{padding: 0; border: 0; background-color: $color-none;
+        &:first-child {border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;}
+        .link{display: block; background-color: $color-primary; position: relative;
+            padding: 16px 95px 16px 45px; font-weight: 600; color: $color-light; line-height: 1em;
+            &:before{content: '-'; position: absolute; top: 22px; right: 45px; background-color: $color-light;
+                width: 30px; height: 30px; line-height: 24px; text-align: center; 
+                color: $color-primary; font-size: 50px;
+                @include border-radius(50%);
+            }
+            &.collapsed{background-color: $color-secondary;
+                &:before{content: '+'; color: $color-secondary;}
+            }
+        }
+    }
+    .card-body{position: relative; margin-top: 40px;
+        &:before{content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 5px;
+            background-color: $color-primary;
+            @include border-radius(3px);
+        }
+        &.editor-content{padding: 0px 40px 20px 0; border: 0;}
+    }
+}
+// page - end
+
+// responsive - start
+@media (max-width: 1600px) {
+    .investor-anti-corruption .card-header .link:before {top: 20px;}
+}
+
+@media (max-width: 1440px) /*check 1280*/ {
+    .investor-anti-corruption .card-header .link:before {top: 19px;}
+}
+
+@media (max-width: 1199px) /*check 1024*/{
+    .investor-main.-inner {padding-bottom: 80px;}
+
+    .wg-investor-relations .investor-information.-inner {margin-bottom: 80px;padding: 20px 0;}
+    .wg-investor-relations .investor-information.-inner .box.-auto {min-width: 320px;}
+
+    .investor-business-group .item-list li + li {margin-top: 50px;}
+
+    .investor-news-list .link.-wrapper .date {font-size: 26px;}
+    .investor-news-list .link.-wrapper .txt {font-size: 22px;}
+    .investor-news-list .link.-wrapper .more { font-size: 24px;}
+
+    .investor-anti-corruption .card-header .link { padding: 16px 75px 16px 25px;}
+    .investor-anti-corruption .card-header .link:before {top: 18px; right: 25px;}
+    .investor-anti-corruption .card-body.editor-content {margin-top: 30px;}
+}
+
+@media (max-width: 991px) {
+    .investor-main.-inner {padding-bottom: 50px;}
+
+    .wg-investor-relations .investor-information.-inner .box.-auto {min-width: 250px;}
+
+    .investor-business-group .item-list li + li {margin-top: 30px;}
+
+    .investor-news-list { padding-bottom: 20px;padding-top: 20px;}
+    .investor-news-list .item-list { margin: -10px -5px;}
+    .investor-news-list .item-list li {padding: 10px 5px;}
+    .investor-news-list .link.download-icon {top: 15px; right: 20px; font-size: 22px;}
+    .investor-news-list .link.-wrapper {padding: 15px 20px;}
+    .investor-news-list .link.-wrapper .content {padding-right: 25px;}
+    .investor-news-list .link.-wrapper .date {font-size: 24px;}
+    .investor-news-list .link.-wrapper .txt {font-size: 20px;}
+    .investor-news-list .link.-wrapper .more { font-size: 22px;}
+
+    .investor-anti-corruption {padding-top: 30px;}
+    .investor-anti-corruption .card-body.editor-content {margin-top: 20px;}
+}
+
+@media (max-width: 767px) {
+    .investor-main .graphic.-I {top: 1%;left: 30px;width: 50px;}
+    .investor-main .graphic.-II {top: 20%;right: -20px;width: 70px;}
+    .investor-main .graphic.-III {top: 5%;left: 10px;width: 30px;}
+
+    .investor-nav-slider .slick-slide:nth-child(even) {padding-top: 10px;}
+    .investor-nav-slider .item .font-sub {left: 15px;right: 15px;}
+
+    .wg-investor-relations .investor-information.-inner{margin-top: 30px;margin-bottom: 20px; padding: 10px 0;}
+    .wg-investor-relations .investor-information.-inner .title{text-align: center;}
+    .wg-investor-relations .investor-information.-inner .box.-auto{min-width: inherit;}
+
+    .investor-business-group table{display: flex;}
+    .investor-business-group thead{
+        -ms-flex: 0 0 auto;
+        -webkit-box-flex: 0;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+    .investor-business-group tbody{border-top: 0;
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+    .investor-business-group tr{display: block;}
+    .investor-business-group th,
+    .investor-business-group td{display: flex; align-items: center; justify-content: center; padding: 15px; min-height: 72px;}
+    .investor-business-group th+th,
+    .investor-business-group td+td{border-top: 1px solid $color-border;}
+
+    .investor-news-list { padding-bottom: 10px;padding-top: 0px;}
+    .investor-news-list .item-list { margin: -5px;}
+    .investor-news-list .item-list li {padding: 5px; width: 50%;}
+    .investor-news-list .link.download-icon {top: 10px; right: 10px;}
+    .investor-news-list .link.-wrapper {padding: 10px;}
+    .investor-news-list .link.-wrapper .date {font-size: 22px;}
+    .investor-news-list .link.-wrapper .txt {font-size: 18px; height: 3em; -webkit-line-clamp: 3;}
+    .investor-news-list .link.-wrapper .more { font-size: 20px;}
+
+    .investor-anti-corruption {padding-top: 20px;}
+    .investor-anti-corruption .accordion > .card + .card { margin-top: 10px;}
+    .investor-anti-corruption .card-header .link {padding: 15px 60px 15px 20px;}
+    .investor-anti-corruption .card-header .link:before { top: 17px; right: 20px; width: 24px; height: 24px; line-height: 20px; font-size: 30px;}
+    .investor-anti-corruption .card-body.editor-content { padding: 0px 20px 10px 0;margin-top: 10px;}
+
+}
+
+@media (max-width: 575px) {
+}
+// responsive - end

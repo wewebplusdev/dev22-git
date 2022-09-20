@@ -31,10 +31,11 @@ class url
         $segment = cleanArray(explode('/', $urlall[0]));
         $this->segment = $segment;
         $this->onModulus = $segment['0'] ? $segment['0'] : $url_show_default;
-
+        
         if (!empty($url_show_lang)) {
 
             if (isset($lang_set[$this->segment[0]])) {
+
                 $this->pagelang = $lang_set[$this->segment[0]];
                 array_splice($this->segment, 0, 1);
             } else {

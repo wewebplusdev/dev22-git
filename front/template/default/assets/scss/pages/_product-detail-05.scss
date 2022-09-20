@@ -1,0 +1,583 @@
+.pap {
+  .contentI {
+    margin-top: 2rem;
+    padding: 3rem;
+    margin-bottom: 3rem;
+  }
+  .contentII {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    .body {
+      margin: 0;
+      background: #fcfcfc;
+      border-left: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      padding: 3rem;
+      position: relative;
+      .info1 {
+        .list,
+        .list1 {
+          margin-bottom: 1rem;
+        }
+      }
+      .graphic-bm {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+  .hs-title {
+    font-size: 45px;
+    position: relative;
+    color: #003e88;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .hs1-title {
+    font-size: 31px;
+    line-height: 1;
+    text-align: left;
+    color: #d70000;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 1rem;
+  }
+
+  .hs2-title {
+    font-size: 31px;
+    line-height: 1;
+    text-align: left;
+    color: #003e88;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 0.6rem;
+  }
+
+  .hs3-title {
+    font-size: 31px;
+    line-height: 1;
+    text-align: left;
+    color: #003e88;
+    font-style: italic;
+    position: relative;
+  }
+
+  .hs4-title {
+    font-size: 31px;
+    line-height: 1;
+    text-align: left;
+    color: #003e88;
+    font-weight: bold;
+    font-style: italic;
+    position: relative;
+    margin-bottom: 0.6rem;
+  }
+
+  .info1 {
+    position: relative;
+    color: #29282d;
+  }
+
+  .info1 .list {
+    position: relative;
+    color: #29282d;
+    line-height: 1.2em;
+    padding-left: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .info1 .list1 {
+    position: relative;
+    color: #191919;
+    padding-left: 1.6rem;
+  }
+
+  .info1 .list2 {
+    position: relative;
+    color: #191919;
+    line-height: 1.2em;
+    padding-left: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .info1 .list::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0px;
+    width: 10px;
+    height: 10px;
+    background-color: #e72c3a;
+    border-radius: 50%;
+  }
+
+  .info1 .list1::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #bbbbbb;
+    border-radius: 50%;
+  }
+
+  .info1 .list2::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    left: 0;
+    background-color: #bbbbbb;
+    border-radius: 50%;
+  }
+
+  .htext {
+    font-size: 48px;
+    line-height: 1;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 1.4rem 3rem;
+    background-color: #003e88;
+  }
+
+  .tj {
+    position: absolute;
+    padding: 10px;
+    left: 955px;
+    bottom: 0px;
+  }
+
+  .picture-cover {
+    position: relative;
+  }
+
+  .content .box1 {
+    position: relative;
+    background: #f8f8f8;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .polygon1 {
+    position: absolute;
+  }
+
+  .polygon2 {
+    position: absolute;
+  }
+  .ed {
+    width: 100%;
+  }
+  .ed1 {
+    font-size: 45px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #003e88;
+    width: 1180px;
+    height: 82px;
+    text-align: center;
+  }
+  .ed2 {
+    border-right: dashed;
+    border-color: #cccccc;
+    padding: 1.6rem;
+    line-height: 1em;
+    text-align: center;
+    width: 50%;
+  }
+  .ed3 {
+    border-right: dashed;
+    border-color: #cccccc;
+    border-bottom: hidden;
+    font-size: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    font-weight: 600;
+    color: #000000;
+  }
+  .ed4 {
+    border-right: dashed;
+    border-color: #cccccc;
+    font-size: 25px;
+    background-color: #ffffff;
+    font-weight: 400;
+    padding: 20px;
+    color: #000000;
+  }
+  .list3 {
+    position: relative;
+    bottom: 0px;
+    padding-left: 20px;
+  }
+  .ed4 .list3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 11px;
+    height: 11px;
+    background-color: #e72c3a;
+    border-radius: 50%;
+  }
+  .list4 {
+    position: relative;
+    bottom: 0px;
+    padding-left: 20px;
+    line-height: 1.2em;
+  }
+  .ed4 .list4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 37px;
+    width: 11px;
+    height: 11px;
+    background-color: #e72c3a;
+    border-radius: 50%;
+  }
+  .list5 {
+    position: relative;
+    top: 20px;
+    padding-left: 20px;
+  }
+  .ed5 {
+    border-color: #cccccc;
+    border-bottom: hidden;
+    font-size: 30px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    color: #000000;
+    line-height: 1.2em;
+  }
+  .ed6 {
+    border-color: #cccccc;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    border-right: 0px;
+    padding-top: 20px;
+    color: #000000;
+  }
+  .ed7 {
+    border-color: #cccccc;
+    border-bottom: hidden;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    border-right: 0px;
+    color: #000000;
+    line-height: 1.2em;
+  }
+  .ed8 {
+    border-color: #ffffff;
+    border-bottom: hidden;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    border: hidden;
+    color: #000000;
+    line-height: 1.2em;
+  }
+  .ed9 {
+    border-color: #cccccc;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    border-left: 0px;
+    border-right-width: 0px;
+    padding-top: 20px;
+    color: #000000;
+  }
+  .none {
+    border: hidden;
+  }
+}
+@media (max-width: 1600px) {
+  .pap .hs-title {
+    font-size: 40px;
+  }
+  .pap .htext {
+    font-size: 45px;
+  }
+  .pap .hs1-title,
+  .pap .hs2-title,
+  .pap .hs3-title,
+  .pap .hs4-title {
+    font-size: 30px;
+  }
+  .pap .info1 .list::before {
+    width: 11px;
+    height: 11px;
+  }
+  .pap .info1 .list1::before {
+    width: 11px;
+    height: 11px;
+  }
+  .pap .info1 .list2::before {
+    width: 11px;
+    height: 11px;
+  }
+  .pap .ed2 {
+    font-size: 40px;
+  }
+  .pap .ed3,
+  .pap .ed5,
+  .pap .ed7,
+  .pap .ed8 {
+    font-size: 28px;
+  }
+  .pap .ed4,
+  .pap .ed6,
+  .pap .ed9 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .pap .hs-title {
+    font-size: 36px;
+  }
+  .pap .htext {
+    font-size: 40px;
+  }
+  .pap .hs1-title,
+  .pap .hs2-title,
+  .pap .hs3-title,
+  .pap .hs4-title {
+    font-size: 28px;
+  }
+  .pap .info1 .list::before {
+    width: 10px;
+    height: 10px;
+  }
+  .pap .info1 .list1::before {
+    width: 10px;
+    height: 10px;
+  }
+  .pap .info1 .list2::before {
+    width: 10px;
+    height: 10px;
+  }
+  .pap .ed4 .list3::before {
+    width: 10px;
+    height: 10px;
+    bottom: 6px;
+  }
+  .pap .ed4 .list4::before {
+    width: 10px;
+    height: 10px;
+  }
+  .pap .ed2 {
+    font-size: 36px;
+  }
+  .pap .ed3,
+  .pap .ed5,
+  .pap .ed7,
+  .pap .ed8 {
+    font-size: 26px;
+  }
+  .pap .ed4,
+  .pap .ed6,
+  .pap .ed9 {
+    font-size: 23px;
+  }
+  .pap .wrapper {
+    overflow-x: scroll;
+  }
+  .pap .alltable {
+    width: 1180px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1199px) {
+  .pap .hs-title {
+    font-size: 32px;
+  }
+  .pap .htext {
+    font-size: 36px;
+  }
+  .pap .hs1-title,
+  .pap .hs2-title,
+  .pap .hs3-title,
+  .pap .hs4-title {
+    font-size: 26px;
+  }
+  .pap .info1 .list::before {
+    width: 9px;
+    height: 9px;
+  }
+  .pap .info1 .list1::before {
+    width: 9px;
+    height: 9px;
+  }
+  .pap .info1 .list2::before {
+    width: 9px;
+    height: 9px;
+  }
+  .pap .ed4 .list3::before {
+    width: 9px;
+    height: 9px;
+    bottom: 6px;
+  }
+  .pap .ed4 .list4::before {
+    width: 9px;
+    height: 9px;
+  }
+  .pap .ed2 {
+    font-size: 32px;
+  }
+  .pap .ed3,
+  .pap .ed5,
+  .pap .ed7,
+  .pap .ed8 {
+    font-size: 24px;
+  }
+  .pap .ed4,
+  .pap .ed6,
+  .pap .ed9 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 991px) {
+  .pap .hs-title {
+    font-size: 30px;
+  }
+  .pap .htext {
+    font-size: 32px;
+  }
+  .pap .hs1-title,
+  .pap .hs2-title,
+  .pap .hs3-title,
+  .pap .hs4-title {
+    font-size: 24px;
+  }
+  .pap .info1 .list::before {
+    width: 8px;
+    height: 8px;
+    top: 9px;
+  }
+  .pap .info1 .list1::before {
+    width: 8px;
+    height: 8px;
+    top: 9px;
+  }
+  .pap .info1 .list2::before {
+    width: 8px;
+    height: 8px;
+    top: 9px;
+  }
+  .pap .ed4 .list3::before {
+    width: 8px;
+    height: 8px;
+    top: 8px;
+  }
+  .pap .ed4 .list4::before {
+    width: 8px;
+    height: 8px;
+    top: 8px;
+  }
+  .pap .ed2 {
+    font-size: 28px;
+  }
+  .pap .ed3,
+  .pap .ed5,
+  .pap .ed7,
+  .pap .ed8 {
+    font-size: 22px;
+  }
+  .pap .ed4,
+  .pap .ed6,
+  .pap .ed9 {
+    font-size: 20px;
+  }
+  .pap .info1 .list,
+  .pap .info1 .list1,
+  .pap .info1 .list2 {
+    padding-left: 1rem;
+  }
+  .pap .contentII .body .info1 .list,
+  .pap .contentII .body .info1 .list1,
+  .pap .info1 .list,
+  .pap .info1 .list2 {
+    margin-bottom: 0.6rem;
+  }
+  .pap .contentI,
+  .pap .contentII .body {
+    padding: 2rem;
+  }
+  .pap .htext {
+    padding: 1rem 2rem;
+  }
+  .pap .contentII .body .graphic-bm {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .pap .hs-title {
+    font-size: 28px;
+  }
+  .pap .htext {
+    font-size: 28px;
+  }
+  .pap .hs1-title,
+  .pap .hs2-title,
+  .pap .hs3-title,
+  .pap .hs4-title {
+    font-size: 22px;
+  }
+  .pap .info1 .list::before {
+    width: 8px;
+    height: 8px;
+    top: 9px;
+  }
+  .pap .info1 .list1::before {
+    width: 8px;
+    height: 8px;
+    top: 9px;
+  }
+  .pap .info1 .list2::before {
+    width: 8px;
+    height: 8px;
+    top: 9px;
+  }
+  .pap .ed4 .list3::before {
+    width: 8px;
+    height: 8px;
+    top: 8px;
+  }
+  .pap .ed4 .list4::before {
+    width: 8px;
+    height: 8px;
+    top: 8px;
+  }
+  .pap .ed2 {
+    font-size: 26px;
+  }
+  .pap .ed3,
+  .pap .ed5,
+  .pap .ed7,
+  .pap .ed8 {
+    font-size: 20px;
+  }
+  .pap .ed4,
+  .pap .ed6,
+  .pap .ed9 {
+    font-size: 18px;
+  }
+  .pap .contentI,
+  .pap .contentII {
+    margin-bottom: 2rem;
+  }
+}

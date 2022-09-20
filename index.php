@@ -69,7 +69,7 @@ $smarty->assign("ul", $linklang);
 $smarty->assign("langon", $url->pagelang[2]);
 
 if (!empty($url->uri['terms'])) {
-    header("Location:" . $linklang . "/terms/" . $url->uri['terms']);
+    header("Location:" . _URL . $linklang . "/terms/" . $url->uri['terms']);
     exit();
 }
 
@@ -84,7 +84,7 @@ if ($lang_default != $url->pagelang[2]) {
 }
 
 ## addon page ##
-$loadcate = $url->loadmodulus(array("_mainpage", "home", "member"));
+$loadcate = $url->loadmodulus(array("_mainpage", "home"));
 foreach ($loadcate as $loadmodulus) {
     include_once $loadmodulus;
 }

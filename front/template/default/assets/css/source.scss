@@ -1,0 +1,52 @@
+/* frameworks */
+@import "../scss/frameworks/mixins";
+@import "../scss/frameworks/layout";
+/* config */
+@import "../scss/config/colors";
+@import "../scss/config/font";
+@import "../scss/config/text";
+@import "../scss/config/base";
+/* components */
+@import "../scss/components/preloader";
+@import "../scss/components/menu";
+@import "../scss/components/mobile-menu";
+@import "../scss/components/slick";
+@import "../scss/components/breadcrumb";
+@import "../scss/components/pagination";
+@import "../scss/components/editor-content";
+@import "../scss/components/whead";
+@import "../scss/components/button";
+@import "../scss/components/form-control";
+@import "../scss/components/radio-control";
+@import "../scss/components/checkbox-control";
+@import "../scss/components/select2";
+@import "../scss/components/mCustomScrollbar";
+@import "../scss/components/modal";
+@import "../scss/components/cookiepolicy";
+/* pages */
+@import '../scss/pages/default';
+@import "../scss/pages/home";
+@import "../scss/pages/product";
+@import "../scss/pages/investor";
+@import "../scss/pages/news";
+@import "../scss/pages/detail";
+@import "../scss/pages/career";
+@import "../scss/pages/contact";
+@import "../scss/pages/search";
+@import "../scss/pages/car-insurance";
+@import "../scss/pages/car-insurance-act";
+@import "../scss/pages/accident-insurance";
+@import "../scss/pages/historicol-price";
+@import "../scss/pages/about-vision";
+@import "../scss/pages/about-us";
+@import "../scss/pages/_investor-financial-info-ifi";
+@import "../scss/pages/product-detail-05";
+@import "../scss/pages/about-us-history";
+@import "../scss/pages/investor-shareholder-structure";
+@import "../scss/pages/about-us-organizational";
+@import "../scss/pages/about-us-board";
+@import "../scss/pages/corporate-governance";
+/* layouts */
+@import "../scss/layouts/header";
+@import "../scss/layouts/footer";
+@import "../scss/layouts/breakpoints";

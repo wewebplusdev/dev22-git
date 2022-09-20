@@ -1,0 +1,222 @@
+.i-s-s {
+    .txts {
+        position: absolute;
+        .title {
+            font-weight: $bold;
+            font-style: italic;
+            font-size: 35px;
+            line-height: 1;
+            color: #053e88;
+        }
+        .desc {
+            font-size: 30px;
+            line-height: 1;
+            color: #888787;
+        }
+    }
+    .nav-tabs {
+        justify-content: flex-end;
+        border: none;
+        column-gap: 2rem;
+        position: relative;
+        margin-top: 5rem;
+        margin-bottom: 4rem;
+        svg path {
+            fill: #bbb;
+            transition: all 400ms ease-out;
+        }
+        li a:hover {
+            svg path {
+                fill: #e72c3a;
+            }
+        }
+        li a.active:hover {
+            svg path {
+                fill: #e72c3a;
+            }
+        }
+        li a.active {
+            svg path {
+                fill: #053e88;
+            }
+        }
+        li a.active::after {
+            position: absolute;
+            content: "";
+            width: 35px;
+            border: 2px solid #e72c3a;
+            bottom: -12px;
+            left: 0;
+            transition: all 400ms ease-out;
+        }
+        li {
+            position: relative;
+        }
+        li.active::before {
+            content: "";
+            position: absolute;
+            height: 39.22px;
+            background: transparent;
+            border: 2px solid #ccc;
+            right: -19px;
+        }
+    }
+    .tab-content {
+        background: #f8f8f8;
+        .tab-pane {
+            .chart {
+                padding: 4rem 6rem;
+                justify-content: center;
+                display: flex;
+            }
+            .table {
+                thead {
+                    th {
+                        color: #ffffff;
+                        background: #003e88;
+                        font-size: 40px;
+                        line-height: 1;
+                        text-align: center;
+                    }
+                }
+                tbody {
+                    td {
+                        font-size: 30px;
+                        line-height: 1;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .i-s-s {
+        .txts {
+            .title {
+                font-size: 32px;
+            }
+            .desc {
+                font-size: 28px;
+            }
+        }
+        .tab-content .tab-pane .table {
+            thead th {
+                font-size: 36px;
+            }
+            tbody td {
+                font-size: 28px;
+            }
+        }
+    }
+}
+@media (max-width: 1440px) {
+    .i-s-s {
+        .txts {
+            .title {
+                font-size: 30px;
+            }
+            .desc {
+                font-size: 26px;
+            }
+        }
+        .nav-tabs {
+            margin-top: 4rem;
+        }
+        .tab-content .tab-pane .table {
+            thead th {
+                font-size: 32px;
+            }
+            tbody td {
+                font-size: 26px;
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .i-s-s {
+        .txts {
+            .title {
+                font-size: 28px;
+            }
+            .desc {
+                font-size: 24px;
+            }
+        }
+        .nav-tabs {
+            margin-top: 3rem;
+        }
+        .tab-content .tab-pane .table {
+            thead th {
+                font-size: 30px;
+            }
+            tbody td {
+                font-size: 24px;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .i-s-s {
+        .txts {
+            .title {
+                font-size: 26px;
+            }
+            .desc {
+                font-size: 22px;
+            }
+        }
+        .tab-content .tab-pane .table {
+            thead th {
+                font-size: 28px;
+            }
+            tbody td {
+                font-size: 22px;
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .i-s-s {
+        .txts {
+            position: relative;
+            .title {
+                font-size: 24px;
+            }
+            .desc {
+                font-size: 20px;
+            }
+        }
+        .nav-tabs {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            li {
+                a.active::after {
+                    width: 29px;
+                }
+                svg {
+                    width: 28px;
+                }
+            }
+            li.active::before {
+                height: 35px;
+                border: 1px solid #ccc;
+            }
+        }
+        .tab-content .tab-pane {
+            .chart {
+                padding: 2rem;
+            }
+            .table {
+                thead th {
+                    font-size: 26px;
+                }
+                tbody td {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

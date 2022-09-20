@@ -1,0 +1,14 @@
+body{
+	font-family: 'db_helvethaica';
+	background-color: $color-light;
+	font-size:16px;
+	color: $color-lightgray;
+	line-height: 1.4em;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: none;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{font-family: 'db_helvethaica';}
+
+.transition{@include transition(all 400ms ease-out);}

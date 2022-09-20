@@ -1,0 +1,30 @@
+.editor-content{padding-top: 40px;
+    @extend .font-body;
+    p{
+        @extend .font-body;
+        &:last-child{margin-bottom: 0;}
+    }
+    img{height: auto !important;}
+}
+
+// responsive - start
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1440px) /*check 1280*/ {
+}
+
+@media (max-width: 1199px) /*check 1024*/{
+}
+
+@media (max-width: 991px) {
+    .editor-content {padding-top: 30px;}
+}
+
+@media (max-width: 767px) {
+    .editor-content {padding-top: 20px;}
+}
+
+@media (max-width: 575px) {
+}
+// responsive - end

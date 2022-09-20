@@ -1,0 +1,189 @@
+.ifi {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+  }
+  .tg {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dddddd;
+    position: relative;
+    padding-inline: 30px;
+    font-weight: normal;
+  }
+  .tt {
+    background-color: #f0f0f0;
+    font-size: 36px;
+  }
+
+  .ttt {
+    color: #053e88;
+  }
+
+  .ta {
+    color: #e72c3a;
+    padding: 10px;
+    text-align: left;
+    border: 0px;
+    border-left: #cccccc;
+    position: relative;
+    padding-inline: 30px;
+    font-size: 36px;
+  }
+
+  .tb {
+    color: #003e88;
+    text-align: center;
+    padding: 10px;
+    border: 0px;
+    width: 15%;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .tc {
+    color: #888787;
+    font-size: 30px;
+    padding: 10px;
+    border: #cccccc;
+  }
+
+  .te {
+    text-align: center;
+    padding: 10px;
+    font-weight: normal;
+  }
+
+  .tf {
+    color: #e72c3a;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .font-sub-v2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2em;
+    color: #003e88;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .ti {
+    font-size: 48px;
+    color: #ffffff;
+    font-weight: 600;
+    font-style: italic;
+    padding: 30px 35px;
+    background-color: #003e88;
+  }
+}
+
+@media (max-width: 1600px) {
+  .ifi .font-sub-v2 {
+    font-size: 42px;
+  }
+  .ifi .ti {
+    font-size: 44px;
+  }
+  .ifi .ta,
+  .ifi .tb {
+    font-size: 34px;
+  }
+  .ifi .tg,
+  .ifi .te,
+  .ifi .tf {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .ifi .font-sub-v2 {
+    font-size: 38px;
+  }
+  .ifi .ti {
+    font-size: 40px;
+  }
+  .ifi .ta,
+  .ifi .tb {
+    font-size: 30px;
+  }
+  .ifi .tg,
+  .ifi .te,
+  .ifi .tf {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .ifi .font-sub-v2 {
+    font-size: 36px;
+  }
+  .ifi .ti {
+    font-size: 36px;
+  }
+  .ifi .ta,
+  .ifi .tb {
+    font-size: 28px;
+  }
+  .ifi .tg,
+  .ifi .te,
+  .ifi .tf {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ifi .font-sub-v2 {
+    font-size: 32px;
+  }
+  .ifi .ti {
+    font-size: 30px;
+  }
+  .ifi .ta,
+  .ifi .tb {
+    font-size: 26px;
+  }
+  .ifi .tg,
+  .ifi .te,
+  .ifi .tf {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ifi .font-sub-v2 {
+    font-size: 30px;
+  }
+  .ifi .ti {
+    font-size: 28px;
+  }
+  .ifi .ta,
+  .ifi .tb {
+    font-size: 22px;
+  }
+  .ifi .tg,
+  .ifi .te,
+  .ifi .tf {
+    font-size: 20px;
+  }
+  .ifi .scroll {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .ifi .ta,
+  .ifi .tg {
+    padding-inline: initial;
+    padding: 10px;
+  }
+  .ifi .ti {
+    padding: 20px 10px;
+  }
+}
