@@ -1,0 +1,37 @@
+version: "2"
+services:
+    www:
+        build: .
+        ports: 
+            - "8001:80"
+        environment:
+           UPLOAD_LIMIT: 100M
+        volumes:
+            - ./:/var/www/html/
+        links:
+            - db
+        networks:
+            - default
+    db:
+        image: mysql
+        ports: 
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: 2022_git
+            MYSQL_USER: root
+            MYSQL_PASSWORD: IySY?Pk7!!mH
+            MYSQL_ROOT_PASSWORD: IySY?Pk7!!mH
+        networks:
+            - default
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 8000:80
+        environment:
+            MYSQL_USER: root
+            MYSQL_PASSWORD: IySY?Pk7!!mH
+            MYSQL_ROOT_PASSWORD: IySY?Pk7!!mH
+volumes:
+    persistent:
