@@ -5,10 +5,11 @@ services:
         environment:
            UPLOAD_LIMIT: 100M
         ports:
-            - "8001:80"
+            - "8080:80"
         volumes:
             - ./:/var/www/html/
             - ./.htaccess:/var/www/html/.htaccess
+            - ./app/config/custom.php.ini:/usr/local/etc/php/custom.d
         links:
             - db
         networks:
@@ -25,14 +26,14 @@ services:
         networks:
             - default
     phpmyadmin:
-        image: phpmyadmin/phpmyadmin
+        image: phpmyadmin
         ports :
-            - "8000:80"
+            - "8081:80"
         environment:
             MYSQL_USER: root
             MYSQL_PASSWORD: IySY?Pk7!!mH
             MYSQL_ROOT_PASSWORD: IySY?Pk7!!mH
         links:
             - db:db
-volumes:
-    persistent:
+        volumes:
+            - ./app/config/php.ini:/usr/local/etc/php/php.ini
