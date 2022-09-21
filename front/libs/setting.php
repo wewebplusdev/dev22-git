@@ -11,12 +11,13 @@ require_once _DIR . '/front/libs/smarty400/SmartyBC.class.php';
 
 ## adodb start ##
 $db = NewADOConnection($coreLanguageSQL);
-$db->Connect(decodeEnv($_ENV[$CORE_ENV]['hostname']), decodeEnv($_ENV[$CORE_ENV]['user']), decodeEnv($_ENV[$CORE_ENV]['pw']), decodeEnv($_ENV[$CORE_ENV]['dbname']));
+$db->Connect(decodeEnv($_ENV[$CORE_ENV]['hostname']), decodeEnv($_ENV[$CORE_ENV]['user']), decodeEnv($_ENV[$CORE_ENV]['pw']), decodeEnv($_ENV[$CORE_ENV]['dbname'])) or die("Warning !! N0 Connect DataBase");
 
 $db->charSet = "SET NAMES " . $core_db_charecter_set['charset'];
 $db->Execute("SET character_set_results=" . $core_db_charecter_set['charset']);
 $db->Execute("SET collation_connection=" . $core_db_charecter_set['collation']);
 $db->Execute("SET NAMES '" . $core_db_charecter_set['charset'] . "'");
+
 
 $db->cacheSecs = 3600 * 12;
 

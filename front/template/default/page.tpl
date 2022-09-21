@@ -3,6 +3,6 @@
 <html lang="th">
 
     <body>
-        <h1>xxxxxxxxxxxxxx</h1>
+        <h1>FRONT</h1>
     </body>
 </html>

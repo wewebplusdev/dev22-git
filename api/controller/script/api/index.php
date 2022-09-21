@@ -1,6 +1,10 @@
 <?php
-/*
- * API PHP VERSION 1 Coppy right 2022.
+/**
+ * Description of API
+ *
+ * version 1.0
+ *
+ * Coppy right 2022.
  */
 
 //######### Start Authorization Header ########
@@ -11,7 +15,7 @@ $tokenAlready= getTokenAlready($token);
 // header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 $apiPage = new apiPage;
-$getPageControlHeader = getPageControlHeader();
+$getPageControlHeader = strtolower(getPageControlHeader());
 $get_client_ip = get_client_ip();
 
 switch ($getPageControlHeader) {
@@ -52,6 +56,13 @@ switch ($getPageControlHeader) {
         authorization_session();
         logs_usage('Logs Home API', $get_client_ip);
         require_once _DIR . '/controller/script/'.$menuActive.'/service/home/index.php';
+        break;
+        
+    case 'about':
+        // header('Content-Type: application/json; charset=utf-8');
+        authorization_session();
+        logs_usage('Logs About API', $get_client_ip);
+        require_once _DIR . '/controller/script/'.$menuActive.'/service/about/index.php';
         break;
         
     default:

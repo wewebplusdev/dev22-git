@@ -1,5 +1,5 @@
 <?php
-class homePahe
+class homePage
 {
 
   function callTgp()

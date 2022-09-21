@@ -12,6 +12,11 @@ zlib.output_compression=On\n\
 upload_max_filesize=100M\n\
 post_max_size=100M\n' > /usr/local/etc/php/php.ini
 
+# Move the default conf out of the way
+#RUN mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf_orig 
+# Copy in your project's new nginx conf
+#RUN cp env/nginx/nginx.conf /etc/nginx/nginx.conf
+
 
 EXPOSE 8080
 # EXPOSE 443

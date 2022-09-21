@@ -156,7 +156,7 @@ function authorization_session(){
 	}
 }
 
-//######### function  Authorization Header   ########
+//######### function  Page Header   ########
 function getPageControlHeader(){
 	$controller = null;
 	if (isset($_SERVER['Page-Control'])) {
@@ -174,3 +174,4 @@ function getPageControlHeader(){
 	}
 	return $controller;
 }
+

@@ -56,7 +56,7 @@ $coreLanguageSQL = "mysqli";
 // $GET_ENV = file_get_contents('./webservice_json/env.json');
 $GET_ENV = file_get_contents('./weadmin/lib/webservice_json/env.json');
 $_ENV = json_decode($GET_ENV, true); // json decode from web service
-$CORE_ENV = 'PRODEV';
+$CORE_ENV = 'DEV';
 
 $core_db_charecter_set = array('charset' => "utf8", 'collation' => "utf8_general_ci");
 

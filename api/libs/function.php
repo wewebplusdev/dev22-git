@@ -437,3 +437,77 @@ function DateThai($strDate, $function = null, $lang = "th", $type = "shot")
 
     return $day;
 }
+
+####################################################
+
+function txtReplaceAPIService($data)
+{
+    ####################################################
+    $data = str_replace("/ckeditor/upload/", _URL_FRONTEND . "ckeditor/upload/", $data);
+    $data = str_replace("/fckupload/upload/", _URL_FRONTEND . "fckupload/upload/", $data);
+    $data = str_replace("/dmcr/fckupload/upload/", _URL_FRONTEND . "dmcr/fckupload/upload/", $data);
+    $dataHTML = str_replace("\\", "", $data);
+    return $dataHTML;
+}
+
+
+####################################################
+
+function get_IconSize($LinkRelativePath)
+{
+    ####################################################
+    $filesize = @filesize($LinkRelativePath);
+    if ($filesize < 10485) {
+        $sizeFile = number_format($filesize / 1024, 2) . " Kb";
+    } else {
+        $sizeFile = number_format($filesize / (1024 * 1024), 2) . " Mb";
+    }
+    return ($sizeFile);
+}
+
+####################################################
+
+function get_Icon($DownloadFile, $type = "")
+{
+    ####################################################
+
+    $ImageType = strrchr($DownloadFile, '.');
+
+    if (($ImageType == ".jpg") || ($ImageType == ".png") || ($ImageType == ".gif") || ($ImageType == ".bmp")) {
+        $tocss = "picture";
+        $TypeImgFile = "file-picture-o";
+    } elseif ($ImageType == ".pdf") {
+        $tocss = "pdf";
+        $TypeImgFile = "file-pdf-o";
+    } elseif ($ImageType == ".txt") {
+        $tocss = "txt";
+        $TypeImgFile = "file-text-o";
+    } elseif (($ImageType == ".zip") || ($ImageType == ".rar")) {
+        $tocss = "achive";
+        $TypeImgFile = "file-zip-o";
+    } elseif ($ImageType == ".xls" || $ImageType == ".xlsx") {
+        $tocss = "xls";
+        $TypeImgFile = "file-excel-o";
+    } elseif ($ImageType == ".ppt" || $ImageType == ".pptx") {
+        $tocss = "ppt";
+        $TypeImgFile = "file-powerpoint-o";
+    } elseif ($ImageType == ".rtf" || $ImageType == ".doc" || $ImageType == ".docx") {
+        $tocss = "doc";
+        $TypeImgFile = "file-word-o";
+    } else {
+        $tocss = "other";
+        $TypeImgFile = "file-o";
+    }
+
+
+    $fileCheck = array(
+        "icon" => $TypeImgFile,
+        "type" => $ImageType,
+        "tocss" => $tocss
+    );
+    if (!empty($type)) {
+        return $fileCheck[$type];
+    } else {
+        return $fileCheck;
+    }
+}

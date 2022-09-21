@@ -1,9 +1,9 @@
 <?php
 require_once _DIR . '/controller/script/'.$menuActive.'/service/home/modulus.php'; // load modulus page
-$homePahe = new homePahe;
+$homePage = new homePage;
 $arrData = array();
 
-$callTgp = $homePahe->callTgp();
+$callTgp = $homePage->callTgp();
 if ($callTgp->_numOfRows > 0) {
   $arrData['dataset']['tgp']['_maxRecordCount'] = $callTgp->_numOfRows;
   foreach ($callTgp as $keycallTgp => $valuecallTgp) {
