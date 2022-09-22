@@ -12,7 +12,7 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 
 	if(strlen($myVar)>=1) {
 	$permissionID=$myVar;
-		
+	
 			$sql = "SELECT  ".$mod_tb_root."_htmlfilename,".$mod_tb_root."_pic,".$mod_tb_root."_filevdo,".$mod_tb_root."_htmlfilenameen FROM ".$mod_tb_root." WHERE  ".$mod_tb_root."_id='".$permissionID."' ";
 			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
@@ -94,6 +94,10 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 			}
 			
 			$sql="DELETE FROM ".$mod_tb_root_album." WHERE   ".$mod_tb_root_album."_contantid='".$permissionID."' ";
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+
+			######################### Delete  Position ###############################
+			$sql="DELETE FROM ".$md_mem_position." WHERE ".$md_mem_position."_mid='".$permissionID."' ";
 			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 			
 			######################### Delete  Contant ###############################

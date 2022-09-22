@@ -17,6 +17,7 @@ switch ($req_display) {
       $arrData['dataset']['about']['status'] = true;
       foreach ($callCmsDetail as $keycallCmsDetail => $valuecallCmsDetail) {
         $arrData['dataset']['about']['list'][$keycallCmsDetail]['id'] = $valuecallCmsDetail['id'];
+        $arrData['dataset']['about']['list'][$keycallCmsDetail]['gid'] = $valuecallCmsDetail['gid'];
         $arrData['dataset']['about']['list'][$keycallCmsDetail]['masterkey'] = $valuecallCmsDetail['masterkey'];
         $arrData['dataset']['about']['list'][$keycallCmsDetail]['subject'] = $valuecallCmsDetail['subject'];
         $arrData['dataset']['about']['list'][$keycallCmsDetail]['title'] = $valuecallCmsDetail['title'];

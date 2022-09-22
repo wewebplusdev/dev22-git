@@ -21,7 +21,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 } elseif ($_REQUEST['inputLt'] == "Eng") {
 	$sql .= " , " . $mod_tb_root . "_urlen,    " . $mod_tb_root . "_picen, " . $mod_tb_root . "_subjecten  ,    " . $mod_tb_root . "_titleen , " . $mod_tb_root . "_htmlfilenameen   ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen    ";
 } else {
-	$sql .= " , " . $mod_tb_root . "_urlcn,    " . $mod_tb_root . "_picen, " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
+	$sql .= " , " . $mod_tb_root . "_urlcn,    " . $mod_tb_root . "_piccn, " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
 }
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn ";
@@ -90,13 +90,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					return false;
 				}
 
-				// if (inputGroupID.value == 0) {
-				// 	inputGroupID.focus();
-				// 	jQuery("#inputGroupID").addClass("formInputContantTbAlertY");
-				// 	return false;
-				// } else {
-				// 	jQuery("#inputGroupID").removeClass("formInputContantTbAlertY");
-				// }
+				if (inputGroupID.value == 0) {
+					inputGroupID.focus();
+					jQuery("#inputGroupID").addClass("formInputContantTbAlertY");
+					return false;
+				} else {
+					jQuery("#inputGroupID").removeClass("formInputContantTbAlertY");
+				}
 
 
 				if (isBlank(inputSubject)) {
@@ -232,7 +232,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						?>
 					</td>
 				</tr>
-				<!-- <tr>
+				<tr>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:selectgn"] ?><span class="fontContantAlert">*</span></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
 						<select name="inputGroupID" id="inputGroupID" class="formSelectContantTb">
@@ -257,7 +257,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 							<?php } ?>
 						</select>
 					</td>
-				</tr> -->
+				</tr>
 				<tr>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subject"] ?><span class="fontContantAlert">*</span></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputSubject" id="inputSubject" type="text" class="formInputContantTb" value="<?php echo $valSubject ?>" /></td>
@@ -271,7 +271,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 			</table>
 			<br />
-			<!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
@@ -302,7 +302,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					</td>
 				</tr>
 			</table>
-			<br /> -->
+			<br />
 
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
 				<tr>
@@ -329,7 +329,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				</tr>
 			</table>
 			<br class="ckabout" />
-			<!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:album"] ?></span><br />
@@ -382,7 +382,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					</td>
 				</tr>
 			</table>
-			<br class="ckabout" /> -->
+			<br class="ckabout" />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">

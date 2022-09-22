@@ -1,5 +1,6 @@
 FROM php:7.4.0-apache 
 RUN docker-php-ext-install mysqli
+RUN a2enmod rewrite
 
 # php.ini:
 # upload_max_filesize and post_max_size here match production, per T246930

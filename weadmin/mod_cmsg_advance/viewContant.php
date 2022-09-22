@@ -31,7 +31,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 } elseif ($_REQUEST['inputLt'] == "Eng") {
     $sql .= "," . $mod_tb_root . "_urlen," . $mod_tb_root . "_picen , " . $mod_tb_root . "_subjecten  ,    " . $mod_tb_root . "_titleen , " . $mod_tb_root . "_htmlfilenameen   ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen    ";
 } else {
-    $sql .= "," . $mod_tb_root . "_urlcn," . $mod_tb_root . "_picen , " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
+    $sql .= "," . $mod_tb_root . "_urlcn," . $mod_tb_root . "_piccn , " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
 }
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin";
@@ -261,7 +261,7 @@ logs_access('3', 'View');
             <br />
 
 
-            <!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:album"] ?></span><br />
@@ -308,7 +308,7 @@ logs_access('3', 'View');
                     </td>
                 </tr>
             </table>
-            <br /> -->
+            <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
