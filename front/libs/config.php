@@ -73,13 +73,14 @@ $token_action = "10"; // การเข้าที่หน้าสงสั�
 $lang_set = array(
     "th" => array("", "Thai", "th", "", "Thai"),
     "en" => array("", "English", "en", "en", "Eng"),
-    "jp" => array("", "日本人", "jp", "cn", "日本人")
+    "cn" => array("", "日本人", "cn", "cn", "日本人")
 );
 $lang_default = "th";
 
 ## url ##
 $url_show_lang = true;
 $url_show_default = "home";
+$url_error_default = "404";
 
 ## config path system ##
 $path_template = array(
@@ -160,12 +161,8 @@ $weekDay['en'] = array('Su', 'M', 'T', 'W', 'Th', 'F', 'Sa');
 
 $colorpatten = array("#e6e6e6", "#f46b23", "#ffb400", "#e7352b", "#8d42a1", "#3853d8", "#20a5ea", "#5cb328", "#7c5e4c", "#484848", "#01d2f9", "#7f8c8d");
 
-#member
-$config['member']['masterkey'] = "mem";
-$config['member']['db'] = "md_mem";
-$config['member']['db_group'] = "md_meg";
-$config['member']['db_user_group'] = "md_mel";
-$config['member']['db_user_address'] = "md_mea";
+#menu
+$config['sy_mnu']['db']['main'] = "sy_mnu";
 
 #country
 $config['main']['db_country_amphur'] = "md_ads_amphures";

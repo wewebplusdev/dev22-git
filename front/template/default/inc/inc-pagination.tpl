@@ -1,4 +1,4 @@
-{if $pagination|default:null}
+{* {if $pagination|default:null}
 <div class="pagination-block" data-aos="fade-down" data-aos-duration="2000">
     <div class="row row-0 align-items-center">
         <div class="col-lg">
@@ -73,4 +73,4 @@
         </div>
     </div>
 </div>
-{/if}
+{/if} *}

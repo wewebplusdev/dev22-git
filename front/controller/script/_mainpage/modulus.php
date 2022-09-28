@@ -3,19 +3,6 @@ $callSetWebsite = new settingWebsite();
 $smarty->assign("callSetWebsite", $callSetWebsite);
 $infoSetting = $callSetWebsite->callSetting();
 
-// about submenu
-$smarty->assign("menu_masterkey_ab", $menu_masterkey_ab);
-// investor submenu
-$smarty->assign("menu_masterkey_ir", $menu_masterkey_ir);
-//product submenu
-$MenuProduct = $callSetWebsite->callGroupProduct("Home");
-$smarty->assign("MenuProduct", $MenuProduct);
-
-// segment active
-$smarty->assign("segment_1", $url->segment[1]);
-$smarty->assign("segment", $url->segment[0]);
-
-
 /* Start Google Recaptcha */
 $sitekey = '6Lfdr9ofAAAAAJ58ujhLf_Uh41snFL1Alx7QfEEC';
 $smarty->assign("sitekey", $sitekey);
@@ -59,9 +46,9 @@ function Seo($title = '', $desc = '', $keyword = '', $pic = '')
     } else {
         $list['keyword'] = $infoSetting->fields['keywords'];
     }
-    
+
     $list['pic'] = $pic;
-    
+
     $smarty->assign("seo", $list);
 }
 
@@ -129,7 +116,7 @@ class settingWebsite
         " . $config['mnu']['db'] . "
         WHERE
         " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_status != 'Disable'
-        AND " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_masterkey LIKE '".$key."%'
+        AND " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_masterkey LIKE '" . $key . "%'
         ";
 
         $result = $db->execute($sql);
@@ -143,10 +130,10 @@ class settingWebsite
         $sql = "SELECT
         " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id as id,
         " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey as masterkey,
-        " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject".$lang." as subject,
-        " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_description".$lang." as description,
-        " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_keywords".$lang." as keywords,
-        " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_metatitle".$lang." as metatitle,
+        " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject" . $lang . " as subject,
+        " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_description" . $lang . " as description,
+        " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_keywords" . $lang . " as keywords,
+        " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_metatitle" . $lang . " as metatitle,
         " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_type as type
 
         FROM
@@ -154,7 +141,7 @@ class settingWebsite
         WHERE
         " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey = '" . $config['cms']['product']['masterkey'] . "' 
         AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_status = '" . $status . "' 
-        AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject".$lang." != '' 
+        AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject" . $lang . " != '' 
         ";
 
         if (!empty($type)) {
@@ -169,9 +156,9 @@ class settingWebsite
 
     function updateView($id, $masterkey, $table)
     {
-    global $config, $db, $url;
+        global $config, $db, $url;
 
-    $sql = "SELECT
+        $sql = "SELECT
         " . $table . "." . $table . "_view
         FROM
         " . $table . "
@@ -183,20 +170,20 @@ class settingWebsite
         // print_pre($sql);
         $result = $db->execute($sql);
         $view = $result->fields[0] + 1;
-        
-        $listView[$table . '_view'] = $view;
-    $updateView = sqlupdate($listView, $table, $table . "_id", "'" . $id . "'");
 
-    return $updateView;
+        $listView[$table . '_view'] = $view;
+        $updateView = sqlupdate($listView, $table, $table . "_id", "'" . $id . "'");
+
+        return $updateView;
     }
 
     function Call_Album($id, $table)
     {
-    global $config, $db, $url;
-    $lang = $url->pagelang[3];
-    $langFull = $url->pagelang[4];
-  
-    $sql = "SELECT 
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+        $langFull = $url->pagelang[4];
+
+        $sql = "SELECT 
             " . $table . "." . $table . "_id                AS id,
             " . $table . "." . $table . "_contantid         AS contantid,
             " . $table . "." . $table . "_filename          AS filename,
@@ -207,21 +194,21 @@ class settingWebsite
     " . $table . "." . $table . "_contantid = '" . $id . "'
     AND " . $table . "." . $table . "_language = '" . $langFull . "'
     ";
-  
-    $sql .= " ORDER BY " . $table . "." . $table . "_id ASC ";
-    // print_pre($sql);
-    $result = $db->execute($sql);
-    return $result;
+
+        $sql .= " ORDER BY " . $table . "." . $table . "_id ASC ";
+        // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result;
     }
 
-    
-    function Call_File($id,$keyfile = null)
-    {
-    global $config, $db, $url;
-    $lang = $url->pagelang[3];
-    $langFull = $url->pagelang[4];
 
-    $sql = "SELECT 
+    function Call_File($id, $keyfile = null)
+    {
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+        $langFull = $url->pagelang[4];
+
+        $sql = "SELECT 
             " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_id                AS id,
             " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_contantid         AS contantid,
             " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_filename          AS filename,
@@ -233,26 +220,26 @@ class settingWebsite
     AND " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_contantid = '" . $id . "'
     AND " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_language = '" . $langFull . "'
     ";
-    
-    if (!empty($keyfile)) {
-        $sql .= "
+
+        if (!empty($keyfile)) {
+            $sql .= "
         AND " . $config['product']['category'] . "." . $config['product']['category'] . "_id = $id
         ";
+        }
+
+        $sql .= " ORDER BY " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_id ASC ";
+        // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result;
     }
 
-    $sql .= " ORDER BY " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_id ASC ";
-    // print_pre($sql);
-    $result = $db->execute($sql);
-    return $result;
-    }
-
-    function Call_File2($id,$keyfile = null)
+    function Call_File2($id, $keyfile = null)
     {
-    global $config, $db, $url;
-    $lang = $url->pagelang[3];
-    $langFull = $url->pagelang[4];
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+        $langFull = $url->pagelang[4];
 
-    $sql = "SELECT 
+        $sql = "SELECT 
             " . $config['cmsf']['db'] . "." . $config['cmsf']['db'] . "_id                AS id,
             " . $config['cmsf']['db'] . "." . $config['cmsf']['db'] . "_contantid         AS contantid,
             " . $config['cmsf']['db'] . "." . $config['cmsf']['db'] . "_filename          AS filename,
@@ -264,26 +251,26 @@ class settingWebsite
     AND " . $config['cmsf']['db'] . "." . $config['cmsf']['db'] . "_contantid = '" . $id . "'
     AND " . $config['cmsf']['db'] . "." . $config['cmsf']['db'] . "_language = '" . $langFull . "'
     ";
-    
-    if (!empty($keyfile)) {
-        $sql .= "
+
+        if (!empty($keyfile)) {
+            $sql .= "
         AND " . $config['product']['category'] . "." . $config['product']['category'] . "_id = $id
         ";
+        }
+
+        $sql .= " ORDER BY " . $config['cmsf']['db'] . "." . $config['cmsf']['db'] . "_id ASC ";
+        // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result;
     }
 
-    $sql .= " ORDER BY " . $config['cmsf']['db'] . "." . $config['cmsf']['db'] . "_id ASC ";
-    // print_pre($sql);
-    $result = $db->execute($sql);
-    return $result;
-    }
-
-    function Call_File_table($id,$table = null)
+    function Call_File_table($id, $table = null)
     {
-    global $config, $db, $url;
-    $lang = $url->pagelang[3];
-    $langFull = $url->pagelang[4];
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+        $langFull = $url->pagelang[4];
 
-    $sql = "SELECT 
+        $sql = "SELECT 
             " . $table . "." . $table . "_id                AS id,
             " . $table . "." . $table . "_contantid         AS contantid,
             " . $table . "." . $table . "_filename          AS filename,
@@ -296,9 +283,30 @@ class settingWebsite
     AND " . $table . "." . $table . "_language = '" . $langFull . "'
     ";
 
-    $sql .= " ORDER BY " . $table . "." . $table . "_id ASC ";
-    // print_pre($sql);
-    $result = $db->execute($sql);
-    return $result;
+        $sql .= " ORDER BY " . $table . "." . $table . "_id ASC ";
+        // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result;
+    }
+
+    function getMenuDetail($id)
+    {
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+        $langFull = $url->pagelang[4];
+
+        $sql = "SELECT 
+            " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id                AS id,
+            " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey         AS masterkey
+    FROM " . $config['sy_mnu']['db']['main'] . "  
+    WHERE 1=1 
+    AND " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_status != 'Disable'
+    AND " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id = '" . $id . "'
+    ";
+
+        $sql .= " ORDER BY " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id ASC ";
+        // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result->fields['masterkey'];
     }
 }

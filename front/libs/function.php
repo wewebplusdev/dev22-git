@@ -35,12 +35,19 @@ function cleanArray($arr)
 
 function templateInclude($setting, $settemplate = null)
 {
+    global $path_template, $templateweb;
     #################################
-    if (!empty($settemplate)) {
-        return _DIR . "/front/controller/script/" . $setting['page'] . "/template/" . $settemplate;
-    } else {
-        return _DIR . "/front/controller/script/" . $setting['page'] . "/template/" . $setting['template'];
+    switch ($setting['control']) {
+        case 'component':
+            $page =  _DIR . "/" . $path_template[$templateweb][0] . "/_component/". $setting['template'];
+            break;
+        
+        default:
+            $page =  _DIR . "/front/controller/script/" . $setting['page'] . "/template/" . $setting['template'];
+            break;
     }
+
+    return $page;
 }
 
 ## link lang ##
@@ -933,4 +940,18 @@ function textHighlight($text, $keyword)
     }
 
     return $text;
+}
+
+
+function GetContentID($data, $type = null){
+    switch ($type) {
+        case 'encode':
+            $data = decodeStr($data);
+            break;
+        
+        default:
+            $data = intval($data);
+            break;
+    }
+    return $data;
 }

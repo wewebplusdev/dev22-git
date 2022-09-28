@@ -1,8 +1,5 @@
 <?php
-// print_r('test2');
-// die;
 $path_root = ""; #ถ้า root อยู่ public
-// $path_root = "/dev22-git"; #ถ้า root ไม่ได้อยู่ public
 define("_http", "http");
 
 
@@ -68,11 +65,6 @@ if (empty($url->segment[0])) {
 $smarty->assign("ul", $linklang);
 $smarty->assign("langon", $url->pagelang[2]);
 
-if (!empty($url->uri['terms'])) {
-    header("Location:" . _URL . $linklang . "/terms/" . $url->uri['terms']);
-    exit();
-}
-
 $page = pagepagination($url);
 $smarty->assign("page", $page);
 
@@ -84,7 +76,7 @@ if ($lang_default != $url->pagelang[2]) {
 }
 
 ## addon page ##
-$loadcate = $url->loadmodulus(array("_mainpage", "home"));
+$loadcate = $url->loadmodulus(array("_mainpage"));
 foreach ($loadcate as $loadmodulus) {
     include_once $loadmodulus;
 }
@@ -97,7 +89,7 @@ foreach ($pageload['load'] as $loadpage) {
 
 # assign active menu
 if (empty($menuActive)) {
-    $menuActive = "home";
+    $menuActive = "404";
 }
 
 $smarty->assign("navactive", $menuActive);
@@ -117,8 +109,6 @@ $smarty->assign("incfile", $incfile);
 if (!empty($settingPage)) {
     $smarty->display($settingPage['display'] . ".tpl");
 }
-
-//$smarty->display("test.tpl");
 $db->Close();
 
 #==============================================================##

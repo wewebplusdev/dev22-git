@@ -16,7 +16,7 @@ class url
 
     public function __construct()
     {
-        global $url_show_lang, $lang_set, $lang_default, $url_show_default;
+        global $url_show_lang, $lang_set, $lang_default, $url_show_default, $url_error_default;
         $pathFirst = $this->onRoot();
 
         $_SERVER['DOCUMENT_ROOT'] = str_replace("private_html","public_html",$_SERVER['DOCUMENT_ROOT']);
@@ -98,7 +98,6 @@ class url
         if (file_exists($folderpage)) {
             $statuspage = $this->checkpagefile($folderpage);
             if (!empty($statuspage)) {
-
                 $loderpage['pagename'] = $this->segment[0];
                 $loderpage['load'][] = $folderpage . "lang/" . $this->pagelang[2] . ".php";
                 foreach ($this->listfilemodulus as $value) {
@@ -116,8 +115,9 @@ class url
 
     public function setpagedefault()
     {
-        global $url_show_default;
-        $path = _DIR . '/front/controller/script/' . $url_show_default;
+        global $url_show_default, $url_error_default;
+        // $path = _DIR . '/front/controller/script/' . $url_show_default;
+        $path = _DIR . '/front/controller/script/' . $url_error_default;
         $loderpage['pagename'] = $url_show_default;
         $loderpage['load'][] = $path . "/lang/" . $this->pagelang[2] . ".php";
         foreach ($this->listfilemodulus as $value) {
