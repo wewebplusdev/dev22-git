@@ -12,7 +12,7 @@ $valLinkNav1 = "../core/index.php";
 $valNav2 = $langTxt["nav:menuManage2"];
 
 
-$sql = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_icon, " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_moduletype, " . $core_tb_menu . "_linkpath, " . $core_tb_menu . "_masterkey, " . $core_tb_menu . "_target, " . $core_tb_menu . "_nameeng    FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["valEditID"] . "'";
+$sql = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_icon, " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_moduletype, " . $core_tb_menu . "_linkpath, " . $core_tb_menu . "_masterkey, " . $core_tb_menu . "_target, " . $core_tb_menu . "_nameeng, " . $core_tb_menu . "_namechi    FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["valEditID"] . "'";
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $row = wewebFetchArrayDB($coreLanguageSQL, $query);
 $valId = $row[0];
@@ -23,14 +23,17 @@ $valLinkpath = $row[4];
 $valMasterkey = $row[5];
 $valTarget = $row[6];
 $valNameeng = $row[7];
+$valNamechi = $row[8];
 
-$sqlP = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_nameeng    FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["myParentID"] . "'";
+$sqlP = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_nameeng, " . $core_tb_menu . "_namechi    FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["myParentID"] . "'";
 $queryP = wewebQueryDB($coreLanguageSQL, $sqlP);
 $rowP = wewebFetchArrayDB($coreLanguageSQL, $queryP);
 if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
   $valName = rechangeQuot($rowP[$core_tb_menu . "_namethai"]);
 } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
   $valName = rechangeQuot($rowP[$core_tb_menu . "_nameeng"]);
+} else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Chi") {
+  $valName = rechangeQuot($rowP[$core_tb_menu . "_namechi"]);
 }
 
 ?>
@@ -57,13 +60,24 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
           jQuery("#inputmenuname").removeClass("formInputContantTbAlertY");
         }
 
-        // if(isBlank(inputmenunameen)) {
-        // 	inputmenunameen.focus();
-        // 	jQuery("#inputmenunameen").addClass("formInputContantTbAlertY"); 
-        // 	return false; 
-        // }else{ 
-        // 	jQuery("#inputmenunameen").removeClass("formInputContantTbAlertY"); 
-        // }
+        <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+        if (isBlank(inputmenunameen)) {
+            inputmenunameen.focus();
+            jQuery("#inputmenunameen").addClass("formInputContantTbAlertY");
+            return false;
+        } else {
+            jQuery("#inputmenunameen").removeClass("formInputContantTbAlertY");
+        }
+        <?php } ?>
+        <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+        if (isBlank(inputmenunamecn)) {
+            inputmenunamecn.focus();
+            jQuery("#inputmenunamecn").addClass("formInputContantTbAlertY");
+            return false;
+        } else {
+            jQuery("#inputmenunamecn").removeClass("formInputContantTbAlertY");
+        }
+        <?php } ?>
 
         if (inputMenu_LinkType[0].checked) {
           if (isBlank(inputlinkpath)) {
@@ -177,10 +191,18 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langTxt["mg:inpnthai"] ?><span class="fontContantAlert">*</span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputmenuname" id="inputmenuname" type="text" class="formInputContantTb" value="<?php echo $valNamethai ?>" /></td>
         </tr>
-        <!-- <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["mg:inpneng"] ?><span class="fontContantAlert">*</span></td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="inputmenunameen" id="inputmenunameen" type="text"  class="formInputContantTb" value="<?php echo $valNameeng ?>"/></td>
-  </tr> -->
+        <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+        <tr >
+          <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["mg:inpneng"] ?><span class="fontContantAlert">*</span></td>
+          <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="inputmenunameen" id="inputmenunameen" type="text"  class="formInputContantTb" value="<?php echo $valNameeng ?>"/></td>
+        </tr>
+        <?php } ?>
+        <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+        <tr >
+          <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["mg:inpnchi"] ?><span class="fontContantAlert">*</span></td>
+          <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="inputmenunamecn" id="inputmenunamecn" type="text"  class="formInputContantTb" value="<?php echo $valNamechi ?>"/></td>
+        </tr>
+        <?php } ?>
       </table>
       <br />
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">

@@ -36,9 +36,7 @@ if (!empty($url->uri['file'])) {
     $file_extension = $filename[count($filename) - 1];
     $myDateArray = explode(".", $downloadFile);
     $path = $fileDecode;
-
     if (file_exists($path)) {
-        //  logs("download", $pageOn, FALSE);
         header('Content-Description: File Transfer');
         header('Content-Type: application/' . $file_extension);
         header('Content-Disposition: attachment; filename="' . urldecode($url->uri['n']) . '.' . $file_extension . '"');
@@ -55,7 +53,6 @@ if (!empty($url->uri['file'])) {
         }
         exit();
     } else {
-        //  print_pre($path);
         echo "no have";
     }
 }

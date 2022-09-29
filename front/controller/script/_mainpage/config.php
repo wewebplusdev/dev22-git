@@ -5,7 +5,10 @@ $config['mnu']['db'] = "sy_mnu";
 
 // table
 $config['cms']['db']['main'] = "md_cms";
+$config['cmg']['db']['main'] = "md_cmg";
 $config['popup']['db'] = "md_int";
+$config['cmf']['db']['main'] = "md_cmf";
+$config['cmsg']['db']['main'] = "md_cmsg";
 
 // masterkey
 $config['about']['ab_odc']['masterkey'] = 'ab_odc';

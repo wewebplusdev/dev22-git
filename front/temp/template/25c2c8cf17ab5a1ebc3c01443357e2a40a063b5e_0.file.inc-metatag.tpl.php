@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-09-28 16:18:43
+/* Smarty version 4.0.0, created on 2022-09-29 09:59:19
   from '/var/www/html/front/template/default/inc/inc-metatag.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_63341173c4b089_89446158',
+  'unifunc' => 'content_63350a071c57d7_23101937',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25c2c8cf17ab5a1ebc3c01443357e2a40a063b5e' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-metatag.tpl',
-      1 => 1664356628,
+      1 => 1664420357,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63341173c4b089_89446158 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63350a071c57d7_23101937 (Smarty_Internal_Template $_smarty_tpl) {
 ?><base href="<?php echo $_smarty_tpl->tpl_vars['base']->value;?>
 ">
 <title><?php echo (($tmp = $_smarty_tpl->tpl_vars['seo']->value['title'] ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['settingWeb']->value['metatitle'] ?? null : $tmp);?>
@@ -56,41 +56,16 @@ function content_63341173c4b089_89446158 (Smarty_Internal_Template $_smarty_tpl)
 <link rel="image_src" href="<?php echo (($tmp = $_smarty_tpl->tpl_vars['valSeoImages']->value ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['valLinkImgSeo']->value ?? null : $tmp);?>
 " />
 
-<!-- TWITTER CARD -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:url" content="">
-<meta name="twitter:image:src" content="">
-
-<!-- ICONS -->
-<link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/favicon.ico" type="image/x-icon"/>
-<link rel="apple-touch-icon" sizes="57x57" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/apple-icon-152x152.png">
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/favicon-16x16.png" sizes="16x16">
-<link rel="icon" type="image/png" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/favicon/android-192x192.png" sizes="192x192">
-<?php }
+/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/favicon/site.webmanifest">
+<link rel="mask-icon" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff"><?php }
 }

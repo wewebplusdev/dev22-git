@@ -33,7 +33,7 @@ function cleanArray($arr)
 
 ## include Page to template #####
 
-function templateInclude($setting, $settemplate = null)
+function templateInclude($setting)
 {
     global $path_template, $templateweb;
     #################################
@@ -954,4 +954,43 @@ function GetContentID($data, $type = null){
             break;
     }
     return $data;
+}
+
+
+//#################################################
+function DateFormat($DateTime)
+{
+    //#################################################
+    global $core_session_language, $url;
+    $langFull = strtolower($url->pagelang[4]);
+
+    if ($DateTime == "") {
+        $DateTime = "0000";
+    }
+
+    $DateArr = explode(" ", $DateTime);
+    $DateArr = explode("-", $DateArr[0]);
+
+    if ($DateArr[0] >= 1) {
+        if ($langFull == 'thai') {
+            $dataYear = $DateArr[0]+543;
+        }else{
+            $dataYear = $DateArr[0];
+        }
+    } else {
+        $dataYear = "0000";
+    }
+
+    if ($DateArr[2] >= 1) {
+        $dataD = $DateArr[2];
+    } else {
+        $dataD = "00";
+    }
+
+    if ($DateArr[1] >= 1) {
+        $dataM = $DateArr[1];
+    } else {
+        $dataM = "00";
+    }
+    return $dataYear . "-" . $dataM . "-" . $dataD;
 }

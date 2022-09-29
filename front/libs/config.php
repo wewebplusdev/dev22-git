@@ -73,7 +73,7 @@ $token_action = "10"; // การเข้าที่หน้าสงสั�
 $lang_set = array(
     "th" => array("", "Thai", "th", "", "Thai"),
     "en" => array("", "English", "en", "en", "Eng"),
-    "cn" => array("", "日本人", "cn", "cn", "日本人")
+    "cn" => array("", "日本人", "cn", "cn", "Chi")
 );
 $lang_default = "th";
 
@@ -100,6 +100,7 @@ $incfile['loadscript'] = "inc/inc-loadscript.tpl";
 $incfile['modal'] = "inc/inc-modal.tpl";
 $incfile['preloader'] = "inc/inc-preloader.tpl";
 $incfile['pagination'] = "inc/inc-pagination.tpl";
+$incfile['sitemap'] = "inc/inc-sitemap.tpl";
 
 
 ## addon js ##

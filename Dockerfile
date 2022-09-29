@@ -26,6 +26,7 @@ zlib.output_compression=On\n\
 upload_max_filesize=512M\n\
 max_input_vars=10000\n\
 max_execution_time=30000\n\
+short_open_tag=On\n\
 post_max_size=512M\n' > /usr/local/etc/php/php.ini
 
 # Move the default conf out of the way

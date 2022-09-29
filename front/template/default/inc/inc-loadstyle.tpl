@@ -1,10 +1,16 @@
 
-{* <!-- CSS SOURCE -->
-<link rel="stylesheet" type="text/css" href="{$template}/assets/css/import.css">
-<link rel="stylesheet" type="text/css" href="{$template}/assets/css/source.css{$lastModify}">
+<!-- Core -->
+<link rel="stylesheet" href="{$template}/assets/css/plugin/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="{$template}/assets/css/plugin/bootstrap-5.min.css"> -->
+<link rel="stylesheet" href="{$template}/assets/css/plugin/normalize.min.css">
+<link rel="stylesheet" href="{$template}/assets/css/plugin/animate.min.css">
+<link rel="stylesheet" href="{$template}/assets/css/plugin/animate.min.css">
+<link rel="stylesheet" href="{$template}/assets/css/plugin/select2.min.css">
+<link rel="stylesheet" href="{$template}/assets/css/plugin/slick.css">
 
-<!-- CSS MODIFY -->
-<link rel="stylesheet" type="text/css" href="{$template}/assets/css/modify.css{$lastModify}">
+
+<!-- Custom -->
+<link rel="stylesheet" type="text/css" href="{$template}/assets/css/style.css{$lastModify}">
 
 {strip}
     {if {$assigncss|default:null}}
@@ -12,4 +18,5 @@
             {$addAssetCss}
         {/foreach}
     {/if}
-{/strip} *}
+{/strip}
+

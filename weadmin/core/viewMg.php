@@ -12,7 +12,7 @@ $valLinkNav1 = "../core/index.php";
 $valNav2 = $langTxt["nav:menuManage2"];
 
 
-$sql = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_icon, " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_moduletype, " . $core_tb_menu . "_linkpath, " . $core_tb_menu . "_masterkey, " . $core_tb_menu . "_target, " . $core_tb_menu . "_nameeng  , " . $core_tb_menu . "_credate  FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["valEditID"] . "'";
+$sql = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_icon, " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_moduletype, " . $core_tb_menu . "_linkpath, " . $core_tb_menu . "_masterkey, " . $core_tb_menu . "_target, " . $core_tb_menu . "_nameeng  , " . $core_tb_menu . "_credate, " . $core_tb_menu . "_nameeng  FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["valEditID"] . "'";
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $row = wewebFetchArrayDB($coreLanguageSQL, $query);
 $valId = $row[0];
@@ -24,14 +24,17 @@ $valMasterkey = $row[5];
 $valTarget = $row[6];
 $valNameeng = $row[7];
 $valCredate = DateFormat($row[8]);
+$valNamechi = $row[9];
 
-$sqlP = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_nameeng    FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["myParentID"] . "'";
+$sqlP = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_nameeng, " . $core_tb_menu . "_namechi    FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["myParentID"] . "'";
 $queryP = wewebQueryDB($coreLanguageSQL, $sqlP);
 $rowP = wewebFetchArrayDB($coreLanguageSQL, $queryP);
 if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
   $valName = rechangeQuot($rowP[$core_tb_menu . "_namethai"]);
 } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
   $valName = rechangeQuot($rowP[$core_tb_menu . "_nameeng"]);
+} else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Chi") {
+  $valName = rechangeQuot($rowP[$core_tb_menu . "_namechi"]);
 }
 
 ?>
@@ -164,10 +167,18 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
             <div class="formDivView"><?php echo $valNamethai ?></div>
           </td>
         </tr>
-        <!-- <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["mg:inpneng"] ?>:</td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb"  ><div class="formDivView"><?php echo $valNameeng ?></div></td>
-  </tr> -->
+        <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+        <tr >
+          <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["mg:inpneng"] ?>:</td>
+          <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb"  ><div class="formDivView"><?php echo $valNameeng ?></div></td>
+        </tr>
+        <?php } ?>
+        <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+        <tr >
+          <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["mg:inpnchi"] ?>:</td>
+          <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb"  ><div class="formDivView"><?php echo $valNamechi ?></div></td>
+        </tr>
+        <?php } ?>
       </table>
       <br />
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">

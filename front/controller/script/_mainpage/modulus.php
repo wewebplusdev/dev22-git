@@ -289,24 +289,55 @@ class settingWebsite
         return $result;
     }
 
-    function getMenuDetail($id)
+    function getMenuID($id = null)
     {
         global $config, $db, $url;
         $lang = $url->pagelang[3];
         $langFull = $url->pagelang[4];
 
         $sql = "SELECT 
-            " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id                AS id,
-            " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey         AS masterkey
-    FROM " . $config['sy_mnu']['db']['main'] . "  
-    WHERE 1=1 
-    AND " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_status != 'Disable'
-    AND " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id = '" . $id . "'
-    ";
+        " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id                AS id,
+        " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey         AS masterkey
+        FROM " . $config['sy_mnu']['db']['main'] . "  
+        WHERE 1=1 
+        AND " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_status != 'Disable'
+        AND " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id = '".$id."' 
+        ";
 
         $sql .= " ORDER BY " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id ASC ";
-        // print_pre($sql);
         $result = $db->execute($sql);
         return $result->fields['masterkey'];
+    }
+
+    function getMenuDetail($id = null, $masterkey = null, $notlike = null)
+    {
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+        $langFull = strtolower($url->pagelang[4]);
+
+        $sql = "SELECT 
+        " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id                AS id,
+        " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey         AS masterkey,
+        " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull."         AS subject
+        FROM " . $config['sy_mnu']['db']['main'] . "  
+        WHERE 1=1 
+        AND " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_status != 'Disable'
+        ";
+
+        if (!empty($id)) {
+            $sql .= " AND " . $config['sy_mnu']['db']['main'] . "_id = '".$id."' ";
+        }
+
+        if (!empty($masterkey)) {
+            $sql .= " AND " . $config['sy_mnu']['db']['main'] . "_masterkey LIKE '".$masterkey."%' ";
+        }
+
+        if (!empty($notlike)) {
+            $sql .= " AND " . $config['sy_mnu']['db']['main'] . "_id != '".$notlike."' ";
+        }
+
+        $sql .= " ORDER BY " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_order ASC ";
+        $result = $db->execute($sql);
+        return $result;
     }
 }

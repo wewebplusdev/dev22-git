@@ -29,8 +29,8 @@ include("../lib/checkMember.php");
 		$maxOrder = $Row[0]+1;
 		
 		$insert[$core_tb_menu."_namethai"] = "'".changeQuot($_REQUEST['inputmenuname'])."'";
-		$insert[$core_tb_menu."_nameeng"] = "'".changeQuot($_REQUEST['inputmenuname'])."'";
-		// $insert[$core_tb_menu."_nameeng"] = "'".changeQuot($_REQUEST['inputmenunameen'])."'";
+		$insert[$core_tb_menu."_nameeng"] = "'".changeQuot($_REQUEST['inputmenunameen'])."'";
+		$insert[$core_tb_menu."_namechi"] = "'".changeQuot($_REQUEST['inputmenunamecn'])."'";
 		$insert[$core_tb_menu."_linkpath"] = "'".$inputlinkpath."'";
 		$insert[$core_tb_menu."_icon"] = "'".changeQuot($_REQUEST['inputIconName'])."'";
 		$insert[$core_tb_menu."_order"] = "'".$maxOrder."'";

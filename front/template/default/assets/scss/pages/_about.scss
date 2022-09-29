@@ -1,0 +1,22 @@
+.about {
+    .head-title {
+        font-size: var(--typo-lg);
+        font-weight: var(--fw-medium);
+        color: var(--color-primary);
+        text-align: center;
+        margin: 30px 0;
+    }
+    .download-block:not(:last-child),
+    .news-block:not(:last-child) {
+        margin: 0;
+        border-bottom: 1px solid transparent;
+    }
+    // .collapse-block {
+    //     .download-block:nth-child(even) {
+    //         border-top: 1px solid transparent !important;
+    //     }
+    // }
+    .form-group {
+        margin: 0;
+    }
+}

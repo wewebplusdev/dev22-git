@@ -49,6 +49,7 @@ class url
 
 
         foreach ($this->listcheckurl as $valueCheckurl) {
+            $valueCheckurl = '1';
             if (strpos($this->segment[0], $valueCheckurl) !== false) {
                 $listnewsegment = explode($valueCheckurl, $this->segment[0]);
                 $this->segment[0] = str_replace("-", "", $valueCheckurl);

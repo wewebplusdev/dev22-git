@@ -1,46 +1,39 @@
-.breadcrumb-block{padding: 15px 0 20px 0;overflow: auto; white-space: nowrap; display: flex; border-bottom: 1px solid $color-lightgray;}
-.breadcrumb{background-color: $color-none;margin: 0;padding: 0;flex-wrap: nowrap;
-    @include border-radius(0px);
-    li{position: relative; color: $color-lightgray; font-size: 24px; line-height: 26px;
-        .icon{margin-right: 10px; display: inline-block; vertical-align: middle; color: $color-primary; top: -1px;}
-        .link{color: $color-gray; font-size: 24px; line-height: 26px;
-            &:hover{color: $color-primary;}
+.breadcrumb-block {}
+
+.breadcrumb {
+    background-color: transparent;
+    margin: 5px 0 0 0;
+    padding: 0;
+    border-radius: 0;
+    li {
+        &+li {
+            &:before {
+                font-family: 'feather';
+                content: '\e844' !important;
+                color: var(--color-white) !important;
+                padding: 0 6px;
+                float: left;
+                position: relative;
+                top: 1px;
+            }
         }
-        &.active{max-width: 300px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; color: $color-secondary;}
     }
-    li + li{padding-left: 30px;margin-left: 30px;
-        &:before{content: '';position: absolute; left: 0; top: 0;  bottom: 0; margin: auto; padding: 0;
-            width: 1px; height: 20px; background-color: $color-lightgray;
+    .link {
+        float: left;
+        display: block;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &.-nolimit {
+            max-width: inherit;
+        }
+        &.active {
+            color: var(--color-primary);
         }
     }
+    li,
+    .link {
+        color: var(--color-default);
+    }
 }
-
-// responsive - start
-@media (max-width: 1600px) {
-}
-
-@media (max-width: 1440px) /*check 1280*/ {
-}
-
-@media (max-width: 1199px) /*check 1024*/{
-    .breadcrumb-block {padding: 12px 0 15px 0;}
-    .breadcrumb li,
-    .breadcrumb li .link{font-size: 22px;}
-}
-
-@media (max-width: 991px) {
-    .breadcrumb li,
-    .breadcrumb li .link{font-size: 20px;}
-}
-
-@media (max-width: 767px) {
-    .breadcrumb-block {padding: 7px 30px 7px 30px; margin: 0 -30px;}
-    .breadcrumb{padding-right: 20px;}
-    .breadcrumb li + li {padding-left: 20px; margin-left: 20px;}
-    .breadcrumb li,
-    .breadcrumb li .link{font-size: 18px;}
-}
-
-@media (max-width: 575px) {
-}
-// responsive - end

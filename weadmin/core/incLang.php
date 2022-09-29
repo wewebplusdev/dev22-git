@@ -54,6 +54,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     // $langTxt["mg:inpnthai"] = "Thailand Name Menu";
     $langTxt["mg:inpnthai"] = "Name Menu";
     $langTxt["mg:inpneng"] = "English Name Menu";
+    $langTxt["mg:inpnchi"] = "China Name Menu";
 
 
 
@@ -277,6 +278,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["mg:inpiconAd"] = "เลือกไอคอน";
     $langTxt["mg:inpnthai"] = "ชื่อเมนูไทย";
     $langTxt["mg:inpneng"] = "ชื่อเมนูอังกฤษ";
+    $langTxt["mg:inpnchi"] = "ชื่อเมนูจีน";
     $langTxt["mg:inpwindows1"] = "Home";
     $langTxt["mg:inpwindows2"] = "Portfolio";
     $langTxt["mg:inpwindows3"] = "Client";
