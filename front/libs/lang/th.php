@@ -23,6 +23,7 @@ $lang['menu']['news'] = "ข่าวสารและกิจกรรม";
 $lang['menu']['career'] = "ร่วมงานกับเรา";
 $lang['menu']['contact'] = "ติดต่อเรา";
 $lang['menu']['404'] = "ขออภัย ไม่พบหน้าที่คุณกำลังค้นหา";
+$lang['menu']['sitemap'] = "แผนผังเว็บไซต์";
 
 $lang['system']['close'] = "ปิด";
 $lang['system']['ducdownload'] = "เอกสารดาวน์โหลด";
@@ -42,6 +43,7 @@ $lang['system']['view'] = "เข้าชม";
 $lang['system']['search'] = "ค้นหา";
 $lang['system']['address'] = "ที่อยู่";
 $lang['system']['phone'] = "โทร";
+$lang['system']['phone2'] = "เบอร์โทร";
 $lang['system']['tel'] = "โทรศัพท์";
 $lang['system']['fax'] = "แฟกซ์";
 $lang['system']['email'] = "อีเมล";
@@ -62,6 +64,7 @@ $lang['system']['tryagain'] = "ลองใหม่อีกครั้ง";
 $lang['system']['all'] = "ทั้งหมด";
 $lang['system']['lastdate'] = "ปรับปรุงเมื่อ";
 $lang['system']['viewmore'] = "อ่านต่อ";
+$lang['system']['readmore2'] = "อ่านรายละเอียด";
 
 $lang['login']['email'] = "อีเมล";
 $lang['login']['password'] = "รหัสผ่าน";

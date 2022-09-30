@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-09-29 10:00:47
+/* Smarty version 4.0.0, created on 2022-09-30 09:43:45
   from '/var/www/html/front/template/default/inc/inc-loadstyle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_63350a5fad1724_86388468',
+  'unifunc' => 'content_633657e15ddb85_95485329',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0808b38a737bb839451a44599899888a059b3a9c' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-loadstyle.tpl',
-      1 => 1664420446,
+      1 => 1664505047,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63350a5fad1724_86388468 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633657e15ddb85_95485329 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- Core -->
 <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
@@ -46,8 +46,8 @@ function content_63350a5fad1724_86388468 (Smarty_Internal_Template $_smarty_tpl)
 
 <?php ob_start();
 echo (($tmp = $_smarty_tpl->tpl_vars['assigncss']->value ?? null)===null||$tmp==='' ? null ?? null : $tmp);
-$_prefixVariable1 = ob_get_clean();
-if ($_prefixVariable1) {
+$_prefixVariable2 = ob_get_clean();
+if ($_prefixVariable2) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['assigncss']->value, 'addAssetCss');
 $_smarty_tpl->tpl_vars['addAssetCss']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['addAssetCss']->value) {

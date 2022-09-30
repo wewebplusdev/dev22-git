@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-09-29 09:59:19
+/* Smarty version 4.0.0, created on 2022-09-30 09:43:45
   from '/var/www/html/front/template/default/inc/inc-metatag.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_63350a071c57d7_23101937',
+  'unifunc' => 'content_633657e1472731_94847594',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25c2c8cf17ab5a1ebc3c01443357e2a40a063b5e' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-metatag.tpl',
-      1 => 1664420357,
+      1 => 1664505047,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63350a071c57d7_23101937 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633657e1472731_94847594 (Smarty_Internal_Template $_smarty_tpl) {
 ?><base href="<?php echo $_smarty_tpl->tpl_vars['base']->value;?>
 ">
 <title><?php echo (($tmp = $_smarty_tpl->tpl_vars['seo']->value['title'] ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['settingWeb']->value['metatitle'] ?? null : $tmp);?>

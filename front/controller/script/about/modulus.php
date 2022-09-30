@@ -275,4 +275,188 @@ class aboutPage
     $result = $db->pageexecute($sql, $limit, $page);
     return $result;
   }
+
+  ## คณะกรรมการสถาบัน
+  function callGroupMem($masterkey, $id = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_id as id,
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_masterkey as masterkey,
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_url" . $lang . " as url,
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_lastdate as lastdate,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
+    FROM
+    " . $config['memsg']['db']['main'] . "
+    INNER JOIN 
+    " . $config['sy_mnu']['db']['main'] . "
+    ON
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_masterkey
+    WHERE
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_status != 'Disable' AND
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_subject" . $lang . " != '' 
+    ";
+
+    if (!empty($id)) {
+      $sql .= " AND " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_id = '" . $id . "' ";
+    }
+
+    $sql .= " ORDER  BY " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_order DESC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callSubGroupMem($masterkey, $id = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_id as id,
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_masterkey as masterkey,
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_lastdate as lastdate
+    FROM
+    " . $config['memg']['db']['main'] . "
+    WHERE
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_status != 'Disable' AND
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_subject" . $lang . " != '' 
+    ";
+
+    if (!empty($id)) {
+      $sql .= " AND " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_gid = '" . $id . "' ";
+    }
+
+    $sql .= " ORDER  BY " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order DESC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+  function callPositionMem($masterkey, $gid = null, $pid = null, $mid = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+    " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_id as id,
+    " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_mid as mid,
+    " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid as gid,
+    " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_pid as pid
+    FROM
+    " . $config['memp']['db']['main'] . " 
+    INNER JOIN
+    " . $config['memg']['db']['main'] . " 
+    ON
+    " . $config['memp']['db']['main'] . " . " . $config['memp']['db']['main'] . "_gid = " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_id
+    WHERE 1=1 
+    AND " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_masterkey = '".$masterkey."'
+    AND " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_subject".$lang." != ''
+    ";
+
+    if (!empty($gid)) {
+      $sql .= " AND " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid = '" . $gid . "' ";
+    }
+
+    if (!empty($pid)) {
+      $sql .= " AND " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_pid = '" . $pid . "' ";
+    }
+
+    if (!empty($mid)) {
+      $sql .= " AND " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_mid = '" . $mid . "' ";
+    }
+
+    $sql .= " GROUP BY " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid 
+    ORDER  BY " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order DESC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callMem($masterkey, $gid = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langOption = $url->pagelang[2];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id as id,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_masterkey as masterkey,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_pic" . $lang . " as pic,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_sdatetxt" . $lang . " as sdatetxt,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_email" . $lang . " as email,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_tel" . $lang . " as tel,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_fname" . $lang . " as fname,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_lname" . $lang . " as lname,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_depart" . $lang . " as depart,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_lastdate as lastdate,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_url as url,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_gid as gid,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_view as view,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_credate as credate,
+    " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid as posi_gid,
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_subject".$lang." as namegroup,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
+
+    FROM
+    " . $config['mem']['db']['main'] . "
+    INNER JOIN 
+    " . $config['memp']['db']['main'] . "
+    ON
+    " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_mid = " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id
+    INNER JOIN 
+    " . $config['memg']['db']['main'] . "
+    ON
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_id = " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid
+    INNER JOIN 
+    " . $config['sy_mnu']['db']['main'] . "
+    ON
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_masterkey
+    WHERE
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_status != 'Disable' AND
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_lang".$langOption." = '1' AND
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_fname" . $lang . " != '' AND
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_lname" . $lang . " != '' AND
+    ((" . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
+    (" . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    TO_DAYS(" . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_edate)>=TO_DAYS(NOW()) ) OR
+    (TO_DAYS(" . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_edate='0000-00-00 00:00:00' )  OR
+    (TO_DAYS(" . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    TO_DAYS(" . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
+    ";
+
+    if (!empty($gid)) {
+      $sql .= " AND " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid IN (" . $gid . ") ";
+    }
+
+    $sql .= " GROUP BY " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id
+    ," . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id 
+    ORDER  BY " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_order ," . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order DESC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
 }

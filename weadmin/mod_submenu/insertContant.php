@@ -18,7 +18,6 @@ if ($_REQUEST['execute'] == "insert") {
     $insert[$mod_tb_root . "_subject"] = "'" . changeQuot($_REQUEST['inputSubject']) . "'";
     $insert[$mod_tb_root . "_title"] = "'" . changeQuot($_REQUEST['inputDescription']) . "'";
     $insert[$mod_tb_root . "_groupProoject"] = "'" . $_POST["inputGroupID"] . "'";
-    $insert[$mod_tb_root . "_pic"] = "'" . $_POST["picname"] . "'";
     $insert[$mod_tb_root . "_target"] = "'" . $_POST["inputmenutarget"] . "'";
     $insert[$mod_tb_root . "_url"] = "'" . changeQuot($_REQUEST['inputurl']) . "'";
     $insert[$mod_tb_root . "_crebyid"] = "'" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";

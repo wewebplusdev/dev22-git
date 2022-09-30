@@ -10,6 +10,27 @@ $secretkey = '6Lfdr9ofAAAAAFighzBCgBIcb04AKKKisRJ8YoWG';
 $smarty->assign("secretkey", $secretkey);
 /* End Google Recaptcha */
 
+/* Start Site map */
+$arrSitemap = $_SESSION['arrSitemap'];
+if (count($arrMenu) < 1) {
+    $getGroupMenu = $callSetWebsite->getGroupMenu($config['setting']['mnu']['masterkey']);
+    $arrSitemap = array();
+    foreach ($getGroupMenu as $keygetGroupMenu => $valuegetGroupMenu) {
+        $getSubGroupMenu = $callSetWebsite->getSubGroupMenu($config['setting']['mnu']['masterkey'], $valuegetGroupMenu['id']);
+        $arrSitemap[$keygetGroupMenu]['group'] = $valuegetGroupMenu;
+        foreach ($getSubGroupMenu as $keygetSubGroupMenu => $valuegetSubGroupMenu) {
+            $arrSitemap[$keygetGroupMenu]['list'][$keygetSubGroupMenu]['subgroup'] = $valuegetSubGroupMenu;
+            $getMenu = $callSetWebsite->getMenu($config['setting']['mnu']['masterkey'], $valuegetSubGroupMenu['id']);
+            foreach ($getMenu as $keygetMenu => $valuegetMenu) {
+                $arrSitemap[$keygetGroupMenu]['list'][$keygetSubGroupMenu]['menu'][] = $valuegetMenu;
+            }
+        }
+    }
+    $_SESSION['Sitemap'] = $arrSitemap;
+}
+$smarty->assign("arrSitemap", $arrSitemap);
+/* End Site map */
+
 Seo();
 function Seo($title = '', $desc = '', $keyword = '', $pic = '')
 {
@@ -337,6 +358,99 @@ class settingWebsite
         }
 
         $sql .= " ORDER BY " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_order ASC ";
+        $result = $db->execute($sql);
+        return $result;
+    }
+
+    function getGroupMenu($masterkey = null, $id = null)
+    {
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+
+        $sql = "SELECT 
+        " . $config['mng']['db']['main'] . "." . $config['mng']['db']['main'] . "_id                AS id,
+        " . $config['mng']['db']['main'] . "." . $config['mng']['db']['main'] . "_masterkey         AS masterkey,
+        " . $config['mng']['db']['main'] . "." . $config['mng']['db']['main'] . "_subject".$lang."         AS subject,
+        " . $config['mng']['db']['main'] . "." . $config['mng']['db']['main'] . "_url".$lang."         AS url,
+        " . $config['mng']['db']['main'] . "." . $config['mng']['db']['main'] . "_target         AS target
+        FROM " . $config['mng']['db']['main'] . "  
+        WHERE 1=1 
+        AND " . $config['mng']['db']['main'] . "." . $config['mng']['db']['main'] . "_status != 'Disable'
+        AND " . $config['mng']['db']['main'] . "." . $config['mng']['db']['main'] . "_subject".$lang." != ''
+        ";
+
+        if (!empty($id)) {
+            $sql .= " AND " . $config['mng']['db']['main'] . "_id = '".$id."' ";
+        }
+
+        if (!empty($masterkey)) {
+            $sql .= " AND " . $config['mng']['db']['main'] . "_masterkey = '".$masterkey."' ";
+        }
+
+        $sql .= " ORDER BY " . $config['mng']['db']['main'] . "." . $config['mng']['db']['main'] . "_order DESC ";
+        // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result;
+    }
+
+    function getSubGroupMenu($masterkey = null, $gid = null)
+    {
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+
+        $sql = "SELECT 
+        " . $config['mnsg']['db']['main'] . "." . $config['mnsg']['db']['main'] . "_id                AS id,
+        " . $config['mnsg']['db']['main'] . "." . $config['mnsg']['db']['main'] . "_masterkey         AS masterkey,
+        " . $config['mnsg']['db']['main'] . "." . $config['mnsg']['db']['main'] . "_subject".$lang."         AS subject,
+        " . $config['mnsg']['db']['main'] . "." . $config['mnsg']['db']['main'] . "_url".$lang."         AS url,
+        " . $config['mnsg']['db']['main'] . "." . $config['mnsg']['db']['main'] . "_target         AS target
+        FROM " . $config['mnsg']['db']['main'] . "  
+        WHERE 1=1 
+        AND " . $config['mnsg']['db']['main'] . "." . $config['mnsg']['db']['main'] . "_status != 'Disable'
+        AND " . $config['mnsg']['db']['main'] . "." . $config['mnsg']['db']['main'] . "_subject".$lang." != ''
+        ";
+
+        if (!empty($gid)) {
+            $sql .= " AND " . $config['mnsg']['db']['main'] . "_gid = '".$gid."' ";
+        }
+
+        if (!empty($masterkey)) {
+            $sql .= " AND " . $config['mnsg']['db']['main'] . "_masterkey = '".$masterkey."' ";
+        }
+
+        $sql .= " ORDER BY " . $config['mnsg']['db']['main'] . "." . $config['mnsg']['db']['main'] . "_order DESC ";
+        // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result;
+    }
+
+    function getMenu($masterkey = null, $gid = null)
+    {
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+
+        $sql = "SELECT 
+        " . $config['mn']['db']['main'] . "." . $config['mn']['db']['main'] . "_id                AS id,
+        " . $config['mn']['db']['main'] . "." . $config['mn']['db']['main'] . "_masterkey         AS masterkey,
+        " . $config['mn']['db']['main'] . "." . $config['mn']['db']['main'] . "_subject".$lang."         AS subject,
+        " . $config['mn']['db']['main'] . "." . $config['mn']['db']['main'] . "_url".$lang."         AS url,
+        " . $config['mn']['db']['main'] . "." . $config['mn']['db']['main'] . "_target        AS target
+        FROM " . $config['mn']['db']['main'] . "  
+        WHERE 1=1 
+        AND " . $config['mn']['db']['main'] . "." . $config['mn']['db']['main'] . "_status != 'Disable'
+        AND " . $config['mn']['db']['main'] . "." . $config['mn']['db']['main'] . "_subject".$lang." != ''
+        ";
+
+        if (!empty($gid)) {
+            $sql .= " AND " . $config['mn']['db']['main'] . "_groupProoject = '".$gid."' ";
+        }
+
+        if (!empty($masterkey)) {
+            $sql .= " AND " . $config['mn']['db']['main'] . "_masterkey = '".$masterkey."' ";
+        }
+
+        $sql .= " ORDER BY " . $config['mn']['db']['main'] . "." . $config['mn']['db']['main'] . "_order DESC ";
+        // print_pre($sql);
         $result = $db->execute($sql);
         return $result;
     }

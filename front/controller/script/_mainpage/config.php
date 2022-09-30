@@ -9,10 +9,20 @@ $config['cmg']['db']['main'] = "md_cmg";
 $config['popup']['db'] = "md_int";
 $config['cmf']['db']['main'] = "md_cmf";
 $config['cmsg']['db']['main'] = "md_cmsg";
+$config['mng']['db']['main'] = "md_mng";
+$config['mnsg']['db']['main'] = "md_mnsg";
+$config['mn']['db']['main'] = "md_mn";
+$config['mem']['db']['main'] = "md_mem";
+$config['memsg']['db']['main'] = "md_memsg";
+$config['memg']['db']['main'] = "md_memg";
+$config['memp']['db']['main'] = "md_mem_position";
+$config['memf']['db']['main'] = "md_memf";
 
 // masterkey
+$config['setting']['mnu']['masterkey'] = 'mnu';
 $config['about']['ab_odc']['masterkey'] = 'ab_odc';
 $config['about']['ab_odw']['masterkey'] = 'ab_odw';
+$config['about']['ab_ib']['masterkey'] = 'ab_ib';
 
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';

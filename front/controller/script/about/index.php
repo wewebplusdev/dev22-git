@@ -30,6 +30,10 @@ switch ($MenuID) {
     case 'ab_pap':
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_pap.php';
         break;
+
+    case 'ab_ib':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_ib.php';
+        break;
     
     default:
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_odc-ab_odw.php';

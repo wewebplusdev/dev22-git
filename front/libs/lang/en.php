@@ -23,6 +23,7 @@ $lang['menu']['news'] = "NEWS AND EVENTS";
 $lang['menu']['career'] = "CAREER";
 $lang['menu']['contact'] = "CONTACT US";
 $lang['menu']['404'] = "PAGE NOT FOUND";
+$lang['menu']['sitemap'] = "SITEMAP";
 
 $lang['system']['close'] = "Close";
 $lang['system']['ducdownload'] = "Document Download";
@@ -43,6 +44,7 @@ $lang['system']['search'] = "SEARCH";
 $lang['system']['address'] = "Address";
 $lang['system']['phone'] = "Phone";
 $lang['system']['tel'] = "Tel";
+$lang['system']['tel2'] = "Tel";
 $lang['system']['fax'] = "Fax";
 $lang['system']['email'] = "Email";
 $lang['system']['lineid'] = "LINE ID";
@@ -57,6 +59,7 @@ $lang['system']['btn_back'] = "BACK";
 $lang['system']['all'] = "Total";
 $lang['system']['lastdate'] = "Last Update";
 $lang['system']['viewmore'] = "Read More";
+$lang['system']['readmore2'] = "Read Details";
 
 $lang['pagination']['total'] = "Total";
 $lang['pagination']['per'] = "Page";

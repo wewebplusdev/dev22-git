@@ -1,0 +1,20 @@
+Delete|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/deleteContant.php|:|mnu|:|12|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:18:24
+Delete Group|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/deleteSubGroup.php|:|mnu|:|12|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:18:29
+Delete Group|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/deleteGroup.php|:|mnu|:|12|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:23:45
+Insert Group|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/insertSubGroup.php|:|mnu|:|12|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:25:57
+Insert|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/insertContant.php|:|mnu|:|12|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:44:09
+Insert|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/insertContant.php|:|mnu|:|12|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:44:33
+Update|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/updateContant.php|:|mnu|:|12|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:45:51
+Update|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/updateContant.php|:|mnu|:|12|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:45:56
+Insert|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/insertContant.php|:|mnu|:|12|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:50:49
+Insert Group|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/insertSubGroup.php|:|mnu|:|12|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:51:09
+Sort|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/topUpdateSubGroup.php|:|mnu|:|12|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:51:11
+Update|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/updateContant.php|:|mnu|:|12|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:51:20
+Update|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/updateContant.php|:|mnu|:|12|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 13:51:27
+Update Group|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_submenu/updateSubGroup.php|:|mnu|:|12|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 14:25:10
+Update|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 15:12:29
+View|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 15:39:56
+Update|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 15:50:07
+Update|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 15:50:27
+Update|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 15:51:46
+Insert|:|5d0d42aa1712d67c757d300ed0fbd137|:|3|:|http://localhost:8080/weadmin/mod_mem/insertContant.php|:|ab_ib|:|16|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-09-30 16:12:47
