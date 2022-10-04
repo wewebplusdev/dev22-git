@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-04 14:39:35
+/* Smarty version 4.0.0, created on 2022-10-04 16:34:13
   from '/var/www/html/front/template/default/_component/cms_advance_list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633be337315772_21618529',
+  'unifunc' => 'content_633bfe15865052_07107730',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '11cd185fe91e1a5b5fd100c168759688183475b0' => 
     array (
       0 => '/var/www/html/front/template/default/_component/cms_advance_list.tpl',
-      1 => 1664869172,
+      1 => 1664876052,
       2 => 'file',
     ),
   ),
@@ -20,21 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633be337315772_21618529 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633bfe15865052_07107730 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
       <figure class="cover">
-        <img class="figure-img img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/background/mock-top-grapphic-2.png" alt="">
+        <img class="figure-img img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;
+echo $_smarty_tpl->tpl_vars['settingModulus']->value['tgp'];?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['tgp'];?>
+">
       </figure>
       <div class="container">
         <div class="wrapper">
-          <div class="title typo-lg">เกี่ยวกับเรา</div>
+          <div class="title typo-lg"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['subject'];?>
+</div>
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">หน้าหลัก</a></li>
-            <li class="breadcrumb-item"><a href="#">งานบริการ</a></li>
-            <li class="breadcrumb-item active" aria-current="page">นโยบายและแผน</li>
+            <li class="breadcrumb-item"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/home"><?php echo $_smarty_tpl->tpl_vars['lang']->value['menu']['home'];?>
+</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['menuActive']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['subject'];?>
+</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['breadcrumb'];?>
+</li>
           </ol>
         </div>
       </div>
@@ -97,21 +106,40 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <div class="container">
       <div class="row align-items-center">
         <div class="col-auto">
+<<<<<<< Updated upstream
           <div class="h-title">นโยบายและแผน</div>
+=======
+          <div class="h-title"><?php echo $_smarty_tpl->tpl_vars['callGroup']->value->fields['subject'];?>
+</div>
+>>>>>>> Stashed changes
         </div>
-        <div class="col text-right">
-          <div class="form-group has-feedback">
-            <label class="control-label visuallyhidden" for="yearSelect">ปี :</label>
-
-            <div class="select-wrapper">
-              <span>ปี :</span>
-              <select class="select-control select-year" name="ordernews" id="yearSelect">
-                <option value="SELECT1">2565</option>
-                <option value="SELECT2">2564</option>
-                <option value="SELECT3">2563</option>
-              </select>
+        <?php if (count($_smarty_tpl->tpl_vars['callYear']->value) > 0) {?>
+          <div class="col text-right">
+            <div class="form-group has-feedback">
+              <label class="control-label visuallyhidden" for="yearSelect"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['year'];?>
+ :</label>
+              <div class="select-wrapper">
+                <span><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['year'];?>
+ :</span>
+                <select class="select-control select-year" name="ordernews" id="yearSelect">
+                    <option value="All"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['all'];?>
+</option>
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callYear']->value, 'valuecallYear', false, 'keycallYear');
+$_smarty_tpl->tpl_vars['valuecallYear']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keycallYear']->value => $_smarty_tpl->tpl_vars['valuecallYear']->value) {
+$_smarty_tpl->tpl_vars['valuecallYear']->do_else = false;
+?>
+                      <option value="<?php echo date('Y',strtotime($_smarty_tpl->tpl_vars['valuecallYear']->value['credate']));?>
+" <?php if ($_smarty_tpl->tpl_vars['req_params']->value['year'] == date('Y',strtotime($_smarty_tpl->tpl_vars['valuecallYear']->value['credate']))) {?>selected="selected"<?php }?>><?php echo date('Y',strtotime(DateFormat($_smarty_tpl->tpl_vars['valuecallYear']->value['credate'])));?>
+</option>
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                </select>
+              </div>
             </div>
-          </div>
+        <?php }?>
         </div>
       </div>
       <?php if ($_smarty_tpl->tpl_vars['callCMS']->value->_numOfRows >= 1) {?>
@@ -150,7 +178,13 @@ echo DateThai($_smarty_tpl->tpl_vars['valuecallCMS']->value['credate'],'1',$_pre
 </span>
                   </div>
                   <div class="col-12">
-                    <a href="javascript:void(0)" class="btn" title="btn"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewmore'];?>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['menuActive']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['menuid'];?>
+/<?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['gid'];?>
+/<?php echo $_smarty_tpl->tpl_vars['menuDetail']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['id'];?>
+" class="btn" title="btn"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewmore'];?>
 </a>
                   </div>
                 </div>
@@ -165,50 +199,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
       <div class="editor-content">
       </div>
-      <div class="pagination-block">
-        <div class="row align-items-center">
-          <div class="col-sm-6">
-            <div class="pagination-label">
-              ทั้งหมด 93 รายการ
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="pagination">
-              <ul class="item-list">
-                <li>
-                  <a href="/th/news?page=2" title="ก่อนหน้า">
-                    <span class="feather icon-chevron-left" aria-hidden="true"></span>
-                  </a>
-                </li>
-                <li class="active">
-                  <a href="javascript:void(0)" title="1">1</a>
-                </li>
-                <li class="">
-                  <a href="javascript:void(0)" title="2">2</a>
-                </li>
-                <li class="">
-                  <a href="javascript:void(0)" title="3">3</a>
-                </li>
-                <li class="">
-                  <a href="javascript:void(0)" title="4">4</a>
-                </li>
-                <li class="">
-                  <a href="javascript:void(0)" title="5">5</a>
-                </li>
-                <li class="">
-                  <a href="javascript:void(0)" title="6">6</a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)" title="ถัดไป">
-                    <span class="feather icon-chevron-right" aria-hidden="true"></span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <?php if ($_smarty_tpl->tpl_vars['callCMS']->value->_numOfRows >= 1 && $_smarty_tpl->tpl_vars['pagination']->value['totalpage'] >= 2) {?>
+        <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['incfile']->value['pagination']), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
+      <?php }?>
     </div>
   </div>
 </section><?php }
