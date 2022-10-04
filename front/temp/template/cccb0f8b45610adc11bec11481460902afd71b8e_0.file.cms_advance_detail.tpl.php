@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-09-29 17:12:28
+/* Smarty version 4.0.0, created on 2022-10-04 10:42:19
   from '/var/www/html/front/template/default/_component/cms_advance_detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_63356f8cc1cbe4_15528953',
+  'unifunc' => 'content_633bab9b0856a2_19153002',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cccb0f8b45610adc11bec11481460902afd71b8e' => 
     array (
       0 => '/var/www/html/front/template/default/_component/cms_advance_detail.tpl',
-      1 => 1664446321,
+      1 => 1664854783,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63356f8cc1cbe4_15528953 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633bab9b0856a2_19153002 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
@@ -51,7 +51,8 @@ echo $_smarty_tpl->tpl_vars['settingModulus']->value['tgp'];?>
   <div class="default-page about">
     <?php if (count($_smarty_tpl->tpl_vars['getMenuDetail']->value) > 0) {?>
       <div class="container">
-        <div class="default-nav-slider">
+        <div class="default-nav-slider" data-slick='<?php echo $_smarty_tpl->tpl_vars['initialSlide']->value;?>
+'>
           <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['getMenuDetail']->value, 'valuegetMenuDetail', false, 'keygetMenuDetail');
 $_smarty_tpl->tpl_vars['valuegetMenuDetail']->do_else = true;
@@ -73,11 +74,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       </div>
     <?php }?>
     <div class="border-nav-slider"></div>
-    <?php if (count($_smarty_tpl->tpl_vars['arrMenu']->value) > 0) {?>
+    <?php if (count($_smarty_tpl->tpl_vars['arrMenu']->value) > 0 && $_smarty_tpl->tpl_vars['showslick']->value) {?>
       <div class="container mt-5">
         <h2 class="text-primary mb-4"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['breadcrumb'];?>
 </h2>
-        <div class="default-tab-slider default-slick">
+        <div class="default-tab-slider default-slick" data-slick='<?php echo $_smarty_tpl->tpl_vars['initialSlide2']->value;?>
+'>
           <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arrMenu']->value, 'valuearrMenu', false, 'keyarrMenu');
 $_smarty_tpl->tpl_vars['valuearrMenu']->do_else = true;

@@ -118,7 +118,13 @@ include("config.php");
 			$thumbnail = resize($imgReal, $w, $h, $newfilename);
 
 		$update=array();
-		$update[]=$mod_tb_root_group."_pic  	='".$picname."'";
+		if ($_REQUEST['langt'] == 'Thai') {
+			$update[]=$mod_tb_root_group."_pic  	='".$picname."'";
+		}else if($_REQUEST['langt'] == 'Eng'){
+			$update[]=$mod_tb_root_group."_picen  	='".$picname."'";
+		}else{
+			$update[]=$mod_tb_root_group."_piccn  	='".$picname."'";
+		}
 		$sql="UPDATE ".$mod_tb_root_group." SET ".implode(",",$update)." WHERE ".$mod_tb_root_group."_id='".$_REQUEST["myID"]."'  ";
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 

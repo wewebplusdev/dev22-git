@@ -118,8 +118,10 @@ include("config.php");
 		$update=array();
 		if ($_REQUEST['langt'] == 'Thai') {
 			$update[]=$mod_tb_root."_pic  	='".$picname."'";
-		}else{
+		}else if($_REQUEST['langt'] == 'Eng'){
 			$update[]=$mod_tb_root."_picen  	='".$picname."'";
+		}else{
+			$update[]=$mod_tb_root."_piccn  	='".$picname."'";
 		}
 		$sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$_REQUEST["myID"]."'  ";
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);

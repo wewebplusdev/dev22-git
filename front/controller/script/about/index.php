@@ -6,11 +6,13 @@ $listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script
 
 $aboutPage = new aboutPage;
 $arrMenu = array();
+$getMenuDetail = array();
 $ContentID = GetContentID($url->segment[2]);
 $PageAction = $url->segment[3];
 $MenuID = GetContentID($url->segment[1]);
 $MenuID = $callSetWebsite->getMenuID($MenuID);
-$MasterkeyTemp = "ab_";
+$MasterkeyTemp = "ab_"; // master about like this
+$showslick = true; // slick shows
 
 if (empty($MenuID)) {
     $MenuID = 'ab_odc';
@@ -23,19 +25,55 @@ $req_params['order'] = $_REQUEST['order'];
 $smarty->assign("req_params", $req_params);
 
 ## default menu lv1
-$getMenuDetail = $callSetWebsite->getMenuDetail(0, $MasterkeyTemp, $FixmenuID);
+$getMenuDetailFc = $callSetWebsite->getMenuDetail(0, $MasterkeyTemp, $FixmenuID);
+foreach ($getMenuDetailFc as $keygetMenuDetailFc => $valuegetMenuDetailFc) {
+    $getMenuDetail[] = $valuegetMenuDetailFc;
+}
 $smarty->assign("getMenuDetail", $getMenuDetail);
 
+// slick slide
+$initialSlide = 0;
+if (count($getMenuDetail) > 4) {
+    foreach ($getMenuDetail as $key => $valuegetMenuDetail) {
+        if ($valuegetMenuDetail['masterkey'] == $MenuID) {
+            break;
+        } else {
+            $initialSlide++;
+        }
+    }
+}
+$smarty->assign("initialSlide", '{"initialSlide": ' . $initialSlide . '}');
+
 switch ($MenuID) {
-    case 'ab_pap':
+    case 'ab_pap': //นโยบายและแผน
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_pap.php';
         break;
 
-    case 'ab_ib':
+    case 'ab_ib': //คณะกรรมการสถาบัน
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_ib.php';
         break;
+
+    case 'ab_st': //โครงสร้าง
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_st.php';
+        break;
+
+    case 'ab_pcm': //การจัดซื้อ/ จัดจ้าง
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_pcm.php';
+        break;
+
+    case 'ab_hrm': //การบริหารและพัฒนาทรัพยากรบุคคล
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_hrm.php';
+        break;
+
+    case 'ab_qs': //ระบบคุณภาพ
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_qs.php';
+        break;
+
+    case 'ab_nm': //ข่าวสารความเคลื่อนไหว
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_nm.php';
+        break;
     
-    default:
+    default: //ทิศทางองค์กร
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_odc-ab_odw.php';
         break;
 }
@@ -47,3 +85,4 @@ $smarty->assign("menuDetail", $menuDetail);
 $smarty->assign("fileInclude", $settingPage);
 $smarty->assign("MenuID", $MenuID);
 $smarty->assign("settingModulus", $settingModulus);
+$smarty->assign("showslick", $showslick);

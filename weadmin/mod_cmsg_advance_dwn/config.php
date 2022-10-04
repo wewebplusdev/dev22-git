@@ -51,8 +51,8 @@ $sizeHeightIcon="100";
 $sizeWidthOff="50";
 $sizeHeightOff="50";
 
-// $sizeWidthPicG="580";
-// $sizeHeightPicG="295";
+$sizeWidthPicG="295";
+$sizeHeightPicG="580";
 
 $sizeWidthAlbum="980";
 $sizeHeightAlbum="490";

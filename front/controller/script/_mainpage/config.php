@@ -23,6 +23,10 @@ $config['setting']['mnu']['masterkey'] = 'mnu';
 $config['about']['ab_odc']['masterkey'] = 'ab_odc';
 $config['about']['ab_odw']['masterkey'] = 'ab_odw';
 $config['about']['ab_ib']['masterkey'] = 'ab_ib';
+$config['about']['ab_st']['masterkey'] = 'ab_st';
+$config['about']['ab_pcm']['masterkey'] = 'ab_pcm';
+$config['about']['ab_hrm']['masterkey'] = 'ab_hrm';
+$config['about']['ab_qs']['masterkey'] = 'ab_qs';
 
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';

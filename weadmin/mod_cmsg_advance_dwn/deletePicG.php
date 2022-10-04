@@ -20,7 +20,13 @@ include("config.php");
 	}
 
 		$update=array();
-		$update[]=$mod_tb_root_group."_pic  	=''";
+		if ($_REQUEST['inputLt'] == 'Thai') {
+			$update[]=$mod_tb_root_group."_pic  	=''";
+		}else if($_REQUEST['inputLt'] == 'Eng'){
+			$update[]=$mod_tb_root_group."_picen  	=''";
+		}else{
+			$update[]=$mod_tb_root_group."_piccn  	=''";
+		}
 		$sql="UPDATE ".$mod_tb_root_group." SET ".implode(",",$update)." WHERE ".$mod_tb_root_group."_id='".$_REQUEST["valEditID"]."'  ";
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 

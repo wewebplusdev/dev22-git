@@ -18,16 +18,15 @@ $sql .= "   " . $mod_tb_root_group . "_id, " . $mod_tb_root_group . "_credate ,
       " . $mod_tb_root_group . "_crebyid, " . $mod_tb_root_group . "_status  ";
 
 if ($_REQUEST['inputLt'] == "Thai") {
-	$sql .= "  ,    " . $mod_tb_root_group . "_subject  ,    " . $mod_tb_root_group . "_title  ";
+	$sql .= "  ,    " . $mod_tb_root_group . "_subject  ,    " . $mod_tb_root_group . "_title ,".$mod_tb_root_group."_pic ";
 } else if ($_REQUEST['inputLt'] == "Eng") {
-	$sql .= "  ," . $mod_tb_root_group . "_subjecten  ,    " . $mod_tb_root_group . "_titleen 	  ";
+	$sql .= "  ," . $mod_tb_root_group . "_subjecten  ,    " . $mod_tb_root_group . "_titleen ,".$mod_tb_root_group."_picen	  ";
 } else {
-	$sql .= "  ," . $mod_tb_root_group . "_subjectcn  ,    " . $mod_tb_root_group . "_titlecn 	  ";
+	$sql .= "  ," . $mod_tb_root_group . "_subjectcn  ,    " . $mod_tb_root_group . "_titlecn ,".$mod_tb_root_group."_piccn	  ";
 }
 // $sql .= " ,".$mod_tb_root_group."_pic ";
 $sql .= " 
-, " . $mod_tb_root_group . "_pic,
-" . $mod_tb_root_group . "_type, 
+, " . $mod_tb_root_group . "_type, 
 " . $mod_tb_root_group . "_url, 
 " . $mod_tb_root_group . "_target,
 " . $mod_tb_root_group . "_types
@@ -182,14 +181,14 @@ if ($_REQUEST['masterkey'] == 'news') {
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:typetheme"] ?></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
 						<label>
-							<div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="1" type="radio" checked="checked" class="formRadioContantTb" onclick="jQuery('.boxDetail').show();" <?php if ($valType == 1) {
+							<div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="1" type="radio" checked="checked" class="formRadioContantTb" onclick="jQuery('.boxDetail').show();jQuery('.boxPic').hide();" <?php if ($valType == 1) {
 																																																																																																			echo 'checked="checked"';
 																																																																																																		} ?> /></div>
 							<div class="formDivRadioR"><?php echo  $modTypeTheme[1] ?></div>
 						</label>
 
 						<label>
-							<div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="2" type="radio" class="formRadioContantTb" onclick="jQuery('.boxDetail').hide();" <?php if ($valType != 1) {
+							<div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="2" type="radio" class="formRadioContantTb" onclick="jQuery('.boxDetail').hide();jQuery('.boxPic').show();" <?php if ($valType != 1) {
 																																																																																										echo 'checked="checked"';
 																																																																																									} ?> /></div>
 							<div class="formDivRadioR"><?php echo  $modTypeTheme[2] ?></div>
@@ -216,7 +215,7 @@ if ($_REQUEST['masterkey'] == 'news') {
 			</table>
 			<br />
 
-			<table <?php echo $display; ?> width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic" <?php if($valType != 2){ echo "style='display:none;'"; } ?>>
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
@@ -250,7 +249,7 @@ if ($_REQUEST['masterkey'] == 'news') {
 
 
 			</table>
-			<!-- <br /> -->
+			<br class="boxPic"/>
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
 				<tr>
 					<td colspan="7" align="right" valign="top" height="20"></td>

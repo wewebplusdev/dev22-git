@@ -19,7 +19,7 @@
   <div class="default-page about">
       {if count($getMenuDetail) > 0}
         <div class="container">
-          <div class="default-nav-slider">
+          <div class="default-nav-slider" data-slick='{$initialSlide}'>
             {foreach $getMenuDetail as $keygetMenuDetail => $valuegetMenuDetail}
               {$arrName = explode("-", $valuegetMenuDetail.subject)}
               <div class="item">
@@ -33,7 +33,7 @@
       {if count($arrMenu) > 0}
         <div class="container mt-5">
             <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
-            <div class="default-tab-slider default-slick">
+            <div class="default-tab-slider default-slick" data-slick='{$initialSlide2}'>
               {foreach $arrMenu as $keyarrMenu => $valuearrMenu}
                 <div class="item">
                   <div class="tab-block {if $callGroup->fields.id eq $valuearrMenu.id}active{/if}">

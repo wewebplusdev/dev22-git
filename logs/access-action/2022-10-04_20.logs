@@ -1,0 +1,21 @@
+Update|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cms/updateContant.php|:|ab_st|:|32|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:10:02
+Delete|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/deleteContant.php|:|ab_pcm|:|11|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:17:10
+Delete Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/deleteSubGroup.php|:|ab_pcm|:|11|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:17:15
+Delete Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/deleteGroup.php|:|ab_pcm|:|11|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:17:22
+Insert|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/insertContant.php|:|ab_pcm|:|11|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:18:49
+Insert Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/insertGroup.php|:|ab_pcm|:|11|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:40:14
+Insert Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/insertGroup.php|:|ab_pcm|:|11|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:40:17
+Insert Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/insertGroup.php|:|ab_pcm|:|11|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:40:22
+Update Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/updateGroup.php|:|ab_pcm|:|11|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:40:26
+Insert Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/insertGroup.php|:|ab_pcm|:|11|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:40:29
+Insert Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/insertGroup.php|:|ab_pcm|:|11|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:40:35
+Delete Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/deleteGroup.php|:|ab_pcm|:|11|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 10:50:48
+Insert Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/insertGroup.php|:|ab_pcm|:|11|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 11:02:22
+Update Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/updateGroup.php|:|ab_pcm|:|11|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 11:04:18
+Update Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/updateGroup.php|:|ab_pcm|:|11|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 11:05:06
+View Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/viewGroup.php|:|ab_pcm|:|11|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 11:05:25
+View Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/viewGroup.php|:|ab_pcm|:|11|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 11:06:13
+View Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/viewGroup.php|:|ab_pcm|:|11|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 11:06:45
+View Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/viewGroup.php|:|ab_pcm|:|11|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 11:06:47
+Update Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/updateGroup.php|:|ab_pcm|:|11|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 11:11:48
+Delete Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/deleteGroup.php|:|ab_pcm|:|11|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 11:12:40
