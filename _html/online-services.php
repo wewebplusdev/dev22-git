@@ -20,7 +20,7 @@
                     </figure>
                     <div class="container">
                         <div class="wrapper">
-                            <div class="title typo-lg">เกี่ยวกับเรา</div>
+                            <div class="title typo-lg jfdkfjdk">เกี่ยวกับเรา</div>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">หน้าหลัก</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">บริการออนไลน์</li>
