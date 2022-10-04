@@ -29,10 +29,42 @@
                     </div>
                 </div>
             </div>
-            <div class="default-page about">
+            <div class="default-page online-services">
                 <div class="container">
                     <div class="h-title">
                         บริการออนไลน์
+                    </div>
+                    <div class="online-services-block">
+                        <ul class="item-list">
+                            <?php for ($i = 1; $i <= 8; $i++) { ?>
+                                <li>
+                                    <a href="" class="link" title="SAMPLE TRACKING">
+                                        <figure class="cover">
+                                            <img src="<?php echo $core_template; ?>/assets/img/static/online-service-01.jpg" alt="diamond">
+                                        </figure>
+                                        <div class="inner">
+                                            <!-- <div class="wrapper"> -->
+                                                <div class="title text-uppercase text-limit -x2">
+                                                    SAMPLE <br>
+                                                    TRACKING
+                                                </div>
+
+                                                <div class="subtitle">
+                                                    Gem & <br>
+                                                    Precious <br>
+                                                    Metals <br>
+                                                    Testing
+                                                </div>
+                                            <!-- </div> -->
+                                        </div>
+                                        <div class="text-orient text-limit">
+                                            SAMPLE
+                                            TRACKING
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </div>
             </div>
