@@ -363,8 +363,12 @@
             padding-bottom: 10px;
         }
     }
-    .top-graphic {
-        margin-top: 47px;
+    .default-header {
+        .top-graphic {
+            .cover {
+                padding-bottom: 290px;
+            }
+        }
     }
 }
 
@@ -398,9 +402,9 @@
 
 @media (max-width:575px) {
     .top-graphic {
-        .cover {
-            height: 250px;
-        }
+        // .cover {
+        //     height: 250px;
+        // }
     }
     .download-block {
         // padding: 20px 0;
@@ -466,5 +470,17 @@
 @media (max-width:375px) {
     .job-source-block {
         padding: 15px 10px;
+    }
+    .default-header {
+        .top-graphic {
+            .cover {
+                padding-bottom: 200px;
+            }
+            .wrapper {
+                .title {
+                    margin: 0;
+                }
+            }
+        }
     }
 }
