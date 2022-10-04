@@ -31,7 +31,7 @@
             </div>
             <div class="default-page about">
                 <div class="container">
-                    <div class="head-title">
+                    <div class="h-title">
                         บริการออนไลน์
                     </div>
                 </div>
