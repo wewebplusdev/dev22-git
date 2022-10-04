@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="default-page about from-about">
+            <div class="default-page about form-about">
                 <div class="container">
                     <div class="h-title">
                         ใบสมัครงาน (APPLICATION FORM)
@@ -113,7 +113,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="fname">Example input</label>
                                     <div class="block-control">
@@ -122,7 +122,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="lname">Example input</label>
                                     <div class="block-control">
@@ -145,7 +145,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="email">Example input</label>
                                     <div class="block-control">
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="email">Example input</label>
                                     <div class="block-control">
@@ -168,9 +168,9 @@
                     <form data-toggle="validator" role="form" class="form-default" method="post">
                         <!-- <div class="text-primary typo-xs">วันเดือนปีเกิด/Date of birthday<span>*</span> </div> -->
                         <div class="row gutters-custom align-items-end">
-                            <div class="col-lg">
+                            <div class="col-xl">
                                 <div class="row gutters-custom align-items-end">
-                                    <div class="col-lg-3 col-md-4 col-12">
+                                    <div class="col-lg-3 col-md-4 col-sm">
                                         <div class="form-group">
                                             <label class="control-label label-custom" for="select-day">วันเดือนปีเกิด/Date of birthday<span>*</span></label>
                                             <div class="select-wrapper">
@@ -182,7 +182,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-4 col-12">
+                                    <div class="col-lg-6 col-md-4 col-sm">
                                         <div class="form-group">
                                             <label class="control-label visuallyhidden" for="select-month">Example select</label>
                                             <div class="select-wrapper">
@@ -194,7 +194,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-12">
+                                    <div class="col-lg-3 col-md-4 col-sm">
                                         <div class="form-group">
                                             <label class="control-label visuallyhidden" for="select-year">Example select</label>
                                             <div class="select-wrapper">
@@ -208,9 +208,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg">
+                            <div class="col-xl">
                                 <div class="row gutters-custom align-items-center">
-                                    <div class="col-lg-3 col-md-4 col-12">
+                                    <div class="col-lg-3 col-md-4 col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="weight">Example input</label>
                                             <div class="block-control">
@@ -219,7 +219,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-12">
+                                    <div class="col-lg-4 col-md-4 col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="height">Example input</label>
                                             <div class="block-control">
@@ -228,7 +228,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-4 col-12">
+                                    <div class="col-lg-5 col-md-4 col-sm">
                                         <div class="form-group">
                                             <label class="control-label visuallyhidden" for="date-select-year">Example select</label>
                                             <div class="select-wrapper">
@@ -273,7 +273,7 @@
                         <div class="row gutters-custom">
                             <div class="col-md-4">
                                 <div class="row gutters-custom">
-                                    <div class="col-lg-auto col-md-8 col">
+                                    <div class="col-lg-auto col-md-8 col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="have-with-number">Example input</label>
                                             <div class="block-control">
@@ -282,7 +282,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg col-md-4 col">
+                                    <div class="col-lg col-md-4 col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="moo">Example input</label>
                                             <input type="text" class="form-control" id="moo" placeholder="Moo" data-error="">
@@ -295,7 +295,7 @@
                             </div>
                             <div class="col">
                                 <div class="row gutters-custom">
-                                    <div class="col">
+                                    <div class="col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="village-building">Example input</label>
                                             <div class="block-control">
@@ -304,7 +304,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="alley">Example input</label>
                                             <div class="block-control">
@@ -313,7 +313,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="road">Example input</label>
                                             <div class="block-control">
@@ -326,7 +326,7 @@
                             </div>
                         </div>
                         <div class="row gutters-custom">
-                            <div class="col-sm-4">
+                            <div class="col-sm">
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="province">Example select</label>
                                     <div class="select-wrapper">
@@ -338,7 +338,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="district">Example select</label>
                                     <div class="select-wrapper">
@@ -350,7 +350,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="subdistrict">Example select</label>
                                     <div class="select-wrapper">
@@ -376,9 +376,9 @@
                     <form data-toggle="validator" role="form" class="form-default mt-xl-4" method="post">
                         <div class="title">ที่อยู่ปัจจุบัน/Present Address</div>
                         <div class="row gutters-custom">
-                            <div class="col-4">
+                            <div class="col-sm-4">
                                 <div class="row gutters-custom">
-                                    <div class="col-auto">
+                                    <div class="col-md-auto col-sm-8">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="present-have-with-number">Example input</label>
                                             <div class="block-control">
@@ -400,7 +400,7 @@
                             </div>
                             <div class="col">
                                 <div class="row gutters-custom">
-                                    <div class="col">
+                                    <div class="col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="present-village-building">Example input</label>
                                             <div class="block-control">
@@ -409,7 +409,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="present-alley">Example input</label>
                                             <div class="block-control">
@@ -418,7 +418,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="present-road">Example input</label>
                                             <div class="block-control">
@@ -431,7 +431,7 @@
                             </div>
                         </div>
                         <div class="row gutters-custom">
-                            <div class="col-4">
+                            <div class="col-sm-4">
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="present-province">Example select</label>
                                     <div class="select-wrapper">
@@ -443,7 +443,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="present-district">Example select</label>
                                     <div class="select-wrapper">
@@ -455,7 +455,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="present-subdistrict">Example select</label>
                                     <div class="select-wrapper">
@@ -467,7 +467,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-postcode">Example input</label>
                                     <div class="block-control">
@@ -478,7 +478,7 @@
                             </div>
                         </div>
                         <div class="row gutters-custom">
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label" for="telephone-home">โทรศัพท์ / Telephone Home</label>
                                     <div class="block-control">
@@ -487,7 +487,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label" for="telephone-mobile">โทรศัพท์มือถือ / Mobile Phone</label>
                                     <div class="block-control">
@@ -496,7 +496,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label" for="email">อีเมล์ / E-Mail</label>
                                     <div class="block-control">
@@ -507,9 +507,9 @@
                             </div>
                         </div>
                         <div class="row gutters-custom">
-                            <div class="col-4">
+                            <div class="col-md-4 col-sm-6">
                                 <div class="row gutters-custom">
-                                    <div class="col">
+                                    <div class="col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label" for="identification-1">บัตรประชาชนเลขที่ / Identification Card No.</label>
                                             <div class="block-control">
@@ -520,9 +520,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-md-4 col-sm-6">
                                 <div class="row gutters-custom">
-                                    <div class="col-auto">
+                                    <div class="col-sm-auto">
                                         <div class="form-group">
                                             <label class="control-label" for="issued-at">สถานที่ออกบัตร / Issued at</label>
                                             <div class="select-wrapper">
@@ -534,7 +534,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label" for="expiry-date" style=" font-size: 14px; ">วันหมดอายุ / Expiry Date</label>
                                             <div class="block-control">
@@ -618,10 +618,10 @@
                             </div>
                         </div>
                     </form>
-                    <form data-toggle="validator" role="form" class="form-default emergency-case mt-4" method="post">
+                    <form data-toggle="validator" role="form" class="form-default emergency-case" method="post">
                         <div class="title">บุคคลที่สามารถติดต่อได้กรณีเร่งด่วน / In case of emergency please contact</div>
                         <div class="row gutters-custom align-items-end">
-                            <div class="col">
+                            <div class="col-md">
                                 <div class="form-group has-feedback">
                                     <label class="control-label font-size-C" for="e-name">ชื่อ / Name</label>
                                     <div class="block-control">
@@ -630,9 +630,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-md">
                                 <div class="row gutters-custom">
-                                    <div class="col">
+                                    <div class="col-md col-sm-6">
                                         <div class="form-group has-feedback">
                                             <label class="control-label font-size-C" for="e-surname">นามสกุล / Surname</label>
                                             <div class="block-control">
@@ -641,7 +641,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-sm-6">
                                         <div class="form-group">
                                             <label class="control-label label-custom" for="e-select-day">วันเดือนปีเกิด/Date of birthday</label>
                                             <div class="select-wrapper">
@@ -655,9 +655,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-md">
                                 <div class="row gutters-custom">
-                                    <div class="col-5">
+                                    <div class="col-md-5 col-sm-4">
                                         <div class="form-group">
                                             <label class="control-label visuallyhidden" for="e-select-month">Ex</label>
                                             <div class="select-wrapper">
@@ -669,7 +669,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md col-sm-4">
                                         <div class="form-group">
                                             <label class="control-label visuallyhidden" for="e-select-year">Ex</label>
                                             <div class="select-wrapper">
@@ -681,7 +681,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md col-sm-4">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="e-age">Ex</label>
                                             <div class="block-control">
@@ -694,7 +694,7 @@
                             </div>
                         </div>
                         <div class="row gutters-custom">
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label font-size-C" for="relations">ความสัมพันธ์ / Relations</label>
                                     <div class="block-control">
@@ -703,7 +703,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label font-size-C" for="address-workplace">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
                                     <div class="block-control">
@@ -712,7 +712,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label" for="e-tel">โทรศัพท / Tel.</label>
                                     <div class="block-control">
@@ -727,7 +727,7 @@
                         <div class="form-set -I">
                             <div class="title">รายละเอียดครอบครัว / Family details <span>*</span></div>
                             <div class="row gutters-custom align-items-end">
-                                <div class="col">
+                                <div class="col-md">
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-name-1">1. ชื่อ / Name</label>
                                         <div class="block-control">
@@ -736,9 +736,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md">
                                     <div class="row gutters-custom">
-                                        <div class="col">
+                                        <div class="col-md col-sm-6">
                                             <div class="form-group has-feedback">
                                                 <label class="control-label font-size-C" for="f-surname-1">นามสกุล / Surname</label>
                                                 <div class="block-control">
@@ -747,7 +747,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-md-3 col-sm-6">
                                             <div class="form-group">
                                                 <label class="control-label label-custom" for="f-select-day-1">วันเดือนปีเกิด/Date of birthday</label>
                                                 <div class="select-wrapper">
@@ -761,9 +761,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md">
                                     <div class="row gutters-custom">
-                                        <div class="col-5">
+                                        <div class="col-md-5 col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label visuallyhidden" for="f-select-month-1">Ex</label>
                                                 <div class="select-wrapper">
@@ -775,7 +775,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-md col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label visuallyhidden" for="f-select-year-1">Ex</label>
                                                 <div class="select-wrapper">
@@ -787,7 +787,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-md col-sm-4">
                                             <div class="form-group has-feedback">
                                                 <label class="control-label visuallyhidden" for="f-age-1">Ex</label>
                                                 <div class="block-control">
@@ -800,7 +800,7 @@
                                 </div>
                             </div>
                             <div class="row gutters-custom">
-                                <div class="col">
+                                <div class="col-sm">
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-relations-1">ความสัมพันธ์ / Relations</label>
                                         <div class="block-control">
@@ -809,7 +809,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-sm">
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-address-workplace-1">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
                                         <div class="block-control">
@@ -818,7 +818,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-sm">
                                     <div class="form-group has-feedback">
                                         <label class="control-label" for="f-tel-1">โทรศัพท / Tel.</label>
                                         <div class="block-control">
@@ -855,7 +855,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-8">
                                     <div class="row gutters-custom">
                                         <div class="col">
                                             <div class="form-group">
@@ -899,7 +899,7 @@
                         </div>
                         <div class="form-set -II">
                             <div class="row gutters-custom align-items-end">
-                                <div class="col">
+                                <div class="col-md">
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-name-2">2. ชื่อ / Name</label>
                                         <div class="block-control">
@@ -908,9 +908,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md">
                                     <div class="row gutters-custom">
-                                        <div class="col">
+                                        <div class="col-md col-sm-6">
                                             <div class="form-group has-feedback">
                                                 <label class="control-label font-size-C" for="f-surname-2">นามสกุล / Surname</label>
                                                 <div class="block-control">
@@ -919,7 +919,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-md-3 col-sm-6">
                                             <div class="form-group">
                                                 <label class="control-label label-custom" for="f-select-day-2">วันเดือนปีเกิด/Date of birthday</label>
                                                 <div class="select-wrapper">
@@ -933,9 +933,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md">
                                     <div class="row gutters-custom">
-                                        <div class="col-5">
+                                        <div class="col-md-5 col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label visuallyhidden" for="f-select-month-2">Ex</label>
                                                 <div class="select-wrapper">
@@ -947,7 +947,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-md col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label visuallyhidden" for="f-select-year-2">Ex</label>
                                                 <div class="select-wrapper">
@@ -959,7 +959,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-md col-sm-4">
                                             <div class="form-group has-feedback">
                                                 <label class="control-label visuallyhidden" for="f-age-2">Ex</label>
                                                 <div class="block-control">
@@ -972,7 +972,7 @@
                                 </div>
                             </div>
                             <div class="row gutters-custom">
-                                <div class="col">
+                                <div class="col-sm">
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-relations-2">ความสัมพันธ์ / Relations</label>
                                         <div class="block-control">
@@ -981,7 +981,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-sm">
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-address-workplace-2">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
                                         <div class="block-control">
@@ -990,7 +990,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-sm">
                                     <div class="form-group has-feedback">
                                         <label class="control-label" for="f-tel-2">โทรศัพท / Tel.</label>
                                         <div class="block-control">
@@ -1027,7 +1027,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-8">
                                     <div class="row gutters-custom">
                                         <div class="col">
                                             <div class="form-group">

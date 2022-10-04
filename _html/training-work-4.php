@@ -102,7 +102,7 @@
                 <div class="container mt-5">
                     <div class="row py-3">
                         <div class="col">
-                            <div class="head-title">หลักสูตรด้านอัญมณีศาสตร์</div>
+                            <div class="h-title">หลักสูตรด้านอัญมณีศาสตร์</div>
                             <div class="detail-link-block">
                                 <div class="detail-link">
                                     <ul class="item-list">

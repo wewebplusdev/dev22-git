@@ -48,7 +48,7 @@
       <div class="container">
           <div class="row align-items-center">
               <div class="col-auto">
-                  <div class="head-title">{$callGroup->fields.subject}</div>
+                  <div class="h-title">{$callGroup->fields.subject}</div>
               </div>
               {if count($callYear) > 0}
                 <div class="col text-right">

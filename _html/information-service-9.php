@@ -62,7 +62,7 @@
                 <div class="container">
                     <div class="row py-5">
                         <div class="col">
-                            <div class="head-title">ห้องแสดงภาพ</div>
+                            <div class="h-title">ห้องแสดงภาพ</div>
                             <!--gallery block -->
                             <div class="gallery-block">
                                 <div class="gallery">

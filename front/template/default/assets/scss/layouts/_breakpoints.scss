@@ -52,6 +52,14 @@
     .site-container {
         margin-top: 100px;
     }
+    .about.form-about {
+        .emergency-case,
+        .family-datails {
+            .font-size-C {
+                font-size: 14px !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 991px) {
@@ -71,6 +79,14 @@
     .site-container {
         // margin-top: 65px;
         margin-top: 112px;
+    }
+    .about.form-about {
+        .emergency-case,
+        .family-datails {
+            .font-size-C {
+                font-size: 14px !important;
+            }
+        }
     }
 }
 

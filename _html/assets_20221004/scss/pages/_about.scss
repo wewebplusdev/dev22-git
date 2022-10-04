@@ -1,5 +1,5 @@
 .about {
-    .head-title {
+    .h-title {
         font-size: var(--typo-lg);
         font-weight: var(--fw-medium);
         color: var(--color-primary);
@@ -32,7 +32,7 @@
 }
 
 .about.from-about {
-    .head-title,
+    .h-title,
     .title {
         line-height: 1.5;
     }

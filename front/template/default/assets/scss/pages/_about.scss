@@ -20,8 +20,8 @@
     }
 }
 
-.about.from-about {
-    .head-title,
+.about.form-about {
+    .h-title,
     .title {
         line-height: 1.5;
     }
@@ -67,7 +67,7 @@
                 height: 20px;
                 display: flex;
                 align-items: flex-end;
-                text-transform: uppercase;
+                // text-transform: uppercase;
             }
             .label-custom {
                 white-space: nowrap;
@@ -154,7 +154,7 @@
         }
         .form-set.-III {
             .button {
-                margin-top: 30px;
+                // margin-top: 30px;
             }
         }
         .form-set.-IV {
@@ -199,7 +199,7 @@
 @media (max-width: 1600px) {}
 
 @media (max-width: 1440px) {
-    .about.from-about {
+    .about.form-about {
         .form-default {
             .form-group {
                 margin-top: 15px !important;

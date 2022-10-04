@@ -102,7 +102,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-auto">
-                    <div class="head-title"><?php echo $_smarty_tpl->tpl_vars['callGroup']->value->fields['subject'];?>
+                    <div class="h-title"><?php echo $_smarty_tpl->tpl_vars['callGroup']->value->fields['subject'];?>
 </div>
                 </div>
                 <?php if (count($_smarty_tpl->tpl_vars['callYear']->value) > 0) {?>

@@ -116,7 +116,7 @@ function content_63356a81065fc9_93127146 (Smarty_Internal_Template $_smarty_tpl)
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-auto">
-                    <div class="head-title">นโยบายและแผน</div>
+                    <div class="h-title">นโยบายและแผน</div>
                 </div>
                 <div class="col text-right">
                     <div class="form-group">

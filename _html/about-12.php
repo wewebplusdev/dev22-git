@@ -103,7 +103,7 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-auto">
-                            <div class="head-title">นโยบายและแผน</div>
+                            <div class="h-title">นโยบายและแผน</div>
                         </div>
                         <div class="col text-right">
                             <div class="form-group has-feedback">
