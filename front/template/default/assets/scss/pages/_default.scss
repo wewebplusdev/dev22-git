@@ -5,6 +5,17 @@
 .default-page {
     padding-top: 30px;
     padding-bottom: 70px;
+    .h-title {
+        font-size: var(--typo-lg);
+        font-weight: var(--fw-medium);
+        color: var(--color-primary);
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .title {
+        font-size: var(--typo-sm);
+        color: var(--color-primary);
+    }
 }
 
 .feather {
