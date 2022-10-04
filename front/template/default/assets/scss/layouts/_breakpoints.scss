@@ -66,8 +66,8 @@
      :root {
         --typo-s: 12px;
         --typo-xs: 14px;
-        --typo-sm: 18px;
-        --typo-md: 20px;
+        --typo-sm: 16px;
+        --typo-md: 18px;
         --typo-lg: 22px;
         --typo-xl: 32px;
         --typo-default: 16px;
@@ -87,6 +87,12 @@
                 font-size: 14px !important;
             }
         }
+    }
+    .theme-3 .site-header {
+        height: 114px;
+    }
+    .theme-3 .site-container {
+        margin-top: 114px;
     }
 }
 

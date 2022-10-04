@@ -238,7 +238,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
             $valStatus = $row[3];
             $valNameEn = rechangeQuot($row[4]);
             $valNameEn = chechNullVal($valNameEn);
-            $valPic = $mod_path_pic . "/" . $row[5];
+            $valPic = $mod_path_pictures . "/" . $row[5];
             if (is_file($valPic)) {
               $valPic = $valPic;
             } else {

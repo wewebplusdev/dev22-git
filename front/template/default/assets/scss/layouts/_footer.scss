@@ -299,9 +299,13 @@
                 }
             }
         }
+        .maps .item-list {
+            margin: 0;
+        }
         .maps .item-list > li {
             // width: 100%;
             float: none;
+            padding: 0;
             .btn {
                 position: relative;
                 // line-height: 135px;
@@ -471,6 +475,31 @@
     .theme-3 .site-footer .footer-sitemap .card-header {
         margin-top: -40px;
     }
+    .theme-3 .site-footer .social .item-list > li .inner {
+        width: 48px;
+        height: 48px;
+    }
+    .theme-3 .site-footer .social .item-list {
+        margin: 0 -7px;
+    }
+    .theme-3 .site-footer .social .item-list > li {
+        padding: 0 7px;
+    }
+    .theme-3 .site-footer .footer-bottom {
+        padding: 2rem 0;
+    }
+    .theme-3 .site-footer .maps .item-list > li .btn {
+        height: 100px;
+    }
+    .theme-3 .site-footer .maps .item-list > li .btn .inner .txt {
+        margin-top: 5px;
+    }
+    .theme-3 .site-footer .maps .item-list > li .btn .inner .icon {
+        width: 64px;
+    }
+    .theme-3 .site-footer .footer-top {
+        padding: 2rem 0 4rem 0;
+    }
 }
 
 @media (max-width: 575px) {
@@ -512,6 +541,5 @@
 
     .theme-3 .site-footer .maps .item-list > li + li{
         margin-top: 0;
-    }
-    
+    }   
 }

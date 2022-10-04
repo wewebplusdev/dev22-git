@@ -17,77 +17,35 @@
     </div>
   </div>
   <div class="default-page about">
-    <div class="container">
-      <div class="default-nav-slider">
-        <div class="item">
-          <a href="javascript:void(0)" class="active">ตรวจสอบอัญมณี</a>
-        </div>
-        <div class="item">
-          <a href="javascript:void(0)">ตรวจสอบโลหะมีค่า</a>
-        </div>
-        <div class="item">
-          <a href="javascript:void(0))">ศูนย์ให้คำปรึกษา</a>
-        </div>
-        <div class="item">
-          <a href="javascript:void(0)">เครื่องมือ</a>
-        </div>
-        <div class="item">
-          <a href="javascript:void(0)">สัมมนา/workshop</a>
-        </div>
-        <div class="item">
-          <a href="javascript:void(0)">ราคา</a>
-        </div>
-        <div class="item">
-          <a href="javascript:void(0)">การประกวดออกแบบ</a>
-        </div>
-        <div class="item">
-          <a href="javascript:void(0)">การบริหารและพัฒนาทรัพยากรบุคคล</a>
+    {if count($getMenuDetail) > 0}
+      <div class="container">
+        <div class="default-nav-slider" data-slick='{$initialSlide}'>
+          {foreach $getMenuDetail as $keygetMenuDetail => $valuegetMenuDetail}
+            {$arrName = explode("-", $valuegetMenuDetail.subject)}
+            <div class="item">
+              <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" {if $MenuID eq $valuegetMenuDetail.masterkey}class="active"{/if}>{$arrName[0]}</a>
+            </div>
+          {/foreach}
         </div>
       </div>
-    </div>
+    {/if}
 
     <div class="border-nav-slider"></div>
 
-    <div class="container mt-5">
-      <h2 class="text-primary mb-4">นโยบายและแผน</h2>
-      <div class="default-tab-slider default-slick">
-        <div class="item">
-          <div class="tab-block active">
-            <a class="text-limit" href="javascript:void(0)">แนะนำบริการ</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="tab-block">
-            <a class="text-limit" href="javascript:void(0)">ค่าบริการ</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="tab-block">
-            <a class="text-limit" href="javascript:void(0)">ตรวจสอบใบรายงาน</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="tab-block">
-            <a class="text-limit" href="javascript:void(0)">ติดตามงานตรวจสอบ</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="tab-block">
-            <a class="text-limit" href="javascript:void(0)">การประกวดออกแบบการประกวดออกแบบ</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="tab-block">
-            <a class="text-limit" href="javascript:void(0)">การประกวดออกแบบการประกวดออกแบบ</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="tab-block">
-            <a class="text-limit" href="javascript:void(0)">การประกวดออกแบบการประกวดออกแบบ</a>
-          </div>
+    {if count($arrMenu) > 0 && $showslick}
+      <div class="container mt-5">
+        <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
+        <div class="default-tab-slider default-slick" data-slick='{$initialSlide2}'>
+          {foreach $arrMenu as $keyarrMenu => $valuearrMenu}
+            <div class="item">
+              <div class="tab-block {if $menuidLv2 eq $valuearrMenu.id}active{/if}">
+                <a class="text-limit" href="{str_replace("//","/","{$ul}/{$menuActive}/{$valuearrMenu.menuid}/{$valuearrMenu.id}")}">{$valuearrMenu.subject}</a>
+              </div>
+            </div>
+          {/foreach}
         </div>
       </div>
-    </div>
+    {/if}
 
     <div class="container">
       <div class="row align-items-center">
@@ -109,34 +67,35 @@
           </div>
         </div>
       </div>
-      <?php for ($i = 1; $i <= 5; $i++) { ?>
-      <div class="news-block">
-        <div class="row align-items-center">
-          <div class="col-sm-auto">
-            <figure class="cover">
-              <img src="{$template}/assets/img/static/news-image.png" alt="news image">
-            </figure>
-          </div>
-          <div class="col-sm">
-            <div class="title">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ</div>
-            <div class="row">
-              <div class="col-12">
-                <div class="desc">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ
-                  หนุนผู้ประกอบการขยายช่องทางการค้าผ่านแพลตฟอร์ม Home Shopping 24 ชั่วโมง</div>
+      {if $callCMS->_numOfRows gte 1}
+        {foreach $callCMS as $keycallCMS => $valuecallCMS}
+          <div class="news-block">
+            <div class="row align-items-center">
+              <div class="col-sm-auto">
+                <figure class="cover">
+                  <img src="{$valuecallCMS['pic']|fileinclude:"real":{$valuecallCMS['masterkey']}:"link"}" alt="{$valuecallCMS.subject}">
+                </figure>
               </div>
-              <div class="col-12">
-                <!-- <img class="" src="{$template}/assets/img/icon/icon-calendar.svg" alt="icon calendar"> -->
-                <span class="feather icon-calendar"></span>
-                <span class="typo-xs text-black">16 มิถุนายน 2565</span>
-              </div>
-              <div class="col-12">
-                <a href="javascript:void(0)" class="btn" title="btn">อ่านต่อ</a>
+              <div class="col-sm">
+                <div class="title">{$valuecallCMS.subject}</div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="desc">{$valuecallCMS.title}</div>
+                  </div>
+                  <div class="col-12">
+                    <span class="feather icon-calendar"></span>
+                    <span class="typo-xs text-black">{$valuecallCMS.credate|DateThai:'1':{$langon}:'full'}</span>
+                  </div>
+                  <div class="col-12">
+                    <a href="javascript:void(0)" class="btn" title="btn">{$lang['system']['viewmore']}</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <?php } ?>
+        {/foreach}
+      {/if}
+      
 
       <div class="editor-content">
       </div>
