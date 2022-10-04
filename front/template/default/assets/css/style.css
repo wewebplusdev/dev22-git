@@ -6289,9 +6289,13 @@ div.swal2-html-container {
 }
 .default-slick .slick-prev::before,
 .default-slick .slick-next::before {
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   opacity: 1;
-  content: "#";
+  content: "";
   color: transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -7777,6 +7781,7 @@ fieldset {
   height: 20px;
   display: flex;
   align-items: flex-end;
+  text-transform: uppercase;
 }
 .about.form-about .form-default .form-group .label-custom {
   white-space: nowrap;
@@ -7849,6 +7854,9 @@ fieldset {
 .about.form-about .family-datails .form-set {
   padding-top: 40px;
 }
+.about.form-about .family-datails .form-set.-III .button {
+  margin-top: 25px;
+}
 .about.form-about .family-datails .form-set.-IV {
   transition: all 200ms ease-out;
 }
@@ -7886,9 +7894,10 @@ fieldset {
   text-align: center;
 }
 
-@media (max-width: 1440px) {
-  .about.form-about .form-default .form-group {
-    margin-top: 15px !important;
+@media (max-width: 1199px) {
+  .about.form-about .emergency-case .font-size-C,
+.about.form-about .family-datails .font-size-C {
+    font-size: 14px !important;
   }
 }
 @media (max-width: 991px) {
@@ -7898,6 +7907,10 @@ fieldset {
   .gutters-custom > div {
     padding: 0 7.5px;
   }
+  .about.form-about .emergency-case .font-size-C,
+.about.form-about .family-datails .font-size-C {
+    font-size: 14px !important;
+  }
 }
 @media (max-width: 767px) {
   .gutters-custom {
@@ -7905,6 +7918,11 @@ fieldset {
   }
   .gutters-custom > div {
     padding: 0 5px;
+  }
+}
+@media (max-width: 575px) {
+  .add-form-2 {
+    margin-top: 30px;
   }
 }
 .theme-style-2 .text-primary {
@@ -8841,10 +8859,6 @@ fieldset {
   .site-container {
     margin-top: 100px;
   }
-  .about.form-about .emergency-case .font-size-C,
-.about.form-about .family-datails .font-size-C {
-    font-size: 14px !important;
-  }
 }
 @media (max-width: 991px) {
   :root {
@@ -8862,10 +8876,6 @@ fieldset {
   }
   .site-container {
     margin-top: 112px;
-  }
-  .about.form-about .emergency-case .font-size-C,
-.about.form-about .family-datails .font-size-C {
-    font-size: 14px !important;
   }
   .theme-3 .site-header {
     height: 114px;

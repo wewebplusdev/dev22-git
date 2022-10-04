@@ -170,7 +170,7 @@
                         <div class="row gutters-custom align-items-end">
                             <div class="col-xl">
                                 <div class="row gutters-custom align-items-end">
-                                    <div class="col-lg-3 col-md-4 col-sm">
+                                    <div class="col-xl-3 col-lg-4 col-md">
                                         <div class="form-group">
                                             <label class="control-label label-custom" for="select-day">วันเดือนปีเกิด/Date of birthday<span>*</span></label>
                                             <div class="select-wrapper">
@@ -182,7 +182,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-4 col-sm">
+                                    <div class="col-xl-6 col-lg-4 col-md">
                                         <div class="form-group">
                                             <label class="control-label visuallyhidden" for="select-month">Example select</label>
                                             <div class="select-wrapper">
@@ -194,7 +194,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-sm">
+                                    <div class="col-xl-3 col-lg-4 col-md">
                                         <div class="form-group">
                                             <label class="control-label visuallyhidden" for="select-year">Example select</label>
                                             <div class="select-wrapper">
@@ -210,7 +210,7 @@
                             </div>
                             <div class="col-xl">
                                 <div class="row gutters-custom align-items-center">
-                                    <div class="col-lg-3 col-md-4 col-sm">
+                                    <div class="col-xl-3 col-lg-4 col-md">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="weight">Example input</label>
                                             <div class="block-control">
@@ -219,7 +219,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-sm">
+                                    <div class="col-xl-4 col-lg-4 col-md">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="height">Example input</label>
                                             <div class="block-control">
@@ -228,7 +228,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-4 col-sm">
+                                    <div class="col-xl-5 col-lg-4 col-md">
                                         <div class="form-group">
                                             <label class="control-label visuallyhidden" for="date-select-year">Example select</label>
                                             <div class="select-wrapper">
@@ -273,7 +273,7 @@
                         <div class="row gutters-custom">
                             <div class="col-md-4">
                                 <div class="row gutters-custom">
-                                    <div class="col-lg-auto col-md-8 col-sm">
+                                    <div class="col-md-7 col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="have-with-number">Example input</label>
                                             <div class="block-control">
@@ -282,7 +282,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg col-md-4 col-sm">
+                                    <div class="col-md-5 col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="moo">Example input</label>
                                             <input type="text" class="form-control" id="moo" placeholder="Moo" data-error="">
@@ -326,7 +326,7 @@
                             </div>
                         </div>
                         <div class="row gutters-custom">
-                            <div class="col-sm">
+                            <div class="col-sm-4">
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="province">Example select</label>
                                     <div class="select-wrapper">
@@ -362,7 +362,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="postcode">Example input</label>
                                     <div class="block-control">
@@ -376,9 +376,9 @@
                     <form data-toggle="validator" role="form" class="form-default mt-xl-4" method="post">
                         <div class="title">ที่อยู่ปัจจุบัน/Present Address</div>
                         <div class="row gutters-custom">
-                            <div class="col-sm-4">
+                            <div class="col-md-4">
                                 <div class="row gutters-custom">
-                                    <div class="col-md-auto col-sm-8">
+                                    <div class="col-md-7 col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="present-have-with-number">Example input</label>
                                             <div class="block-control">
@@ -387,7 +387,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md-5 col-sm">
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="present-moo">Example input</label>
                                             <div class="block-control">
@@ -507,7 +507,7 @@
                             </div>
                         </div>
                         <div class="row gutters-custom">
-                            <div class="col-md-4 col-sm-6">
+                            <div class="col-xl-4 col-md-4 col-sm-6">
                                 <div class="row gutters-custom">
                                     <div class="col-sm">
                                         <div class="form-group has-feedback">
@@ -520,9 +520,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6">
+                            <div class="col-xl-4 col-md-8 col-sm-6">
                                 <div class="row gutters-custom">
-                                    <div class="col-sm-auto">
+                                    <div class="col-sm-6">
                                         <div class="form-group">
                                             <label class="control-label" for="issued-at">สถานที่ออกบัตร / Issued at</label>
                                             <div class="select-wrapper">
@@ -534,7 +534,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm">
+                                    <div class="col-sm-6">
                                         <div class="form-group has-feedback">
                                             <label class="control-label" for="expiry-date" style=" font-size: 14px; ">วันหมดอายุ / Expiry Date</label>
                                             <div class="block-control">
@@ -641,7 +641,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-sm-6">
+                                    <div class="col-xl-3 col-md-4 col-sm-6">
                                         <div class="form-group">
                                             <label class="control-label label-custom" for="e-select-day">วันเดือนปีเกิด/Date of birthday</label>
                                             <div class="select-wrapper">
@@ -1070,10 +1070,10 @@
                             </div>
                         </div>
                         <div class="form-set -III">
-                            <div class="row gutters-custom">
-                                <div class="col-auto">
+                            <div class="row gutters-custom align-items-center">
+                                <div class="col-sm-auto">
                                     <div class="row gutters-custom">
-                                        <div class="col">
+                                        <div class="col-sm">
                                             <div class="form-group has-feedback">
                                                 <label class="control-label visuallyhidden" for="input-two">input-two</label>
                                                 <div class="block-control">
@@ -1082,7 +1082,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-sm">
                                             <div class="form-group has-feedback">
                                                 <label class="control-label visuallyhidden" for="you-are-someone-who">You Are Someone Who?</label>
                                                 <div class="block-control">
@@ -1093,21 +1093,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col text-right">
-                                    <div class="row gutters-custom">
-                                        <div class="col">
-                                            <div class="button add-form-1">
-                                                <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
-                                                    <span class="feather icon-plus text-white"></span>
-                                                    Add Brother / Sister
-                                                </a>
-                                            </div>
-                                        </div>
+                                <div class="col-sm text-right">
+                                    <div class="button add-form-1">
+                                        <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                                            <span class="feather icon-plus text-white"></span>
+                                            Add Brother / Sister
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row gutters-custom align-items-end">
-                                <div class="col">
+                                <div class="col-md">
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-name-3">พี่น้อง / Brother Sister</label>
                                         <div class="block-control">
@@ -1116,9 +1112,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md">
                                     <div class="row gutters-custom">
-                                        <div class="col">
+                                        <div class="col-md col-sm-6">
                                             <div class="form-group has-feedback">
                                                 <label class="control-label font-size-C" for="f-surname-3">นามสกุล / Surname</label>
                                                 <div class="block-control">
@@ -1127,7 +1123,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-md-3 col-sm-6">
                                             <div class="form-group">
                                                 <label class="control-label label-custom" for="f-select-day-3">วันเดือนปีเกิด/Date of birthday</label>
                                                 <div class="select-wrapper">
@@ -1141,9 +1137,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md">
                                     <div class="row gutters-custom">
-                                        <div class="col-5">
+                                        <div class="col-md-5 col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label visuallyhidden" for="f-select-month-3">Ex</label>
                                                 <div class="select-wrapper">
@@ -1155,7 +1151,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-md col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label visuallyhidden" for="f-select-year-3">Ex</label>
                                                 <div class="select-wrapper">
@@ -1167,7 +1163,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-md col-sm-4">
                                             <div class="form-group has-feedback">
                                                 <label class="control-label visuallyhidden" for="f-age-3">Ex</label>
                                                 <div class="block-control">
@@ -1180,7 +1176,7 @@
                                 </div>
                             </div>
                             <div class="row gutters-custom">
-                                <div class="col">
+                                <div class="col-sm">
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-relations-3">ความสัมพันธ์ / Relations</label>
                                         <div class="block-control">
@@ -1189,7 +1185,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-sm">
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-address-workplace-3">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
                                         <div class="block-control">
@@ -1198,7 +1194,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-sm">
                                     <div class="form-group has-feedback">
                                         <label class="control-label" for="f-tel-3">โทรศัพท / Tel.</label>
                                         <div class="block-control">
@@ -1235,7 +1231,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-8">
                                     <div class="row gutters-custom">
                                         <div class="col">
                                             <div class="form-group">
@@ -1453,10 +1449,10 @@
                     </form>
                     <form data-toggle="validator" role="form" class="form-default form-history" method="post">
                         <div class="row gutters-custom align-items-center">
-                            <div class="col">
+                            <div class="col-sm">
                                 <div class="title">ประวัติการศึกษา EDUCATION BACKGROUND <span>*</span></div>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-sm-auto text-right">
                                 <div class="button add-form-2">
                                     <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
                                         <span class="feather icon-plus text-white"></span>
@@ -1469,7 +1465,7 @@
                         <div class="row gutters-custom align-items-end">
                             <div class="col">
                                 <div class="form-group">
-                                    <label class="control-label font-size-C" for="education-level">ระดับการศึกษา / Education history</label>
+                                    <label class="control-label font-size-C label-custom" for="education-level">ระดับการศึกษา / Education history</label>
                                     <div class="select-wrapper">
                                         <select class="select-control" name="ordernews" id="education-level" style="width: 100%;">
                                             <option value="SELECT1">ระดับการศึกษา / Education Level</option>

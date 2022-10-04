@@ -67,7 +67,7 @@
                 height: 20px;
                 display: flex;
                 align-items: flex-end;
-                // text-transform: uppercase;
+                text-transform: uppercase;
             }
             .label-custom {
                 white-space: nowrap;
@@ -154,7 +154,7 @@
         }
         .form-set.-III {
             .button {
-                // margin-top: 30px;
+                margin-top: 25px;
             }
         }
         .form-set.-IV {
@@ -202,19 +202,36 @@
     .about.form-about {
         .form-default {
             .form-group {
-                margin-top: 15px !important;
+                // margin-top: 15px !important;
             }
         }
     }
 }
 
-@media (max-width: 1199px) {}
+@media (max-width: 1199px) {
+    .about.form-about {
+        .emergency-case,
+        .family-datails {
+            .font-size-C {
+                font-size: 14px !important;
+            }
+        }
+    }
+}
 
 @media (max-width: 991px) {
     .gutters-custom {
         margin: 0 -7.5px;
         >div {
             padding: 0 7.5px;
+        }
+    }
+    .about.form-about {
+        .emergency-case,
+        .family-datails {
+            .font-size-C {
+                font-size: 14px !important;
+            }
         }
     }
 }
@@ -228,7 +245,11 @@
     }
 }
 
-@media (max-width: 575px) {}
+@media (max-width: 575px) {
+    .add-form-2 {
+        margin-top: 30px;
+    }
+}
 
 @media (max-width: 375px) {}
 
