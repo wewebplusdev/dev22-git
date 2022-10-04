@@ -92,12 +92,15 @@
                                                                 {/if}
                                                                 {if $valueMember.tel neq ""}
                                                                     <div class="telephone">
-                                                                        {$lang['system']['tel2']}: {$valueMember.tel}
+                                                                        {$lang['system']['tel']}: {$valueMember.tel}
                                                                     </div>
                                                                 {/if}
                                                             </div>
                                                         {/if}
-                                                        <a href="#" class="btn" title="อ่านรายละเอียด">
+                                                        <a href="javascript:void(0);" class="btn modal-alert" title="{$lang['system']['readmore2']}" data-toggle="modal" 
+                                                            data-target="#profileBlock" data-name="{$valueMember.fname} {$valueMember.lname}" data-depart="{$valueMember.depart}" 
+                                                            data-sdatetxt="{$valueMember.sdatetxt}" data-email="{$valueMember.email}" data-tel="{$valueMember.tel}" 
+                                                            data-pic="{$valueMember['pic']|fileinclude:"real":{$valueMember['masterkey']}:"link"}" data-txtemail="{$lang['system']['email']}" data-txttel="{$lang['system']['tel']}">
                                                             <span class="feather icon-chevron-right"></span>
                                                             {$lang['system']['readmore2']}
                                                         </a>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-04 10:42:29
+/* Smarty version 4.0.0, created on 2022-10-04 17:12:39
   from '/var/www/html/front/template/default/_component/cms_board.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633baba516cb90_89923358',
+  'unifunc' => 'content_633c0717521954_56411515',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ab4c24d228815b55478250f50e3825831cd43de9' => 
     array (
       0 => '/var/www/html/front/template/default/_component/cms_board.tpl',
-      1 => 1664854791,
+      1 => 1664878357,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633baba516cb90_89923358 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633c0717521954_56411515 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
     <div class="default-header">
         <div class="top-graphic mb-4">
@@ -169,14 +169,30 @@ echo fileinclude($_smarty_tpl->tpl_vars['valueMember']->value['pic'],"real",$_pr
                                                                 <?php }?>
                                                                 <?php if ($_smarty_tpl->tpl_vars['valueMember']->value['tel'] != '') {?>
                                                                     <div class="telephone">
-                                                                        <?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['tel2'];?>
+                                                                        <?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['tel'];?>
 : <?php echo $_smarty_tpl->tpl_vars['valueMember']->value['tel'];?>
 
                                                                     </div>
                                                                 <?php }?>
                                                             </div>
                                                         <?php }?>
-                                                        <a href="#" class="btn" title="อ่านรายละเอียด">
+                                                        <a href="javascript:void(0);" class="btn modal-alert" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['readmore2'];?>
+" data-toggle="modal" 
+                                                            data-target="#profileBlock" data-name="<?php echo $_smarty_tpl->tpl_vars['valueMember']->value['fname'];?>
+ <?php echo $_smarty_tpl->tpl_vars['valueMember']->value['lname'];?>
+" data-depart="<?php echo $_smarty_tpl->tpl_vars['valueMember']->value['depart'];?>
+" 
+                                                            data-sdatetxt="<?php echo $_smarty_tpl->tpl_vars['valueMember']->value['sdatetxt'];?>
+" data-email="<?php echo $_smarty_tpl->tpl_vars['valueMember']->value['email'];?>
+" data-tel="<?php echo $_smarty_tpl->tpl_vars['valueMember']->value['tel'];?>
+" 
+                                                            data-pic="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueMember']->value['masterkey'];
+$_prefixVariable2 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueMember']->value['pic'],"real",$_prefixVariable2,"link");?>
+" data-txtemail="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['email'];?>
+" data-txttel="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['tel'];?>
+">
                                                             <span class="feather icon-chevron-right"></span>
                                                             <?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['readmore2'];?>
 
@@ -229,15 +245,15 @@ $_smarty_tpl->tpl_vars['valueCall_File']->do_else = false;
 ?>
                                 <?php ob_start();
 echo $_smarty_tpl->tpl_vars['arrMenuActive']->value->fields['masterkey'];
-$_prefixVariable2 = ob_get_clean();
-$_smarty_tpl->_assignInScope('fileinfo', get_Icon(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable2)));?>
+$_prefixVariable3 = ob_get_clean();
+$_smarty_tpl->_assignInScope('fileinfo', get_Icon(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable3)));?>
                                 <div class="item">
                                     <div class="attachment-block">
                                         <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /download/<?php ob_start();
 echo $_smarty_tpl->tpl_vars['arrMenuActive']->value->fields['masterkey'];
-$_prefixVariable3 = ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable3,'download');?>
+$_prefixVariable4 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable4,'download');?>
 &n=<?php echo $_smarty_tpl->tpl_vars['valueCall_File']->value['name'];?>
 &t=<?php echo encodeStr('md_memf');?>
 " class="link" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['attachment'];?>
@@ -274,8 +290,8 @@ echo fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'fi
                                                     <div class="subtitle typo-x"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['size'];?>
  : <?php ob_start();
 echo $_smarty_tpl->tpl_vars['arrMenuActive']->value->fields['masterkey'];
-$_prefixVariable4 = ob_get_clean();
-echo get_IconSize(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable4));?>
+$_prefixVariable5 = ob_get_clean();
+echo get_IconSize(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable5));?>
  | <?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['type'];?>
  : <?php echo $_smarty_tpl->tpl_vars['fileinfo']->value['type'];?>
 </div>
