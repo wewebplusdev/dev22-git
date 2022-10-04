@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-09-30 15:02:51
+/* Smarty version 4.0.0, created on 2022-10-04 13:59:20
   from '/var/www/html/front/template/default/inc/inc-sitemap.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6336a2abcf7be0_10676316',
+  'unifunc' => 'content_633bd9c8a0f774_91715103',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a79e88559f9eec5746a24974607cef7eaeeaf829' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-sitemap.tpl',
-      1 => 1664524967,
+      1 => 1664866759,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6336a2abcf7be0_10676316 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633bd9c8a0f774_91715103 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="sitemap">
     <div class="container">
         <div id="accordion">
             <div class="card">
                 <div class="card-header" id="headingSitemap">
                     <h3 class="mb-0">
-                        <button class="btn btn-lg btn-link collapsed" data-toggle="collapse" data-target="#collapseSitemap" aria-expanded="false" aria-controls="collapseSitemap">
+                        <button class="btn btn-sm btn-link collapsed" data-toggle="collapse" data-target="#collapseSitemap" aria-expanded="false" aria-controls="collapseSitemap">
                             <?php echo $_smarty_tpl->tpl_vars['lang']->value['menu']['sitemap'];?>
  <span class="feather icon-chevron-up"></span>
                         </button>
