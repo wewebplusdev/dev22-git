@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-09-30 09:43:45
+/* Smarty version 4.0.0, created on 2022-10-04 17:31:27
   from '/var/www/html/front/template/default/inc/inc-footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633657e17ae823_28616590',
+  'unifunc' => 'content_633c0b7f57bfa4_65219380',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8fd1aff02959a38ea0fc66137cab39a8e424949b' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-footer.tpl',
-      1 => 1664505047,
+      1 => 1664879485,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633657e17ae823_28616590 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633c0b7f57bfa4_65219380 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="site-footer">
     <div class="footer-top">
         <div class="container">
@@ -201,7 +201,7 @@ function content_633657e17ae823_28616590 (Smarty_Internal_Template $_smarty_tpl)
 </footer>
 
 <form name="filter-component" id="filter-component" action="?" method="get">
-<input name="year" id="year" value="<?php echo $_smarty_tpl->tpl_vars['req_params']->value['year'];?>
+<input name="year" id="year" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['req_params']->value['year'];?>
 ">
 </form><?php }
 }

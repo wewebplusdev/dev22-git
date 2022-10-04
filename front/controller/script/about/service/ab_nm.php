@@ -47,7 +47,7 @@ switch ($PageAction) {
 
         $settingPage = array(
             "page" => $menuActive,
-            "template" => "cms_advance_detail.tpl",
+            "template" => "cmsg_advance_detail.tpl",
             "display" => "page",
             "control" => "component",
         );
@@ -72,12 +72,18 @@ switch ($PageAction) {
             exit(0);
         }
 
+        $smarty->assign("callGroup", $callGroup);
+
         $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
         $smarty->assign("callCMS", $callCMS);
 
         ## breadcrumb
         $breadcrumb = explode("-", $callGroup->fields['menuname']);
         $settingModulus['breadcrumb'] = $breadcrumb[0];
+
+        ## group by year for filter
+        $callYear = $aboutPage->callYear($MenuID, $callGroup->fields['id']);
+        $smarty->assign("callYear", $callYear);
 
         ## menu lv 2 active
         $menuidLv2 = $callGroup->fields['id'];
@@ -90,6 +96,15 @@ switch ($PageAction) {
         $seo_keyword = "";
         Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
         /*## End SEO #####*/
+
+        /*## Set up pagination #####*/
+        $pagination['total'] = $callCMS->_maxRecordCount;
+        $pagination['totalpage'] = ceil(($pagination['total'] / $limit));
+        $pagination['limit'] = $limit;
+        $pagination['curent'] = $page['on'];
+        $pagination['method'] = $page;
+        $smarty->assign("pagination", $pagination);
+        /*## Set up pagination #####*/
 
         $settingPage = array(
             "page" => $menuActive,

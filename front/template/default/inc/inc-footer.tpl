@@ -172,5 +172,5 @@
 </footer>
 
 <form name="filter-component" id="filter-component" action="?" method="get">
-<input name="year" id="year" value="{$req_params['year']}">
+<input name="year" id="year" type="hidden" value="{$req_params['year']}">
 </form>

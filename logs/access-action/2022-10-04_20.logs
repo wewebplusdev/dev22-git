@@ -22,3 +22,5 @@ Delete Group|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/wead
 Update|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance/updateContant.php|:|ab_nm|:|18|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 14:39:51
 Update|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance/updateContant.php|:|ab_nm|:|18|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 14:39:59
 View|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance/viewContant.php|:|ab_nm|:|18|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 14:41:46
+Update|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance/updateContant.php|:|ab_nm|:|18|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 16:39:22
+View|:|7532dd93ad11bb1ebd4189563ce7f949|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance/viewContant.php|:|ab_nm|:|18|:||:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-04 16:39:35
