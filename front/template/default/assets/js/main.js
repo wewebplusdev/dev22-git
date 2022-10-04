@@ -167,6 +167,8 @@ $(document).ready(function() {
         slidesToScroll: 1,
         arrows: true,
         dots: false,
+        prevArrow: '<button class="slick-prev prev-arrow"></button>',
+        nextArrow: '<button class="slick-next next-arrow"></button>',
         responsive: [{
                 breakpoint: 992,
                 settings: {
