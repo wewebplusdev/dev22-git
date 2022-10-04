@@ -337,7 +337,7 @@
                                                                     เบอร์โทร: 0-2634-4999 ต่อ 633
                                                                 </div>
                                                             </div>
-                                                            <a href="#" class="btn" title="อ่านรายละเอียด">
+                                                            <a href="#" class="btn" title="อ่านรายละเอียด" data-toggle="modal" data-target="#profileBlock">
                                                                 <span class="feather icon-chevron-right"></span>
                                                                 อ่านรายละเอียด
                                                             </a>
@@ -793,6 +793,8 @@
         </section>
 
         <?php include('inc/footer.php'); ?>
+        <?php include('inc/modal.php'); ?>
+
     </div>
 
     <?php include('inc/loadscript.php'); ?>
