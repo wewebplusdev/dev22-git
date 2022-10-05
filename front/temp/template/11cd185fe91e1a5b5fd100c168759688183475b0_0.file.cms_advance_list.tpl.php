@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-04 16:34:13
+/* Smarty version 4.0.0, created on 2022-10-04 17:41:12
   from '/var/www/html/front/template/default/_component/cms_advance_list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633bfe15865052_07107730',
+  'unifunc' => 'content_633c0dc8588078_98263533',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '11cd185fe91e1a5b5fd100c168759688183475b0' => 
     array (
       0 => '/var/www/html/front/template/default/_component/cms_advance_list.tpl',
-      1 => 1664876052,
+      1 => 1664880008,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633bfe15865052_07107730 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633c0dc8588078_98263533 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
@@ -106,12 +106,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <div class="container">
       <div class="row align-items-center">
         <div class="col-auto">
-<<<<<<< Updated upstream
-          <div class="h-title">นโยบายและแผน</div>
-=======
           <div class="h-title"><?php echo $_smarty_tpl->tpl_vars['callGroup']->value->fields['subject'];?>
 </div>
->>>>>>> Stashed changes
         </div>
         <?php if (count($_smarty_tpl->tpl_vars['callYear']->value) > 0) {?>
           <div class="col text-right">
