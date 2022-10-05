@@ -29,6 +29,13 @@ body {
     }
 }
 
+.gutters-15 {
+    margin: 0 -7.5px;
+    >div {
+        padding: 0 7.5px;
+    }
+}
+
 .gutters-20 {
     margin: 0 -10px;
     >div {
@@ -47,6 +54,13 @@ body {
     margin: 0 -20px;
     >div {
         padding: 0 20px;
+    }
+}
+
+.gutters-50 {
+    margin: 0 -25px;
+    >div {
+        padding: 0 25px;
     }
 }
 
@@ -332,4 +346,15 @@ textarea {
 .hidden {
     display: none;
     visibility: hidden;
+}
+
+
+@media (min-width: 992px){
+    .gutters-lg-50 {
+        margin: 0 -25px;
+        >div {
+            padding: 0 25px;
+        }
+    }
+    
 }

@@ -9,10 +9,22 @@
         &+li {
             &:before {
                 font-family: 'feather';
-                content: '\e844' !important;
-                color: var(--color-white) !important;
+                content: '\e844';
+                color: var(--color-white) ;
                 padding: 0 6px;
                 // float: left;
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+    .breadcrumb-item {
+        &+.breadcrumb-item {
+            &:before {
+                font-family: 'feather';
+                content: '\e844';
+                color: var(--color-white) ;
+                padding: 0 6px;
                 position: relative;
                 top: 1px;
             }
