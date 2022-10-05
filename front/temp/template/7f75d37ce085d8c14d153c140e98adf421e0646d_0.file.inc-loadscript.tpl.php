@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-09-30 09:43:45
+/* Smarty version 4.0.0, created on 2022-10-04 17:41:12
   from '/var/www/html/front/template/default/inc/inc-loadscript.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633657e18836a2_56630435',
+  'unifunc' => 'content_633c0dc88385c0_53217177',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7f75d37ce085d8c14d153c140e98adf421e0646d' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-loadscript.tpl',
-      1 => 1664505047,
+      1 => 1664879775,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633657e18836a2_56630435 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633c0dc88385c0_53217177 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Core -->
 
 <?php echo '<script'; ?>
@@ -71,6 +71,11 @@ function content_633657e18836a2_56630435 (Smarty_Internal_Template $_smarty_tpl)
  src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/js/select2.min.js"><?php echo '</script'; ?>
 >
+
+<?php echo '<script'; ?>
+ src="//cdn.jsdelivr.net/npm/sweetalert2@11"><?php echo '</script'; ?>
+>
+
 
 
 <?php echo '<script'; ?>

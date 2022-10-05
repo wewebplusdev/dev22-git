@@ -4,16 +4,13 @@
 
 .form-default .form-group {
     position: relative;
-    margin-top: 20px !important;
-    // padding-left: 12.5px;
-    // padding-right: 12.5px;
 }
 
 .form-default .control-label {
     margin-bottom: 10px;
     font-weight: var(--fw-normal);
     font-size: var(--typo-xs);
-    color: var(--color-default);
+    color: var(--color-dark);
     line-height: 1.2em;
 }
 
@@ -49,8 +46,8 @@
     border-radius: 0;
     box-shadow: none;
     font-size: var(--typo-xs);
-    color: var(--color-default);
-    font-weight: var(--fw-default);
+    color: var(--color-dark);
+    font-weight: var(--fw-normal);
     &::-webkit-input-placeholder {
         color: var(--color-gray);
         opacity: 1;

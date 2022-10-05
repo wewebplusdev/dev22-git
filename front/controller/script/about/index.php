@@ -15,7 +15,7 @@ $MasterkeyTemp = "ab_"; // master about like this
 $showslick = true; // slick shows
 
 if (empty($MenuID)) {
-    $MenuID = 'ab_odc';
+    $MenuID = $config['about']['ab_odc']['masterkey'];
 }
 
 ## REQUEST_URI
@@ -35,6 +35,9 @@ $smarty->assign("getMenuDetail", $getMenuDetail);
 $initialSlide = 0;
 if (count($getMenuDetail) > 4) {
     foreach ($getMenuDetail as $key => $valuegetMenuDetail) {
+        if ($MenuID == $config['about']['ab_odw']['masterkey']) { // break loop when master key is equal ab_odw
+            break;
+        }
         if ($valuegetMenuDetail['masterkey'] == $MenuID) {
             break;
         } else {

@@ -18,7 +18,9 @@ $lang['home']['career:detail'] = "If you are another person who has the ability 
 
 $lang['menu']['home'] = "HOME";
 $lang['menu']['about'] = "ABOUT US";
-$lang['menu']['investor'] = "INVESTOR RELATIONS";
+$lang['menu']['service'] = "SERVICE";
+$lang['menu']['research'] = "RESEARCH";
+$lang['menu']['online-service'] = "ONLINE SERVICE";
 $lang['menu']['news'] = "NEWS AND EVENTS";
 $lang['menu']['career'] = "CAREER";
 $lang['menu']['contact'] = "CONTACT US";

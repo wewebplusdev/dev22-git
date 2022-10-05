@@ -17,6 +17,7 @@ $config['memsg']['db']['main'] = "md_memsg";
 $config['memg']['db']['main'] = "md_memg";
 $config['memp']['db']['main'] = "md_mem_position";
 $config['memf']['db']['main'] = "md_memf";
+$config['wel']['db']['main'] = "md_wel";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
@@ -27,6 +28,11 @@ $config['about']['ab_st']['masterkey'] = 'ab_st';
 $config['about']['ab_pcm']['masterkey'] = 'ab_pcm';
 $config['about']['ab_hrm']['masterkey'] = 'ab_hrm';
 $config['about']['ab_qs']['masterkey'] = 'ab_qs';
+$config['about']['sv_gc']['masterkey'] = 'sv_gc';
+$config['about']['rs_ri']['masterkey'] = 'rs_ri';
+$config['about']['osv']['masterkey'] = 'osv';
+$config['about']['mr']['masterkey'] = 'mr';
+$config['about']['plc']['masterkey'] = 'plc';
 
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';

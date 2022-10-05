@@ -4600,6 +4600,7 @@ li.fancybox-thumbs-loading {
   background: #AEAEAE;
   height: 40px;
   line-height: 38px;
+  margin: 0;
 }
 
 .btn-file:hover {
@@ -4680,14 +4681,13 @@ li.fancybox-thumbs-loading {
 
 .form-default .form-group {
   position: relative;
-  margin-top: 20px !important;
 }
 
 .form-default .control-label {
   margin-bottom: 10px;
   font-weight: var(--fw-normal);
   font-size: var(--typo-xs);
-  color: var(--color-default);
+  color: var(--color-dark);
   line-height: 1.2em;
 }
 
@@ -4723,8 +4723,8 @@ li.fancybox-thumbs-loading {
   -webkit-box-shadow: none;
           box-shadow: none;
   font-size: var(--typo-xs);
-  color: var(--color-default);
-  font-weight: var(--fw-default);
+  color: var(--color-dark);
+  font-weight: var(--fw-normal);
 }
 .form-default .block-control .form-control::-webkit-input-placeholder {
   color: var(--color-gray);
@@ -5357,13 +5357,17 @@ div.swal2-html-container {
   color: var(--color-gray);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .attachment-slider .attachment-block {
-    padding: 20px 15px;
+    padding: 30px 15px;
   }
   .attachment-slider .attachment-block .icon {
     width: 40px;
-    margin-right: 15px;
+  }
+}
+@media (max-width: 575px) {
+  .attachment-slider .attachment-block .icon {
+    width: auto;
   }
 }
 .site-header {
@@ -8227,7 +8231,7 @@ fieldset {
 }
 .about.form-about .upload-form {
   padding: 40px;
-  background-color: #cc1212;
+  background-color: rgba(242, 245, 255, 0.5294117647);
 }
 .about.form-about .upload-form .upload-image {
   position: relative;
@@ -8297,6 +8301,9 @@ fieldset {
 .about.form-about .form-default .-nm {
   margin-top: 10px !important;
 }
+.about.form-about .form-default .-nm.I {
+  margin: 0 !important;
+}
 .about.form-about .form-default fieldset .control-legend {
   color: var(--color-primary);
   font-size: var(--typo-xs);
@@ -8307,6 +8314,7 @@ fieldset {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  margin-bottom: 5px;
 }
 .about.form-about .form-default fieldset .form-group.-nm {
   margin-top: 10px !important;
@@ -8329,7 +8337,6 @@ fieldset {
   font-size: var(--typo-default) !important;
 }
 .about.form-about .form-history .font-size-C {
-  font-size: var(--typo-sm) !important;
   color: #0B2845 !important;
 }
 .about.form-about .form-history .font-size-C.-I {
@@ -8413,10 +8420,76 @@ fieldset {
   .gutters-custom > div {
     padding: 0 5px;
   }
+  .about.form-about .upload-form {
+    padding: 20px;
+  }
+  .about.form-about .form-default .form-group {
+    margin-top: 20px !important;
+  }
+  .about.form-about .form-default fieldset .form-group.-nm .-C {
+    top: unset;
+  }
+  .about.form-about .form-default .-np {
+    padding: 0;
+  }
+  .about.form-about .form-default .form-group .form-check-input {
+    margin-top: 0.4em;
+  }
+  .about.form-about .form-default .topic {
+    padding: 0.5rem 0;
+  }
+  .about.form-about .form-history {
+    padding: 30px 0;
+  }
+  .about.form-about .family-datails {
+    margin-top: 15px !important;
+    padding-bottom: 30px;
+  }
+  .about.form-about .family-datails .form-set {
+    padding-top: 15px;
+  }
 }
 @media (max-width: 575px) {
-  .add-form-2 {
-    margin-top: 30px;
+  .add-form-1,
+.add-form-2,
+.add-form-3,
+.add-form-4 {
+    margin-top: 15px;
+    text-align: right;
+  }
+  .add-form-5 {
+    text-align: right;
+    margin: 15px 0;
+  }
+  .about.form-about .form-default .btn-form {
+    width: 80%;
+  }
+  .about.form-about .form-default .form-group {
+    margin-top: 15px !important;
+  }
+  .about.form-about .form-default .control-label {
+    margin-bottom: 5px;
+  }
+  .about.form-about .form-default fieldset .-nm.I {
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+  }
+  .about.form-about .form-default fieldset .-nm.IC {
+    margin-top: 0 !important;
+  }
+  .about.form-about .form-history {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 375px) {
+  .about.form-about .form-default .btn-form {
+    width: 100%;
+  }
+  .about.form-about .form-default .form-group .form-check-input {
+    margin-top: 0.25em;
+  }
+  .about.form-about .form-default .form-group .control-label {
+    height: auto;
   }
 }
 .online-services .h-title {
