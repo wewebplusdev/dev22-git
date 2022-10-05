@@ -27,8 +27,8 @@
     }
     .upload-form {
         padding: 40px;
-        // background-color: #f2f5ff87;
-        background-color: #cc1212;
+        background-color: #f2f5ff87;
+        // background-color: #cc1212;
         .upload-image {
             position: relative;
             background-color: var(--color-white);
@@ -95,6 +95,9 @@
         .-nm {
             margin-top: 10px !important;
         }
+        .-nm.I {
+            margin: 0 !important;
+        }
         fieldset {
             .control-legend {
                 color: var(--color-primary);
@@ -103,6 +106,7 @@
                 height: 20px;
                 display: flex;
                 align-items: flex-end;
+                margin-bottom: 5px;
             }
             .form-group.-nm {
                 margin-top: 10px !important;
@@ -130,7 +134,7 @@
     }
     .form-history {
         .font-size-C {
-            font-size: var(--typo-sm) !important;
+            // font-size: var(--typo-sm) !important;
             color: #0B2845 !important;
         }
         .font-size-C.-I {
@@ -243,14 +247,101 @@
             padding: 0 5px;
         }
     }
-}
-
-@media (max-width: 575px) {
-    .add-form-2 {
-        margin-top: 30px;
+    .about.form-about {
+        .upload-form {
+            padding: 20px;
+        }
+        .form-default {
+            .form-group {
+                margin-top: 20px !important;
+            }
+            fieldset {
+                .form-group.-nm {
+                    .-C {
+                        top: unset;
+                    }
+                }
+            }
+            .-np {
+                padding: 0;
+            }
+            .form-group {
+                .form-check-input {
+                    margin-top: 0.4em;
+                }
+            }
+            .topic {
+                padding: .5rem 0;
+            }
+        }
+        .form-history {
+            padding: 30px 0;
+        }
+        .family-datails {
+            margin-top: 15px !important;
+            padding-bottom: 30px;
+            .form-set {
+                padding-top: 15px;
+            }
+        }
     }
 }
 
-@media (max-width: 375px) {}
+@media (max-width: 575px) {
+    .add-form-1,
+    .add-form-2,
+    .add-form-3,
+    .add-form-4 {
+        margin-top: 15px;
+        text-align: right;
+    }
+    .add-form-5 {
+        text-align: right;
+        margin: 15px 0;
+    }
+    .about.form-about {
+        .form-default {
+            .btn-form {
+                width: 80%;
+            }
+            .form-group {
+                margin-top: 15px !important;
+            }
+            .control-label {
+                margin-bottom: 5px;
+            }
+            fieldset {
+                .-nm.I {
+                    margin-top: 0 !important;
+                    margin-bottom: 5px !important;
+                }
+                .-nm.IC {
+                    margin-top: 0 !important;
+                }
+            }
+        }
+        .form-history {
+            padding: 20px 0;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .about.form-about {
+        .form-default {
+            .btn-form {
+                width: 100%;
+            }
+            .form-group {
+                .form-check-input {
+                    margin-top: 0.25em;
+                }
+                .control-label {
+                    height: auto;
+                }
+            }
+        }
+    }
+}
 
 @media (max-width: 320px) {}

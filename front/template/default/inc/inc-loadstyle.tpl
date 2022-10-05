@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{$template}/assets/css/plugin/animate.min.css">
 <link rel="stylesheet" href="{$template}/assets/css/plugin/select2.min.css">
 <link rel="stylesheet" href="{$template}/assets/css/plugin/slick.css">
+<link rel="stylesheet" href="sweetalert2.min.css">
 
 
 <!-- Custom -->
