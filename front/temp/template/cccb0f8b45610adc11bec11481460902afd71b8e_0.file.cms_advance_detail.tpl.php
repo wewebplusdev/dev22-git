@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-04 10:42:19
+/* Smarty version 4.0.0, created on 2022-10-05 16:28:13
   from '/var/www/html/front/template/default/_component/cms_advance_detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633bab9b0856a2_19153002',
+  'unifunc' => 'content_633d4e2d6b9e37_48410195',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cccb0f8b45610adc11bec11481460902afd71b8e' => 
     array (
       0 => '/var/www/html/front/template/default/_component/cms_advance_detail.tpl',
-      1 => 1664854783,
+      1 => 1664962092,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633bab9b0856a2_19153002 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633d4e2d6b9e37_48410195 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
@@ -32,16 +32,18 @@ echo $_smarty_tpl->tpl_vars['settingModulus']->value['tgp'];?>
       </figure>
       <div class="container">
         <div class="wrapper">
-          <div class="title typo-lg"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['subject'];?>
+          <div class="title typo-lg"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['title'];?>
 </div>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /home"><?php echo $_smarty_tpl->tpl_vars['lang']->value['menu']['home'];?>
 </a></li>
-            <li class="breadcrumb-item"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+            <?php if ($_smarty_tpl->tpl_vars['settingModulus']->value['subject'] != '') {?>
+              <li class="breadcrumb-item"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['menuActive']->value;?>
 "><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['subject'];?>
 </a></li>
+            <?php }?>
             <li class="breadcrumb-item active" aria-current="page"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['breadcrumb'];?>
 </li>
           </ol>

@@ -6,10 +6,12 @@
             </figure>
             <div class="container">
                 <div class="wrapper">
-                    <div class="title typo-lg">{$settingModulus.subject}</div>
+                    <div class="title typo-lg">{$settingModulus.title}</div>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{$ul}/home">{$lang['menu']['home']}</a></li>
-                        <li class="breadcrumb-item"><a href="{$ul}/{$menuActive}">{$settingModulus.subject}</a></li>
+                        {if $settingModulus.subject neq ""}
+                            <li class="breadcrumb-item"><a href="{$ul}/{$menuActive}">{$settingModulus.subject}</a></li>
+                        {/if}
                         <li class="breadcrumb-item active" aria-current="page">{$settingModulus.breadcrumb}</li>
                     </ol>
                 </div>

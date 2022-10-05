@@ -77,6 +77,10 @@ switch ($PageAction) {
         $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
         $smarty->assign("callCMS", $callCMS);
 
+        ## menu lv 2 active
+        $menuidLv2 = $callGroup->fields['id'];
+        $smarty->assign("menuidLv2", $menuidLv2);
+
         ## breadcrumb
         $breadcrumb = explode("-", $callGroup->fields['menuname']);
         $settingModulus['breadcrumb'] = $breadcrumb[0];
@@ -114,3 +118,16 @@ switch ($PageAction) {
         );
         break;
 }
+
+// slick slide
+$initialSlide2 = 0;
+if (count($arrMenu) > 4) {
+    foreach ($arrMenu as $key => $valuearrMenu) {
+        if ($valuearrMenu['id'] == $menuidLv2) {
+            break;
+        } else {
+            $initialSlide2++;
+        }
+    }
+}
+$smarty->assign("initialSlide2", '{"initialSlide": ' . $initialSlide2 . '}');

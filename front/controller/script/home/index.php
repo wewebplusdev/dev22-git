@@ -22,3 +22,6 @@ $urlfull = _FullUrl;
 $smarty->assign("urlfull", $urlfull);
 $smarty->assign("menuActive", $menuActive);
 $smarty->assign("fileInclude", $settingPage);
+$smarty->assign("MenuID", $MenuID);
+$smarty->assign("settingModulus", $settingModulus);
+$smarty->assign("showslick", $showslick);

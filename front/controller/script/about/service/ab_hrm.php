@@ -60,19 +60,6 @@ switch ($PageAction) {
   default:
     $callGroup = $aboutPage->callGroup($MenuID, $ContentID);
 
-    // slick slide
-    $initialSlide2 = 0;
-    if (count($arrMenu) > 4) {
-        foreach ($arrMenu as $key => $valuearrMenu) {
-            if ($valuearrMenu['id'] == $callGroup->fields['id']) {
-                break;
-            } else {
-                $initialSlide2++;
-            }
-        }
-    }
-    $smarty->assign("initialSlide2", '{"initialSlide": ' . $initialSlide2 . '}');
-
     if ($callGroup->_numOfRows < 1) {
         header('location:'.$linklang.'/404');
         exit(0);
@@ -121,6 +108,10 @@ switch ($PageAction) {
         );
     }
 
+    ## menu lv 2 active
+    $menuidLv2 = $callGroup->fields['id'];
+    $smarty->assign("menuidLv2", $menuidLv2);
+
     ## breadcrumb
     $breadcrumb = explode("-", $callGroup->fields['menuname']);
     $settingModulus['breadcrumb'] = $breadcrumb[0];
@@ -153,3 +144,16 @@ switch ($PageAction) {
     /*## Set up pagination #####*/
     break;
 }
+
+// slick slide
+$initialSlide2 = 0;
+if (count($arrMenu) > 4) {
+    foreach ($arrMenu as $key => $valuearrMenu) {
+        if ($valuearrMenu['id'] == $menuidLv2) {
+            break;
+        } else {
+            $initialSlide2++;
+        }
+    }
+}
+$smarty->assign("initialSlide2", '{"initialSlide": ' . $initialSlide2 . '}');
