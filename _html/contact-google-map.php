@@ -24,12 +24,12 @@
                 <ul class="nav-list">
                     <li class="active">
                         <a href="" class="btn btn-border-primary">
-                            แผนที่กราฟิก
+                            แผนที่กูเกิ้ล
                         </a>
                     </li>
                     <li>
                         <a href="" class="btn btn-border-primary">
-                            แผนที่กูเกิ้ล
+                            แผนที่กราฟิก
                         </a>
                     </li>
                 </ul>
