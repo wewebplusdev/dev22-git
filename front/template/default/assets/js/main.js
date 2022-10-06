@@ -1,3 +1,5 @@
+var base_url_lang = $("html").attr("lang");
+var path = $("base").attr("href");
 window.onload = function() {
     // script
 };

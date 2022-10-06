@@ -107,11 +107,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					<td class="divRightNavTb" align="right">
 
 						<!-- ######### Start Menu Sub Mod ########## -->
-						<!-- <div class="menuSubMod">
-							<a href="settingEmail.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
+						<div class="menuSubMod">
+							<a href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
 								<?php echo $langMod["txt:titles"] ?>
 							</a>
-						</div> -->
+						</div>
 						<div class="menuSubMod">
 							<a href="group.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
 								<?php echo $langMod["meu:group"] ?>
@@ -226,7 +226,6 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 		
 	FROM " . $mod_tb_root;
 				$sql = $sql . "  WHERE " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
-				// print_pre($sql);
 				if ($_REQUEST['inputGh'] >= 1) {
 					$sql = $sql . "  AND " . $mod_tb_root . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
 				}

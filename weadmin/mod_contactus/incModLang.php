@@ -62,6 +62,7 @@ $langMod["tit:company"] = "Company Name";
 $langMod["tit:special"] = "Special Requirement";
 $langMod["tit:fname"] = "First Name";
 $langMod["tit:lname"] = "Last Name";
+$langMod["tit:name"] = "Name - Surname";
 
 $langMod["meu:setPermis"] = "Address";
 $langMod["txt:titleadds"] = "". $langMod["meu:setPermis"]." New";
@@ -73,8 +74,11 @@ $langMod["txt:titlesDe"] = "Please enter details. For use in display on your web
 
 $langMod["txt:titleemailset"] = "Email Notify Edit";
 $langMod["tit:emailset"] = "Email";
-$langMod["tit:titlesetting"] = "Title consent";
+$langMod["tit:titlesetting"] = "Subtitle";
 
+$langMod["txt:attfile"] = "Attachment information";
+$langMod["txt:attfileDe"] = "Attachment information To use to display the attachment of this content. In the form of downloading documents stored on a computer on your website. ";
+$langMod["inp:sefile"] = "Select attachment";
 }else{
 		$langMod["meu:group"] = "กลุ่ม".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
@@ -121,5 +125,9 @@ $langMod["tit:titlesetting"] = "Title consent";
 		$langMod["tit:lname"] ="Last Name";
 		$langMod["txt:titleemailset"] = "Email Notify Edit";
 		$langMod["tit:emailset"] = "Email";
+		
+		$langMod["txt:attfile"] = "ข้อมูลเอกสารแนบ";
+		$langMod["txt:attfileDe"] = "ข้อมูลเอกสารแนบ เพื่อใช้ในการแสดงผลเอกสารแนบของเนื้อหานี้ ในรูปแบบของการดาวน์โหลดเอกสารเก็บไว้ในเครื่องคอมพิวเตอร์บนเว็บไซต์ของคุณ";
+		$langMod["inp:sefile"] ="เลือกเอกสารแนบ";
 }
 ?>

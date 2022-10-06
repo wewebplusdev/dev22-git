@@ -27,6 +27,27 @@ $lang['menu']['contact'] = "ติดต่อเรา";
 $lang['menu']['404'] = "ขออภัย ไม่พบหน้าที่คุณกำลังค้นหา";
 $lang['menu']['sitemap'] = "แผนผังเว็บไซต์";
 
+// contact
+$lang['contact']['form'] = "แบบฟอร์มติดต่อเรา";
+$lang['contact']['group'] = "ติดต่อ";
+$lang['contact']['subject'] = "หัวข้อ";
+$lang['contact']['text'] = "ข้อความ";
+$lang['contact']['name'] = "ชื่อ - นามสกุล";
+$lang['contact']['email'] = "อีเมล";
+$lang['contact']['address'] = "ที่อยู่";
+$lang['contact']['tel'] = "เบอร์โทรศัพท์";
+$lang['contact']['graphic-map'] = "แผนที่กราฟฟิค";
+$lang['contact']['google-map'] = "แผนที่กูเกิล";
+$lang['contact']['download-map'] = "ดาวน์โหลดแผนที่";
+$lang['contact']['misconduct-complaint'] = "ระบบร้องเรียนการทุจริตและประพฤติมิชอบ";
+$lang['contact']['feedback-system'] = "ระบบร้องเรียน/ เสนอแนะออนไลน์ (เรื่องทั่วไป)";
+$lang['contact']['title_success'] = "บันทึกข้อมูลเรียบร้อยแล้ว";
+$lang['contact']['title_fail'] = "เกิดข้อผิดพลาดในการทำงาน";
+$lang['contact']['msg_success'] = "ทางเราได้รับข้อมูลของท่านเรียบร้อยแล้ว ขอขอบพระคุณที่ใช้บริการ";
+$lang['contact']['msg_fail'] = "บันทึกข้อมูลไม่สำเร็จ โปรดลองใหม่อีกครั้ง";
+$lang['contact']['working'] = "วันและเวลาทำการ";
+$lang['contact']['timmer'] = "วันจันทร์ - ศุกร์ เวลา 8.30 - 16.30 น. ";
+
 $lang['system']['close'] = "ปิด";
 $lang['system']['ducdownload'] = "เอกสารดาวน์โหลด";
 $lang['system']['share'] = "แบ่งปัน";
@@ -67,6 +88,10 @@ $lang['system']['all'] = "ทั้งหมด";
 $lang['system']['lastdate'] = "ปรับปรุงเมื่อ";
 $lang['system']['viewmore'] = "อ่านต่อ";
 $lang['system']['readmore2'] = "อ่านรายละเอียด";
+$lang['system']['submit'] = "ส่งข้อมูล";
+$lang['system']['cancel'] = "ยกเลิก";
+$lang['system']['fill'] = "กรอก";
+$lang['system']['fill'] = "กรอก";
 
 $lang['login']['email'] = "อีเมล";
 $lang['login']['password'] = "รหัสผ่าน";
