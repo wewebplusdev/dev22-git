@@ -47,7 +47,7 @@
                                 <a href="https://www.git.or.th/complainSystem/default.aspx" class="btn btn-primary" title="ระบบร้องเรียนการทุจริตและประพฤติมิชอบ" target="_blank">
                                     ระบบร้องเรียนการทุจริตและประพฤติมิชอบ
                                 </a>
-                                <a href="https://www.git.or.th/complainSystem/General.aspx" class="btn btn-border-primary" title="ระบบร้องเรียน/ เสนอแนะออนไลน์ (เรื่องทั่วไป)" target="_blank">
+                                <a href="https://www.git.or.th/complainSystem/General.aspx" class="btn btn-primary" title="ระบบร้องเรียน/ เสนอแนะออนไลน์ (เรื่องทั่วไป)" target="_blank">
                                     ระบบร้องเรียน/ เสนอแนะออนไลน์ (เรื่องทั่วไป)
                                 </a>
                             </div>
@@ -79,9 +79,11 @@
                     </div>
                 </div>
                 <div class="map-block">
-                    <div class="iframe-container">
-                        <iframe class="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7751.732215638551!2d100.528245!3d13.726555!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2984903b1c6a5de!2sThe%20Gem%20and%20Jewelry%20Institute%20of%20Thailand%20(Public%20Organization)!5e0!3m2!1sth!2sus!4v1664961253439!5m2!1sth!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                    <!-- <a href="" class="link"> -->
+                        <div class="iframe-container">
+                            <iframe class="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7751.732215638551!2d100.528245!3d13.726555!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2984903b1c6a5de!2sThe%20Gem%20and%20Jewelry%20Institute%20of%20Thailand%20(Public%20Organization)!5e0!3m2!1sth!2sus!4v1664961253439!5m2!1sth!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    <!-- </a> -->
                 </div>
                 <div class="container">
                     <div class="form-block">
@@ -92,9 +94,12 @@
                                 <div class="col-md-6">
                                     <div class="form-group has-feedback">
                                         <label class="control-label" for="contact">ติดต่อ</label>
-                                        <div class="block-control">
-                                            <input type="text" class="form-control" id="contact" placeholder="ร้องเรียน" data-error="">
-                                            <span class="form-control-feedback" aria-hidden="true"></span>
+                                        <div class="select-wrapper">
+                                            <select class="select-control" name="contact" id="contact" style="width: 100%;">
+                                                <option value="SELECT1">ร้องเรียน</option>
+                                                <option value="SELECT2">ระบบร้องเรียนการทุจริตและประพฤติมิชอบ</option>
+                                                <option value="SELECT2">ระบบร้องเรียน/ เสนอแนะออนไลน์ (เรื่องทั่วไป)</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group has-feedback">
@@ -115,7 +120,16 @@
                                 </div>
                                 <div class="col-md-6 order-md-2 order-first">
                                     <div class="graphic-map">
-                                        <div class="title">แผนที่กราฟฟิค</div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="title">แผนที่กราฟฟิค</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="" class="link" title="ดาวน์โหลดแผนที่">
+                                                    <span class="feather icon-download"></span>ดาวน์โหลดแผนที่
+                                                </a>
+                                            </div>
+                                        </div>
                                         <figure class="cover">
                                             <img src="<?php echo $core_template; ?>/assets/img/static/graphic-map.jpg" alt="แผนที่กราฟฟิค">
                                         </figure>
@@ -205,9 +219,11 @@
         </section>
 
         <?php include('inc/footer.php'); ?>
+
     </div>
 
     <?php include('inc/loadscript.php'); ?>
+
 
 </body>
 

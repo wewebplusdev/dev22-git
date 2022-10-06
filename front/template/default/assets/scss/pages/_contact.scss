@@ -50,9 +50,18 @@
         }
     }
     .graphic-map {
-        .title {
+        .title,
+        .link {
             font-size: var(--typo-xs);
             margin-bottom: 8px;
+        }
+        .link {
+            display: block;
+            color: var(--color-primary-light);
+            span {
+                font-size: 16px;
+                margin-right: 5px;
+            }
         }
         .cover {
             padding-bottom: 68%;
@@ -61,4 +70,33 @@
     .form-default .form-group {
         margin-top: 0 !important;
     }
+}
+
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+    .contact-page .map-block .iframe-container {
+        padding-top: 24%;
+    }
+    .contact-page .form-block {
+        padding-top: 1rem;
+    }
+    .contact-page .contact-list {
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
 }

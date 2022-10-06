@@ -8703,9 +8703,18 @@ fieldset {
   border-radius: var(--circle);
   margin-right: 15px;
 }
-.contact-page .graphic-map .title {
+.contact-page .graphic-map .title,
+.contact-page .graphic-map .link {
   font-size: var(--typo-xs);
   margin-bottom: 8px;
+}
+.contact-page .graphic-map .link {
+  display: block;
+  color: var(--color-primary-light);
+}
+.contact-page .graphic-map .link span {
+  font-size: 16px;
+  margin-right: 5px;
 }
 .contact-page .graphic-map .cover {
   padding-bottom: 68%;
@@ -8714,6 +8723,18 @@ fieldset {
   margin-top: 0 !important;
 }
 
+@media (max-width: 991px) {
+  .contact-page .map-block .iframe-container {
+    padding-top: 24%;
+  }
+  .contact-page .form-block {
+    padding-top: 1rem;
+  }
+  .contact-page .contact-list {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+}
 .theme-style-2 .text-primary {
   color: var(--color-black) !important;
 }
