@@ -7,20 +7,20 @@
             text-align: center;
             margin: 30px 0;
         }
-        .border-block {
-            margin: 30px 0;
-            .border-title {
-                font-size: var(--typo-xs);
-                color: var(--color-dark);
-                border: 1px solid #D0DBFF;
-                padding: 30px 100px;
-            }
-            .border-desc {
-                border: 1px solid #D0DBFF;
-                border-top: 1px solid transparent;
-                padding: 30px 100px;
-            }
-        }
+        // .border-block {
+        //     margin: 30px 0;
+        //     .border-title {
+        //         font-size: var(--typo-xs);
+        //         color: var(--color-dark);
+        //         border: 1px solid #D0DBFF;
+        //         padding: 30px 100px;
+        //     }
+        //     .border-desc {
+        //         border: 1px solid #D0DBFF;
+        //         border-top: 1px solid transparent;
+        //         padding: 30px 100px;
+        //     }
+        // }
         .border-block.II {
             .border-title {
                 padding: 30px 50px;

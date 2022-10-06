@@ -1,37 +1,57 @@
-div.swal2-popup{
+div.swal2-popup {
     border-radius: 0;
     width: 26em;
     padding-bottom: 40px;
     color: var(--color-default);
     background-color: var(--color-light);
 }
-div.swal2-icon{
+
+div.swal2-icon {
     margin-top: 40px;
     margin-bottom: 0;
 }
-h2.swal2-title{
-    padding-top: 15px;
-    font-size: var(--typo-default);
-    font-weight: var(--fw-normal);
+
+div.swal2-icon.swal2-success {
+    border-color: var(--color-primary);
     color: var(--color-primary);
 }
-div.swal2-html-container{
+
+div.swal2-icon.swal2-success .swal2-success-ring {
+    border-color: #013f947d;
+}
+
+div.swal2-icon.swal2-success [class^=swal2-success-line] {
+    background-color: var(--color-primary);
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: var(--color-primary) !important;
+}
+
+h2.swal2-title {
+    padding-top: 15px;
+    font-size: var(--typo-lg);
+    font-weight: var(--fw-bold);
+    color: var(--color-primary);
+}
+
+div.swal2-html-container {
     margin-top: 15px;
     margin-bottom: 10px;
     margin-left: 3em;
     margin-right: 3em;
     font-size: var(--typo-default);
     font-weight: var(--fw-normal);
-    color: var(--color-primary);
+    color: var(--color-dark);
     overflow: visible;
     line-height: 1.4em;
 }
-.swal2-actions{
-    .btn{
+
+.swal2-actions {
+    .btn {
         margin: 0 5px;
     }
 }
-
 
 // @supports (backdrop-filter: none) {
 //     div.swal2-container.swal2-backdrop-show, 

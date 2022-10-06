@@ -58,7 +58,6 @@
                 </div>
 
                 <div class="border-nav-slider"></div>
-
                 <div class="container mt-5">
                     <h2 class="text-primary mb-4">คณะกรรมการสถาบัน</h2>
                     <div class="default-tab-slider default-slick">
@@ -103,6 +102,35 @@
                 <div class="container">
 
                     <div class="editor-content">
+                        <div class="h-title">แหล่งงาน</div>
+                        <div class="default-bar">
+                            <div class="row">
+                                <div class="col-md">
+                                    <div class="whead">
+                                        <div class="h-title">หัวหน้าฝ่ายวิจัยและพัฒนาอัญมณีและเครื่องประดับ</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto">
+                                    <div class="social-block">
+                                        <div class="title">Share :</div>
+                                        <ul class="item-list">
+                                            <li>
+                                                <img src="<?php echo $core_template; ?>/assets/img/icon/" alt="">
+                                            </li>
+                                            <li>
+                                                <img src="<?php echo $core_template; ?>/assets/img/icon/" alt="">
+                                            </li>
+                                            <li>
+                                                <img src="<?php echo $core_template; ?>/assets/img/icon/" alt="">
+                                            </li>
+                                            <li>
+                                                <img src="<?php echo $core_template; ?>/assets/img/icon/" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="border-nav-slider pt-5"></div>
                     <div class="youtube-block pt-4">

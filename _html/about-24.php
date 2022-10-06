@@ -2522,7 +2522,7 @@
                                         <input class="form-check-input radio-check -C" type="radio" name="exampleRadios" id="personal-recommendation" value="option1" checked>
                                         <label class="control-label" for="personal-recommendation">
                                             เจ้าหน้าที่สภาบัน ชื่อ
-                                            
+
                                             personal-recommendation
                                         </label>
                                     </div>
@@ -2920,6 +2920,33 @@
         <?php include('inc/footer.php'); ?>
     </div>
     <?php include('inc/loadscript.php'); ?>
+
+    <script>
+        Swal.fire({
+            // popup: 'popup-class',
+            title: 'แบบคำขอใช้สิทธิข้อมูลส่วนบุคคล บันทึกข้อมูลเรียบร้อยแล้ว',
+            text: 'ทางเราได้รับข้อมูลของท่านเรียบร้อยแล้ว ขอขอบพระคุณที่ใช่บริการ',
+            icon: 'success',
+            confirmButtonText: 'ตกลง'
+        })
+        // Swal.fire({
+        //     customClass: {
+        //     container: 'container-class',
+        //     popup: 'popup-class',
+        //     header: 'header-class',
+        //     title: 'title-class',
+        //     closeButton: 'close-button-class',
+        //     icon: 'icon-class',
+        //     image: 'image-class',
+        //     content: 'content-class',
+        //     input: 'input-class',
+        //     actions: 'actions-class',
+        //     confirmButton: 'confirm-button-class',
+        //     cancelButton: 'cancel-button-class',
+        //     footer: 'footer-class'
+        //     }
+        // })
+    </script>
 </body>
 
 </html>
