@@ -4653,24 +4653,38 @@ li.fancybox-thumbs-loading {
     line-height: 53px;
   }
 }
-.editor-content {
+.editor-content,
+.default-page .editor-content {
   font-size: var(--typo-default);
   color: var(--color-default);
   line-height: 1.4em;
 }
-.editor-content .title {
+.editor-content .title,
+.default-page .editor-content .title {
   color: var(--color-dark);
   font-size: var(--typo-sm);
   font-weight: var(--fw-normal);
 }
-.editor-content p {
+.editor-content .desc,
+.default-page .editor-content .desc {
   font-size: var(--typo-xs);
   margin-bottom: 20px;
 }
-.editor-content p:last-child {
+.editor-content .desc:last-child,
+.default-page .editor-content .desc:last-child {
   margin-bottom: 0;
 }
-.editor-content img {
+.editor-content p,
+.default-page .editor-content p {
+  font-size: var(--typo-xs);
+  margin-bottom: 20px;
+}
+.editor-content p:last-child,
+.default-page .editor-content p:last-child {
+  margin-bottom: 0;
+}
+.editor-content img,
+.default-page .editor-content img {
   height: auto !important;
   margin-bottom: 20px;
 }
@@ -7739,6 +7753,12 @@ fieldset {
 .default-header .top-graphic.text-primary .wrapper .breadcrumb .breadcrumb-item a {
   color: var(--color-primary);
 }
+.default-header .top-graphic.text-dark .wrapper .title,
+.default-header .top-graphic.text-dark .breadcrumb li + li:before,
+.default-header .top-graphic.text-dark .wrapper .breadcrumb .breadcrumb-item,
+.default-header .top-graphic.text-dark .wrapper .breadcrumb .breadcrumb-item a {
+  color: var(--color-dark);
+}
 
 .default-nav-slider {
   position: relative;
@@ -8544,6 +8564,7 @@ fieldset {
   position: absolute;
   top: 0;
   right: 0;
+  text-transform: uppercase;
   color: var(--color-primary);
   max-height: 100%;
 }
@@ -8893,6 +8914,20 @@ fieldset {
     padding-top: calc(100vh - 135px);
   }
 }
+.pdpa-page .default-nav-slider .item {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.pdpa-page .h-title {
+  margin-bottom: 3rem;
+}
+.pdpa-page .title {
+  margin-bottom: 0.5rem;
+}
+.pdpa-page .desc {
+  margin-bottom: 30px;
+}
+
 .theme-style-2 .text-primary {
   color: var(--color-black) !important;
 }
