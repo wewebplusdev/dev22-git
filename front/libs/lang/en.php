@@ -27,6 +27,31 @@ $lang['menu']['contact'] = "CONTACT US";
 $lang['menu']['404'] = "PAGE NOT FOUND";
 $lang['menu']['sitemap'] = "SITEMAP";
 
+// contact
+$lang['contact']['form'] = "Contact us form";
+$lang['contact']['group'] = "Contact";
+$lang['contact']['subject'] = "Subject";
+$lang['contact']['text'] = "Message";
+$lang['contact']['name'] = "Name - Surname";
+$lang['contact']['email'] = "Email";
+$lang['contact']['address'] = "Address";
+$lang['contact']['tel'] = "Tel";
+$lang['contact']['graphic-map'] = "Graphic Map";
+$lang['contact']['google-map'] = "google Map";
+$lang['contact']['download-map'] = "Map Download";
+$lang['contact']['misconduct-complaint'] = "Fraud and Misconduct Complaint System";
+$lang['contact']['feedback-system'] = "Online Complaint/Feedback System (general)";
+$lang['contact']['success_msg_desc'] = "We have received information from you. <br>Thank you for using the service";
+$lang['contact']['error_msg'] = "Sorry, the transaction was not successful.";
+$lang['contact']['error_msg_desc'] = "Please try again later.";
+$lang['contact']['thank_you_desc'] = "Thank you for taking the time to contact us.<br/> We'll be in touch shortly.";
+$lang['contact']['title_success'] = "The data was saved successfully.";
+$lang['contact']['title_fail'] = "Error working please try again.";
+$lang['contact']['msg_success'] = "We have received your information already. Thank you for using the service.";
+$lang['contact']['msg_fail'] = "Failed to save data. Please try again.";
+$lang['contact']['working'] = "Working day and hours";
+$lang['contact']['timmer'] = "Monday-Friday 8:30 A.M. - 5:30 P.M. ";
+
 $lang['system']['close'] = "Close";
 $lang['system']['ducdownload'] = "Document Download";
 $lang['system']['share'] = "share";
@@ -62,6 +87,9 @@ $lang['system']['all'] = "Total";
 $lang['system']['lastdate'] = "Last Update";
 $lang['system']['viewmore'] = "Read More";
 $lang['system']['readmore2'] = "Read Details";
+$lang['system']['submit'] = "Submit";
+$lang['system']['cancel'] = "Cancel";
+$lang['system']['fill'] = "Fill";
 
 $lang['pagination']['total'] = "Total";
 $lang['pagination']['per'] = "Page";

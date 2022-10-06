@@ -4,9 +4,9 @@ $smarty->assign("callSetWebsite", $callSetWebsite);
 $infoSetting = $callSetWebsite->callSetting();
 
 /* Start Google Recaptcha */
-$sitekey = '6Lfdr9ofAAAAAJ58ujhLf_Uh41snFL1Alx7QfEEC';
+$sitekey = '6LfP21siAAAAADlhcMQ0tNH_528_DWC67mmqSxRa';
 $smarty->assign("sitekey", $sitekey);
-$secretkey = '6Lfdr9ofAAAAAFighzBCgBIcb04AKKKisRJ8YoWG';
+$secretkey = '6LfP21siAAAAADZThwKgdO_EN9w6atBwzyiBcCAR';
 $smarty->assign("secretkey", $secretkey);
 /* End Google Recaptcha */
 
@@ -453,5 +453,150 @@ class settingWebsite
         // print_pre($sql);
         $result = $db->execute($sql);
         return $result;
+    }
+
+    function template_mail($body){
+        global $settingWeb, $path_template, $templateweb, $url;
+        $strHTML = "<!doctype html>
+        <html lang='en'>
+        
+        <head>
+            <meta charset='utf-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet'
+                integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous'>
+        </head>
+        
+        <body>
+            <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
+                <tbody>
+                    <tr>
+                        <td>
+                            <table style='font-family: Arial, sans-serif; border: 1px solid #ebebeb; height: 629px;' border='0'
+                                width='600' cellspacing='0' cellpadding='0' align='center'>
+                                <tbody>
+                                    <tr style='height: 22px;'>
+                                        <td style='height: 22px; width: 596px; padding-top: 10px;border-bottom:1px solid #ebebeb;'>
+                                            <table style='width: 100%;' border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style='width: 2%;'></td>
+                                                        <td style='width: 24.9161%;'><img
+                                                                src='"._URL."/".$path_template[$templateweb][0]."/assets/img/static/git-logo.png'
+                                                                style='width: 90px;' alt='git-logo.png'></td>
+                                                        <td
+                                                            style='width: 54.9161%; font-size: 14px; color: #666;text-align: right;padding-right: 20px;'>
+                                                            <b>".$settingWeb['contact']['address'.$url->pagelang[3]]."</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>";
+        $strHTML .= $body;
+        
+        $strHTML .="                <tr style='height: 298px;'>
+                                        <td style='height: 298px; width: 596px;'>
+                                            <table style='background-color: #fbfbfb;' border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
+                                                <tbody>
+                                    <tr>
+                                        <td width='40'>&nbsp;</td>
+                                        <td valign='top'>
+                                            <table style='background-color: #fbfbfb; height: 186px; width: 100%;' border='0' width='100%'
+                                                cellspacing='0' cellpadding='0' align='center'>
+                                                <tbody>
+                                                    <tr style='height: 45px;'>
+                                                        <td style='height: 45px;'>
+                                                            <div style='font-size: 13px; font-weight: bold; color: #037ee5; line-height: 1.2em;'>
+                                                            ".$settingWeb['subjectoffice']."</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style='height: 18px;'>
+                                                        <td style='height: 18px;' height='8'>&nbsp;</td>
+                                                    </tr>
+                                                    <tr style='height: 18px;'>
+                                                        <td style='height: 18px;'>
+                                                            <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div style='font-size: 11px; color: #666;'><img
+                                                                                    style='display: inline-block; vertical-align: middle;'
+                                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/template-tel.jpg' alt='template-tel.jpg' />".$settingWeb['contact']['tel']."</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div style='font-size: 11px; color: #666;'><img
+                                                                                    style='display: inline-block; vertical-align: middle;'
+                                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/template-fax.jpg' alt='template-fax.jpg' />".$settingWeb['contact']['fax']."</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div style='font-size: 11px; color: #666;'><img
+                                                                                    style='display: inline-block; vertical-align: middle;'
+                                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/template-email.jpg'
+                                                                                    alt='template-email.jpg' />".$settingWeb['contact']['email']."</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    <tr style='height: 18px;'>
+                                                        <td style='height: 18px;'>";
+                                                            if ($settingWeb['social']['Facebook']['link'] != "" && $settingWeb['social']['Facebook']['link'] != "#") {
+                                                                $strHTML .="<a title='Facebook' href='".$settingWeb['social']['Facebook']['link']."'
+                                                                    target='_blank' rel='nofollow'><img
+                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/social-fb.png' alt='social-fb.png'
+                                                                    height='30' /></a>";
+                                                            }
+                                                            if ($settingWeb['social']['Twitter']['link'] != "" && $settingWeb['social']['Twitter']['link'] != "#") {
+                                                                $strHTML .="<a title='Twitter' href='".$settingWeb['social']['Twitter']['link']."' target='_blank'
+                                                                    rel='nofollow'><img src='"._URL . $path_template[$templateweb][0]."/assets/img/static/social-tw.png'
+                                                                    alt='social-tw.png' height='30' /></a>";
+                                                            }
+                                                            if ($settingWeb['social']['Instagram']['link'] != "" && $settingWeb['social']['Instagram']['link'] != "#") {
+                                                                $strHTML .="<a title='Instagram' href='".$settingWeb['social']['Instagram']['link']."' target='_blank'
+                                                                    rel='nofollow'><img src='"._URL . $path_template[$templateweb][0]."/assets/img/static/social-ig.png'
+                                                                    alt='social-ig.png' height='30' /></a>";
+                                                            }
+                                                            if ($settingWeb['social']['Youtube']['link'] != "" && $settingWeb['social']['Youtube']['link'] != "#") {
+                                                                $strHTML .="<a title='Youtube' href='".$settingWeb['social']['Instagram']['link']."'
+                                                                    target='_blank' rel='nofollow'><img
+                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/social-yt.png' alt='social-yt.png'
+                                                                    height='30' /></a>";
+                                                            }
+                                            $strHTML .=" </td>
+                                                    </tr>
+                                                    <tr style='height: 20px;'>
+                                                        <td style='height: 20px;' height='20'>&nbsp;</td>
+                                                    </tr>
+                                                    <tr style='height: 13px;'>
+                                                        <td style='height: 13px;'>
+                                                            <div style='font-size: 11px; color: #999; line-height: 1.2em;'>Copyright &copy;
+                                                            2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td colspan='5' height='30'>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js'
+        integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous'>
+        </script>
+        </body>
+
+        </html>";
+
+        return $strHTML;
     }
 }

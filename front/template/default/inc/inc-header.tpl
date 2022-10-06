@@ -299,7 +299,6 @@
 							เกี่ยวกับเรา
 						</a>
 					</li>
-					<?php for ($i = 1; $i <= 5; $i++) { ?>
 
 					<li class="dropdown-item">
 						<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">ทิศทางองค์กร</a>
@@ -318,7 +317,6 @@
 							</li>
 						</ul>
 					</li>
-					<?php } ?>
 				</ul>
 			</li>
 			<li class="service-menu dropright">
@@ -333,7 +331,6 @@
 						</a>
 					</li>
 
-					<?php for ($i = 1; $i <= 2; $i++) { ?>
 
 					<li class="dropdown-item active">
 						<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">งานบริการ</a>
@@ -352,7 +349,6 @@
 							</li>
 						</ul>
 					</li>
-					<?php } ?>
 				</ul>
 			</li>
 			<li>
@@ -388,9 +384,3 @@
 		</ul>
 	</div>
 </div>
-
-
-
-<?php for ($i = 1; $i <= 8; $i++) { ?>
-
-<?php } ?>

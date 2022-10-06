@@ -5,6 +5,7 @@ $mod_tb_root_group = "md_cug";
 $mod_tb_root_email = "md_cue";
 // $mod_tb_setting = "md_cuss";
 $mod_tb_setting = "md_cmss2";
+$mod_tb_file = "md_cmsf";
 ## Mod Folder ###################################
 $mod_fd_root = "mod_contactus";
 
