@@ -87,11 +87,11 @@ if ($_REQUEST['inputSearch'] != "") {
                                 <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <?php echo $valNav2?></span></td>
                         <td  class="divRightNavTb" align="right">
                         <!-- ######### Start Menu Sub Mod ########## -->
-                        <!-- <div class="menuSubMod">
-                            <a  href="../mod_contactus_address/index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                <?php echo $langMod["meu:setPermis"] ?>
+                        <div class="menuSubMod ">
+                            <a  href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
+                                <?php echo $langMod["txt:titles"] ?>
                             </a>
-                        </div> -->
+                        </div>
                         <div class="menuSubMod active">
                             <a  href="group.php?masterkey=<?php echo $_REQUEST['masterkey']?>&menukeyid=<?php echo $_REQUEST['menukeyid']?>">
 								<?php echo $langMod["meu:group"]?>

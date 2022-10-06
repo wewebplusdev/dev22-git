@@ -18,6 +18,11 @@ $config['memg']['db']['main'] = "md_memg";
 $config['memp']['db']['main'] = "md_mem_position";
 $config['memf']['db']['main'] = "md_memf";
 $config['wel']['db']['main'] = "md_wel";
+$config['cmss']['db']['main'] = "md_cmss2";
+$config['cmsf']['db']['main'] = "md_cmsf";
+$config['cug']['db']['main'] = "md_cug";
+$config['cus']['db']['main'] = "md_cus";
+$config['cue']['db']['main'] = "md_cue";  
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
@@ -33,6 +38,7 @@ $config['about']['rs_ri']['masterkey'] = 'rs_ri';
 $config['about']['osv']['masterkey'] = 'osv';
 $config['about']['mr']['masterkey'] = 'mr';
 $config['about']['plc']['masterkey'] = 'plc';
+$config['contact']['cu']['masterkey'] = 'cu';
 
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';

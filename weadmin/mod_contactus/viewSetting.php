@@ -42,6 +42,7 @@ $sql .= " , " . $mod_tb_setting . "_urlfile as urlfile , " . $mod_tb_setting . "
 $sql .= " , " . $mod_tb_setting . "_fileen as fileen , " . $mod_tb_setting . "_filenameen as filenameen  ";
 $sql .= " , " . $mod_tb_setting . "_filecn as filecn , " . $mod_tb_setting . "_filenamecn as filenamecn  ";
 $sql .= " , " . $mod_tb_setting . "_subjecten as subjecten , " . $mod_tb_setting . "_titleen as titleen  ";
+$sql .= " , " . $mod_tb_setting . "_subjectcn as subjectcn , " . $mod_tb_setting . "_titlecn as titlecn  ";
 $sql .= " FROM " . $mod_tb_setting . "  WHERE " . $mod_tb_setting . "_masterkey='" . $_REQUEST["masterkey"] . "' ";
 
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
@@ -101,6 +102,7 @@ if (empty($numRow)) {
         $sql .= " , " . $mod_tb_setting . "_fileen as fileen , " . $mod_tb_setting . "_filenameen as filenameen  ";
         $sql .= " , " . $mod_tb_setting . "_filecn as filecn , " . $mod_tb_setting . "_filenamecn as filenamecn  ";
         $sql .= " , " . $mod_tb_setting . "_subjecten as subjecten , " . $mod_tb_setting . "_titleen as titleen  ";
+        $sql .= " , " . $mod_tb_setting . "_subjectcn as subjectcn , " . $mod_tb_setting . "_titlecn as titlecn  ";
         $sql .= " FROM " . $mod_tb_setting . " WHERE " . $mod_tb_setting . "_masterkey='" . $_REQUEST["masterkey"] . "' ";
         $Query = wewebQueryDB($coreLanguageSQL, $sql);
         $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
@@ -172,6 +174,8 @@ $valUrlFileCn = $Row['urlfilecn'];
 
 $valSubjecten = $Row['subjecten'];
 $valTitleen = $Row['titleen'];
+$valSubjectcn = $Row['subjectcn'];
+$valTitlecn = $Row['titlecn'];
 
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 
@@ -209,21 +213,21 @@ logs_access('3', 'View');
                         <td class="divRightNavTb" align="left" id="defTop"><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1 ?>" target="_self"><?php echo $valNav1 ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /><?php echo $langMod["txt:titles"] ?></span></td>
                         <td class="divRightNavTb" align="right">
                             <!-- ######### Start Menu Sub Mod ########## -->
-                            <div class="menuSubMod">
-                                <a  href="settingEmail.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                    <?php echo $langMod["meu:contant"] ?> Email
-                                </a>
-                            </div>
                             <div class="menuSubMod active">
                                 <a  href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                                     <?php echo $langMod["txt:titles"] ?>
                                 </a>
                             </div>
                             <div class="menuSubMod">
-                              <a  href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                              <?php echo $langMod["meu:contant"] ?>
-                              </a>
-                          </div>
+							<a href="group.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
+								<?php echo $langMod["meu:group"] ?>
+							</a>
+                            </div>
+                            <div class="menuSubMod">
+                                <a href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
+                                    <?php echo $langMod["meu:contant"] ?>
+                                </a>
+                            </div>
                             <!-- ######### End Menu Sub Mod ########## -->
                         </td>
                     </tr>
@@ -311,6 +315,46 @@ logs_access('3', 'View');
                 </tr>
             </table>
             <br style="display: none;"/>
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:attfileDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:attfile"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView">
+                            <?php
+                            $sql = "SELECT " . $mod_tb_file . "_id," . $mod_tb_file . "_filename," . $mod_tb_file . "_name," . $mod_tb_file . "_download FROM " . $mod_tb_file . " WHERE " . $mod_tb_file . "_contantid 	='" . $valID . "' AND " . $mod_tb_file . "_language ='thai' ORDER BY " . $mod_tb_file . "_id ASC";
+                            $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                            $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                            if ($number_row >= 1) {
+                                $txtFile = "";
+                                while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                                    $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                                    $downloadFile = $row_file[1];
+                                    $downloadID = $row_file[0];
+                                    $downloadName = $row_file[2];
+                                    $countDownload = $row_file[3];
+                                    $imageType = strstr($downloadFile, '.');
+                            ?>
+
+                                    <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                                    <div></div>
+
+                            <?php
+                                }
+                            } else {
+                                echo "-";
+                            }
+                            ?>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder "> 
                 <tr >
                     <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -348,7 +392,123 @@ logs_access('3', 'View');
                 </tr>
             </table>
             <br style="display: none;"/>
-            
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:eng"] ?>)<?php } ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:attfileDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:attfile"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView">
+                            <?php
+                            $sql = "SELECT " . $mod_tb_file . "_id," . $mod_tb_file . "_filename," . $mod_tb_file . "_name," . $mod_tb_file . "_download FROM " . $mod_tb_file . " WHERE " . $mod_tb_file . "_contantid 	='" . $valID . "' AND " . $mod_tb_file . "_language ='eng' ORDER BY " . $mod_tb_file . "_id ASC";
+                            $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                            $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                            if ($number_row >= 1) {
+                                $txtFile = "";
+                                while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                                    $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                                    $downloadFile = $row_file[1];
+                                    $downloadID = $row_file[0];
+                                    $downloadName = $row_file[2];
+                                    $countDownload = $row_file[3];
+                                    $imageType = strstr($downloadFile, '.');
+                            ?>
+
+                                    <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                                    <div></div>
+
+                            <?php
+                                }
+                            } else {
+                                echo "-";
+                            }
+                            ?>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder "> 
+                <tr >
+                    <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo  $langMod["txt:titles"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:chi"] ?>)<?php } ?></span><br/>
+                        <span class="formFontTileTxt"><?php echo  $langMod["txt:titlesDe"] ?></span>    </td>
+                </tr>
+                <tr >
+                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:subject"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valSubjectcn ?></div></td>
+                </tr>
+                <tr >
+                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:titlesetting"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valTitlecn ?></div></td>
+                </tr>
+            </table>
+            <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " style="display: none;">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:titsets"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?>(<?php echo $langTxt["lg:eng"] ?>)<?php } ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="left" valign="top" class="formTileTxt">
+                        <div class="viewEditorTileTxt">
+                            <?php
+                            $fd = @fopen($valHtmlCN, "r");
+                            $contents = @fread($fd, filesize($valHtmlCN));
+                            @fclose($fd);
+                            echo txtReplaceHTML($contents);
+                            ?>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br style="display: none;"/>
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:chi"] ?>)<?php } ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:attfileDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:attfile"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView">
+                            <?php
+                            $sql = "SELECT " . $mod_tb_file . "_id," . $mod_tb_file . "_filename," . $mod_tb_file . "_name," . $mod_tb_file . "_download FROM " . $mod_tb_file . " WHERE " . $mod_tb_file . "_contantid 	='" . $valID . "' AND " . $mod_tb_file . "_language ='chi' ORDER BY " . $mod_tb_file . "_id ASC";
+                            $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                            $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                            if ($number_row >= 1) {
+                                $txtFile = "";
+                                while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                                    $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                                    $downloadFile = $row_file[1];
+                                    $downloadID = $row_file[0];
+                                    $downloadName = $row_file[2];
+                                    $countDownload = $row_file[3];
+                                    $imageType = strstr($downloadFile, '.');
+                            ?>
+
+                                    <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                                    <div></div>
+
+                            <?php
+                                }
+                            } else {
+                                echo "-";
+                            }
+                            ?>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">

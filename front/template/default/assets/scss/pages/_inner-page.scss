@@ -94,6 +94,14 @@
                 color: var(--color-primary);
             }
         }
+        &.text-dark {
+            .wrapper .title,
+            .breadcrumb li + li:before,
+            .wrapper .breadcrumb .breadcrumb-item,
+            .wrapper .breadcrumb .breadcrumb-item a {
+                color: var(--color-dark);
+            }
+        }
     }
 }
 

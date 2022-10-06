@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-09-30 09:43:45
+/* Smarty version 4.0.0, created on 2022-10-06 17:14:23
   from '/var/www/html/front/template/default/inc/inc-header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633657e16d27e2_31443423',
+  'unifunc' => 'content_633eaa7f93b7c2_60635381',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd20ba62163c3dd083d1fb945d3678f026da9b553' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-header.tpl',
-      1 => 1664505047,
+      1 => 1665051262,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633657e16d27e2_31443423 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633eaa7f93b7c2_60635381 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header class="site-header">
 	<div class="site-header-topbar mobile">
 		<div class="container">
@@ -335,9 +335,6 @@ function content_633657e16d27e2_31443423 (Smarty_Internal_Template $_smarty_tpl)
 							เกี่ยวกับเรา
 						</a>
 					</li>
-					<?php echo '<?php'; ?>
- for ($i = 1; $i <= 5; $i++) { <?php echo '?>'; ?>
-
 
 					<li class="dropdown-item">
 						<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">ทิศทางองค์กร</a>
@@ -356,9 +353,6 @@ function content_633657e16d27e2_31443423 (Smarty_Internal_Template $_smarty_tpl)
 							</li>
 						</ul>
 					</li>
-					<?php echo '<?php'; ?>
- } <?php echo '?>'; ?>
-
 				</ul>
 			</li>
 			<li class="service-menu dropright">
@@ -372,9 +366,6 @@ function content_633657e16d27e2_31443423 (Smarty_Internal_Template $_smarty_tpl)
 							งานบริการ
 						</a>
 					</li>
-
-					<?php echo '<?php'; ?>
- for ($i = 1; $i <= 2; $i++) { <?php echo '?>'; ?>
 
 
 					<li class="dropdown-item active">
@@ -394,9 +385,6 @@ function content_633657e16d27e2_31443423 (Smarty_Internal_Template $_smarty_tpl)
 							</li>
 						</ul>
 					</li>
-					<?php echo '<?php'; ?>
- } <?php echo '?>'; ?>
-
 				</ul>
 			</li>
 			<li>
@@ -431,15 +419,5 @@ function content_633657e16d27e2_31443423 (Smarty_Internal_Template $_smarty_tpl)
 			</li>
 		</ul>
 	</div>
-</div>
-
-
-
-<?php echo '<?php'; ?>
- for ($i = 1; $i <= 8; $i++) { <?php echo '?>'; ?>
-
-
-<?php echo '<?php'; ?>
- } <?php echo '?>';
-}
+</div><?php }
 }

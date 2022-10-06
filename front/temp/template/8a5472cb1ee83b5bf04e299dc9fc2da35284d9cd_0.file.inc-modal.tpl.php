@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-04 16:52:19
+/* Smarty version 4.0.0, created on 2022-10-06 14:36:32
   from '/var/www/html/front/template/default/inc/inc-modal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633c025369ed45_00842026',
+  'unifunc' => 'content_633e858035ba67_50999616',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8a5472cb1ee83b5bf04e299dc9fc2da35284d9cd' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-modal.tpl',
-      1 => 1664877109,
+      1 => 1665041782,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633c025369ed45_00842026 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633e858035ba67_50999616 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Modal -->
 <div class="modal modal-profile fade" id="profileBlock" tabindex="-1" role="dialog" aria-labelledby="profileBlockTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -38,9 +38,7 @@ function content_633c025369ed45_00842026 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="col-md-4">
                                 <div class="profile-thumbnail">
                                     <figure class="cover">
-                                        <img src="<?php echo '<?php'; ?>
- echo $core_template; <?php echo '?>'; ?>
-/assets/img/upload/profile-thumbnail.jpg" alt="profile thumbnail">
+                                        <img src="./front/template/default/assets/img/upload/profile-thumbnail.jpg" alt="profile thumbnail">
                                     </figure>
                                 </div>
                             </div>

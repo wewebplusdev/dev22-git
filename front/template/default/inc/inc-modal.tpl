@@ -15,7 +15,7 @@
                             <div class="col-md-4">
                                 <div class="profile-thumbnail">
                                     <figure class="cover">
-                                        <img src="<?php echo $core_template; ?>/assets/img/upload/profile-thumbnail.jpg" alt="profile thumbnail">
+                                        <img src="./front/template/default/assets/img/upload/profile-thumbnail.jpg" alt="profile thumbnail">
                                     </figure>
                                 </div>
                             </div>

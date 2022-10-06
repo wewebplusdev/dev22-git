@@ -820,7 +820,7 @@ function multiexplode($delimiters, $string)
 
 /* ############################################### */
 
-function loadSendEmailTo($mailTo, $mailFrom = null, $subjectMail = null, $messageMail = null, $typeMail = 1, $pdfFile = null)
+function loadSendEmailTo($mailTo, $subjectMail = null, $messageMail = null)
 {
     global $coreLanguageSQL;
 
