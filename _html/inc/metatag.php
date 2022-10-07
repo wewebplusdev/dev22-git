@@ -1,6 +1,5 @@
-<?php 
-$core_template = "../front/template/default";
-?>
+<?php $core_template = "../front/template/default";?>
+
 <title>GIT - Gem and Jewelry Institute of Thailand</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
