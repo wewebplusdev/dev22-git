@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-header" id="headingSitemap">
                     <h3 class="mb-0">
-                        <button class="btn btn-lg btn-link collapsed" data-toggle="collapse" data-target="#collapseSitemap" aria-expanded="false" aria-controls="collapseSitemap">
+                        <button class="btn btn-sm btn-link collapsed" data-toggle="collapse" data-target="#collapseSitemap" aria-expanded="false" aria-controls="collapseSitemap">
                             แผนผังเว็บไซต์ <span class="feather icon-chevron-up"></span>
                         </button>
                     </h3>

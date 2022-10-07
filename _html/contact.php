@@ -16,7 +16,7 @@
             <div class="default-header">
                 <div class="top-graphic mb-4 text-primary">
                     <figure class="cover">
-                        <img class="figure-img img-fluid" src="<?php echo $core_template; ?>/assets/img/background/top-graphic-contact.jpg" alt="">
+                        <img src="<?php echo $core_template; ?>/assets/img/background/top-graphic-contact.jpg" alt="">
                     </figure>
                     <div class="container">
                         <div class="wrapper">

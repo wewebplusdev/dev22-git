@@ -508,10 +508,14 @@ fieldset {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 0;
-    border-top: 1px solid #BFBFBF;
+    border-top: 1px solid #bfbfbf;
     box-sizing: content-box;
     height: 0;
     overflow: visible;
+}
+
+.nav-slider-block {
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 1600px) {
@@ -617,7 +621,10 @@ fieldset {
     .item-list.note > li {
         padding-left: 2rem;
     }
-    
+
+    .nav-slider-block {
+        margin-bottom: 2rem;
+    }
 }
 
 @media (max-width: 575px) {

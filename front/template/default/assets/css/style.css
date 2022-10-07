@@ -231,6 +231,13 @@ body {
   padding: 0 10px;
 }
 
+.gutters-30 {
+  margin: 0 -15px;
+}
+.gutters-30 > div {
+  padding: 0 15px;
+}
+
 .gutters-custom {
   margin: 0 -12.5px;
 }
@@ -537,6 +544,12 @@ textarea {
   }
   .gutters-lg-50 > div {
     padding: 0 25px;
+  }
+  .gutters-lg-30 {
+    margin: 0 -15px;
+  }
+  .gutters-lg-30 > div {
+    padding: 0 15px;
   }
 }
 [data-aos][data-aos][data-aos-duration="50"], body[data-aos-duration="50"] [data-aos] {
@@ -7176,11 +7189,15 @@ fieldset {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid #BFBFBF;
+  border-top: 1px solid #bfbfbf;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   height: 0;
   overflow: visible;
+}
+
+.nav-slider-block {
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 1440px) {
@@ -7278,6 +7295,9 @@ fieldset {
   }
   .item-list.note > li {
     padding-left: 2rem;
+  }
+  .nav-slider-block {
+    margin-bottom: 2rem;
   }
 }
 @media (max-width: 575px) {
@@ -8020,7 +8040,7 @@ fieldset {
   bottom: 0;
 }
 .default-nav-slider .slick-arrow {
-  top: 45%;
+  top: 50%;
 }
 .default-nav-slider .slick-prev::before,
 .default-nav-slider .slick-next::before {
@@ -8304,6 +8324,12 @@ fieldset {
   .news-block .btn {
     margin-top: 10px;
   }
+  .default-header .top-graphic .cover {
+    padding-bottom: 200px;
+  }
+  .default-header .top-graphic .wrapper .title {
+    margin: 0;
+  }
 }
 @media (max-width: 575px) {
   .download-block .title {
@@ -8358,12 +8384,6 @@ fieldset {
 @media (max-width: 375px) {
   .job-source-block {
     padding: 15px 10px;
-  }
-  .default-header .top-graphic .cover {
-    padding-bottom: 200px;
-  }
-  .default-header .top-graphic .wrapper .title {
-    margin: 0;
   }
 }
 .service-work .editor-content .h-title {
@@ -9118,7 +9138,190 @@ fieldset {
 .pdpa-page .desc {
   margin-bottom: 30px;
 }
+.pdpa-page .form-block .form-group {
+  margin-bottom: 1.5rem;
+}
+.pdpa-page .form-block .box {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #eeeeee;
+}
+.pdpa-page .form-block .box p {
+  font-size: var(--typo-xs);
+  margin-bottom: 0;
+}
+.pdpa-page .form-block .form-check {
+  margin-bottom: 3rem;
+}
 
+@media (max-width: 991px) {
+  .pdpa-page .form-block .box {
+    margin: 2rem 0;
+  }
+  .pdpa-page .form-block .form-check {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .pdpa-page .h-title {
+    margin-bottom: 2rem;
+  }
+  .pdpa-page .form-block .box {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+}
+.swal2-styled {
+  background: none;
+  position: relative;
+  padding: 0 30px !important;
+  min-width: 120px;
+  height: 50px;
+  line-height: 48px !important;
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
+  font-size: var(--typo-default) !important;
+  font-weight: var(--fw-medium) !important;
+}
+
+.search-page .title {
+  font-size: var(--typo-lg);
+}
+
+.search-block .search-result {
+  font-size: var(--typo-xs);
+  font-weight: var(--fw-medium);
+}
+.search-block .search-result span {
+  color: var(--color-primary);
+}
+.search-block .form-default .btn {
+  min-width: auto;
+  padding: 0;
+}
+.search-block .item-list > li {
+  float: none;
+  border: 2px solid #f2f5ff;
+  padding: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.search-block .item-list > li:hover {
+  background-color: #f2f5ff;
+}
+.search-block .item-list > li + li {
+  margin-top: 30px;
+}
+.search-block .item-list .title {
+  font-size: var(--typo-md);
+  font-weight: var(--fw-medium);
+}
+.search-block .item-list .desc {
+  margin-bottom: 5px;
+}
+.search-block .item-list .desc,
+.search-block .item-list .link {
+  font-size: var(--typo-xs);
+  font-weight: var(--fw-light);
+  color: var(--color-default);
+}
+.search-block .item-list .link.detail {
+  color: var(--color-primary);
+  font-weight: var(--fw-normal);
+}
+.search-block .item-list .link.detail .txt {
+  margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .search-block .item-list .link.detail {
+    margin-top: 1rem;
+    display: block;
+  }
+  .search-block .item-list > li {
+    padding: 20px;
+  }
+  .search-block .item-list > li + li {
+    margin-top: 20px;
+  }
+}
+.default-nav-slider .item {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.error-page {
+  background: url(../img/background/error-graphic.svg), -webkit-gradient(linear, left top, left bottom, from(#f2f5ff), to(#eff7ff));
+  background: url(../img/background/error-graphic.svg), linear-gradient(#f2f5ff 0%, #eff7ff 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.site-container.error {
+  margin-top: 0;
+}
+
+.error-block {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 10rem;
+}
+.error-block .h-title {
+  font-size: 65px;
+  font-weight: var(--fw-medium);
+}
+.error-block .title {
+  font-size: 35px;
+}
+.error-block .desc {
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+}
+.error-block .graphic {
+  position: relative;
+  margin-bottom: -300px;
+  text-align: right;
+  padding-left: 18rem;
+}
+
+@media (max-width: 1199px) {
+  .error-block {
+    padding-bottom: 8rem;
+  }
+}
+@media (max-width: 991px) {
+  .error-block {
+    padding-bottom: 0;
+  }
+  .error-block .h-title {
+    font-size: 55px;
+  }
+  .error-block .title {
+    font-size: 30px;
+  }
+  .error-block .graphic {
+    margin-bottom: -180px;
+    padding-left: 20rem;
+  }
+}
+@media (max-width: 767px) {
+  .error-block .h-title {
+    font-size: 45px;
+  }
+  .error-block .title {
+    font-size: 26px;
+  }
+  .error-block .graphic {
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+}
 .theme-style-2 .text-primary {
   color: var(--color-black) !important;
 }
@@ -10103,11 +10306,17 @@ fieldset {
   .theme-3 .site-container {
     margin-top: 114px;
   }
+  .form-default .form-group .form-control {
+    height: 44px;
+  }
 }
 @media (max-width: 767px) {
   .container {
     max-width: inherit;
     width: 100%;
+  }
+  .form-default .form-group .form-control {
+    height: 40px;
   }
 }
 @media (max-width: 575px) {

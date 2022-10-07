@@ -44,7 +44,7 @@
             </div>
 
         </section>
-
+        <?php include('inc/footer.php'); ?>
     </div>
 
     <?php include('inc/loadscript.php'); ?>
@@ -55,6 +55,7 @@
         $('.site-header-main').hide();
         $('.site-header-topbar.mobile').hide();
         $('.site-header').addClass('map-header');
+        $('.site-footer').hide();
     </script>
 
 </body>

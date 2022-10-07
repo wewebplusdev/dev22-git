@@ -78,12 +78,18 @@
     .theme-3 .site-container {
         margin-top: 114px;
     }
+    .form-default .form-group .form-control {
+        height: 44px;
+    }
 }
 
 @media (max-width: 767px) {
     .container {
         max-width: inherit;
         width: 100%;
+    }
+    .form-default .form-group .form-control {
+        height: 40px;
     }
     // .site-header-main .search.show .form .form-control {
     //     width: auto;
