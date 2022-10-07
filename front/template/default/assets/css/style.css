@@ -9271,6 +9271,7 @@ fieldset {
       -ms-flex-align: center;
           align-items: center;
   padding-bottom: 10rem;
+  color: #7793F2;
 }
 .error-block .h-title {
   font-size: 65px;
