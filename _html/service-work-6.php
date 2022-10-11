@@ -123,18 +123,15 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>ชนิด</th>
-                                                                <!-- <th>น้ำหนัก(กะรัต)</th> -->
                                                                 <th>ลักษณะการรายงานผล</th>
                                                                 <th>ราคาต่อตัวอย่าง (บาท)</th>
-                                                                <!-- <th>ตัวอย่างใบรายงานผล</th> -->
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td style=" padding: 0; ">
-                                                                    <img src="<?php echo $core_template; ?>/assets/img/static/icp01.png" alt="" style=" width: 348px; ">
-                                                                    <!-- <div class="desc">การจัดระดับคุณภาพเพชร</br>Diamond Grading</div> -->
-                                                                </td>
+                                                                <!-- <td style=" padding: 0; ">
+                                                                    <img src="<?php echo $core_template; ?>/assets/img/static/icp01.png" alt="" style=" width: 348px; ">          
+                                                                </td>                                                      </td> -->
                                                                 <td>
                                                                     <p>1. รายงานธาตุเดียว</p>
                                                                     <p>2. รายงานธาตุเดียว (ตัวอย่างที่เป็นสารละลาย)</p>
@@ -164,13 +161,6 @@
                                                                     </p>
                                                                     <p>+ 1000 ต่อสุด</p>
                                                                 </td>
-                                                                <!-- <td>
-                                                                    <p>1,300 / เม็ด</p>
-                                                                    <p>1,500 / เม็ด</p>
-                                                                    <p>เพิ่ม 700 / กะรัต</p>
-                                                                <td style=" vertical-align: baseline; ">
-                                                                    <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 200px;">
-                                                                </td> -->
                                                             </tr>
                                                         </tbody>
                                                     </table>

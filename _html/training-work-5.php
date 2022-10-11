@@ -118,7 +118,7 @@
                                                     </button>
                                                 </h3>
                                             </div>
-                                            <div id="training-work-1" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
+                                            <div id="training-work-1" class="collapse show" aria-labelledby="headingCollapse" data-parent="#accordion">
                                                 <?php for ($i = 1; $i <= 6; $i++) { ?>
                                                     <div class="download-block">
                                                         <div class="row align-items-center">

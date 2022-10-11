@@ -101,6 +101,14 @@
                 </div>
 
                 <div class="container">
+                <div class="editor-content">
+                    <div class="title text-left">สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์กรมหาชน)
+                        <br>
+                        (วันที่ประกาศ 15 มิถุนายน 2565)
+                    </div>
+                    <p>สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ สังกัดกระทรวงพาณิชย์ จัดตั้งขึ้นเพื่อพัฒนา ส่งเสริม และสนับสนุนอุตสากรรมอัญมณีและเครื่องประดับของไทยให้มีขีดความสามารถสูงในตลาดโลก มีความประสงค์รับสมัครบุคลากรที่มีความรู้ความสามารถและมีความกระตือรือร้นในการทำงาน ในตำแหน้งดังต่อไปนี้</p>
+                    <br>
+                    </div>
                     <form data-toggle="validator" role="form" class="form-default" method="post">
                         <div class="row align-items-center">
                             <div class="col-md-8">
@@ -171,9 +179,6 @@
                             </div>
                         </div>
                     <?php } ?>
-
-                    <div class="editor-content">
-                    </div>
                     <div class="pagination-block">
                         <div class="row align-items-center">
                             <div class="col-sm-6">
