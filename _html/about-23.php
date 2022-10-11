@@ -29,144 +29,78 @@
             </div>
             <div class="default-page about">
                 <div class="container">
-                    <div class="default-nav-slider">
-                        <div class="item">
-                            <a href="javascript:void(0)" class="active">ตรวจสอบอัญมณี</a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0)">ตรวจสอบโลหะมีค่า</a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0))">ศูนย์ให้คำปรึกษา</a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0)">เครื่องมือ</a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0)">สัมมนา/workshop</a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0)">ราคา</a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0)">การประกวดออกแบบ</a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0)">การบริหารและพัฒนาทรัพยากรบุคคล</a>
+                    <div class="row">
+                        <div class="col">
+                            <div class="h-title -mc">แหล่งงาน</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="border-nav-slider"></div>
-                <div class="container mt-5">
-                    <h2 class="text-primary mb-4">คณะกรรมการสถาบัน</h2>
-                    <div class="default-tab-slider default-slick">
-                        <div class="item">
-                            <div class="tab-block active">
-                                <a class="text-limit" href="javascript:void(0)">แนะนำบริการ</a>
+                    <div class="default-bar">
+                        <div class="row align-items-center">
+                            <div class="col-md-auto">
+                                <div class="whead">
+                                    <div class="h-title">หัวหน้าฝ่ายวิจัยและพัฒนาอัญมณีและเครื่องประดับ</div>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="social-block">
+                                    <div class="title">Share :</div>
+                                    <ul class="item-list">
+                                        <li>
+                                            <a href="" class="link">
+                                                <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-facebook.svg" alt="" style=" width: auto; ">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="link">
+                                                <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-twitter.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="link">
+                                                <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-gmail.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="-bsc"></li>
+                                        <li>
+                                            <a href="" class="link">
+                                                <img src="<?php echo $core_template; ?>/assets/img/icon/icon-print.svg" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="tab-block">
-                                <a class="text-limit" href="javascript:void(0)">ค่าบริการ</a>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="whead-addon -bsc">
+                                    <div class="detail-info">
+                                        <ul class="item-list">
+                                            <li>23.07.2564</li>
+                                            <li>
+                                                <span class="feather icon-eye mr-2"></span>
+                                                336 View
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="tab-block">
-                                <a class="text-limit" href="javascript:void(0)">ตรวจสอบใบรายงาน</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="tab-block">
-                                <a class="text-limit" href="javascript:void(0)">ติดตามงานตรวจสอบ</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="tab-block">
-                                <a class="text-limit" href="javascript:void(0)">การประกวดออกแบบการประกวดออกแบบ</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="tab-block">
-                                <a class="text-limit" href="javascript:void(0)">การประกวดออกแบบการประกวดออกแบบ</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="tab-block">
-                                <a class="text-limit" href="javascript:void(0)">การประกวดออกแบบการประกวดออกแบบ</a>
+                            <div class="col-12">
+                                <div class="whead-addon">
+                                    <div class="detail-info">
+                                        <ul class="item-list -c">
+                                            <li>จำนวนเปิดรับสมัคร : 1 ตำแหน่ง</li>
+                                            <li class="-bsc"></li>
+                                            <li>สถานที่ : กรุงเทพมหานคร</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="container">
-
                     <div class="editor-content">
-                        <div class="h-title">แหล่งงาน</div>
-                        <div class="default-bar">
-                            <div class="row align-items-center">
-                                <div class="col-md-auto">
-                                    <div class="whead">
-                                        <div class="h-title">หัวหน้าฝ่ายวิจัยและพัฒนาอัญมณีและเครื่องประดับ</div>
-                                    </div>
-                                </div>
-                                <div class="col-md">
-                                    <div class="social-block">
-                                        <div class="title">Share :</div>
-                                        <ul class="item-list">
-                                            <li>
-                                                <a href="" class="link">
-                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-facebook.svg" alt="" style=" width: auto; ">
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="" class="link">
-                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-twitter.svg" alt="">
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="" class="link">
-                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-gmail.svg" alt="">
-                                                </a>
-                                            </li>
-                                            <li class="-bsc"></li>
-                                            <li>
-                                                <a href="" class="link">
-                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-print.svg" alt="">
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="whead-addon -bsc">
-                                        <div class="detail-info">
-                                            <ul class="item-list">
-                                                <li>23.07.2564</li>
-                                                <li>
-                                                    <span class="feather icon-eye mr-2"></span>
-                                                    336 View
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="whead-addon">
-                                        <div class="detail-info">
-                                            <ul class="item-list -c">
-                                                <li>จำนวนเปิดรับสมัคร : 1 ตำแหน่ง</li>
-                                                <li class="-bsc"></li>
-                                                <li>สถานที่ : กรุงเทพมหานคร</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="title">วัตถุประสงค์ของตำแหน่งงาน</div>
                         <p>ปฏิบัติงานในฐานะหัวหน้าหน่วยงาน โดยใช้ความรู้ ความสามารถ ประสบการณ์และความเชี่ยวชาญในด้านวิจัยและพัฒนา เทคนิคการตรวจสอบ การวิเคราะห์
                             การปรับปรุงมาตรฐานอัญมณีและโลหะมีค่าประเภทต่างๆ รวมถึงการวางแผน บริหารจัดการ จัดระบบงาน อำนวยการ สั่งการ มอบหมาย กำกับ แนะนำ ตรวจ
@@ -197,7 +131,7 @@
                         <p class="-mc">- ทักษะการใช้เครื่องมือ อุปกรณ์ในห้องแล็บวิเคราะห์</p>
                         <p class="-mc">- ความสามารถในการทำงานภายใต้สภาวะกดดัน</p>
                         <div class="button -ck">
-                            <div class="row mt-5">
+                            <div class="row my-sm-5 my-4">
                                 <div class="col-sm text-sm-right">
                                     <a href="" class="btn btn-primary" title="btn btn-primary">
                                         กรอกใบสมัครออนไลน์

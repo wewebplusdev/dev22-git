@@ -142,11 +142,11 @@
                         <div class="job-source-block mb-3">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="title typo-sm">หัวหน้าฝ่ายวิจัยพัฒนาอัญมณีและเครื่องประดับ</div>
+                                    <div class="title typo-sm text-limit -x3">หัวหน้าฝ่ายวิจัยพัฒนาอัญมณีและเครื่องประดับ</div>
                                     <div class="desc">(จำนวนที่เปิดรับ : 1 ตำแหน่ง)</div>
                                 </div>
                                 <div class="col-12 py-3">
-                                    <div class="desc">ปฏิบัติในฐานะหัวหน้าหน่วยงาน โดยใช้ความรู้ ความสามารถ ประสบการ์ณและความเชี่ยวชาญในด้านวิจัยแลพัฒนา เทคนิคการตรวจสอบ</div>
+                                    <div class="desc text-limit -x3">ปฏิบัติในฐานะหัวหน้าหน่วยงาน โดยใช้ความรู้ ความสามารถ ประสบการ์ณและความเชี่ยวชาญในด้านวิจัยแลพัฒนา เทคนิคการตรวจสอบ</div>
                                 </div>
                             </div>
                             <div class="job-source-location">

@@ -12,6 +12,12 @@
         text-align: center;
         margin-bottom: 30px;
     }
+    .-mc {
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
     .title {
         font-size: var(--typo-sm);
         color: var(--color-primary);
@@ -519,6 +525,77 @@ fieldset {
     margin-bottom: 2rem;
 }
 
+.default-bar {
+    margin: 60px 0;
+    .whead {
+        .h-title {
+            margin: 0;
+            text-align: left;
+        }
+    }
+    .social-block {
+        display: flex;
+        justify-content: right;
+        position: relative;
+        bottom: 10px;
+        .title {
+            margin: 0;
+            color: #9f9f9f;
+        }
+        .item-list {
+            display: flex;
+            align-items: center;
+            li {
+                margin: 0 7px;
+                a {
+                    img {
+                        // position: relative;
+                        // top: 4px;
+                        width: 22px;
+                    }
+                }
+            }
+            .-bsc {
+                &::before {
+                    border: 1px solid #9f9f9f;
+                    content: '';
+                }
+            }
+        }
+    }
+    .whead-addon.-bsc {
+        border-top: 1px solid #9f9f9f;
+        .detail-info {
+            .item-list {
+                li {
+                    color: #9f9f9f;
+                    display: flex;
+                    align-items: center;
+                    span {
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+        }
+    }
+    .whead-addon {
+        padding-top: 20px;
+        .detail-info {
+            .item-list {
+                display: flex;
+                li {
+                    margin: 0 15px;
+                    margin-left: 0;
+                    color: var(--color-primary);
+                }
+                .-bsc {
+                    border-right: 2px solid #013F94;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 1600px) {}
 
 @media (max-width: 1440px) {
@@ -534,6 +611,14 @@ fieldset {
     }
     .profile-block .profile-desc {
         height: 340px;
+    }
+    .default-bar {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        .social-block {
+            justify-content: left;
+            margin: 15px 0;
+        }
     }
 }
 
@@ -622,6 +707,28 @@ fieldset {
     }
     .nav-slider-block {
         margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 414px) {
+    .default-bar {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        .whead-addon {
+            padding-top: 15px;
+            .detail-info {
+                display: block;
+                .item-list {
+                    display: block;
+                    li {
+                        padding-top: 5px;
+                    }
+                    .-bsc {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }
 

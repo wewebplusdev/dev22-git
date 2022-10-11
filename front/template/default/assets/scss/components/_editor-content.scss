@@ -107,71 +107,6 @@
                 }
             }
         }
-        .default-bar {
-            margin: 80px 0;
-            .whead {
-                .h-title {
-                    margin: 0;
-                    text-align: left;
-                }
-            }
-            .social-block {
-                display: flex;
-                justify-content: right;
-                position: relative;
-                bottom: 10px;
-                .title {
-                    margin: 0;
-                    color: #9f9f9f;
-                }
-                .item-list {
-                    display: flex;
-                    li {
-                        margin: 0 7px;
-                        a {
-                            img {
-                                margin: 0;
-                                width: 22px;
-                            }
-                        }
-                    }
-                    .-bsc {
-                        border: 1px solid #9f9f9f;
-                    }
-                }
-            }
-            .whead-addon.-bsc {
-                border-top: 1px solid #9f9f9f;
-                .detail-info {
-                    .item-list {
-                        li {
-                            color: #9f9f9f;
-                            display: flex;
-                            align-items: center;
-                            span {
-                                margin-bottom: 2px;
-                            }
-                        }
-                    }
-                }
-            }
-            .whead-addon {
-                padding-top: 20px;
-                .detail-info {
-                    .item-list {
-                        display: flex;
-                        li {
-                            margin: 0 15px;
-                            margin-left: 0;
-                            color: var(--color-primary);
-                        }
-                        .-bsc {
-                            border-right: 2px solid #013F94;
-                        }
-                    }
-                }
-            }
-        }
         .button.-ck {
             margin-top: 50px;
             .btn {
@@ -429,13 +364,6 @@
                     padding: 30px 60px;
                 }
             }
-            .default-bar {
-                margin: 50px 0;
-                .social-block {
-                    justify-content: left;
-                    margin: 15px 0;
-                }
-            }
             .border-block {
                 .border-topic.-C {
                     padding: 30px;
@@ -567,24 +495,6 @@
 @media (max-width: 414px) {
     .default-page {
         .editor-content {
-            .default-bar {
-                margin: 40px 0;
-                .whead-addon {
-                    padding-top: 15px;
-                    .detail-info {
-                        display: block;
-                        .item-list {
-                            display: block;
-                            li {
-                                padding-top: 5px;
-                            }
-                            .-bsc {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-            }
             .collapse-block {
                 .btn {
                     padding: 0 10px;
