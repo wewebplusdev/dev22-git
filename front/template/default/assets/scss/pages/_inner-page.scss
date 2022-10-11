@@ -38,7 +38,7 @@
         }
         &.text-primary {
             .wrapper .title,
-            .breadcrumb li + li:before,
+            .breadcrumb li+li:before,
             .wrapper .breadcrumb .breadcrumb-item,
             .wrapper .breadcrumb .breadcrumb-item a {
                 color: var(--color-primary);
@@ -46,7 +46,7 @@
         }
         &.text-dark {
             .wrapper .title,
-            .breadcrumb li + li:before,
+            .breadcrumb li+li:before,
             .wrapper .breadcrumb .breadcrumb-item,
             .wrapper .breadcrumb .breadcrumb-item a {
                 color: var(--color-dark);
@@ -54,6 +54,7 @@
         }
     }
 }
+
 .theme-3 {
     .default-header {
         .top-graphic {
@@ -395,11 +396,9 @@
     }
 }
 
-@media (max-width: 1600px) {
-}
+@media (max-width: 1600px) {}
 
-@media (max-width: 1400px) {
-}
+@media (max-width: 1400px) {}
 
 @media (max-width: 1199px) {
     .border-nav-slider {
@@ -506,7 +505,7 @@
         .pagination {
             float: none;
             justify-content: center;
-            li + li {
+            li+li {
                 margin-left: 35px;
             }
         }
