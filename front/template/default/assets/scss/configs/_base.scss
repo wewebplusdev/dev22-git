@@ -42,6 +42,7 @@ body {
         padding: 0 10px;
     }
 }
+
 .gutters-30 {
     margin: 0 -15px;
     >div {
@@ -354,8 +355,7 @@ textarea {
     visibility: hidden;
 }
 
-
-@media (min-width: 992px){
+@media (min-width: 992px) {
     .gutters-lg-50 {
         margin: 0 -25px;
         >div {
@@ -368,5 +368,4 @@ textarea {
             padding: 0 15px;
         }
     }
-    
 }
