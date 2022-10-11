@@ -271,48 +271,83 @@
             }
         }
         .collapse-block {
-            .desc {
-                color: var(--color-primary);
-            }
-            .table {
-                margin: 0;
-            }
-            .table tbody td {
-                vertical-align: middle;
-                // p {
-                //     line-height: 3;
-                // }
-                img {
+            .card-body {
+                .desc {
+                    color: var(--color-primary);
+                }
+                .table {
                     margin: 0;
                 }
-            }
-            .table tbody td {
-                padding: 20px 15px;
-                p {
-                    margin-bottom: 30px;
-                    &:last-child {
-                        margin-bottom: 0;
+                .table tbody td {
+                    vertical-align: middle;
+                    // p {
+                    //     line-height: 3;
+                    // }
+                    img {
+                        margin: 0;
                     }
                 }
-                .-fix-height {
-                    height: 50px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    line-height: 1em;
+                .table tbody td {
+                    padding: 20px 15px;
+                    p {
+                        margin-bottom: 30px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                    .-fix-height {
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        line-height: 1em;
+                    }
+                    .desc {
+                        line-height: 1.5;
+                    }
                 }
-                .desc {
-                    line-height: 1.5;
+                .table.bordered-custom thead th {
+                    padding: 1.2rem 0.75rem;
+                }
+                .table.bordered-custom thead th:nth-child(2),
+                .table.bordered-custom thead th:nth-child(3),
+                .table.bordered-custom tbody td:nth-child(2),
+                .table.bordered-custom tbody td:nth-child(3) {
+                    border-right: 1px solid transparent;
                 }
             }
-            .table thead th {
-                padding: 1.2rem 0.75rem;
-            }
-            .table thead th:nth-child(2),
-            .table thead th:nth-child(3),
-            .table tbody td:nth-child(2),
-            .table tbody td:nth-child(3) {
-                border-right: 1px solid transparent;
+            .card-body.precious-metal {
+                img {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                table tbody td {
+                    padding: 0;
+                    vertical-align: unset;
+                    p {
+                        margin-bottom: 0;
+                        padding: 10px;
+                        height: 70px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    p.height-custom {
+                        height: 80px;
+                    }
+                    p:nth-child(even) {
+                        background-color: #d0dbff8a;
+                        border-top: 1px solid #D0DBFF;
+                        border-bottom: 1px solid #D0DBFF;
+                    }
+                }
+                table tbody td:nth-child(odd) {
+                    p {
+                        // padding: 10px 30px;
+                        // align-items: center;
+                        justify-content: left;
+                    }
+                }
             }
         }
         .border-table {

@@ -119,7 +119,7 @@
                                             </div>
                                             <div id="service-work-1" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
                                                 <div class="card-body">
-                                                    <table class="table table-bordered text-center">
+                                                    <table class="table table-bordered bordered-custom text-center">
                                                         <thead>
                                                             <tr>
                                                                 <th>ชนิด</th>
@@ -212,7 +212,7 @@
                                             </div>
                                             <div id="service-work-2" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
                                                 <div class="card-body">
-                                                    <table class="table table-bordered text-center">
+                                                    <table class="table table-bordered bordered-custom text-center">
                                                         <thead>
                                                             <tr>
                                                                 <th>ชนิด</th>
@@ -378,7 +378,7 @@
                                             </div>
                                             <div id="service-work-3" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
                                                 <div class="card-body">
-                                                    <table class="table table-bordered text-center">
+                                                    <table class="table table-bordered bordered-custom text-center">
                                                         <thead>
                                                             <tr>
                                                                 <th>ชนิด</th>
@@ -471,7 +471,7 @@
                                             </div>
                                             <div id="service-work-4" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
                                                 <div class="card-body">
-                                                    <table class="table table-bordered text-center">
+                                                    <table class="table table-bordered bordered-custom text-center">
                                                         <thead>
                                                             <tr>
                                                                 <th>ชนิด</th>
@@ -564,7 +564,7 @@
                                             </div>
                                             <div id="service-work-5" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
                                                 <div class="card-body">
-                                                    <table class="table table-bordered text-center">
+                                                    <table class="table table-bordered bordered-custom text-center">
                                                         <thead>
                                                             <tr>
                                                                 <th>ชนิด</th>

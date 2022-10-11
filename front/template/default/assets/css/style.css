@@ -4637,45 +4637,72 @@ li.fancybox-thumbs-loading {
 .default-page .editor-content .border-block.II .border-desc {
   padding: 30px 50px;
 }
-.default-page .editor-content .collapse-block .desc {
+.default-page .editor-content .collapse-block .card-body .desc {
   color: var(--color-primary);
 }
-.default-page .editor-content .collapse-block .table {
+.default-page .editor-content .collapse-block .card-body .table {
   margin: 0;
 }
-.default-page .editor-content .collapse-block .table tbody td {
+.default-page .editor-content .collapse-block .card-body .table tbody td {
   vertical-align: middle;
 }
-.default-page .editor-content .collapse-block .table tbody td img {
+.default-page .editor-content .collapse-block .card-body .table tbody td img {
   margin: 0;
 }
-.default-page .editor-content .collapse-block .table tbody td {
+.default-page .editor-content .collapse-block .card-body .table tbody td {
   padding: 20px 15px;
 }
-.default-page .editor-content .collapse-block .table tbody td p {
+.default-page .editor-content .collapse-block .card-body .table tbody td p {
   margin-bottom: 30px;
 }
-.default-page .editor-content .collapse-block .table tbody td p:last-child {
+.default-page .editor-content .collapse-block .card-body .table tbody td p:last-child {
   margin-bottom: 0;
 }
-.default-page .editor-content .collapse-block .table tbody td .-fix-height {
+.default-page .editor-content .collapse-block .card-body .table tbody td .-fix-height {
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1em;
 }
-.default-page .editor-content .collapse-block .table tbody td .desc {
+.default-page .editor-content .collapse-block .card-body .table tbody td .desc {
   line-height: 1.5;
 }
-.default-page .editor-content .collapse-block .table thead th {
+.default-page .editor-content .collapse-block .card-body .table.bordered-custom thead th {
   padding: 1.2rem 0.75rem;
 }
-.default-page .editor-content .collapse-block .table thead th:nth-child(2),
-.default-page .editor-content .collapse-block .table thead th:nth-child(3),
-.default-page .editor-content .collapse-block .table tbody td:nth-child(2),
-.default-page .editor-content .collapse-block .table tbody td:nth-child(3) {
+.default-page .editor-content .collapse-block .card-body .table.bordered-custom thead th:nth-child(2),
+.default-page .editor-content .collapse-block .card-body .table.bordered-custom thead th:nth-child(3),
+.default-page .editor-content .collapse-block .card-body .table.bordered-custom tbody td:nth-child(2),
+.default-page .editor-content .collapse-block .card-body .table.bordered-custom tbody td:nth-child(3) {
   border-right: 1px solid transparent;
+}
+.default-page .editor-content .collapse-block .card-body.precious-metal img {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.default-page .editor-content .collapse-block .card-body.precious-metal table tbody td {
+  padding: 0;
+  vertical-align: unset;
+}
+.default-page .editor-content .collapse-block .card-body.precious-metal table tbody td p {
+  margin-bottom: 0;
+  padding: 10px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.default-page .editor-content .collapse-block .card-body.precious-metal table tbody td p.height-custom {
+  height: 80px;
+}
+.default-page .editor-content .collapse-block .card-body.precious-metal table tbody td p:nth-child(even) {
+  background-color: rgba(208, 219, 255, 0.5411764706);
+  border-top: 1px solid #D0DBFF;
+  border-bottom: 1px solid #D0DBFF;
+}
+.default-page .editor-content .collapse-block .card-body.precious-metal table tbody td:nth-child(odd) p {
+  justify-content: left;
 }
 .default-page .editor-content .border-table {
   border: 1px solid #D0DBFF;
