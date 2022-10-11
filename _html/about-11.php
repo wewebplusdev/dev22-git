@@ -104,8 +104,36 @@
 
                 <div class="container">
                     <div class="editor-content">
+                        <div class="h-title">โครงสร้าง</div>
+                        <p style=" display: flex; justify-content: center; ">ผังโครงสร้างองค์กรแนบท้ายข้อบังคับสถาบันวิจัยและอัญมณีและเครื่องประดับแห่งชาติ(องค์การมหาชน)
+                            <br>
+                            ว่าด้วย การจัดแบ่งส่วนงานและขอบเขตหน้าที่ของส่วนงาน พ.ศ. ๒๕๖๓
+                        </p>
+                        <img src="<?php echo $core_template; ?>/assets/img/static/flow-chart.png" alt="">
+                        <div class="note-flow-chart">
+                            <ul class="link">
+                                <li class="-color-1">
+                                    <span>รองผู้อำนวยการ(ธุรกิจ)</span>
+                                </li>
+                                <li class="-color-2">
+                                    <span>รองผู้อำนวยการ(ธุรกิจ)</span>
+                                </li>
+                                <li class="-color-3">
+                                    <span>รองผู้อำนวยการ(ธุรกิจ)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="border-nav-slider pt-5"></div>
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <a href="" class="btn btn-primary btn-rounded -ck" title="btn btn-primary">
+                                    <span class="feather icon-download"></span>
+                                    ดาวน์โหลดไฟล์แผนภูมิโครงสร้างของสถาบัน
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="border-nav-slider pt-5"></div>
+                    <!-- <div class="border-nav-slider pt-5"></div> -->
                     <div class="youtube-block pt-4">
                         <div class="iframe-container">
                             <iframe class="responsive-iframe" src="https://www.youtube.com/embed/4r9TbKLCus0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

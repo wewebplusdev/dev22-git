@@ -104,8 +104,97 @@
 
                 <div class="container">
                     <div class="editor-content">
+                        <div class="h-title -mc">หลักสูตรธุรกิจทองคำและโลหะมีค่า</div>
+                        <img src="<?php echo $core_template; ?>/assets/img/background/woman-choosing-necklace-jewelry-store.png" alt="">
+                        <p> สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน) GIT ร่วมกับ สมาคมค้าทองคำ (Gold Traders Association) ซึ่งเป็นสมาคมที่จัดตั้งขึ้นมาเพื่อมุ่งพัฒนาการทำการค้าด้านทองคำโดยเฉพาะ โดยมีวัตถุประสงค์ เพื่อเสริมสร้างความรู้ความเข้าใจเกี่ยวกับทองคำ คุณสมบัติ กระบวนการผลิต การตรวจสอบ และการพัฒนาสินค้าทองรูปพรรณให้กับผู้ประกอบการ ผู้บริโภคและผู้สนใจทั่วไป พร้อมทั้งเสริมสร้างความแข็งแกร่งทางวิชาการและยกระดับคุณภาพของบุคลากรในวงการอุตสาหกรรมเครื่องประดับทองของไทย</p>
+                        <div class="border-nav-slider my-xl-5 my-4"></div>
+                        <div class="row mt-xl-5 mt-4">
+                            <div class="col">
+                                <div class="title">ระยะเวลาอบรม : <span class="text-default typo-xs">36 ชั่วโมง</span> </div>
+                                <div class="title -mc">คุณสมบัติผู้เข้าอบรม</div>
+                                <p class="-mc">- ผู้ประกอบการ และผู้บริโภค หรือบุคคลทั่วไปที่สนใจในธุรกิจเครื่องประดับทอง</p>
+                                <p class="-mc">- ไม่จำเป็นต้องมีพื้นฐานความรู้ด้านโลหะมีค่า</p>
+                            </div>
+                        </div>
+                        <div class="row mt-xl-4 mt-3">
+                            <div class="col">
+                                <div class="title -mc">เนื้อหาหลักสูตร</div>
+                                <p class="-mc">- ความรู้ทั่วไปเกี่ยวกับโลหะมีค่า แหล่งกำเนิด ประวัติ การทำเหมืองทองและโลหะอื่นๆ</p>
+                                <p class="-mc">- เทคนิควิธีการตรวจสอบโลหะมีค่าด้วยเทคนิคพื้นฐาน และเครื่องมือขั้นสูง</p>
+                                <p class="-mc">- กระบวนการผลิตเครื่องประดับทองคำ และการประเมินราคาทอง</p>
+                                <p class="-mc">- รูปแบบธุรกิจค้าทองและเครื่องประดับ</p>
+                                <p class="-mc">- ภาษี กฎหมาย และมาตรฐานที่เกี่ยวข้อง</p>
+                                <p class="-mc">- การลงทุนในทองคำ (AEC - Global)</p>
+                            </div>
+                        </div>
+                        <div class="border-block py-xl-5 py-0">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="border-topic text-center">เนื้อหาหลักสูตร:</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="border-desc">
+                                        <p class="-mc">- ความรู้ทั่วไปเกี่ยวกับโลหะมีค่า แหล่งกำเนิด ประวัติ การทำเหมืองทองและโลหะอื่นๆ</p>
+                                        <p class="-mc">- เทคนิควิธีการตรวจสอบโลหะมีค่าด้วยเทคนิคพื้นฐาน และเครื่องมือขั้นสูง</p>
+                                        <p class="-mc">- กระบวนการผลิตเครื่องประดับทองคำ และการประเมินราคาทอง</p>
+                                        <p class="-mc">- กระบวนการผลิตเครื่องประดับที่นักออกแบบต้องรู้</p>
+                                        <p class="-mc">- รูปแบบธุรกิจค้าทองและเครื่องประดับ</p>
+                                        <p class="-mc">- ภาษี กฎหมาย และมาตรฐานที่เกี่ยวข้อง</p>
+                                        <p class="-mc">- จุดประกายแรงบันดาลใจสู่การออกแบบได้จริง</p>
+                                        <p class="-mc">- การลงทุนในทองคำ (AEC - Global)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title -mc">อุปกรณ์ที่ผู้เข้าอบรมจะได้รับ</div>
+                        <p class="-mc">- Loupe กำลังขยาย 10 เท่า</p>
+                        <p class="-mc">- ตะไบ</p>
+                        <p class="-mc">- หินภูเขาไฟสำหรับฝนทอง (Touch stone)</p>
+                        <br>
+                        <div class="title -mc">ประกาศนียบัตร</div>
+                        <p class="-mc">- ธุรกิจทองคำและโลหะมีค่า (Gold and Precious Metals Business Course)</p>
+                        <br>
+                        <div class="title -mc">ค่าใช้จ่ายในการฝึกอบรม</div>
+                        <p class="-mc">- บุคคลทั่วไป 31,500 บาท (ราคารวมภาษีมูลค่าเพิ่ม 7%)</p>
+                        <div class="button -ck">
+                            <div class="row my-xl-5 my-4">
+                                <div class="col-sm text-sm-right">
+                                    <a href="" class="btn btn-primary" title="btn btn-primary">
+                                        สมัครหลักสูตรออนไลน์
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="51.235" height="7.199" viewBox="0 0 51.235 7.199">
+                                            <path data-name="Path 5" d="M4670.6,5544.179h50.033l-6.306-6.347" transform="translate(-4670.602 -5537.48)" fill="none" stroke="#fff" stroke-width="1"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="" class="btn btn-border-primary -c" title="btn btn-primary">
+                                        ดาวน์โหลดแบบฟอร์มใบสมัคร
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="51.235" height="7.199" viewBox="0 0 51.235 7.199">
+                                            <path data-name="Path 5" d="M4670.6,5544.179h50.033l-6.306-6.347" transform="translate(-4670.602 -5537.48)" fill="none" stroke="#fff" stroke-width="1"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-nav-slider"></div>
+                        <div class="row my-xl-5 my-4">
+                            <div class="col">
+                                <div class="title">สถานที่ติดต่อ</div>
+                                <p class="-mc">ห้องปฏิบัติการตรวจสอบอัญมณีสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)อาคารไอทีเอฟ ทาวเวอร์ ชั้น 4 ถนนสีลม</p>
+                                <p class="-mc">แขวงสุริยวงศ์ เขตบางรัก กรุงเทพฯ 10500</p>
+                                <br>
+                                <p class="-mc">โทรศัพท์ 0 2634 4999 ต่อ 409</p>
+                                <p class="-mc">โทรสาร 0 2634 4970</p>
+                                <p class="-mc">อีเมล jewelry@git.or.th</p>
+                                <br>
+                                <p class="-mc">เวลาทำการ</p>
+                                <p class="-mc">วันจันทร์ - ศุกร์ เวลา 8.30 - 16.30 น. เว้นวันเสาร์ - อาทิตย์ วันนักขัตฤกษ์ และวันหยุดตามประกาศของสถาบัน</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="border-nav-slider pt-5"></div>
+                    <div class="border-nav-slider"></div>
                     <div class="youtube-block pt-4">
                         <div class="iframe-container">
                             <iframe class="responsive-iframe" src="https://www.youtube.com/embed/4r9TbKLCus0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

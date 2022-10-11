@@ -107,7 +107,7 @@
                             นอกจากนั้น ห้องปฏิบัติการตรวจสอบฯ ยังได้รับการรับรองจากสมาพันธ์อัญมณีโลก (The World Jewellery Confederation หรือมีชี่อย่อว่า CIBJO) ให้เป็น CIBJO Member
                             เมื่อเดือนพฤษภาคม 2543
                         </p>
-                        <img class="figure-img img-fluid" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-1.png" alt="">
+                        <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-1.png" alt="">
 
                         <div class="title">สถานที่ติดต่อ</div>
                         <p>ห้องปฏิบัติการตรวจสอบอัญมณีสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)อาคารไอทีเอฟ ทาวเวอร์ ชั้น 4 ถนนสีลม
@@ -127,7 +127,7 @@
                         <div class="border-block">
                             <div class="row">
                                 <div class="col">
-                                    <div class="border-title">การให้บริการของห้องปฏิบัติการตรวจสอบอัญมณีมีดังต่อไปนี้</div>
+                                    <div class="border-topic">การให้บริการของห้องปฏิบัติการตรวจสอบอัญมณีมีดังต่อไปนี้</div>
                                 </div>
                             </div>
                             <div class="row">
@@ -148,15 +148,15 @@
                             </div>
                         </div>
                         <div class="title">ขั้นตอนการให้บริการฝ่ายตรวจสอบอัญมณี</div>
-                        <img class="figure-img img-fluid" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-2.png" alt="" style=" width: 484px; margin-bottom:50px;">
+                        <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-2.png" alt="" style=" width: 484px; margin-bottom:50px;">
 
-                        <img class="figure-img img-fluid" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-3.png" alt="" style="margin-bottom:50px;">
+                        <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-3.png" alt="" style="margin-bottom:50px;">
 
                         <div class="title">การรายงานผล</div>
                         <p>รายงานผลการวิเคราะห์และตรวจสอบ แบ่งเป็น</p>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md mt-xl-5 mt-lg-4">
                                 <div class="title">1. รายงานผลการตรวจสอบอัญมณีแบบเต็ม (Gem Identification Report)</div>
                                 <p>ระบุ ชนิด ประเภท สัดส่วน น้ำหนัก คำอธิบายที่ชัดเจน รวมทั้งมีภาพถ่ายสีดิจิตัลของอัญมณีด้วย
                                     สำหรับทับทิมและไพลิน สามารถให้บริการ การจัดระดับคุณภาพสี ข้อมูลรายงานผลการตรวจสอบ
@@ -165,13 +165,13 @@
                                     ของประเทศไทยติดผนึกอยู่เพื่อป้องกันการปลอมแปลง</p>
                             </div>
                             <div class="col-auto">
-                                <img class="figure-img img-fluid m-0" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
-                                <p class="mt-2 mb-5 text-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
+                                <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
+                                <p class="mb-5 text-md-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md mt-xl-5 mt-lg-4">
                                 <div class="title">2. รายงานผลการตรวจสอบหยก (Jade Report)</div>
                                 <p>ระบุ ชนิด ประเภท สัดส่วน น้ำหนัก คำอธิบายที่ชัดเจน รวมทั้งมีภาพถ่ายสีดิจิตัลของหยกชิ้นนั้นๆ ด้วย
                                     สามารถให้บริการตรวจสอบการปรับปรุงคุณภาพหยกโดยเฉพาะ ข้อมูลรายงานผลการตรวจสอบพร้อม
@@ -179,13 +179,13 @@
                                     มหาราชวังซึ่งเป็นสัญลักษณ์ที่สำคัญของประเทศไทยติดผนึกอยู่เพื่อป้องกันการปลอมแปลง</p>
                             </div>
                             <div class="col-auto">
-                                <img class="figure-img img-fluid m-0" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
-                                <p class="mt-2 mb-5 text-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
+                                <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
+                                <p class="mb-5 text-md-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md mt-xl-5 mt-lg-4">
                                 <div class="title">3. รายงานผลการตรวจสอบมุก (Pearl Report)</p>
                                 <p>ระบุ ชนิด ประเภท สัดส่วน น้ำหนัก คำอธิบายที่ชัดเจน รวมทั้งมีภาพถ่ายสีดิจิตัลของมุกด้วย
                                     สามารถให้บริการตรวจสอบการปรับปรุงคุณภาพมุกโดยเฉพาะ ข้อมูลรายงานผลการตรวจสอบ
@@ -193,25 +193,25 @@
                                     รูปพระบรมมหาราชวังซึ่งเป็นสัญลักษณ์ที่สำคัญของประเทศไทยติดผนึกอยู่เพื่อป้องกันการปลอมแปลง</div>
                             </div>
                             <div class="col-auto">
-                                <img class="figure-img img-fluid m-0" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
-                                <p class="mt-2 mb-5 text-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
+                                <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
+                                <p class="mb-5 text-md-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md mt-xl-5 mt-lg-4">
                                 <div class="title">4. รายงานผลการตรวจสอบการจัดระดับคุณภาพเพชร (Diamond Grading Report)</div>
                                 <p>ระบุ ชนิด สัดส่วน น้ำหนัก คำอธิบายความที่ชัดเจน รวมทั้งระดับคุณภาพของเพชรตามมาตรฐาน
                                     4Cs (Color, Clarity, Cut and Carat)</p>
                             </div>
                             <div class="col-auto">
-                                <img class="figure-img img-fluid m-0" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
-                                <p class="mt-2 mb-5 text-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
+                                <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
+                                <p class="mb-5 text-md-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md mt-xl-5 mt-lg-4">
                                 <div class="title">5. รายงานผลการตรวจสอบความเป็นธรรมชาติสีเพชร (Determination of Authenticity of Fancy Colored Diamond Report)</div>
                                 <p>ระบุ ชนิด ประเภท สัดส่วน น้ำหนัก คำอธิบายที่ชัดเจน รวมทั้งมีภาพถ่ายสีดิจิตัลของเพชรสีเม็ดนั้นๆ ด้วย
                                     สามารถให้บริการตรวจสอบความเป็นธรรมชาติสีเพชรโดยเฉพาะ ข้อมูลรายงานผลการตรวจสอบ
@@ -220,13 +220,13 @@
                                     การปลอมแปลง</p>
                             </div>
                             <div class="col-auto">
-                                <img class="figure-img img-fluid m-0" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
-                                <p class="mt-2 mb-5 text-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
+                                <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
+                                <p class="mb-5 text-md-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md mt-xl-5 mt-lg-4">
                                 <div class="title">6. รายงานผลการตรวจสอบเครื่องประดับ (Jewelry Report)</div>
                                 <p>ระบุ ชนิด ประเภท สัดส่วน น้ำหนัก และความบริสุทธิ์ของโลหะมีค่า พร้อมคำอธิบายที่ชัดเจน
                                     รวมทั้งมีภาพถ่ายสีดิจิตัลของเครื่องประดับด้วย ข้อมูลรายงานผลการตรวจสอบพร้อมทั้งภาพถ่ายสี
@@ -234,19 +234,19 @@
                                     ซึ่งเป็นสัญลักษณ์ที่สำคัญของประเทศไทยติดผนึกอยู่เพื่อป้องกันการปลอมแปลง</p>
                             </div>
                             <div class="col-auto">
-                                <img class="figure-img img-fluid m-0" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
-                                <p class="mt-2 mb-5 text-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
+                                <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
+                                <p class="mb-5 text-md-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md mt-xl-5 mt-lg-4">
                                 <div class="title">7. รายงานผลการตรวจสอบอัญมณีแบบย่อ (Gem Identification Mini Report)</div>
                                 <p>ระบุ ชนิด ประเภท สัดส่วน น้ำหนัก และภาพถ่ายอัญมณี จะถูกพิมพ์ลงบนกระดาษชนิดอาร์ตด้าน</p>
                             </div>
                             <div class="col-auto">
-                                <img class="figure-img img-fluid m-0" src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
-                                <p class="mt-2 mb-5 text-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
+                                <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 453px;">
+                                <p class="mb-5 text-md-right">ตัวอย่างใบรายงานผลพร้อมแหล่งที่มา</p>
                             </div>
                         </div>
                     </div>

@@ -102,6 +102,11 @@
 
                 <div class="container">
                     <div class="editor-content">
+                        <div class="h-title">ขอบเขตของการให้คำปรึกษา</div>
+                        <div class="title">งานบริการให้คำปรึกษาด้านอัญมณีและเครื่องประดับ ประกอบด้วย</div>
+                        <p class="-mc">1. บริการให้คำปรึกษาระบบมาตรฐานสากล อาทิ มาตรฐาน ISO/IEC 17025 มาตรฐาน ISO 9001 และ GIT Standard</p>
+                        <p class="-mc">2. บริการให้คำปรึกษาด้านการควบคุมคุณภาพกระบวนการให้เป็นมาตรฐาน อาทิ การทดสอบเพื่อควบคุมมาตรฐานกระบวนการผลิต การ QC ให้สอดคล้องกับมาตรฐานที่กำหนด การแก้ปัญหา QC ในกระบวนการ</p>
+                        <img src="<?php echo $core_template; ?>/assets/img/background/flow-chart-2.png" alt="">
                     </div>
                     <div class="border-nav-slider pt-5"></div>
                     <div class="youtube-block pt-4">

@@ -104,30 +104,115 @@
                     <div class="editor-content">
                         <div class="h-title">แหล่งงาน</div>
                         <div class="default-bar">
-                            <div class="row">
-                                <div class="col-md">
+                            <div class="row align-items-center">
+                                <div class="col-md-auto">
                                     <div class="whead">
                                         <div class="h-title">หัวหน้าฝ่ายวิจัยและพัฒนาอัญมณีและเครื่องประดับ</div>
                                     </div>
                                 </div>
-                                <div class="col-md-auto">
+                                <div class="col-md">
                                     <div class="social-block">
                                         <div class="title">Share :</div>
                                         <ul class="item-list">
                                             <li>
-                                                <img src="<?php echo $core_template; ?>/assets/img/icon/" alt="">
+                                                <a href="" class="link">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-facebook.svg" alt="" style=" width: auto; ">
+                                                </a>
                                             </li>
                                             <li>
-                                                <img src="<?php echo $core_template; ?>/assets/img/icon/" alt="">
+                                                <a href="" class="link">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-twitter.svg" alt="">
+                                                </a>
                                             </li>
                                             <li>
-                                                <img src="<?php echo $core_template; ?>/assets/img/icon/" alt="">
+                                                <a href="" class="link">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-gmail.svg" alt="">
+                                                </a>
                                             </li>
+                                            <li class="-bsc"></li>
                                             <li>
-                                                <img src="<?php echo $core_template; ?>/assets/img/icon/" alt="">
+                                                <a href="" class="link">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-print.svg" alt="">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="whead-addon -bsc">
+                                        <div class="detail-info">
+                                            <ul class="item-list">
+                                                <li>23.07.2564</li>
+                                                <li>
+                                                    <span class="feather icon-eye mr-2"></span>
+                                                    336 View
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="whead-addon">
+                                        <div class="detail-info">
+                                            <ul class="item-list -c">
+                                                <li>จำนวนเปิดรับสมัคร : 1 ตำแหน่ง</li>
+                                                <li class="-bsc"></li>
+                                                <li>สถานที่ : กรุงเทพมหานคร</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="title">วัตถุประสงค์ของตำแหน่งงาน</div>
+                        <p>ปฏิบัติงานในฐานะหัวหน้าหน่วยงาน โดยใช้ความรู้ ความสามารถ ประสบการณ์และความเชี่ยวชาญในด้านวิจัยและพัฒนา เทคนิคการตรวจสอบ การวิเคราะห์
+                            การปรับปรุงมาตรฐานอัญมณีและโลหะมีค่าประเภทต่างๆ รวมถึงการวางแผน บริหารจัดการ จัดระบบงาน อำนวยการ สั่งการ มอบหมาย กำกับ แนะนำ ตรวจ
+                            สอบ ประเมินผลงาน ตัดสินใจ แก้ปัญหาในงานตามภารกิจของหน่วยงานที่รับผิดชอบ บริหารจัดการการถ่ายทอดองค์ความรู้ใหม่ๆที่ได้จากงานวิจัยและพัฒนา
+                            จัดทำยุทธศาสตร์งานวิจัยของสถาบัน แผนงานวิจัยประจำปี ติดตามงานและควบคุมโครงการวิจัยของสถาบัน กำกับดูแลการดำเนินงานระบบมาตรฐานต่างๆ
+                            ของสถาบัน และปฏิบัติหน้าที่อื่นที่ได้รับมอบหมาย</p>
+                        <div class="title">ความรับผิดชอบหลัก</div>
+                        <p class="-mc">- การกำกับนโยบายและแผนงานของหน่วยงาน กำหนดเป้าหมายตัวชี้วัดผลงาน</p>
+                        <p class="-mc">- การบริหารงานของหน่วยงาน ควบคุม กำกับดูแล และพัฒนากระบวนการทำงานของฝ่าย</p>
+                        <p class="-mc">- การบริหารผู้ใต้บังคับบัญชา กำหนดเป้าหมายติดตามประเมินผลการปฏิบัติงาน พัฒนาความรู้ทักษะ</p>
+                        <p class="-mc">- การจัดทำและควบคุมแผนงบประมาณของหน่วยงาน</p>
+                        <p class="-mc">- การจัดทำแผนการวิจัยและพัฒนาให้สอดคล้องกับยุทธศาศตร์ และการให้ทุนวิจัย การบริหารโครงการวิจัยต่างๆติดตามความก้าวหน้าโครงการวิจัยต่างๆของสถาบัน</p>
+                        <p class="-mc">- ดำเนินการวิจัยและพัฒนาโครงการวิจัยด้านเทคนิคของสถาบัน</p>
+                        <p class="-mc">- พัฒนาองค์ความรู้ด้านการวิจัยและพัฒนา เป็นผู้แทนของสถาบันฯ ในการเข้าร่วมการสัมมนาหรือการแลกเปลี่ยนข้อมูลในเชิงวิชาการและประชาสัมพันธ์เผยแพร่องค์ความรู้จากงานวิจัย</p>
+                        <p class="-mc">- วางแผน บริหารจัดการการดำเนินงานและพัฒนาระบบมาตรฐาน ISO ต่างๆ ของสถาบัน</p>
+                        <p>- จัดประชุมวิชาการนานาชาติ การเขียนบทความวิชาการและการเป็นวิทยากร</p>
+                        <div class="title">ความรู้ ความสามารถ ทักษะเฉพาะตำแหน่ง</div>
+                        <p class="-mc">- มีวุฒิการศึกษาไม่ต่ำกว่าระดับปริญญาตรีหรือเทียบเท่า สาขาวิทยาศาสตร์ ธรณีวิทยา อัญมณีศาสตร์ วัสดุศาสตร์ โลกศาสตร์ เคมี เคมีวิเคราะห์ หรือสาขาอื่นๆ</p>
+                        <p class="-mc">- ที่เกี่ยวข้อง จากสถาบันการศึกษาที่สำนักงานคณะกรรมการข้าราชการพลเรือนรับรอง</p>
+                        <p class="-mc">- ประสบการณ์ด้านงานวิจัยและพัฒนา ไม่น้อยกว่า 12 ปี กรณีมีประสบการณ์ด้านการตรวจวิเคราะห์ การวิจัย หรือการพัฒนาเชิงเทคนิคด้านอัญมณีและเครื่อง</p>
+                        <p class="-mc">- ประดับในห้องปฏิบัติการ จะได้รับการพิจารณาเป็นพิเศษ</p>
+                        <p class="-mc">- ประสบการณ์ในตำแหน่งบังคับบัญชาไม่น้อยกว่า 7 ปี การบริหารหน่วยงาน บุคลากร งบประมาณ</p>
+                        <p>- ต้องมีคุณสมบัติและไม่มีลักษณะต้องห้ามการเป็นเจ้าหน้าที่สถาบัน ตาม พรฎ จัดตั้งสถาบันฯ</p>
+                        <div class="title">ความรู้ ความสามารถ ทักษะเฉพาะตำแหน่ง</div>
+                        <p class="-mc">- มีความสามารถในการสื่อสารภาษาอังกฤษได้ดี</p>
+                        <p class="-mc">- การใช้โปรแกรมคอมพิวเตอร์ Word, Excel และ Power Point</p>
+                        <p class="-mc">- ทักษะการคิดวิเคราะห์ การสื่อสาร การนำเสนอ และการบริหารจัดการ</p>
+                        <p class="-mc">- ทักษะการใช้เครื่องมือ อุปกรณ์ในห้องแล็บวิเคราะห์</p>
+                        <p class="-mc">- ความสามารถในการทำงานภายใต้สภาวะกดดัน</p>
+                        <div class="button -ck">
+                            <div class="row mt-5">
+                                <div class="col-sm text-sm-right">
+                                    <a href="" class="btn btn-primary" title="btn btn-primary">
+                                        กรอกใบสมัครออนไลน์
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="51.235" height="7.199" viewBox="0 0 51.235 7.199">
+                                            <path data-name="Path 5" d="M4670.6,5544.179h50.033l-6.306-6.347" transform="translate(-4670.602 -5537.48)" fill="none" stroke="#fff" stroke-width="1"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="" class="btn btn-primary" title="btn btn-primary">
+                                        ดาวน์โหลดใบสมัคร
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="51.235" height="7.199" viewBox="0 0 51.235 7.199">
+                                            <path data-name="Path 5" d="M4670.6,5544.179h50.033l-6.306-6.347" transform="translate(-4670.602 -5537.48)" fill="none" stroke="#fff" stroke-width="1"></path>
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -171,6 +256,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row pt-5 text-right">
                         <div class="col-12">
                             <a href="" class="btn btn-border-primary" title="btn btn-primary">กลับ</a>

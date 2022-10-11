@@ -102,6 +102,85 @@
 
                 <div class="container">
                     <div class="editor-content">
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="collapse-block">
+                                    <div id="accordionInner">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="mb-0">
+                                                    <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#service-work-7" aria-expanded="false" aria-controls="collapse">
+                                                        <span>
+                                                            ราคาค่าบริการตรวจสอบเพชร
+                                                        </span>
+                                                        <span class="feather icon-plus-circle"></span>
+                                                    </button>
+                                                </h3>
+                                            </div>
+                                            <div id="service-work-7" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <table class="table table-bordered text-center">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>ชนิด</th>
+                                                                <!-- <th>น้ำหนัก(กะรัต)</th> -->
+                                                                <th>ลักษณะการรายงานผล</th>
+                                                                <th>ราคาต่อตัวอย่าง (บาท)</th>
+                                                                <!-- <th>ตัวอย่างใบรายงานผล</th> -->
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style=" padding: 0; ">
+                                                                    <img src="<?php echo $core_template; ?>/assets/img/static/icp01.png" alt="" style=" width: 348px; ">
+                                                                    <!-- <div class="desc">การจัดระดับคุณภาพเพชร</br>Diamond Grading</div> -->
+                                                                </td>
+                                                                <td>
+                                                                    <p>1. รายงานธาตุเดียว</p>
+                                                                    <p>2. รายงานธาตุเดียว (ตัวอย่างที่เป็นสารละลาย)</p>
+                                                                    <p>3. ค่าเตรียมตัวอย่าง สำหรับลักษณะตัวอย่างพิเศษ-ชิ้นส่วนอื่นๆ ที่ไม่ใช่เครื่องประดับ หรือโลหะทั่วไป เช่น
+                                                                        <br>
+                                                                        ชิ้นส่วนจากอุปกรณ์อิเล็กทรอนิก หรือ ผงโลหะ หินแร่ เป็นต้น (คำนวณข้อ 1 ต่อไป)
+                                                                    </p>
+                                                                    <p>4. รายงานมากกว่า 1 ธาตุ (คำนวณส่วนเกินจาก ข้อ 1)</p>
+                                                                    <p>5. การวิเคราะห์หาธาตุเชิงปริมาณวิเคราะห์ (ระบุธาตุ แต่ไม่ระบุค่าความบริสุทธิ์)</p>
+                                                                    <p>6. การตรวจวัดอัตราการแพร่ของปริมาณนิกเกิล 1 ชิ้นส่วนในเครื่องประดับ</p>
+                                                                    <p>7. การตรวจวัดอัตราการแพร่ของปริมาณนิกเกิลมากกว่า 1 ชิ้นส่วนในเครื่องประดับ</p>
+                                                                </td>
+                                                                <td>
+                                                                    <p>600 บาท</p>
+                                                                    <p>500 บาท</p>
+                                                                    <p>500 บาท</p>
+                                                                    <p>
+                                                                        +300 บาทต่อธาตุ
+                                                                        <br>
+                                                                        (3 ตัวอย่างขึ้นไป)
+                                                                    </p>
+                                                                    <p>500 บาท</p>
+                                                                    <p>
+                                                                        3,000 / 2,500
+                                                                        <br>
+                                                                        (มากกว่า 10 ตัวอย่าง)
+                                                                    </p>
+                                                                    <p>+ 1000 ต่อสุด</p>
+                                                                </td>
+                                                                <!-- <td>
+                                                                    <p>1,300 / เม็ด</p>
+                                                                    <p>1,500 / เม็ด</p>
+                                                                    <p>เพิ่ม 700 / กะรัต</p>
+                                                                <td style=" vertical-align: baseline; ">
+                                                                    <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-4.png" alt="" style=" width: 200px;">
+                                                                </td> -->
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="border-nav-slider pt-5"></div>
                     <div class="youtube-block pt-4">

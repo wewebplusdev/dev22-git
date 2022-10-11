@@ -102,6 +102,36 @@
 
                 <div class="container">
                     <div class="editor-content">
+                        <div class="h-title">ความเป็นมาศูนย์ให้คำปรึกษา</div>
+                        <p>เมื่อวันที่ 23 มิถุนายน 2563 มีมติเห็นชอบการปรับโครงสร้างองค์กรใหม่ จากคณะกรรมการบริหารสถาบัน เพื่อรองรับภารกิจและบทบาทในการสนับสนุนและยกระดับมาตรฐานอุตสาหกรรมอัญมณี
+                            และเครื่องประดับของประเทศ จึงมีมติให้จัดตั้ง "ศูนย์ให้คำปรึกษา" ขึ้น โดยให้มีหน้าที่และ ความรับผิดชอบในการเป็นศูนย์กลางรับงานบริการ ให้คำปรึกษาด้านเทคนิคและระบบงานมาตรฐานด้าน
+                            อัญมณีและเครื่องประดับให้กับกลุ่มอุตสาหกรรม อัญมณีและเครื่องประดับ ตลอดจนบริหารโครงการ การให้บริการและรับปรึกษากับลูกค้า/องค์กรภายนอกให้เป็นไปตามขอบเขตและข้อตกลง โดยมี
+                            วัตถุประสงค์ดังนี้
+                        </p>
+                        <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-6.png" alt="">
+                        <div class="title mt-lg-4">วัตถุประสงค์</div>
+                        <p class="-mc">1. เพื่อเป็นหน่วยงานกลางในการส่งเสริมและพัฒนาอุตสาหกรรมอัญมณีและเครื่องประดับ</p>
+                        <p class="-mc">2. เพื่อสร้างความเข้มแข็งให้แก่ผู้ประกอบการทั่วประเทศให้แข่งขันได้ และมีขีดความสามารถเพียงพอต่อการขยายตลาดการค้าสู่สากล</p>
+                        <p class="-mc">3. การพัฒนาศักยภาพและยกระดับมาตรฐานของอุตสาหกรรมด้านอัญมณีและเครื่องประดับ</p>
+                        <div class="consultant-search">
+                            <div class="cover">
+                                <img src="<?php echo $core_template; ?>/assets/img/background/image-service-work-7.png" alt="">
+                            </div>
+                            <div class="wrapper">
+                                <div class="title">ระบบศูนย์ข้อมูลที่ปรึกษาสำนักงาน
+                                    บริหารหนี้สาธารณะกระทรวงการคลัง
+                                    Consultant Database Center
+                                </div>
+                                <div class="button ">
+                                    <a href="" class="btn btn-primary" title="btn btn-primary">
+                                        ค้นหารายชื่อที่ปรึกษา
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="51.235" height="7.199" viewBox="0 0 51.235 7.199">
+                                            <path data-name="Path 5" d="M4670.6,5544.179h50.033l-6.306-6.347" transform="translate(-4670.602 -5537.48)" fill="none" stroke="#fff" stroke-width="1"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="border-nav-slider pt-5"></div>
                     <div class="youtube-block pt-4">
