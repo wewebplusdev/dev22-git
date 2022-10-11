@@ -7,9 +7,70 @@
         margin-bottom: 3rem;
     }
     .title {
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
     }
     .desc {
         margin-bottom: 30px;
     }
+    .form-block {
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .box {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #eeeeee;
+            p {
+                font-size: var(--typo-xs);
+                margin-bottom: 0;
+            }
+        }
+        .form-check{
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+    .pdpa-page .form-block .box {
+        margin: 2rem 0;
+    }
+    .pdpa-page .form-block .form-check {
+        margin-bottom: 2rem;
+    }    
+}
+
+@media (max-width: 767px) {
+    .pdpa-page .h-title {
+        margin-bottom: 2rem;
+    }
+    .pdpa-page .form-block .box {
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+}
+
+.swal2-styled {
+    background: none;
+    position: relative;
+    padding: 0 30px !important;
+    min-width: 120px;
+    height: 50px;
+    line-height: 48px !important;
+    border: 1px solid transparent !important;
+    border-radius: 0 !important;
+    font-size: var(--typo-default) !important;
+    font-weight: var(--fw-medium) !important;
 }

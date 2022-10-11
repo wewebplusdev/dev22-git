@@ -42,6 +42,12 @@ body {
         padding: 0 10px;
     }
 }
+.gutters-30 {
+    margin: 0 -15px;
+    >div {
+        padding: 0 15px;
+    }
+}
 
 .gutters-custom {
     margin: 0 -12.5px;
@@ -354,6 +360,12 @@ textarea {
         margin: 0 -25px;
         >div {
             padding: 0 25px;
+        }
+    }
+    .gutters-lg-30 {
+        margin: 0 -15px;
+        >div {
+            padding: 0 15px;
         }
     }
     

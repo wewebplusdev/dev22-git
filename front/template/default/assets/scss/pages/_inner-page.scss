@@ -155,7 +155,8 @@
         }
     }
     .slick-arrow {
-        top: 45%;
+        // top: 45%;
+        top: 50%;
     }
     .slick-prev,
     .slick-next {
@@ -461,14 +462,21 @@
             margin-top: 10px;
         }
     }
+    .default-header {
+        .top-graphic {
+            .cover {
+                padding-bottom: 200px;
+            }
+            .wrapper {
+                .title {
+                    margin: 0;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 575px) {
-    .top-graphic {
-        // .cover {
-        //     height: 250px;
-        // }
-    }
     .download-block {
         // padding: 20px 0;
         .title {

@@ -14,9 +14,9 @@
         <section class="site-container">
 
             <div class="default-header">
-                <div class="top-graphic mb-4 text-dark">
+                <div class="top-graphic text-dark">
                     <figure class="cover">
-                        <img class="figure-img img-fluid" src="<?php echo $core_template; ?>/assets/img/background/top-graphic-pdpa.jpg" alt="">
+                        <img src="<?php echo $core_template; ?>/assets/img/background/top-graphic-pdpa.jpg" alt="">
                     </figure>
                     <div class="container">
                         <div class="wrapper">
@@ -29,47 +29,51 @@
                     </div>
                 </div>
             </div>
-            <div class="default-page pdpa-page">
-                <div class="container">
-                    <div class="default-nav-slider">
-                        <div class="item">
-                            <a href="javascript:void(0)" class="active">
-                                นโยบายความเป็นส่วนตัว
-                                สำหรับลูกค้า
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0)">
-                                นโยบายความเป็นส่วนตัว
-                                สำหรับคู่ค้า
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0))">
-                                นโยบายความเป็นส่วนตัว
-                                สำหรับพนักงาน
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0))">
-                                นโยบายความเป็นส่วนตัว
-                                สำหรับผู้สมัครงาน
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0))">
-                                นโยบายคุกกี้
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="javascript:void(0))">
-                                แบบคำขอใช้สิทธิ
-                                ข้อมูลส่วนบุคคล
-                            </a>
+            <div class="default-nav">
+                <div class="nav-slider-block">
+                    <div class="container">
+                        <div class="default-nav-slider">
+                            <div class="item">
+                                <a href="javascript:void(0)" class="active">
+                                    นโยบายความเป็นส่วนตัว
+                                    สำหรับลูกค้า
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:void(0)">
+                                    นโยบายความเป็นส่วนตัว
+                                    สำหรับคู่ค้า
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:void(0))">
+                                    นโยบายความเป็นส่วนตัว
+                                    สำหรับพนักงาน
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:void(0))">
+                                    นโยบายความเป็นส่วนตัว
+                                    สำหรับผู้สมัครงาน
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:void(0))">
+                                    นโยบายคุกกี้
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:void(0))">
+                                    แบบคำขอใช้สิทธิ
+                                    ข้อมูลส่วนบุคคล
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    <div class="border-nav-slider"></div>
                 </div>
-                <div class="border-nav-slider"></div>
+            </div>
+            <div class="default-page pdpa-page">
                 <div class="container">
                     <div class="h-title">
                         บริการออนไลน์

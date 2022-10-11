@@ -16,7 +16,7 @@
             <div class="default-header">
                 <div class="top-graphic mb-4">
                     <figure class="cover">
-                        <img class="figure-img img-fluid" src="<?php echo $core_template; ?>/assets/img/background/mock-top-grapphic-1.png" alt="">
+                        <img src="<?php echo $core_template; ?>/assets/img/background/mock-top-grapphic-1.png" alt="">
                     </figure>
                     <div class="container">
                         <div class="wrapper">
