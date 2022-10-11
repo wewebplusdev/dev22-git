@@ -27,6 +27,16 @@ $lang['menu']['contact'] = "ติดต่อเรา";
 $lang['menu']['404'] = "ขออภัย ไม่พบหน้าที่คุณกำลังค้นหา";
 $lang['menu']['sitemap'] = "แผนผังเว็บไซต์";
 
+//career
+$lang['career']['select'] = "ตำแหน่ง | เลือก";
+$lang['career']['search'] = 'งาน | ค้นหา ';
+$lang['career']['search-title'] = 'ค้นหางาน';
+$lang['career']['quantity'] = 'จำนวนที่เปิดรับ';
+$lang['career']['position'] = 'ตำแหน่ง';
+$lang['career']['location'] = 'สถานที่';
+$lang['career']['detail'] = 'รายละเอียด';
+$lang['career']['source'] = 'แหล่งงาน';
+
 // contact
 $lang['contact']['form'] = "แบบฟอร์มติดต่อเรา";
 $lang['contact']['group'] = "ติดต่อ";

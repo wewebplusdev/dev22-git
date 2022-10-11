@@ -27,6 +27,16 @@ $lang['menu']['contact'] = "CONTACT US";
 $lang['menu']['404'] = "PAGE NOT FOUND";
 $lang['menu']['sitemap'] = "SITEMAP";
 
+//career
+$lang['career']['select'] = "Position | Select";
+$lang['career']['search'] = 'Job | Search';
+$lang['career']['search-title'] = 'Job Search';
+$lang['career']['quantity'] = 'Number of open positions';
+$lang['career']['position'] = 'Position';
+$lang['career']['location'] = 'Location';
+$lang['career']['detail'] = 'Details';
+$lang['career']['source'] = 'Job Source';
+
 // contact
 $lang['contact']['form'] = "Contact us form";
 $lang['contact']['group'] = "Contact";

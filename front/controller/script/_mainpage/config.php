@@ -23,6 +23,9 @@ $config['cmsf']['db']['main'] = "md_cmsf";
 $config['cug']['db']['main'] = "md_cug";
 $config['cus']['db']['main'] = "md_cus";
 $config['cue']['db']['main'] = "md_cue";  
+$config['joss']['db']['main'] = "md_joss";
+$config['jos']['db']['main'] = "md_jos";
+$config['jof']['db']['main'] = "md_jof";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
@@ -39,7 +42,7 @@ $config['about']['osv']['masterkey'] = 'osv';
 $config['about']['mr']['masterkey'] = 'mr';
 $config['about']['plc']['masterkey'] = 'plc';
 $config['contact']['cu']['masterkey'] = 'cu';
-
+$config['about']['ab_js']['masterkey'] = "ab_js";
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';
 $config['policy']['db'] = 'md_ab';
