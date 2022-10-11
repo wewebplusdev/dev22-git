@@ -89,44 +89,44 @@
         </div>
       </form>
         {foreach $callCMS as $keycallCMS => $valuecallCMS}
-        <div class="job-source-block mb-3">
-          <div class="row">
-            <div class="col-auto">
-              <div class="title typo-sm">{$valuecallCMS.subject}</div>
-              <div class="desc">({$lang['career']['quantity']} : {$valuecallCMS.quantity} {$lang['career']['position']})</div>
-            </div>
-            <div class="col-auto py-3">
-              <div class="desc">{$valuecallCMS.title}</div>
-            </div>
-          </div>
-          <div class="job-source-location">
-            <div class="row align-items-center">
-              <div class="col">
-                <div class="row align-items-center no-gutters">
-                  <div class="col-auto">
-                    <img src="{$template}/assets/img/icon/icon-location.svg" alt="icon-location">
-                  </div>
-                  <div class="col">
-                    <div class="desc">{$lang['career']['location']} : {$valuecallCMS.address}</div>
-                  </div>
+          <div class="job-source-block mb-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title typo-sm text-limit -x3">{$valuecallCMS.subject}</div>
+                    <div class="desc">({$lang['career']['quantity']} : {$valuecallCMS.quantity} {$lang['career']['position']})</div>
                 </div>
-              </div>
-              <div class="col-auto">
-                <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}/{$menuDetail}/{$valuecallCMS.id}" class="link" title="{$lang['career']['detail']}">
-                  <div class="row align-items-center no-gutters">
+                <div class="col-12 py-3">
+                    <div class="desc text-limit -x3">{$valuecallCMS.title}</div>
+                </div>
+            </div>
+            <div class="job-source-location">
+                <div class="row align-items-center">
                     <div class="col">
-                      <div class="desc">
-                        {$lang['career']['detail']}
-                      </div>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                                <img src="{$template}/assets/img/icon/icon-location.svg" alt="icon-location">
+                            </div>
+                            <div class="col">
+                                <div class="desc">{$lang['career']['location']} : {$valuecallCMS.address}</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-auto">
-                      <img src="{$template}/assets/img/icon/icon-detail.svg" alt="icon-detail">
+                        <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}/{$menuDetail}/{$valuecallCMS.id}" class="link" title="{$lang['career']['detail']}">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col">
+                                    <div class="desc">
+                                        {$lang['career']['detail']}
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <img src="{$template}/assets/img/icon/icon-detail.svg" alt="icon-detail">
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                  </div>
-                </a>
-              </div>
+                </div>
             </div>
-          </div>
         </div>
         {/foreach}
         {if $callCMS->_numOfRows gte 1 && $pagination['totalpage'] gte 2}

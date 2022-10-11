@@ -1,9 +1,34 @@
-<section class="site-container" data-menuid="{$settingModulus['menuid']}">
+<?php
+/* Smarty version 4.0.0, created on 2022-10-11 18:01:28
+  from '/var/www/html/front/template/default/_component/career-form.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.0.0',
+  'unifunc' => 'content_63454d084afd85_14638494',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5a523170c265681e6c2b26d0727eb06a15c5892a' => 
+    array (
+      0 => '/var/www/html/front/template/default/_component/career-form.tpl',
+      1 => 1665486085,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_63454d084afd85_14638494 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="site-container" data-menuid="<?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['menuid'];?>
+">
   <div class="default-header">
     <div class="top-graphic mb-4">
       <figure class="cover">
         <img class="figure-img img-fluid"
-          src="{$template}/assets/img/background/mock-top-grapphic-2.png" alt="">
+          src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/background/mock-top-grapphic-2.png" alt="">
       </figure>
       <div class="container">
         <div class="wrapper">
@@ -41,24 +66,36 @@
           </div>
           <div class="col-sm">
             <form data-toggle="validator" name="form-career" id="form-career" role="form" class="form-default" method="post">
-            {* pictures *}
-            <input name="keyProfile" value="{$MenuID}" type="hidden">
+                        <input name="keyProfile" value="<?php echo $_smarty_tpl->tpl_vars['MenuID']->value;?>
+" type="hidden">
             <input name="picProfile" value="" type="hidden">
-            <input name="LangPage" value="{$langon}" type="hidden">
+            <input name="LangPage" value="<?php echo $_smarty_tpl->tpl_vars['langon']->value;?>
+" type="hidden">
             <input type="file" name="uploadProfile" id="uploadProfile" style="display:none;" accept="image/*">
-            {* pictures *}
-              <!-- <div class="typo-xs text-gray" style=" padding-left: 12.5px; padding-right: 12.5px; ">ตำแหน่งที่ต้องการสมัคร Position</div> -->
+                          <!-- <div class="typo-xs text-gray" style=" padding-left: 12.5px; padding-right: 12.5px; ">ตำแหน่งที่ต้องการสมัคร Position</div> -->
               <div class="row gutters-custom">
                 <div class="col">
-                  <div class="control-label" for="mockSelect1">{$lang['career']['apply']}</div>
+                  <div class="control-label" for="mockSelect1"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['apply'];?>
+</div>
                   <div class="form-group has-feedback">
-                    <label class="control-label visuallyhidden" for="mockSelect1">{$lang['career']['select']}</label>
+                    <label class="control-label visuallyhidden" for="mockSelect1"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['select'];?>
+</label>
                     <div class="select-wrapper">
                       <select class="select-control select-year" name="info[]" id="mockSelect1" style="width: 100%;" required="required">
-                        <option value="">{$lang['career']['select']}</option>
-                        {foreach $callListCareerSelect as $keycallListCareerSelect => $valuecallListCareerSelect}
-                        <option value="{$valuecallListCareerSelect.id}" {if $req_params['selectcareer'] eq $valuecallListCareerSelect.id}selected{/if}>{$valuecallListCareerSelect.subject}</option>
-                        {/foreach}
+                        <option value=""><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['select'];?>
+</option>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callListCareerSelect']->value, 'valuecallListCareerSelect', false, 'keycallListCareerSelect');
+$_smarty_tpl->tpl_vars['valuecallListCareerSelect']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keycallListCareerSelect']->value => $_smarty_tpl->tpl_vars['valuecallListCareerSelect']->value) {
+$_smarty_tpl->tpl_vars['valuecallListCareerSelect']->do_else = false;
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['valuecallListCareerSelect']->value['id'];?>
+" <?php if ($_smarty_tpl->tpl_vars['req_params']->value['selectcareer'] == $_smarty_tpl->tpl_vars['valuecallListCareerSelect']->value['id']) {?>selected<?php }?>><?php echo $_smarty_tpl->tpl_vars['valuecallListCareerSelect']->value['subject'];?>
+</option>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       </select>
                     </div>
                   </div>
@@ -67,9 +104,11 @@
               <div class="row gutters-custom">
                 <div class="col-md">
                   <div class="form-group has-feedback">
-                    <label class="control-label visuallyhidden" for="salaly">{$lang["career"]["salary"]}</label>
+                    <label class="control-label visuallyhidden" for="salaly"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["salary"];?>
+</label>
                     <div class="block-control">
-                      <input type="text" class="form-control" name="info[]" id="salaly" placeholder="{$lang["career"]["salary"]}"
+                      <input type="text" class="form-control" name="info[]" id="salaly" placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["salary"];?>
+"
                         data-error="" required="required">
                       <span class="form-control-feedback" aria-hidden="true"></span>
                     </div>
@@ -77,10 +116,12 @@
                 </div>
                 <div class="col-md">
                   <div class="form-group has-feedback">
-                    <label class="control-label visuallyhidden" for="sdate">{$lang['career']['datework']}</label>
+                    <label class="control-label visuallyhidden" for="sdate"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['datework'];?>
+</label>
                     <div class="block-control">
                       <input name="info[]" type="date" class="form-control" id="sdate"
-                        placeholder="{$lang['career']['datework']}" ata-error="" required="required">
+                        placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['datework'];?>
+" ata-error="" required="required">
                       <span class="form-control-feedback" aria-hidden="true"></span>
                     </div>
                   </div>
@@ -103,9 +144,15 @@
               <label class="control-label visuallyhidden" for="inputPrefix">Example select</label>
               <div class="select-wrapper">
                 <select class="select-control" name="general[]" id="inputPrefix" onchange="hidearmy()" style="width: 100%;">
-                  <option value="{$lang['career']['mr']}">{$lang['career']['mr']}</option>
-                  <option value="{$lang['career']['mis']}">{$lang['career']['mis']}</option>
-                  <option value="{$lang['career']['miss']}">{$lang['career']['miss']}</option>
+                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mr'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mr'];?>
+</option>
+                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mis'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mis'];?>
+</option>
+                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['miss'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['miss'];?>
+</option>
                 </select>
               </div>
             </div>
@@ -135,9 +182,15 @@
               <label class="control-label visuallyhidden" for="inputPrefixen">Example select</label>
               <div class="select-wrapper">
                 <select class="select-control" name="general[]" id="inputPrefixen" onchange="hidearmyen()" style="width: 100%;">
-                  <option value="{$lang['career']['mren']}">{$lang['career']['mren']}</option>
-                  <option value="{$lang['career']['misen']}">{$lang['career']['misen']}</option>
-                  <option value="{$lang['career']['missen']}">{$lang['career']['missen']}</option>
+                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mren'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mren'];?>
+</option>
+                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['misen'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['misen'];?>
+</option>
+                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['missen'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['missen'];?>
+</option>
                 </select>
               </div>
             </div>
@@ -173,10 +226,20 @@
                     birthday<span>*</span></label>
                   <div class="select-wrapper">
                     <select class="select-control" name="general[]" id="General_datebirth" style="width: 100%;">
-                      <option disabled selected value="0">{$lang['career']['day']}</option>
-                      {for $index=1 to 31}
-                          <option value="{if $index < 10}0{/if}{$index}">{$index}</option>
-                      {/for}
+                      <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                      <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                          <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                      <?php }
+}
+?>
                     </select>
                   </div>
                 </div>
@@ -186,10 +249,20 @@
                   <label class="control-label visuallyhidden" for="General_monthbirth">Example select</label>
                   <div class="select-wrapper">
                     <select class="select-control" name="general[]" id="General_monthbirth" style="width: 100%;">
-                      <option disabled selected value="0">{$lang['career']['month']}</option>
-                      {foreach $MonthArray as $keyMonthArray => $valueMonthArray}
-                          <option value="{$valueMonthArray['number']}">{$valueMonthArray[$LangMonth]}</option>
-                      {/foreach}
+                      <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                          <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                      <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
                   </div>
                 </div>
@@ -199,14 +272,21 @@
                   <label class="control-label visuallyhidden" for="General_yearbirth">Example select</label>
                   <div class="select-wrapper">
                     <select class="select-control" name="general[]" id="General_yearbirth" style="width: 100%;">
-                      <option disabled selected value="0">{$lang['career']['year']}</option>
-                      {assign var="current" value="{$Year}"}
-                      {assign var="currentEN" value="{$YearEn}"}
-                      {while $current > ($Year - 100)}
-                          <option value="{$currentEN}">{$current}</option>
-                          {$current--}
-                          {$currentEN--}
-                      {/while}
+                      <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                      <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                      <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                      <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                          <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                          <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                          <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                      <?php }?>
+
                     </select>
                   </div>
                 </div>
@@ -337,10 +417,21 @@
               <label class="control-label visuallyhidden" for="inputProvince">Example select</label>
               <div class="select-wrapper">
                 <select class="select-control inputProvince" name="address[]" id="inputProvince" style="width: 100%;">
-                  <option disabled selected value="0">{$lang['career']['province']}</option>
-                  {foreach $callProvince_mains as $callProvince_main}
-                      <option value="{$callProvince_main.0}" data-name="{$callProvince_main.2}">{$callProvince_main.2}</option>
-                  {/foreach}
+                  <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['province'];?>
+</option>
+                  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callProvince_mains']->value, 'callProvince_main');
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['callProvince_main']->value) {
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = false;
+?>
+                      <option value="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[0];?>
+" data-name="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+"><?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+</option>
+                  <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </select>
               </div>
             </div>
@@ -350,7 +441,8 @@
               <label class="control-label visuallyhidden" for="inputDistrict">Example select</label>
               <div class="select-wrapper">
                 <select class="select-control inputDistrict" name="address[]" id="inputDistrict" style="width: 100%;">
-                    <option disabled selected value="0">{$lang['career']['district']}</option>
+                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['district'];?>
+</option>
                 </select>
               </div>
             </div>
@@ -360,7 +452,8 @@
               <label class="control-label visuallyhidden" for="inputSubdictrict">Example select</label>
               <div class="select-wrapper">
                 <select class="select-control inputSubdictrict" name="address[]" id="inputSubdictrict" style="width: 100%;">
-                    <option disabled selected value="0">{$lang['career']['subdistrict']}</option>
+                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['subdistrict'];?>
+</option>
                 </select>
               </div>
             </div>
@@ -441,10 +534,21 @@
               <label class="control-label visuallyhidden" for="inputProvince2">Example select</label>
               <div class="select-wrapper">
                 <select class="select-control inputProvince2" name="address[]" id="inputProvince2" style="width: 100%;">
-                  <option disabled selected value="0">{$lang['career']['province']}</option>
-                  {foreach $callProvince_mains as $callProvince_main}
-                      <option value="{$callProvince_main.0}" data-name="{$callProvince_main.2}">{$callProvince_main.2}</option>
-                  {/foreach}
+                  <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['province'];?>
+</option>
+                  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callProvince_mains']->value, 'callProvince_main');
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['callProvince_main']->value) {
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = false;
+?>
+                      <option value="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[0];?>
+" data-name="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+"><?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+</option>
+                  <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </select>
               </div>
             </div>
@@ -454,7 +558,8 @@
               <label class="control-label visuallyhidden" for="inputDistrict2">Example select</label>
               <div class="select-wrapper">
                 <select class="select-control inputDistrict2" name="address[]" id="inputDistrict2" style="width: 100%;">
-                  <option disabled selected value="0">{$lang['career']['district']}</option>
+                  <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['district'];?>
+</option>
                 </select>
               </div>
             </div>
@@ -464,7 +569,8 @@
               <label class="control-label visuallyhidden" for="present-subdistrict">Example select</label>
               <div class="select-wrapper">
                 <select class="select-control inputSubdictrict2" name="address[]" id="present-subdistrict" style="width: 100%;">
-                  <option disabled selected value="0">{$lang['career']['subdistrict']}</option>
+                  <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['subdistrict'];?>
+</option>
                 </select>
               </div>
             </div>
@@ -560,7 +666,8 @@
               <legend class="visuallyhidden">radio</legend>
               <div class="form-group form-check">
                 <input class="form-check-input radio-check" type="radio" name="military[status]" id="exempted"
-                  value="{$lang['career']['army1']}" >
+                  value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['army1'];?>
+" >
                 <label class="control-label" for="exempted">
                   ได้รับการยกเว้น / Exempted
                 </label>
@@ -572,7 +679,8 @@
               <legend class="visuallyhidden">radio</legend>
               <div class="form-group form-check">
                 <input class="form-check-input radio-check" type="radio" name="military[status]" id="non-exempted"
-                  value="{$lang['career']['army2']}">
+                  value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['army2'];?>
+">
                 <label class="control-label" for="non-exempted">
                   ยังไม่ผ่านการเกณฑ์ทหาร / Non-Exempted
                 </label>
@@ -584,7 +692,8 @@
               <legend class="visuallyhidden">radio</legend>
               <div class="form-group form-check">
                 <input class="form-check-input radio-check" type="radio" name="military[status]"
-                  id="territorial-degree-student" value="{$lang['career']['army3']}">
+                  id="territorial-degree-student" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['army3'];?>
+">
                 <label class="control-label" for="territorial-degree-student">
                   เรียนรักษาดินแดน / Territorial Degree Student
                 </label>
@@ -598,7 +707,8 @@
               <legend class="visuallyhidden">radio</legend>
               <div class="form-group form-check">
                 <input class="form-check-input radio-check" type="radio" name="military[status]" id="date-entered-service"
-                  value="{$lang['career']['army4']}">
+                  value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['army4'];?>
+">
                 <label class="control-label" for="date-entered-service">
                   รับราชการทหารแล้ว / Date Entered Service
                 </label>
@@ -609,7 +719,8 @@
             <fieldset>
               <legend class="visuallyhidden">radio</legend>
               <div class="form-group form-check">
-                <input class="form-check-input radio-check" type="radio" name="military[status]" id="other" value="{$lang['career']['army']}">
+                <input class="form-check-input radio-check" type="radio" name="military[status]" id="other" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['army'];?>
+">
                 <label class="control-label" for="other">
                   อื่นๆ / Other
                 </label>
@@ -658,10 +769,20 @@
                   <label class="control-label label-custom" for="e-select-day">วันเดือนปีเกิด/Date of birthday</label>
                   <div class="select-wrapper">
                     <select class="select-control" name="emergency[]" id="e-select-day" style="width: 100%;">
-                      <option disabled selected value="0">{$lang['career']['day']}</option>
-                      {for $index=1 to 31}
-                          <option value="{if $index < 10}0{/if}{$index}">{$index}</option>
-                      {/for}
+                      <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                      <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                          <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                      <?php }
+}
+?>
                     </select>
                   </div>
                 </div>
@@ -675,10 +796,20 @@
                   <label class="control-label visuallyhidden" for="e-select-month">Ex</label>
                   <div class="select-wrapper">
                     <select class="select-control" name="emergency[]" id="e-select-month" style="width: 100%;">
-                      <option disabled selected value="0">{$lang['career']['month']}</option>
-                      {foreach $MonthArray as $keyMonthArray => $valueMonthArray}
-                          <option value="{$valueMonthArray['number']}">{$valueMonthArray[$LangMonth]}</option>
-                      {/foreach}
+                      <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                          <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                      <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
                   </div>
                 </div>
@@ -688,14 +819,21 @@
                   <label class="control-label visuallyhidden" for="e-select-year">Ex</label>
                   <div class="select-wrapper">
                     <select class="select-control" name="emergency[]" id="e-select-year" style="width: 100%;">
-                      <option disabled selected value="0">{$lang['career']['year']}</option>
-                      {assign var="current" value="{$Year}"}
-                      {assign var="currentEN" value="{$YearEn}"}
-                      {while $current > ($Year - 100)}
-                          <option value="{$currentEN}">{$current}</option>
-                          {$current--}
-                          {$currentEN--}
-                      {/while}
+                      <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                      <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                      <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                      <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                          <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                          <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                          <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                      <?php }?>
+
                     </select>
                   </div>
                 </div>
@@ -776,10 +914,20 @@
                       birthday</label>
                     <div class="select-wrapper">
                       <select class="select-control" name="family[]" id="f-select-day-1" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['day']}</option>
-                        {for $index=1 to 31}
-                            <option value="{if $index < 10}0{/if}{$index}">{$index}</option>
-                        {/for}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                        <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                            <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                        <?php }
+}
+?>
                       </select>
                     </div>
                   </div>
@@ -793,10 +941,20 @@
                     <label class="control-label visuallyhidden" for="f-select-month-1">Ex</label>
                     <div class="select-wrapper">
                       <select class="select-control" name="family[]" id="f-select-month-1" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['month']}</option>
-                        {foreach $MonthArray as $keyMonthArray => $valueMonthArray}
-                            <option value="{$valueMonthArray['number']}">{$valueMonthArray[$LangMonth]}</option>
-                        {/foreach}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       </select>
                     </div>
                   </div>
@@ -806,14 +964,21 @@
                     <label class="control-label visuallyhidden" for="f-select-year-1">Ex</label>
                     <div class="select-wrapper">
                       <select class="select-control" name="family[]" id="f-select-year-1" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['year']}</option>
-                        {assign var="current" value="{$Year}"}
-                        {assign var="currentEN" value="{$YearEn}"}
-                        {while $current > ($Year - 100)}
-                            <option value="{$currentEN}">{$current}</option>
-                            {$current--}
-                            {$currentEN--}
-                        {/while}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                        <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                        <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                        <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                            <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                            <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                        <?php }?>
+
                       </select>
                     </div>
                   </div>
@@ -898,10 +1063,20 @@
                     <label class="control-label visuallyhidden" for="fc-select-day-1">Ex</label>
                     <div class="select-wrapper select-custom">
                       <select class="select-control" name="family[]" id="fc-select-day-1" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['day']}</option>
-                        {for $index=1 to 31}
-                            <option value="{if $index < 10}0{/if}{$index}">{$index}</option>
-                        {/for}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                        <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                            <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                        <?php }
+}
+?>
                       </select>
                     </div>
                   </div>
@@ -911,10 +1086,20 @@
                     <label class="control-label visuallyhidden" for="fc-select-month-1">Ex</label>
                     <div class="select-wrapper select-custom">
                       <select class="select-control" name="family[]" id="fc-select-month-1" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['month']}</option>
-                        {foreach $MonthArray as $keyMonthArray => $valueMonthArray}
-                            <option value="{$valueMonthArray['number']}">{$valueMonthArray[$LangMonth]}</option>
-                        {/foreach}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       </select>
                     </div>
                   </div>
@@ -924,14 +1109,21 @@
                     <label class="control-label visuallyhidden" for="fc-select-year-1">Ex</label>
                     <div class="select-wrapper select-custom">
                       <select class="select-control" name="family[]" id="fc-select-year-1" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['year']}</option>
-                        {assign var="current" value="{$Year}"}
-                        {assign var="currentEN" value="{$YearEn}"}
-                        {while $current > ($Year - 100)}
-                            <option value="{$currentEN}">{$current}</option>
-                            {$current--}
-                            {$currentEN--}
-                        {/while}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                        <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                        <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                        <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                            <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                            <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                        <?php }?>
+
                       </select>
                     </div>
                   </div>
@@ -969,10 +1161,20 @@
                       birthday</label>
                     <div class="select-wrapper">
                       <select class="select-control" name="family[]" id="f-select-day-2" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['day']}</option>
-                        {for $index=1 to 31}
-                            <option value="{if $index < 10}0{/if}{$index}">{$index}</option>
-                        {/for}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                        <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                            <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                        <?php }
+}
+?>
                       </select>
                     </div>
                   </div>
@@ -986,10 +1188,20 @@
                     <label class="control-label visuallyhidden" for="f-select-month-2">Ex</label>
                     <div class="select-wrapper">
                       <select class="select-control" name="family[]" id="f-select-month-2" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['month']}</option>
-                        {foreach $MonthArray as $keyMonthArray => $valueMonthArray}
-                            <option value="{$valueMonthArray['number']}">{$valueMonthArray[$LangMonth]}</option>
-                        {/foreach}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       </select>
                     </div>
                   </div>
@@ -999,14 +1211,21 @@
                     <label class="control-label visuallyhidden" for="f-select-year-2">Ex</label>
                     <div class="select-wrapper">
                       <select class="select-control" name="family[]" id="f-select-year-2" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['year']}</option>
-                        {assign var="current" value="{$Year}"}
-                        {assign var="currentEN" value="{$YearEn}"}
-                        {while $current > ($Year - 100)}
-                            <option value="{$currentEN}">{$current}</option>
-                            {$current--}
-                            {$currentEN--}
-                        {/while}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                        <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                        <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                        <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                            <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                            <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                        <?php }?>
+
                       </select>
                     </div>
                   </div>
@@ -1091,10 +1310,20 @@
                     <label class="control-label visuallyhidden" for="fc-select-day-2">Ex</label>
                     <div class="select-wrapper select-custom">
                       <select class="select-control" name="family[]" id="fc-select-day-2" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['day']}</option>
-                        {for $index=1 to 31}
-                            <option value="{if $index < 10}0{/if}{$index}">{$index}</option>
-                        {/for}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                        <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                            <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                        <?php }
+}
+?>
                       </select>
                     </div>
                   </div>
@@ -1104,10 +1333,20 @@
                     <label class="control-label visuallyhidden" for="fc-select-month-2">Ex</label>
                     <div class="select-wrapper select-custom">
                       <select class="select-control" name="family[]" id="fc-select-month-2" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['month']}</option>
-                        {foreach $MonthArray as $keyMonthArray => $valueMonthArray}
-                            <option value="{$valueMonthArray['number']}">{$valueMonthArray[$LangMonth]}</option>
-                        {/foreach}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       </select>
                     </div>
                   </div>
@@ -1117,14 +1356,21 @@
                     <label class="control-label visuallyhidden" for="fc-select-year-2">Ex</label>
                     <div class="select-wrapper select-custom">
                       <select class="select-control" name="family[]" id="fc-select-year-2" style="width: 100%;">
-                        <option disabled selected value="0">{$lang['career']['year']}</option>
-                        {assign var="current" value="{$Year}"}
-                        {assign var="currentEN" value="{$YearEn}"}
-                        {while $current > ($Year - 100)}
-                            <option value="{$currentEN}">{$current}</option>
-                            {$current--}
-                            {$currentEN--}
-                        {/while}
+                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                        <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                        <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                        <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                            <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                            <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                        <?php }?>
+
                       </select>
                     </div>
                   </div>
@@ -2897,7 +3143,8 @@
                   <input type="file" id="use-only-upload-1">
                   <div class="row gutters-custom">
                     <div class="col-auto">
-                      <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg"
+                      <img class="icon" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-upload.svg"
                         alt="icon upload">
                     </div>
                     <div class="col">
@@ -2918,7 +3165,8 @@
                   <input type="file" id="use-only-upload-2">
                   <div class="row gutters-custom">
                     <div class="col-auto">
-                      <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg"
+                      <img class="icon" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-upload.svg"
                         alt="icon upload">
                     </div>
                     <div class="col">
@@ -2939,7 +3187,8 @@
                   <input type="file" id="use-only-upload-3">
                   <div class="row gutters-custom">
                     <div class="col-auto">
-                      <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg"
+                      <img class="icon" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-upload.svg"
                         alt="icon upload">
                     </div>
                     <div class="col">
@@ -2959,7 +3208,8 @@
                   <input type="file" id="use-only-upload-4">
                   <div class="row gutters-custom">
                     <div class="col-auto">
-                      <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg"
+                      <img class="icon" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-upload.svg"
                         alt="icon upload">
                     </div>
                     <div class="col">
@@ -2980,7 +3230,8 @@
                   <input type="file" id="use-only-upload-5">
                   <div class="row gutters-custom">
                     <div class="col-auto">
-                      <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg"
+                      <img class="icon" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-upload.svg"
                         alt="icon upload">
                     </div>
                     <div class="col">
@@ -3000,7 +3251,8 @@
                   <input type="file" id="use-only-upload-6">
                   <div class="row gutters-custom">
                     <div class="col-auto">
-                      <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg"
+                      <img class="icon" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-upload.svg"
                         alt="icon upload">
                     </div>
                     <div class="col">
@@ -3093,4 +3345,5 @@
       </form>
     </div>
   </div>
-</section>
+</section><?php }
+}

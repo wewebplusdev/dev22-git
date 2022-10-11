@@ -33,91 +33,81 @@
       </div>
     {/if}
 
-    <div class="border-nav-slider"></div>
-    <div class="container mt-5">
-      {if count($arrMenu) > 0 && $showslick}
-        <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
-        <div class="default-tab-slider default-slick" data-slick='{$initialSlide2}'>
-          {foreach $arrMenu as $keyarrMenu => $valuearrMenu}
-            <div class="item">
-              <div class="tab-block {if $menuidLv2 eq $valuearrMenu.id}active{/if}">
-                <a class="text-limit" href="{str_replace("//","/","{$ul}/{$menuActive}/{$valuearrMenu.menuid}/{$valuearrMenu.id}")}">{$valuearrMenu.subject}</a>
-              </div>
-            </div>
-          {/foreach}
-        </div>
-      {/if}
-    </div>
-
     <div class="container">
-
-      <div class="editor-content">
-        <div class="h-title">{$lang['career']['source']}</div>
-        <div class="default-bar">
-          <div class="row align-items-center">
-            <div class="col-md-auto">
-              <div class="whead">
-                <div class="h-title">{$callCMS->fields.subject}</div>
-              </div>
+      <div class="row">
+        <div class="col">
+          <div class="h-title -mc">{$lang['career']['source']}</div>
+        </div>
+      </div>
+      <div class="default-bar">
+        <div class="row align-items-center">
+          <div class="col-md-auto">
+            <div class="whead">
+              <div class="h-title">{$callCMS->fields.subject}</div>
             </div>
-            <div class="col-md">
-              <div class="social-block">
-                <div class="title">{$lang['system']['share']} :</div>
+          </div>
+          <div class="col-md">
+            <div class="social-block">
+              <div class="title">{$lang['system']['share']} :</div>
+              <ul class="item-list">
+                <li>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u={$fullurl}" target="_blank" class="link">
+                    <img src="{$template}/assets/img/icon/icon-social-facebook.svg" alt=""
+                      style=" width: auto; ">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/intent/tweet?url={$fullurl}" target="_blank" class="link">
+                    <img src="{$template}/assets/img/icon/icon-social-twitter.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:?subject={$callCMS->fields.subject}&amp;body=Check out this site : {$fullurl}"
+                  title="{$infoSetting->fields['subject']}" class="link">
+                    <img src="{$template}/assets/img/icon/icon-social-gmail.svg" alt="">
+                  </a>
+                </li>
+                <li class="-bsc"></li>
+                <li>
+                  <a href="javascript:window.print()" class="link">
+                    <img src="{$template}/assets/img/icon/icon-print.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="whead-addon -bsc">
+              <div class="detail-info">
                 <ul class="item-list">
+                  <li>{$callCMS->fields.credate|DateThai:'23':{$langon}:'shot3'}</li>
                   <li>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={$fullurl}" target="_blank" class="link">
-                      <img src="{$template}/assets/img/icon/icon-social-facebook.svg" alt=""
-                        style=" width: auto; ">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/intent/tweet?url={$fullurl}" target="_blank" class="link">
-                      <img src="{$template}/assets/img/icon/icon-social-twitter.svg" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:?subject={$callCMS->fields.subject}&amp;body=Check out this site : {$fullurl}"
-                    title="{$infoSetting->fields['subject']}" class="link">
-                      <img src="{$template}/assets/img/icon/icon-social-gmail.svg" alt="">
-                    </a>
-                  </li>
-                  <li class="-bsc"></li>
-                  <li>
-                    <a href="javascript:window.print()" class="link">
-                      <img src="{$template}/assets/img/icon/icon-print.svg" alt="">
-                    </a>
+                    <span class="feather icon-eye mr-2"></span>
+                    {$callCMS->fields.view} {$lang['system']['view']}
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="whead-addon -bsc">
-                <div class="detail-info">
-                  <ul class="item-list">
-                    <li>{$callCMS->fields.credate|DateThai:'23':{$langon}:'shot3'}</li>
-                    <li>
-                      <span class="feather icon-eye mr-2"></span>
-                      {$callCMS->fields.view} {$lang['system']['view']}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="whead-addon">
-                <div class="detail-info">
-                  <ul class="item-list -c">
-                    <li>{$lang['career']['quantity']} : {$callCMS->fields.quantity} {$lang['career']['position']}</li>
-                    <li class="-bsc"></li>
-                    <li>{$lang['career']['location']} : {$callCMS->fields.address}</li>
-                  </ul>
-                </div>
+          <div class="col-12">
+            <div class="whead-addon">
+              <div class="detail-info">
+                <ul class="item-list -c">
+                  <li>{$lang['career']['quantity']} : {$callCMS->fields.quantity} {$lang['career']['position']}</li>
+                  <li class="-bsc"></li>
+                  <li>{$lang['career']['location']} : {$callCMS->fields.address}</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="editor-content">
         {if $callCMS->fields.htmlfilename neq ""}
             <!-- CK Editor -->
             {strip}
@@ -125,7 +115,6 @@
             {/strip}
             <!-- CK Editor -->
         {/if}
-
       </div>
       <div class="border-nav-slider pt-5"></div>
       {if $callCMS->fields.url neq '' && $callCMS->fields.url neq '#'}
@@ -141,7 +130,6 @@
           </div>
         </div>
       {/if}
-
       {if $Call_File->_numOfRows gte 1}
         <div class="row mt-5">
           <div class="col-12">

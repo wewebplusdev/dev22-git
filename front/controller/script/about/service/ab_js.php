@@ -9,17 +9,50 @@
 // }
 // $smarty->assign("getMenuDetail", $getMenuDetail);
 
+$listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script/'.$menuActive.'/js/scriptCareer.js'.$lastModify.'"></script>';
+
 switch ($PageActionCareer) {
+  case 'district':    
+    $infoDistrict = $aboutPage->callDistrict_main($_POST['districtID']);      
+    $smarty->assign("infoDistrict", $infoDistrict);
+    $settingPage = array(
+        "page" => $menuActive,
+        "template" => "listDistrict.tpl",
+        "display" => "page-single",
+    );
+    $smarty->assign("fileInclude", $settingPage);
+    break;
+  
+case 'subDistrict':      
+    $infoSubDistrict = $aboutPage->callSubDistrict_main($_POST['subDistrictID']);
+    $smarty->assign("infoSubDistrict", $infoSubDistrict);
+
+    $settingPage = array(
+        "page" => $menuActive,
+        "template" => "listSubDistrict.tpl",
+        "display" => "page-single",
+    );
+    $smarty->assign("fileInclude", $settingPage);
+    break;
+
+  // upload pic
+  case 'upload-profile':
+    require_once _DIR . '/front/controller/script/'.$menuActive.'/service/upload-profile.php';
+    break;
 
   case 'career-form':
     $ContentID = GetContentID($url->segment[3]);
-
-    $Call_File = $callSetWebsite->Call_File_table($callCMS->fields['id'], $config['jof']['db']['main']);
-    $smarty->assign("Call_File", $Call_File);
+    //select list
+    $callListCareerSelect = $aboutPage->callListCareer($config['about']['ab_js']['masterkey'], $page['on'], $limit, $sorting, null, $ContentID);
+    $smarty->assign("callListCareerSelect", $callListCareerSelect);
 
     ## breadcrumb
     $breadcrumb = explode("-", $callCMS->fields['menuname']);
     $settingModulus['breadcrumb'] = $breadcrumb[0];
+
+    ## province
+    $callProvince_mains = $aboutPage->callProvince_main();
+    $smarty->assign("callProvince_mains", $callProvince_mains);
 
     /*## Start SEO #####*/
     $seo_desc ="";
@@ -27,6 +60,17 @@ switch ($PageActionCareer) {
     $seo_keyword ="";
     Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
     /*## End SEO #####*/
+
+    $settingModulus['menuid'] = $url->segment[1];
+    $smarty->assign("MonthArray",$MonthArray); // month in config
+    $smarty->assign("LangMonth",$url->pagelang[2]); // Lang month
+    $NowAll = date('Y');
+    $NowEn = date('Y');
+    if ($url->pagelang[2] == 'th') {
+        $NowAll = date('Y')+543;
+    }
+    $smarty->assign("Year",$NowAll); //  year
+    $smarty->assign("YearEn",$NowEn); //  year
 
     $settingPage = array(
         "page" => $menuActive,

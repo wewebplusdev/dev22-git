@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-11 12:14:47
+/* Smarty version 4.0.0, created on 2022-10-11 13:09:46
   from '/var/www/html/front/template/default/_component/career-list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6344fbc73cc2f0_03420016',
+  'unifunc' => 'content_634508aac4b238_36742315',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2659ba8196501d395b620594509e82102202d876' => 
     array (
       0 => '/var/www/html/front/template/default/_component/career-list.tpl',
-      1 => 1665465286,
+      1 => 1665468585,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6344fbc73cc2f0_03420016 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634508aac4b238_36742315 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
@@ -166,60 +166,60 @@ $_smarty_tpl->tpl_vars['valuecallCMS']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keycallCMS']->value => $_smarty_tpl->tpl_vars['valuecallCMS']->value) {
 $_smarty_tpl->tpl_vars['valuecallCMS']->do_else = false;
 ?>
-        <div class="job-source-block mb-3">
-          <div class="row">
-            <div class="col-auto">
-              <div class="title typo-sm"><?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['subject'];?>
+          <div class="job-source-block mb-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title typo-sm text-limit -x3"><?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['subject'];?>
 </div>
-              <div class="desc">(<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['quantity'];?>
+                    <div class="desc">(<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['quantity'];?>
  : <?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['quantity'];?>
  <?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['position'];?>
 )</div>
-            </div>
-            <div class="col-auto py-3">
-              <div class="desc"><?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['title'];?>
+                </div>
+                <div class="col-12 py-3">
+                    <div class="desc text-limit -x3"><?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['title'];?>
 </div>
+                </div>
             </div>
-          </div>
-          <div class="job-source-location">
-            <div class="row align-items-center">
-              <div class="col">
-                <div class="row align-items-center no-gutters">
-                  <div class="col-auto">
-                    <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+            <div class="job-source-location">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                                <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/icon-location.svg" alt="icon-location">
-                  </div>
-                  <div class="col">
-                    <div class="desc"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['location'];?>
+                            </div>
+                            <div class="col">
+                                <div class="desc"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['location'];?>
  : <?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['address'];?>
 </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-auto">
-                <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['menuActive']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['valuegetMenuDetail']->value['id'];?>
 /<?php echo $_smarty_tpl->tpl_vars['menuDetail']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['valuecallCMS']->value['id'];?>
 " class="link" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['detail'];?>
 ">
-                  <div class="row align-items-center no-gutters">
-                    <div class="col">
-                      <div class="desc">
-                        <?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['detail'];?>
+                            <div class="row align-items-center no-gutters">
+                                <div class="col">
+                                    <div class="desc">
+                                        <?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['detail'];?>
 
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/icon-detail.svg" alt="icon-detail">
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                  </div>
-                </a>
-              </div>
+                </div>
             </div>
-          </div>
         </div>
         <?php
 }

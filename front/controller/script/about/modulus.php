@@ -616,4 +616,78 @@ class aboutPage
     return $result;
   }
 
+  function callProvince_main()
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['province']['db']['main'] . "." . $config['province']['db']['main'] . "_id as id,
+    " . $config['province']['db']['main'] . "." . $config['province']['db']['main'] . "_code as code,
+    " . $config['province']['db']['main'] . "." . $config['province']['db']['main'] . "_name".$lang." as name,
+    " . $config['province']['db']['main'] . "." . $config['province']['db']['main'] . "_geography as geography
+    FROM
+        " . $config['province']['db']['main'] . "
+    ";
+
+    $sql .= "
+    ORDER BY " . $config['province']['db']['main'] . "_name ASC";
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callDistrict_main($pid = 0)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_id as id,
+    " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_code as code,
+    " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_name".$lang." as name,
+    " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_province_id as province_id
+    FROM
+    " . $config['amphur']['db']['main'] . "
+    ";
+
+    if (!empty($pid)) {
+      $sql .= "
+        WHERE " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_province_id = $pid  AND  " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_nameen NOT LIKE '%*%'";
+    } else {
+      $sql .= "
+        WHERE " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_province_id = 0  AND  " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_nameen NOT LIKE '%*%'";
+    }
+    $sql .= "
+    ORDER BY " . $config['amphur']['db']['main'] . "_nameen ASC";
+    // print_pre();
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callSubDistrict_main($aid)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_id as id,
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_zip_code as zip_code,
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_name".$lang." as name,
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_amphure_id as amphure_id
+  FROM
+  " . $config['district']['db']['main'] . "
+  ";
+
+    $sql .= "
+  WHERE 
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_amphure_id = $aid AND  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_nameen NOT LIKE '%*%'
+  ";
+
+    $sql .= "
+  ORDER BY " . $config['district']['db']['main'] . "_nameen ASC";
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
 }
