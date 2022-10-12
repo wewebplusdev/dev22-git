@@ -1,49 +1,49 @@
 var menuid = $('.site-container').data('menuid');
 // ############## Start Upload ##############
-$('#clickuploadProfile').click(function() {
-  $("input[name='uploadProfile']").trigger("click");
-});
-$("input[name='uploadProfile']").change(function(e) {
-  $(".showProfile").append('<div class="loadding" style="position: absolute; top: 50%;left: 50%; transform: translate(-50%, -50%);pointer-events: none; color:red; opacity:0.7;font-size: 35px;"><i class="fas fa-circle-notch fa-spin fa-3x fa-fw"></i></div>');
+// $('#clickuploadProfile').click(function() {
+//   $("input[name='uploadProfile']").trigger("click");
+// });
+// $("input[name='uploadProfile']").change(function(e) {
+//   $(".showProfile").append('<div class="loadding" style="position: absolute; top: 50%;left: 50%; transform: translate(-50%, -50%);pointer-events: none; color:red; opacity:0.7;font-size: 35px;"><i class="fas fa-circle-notch fa-spin fa-3x fa-fw"></i></div>');
 
-  e.preventDefault();
-  var path = $("path").attr("href");
-  var key = $("input[name=keyProfile]").val();
-  //var typeupload = $("input[name=typeupImage]").val();
+//   e.preventDefault();
+//   var path = $("path").attr("href");
+//   var key = $("input[name=keyProfile]").val();
+//   //var typeupload = $("input[name=typeupImage]").val();
 
-  var formData = new FormData($("#form-career")[0]);
-  // alert(formData);
+//   var formData = new FormData($("#form-career")[0]);
+//   // alert(formData);
   
-  $.ajax({
-      url: path + $('html').attr('lang') + "/about/" + menuid + "/upload-profile?type=add",
-      type: 'POST',
-      xhr: function() {
-          var myXhr = $.ajaxSettings.xhr();
-          return myXhr;
-      },
-      success: function(data) {
-          if (data.status == "error") {
-            Swal.fire({
-              title: data.text,
-              text: data.msg,
-              icon: data.status,
-              confirmButtonText: data.btn
-            });
-          }else{
-            $(".showProfile img").attr("src", data.real);
-            $("input[name='picProfile']").val(data.name);    
-          }
+//   $.ajax({
+//       url: path + $('html').attr('lang') + "/about/" + menuid + "/upload-profile?type=add",
+//       type: 'POST',
+//       xhr: function() {
+//           var myXhr = $.ajaxSettings.xhr();
+//           return myXhr;
+//       },
+//       success: function(data) {
+//           if (data.status == "error") {
+//             Swal.fire({
+//               title: data.text,
+//               text: data.msg,
+//               icon: data.status,
+//               confirmButtonText: data.btn
+//             });
+//           }else{
+//             $(".showProfile img").attr("src", data.real);
+//             $("input[name='picProfile']").val(data.name);    
+//           }
 
-      },
-      data: formData,
-      cache: false,
-      contentType: false,
-      processData: false,
-      dataType: 'json'
-  });
-  return false;
+//       },
+//       data: formData,
+//       cache: false,
+//       contentType: false,
+//       processData: false,
+//       dataType: 'json'
+//   });
+//   return false;
 
-});
+// });
 // ############## End Upload ##############
 
 // ############## Start Submit ##############
@@ -216,3 +216,16 @@ function callSubDistrict(id,subDistrict,postcode,textpostcode) {
       }
   });
 }
+
+// ############## Start Brother ##############
+function hidebrother() {
+  var x = document.getElementById("inputNumberbrother").value;
+  if(x>0){
+      jQuery('#textvaluebro').show();
+  }else{
+      jQuery('#textvaluebro').hide();
+  }
+ 
+//  x.value = x.value.toUpperCase();
+}
+// ############## End Brother ##############
