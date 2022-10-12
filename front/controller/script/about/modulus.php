@@ -459,4 +459,235 @@ class aboutPage
     return $result;
   }
 
+  function callSetting($masterkey = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $sql = "SELECT
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_id as id,
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_masterkey as masterkey,
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_subject" . $lang . " as subject,
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_title" . $lang . " as title,
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_description" . $lang . " as description,
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_keywords" . $lang . " as keywords,
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_metatitle" . $lang . " as metatitle,
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_type as type,
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_pic as pic,
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename
+
+      FROM
+      " . $config['joss']['db']['main'] . "
+      WHERE
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_masterkey = '" . $masterkey . "' 
+      AND " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_status != 'Disable'
+      ";
+
+    $sql .= " ORDER  BY " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_order DESC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  
+  function callListCareer($masterkey = null, $page = 1, $limit = 10, $order = "DESC", $keywords = null, $id = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langOption = $url->pagelang[2];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_id as id,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey as masterkey,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " as subject,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_title" . $lang . " as title,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_description" . $lang . " as description,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_keywords" . $lang . " as keywords,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_metatitle" . $lang . " as metatitle,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_type as type,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_pic as pic,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_quantity as quantity,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_address" . $lang . " as address,
+      " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
+      " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
+
+      FROM
+      " . $config['jos']['db']['main'] . "
+      INNER JOIN 
+      " . $config['sy_mnu']['db']['main'] . "
+      ON
+      " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey
+      WHERE
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey = '" . $masterkey . "' 
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_status != 'Disable' 
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_lang" . $langOption . " = '1' 
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " != '' 
+      AND 
+      ((" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
+      (" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+      TO_DAYS(" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate)>=TO_DAYS(NOW()) ) OR
+      (TO_DAYS(" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate='0000-00-00 00:00:00' )  OR
+      (TO_DAYS(" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+      TO_DAYS(" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
+      ";
+
+    if (!empty($keywords)) {
+      $sql .= " AND 
+      (
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject LIKE '%" . $keywords . "%' OR
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_title LIKE '%" . $keywords . "%'
+      )";
+    }
+
+    if (!empty($id)) {
+      $sql .= " AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_id = '" . $id . "' ";
+    }
+
+
+    $sql .= " ORDER  BY " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_order " . $order . " ";
+
+    // print_pre($sql);
+    $result = $db->pageexecute($sql, $limit, $page);
+    return $result;
+  }
+
+  
+  function callCareerDetail($masterkey = null, $id = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langOption = $url->pagelang[2];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_id as id,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey as masterkey,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " as subject,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_title" . $lang . " as title,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_description" . $lang . " as description,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_keywords" . $lang . " as keywords,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_metatitle" . $lang . " as metatitle,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_type as type,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_pic as pic,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_url" . $lang . " as url,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_quantity as quantity,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_address" . $lang . " as address,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_view as view,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_credate as credate,
+      " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
+      " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
+
+      FROM
+      " . $config['jos']['db']['main'] . "
+      INNER JOIN 
+      " . $config['sy_mnu']['db']['main'] . "
+      ON
+      " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey
+      WHERE
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey = '" . $masterkey . "' 
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_status != 'Disable' 
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_lang" . $langOption . " = '1' 
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " != '' 
+      AND 
+      ((" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
+      (" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+      TO_DAYS(" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate)>=TO_DAYS(NOW()) ) OR
+      (TO_DAYS(" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate='0000-00-00 00:00:00' )  OR
+      (TO_DAYS(" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+      TO_DAYS(" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
+      ";
+
+    if (!empty($id)) {
+      $sql .= " AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_id = '" . $id . "' ";
+    }
+
+
+    $sql .= " ORDER  BY " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_order DESC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callProvince_main()
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['province']['db']['main'] . "." . $config['province']['db']['main'] . "_id as id,
+    " . $config['province']['db']['main'] . "." . $config['province']['db']['main'] . "_code as code,
+    " . $config['province']['db']['main'] . "." . $config['province']['db']['main'] . "_name".$lang." as name,
+    " . $config['province']['db']['main'] . "." . $config['province']['db']['main'] . "_geography as geography
+    FROM
+        " . $config['province']['db']['main'] . "
+    ";
+
+    $sql .= "
+    ORDER BY " . $config['province']['db']['main'] . "_name ASC";
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callDistrict_main($pid = 0)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_id as id,
+    " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_code as code,
+    " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_name".$lang." as name,
+    " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_province_id as province_id
+    FROM
+    " . $config['amphur']['db']['main'] . "
+    ";
+
+    if (!empty($pid)) {
+      $sql .= "
+        WHERE " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_province_id = $pid  AND  " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_nameen NOT LIKE '%*%'";
+    } else {
+      $sql .= "
+        WHERE " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_province_id = 0  AND  " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_nameen NOT LIKE '%*%'";
+    }
+    $sql .= "
+    ORDER BY " . $config['amphur']['db']['main'] . "_nameen ASC";
+    // print_pre();
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callSubDistrict_main($aid)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_id as id,
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_zip_code as zip_code,
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_name".$lang." as name,
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_amphure_id as amphure_id
+  FROM
+  " . $config['district']['db']['main'] . "
+  ";
+
+    $sql .= "
+  WHERE 
+  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_amphure_id = $aid AND  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_nameen NOT LIKE '%*%'
+  ";
+
+    $sql .= "
+  ORDER BY " . $config['district']['db']['main'] . "_nameen ASC";
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
 }

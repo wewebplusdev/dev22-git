@@ -189,3 +189,7 @@
         </div>
     </div>
 </footer>  
+
+<form name="filter-component" id="filter-component" action="" action="get">
+<input name="year" id="year" value="{$req_params['year']}" type="hidden">
+</form>

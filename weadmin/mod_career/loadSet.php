@@ -75,11 +75,11 @@ logs_access('3', 'View');
                         <td class="divRightNavTb" align="right">
 
                             <!-- ######### Start Menu Sub Mod ########## -->
-                            <!-- <div class="menuSubMod">
+                            <div class="menuSubMod">
                                 <a href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                                     <?php echo $langMod["meu:setPermis"] ?>
                                 </a>
-                            </div> -->
+                            </div>
                             <!-- <div class="menuSubMod ">
                             <a  href="from.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                 <?php echo $langMod["btn:from"] ?>

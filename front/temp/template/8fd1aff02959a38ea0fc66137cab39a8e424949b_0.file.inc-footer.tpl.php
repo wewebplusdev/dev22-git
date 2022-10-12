@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-06 17:14:02
+/* Smarty version 4.0.0, created on 2022-10-11 11:51:55
   from '/var/www/html/front/template/default/inc/inc-footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633eaa6a0a6832_08822521',
+  'unifunc' => 'content_6344f66b173712_87907888',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8fd1aff02959a38ea0fc66137cab39a8e424949b' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-footer.tpl',
-      1 => 1665051237,
+      1 => 1665463913,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633eaa6a0a6832_08822521 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6344f66b173712_87907888 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="site-footer">
     <div class="footer-top">
         <div class="container">
@@ -217,5 +217,10 @@ function content_633eaa6a0a6832_08822521 (Smarty_Internal_Template $_smarty_tpl)
             </div>
         </div>
     </div>
-</footer>  <?php }
+</footer>  
+
+<form name="filter-component" id="filter-component" action="" action="get">
+<input name="year" id="year" value="<?php echo $_smarty_tpl->tpl_vars['req_params']->value['year'];?>
+" type="hidden">
+</form><?php }
 }

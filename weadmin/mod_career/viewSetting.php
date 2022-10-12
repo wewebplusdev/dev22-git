@@ -12,6 +12,8 @@ $valClassNav = 2;
 $valNav1 = $langTxt["nav:home2"];
 $valLinkNav1 = "../core/index.php";
 
+$valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
+
 $sql = "SELECT   ";
 $sql .= "   " . $mod_tb_setting . "_id ,
       " . $mod_tb_setting . "_credate ,
@@ -36,9 +38,74 @@ $sql .= " , " . $mod_tb_setting . "_subject  ,    " . $mod_tb_setting . "_title 
 //     $sql .= " , " . $mod_tb_setting . "_subjectcn  ,    " . $mod_tb_setting . "_titlecn, " . $mod_tb_setting . "_htmlfilenamecn   ,    " . $mod_tb_setting . "_metatitlecn  	 	 ,    " . $mod_tb_setting . "_descriptioncn  	 	 ,    " . $mod_tb_setting . "_keywordscn    ";
 // }
 
-$sql .= "  , " . $mod_tb_setting . "_picshow, " . $mod_tb_setting . "_typec, " . $mod_tb_setting . "_urlc, " . $mod_tb_setting . "_target, " . $mod_tb_setting . "_pic2, " . $mod_tb_setting . "_title2, " . $mod_tb_setting . "_urlfriendly , " . $mod_tb_setting . "_htmlfilenameen, " . $mod_tb_setting . "_htmlfilenamecn  FROM " . $mod_tb_setting . " WHERE " . $mod_tb_setting . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_setting . "_id='" . $_REQUEST['valEditID'] . "' ";
+$sql .= "  , 
+" . $mod_tb_setting . "_picshow, 
+" . $mod_tb_setting . "_typec, 
+" . $mod_tb_setting . "_urlc, 
+" . $mod_tb_setting . "_target, 
+" . $mod_tb_setting . "_pic2, 
+" . $mod_tb_setting . "_title2, 
+" . $mod_tb_setting . "_urlfriendly, 
+" . $mod_tb_setting . "_htmlfilenameen, 
+" . $mod_tb_setting . "_htmlfilenamecn 
+FROM " . $mod_tb_setting . " WHERE " . $mod_tb_setting . "_masterkey='" . $_REQUEST["masterkey"] . "'";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
+$countNumCheck = wewebNumRowsDB($coreLanguageSQL, $Query);
+if ($countNumCheck <= 0) {
+
+    $insert = array();
+    $insert[$mod_tb_setting . "_language"] = "'" . $_SESSION[$valSiteManage . 'core_session_language'] . "'";
+    $insert[$mod_tb_setting . "_masterkey"] = "'" . $_REQUEST["masterkey"] . "'";
+    $insert[$mod_tb_setting . "_crebyid"] = "'" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";
+    $insert[$mod_tb_setting . "_creby"] = "'" . $_SESSION[$valSiteManage . 'core_session_name'] . "'";
+    $insert[$mod_tb_setting . "_lastbyid"] = "'" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";
+    $insert[$mod_tb_setting . "_lastby"] = "'" . $_SESSION[$valSiteManage . 'core_session_name'] . "'";
+    $insert[$mod_tb_setting . "_lastdate"] = "NOW()";
+    $insert[$mod_tb_setting . "_status"] = "'Disable'";
+    $insert[$mod_tb_setting . "_credate"] = "NOW()";
+    $sqlInsert = "INSERT INTO " . $mod_tb_setting . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
+    $queryInsert = wewebQueryDB($coreLanguageSQL, $sqlInsert);
+
+    $sql = "SELECT   ";
+    $sql .= "   " . $mod_tb_setting . "_id ,
+        " . $mod_tb_setting . "_credate ,
+        " . $mod_tb_setting . "_crebyid,
+        " . $mod_tb_setting . "_status,
+        " . $mod_tb_setting . "_sdate  	 	 ,
+        " . $mod_tb_setting . "_edate  	,
+        " . $mod_tb_setting . "_lastdate,
+        " . $mod_tb_setting . "_lastbyid,
+        " . $mod_tb_setting . "_pic ,
+        " . $mod_tb_setting . "_type ,
+        " . $mod_tb_setting . "_filevdo ,
+        " . $mod_tb_setting . "_url  ,
+        " . $mod_tb_setting . "_view,
+        " . $mod_tb_setting . "_gid    ";
+
+    // if ($_REQUEST['inputLt'] == "Thai") {
+    $sql .= " , " . $mod_tb_setting . "_subject  ,    " . $mod_tb_setting . "_title , " . $mod_tb_setting . "_htmlfilename   ,    " . $mod_tb_setting . "_metatitle  	 	 ,    " . $mod_tb_setting . "_description  	 	 ,    " . $mod_tb_setting . "_keywords    ";
+    // } elseif ($_REQUEST['inputLt'] == "Eng") {
+    //     $sql .= " , " . $mod_tb_setting . "_subjecten  ,    " . $mod_tb_setting . "_titleen , " . $mod_tb_setting . "_htmlfilenameen   ,    " . $mod_tb_setting . "_metatitleen  	 	 ,    " . $mod_tb_setting . "_descriptionen  	 	 ,    " . $mod_tb_setting . "_keywordsen    ";
+    // } else {
+    //     $sql .= " , " . $mod_tb_setting . "_subjectcn  ,    " . $mod_tb_setting . "_titlecn, " . $mod_tb_setting . "_htmlfilenamecn   ,    " . $mod_tb_setting . "_metatitlecn  	 	 ,    " . $mod_tb_setting . "_descriptioncn  	 	 ,    " . $mod_tb_setting . "_keywordscn    ";
+    // }
+    $sql .= "  , 
+    " . $mod_tb_setting . "_picshow, 
+    " . $mod_tb_setting . "_typec, 
+    " . $mod_tb_setting . "_urlc, 
+    " . $mod_tb_setting . "_target, 
+    " . $mod_tb_setting . "_pic2, 
+    " . $mod_tb_setting . "_title2, 
+    " . $mod_tb_setting . "_urlfriendly, 
+    " . $mod_tb_setting . "_htmlfilenameen, 
+    " . $mod_tb_setting . "_htmlfilenamecn 
+    FROM " . $mod_tb_setting . " WHERE " . $mod_tb_setting . "_masterkey='" . $_REQUEST["masterkey"] . "'";
+
+    $Query = wewebQueryDB($coreLanguageSQL, $sql);
+    $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
+}
+
 // print_pre($Row);
 $valID = $Row[0];
 $valCredate = DateFormat($Row[1]);
@@ -195,7 +262,7 @@ logs_access('3', 'View');
                                                 </div>
                                             <?php } ?>
                                             <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 3) { ?>
-                                                <div style="display: none;" class="btnEditView" title="<?php echo $langTxt["btn:edit"] ?>" onclick="
+                                                <div class="btnEditView" title="<?php echo $langTxt["btn:edit"] ?>" onclick="
                                                                 document.myFormHome.valEditID.value =<?php echo $valID ?>;
                                                                 document.myFormHome.inputLt.value ='Chi';
                                                                 editContactNew('../<?php echo $mod_fd_root ?>/editSetting.php')">
@@ -272,7 +339,7 @@ logs_access('3', 'View');
                 </tr>
             </table>
             <br />
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " style="display: none;">
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 3) { ?>(<?php echo $langTxt["lg:chi"] ?>)<?php } ?></span><br />
@@ -292,7 +359,7 @@ logs_access('3', 'View');
                     </td>
                 </tr>
             </table>
-            <br style="display: none;"/>
+            <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -364,12 +431,24 @@ logs_access('3', 'View');
                         <?php echo $langTxt["mg:status"] ?>:</td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="formDivView">
-
+                        <?php if ($valPermissionContent == "RW") { ?>
+                            <div id="load_status<?php echo  $valID ?>">
+                                <?php if ($valStatus == "Enable") { ?>
+                                    <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_setting ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMs.php')"><span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span></a>
+                                <?php } else if ($valStatus == "Home") { ?>
+                                    <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_setting ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMs.php')"> <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span> </a>
+                                <?php } else { ?>
+                                <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_setting ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMs.php')"> <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span> </a>
+                                <?php } ?>
+                                <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting<?php echo  $valID ?>" />
+                            </div>
+                        <?php } else { ?>
                             <?php if ($valStatus == "Enable") { ?>
-                                <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span>
+                                <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
                             <?php } else { ?>
-                                <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span>
+                                <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
                             <?php } ?>
+                        <?php } ?>
                         </div>
                     </td>
                 </tr>

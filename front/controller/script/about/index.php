@@ -9,6 +9,7 @@ $arrMenu = array();
 $getMenuDetail = array();
 $ContentID = GetContentID($url->segment[2]);
 $PageAction = $url->segment[3];
+$PageActionCareer = $url->segment[2];
 $MenuID = GetContentID($url->segment[1]);
 $MenuID = $callSetWebsite->getMenuID($MenuID);
 $MasterkeyTemp = "ab_"; // master about like this
@@ -22,6 +23,8 @@ if (empty($MenuID)) {
 $req_params = array();
 $req_params['year'] = $_REQUEST['year'];
 $req_params['order'] = $_REQUEST['order'];
+$req_params['keywords'] = $_REQUEST['keywords'];
+$req_params['selectcareer'] = $_REQUEST['selectCareer'];
 $smarty->assign("req_params", $req_params);
 
 ## default menu lv1
@@ -74,6 +77,10 @@ switch ($MenuID) {
 
     case 'ab_nm': //ข่าวสารความเคลื่อนไหว
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_nm.php';
+        break;
+
+    case 'ab_js': //แหล่งงาน
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_js.php';
         break;
     
     default: //ทิศทางองค์กร
