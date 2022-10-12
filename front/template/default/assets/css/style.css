@@ -4646,8 +4646,14 @@ li.fancybox-thumbs-loading {
   border-top: 1px solid #D0DBFF;
   border-bottom: 1px solid #D0DBFF;
 }
+.default-page .editor-content .collapse-block .card-body.precious-metal table {
+  height: 579px;
+}
 .default-page .editor-content .collapse-block .card-body.precious-metal table tbody td:nth-child(odd) p {
   justify-content: left;
+}
+.default-page .editor-content .collapse-block .card-body.precious-metal table tr th.width-custom {
+  width: 200px;
 }
 .default-page .editor-content .border-table {
   border: 1px solid #D0DBFF;
@@ -4737,6 +4743,9 @@ li.fancybox-thumbs-loading {
   }
   .default-page .editor-content .collapse-block .table thead th {
     padding: 1rem 0.75rem;
+  }
+  .default-page .editor-content .collapse-block .card-body.precious-metal .table thead th {
+    padding: 1.6rem 0.75rem;
   }
 }
 @media (max-width: 991px) {
@@ -8363,30 +8372,11 @@ fieldset {
   padding: 40px;
   background-color: rgba(242, 245, 255, 0.5294117647);
 }
-.about.form-about .upload-form .upload-image {
+.about.form-about .upload-form .thumb .showProfile {
   position: relative;
-  background-color: var(--color-white);
+  width: 226px;
+  height: 246px;
   border: 1px solid #117FE7;
-  padding: 30px 20px;
-}
-.about.form-about .upload-form .upload-image .control-label::before {
-  content: "";
-  background-image: url(../img/static/profile.svg);
-  width: 182px;
-  height: 182px;
-  background-repeat: no-repeat;
-  background-position: center;
-  left: 0;
-  right: 0;
-  margin: auto;
-  bottom: 0;
-  display: flex;
-}
-.about.form-about .upload-form .upload-image p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .about.form-about .form-default .form-group {
   margin-top: 25px !important;
@@ -8511,6 +8501,174 @@ fieldset {
   font-size: 30px;
   padding: 4px 0;
   text-align: center;
+}
+
+.btn_upload {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  background-color: #2a72d4;
+  border: 1px solid #166b8a;
+  padding: 5px 10px;
+}
+
+.btn_upload:hover,
+.btn_upload:focus {
+  background-color: #7ca9e6;
+}
+
+.yes {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px !important;
+}
+
+.btn_upload input {
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  filter: alpha(opacity=1);
+  -moz-opacity: 0;
+  opacity: 0;
+}
+
+.it {
+  height: 100px;
+  margin-left: 10px;
+}
+
+.btn-rmv1,
+.btn-rmv2,
+.btn-rmv3,
+.btn-rmv4,
+.btn-rmv5 {
+  display: none;
+}
+
+.rmv {
+  cursor: pointer;
+  color: #fff;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  display: inline-block;
+  background: rgb(255, 0, 0);
+  margin: -5px -10px;
+}
+
+.rmv:hover {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.btn_upload {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  background-color: #2a72d4;
+  border: 1px solid #166b8a;
+  padding: 5px 10px;
+}
+
+.btn_upload:hover,
+.btn_upload:focus {
+  background-color: #7ca9e6;
+}
+
+.yes {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px !important;
+}
+
+.btn_upload input {
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  filter: alpha(opacity=1);
+  -moz-opacity: 0;
+  opacity: 0;
+}
+
+.it {
+  height: 100px;
+  margin-left: 10px;
+}
+
+.btn-rmv1 {
+  display: none;
+}
+
+.rmv {
+  cursor: pointer;
+  color: #fff;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  display: inline-block;
+  background: rgb(255, 0, 0);
+  margin: -5px -10px;
+}
+
+.rmv:hover {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.js .input-file-trigger {
+  display: block;
+  padding: 14px 45px;
+  background: #39D2B4;
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.js .input-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+.js .input-file:hover + .input-file-trigger,
+.js .input-file:focus + .input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+  background: #34495E;
+  color: #39D2B4;
+}
+
+.file-return {
+  margin: 0;
+}
+
+.file-return:not(:empty) {
+  margin: 1em 0;
+}
+
+.js .file-return {
+  font-style: italic;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.js .file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.uploadTxt-close {
+  cursor: pointer;
+}
+
+.uploadTxt-close.active {
+  display: block;
 }
 
 @media (max-width: 1199px) {
