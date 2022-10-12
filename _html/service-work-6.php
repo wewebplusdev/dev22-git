@@ -122,7 +122,7 @@
                                                     <div class="row align-items-center no-gutters">
                                                         <div class="col-auto">
                                                             <!-- <div class="cover"> -->
-                                                                <img src="<?php echo $core_template; ?>/assets/img/static/icp01.png" alt="" style=" width: 348px; ">
+                                                            <img src="<?php echo $core_template; ?>/assets/img/static/icp01.png" alt="" style=" width: 348px; ">
                                                             <!-- </div> -->
                                                         </div>
                                                         <div class="col">
@@ -163,6 +163,234 @@
                                                                                 (มากกว่า 10 ตัวอย่าง)
                                                                             </p>
                                                                             <p>+ 1000 ต่อสุด</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="collapse-block">
+                                    <div id="accordionInner">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="mb-0">
+                                                    <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#service-work-8" aria-expanded="false" aria-controls="collapse">
+                                                        <span>
+                                                            การวิเคราะห์เทคนิค Fire Assay ด้วยเตาหลอมอุณหภูมิสูง
+                                                        </span>
+                                                        <span class="feather icon-plus-circle"></span>
+                                                    </button>
+                                                </h3>
+                                            </div>
+                                            <div id="service-work-8" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
+                                                <div class="card-body precious-metal">
+                                                    <div class="row align-items-center no-gutters">
+                                                        <div class="col-auto">
+                                                            <!-- <div class="cover"> -->
+                                                            <img src="<?php echo $core_template; ?>/assets/img/static/icp02.png" alt="" style=" width: 348px; ">
+                                                            <!-- </div> -->
+                                                        </div>
+                                                        <div class="col">
+                                                            <table class="table table-bordered text-center">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>ลักษณะการรายงานผล</th>
+                                                                        <th class="width-custom">ราคาต่อตัวอย่าง (บาท)</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-left">
+                                                                            <p>1. รายงานค่าความบริสุทธิ์ของเงิน</p>
+
+                                                                        </td>
+                                                                        <td>
+                                                                            <p>200 บาท</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="collapse-block">
+                                    <div id="accordionInner">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="mb-0">
+                                                    <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#service-work-9" aria-expanded="false" aria-controls="collapse">
+                                                        <span>
+                                                            ราคาค่าบริการของ Potentiometric Titration
+                                                        </span>
+                                                        <span class="feather icon-plus-circle"></span>
+                                                    </button>
+                                                </h3>
+                                            </div>
+                                            <div id="service-work-9" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
+                                                <div class="card-body precious-metal">
+                                                    <div class="row align-items-center no-gutters">
+                                                        <div class="col-auto">
+                                                            <!-- <div class="cover"> -->
+                                                            <img src="<?php echo $core_template; ?>/assets/img/static/icp03.png" alt="" style=" width: 348px; ">
+                                                            <!-- </div> -->
+                                                        </div>
+                                                        <div class="col">
+                                                            <table class="table table-bordered text-center">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>ลักษณะการรายงานผล</th>
+                                                                        <th class="width-custom">ราคาต่อตัวอย่าง (บาท)</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-left">
+                                                                            <p>1. รายงานค่าความบริสุทธิ์ของทอง</p>
+                                                                            <P class="height-custom">2. รายงานค่าความบริสุทธิ์ของทอง (ลักษณะตัวอย่างพิเศษ หรือ ชิ้นส่วนอื่นๆ ที่ไม่ใช่เครื่องประดับ หรือ โลหะทั่วไป เช่น ชิ้นส่วนจากอุปกรณ์อิเล็กทรอนิก หรือ ผงโลหะ เป็นต้น)</P>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p>200 บาท</p>
+                                                                            <P  class="height-custom">800 - 1,000 บาท</P>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="collapse-block">
+                                    <div id="accordionInner">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="mb-0">
+                                                    <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#service-work-10" aria-expanded="false" aria-controls="collapse">
+                                                        <span>
+                                                            ราคาค่าบริการของ X-ray Fluorescence (XRF)
+                                                        </span>
+                                                        <span class="feather icon-plus-circle"></span>
+                                                    </button>
+                                                </h3>
+                                            </div>
+                                            <div id="service-work-10" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
+                                                <div class="card-body precious-metal">
+                                                    <div class="row align-items-center no-gutters">
+                                                        <div class="col-auto">
+                                                            <!-- <div class="cover"> -->
+                                                            <img src="<?php echo $core_template; ?>/assets/img/static/icp04.png" alt="" style=" width: 348px; ">
+                                                            <!-- </div> -->
+                                                        </div>
+                                                        <div class="col">
+                                                            <table class="table table-bordered text-center">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>ลักษณะการรายงานผล</th>
+                                                                        <th class="width-custom">ราคาต่อตัวอย่าง (บาท)</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-left">
+                                                                            <p>1. รายงานธาตุองค์ประกอบธาตุเดียว</p>
+                                                                            <P>2. รายงานธาตุองค์ประกอบมากกว่า 1 ธาตุ</P>
+                                                                            <P>3. รายงานธาตุองค์ประกอบธาตุเดียว จากหลายบริเวณในตัวอย่างชิ้นเดียวกัน (คำนวณข้อ 1 ก่อน)</P>
+                                                                            <P>4. รายงานธาตุองค์ประกอบมากกว่า 1 ธาตุ จากหลายบริเวณในตัวอย่างชิ้นเดียวกัน (คำนวณข้อ 2 ก่อน)</P>
+                                                                            <p>5. รายงานการตรวจวัดความหนา</p>
+                                                                            <p>6. รายงานความหนาชั้นต่อไปในตัวอย่างชิ้นเดียวกัน (คำนวนข้อ 5 ก่อน)</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p>200 บาท</p>
+                                                                            <P>300 บาท</P>
+                                                                            <p>+ 100 บาทต่อบริเวณ</p>
+                                                                            <p>+ 200 บาทต่อบริเวณ</p>
+                                                                            <p>800 บาทต่อชั้น</p>
+                                                                            <p>+400 บาทต่อชั้น</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="collapse-block">
+                                    <div id="accordionInner">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="mb-0">
+                                                    <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#service-work-11" aria-expanded="false" aria-controls="collapse">
+                                                        <span>
+                                                            ราคาค่าบริการของ Laser Engraving
+                                                        </span>
+                                                        <span class="feather icon-plus-circle"></span>
+                                                    </button>
+                                                </h3>
+                                            </div>
+                                            <div id="service-work-11" class="collapse" aria-labelledby="headingCollapse" data-parent="#accordion">
+                                                <div class="card-body precious-metal">
+                                                    <div class="row align-items-center no-gutters">
+                                                        <div class="col-auto">
+                                                            <!-- <div class="cover"> -->
+                                                            <img src="<?php echo $core_template; ?>/assets/img/static/icp05.png" alt="" style=" width: 348px; ">
+                                                            <!-- </div> -->
+                                                        </div>
+                                                        <div class="col">
+                                                            <table class="table table-bordered text-center">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>ลักษณะการรายงานผล</th>
+                                                                        <th class="width-custom">ราคาต่อตัวอย่าง (บาท)</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-left">
+                                                                            <p>1. แกะสลักตัวหนังสือหรือสัญลักษณ์ที่มีอยู่แล้วในพื้นที่ไม่เกิน 1 ตารางเซนติเมตรหรือไม่เกิน 16 ตัวอักษร</p>
+                                                                            <P class="height-custom">2. แกะสลักตัวหนังสือหรือสัญลักษณ์ที่มีอยู่แล้วในพื้นที่เกิน 3 ตารางเซนติเมตร (คำนวณต่อจากข้อ 1)</P>
+                                                                            <P class="height-custom">3. ทำสัญลักษณ์ตามลูกค้าวาด หรือถ่ายสำเนามาให้ โดยทางสถาบัน ต้องทำ Logo เข้าเครื่องเอง(คำนวณก่อนแล้วจึงคำนวณราคาตาม ข้อ 1 ถึง 3)</P>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p>150 บาท</p>
+                                                                            <P  class="height-custom">
+                                                                                + 50 บาท
+                                                                                <br>
+                                                                                ต่อตารางเซนติเมตรที่เกิน
+                                                                            </P>
+                                                                            <p  class="height-custom"> 400 - 1,500 บาท
+                                                                                <br>
+                                                                                ต่อตารางเซนติเมตรที่เกิน
+                                                                            </p>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
