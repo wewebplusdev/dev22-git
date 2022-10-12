@@ -267,34 +267,73 @@ $(document).ready(function() {
         $(this).addClass("active");
     });
 
+    // add
 
     $(".add-form-1").click(function() {
         $("#add-form-1").addClass("d-block");
+        $("#add-form-1").removeClass("d-none");
     });
 
     $(".add-form-2").click(function() {
         $("#add-form-2").addClass("d-block");
+        $("#add-form-2").removeClass("d-none");
     });
 
 
     $(".add-form-3").click(function() {
         $("#add-form-3").addClass("d-block");
+        $("#add-form-3").removeClass("d-none");
     });
 
 
     $(".add-form-4").click(function() {
         $("#add-form-4").addClass("d-block");
+        $("#add-form-4").removeClass("d-none");
     });
 
     $(".add-form-5").click(function() {
         $("#add-form-5").addClass("d-block");
+        $("#add-form-5").removeClass("d-none");
     });
 
 
     $(".add-form-6").click(function() {
         $("#add-form-6").addClass("d-block");
+        $("#add-form-6").removeClass("d-none");
     });
 
+
+    // delete
+
+    $(".delete-form-1").click(function() {
+        $("#add-form-1").addClass("d-none");
+        $("#add-form-1").removeClass("d-block");
+    });
+
+    $(".delete-form-2").click(function() {
+        $("#add-form-2").addClass("d-none");
+        $("#add-form-2").removeClass("d-block");
+    });
+
+    $(".delete-form-3").click(function() {
+        $("#add-form-3").addClass("d-none");
+        $("#add-form-3").removeClass("d-block");
+    });
+
+    $(".delete-form-4").click(function() {
+        $("#add-form-4").addClass("d-none");
+        $("#add-form-4").removeClass("d-block");
+    });
+
+    $(".delete-form-5").click(function() {
+        $("#add-form-5").addClass("d-none");
+        $("#add-form-5").removeClass("d-block");
+    });
+
+    $(".delete-form-6").click(function() {
+        $("#add-form-6").addClass("d-none");
+        $("#add-form-6").removeClass("d-block");
+    });
 
 
     $('.select-control').select2({

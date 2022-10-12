@@ -1277,7 +1277,19 @@
                                 </div>
                             </div>
                             <div class="form-set V d-none" id="add-form-1">
-                                <div class="title"> พี่น้อง / Brother Sister</div>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <div class="title"> พี่น้อง / Brother Sister</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="button delete-form-1">
+                                            <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                                                <!-- <span class="feather icon-minus text-white"></span> -->
+                                                ลบ
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row gutters-custom align-items-end">
                                     <div class="col-md">
                                         <div class="form-group has-feedback">
@@ -1561,6 +1573,19 @@
                                 </div>
                             </div>
                             <div class="d-none mt-3" id="add-form-2">
+                                <div class="row align-items-center">
+                                    <!-- <div class="col">
+                                        <div class="title"> พี่น้อง / Brother Sister</div>
+                                    </div> -->
+                                    <div class="col text-right">
+                                        <div class="button delete-form-2">
+                                            <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                                                <!-- <span class="feather icon-minus text-white"></span> -->
+                                                ลบ
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row gutters-custom align-items-end">
                                     <div class="col-sm">
                                         <div class="form-group">
@@ -1745,6 +1770,19 @@
                                 </div>
                             </div>
                             <div class="d-none mt-3" id="add-form-3">
+                                <div class="row align-items-center">
+                                    <!-- <div class="col">
+                                        <div class="title"> พี่น้อง / Brother Sister</div>
+                                    </div> -->
+                                    <div class="col text-right">
+                                        <div class="button delete-form-3">
+                                            <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                                                <!-- <span class="feather icon-minus text-white"></span> -->
+                                                ลบ
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row gutters-custom align-items-end">
                                     <div class="col-sm">
                                         <div class="form-group has-feedback">
@@ -1972,6 +2010,19 @@
                                 </div>
                             </div>
                             <div class="d-none mt-3" id="add-form-4">
+                                <div class="row align-items-center">
+                                    <!-- <div class="col">
+                                        <div class="title"> พี่น้อง / Brother Sister</div>
+                                    </div> -->
+                                    <div class="col text-right">
+                                        <div class="button delete-form-4">
+                                            <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                                                <!-- <span class="feather icon-minus text-white"></span> -->
+                                                ลบ
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row gutters-custom align-items-end">
                                     <div class="col-md col-sm-auto">
                                         <div class="form-group has-feedback">
@@ -2175,6 +2226,19 @@
                                 </div>
                             </div>
                             <div class="d-none mt-3" id="add-form-5">
+                                <div class="row align-items-center">
+                                    <!-- <div class="col">
+                                        <div class="title"> พี่น้อง / Brother Sister</div>
+                                    </div> -->
+                                    <div class="col text-right">
+                                        <div class="button delete-form-5">
+                                            <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                                                <!-- <span class="feather icon-minus text-white"></span> -->
+                                                ลบ
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row gutters-custom">
                                     <div class="col-sm">
                                         <div class="form-group">
@@ -2676,6 +2740,19 @@
                                 </div>
                             </div>
                             <div class="d-none mt-3" id="add-form-6">
+                            <div class="row align-items-center">
+                                    <!-- <div class="col">
+                                        <div class="title"> พี่น้อง / Brother Sister</div>
+                                    </div> -->
+                                    <div class="col text-right">
+                                        <div class="button delete-form-6">
+                                            <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                                                <!-- <span class="feather icon-minus text-white"></span> -->
+                                                ลบ
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row gutters-custom">
                                     <div class="col-md col-sm">
                                         <div class="form-group has-feedback">
