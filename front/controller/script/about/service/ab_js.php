@@ -10,6 +10,8 @@
 // $smarty->assign("getMenuDetail", $getMenuDetail);
 
 $listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script/'.$menuActive.'/js/scriptCareer.js'.$lastModify.'"></script>';
+$listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script/'.$menuActive.'/js/script_brethren.js'.$lastModify.'"></script>';
+$listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script/'.$menuActive.'/js/scriptUpload.js'.$lastModify.'"></script>';
 
 switch ($PageActionCareer) {
   case 'district':    
