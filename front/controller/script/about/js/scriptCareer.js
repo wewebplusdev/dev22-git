@@ -49,14 +49,13 @@ var menuid = $('.site-container').data('menuid');
 // ############## Start Submit ##############
 //submit
 function checkFocus() {
-  // console.log($("input, select").is(":focus"));
   $(":focus").each(function() {
       console.log(this.id);
       $("html, body").animate({scrollTop: $('#'+this.id).offset().top - 300}, 1000);
   });
 }
 
-$('#form-career').validator().on('submit', function (e) { 
+$('#form-career').validator().on('submit', function (e) {
   if (e.isDefaultPrevented()) { 
     $('#form-career').validator('validate');
     checkFocus();
@@ -69,40 +68,34 @@ $('#form-career').validator().on('submit', function (e) {
       // $(".clicksubmitfromcar").removeClass('disabled');
 
       $(".clicksubmitfromcar").prop("disabled", true);
+      var url= path + $('html').attr('lang') + "/about/" + menuid + "/insert-career";
       
-      var GroupID = $('select[name="inputGroup"]').val();
-      var type="POST";
-      var url= path + $('html').attr('lang') + "/career/insert-career?type=add ";
-      var data= $(this).serialize();
-      return false
-      $.ajax({type:type,url:url,data:data,
-          success:function(data){
-              
-              var data = JSON.parse(data);
-              // console.log(data);
-              switch (data.status) {
-                  case 'Success':
-                      modalalert(data.msg, data.msg_desc, 1, '#modal-member');
+      $.ajax({
+        url: url,
+        type: 'POST',
+        xhr: function() {
+            var myXhr = $.ajaxSettings.xhr();
+            return myXhr;
+        },
+        success: function(data) {
 
-                      break;
-                  default:
-                      modalalert(data.msg, data.msg_desc, 2, '#modal-member');
-
-                      break;
-              }
-
-          }
-      }).done(function() {
+        },
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType: 'json'
+    }).done(function() {
           
-          // $("#modal_success").on("hidden.bs.modal", function () {
-          //     window.location = path  + langs +"/career";
-          // });
+      //     // $("#modal_success").on("hidden.bs.modal", function () {
+      //     //     window.location = path  + langs +"/career";
+      //     // });
           
-          // $("#modal_failed").on("hidden.bs.modal", function () {
-          //     window.location = path + langs +"/career/career-form/"+ GroupID ;
-          // });
+      //     // $("#modal_failed").on("hidden.bs.modal", function () {
+      //     //     window.location = path + langs +"/career/career-form/"+ GroupID ;
+      //     // });
 
-      }); 
+      });
   }
 });
 // ############## End Submit ##############

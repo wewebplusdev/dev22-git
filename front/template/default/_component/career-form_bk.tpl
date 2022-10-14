@@ -869,7 +869,7 @@
                   <fieldset>
                     <legend class="visuallyhidden">Live</legend>
                     <div class="form-group form-check">
-                      <input class="form-check-input radio-check" name="family[]" type="radio" name="family[alive]" id="live"
+                      <input class="form-check-input radio-check" type="radio" name="family[alive]" id="live"
                         value="option1" >
                       <label class="control-label" for="live">
                         Live
@@ -881,7 +881,7 @@
                   <fieldset>
                     <legend class="visuallyhidden">Pass Away</legend>
                     <div class="form-group form-check">
-                      <input class="form-check-input radio-check" name="family[]" type="radio" name="family[alive]" id="pass-away"
+                      <input class="form-check-input radio-check" type="radio" name="family[alive]" id="pass-away"
                         value="option1" >
                       <label class="control-label" for="pass-away">
                         Pass Away

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-12 17:57:18
+/* Smarty version 4.0.0, created on 2022-10-14 17:30:25
   from '/var/www/html/front/template/default/_component/career-form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_63469d8e59e022_42160912',
+  'unifunc' => 'content_63493a4117a629_98234448',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a523170c265681e6c2b26d0727eb06a15c5892a' => 
     array (
       0 => '/var/www/html/front/template/default/_component/career-form.tpl',
-      1 => 1665572236,
+      1 => 1665743409,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63469d8e59e022_42160912 (Smarty_Internal_Template $_smarty_tpl) {
-?><section class="site-container">
+function content_63493a4117a629_98234448 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="site-container" data-menuid="<?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['menuid'];?>
+">
 <div class="default-header">
     <div class="top-graphic mb-4">
         <figure class="cover">
@@ -83,7 +84,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </br>
             สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ(องค์การมหาชน)
         </div>
-        <form data-toggle="validator" role="form" class="form-default" method="post">
+        <form data-toggle="validator" role="form" class="form-default" name="form-career" id="form-career" method="POST">
             <div class="upload-form mb-lg-5 mb-4">
                 <div class="row gutters-custom align-items-center">
                     <div class="col-sm-auto">
@@ -97,8 +98,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div> -->
                                                 <input name="keyProfile" value="<?php echo $_smarty_tpl->tpl_vars['careermasterkey']->value;?>
 " type="hidden">
-                        <input name="picProfile" id="picProfile" value="" type="file" style="display:none;" accept="image/jpeg,jpg,png">
-                        <input name="LangPage" value="<?php echo $_smarty_tpl->tpl_vars['LangPage']->value;?>
+                                                <input name="LangPage" value="<?php echo $_smarty_tpl->tpl_vars['LangPage']->value;?>
 " type="hidden">
                                                 <div class="thumb drag-area">
                             <figure class="cover showProfile" id="clickuploadProfile" style="cursor:pointer;">
@@ -173,10 +173,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group">
                             <label class="control-label visuallyhidden" for="mockSelect2">Example select</label>
                             <div class="select-wrapper">
-                                <select class="select-control" name="ordernews" id="mockSelect2" style="width: 100%;">
-                                    <option value="SELECT1">นาย</option>
-                                    <option value="SELECT2">นางสาว</option>
-                                    <option value="SELECT3">นาง</option>
+                                <select class="select-control" name="general[]" id="mockSelect2" onchange="hidearmy()" style="width: 100%;">
+                                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mr'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mr'];?>
+</option>
+                                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mis'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mis'];?>
+</option>
+                                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['miss'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['miss'];?>
+</option>
                                 </select>
                             </div>
                         </div>
@@ -185,7 +191,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="fname">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="fname" placeholder="ชื่อ First Name (Thai)" data-error="">
+                                <input type="text" class="form-control" name="general[]" id="fname" placeholder="ชื่อ First Name (Thai)" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -194,7 +200,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="lname">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="lname" placeholder="นามสกุล Surname (Thai)" data-error="">
+                                <input type="text" class="form-control" name="general[]" id="lname" placeholder="นามสกุล Surname (Thai)" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -205,10 +211,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group">
                             <label class="control-label visuallyhidden" for="mockSelect3">Example select</label>
                             <div class="select-wrapper">
-                                <select class="select-control" name="ordernews" id="mockSelect3" style="width: 100%;">
-                                    <option value="SELECT1">Mr.</option>
-                                    <option value="SELECT2">Mrs.</option>
-                                    <option value="SELECT2">Ms.</option>
+                                <select class="select-control" name="general[]" id="mockSelect3" onchange="hidearmyen()" style="width: 100%;">
+                                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mren'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['mren'];?>
+</option>
+                                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['misen'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['misen'];?>
+</option>
+                                  <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['missen'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['missen'];?>
+</option>
                                 </select>
                             </div>
                         </div>
@@ -217,7 +229,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="email">Example input</label>
                             <div class="block-control">
-                                <input type="email" class="form-control" id="email" placeholder="ชื่อ First Name (Thai)" data-error="">
+                                <input type="text" class="form-control" name="general[]" id="email" placeholder="ชื่อ First Name (Thai)" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -226,7 +238,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="email">Example input</label>
                             <div class="block-control">
-                                <input type="email" class="form-control" id="email" placeholder="นามสกุล Surname (Thai)" data-error="">
+                                <input type="text" class="form-control" name="general[]" id="email" placeholder="นามสกุล Surname (Thai)" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -242,10 +254,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group -nm I">
                                     <label class="control-label label-custom" for="select-day">วันเดือนปีเกิด/Date of birthday<span>*</span></label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="select-day" style="width: 100%;">
-                                            <option value="SELECT1">01</option>
-                                            <option value="SELECT2">02</option>
-                                            <option value="SELECT2">03</option>
+                                        <select class="select-control" name="general[]" id="select-day" style="width: 100%;">
+                                          <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                          <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                                              <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                                          <?php }
+}
+?>
                                         </select>
                                     </div>
                                 </div>
@@ -254,10 +277,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="select-month">Example select</label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="select-month" style="width: 100%;">
-                                            <option value="SELECT1">January</option>
-                                            <option value="SELECT2">January</option>
-                                            <option value="SELECT2">January</option>
+                                        <select class="select-control" name="general[]" id="select-month" style="width: 100%;">
+                                          <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                              <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                          <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                         </select>
                                     </div>
                                 </div>
@@ -266,10 +300,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="select-year">Example select</label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="select-year" style="width: 100%;">
-                                            <option value="SELECT1">2565</option>
-                                            <option value="SELECT2">2566</option>
-                                            <option value="SELECT2">2567</option>
+                                        <select class="select-control" name="general[]" id="select-year" style="width: 100%;">
+                                          <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                          <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                          <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                          <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                              <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                              <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                              <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                          <?php }?>
+
                                         </select>
                                     </div>
                                 </div>
@@ -282,7 +328,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="weight">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="weight" placeholder="99 kg" data-error="">
+                                        <input type="text" class="form-control" name="general[]" id="weight" placeholder="99 kg" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -291,20 +337,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="height">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="height" placeholder="ส่วนสูง/Height cm" data-error="">
+                                        <input type="text" class="form-control" name="general[]" id="height" placeholder="ส่วนสูง/Height cm" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-5 col-lg-4 col-sm">
-                                <div class="form-group">
-                                    <label class="control-label visuallyhidden" for="date-select-year">Example select</label>
-                                    <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="date-select-year" style="width: 100%;">
-                                            <option value="SELECT1">ภูมิสำเนา/Place of Birth</option>
-                                            <option value="SELECT2">ภูมิสำเนา/Place of Birth</option>
-                                            <option value="SELECT2">ภูมิสำเนา/Place of Birth</option>
-                                        </select>
+                            <div class="col-sm">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label visuallyhidden" for="inputPlaceOfBirth">Example input</label>
+                                    <div class="block-control">
+                                        <input type="text" class="form-control" name="general[]" id="inputPlaceOfBirth" placeholder="ภูมิสำเนา/Place of Birth" data-error="">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
@@ -316,7 +359,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <fieldset>
                             <legend class="visuallyhidden">radio</legend>
                             <div class="form-group form-check">
-                                <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="male" value="option1" checked>
+                                <input class="form-check-input radio-check" type="radio" name="general[sex]" id="male" value="ชาย" checked>
                                 <label class="control-label" for="male">
                                     ชาย/Male
                                 </label>
@@ -327,7 +370,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <fieldset>
                             <legend class="visuallyhidden">radio</legend>
                             <div class="form-group form-check">
-                                <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="female" value="option1" checked>
+                                <input class="form-check-input radio-check" type="radio" name="general[sex]" id="female" value="หญิง" checked>
                                 <label class="control-label" for="female">
                                     หญิง/Female
                                 </label>
@@ -345,7 +388,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="have-with-number">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="have-with-number" placeholder="Have With number" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="have-with-number" placeholder="Have With number" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -353,7 +396,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="col-md-5 col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="moo">Example input</label>
-                                    <input type="text" class="form-control" id="moo" placeholder="Moo" data-error="">
+                                    <input type="text" class="form-control" name="address[]" id="moo" placeholder="Moo" data-error="">
                                     <div class="block-control">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
@@ -367,7 +410,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="village-building">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="village-building" placeholder="Village / building" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="village-building" placeholder="Village / building" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -376,7 +419,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="alley">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="alley" placeholder="Alley" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="alley" placeholder="Alley" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -385,7 +428,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="road">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="road" placeholder="Road" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="road" placeholder="Road" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -396,36 +439,46 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <div class="row gutters-custom">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label class="control-label visuallyhidden" for="province">Example select</label>
+                            <label class="control-label visuallyhidden" for="inputProvince">Example select</label>
                             <div class="select-wrapper">
-                                <select class="select-control" name="ordernews" id="province" style="width: 100%;">
-                                    <option value="SELECT1">Province</option>
-                                    <option value="SELECT2">Province</option>
-                                    <option value="SELECT2">Province</option>
+                                <select class="select-control inputProvince" name="address[]" id="inputProvince" style="width: 100%;">
+                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['province'];?>
+</option>
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callProvince_mains']->value, 'callProvince_main');
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['callProvince_main']->value) {
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = false;
+?>
+                                        <option value="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[0];?>
+" data-name="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+"><?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+</option>
+                                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-group">
-                            <label class="control-label visuallyhidden" for="district">Example select</label>
+                            <label class="control-label visuallyhidden" for="inputDistrict">Example select</label>
                             <div class="select-wrapper">
-                                <select class="select-control" name="ordernews" id="district" style="width: 100%;">
-                                    <option value="SELECT1">District</option>
-                                    <option value="SELECT2">District</option>
-                                    <option value="SELECT2">District</option>
+                                <select class="select-control inputDistrict" name="address[]" id="inputDistrict" style="width: 100%;">
+                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['district'];?>
+</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-group">
-                            <label class="control-label visuallyhidden" for="subdistrict">Example select</label>
+                            <label class="control-label visuallyhidden" for="inputSubdictrict">Example select</label>
                             <div class="select-wrapper">
-                                <select class="select-control" name="ordernews" id="subdistrict" style="width: 100%;">
-                                    <option value="SELECT1">Subdistrict</option>
-                                    <option value="SELECT2">Subdistrict</option>
-                                    <option value="SELECT2">Subdistrict</option>
+                                <select class="select-control inputSubdictrict" name="address[]" id="inputSubdictrict" style="width: 100%;">
+                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['subdistrict'];?>
+</option>
                                 </select>
                             </div>
                         </div>
@@ -434,7 +487,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="postcode">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="postcode" placeholder="Postcode" data-error="">
+                                <input type="text" class="form-control" name="address[]" id="postcode" placeholder="Postcode" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -450,7 +503,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-have-with-number">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="present-have-with-number" placeholder="Have With number" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="present-have-with-number" placeholder="Have With number" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -459,7 +512,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-moo">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="present-moo" placeholder="Moo" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="present-moo" placeholder="Moo" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -472,7 +525,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-village-building">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="present-village-building" placeholder="Village / building" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="present-village-building" placeholder="Village / building" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -481,7 +534,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-alley">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="present-alley" placeholder="Alley" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="present-alley" placeholder="Alley" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -490,7 +543,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-road">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="present-road" placeholder="Road" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="present-road" placeholder="Road" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -501,24 +554,35 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <div class="row gutters-custom">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label class="control-label visuallyhidden" for="present-province">Example select</label>
+                            <label class="control-label visuallyhidden" for="inputProvince2">Example select</label>
                             <div class="select-wrapper">
-                                <select class="select-control" name="ordernews" id="present-province" style="width: 100%;">
-                                    <option value="SELECT1">Province</option>
-                                    <option value="SELECT2">Province</option>
-                                    <option value="SELECT2">Province</option>
+                                <select class="select-control inputProvince2" name="address[]" id="inputProvince2" style="width: 100%;">
+                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['province'];?>
+</option>
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callProvince_mains']->value, 'callProvince_main');
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['callProvince_main']->value) {
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = false;
+?>
+                                        <option value="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[0];?>
+" data-name="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+"><?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+</option>
+                                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-group">
-                            <label class="control-label visuallyhidden" for="present-district">Example select</label>
+                            <label class="control-label visuallyhidden" for="inputDistrict2">Example select</label>
                             <div class="select-wrapper">
-                                <select class="select-control" name="ordernews" id="present-district" style="width: 100%;">
-                                    <option value="SELECT1">District</option>
-                                    <option value="SELECT2">District</option>
-                                    <option value="SELECT2">District</option>
+                                <select class="select-control inputDistrict2" name="address[]" id="inputDistrict2" style="width: 100%;">
+                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['district'];?>
+</option>
                                 </select>
                             </div>
                         </div>
@@ -527,10 +591,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group">
                             <label class="control-label visuallyhidden" for="present-subdistrict">Example select</label>
                             <div class="select-wrapper">
-                                <select class="select-control" name="ordernews" id="present-subdistrict" style="width: 100%;">
-                                    <option value="SELECT1">Subdistrict</option>
-                                    <option value="SELECT2">Subdistrict</option>
-                                    <option value="SELECT2">Subdistrict</option>
+                                <select class="select-control inputSubdictrict2" name="address[]" id="present-subdistrict" style="width: 100%;">
+                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['subdistrict'];?>
+</option>
                                 </select>
                             </div>
                         </div>
@@ -539,7 +602,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="present-postcode">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="present-postcode" placeholder="Postcode" data-error="">
+                                <input type="text" class="form-control" name="address[]" id="present-postcode" placeholder="Postcode" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -550,7 +613,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label" for="telephone-home">โทรศัพท์ / Telephone Home</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="telephone-home" placeholder="058-7784562" data-error="">
+                                <input type="text" class="form-control" name="address[]" id="telephone-home" placeholder="058-7784562" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -559,7 +622,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label" for="telephone-mobile">โทรศัพท์มือถือ / Mobile Phone</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="telephone-mobile" placeholder="060-XXX-XXXX" data-error="">
+                                <input type="text" class="form-control" name="address[]" id="telephone-mobile" placeholder="060-XXX-XXXX" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -568,7 +631,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label" for="email">อีเมล์ / E-Mail</label>
                             <div class="block-control">
-                                <input type="email" class="form-control" id="email" placeholder="อีเมล์ E-Mail" data-error="">
+                                <input type="email" class="form-control" name="address[]" id="email" placeholder="อีเมล์ E-Mail" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -581,7 +644,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label" for="identification-1">บัตรประชาชนเลขที่ / Identification Card No.</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="identification-1" placeholder="X-XXXX-XXXXX-XX-X" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="identification-1" placeholder="X-XXXX-XXXXX-XX-X" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -594,10 +657,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group">
                                     <label class="control-label" for="issued-at">สถานที่ออกบัตร / Issued at</label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="issued-at" style="width: 100%;">
-                                            <option value="SELECT1">กรุงเทพ</option>
-                                            <option value="SELECT2">กรุงเทพ</option>
-                                            <option value="SELECT2">กรุงเทพ</option>
+                                        <select class="select-control" name="address[]" id="issued-at" style="width: 100%;">
+                                            <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['province'];?>
+</option>
+                                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callProvince_mains']->value, 'callProvince_main');
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['callProvince_main']->value) {
+$_smarty_tpl->tpl_vars['callProvince_main']->do_else = false;
+?>
+                                                <option value="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[0];?>
+" data-name="<?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+"><?php echo $_smarty_tpl->tpl_vars['callProvince_main']->value[2];?>
+</option>
+                                            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                         </select>
                                     </div>
                                 </div>
@@ -606,7 +681,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label" for="expiry-date" style=" font-size: 14px; ">วันหมดอายุ / Expiry Date</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="expiry-date" placeholder="17 - 02 - 2565" data-error="">
+                                        <input type="text" class="form-control" name="address[]" id="expiry-date" placeholder="17 - 02 - 2565" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -622,7 +697,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <fieldset>
                             <legend class="visuallyhidden">radio</legend>
                             <div class="form-group form-check">
-                                <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="exempted" value="option1" checked>
+                                <input class="form-check-input radio-check" type="radio" name="military[status]" id="exempted" value="ได้รับการยกเว้น" checked>
                                 <label class="control-label" for="exempted">
                                     ได้รับการยกเว้น / Exempted
                                 </label>
@@ -633,7 +708,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <fieldset>
                             <legend class="visuallyhidden">radio</legend>
                             <div class="form-group form-check">
-                                <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="non-exempted" value="option1" checked>
+                                <input class="form-check-input radio-check" type="radio" name="military[status]" id="non-exempted" value="ยังไม่ผ่านการเกณฑ์ทหาร" checked>
                                 <label class="control-label" for="non-exempted">
                                     ยังไม่ผ่านการเกณฑ์ทหาร / Non-Exempted
                                 </label>
@@ -644,7 +719,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <fieldset>
                             <legend class="visuallyhidden">radio</legend>
                             <div class="form-group form-check">
-                                <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="territorial-degree-student" value="option1" checked>
+                                <input class="form-check-input radio-check" type="radio" name="military[status]" id="territorial-degree-student" value="เรียนรักษาดินแดน" checked>
                                 <label class="control-label" for="territorial-degree-student">
                                     เรียนรักษาดินแดน / Territorial Degree Student
                                 </label>
@@ -657,7 +732,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <fieldset>
                             <legend class="visuallyhidden">radio</legend>
                             <div class="form-group form-check">
-                                <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="date-entered-service" value="option1" checked>
+                                <input class="form-check-input radio-check" type="radio" name="military[status]" id="date-entered-service" value="รับราชการทหารแล้ว" checked>
                                 <label class="control-label" for="date-entered-service">
                                     รับราชการทหารแล้ว / Date Entered Service
                                 </label>
@@ -668,7 +743,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <fieldset>
                             <legend class="visuallyhidden">radio</legend>
                             <div class="form-group form-check">
-                                <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="other" value="option1" checked>
+                                <input class="form-check-input radio-check" type="radio" name="military[status]" id="other" value="อื่นๆ" checked>
                                 <label class="control-label" for="other">
                                     อื่นๆ / Other
                                 </label>
@@ -679,7 +754,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="identification-2">บัตรประชาชนเลขที่ / Identification Card No.</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="identification-2" placeholder="ระบุ / Annotate" data-error="">
+                                <input type="text" class="form-control" name="military[]" id="identification-2" placeholder="ระบุ / Annotate" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -693,7 +768,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label font-size-C" for="e-name">ชื่อ / Name</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="e-name" placeholder="ชื่อ / Name" data-error="">
+                                <input type="text" class="form-control" name="emergency[]" id="e-name" placeholder="ชื่อ / Name" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -704,7 +779,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label font-size-C" for="e-surname">นามสกุล / Surname</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="e-surname" placeholder="นามสกุล / Surname" data-error="">
+                                        <input type="text" class="form-control" name="emergency[]" id="e-surname" placeholder="นามสกุล / Surname" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -713,10 +788,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group">
                                     <label class="control-label label-custom" for="e-select-day">วันเดือนปีเกิด/Date of birthday</label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="e-select-day" style="width: 100%;">
-                                            <option value="SELECT1">23</option>
-                                            <option value="SELECT2">24</option>
-                                            <option value="SELECT2">25</option>
+                                        <select class="select-control" name="emergency[]" id="e-select-day" style="width: 100%;">
+                                            <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                            <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                                                <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                                            <?php }
+}
+?>
                                         </select>
                                     </div>
                                 </div>
@@ -729,10 +815,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="e-select-month">Ex</label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="e-select-month" style="width: 100%;">
-                                            <option value="SELECT1">ธันวาคม</option>
-                                            <option value="SELECT2">ธันวาคม</option>
-                                            <option value="SELECT2">ธันวาคม</option>
+                                        <select class="select-control" name="emergency[]" id="e-select-month" style="width: 100%;">
+                                            <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                                <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                         </select>
                                     </div>
                                 </div>
@@ -741,10 +838,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group">
                                     <label class="control-label visuallyhidden" for="e-select-year">Ex</label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="e-select-year" style="width: 100%;">
-                                            <option value="SELECT1">2544</option>
-                                            <option value="SELECT2">2544</option>
-                                            <option value="SELECT2">ธ2544</option>
+                                        <select class="select-control" name="emergency[]" id="e-select-year" style="width: 100%;">
+                                            <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                            <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                            <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                            <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                                <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                                <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                                <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                            <?php }?>
+
                                         </select>
                                     </div>
                                 </div>
@@ -753,7 +862,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="e-age">Ex</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control text-center" id="e-age" placeholder="35" data-error="">
+                                        <input type="text" class="form-control text-center" name="emergency[]" id="e-age" placeholder="35" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -766,7 +875,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label font-size-C" for="relations">ความสัมพันธ์ / Relations</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="relations" placeholder="ความสัมพันธ์ / Relations" data-error="">
+                                <input type="text" class="form-control" name="emergency[]" id="relations" placeholder="ความสัมพันธ์ / Relations" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -775,7 +884,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label font-size-C" for="address-workplace">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="address-workplace" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
+                                <input type="text" class="form-control" name="emergency[]" id="address-workplace" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -784,7 +893,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label" for="e-tel">โทรศัพท / Tel.</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="e-tel" placeholder="060-XXX-XXXX" data-error="">
+                                <input type="text" class="form-control" name="emergency[]" id="e-tel" placeholder="060-XXX-XXXX" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -799,7 +908,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label font-size-C" for="f-name-1">1. ชื่อ / Name</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="f-name-1" placeholder="ชื่อ / Name" data-error="">
+                                    <input type="text" class="form-control" name="family[]" id="f-name-1" placeholder="ชื่อ / Name" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -810,7 +919,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-surname-1">นามสกุล / Surname</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" id="f-surname-1" placeholder="นามสกุล / Surname" data-error="">
+                                            <input type="text" class="form-control" name="family[]" id="f-surname-1" placeholder="นามสกุล / Surname" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -819,10 +928,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label label-custom" for="f-select-day-1">วันเดือนปีเกิด/Date of birthday</label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-day-1" style="width: 100%;">
-                                                <option value="SELECT1">23</option>
-                                                <option value="SELECT2">24</option>
-                                                <option value="SELECT2">25</option>
+                                            <select class="select-control" name="family[]" id="f-select-day-1" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                                <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                                                    <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                                                <?php }
+}
+?>
                                             </select>
                                         </div>
                                     </div>
@@ -835,10 +955,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="f-select-month-1">Ex</label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-month-1" style="width: 100%;">
-                                                <option value="SELECT1">ธันวาคม</option>
-                                                <option value="SELECT2">ธันวาคม</option>
-                                                <option value="SELECT2">ธันวาคม</option>
+                                            <select class="select-control" name="family[]" id="f-select-month-1" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </select>
                                         </div>
                                     </div>
@@ -847,10 +978,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="f-select-year-1">Ex</label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-year-1" style="width: 100%;">
-                                                <option value="SELECT1">2544</option>
-                                                <option value="SELECT2">2544</option>
-                                                <option value="SELECT2">ธ2544</option>
+                                            <select class="select-control" name="family[]" id="f-select-year-1" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                                <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                                <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                                <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                                    <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                                    <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                                <?php }?>
+
                                             </select>
                                         </div>
                                     </div>
@@ -859,7 +1002,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="f-age-1">Ex</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control text-center" id="f-age-1" placeholder="35" data-error="">
+                                            <input type="text" class="form-control text-center" name="family[]" id="f-age-1" placeholder="35" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -872,7 +1015,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label font-size-C" for="f-relations-1">ความสัมพันธ์ / Relations</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="f-relations-1" placeholder="ความสัมพันธ์ / Relations" data-error="">
+                                    <input type="text" class="form-control" name="family[]" id="f-relations-1" placeholder="ความสัมพันธ์ / Relations" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -881,7 +1024,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label font-size-C" for="f-address-workplace-1">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="f-address-workplace-1" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
+                                    <input type="text" class="form-control" name="family[]" id="f-address-workplace-1" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -890,7 +1033,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="f-tel-1">โทรศัพท / Tel.</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="f-tel-1" placeholder="060-XXX-XXXX" data-error="">
+                                    <input type="text" class="form-control" name="family[]" id="f-tel-1" placeholder="060-XXX-XXXX" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -903,7 +1046,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <fieldset>
                                         <legend class="visuallyhidden">Live</legend>
                                         <div class="form-group form-check">
-                                            <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="live" value="option1" checked>
+                                            <input class="form-check-input radio-check" type="radio" name="family[alive]" id="live" value="มีชีวิต">
                                             <label class="control-label" for="live">
                                                 Live
                                             </label>
@@ -914,7 +1057,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <fieldset>
                                         <legend class="visuallyhidden">Pass Away</legend>
                                         <div class="form-group form-check">
-                                            <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="pass-away" value="option1" checked>
+                                            <input class="form-check-input radio-check" type="radio" name="family[alive]" id="pass-away" value="เสียชีวิต">
                                             <label class="control-label" for="pass-away">
                                                 Pass Away
                                             </label>
@@ -929,10 +1072,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="fc-select-day-1">Ex</label>
                                         <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-day-1" style="width: 100%;">
-                                                <option value="SELECT1">Day</option>
-                                                <option value="SELECT2">Day</option>
-                                                <option value="SELECT2">Day</option>
+                                            <select class="select-control" name="family[]" id="fc-select-day-1" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                                <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                                                    <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                                                <?php }
+}
+?>
                                             </select>
                                         </div>
                                     </div>
@@ -941,10 +1095,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="fc-select-month-1">Ex</label>
                                         <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-month-1" style="width: 100%;">
-                                                <option value="SELECT1">Month</option>
-                                                <option value="SELECT2">Month</option>
-                                                <option value="SELECT2">Month</option>
+                                            <select class="select-control" name="family[]" id="fc-select-month-1" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </select>
                                         </div>
                                     </div>
@@ -953,10 +1118,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="fc-select-year-1">Ex</label>
                                         <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-year-1" style="width: 100%;">
-                                                <option value="SELECT1">Year</option>
-                                                <option value="SELECT2">Year</option>
-                                                <option value="SELECT2">Year</option>
+                                            <select class="select-control" name="family[]" id="fc-select-year-1" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                                <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                                <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                                <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                                    <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                                    <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                                <?php }?>
+
                                             </select>
                                         </div>
                                     </div>
@@ -971,7 +1148,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label font-size-C" for="f-name-2">2. ชื่อ / Name</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="f-name-2" placeholder="ชื่อ / Name" data-error="">
+                                    <input type="text" class="form-control" name="family[]" id="f-name-2" placeholder="ชื่อ / Name" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -982,7 +1159,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group has-feedback">
                                         <label class="control-label font-size-C" for="f-surname-2">นามสกุล / Surname</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" id="f-surname-2" placeholder="นามสกุล / Surname" data-error="">
+                                            <input type="text" class="form-control" name="family[]" id="f-surname-2" placeholder="นามสกุล / Surname" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -991,10 +1168,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label label-custom" for="f-select-day-2">วันเดือนปีเกิด/Date of birthday</label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-day-2" style="width: 100%;">
-                                                <option value="SELECT1">23</option>
-                                                <option value="SELECT2">24</option>
-                                                <option value="SELECT2">25</option>
+                                            <select class="select-control" name="family[]" id="f-select-day-2" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                                <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                                                    <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                                                <?php }
+}
+?>
                                             </select>
                                         </div>
                                     </div>
@@ -1007,10 +1195,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="f-select-month-2">Ex</label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-month-2" style="width: 100%;">
-                                                <option value="SELECT1">ธันวาคม</option>
-                                                <option value="SELECT2">ธันวาคม</option>
-                                                <option value="SELECT2">ธันวาคม</option>
+                                            <select class="select-control" name="family[]" id="f-select-month-2" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </select>
                                         </div>
                                     </div>
@@ -1019,10 +1218,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="f-select-year-2">Ex</label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-year-2" style="width: 100%;">
-                                                <option value="SELECT1">2544</option>
-                                                <option value="SELECT2">2544</option>
-                                                <option value="SELECT2">ธ2544</option>
+                                            <select class="select-control" name="family[]" id="f-select-year-2" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                                <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                                <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                                <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                                    <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                                    <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                                <?php }?>
+
                                             </select>
                                         </div>
                                     </div>
@@ -1031,7 +1242,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="f-age-2">Ex</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control text-center" id="f-age-2" placeholder="35" data-error="">
+                                            <input type="text" class="form-control text-center" name="family[]" id="f-age-2" placeholder="35" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1044,7 +1255,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label font-size-C" for="f-relations-2">ความสัมพันธ์ / Relations</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="f-relations-2" placeholder="ความสัมพันธ์ / Relations" data-error="">
+                                    <input type="text" class="form-control" name="family[]" id="f-relations-2" placeholder="ความสัมพันธ์ / Relations" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1053,7 +1264,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label font-size-C" for="f-address-workplace-2">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="f-address-workplace-2" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
+                                    <input type="text" class="form-control" name="family[]" id="f-address-workplace-2" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1062,7 +1273,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="f-tel-2">โทรศัพท / Tel.</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="f-tel-2" placeholder="060-XXX-XXXX" data-error="">
+                                    <input type="text" class="form-control" name="family[]" id="f-tel-2" placeholder="060-XXX-XXXX" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1075,7 +1286,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <fieldset>
                                         <legend class="visuallyhidden">Live</legend>
                                         <div class="form-group form-check">
-                                            <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="live-2" value="option1" checked>
+                                            <input class="form-check-input radio-check" type="radio" name="family[alive2]" id="live-2" value="มีชีวิต">
                                             <label class="control-label" for="live-2">
                                                 Live
                                             </label>
@@ -1086,7 +1297,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <fieldset>
                                         <legend class="visuallyhidden">Pass Away</legend>
                                         <div class="form-group form-check">
-                                            <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="pass-away-2" value="option1" checked>
+                                            <input class="form-check-input radio-check" type="radio" name="family[alive2]" id="pass-away-2" value="เสียชีวิต">
                                             <label class="control-label" for="pass-away-2">
                                                 Pass Away
                                             </label>
@@ -1101,10 +1312,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="fc-select-day-2">Ex</label>
                                         <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-day-2" style="width: 100%;">
-                                                <option value="SELECT1">Day</option>
-                                                <option value="SELECT2">Day</option>
-                                                <option value="SELECT2">Day</option>
+                                            <select class="select-control" name="family[]" id="fc-select-day-2" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                                <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                                                    <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                                                <?php }
+}
+?>
                                             </select>
                                         </div>
                                     </div>
@@ -1113,10 +1335,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="fc-select-month-2">Ex</label>
                                         <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-month-2" style="width: 100%;">
-                                                <option value="SELECT1">Month</option>
-                                                <option value="SELECT2">Month</option>
-                                                <option value="SELECT2">Month</option>
+                                            <select class="select-control" name="family[]" id="fc-select-month-2" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </select>
                                         </div>
                                     </div>
@@ -1125,10 +1358,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label visuallyhidden" for="fc-select-year-2">Ex</label>
                                         <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-year-2" style="width: 100%;">
-                                                <option value="SELECT1">Year</option>
-                                                <option value="SELECT2">Year</option>
-                                                <option value="SELECT2">Year</option>
+                                            <select class="select-control" name="family[]" id="fc-select-year-2" style="width: 100%;">
+                                                <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                                <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                                <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                                <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                                    <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                                    <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                                <?php }?>
+
                                             </select>
                                         </div>
                                     </div>
@@ -1143,9 +1388,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="row gutters-custom">
                                 <div class="col-sm">
                                     <div class="form-group has-feedback">
-                                        <label class="control-label visuallyhidden" for="input-two">input-two</label>
+                                        <label class="control-label visuallyhidden" for="inputNumberbrother">input-two</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" id="input-two" placeholder="2" data-error="">
+                                            <input type="text" class="form-control" name="brethren[0][]" id="inputNumberbrother" onkeyup="hidebrother()" onmouseup="hidebrother()" value="1" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1154,7 +1399,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="you-are-someone-who">You Are Someone Who?</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" id="you-are-someone-who" placeholder="You Are Someone Who?" data-error="">
+                                            <input type="text" class="form-control" name="brethren[0][]" id="you-are-someone-who" placeholder="You Are Someone Who?" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1162,178 +1407,248 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </div>
                         </div>
                         <div class="col-sm text-right">
-                            <div class="button add-form-1">
-                                <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                            <div class="button ">
+                                <a href="javascript:void(0);" class="btn btn-primary addbrethren" title="btn btn-primary">
                                     <span class="feather icon-plus text-white"></span>
                                     Add Brother / Sister
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="row gutters-custom align-items-end">
-                        <div class="col-md">
-                            <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-name-3">พี่น้อง / Brother Sister</label>
-                                <div class="block-control">
-                                    <input type="text" class="form-control" id="f-name-3" placeholder="ชื่อ / Name" data-error="">
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="row gutters-custom">
-                                <div class="col-md col-sm-6">
-                                    <div class="form-group has-feedback">
-                                        <label class="control-label font-size-C" for="f-surname-3">นามสกุล / Surname</label>
-                                        <div class="block-control">
-                                            <input type="text" class="form-control" id="f-surname-3" placeholder="นามสกุล / Surname" data-error="">
-                                            <span class="form-control-feedback" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label label-custom" for="f-select-day-3">วันเดือนปีเกิด/Date of birthday</label>
-                                        <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-day-3" style="width: 100%;">
-                                                <option value="SELECT1">23</option>
-                                                <option value="SELECT2">24</option>
-                                                <option value="SELECT2">25</option>
-                                            </select>
-                                        </div>
+                    <div id="textvaluebro">
+                        <div class="row gutters-custom align-items-end">
+                            <div class="col-md">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label font-size-C" for="f-name-3">นามสกุล / Surname</label>
+                                    <div class="block-control">
+                                        <input type="text" class="form-control" name="brethren[0][]" id="f-name-3" placeholder="ชื่อ / Name" data-error="">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="row gutters-custom">
-                                <div class="col-md-5 col-sm-4">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="f-select-month-3">Ex</label>
-                                        <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-month-3" style="width: 100%;">
-                                                <option value="SELECT1">ธันวาคม</option>
-                                                <option value="SELECT2">ธันวาคม</option>
-                                                <option value="SELECT2">ธันวาคม</option>
-                                            </select>
+                            <div class="col-md">
+                                <div class="row gutters-custom">
+                                    <div class="col-md col-sm-6">
+                                        <div class="form-group has-feedback">
+                                            <label class="control-label font-size-C" for="f-surname-3">นามสกุล / Surname</label>
+                                            <div class="block-control">
+                                                <input type="text" class="form-control" name="brethren[0][]" id="f-surname-3" placeholder="นามสกุล / Surname" data-error="">
+                                                <span class="form-control-feedback" aria-hidden="true"></span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md col-sm-4">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="f-select-year-3">Ex</label>
-                                        <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-year-3" style="width: 100%;">
-                                                <option value="SELECT1">2544</option>
-                                                <option value="SELECT2">2544</option>
-                                                <option value="SELECT2">ธ2544</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md col-sm-4">
-                                    <div class="form-group has-feedback">
-                                        <label class="control-label visuallyhidden" for="f-age-3">Ex</label>
-                                        <div class="block-control">
-                                            <input type="text" class="form-control text-center" id="f-age-3" placeholder="35" data-error="">
-                                            <span class="form-control-feedback" aria-hidden="true"></span>
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label label-custom" for="f-select-day-3">วันเดือนปีเกิด/Date of birthday</label>
+                                            <div class="select-wrapper">
+                                                <select class="select-control" name="brethren[0][]" id="f-select-day-3" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                                    <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                                                        <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                                                    <?php }
+}
+?>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row gutters-custom">
-                        <div class="col-sm">
-                            <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-relations-3">ความสัมพันธ์ / Relations</label>
-                                <div class="block-control">
-                                    <input type="text" class="form-control" id="f-relations-3" placeholder="ความสัมพันธ์ / Relations" data-error="">
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-address-workplace-3">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
-                                <div class="block-control">
-                                    <input type="text" class="form-control" id="f-address-workplace-3" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="form-group has-feedback">
-                                <label class="control-label" for="f-tel-3">โทรศัพท / Tel.</label>
-                                <div class="block-control">
-                                    <input type="text" class="form-control" id="f-tel-3" placeholder="060-XXX-XXXX" data-error="">
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gutters-custom">
-                        <div class="col-auto">
-                            <div class="row gutters-custom">
-                                <div class="col-auto">
-                                    <fieldset>
-                                        <legend class="visuallyhidden">Live</legend>
-                                        <div class="form-group form-check">
-                                            <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="live-3" value="option1" checked>
-                                            <label class="control-label" for="live-3">
-                                                Live
-                                            </label>
+                            <div class="col-md">
+                                <div class="row gutters-custom">
+                                    <div class="col-md-5 col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="f-select-month-3">Ex</label>
+                                            <div class="select-wrapper">
+                                                <select class="select-control" name="brethren[0][]" id="f-select-month-3" style="width: 100%;">
+                                                        <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                                            <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </fieldset>
-                                </div>
-                                <div class="col-auto">
-                                    <fieldset>
-                                        <legend class="visuallyhidden">Pass Away</legend>
-                                        <div class="form-group form-check">
-                                            <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="pass-away-3" value="option1" checked>
-                                            <label class="control-label" for="pass-away-3">
-                                                Pass Away
-                                            </label>
+                                    </div>
+                                    <div class="col-md col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="f-select-year-3">Ex</label>
+                                            <div class="select-wrapper">
+                                                <select class="select-control" name="brethren[0][]" id="f-select-year-3" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                                    <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                                    <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                                    <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                                        <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                                        <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                                    <?php }?>
+
+                                                </select>
+                                            </div>
                                         </div>
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-8">
-                            <div class="row gutters-custom">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="fc-select-day-3">Ex</label>
-                                        <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-day-3" style="width: 100%;">
-                                                <option value="SELECT1">Day</option>
-                                                <option value="SELECT2">Day</option>
-                                                <option value="SELECT2">Day</option>
-                                            </select>
+                                    </div>
+                                    <div class="col-md col-sm-4">
+                                        <div class="form-group has-feedback">
+                                            <label class="control-label visuallyhidden" for="f-age-3">Ex</label>
+                                            <div class="block-control">
+                                                <input type="text" class="form-control text-center" name="brethren[0][]" id="f-age-3" placeholder="35" data-error="">
+                                                <span class="form-control-feedback" aria-hidden="true"></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="fc-select-month-3">Ex</label>
-                                        <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-month-3" style="width: 100%;">
-                                                <option value="SELECT1">Month</option>
-                                                <option value="SELECT2">Month</option>
-                                                <option value="SELECT2">Month</option>
-                                            </select>
-                                        </div>
+                            </div>
+                        </div>
+                        <div class="row gutters-custom">
+                            <div class="col-sm">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label font-size-C" for="f-relations-3">ความสัมพันธ์ / Relations</label>
+                                    <div class="block-control">
+                                        <input type="text" class="form-control" name="brethren[0][]" id="f-relations-3" placeholder="ความสัมพันธ์ / Relations" data-error="">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="fc-select-year-3">Ex</label>
-                                        <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-year-3" style="width: 100%;">
-                                                <option value="SELECT1">Year</option>
-                                                <option value="SELECT2">Year</option>
-                                                <option value="SELECT2">Year</option>
-                                            </select>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label font-size-C" for="f-address-workplace-3">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
+                                    <div class="block-control">
+                                        <input type="text" class="form-control" name="brethren[0][]" id="f-address-workplace-3" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label" for="f-tel-3">โทรศัพท / Tel.</label>
+                                    <div class="block-control">
+                                        <input type="text" class="form-control" name="brethren[0][]" id="f-tel-3" placeholder="060-XXX-XXXX" data-error="">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters-custom">
+                            <div class="col-auto">
+                                <div class="row gutters-custom">
+                                    <div class="col-auto">
+                                        <fieldset>
+                                            <legend class="visuallyhidden">Live</legend>
+                                            <div class="form-group form-check">
+                                                <input class="form-check-input radio-check" type="radio" name="brethren[0][alive]" id="live-3" value="มีชีวิต">
+                                                <label class="control-label" for="live-3">
+                                                    Live
+                                                </label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-auto">
+                                        <fieldset>
+                                            <legend class="visuallyhidden">Pass Away</legend>
+                                            <div class="form-group form-check">
+                                                <input class="form-check-input radio-check" type="radio" name="brethren[0][alive]" id="pass-away-3" value="เสียชีวิต">
+                                                <label class="control-label" for="pass-away-3">
+                                                    Pass Away
+                                                </label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-8">
+                                <div class="row gutters-custom">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="fc-select-day-3">Ex</label>
+                                            <div class="select-wrapper select-custom">
+                                                <select class="select-control" name="brethren[0][]" id="fc-select-day-3" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                                    <?php
+$_smarty_tpl->tpl_vars['index2'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index2']->step = 1;$_smarty_tpl->tpl_vars['index2']->total = (int) ceil(($_smarty_tpl->tpl_vars['index2']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index2']->step));
+if ($_smarty_tpl->tpl_vars['index2']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index2']->value = 1, $_smarty_tpl->tpl_vars['index2']->iteration = 1;$_smarty_tpl->tpl_vars['index2']->iteration <= $_smarty_tpl->tpl_vars['index2']->total;$_smarty_tpl->tpl_vars['index2']->value += $_smarty_tpl->tpl_vars['index2']->step, $_smarty_tpl->tpl_vars['index2']->iteration++) {
+$_smarty_tpl->tpl_vars['index2']->first = $_smarty_tpl->tpl_vars['index2']->iteration === 1;$_smarty_tpl->tpl_vars['index2']->last = $_smarty_tpl->tpl_vars['index2']->iteration === $_smarty_tpl->tpl_vars['index2']->total;?>
+                                                        <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index2']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index2']->value;?>
+</option>
+                                                    <?php }
+}
+?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="fc-select-month-3">Ex</label>
+                                            <div class="select-wrapper select-custom">
+                                                <select class="select-control" name="brethren[0][]" id="fc-select-month-3" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="fc-select-year-3">Ex</label>
+                                            <div class="select-wrapper select-custom">
+                                                <select class="select-control" name="brethren[0][]" id="fc-select-year-3" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                                    <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                                    <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                                    <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                                        <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                                        <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                                    <?php }?>
+
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1341,200 +1656,276 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
                     </div>
                 </div>
-                <div class="form-set V d-none" id="add-form-1">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <div class="title"> พี่น้อง / Brother Sister</div>
+                <!-- //////////////////////////////// Start Clone Brother /////////////////////////////// -->
+                <div id="temp_brethrens">
+                    <div class="form-set V d-none">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="title"> พี่น้อง / Brother Sister</div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="button">
+                                    <a href="javascript:void(0);" class="btn btn-primary clickdel" title="btn btn-primary">
+                                        <!-- <span class="feather icon-minus text-white"></span> -->
+                                        ลบ
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-auto">
-                            <div class="button delete-form-1">
-                                <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
-                                    <!-- <span class="feather icon-minus text-white"></span> -->
-                                    ลบ
-                                </a>
+                        <div class="row gutters-custom align-items-end">
+                            <div class="col-md">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label font-size-C" for="f-name-4">ชื่อ / Name</label>
+                                    <div class="block-control">
+                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-name-4" placeholder="ชื่อ / Name" data-error="">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="row gutters-custom">
+                                    <div class="col-md col-sm-6">
+                                        <div class="form-group has-feedback">
+                                            <label class="control-label font-size-C" for="f-surname-4">นามสกุล / Surname</label>
+                                            <div class="block-control">
+                                                <input type="text" class="form-control" name="brethren[temp][]" id="f-surname-4" placeholder="นามสกุล / Surname" data-error="">
+                                                <span class="form-control-feedback" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label label-custom" for="f-select-day-4-temp">วันเดือนปีเกิด/Date of birthday</label>
+                                            <div class="select-wrapper">
+                                                <select class="select-control" name="brethren[temp][]" id="f-select-day-4-temp" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                                    <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                                                        <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                                                    <?php }
+}
+?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="row gutters-custom">
+                                    <div class="col-md-5 col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="f-select-month-4-temp">Ex</label>
+                                            <div class="select-wrapper">
+                                                <select class="select-control" name="brethren[temp][]" id="f-select-month-4-temp" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="f-select-year-4-temp">Ex</label>
+                                            <div class="select-wrapper">
+                                                <select class="select-control" name="brethren[temp][]" id="f-select-year-4-temp" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                                    <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                                    <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                                    <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                                        <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                                        <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                                    <?php }?>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md col-sm-4">
+                                        <div class="form-group has-feedback">
+                                            <label class="control-label visuallyhidden" for="f-age-4">Ex</label>
+                                            <div class="block-control">
+                                                <input type="text" class="form-control text-center" name="brethren[temp][]" id="f-age-4" placeholder="35" data-error="">
+                                                <span class="form-control-feedback" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters-custom">
+                            <div class="col-sm">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label font-size-C" for="f-relations-4">ความสัมพันธ์ / Relations</label>
+                                    <div class="block-control">
+                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-relations-4" placeholder="ความสัมพันธ์ / Relations" data-error="">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label font-size-C" for="f-address-workplace-4">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
+                                    <div class="block-control">
+                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-address-workplace-4" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label" for="f-tel-4">โทรศัพท / Tel.</label>
+                                    <div class="block-control">
+                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-tel-4" placeholder="060-XXX-XXXX" data-error="">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters-custom">
+                            <div class="col-auto">
+                                <div class="row gutters-custom">
+                                    <div class="col-auto">
+                                        <fieldset>
+                                            <legend class="visuallyhidden">Live</legend>
+                                            <div class="form-group form-check">
+                                                <input class="form-check-input radio-check" type="radio" name="brethren[temp][alive]" id="live-4" value="มีชีวิต">
+                                                <label class="control-label" for="live-4">
+                                                    Live
+                                                </label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-auto">
+                                        <fieldset>
+                                            <legend class="visuallyhidden">Pass Away</legend>
+                                            <div class="form-group form-check">
+                                                <input class="form-check-input radio-check" type="radio" name="brethren[temp][alive]" id="pass-away-4" value="เสียชีวิต">
+                                                <label class="control-label" for="pass-away-4">
+                                                    Pass Away
+                                                </label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-8">
+                                <div class="row gutters-custom">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="fc-select-day-4-temp">Ex</label>
+                                            <div class="select-wrapper select-custom">
+                                                <select class="select-control" name="brethren[temp][]" id="fc-select-day-4-temp" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['day'];?>
+</option>
+                                                    <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 31+1 - (1) : 1-(31)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 1, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
+                                                        <option value="<?php if ($_smarty_tpl->tpl_vars['index']->value < 10) {?>0<?php }
+echo $_smarty_tpl->tpl_vars['index']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+</option>
+                                                    <?php }
+}
+?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="fc-select-month-4-temp">Ex</label>
+                                            <div class="select-wrapper select-custom">
+                                                <select class="select-control" name="brethren[temp][]" id="fc-select-month-4-temp" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['month'];?>
+</option>
+                                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['MonthArray']->value, 'valueMonthArray', false, 'keyMonthArray');
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMonthArray']->value => $_smarty_tpl->tpl_vars['valueMonthArray']->value) {
+$_smarty_tpl->tpl_vars['valueMonthArray']->do_else = false;
+?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value['number'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMonthArray']->value[$_smarty_tpl->tpl_vars['LangMonth']->value];?>
+</option>
+                                                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="control-label visuallyhidden" for="fc-select-year-4-temp">Ex</label>
+                                            <div class="select-wrapper select-custom">
+                                                <select class="select-control" name="brethren[temp][]" id="fc-select-year-4-temp" style="width: 100%;">
+                                                    <option disabled selected value="0"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['year'];?>
+</option>
+                                                    <?php $_smarty_tpl->_assignInScope('current', ((string)$_smarty_tpl->tpl_vars['Year']->value));?>
+                                                    <?php $_smarty_tpl->_assignInScope('currentEN', ((string)$_smarty_tpl->tpl_vars['YearEn']->value));?>
+                                                    <?php
+ while ($_smarty_tpl->tpl_vars['current']->value > ($_smarty_tpl->tpl_vars['Year']->value-100)) {?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['currentEN']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+</option>
+                                                        <?php echo $_smarty_tpl->tpl_vars['current']->value--;?>
+
+                                                        <?php echo $_smarty_tpl->tpl_vars['currentEN']->value--;?>
+
+                                                    <?php }?>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row gutters-custom align-items-end">
-                        <div class="col-md">
-                            <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-name-4">พี่น้อง / Brother Sister</label>
-                                <div class="block-control">
-                                    <input type="text" class="form-control" id="f-name-4" placeholder="ชื่อ / Name" data-error="">
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="row gutters-custom">
-                                <div class="col-md col-sm-6">
-                                    <div class="form-group has-feedback">
-                                        <label class="control-label font-size-C" for="f-surname-4">นามสกุล / Surname</label>
-                                        <div class="block-control">
-                                            <input type="text" class="form-control" id="f-surname-4" placeholder="นามสกุล / Surname" data-error="">
-                                            <span class="form-control-feedback" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label label-custom" for="f-select-day-4">วันเดือนปีเกิด/Date of birthday</label>
-                                        <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-day-4" style="width: 100%;">
-                                                <option value="SELECT1">23</option>
-                                                <option value="SELECT2">24</option>
-                                                <option value="SELECT2">25</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="row gutters-custom">
-                                <div class="col-md-5 col-sm-4">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="f-select-month-4">Ex</label>
-                                        <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-month-4" style="width: 100%;">
-                                                <option value="SELECT1">ธันวาคม</option>
-                                                <option value="SELECT2">ธันวาคม</option>
-                                                <option value="SELECT2">ธันวาคม</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md col-sm-4">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="f-select-year-4">Ex</label>
-                                        <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="f-select-year-4" style="width: 100%;">
-                                                <option value="SELECT1">2544</option>
-                                                <option value="SELECT2">2544</option>
-                                                <option value="SELECT2">ธ2544</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md col-sm-4">
-                                    <div class="form-group has-feedback">
-                                        <label class="control-label visuallyhidden" for="f-age-4">Ex</label>
-                                        <div class="block-control">
-                                            <input type="text" class="form-control text-center" id="f-age-4" placeholder="35" data-error="">
-                                            <span class="form-control-feedback" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gutters-custom">
-                        <div class="col-sm">
-                            <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-relations-4">ความสัมพันธ์ / Relations</label>
-                                <div class="block-control">
-                                    <input type="text" class="form-control" id="f-relations-4" placeholder="ความสัมพันธ์ / Relations" data-error="">
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-address-workplace-4">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
-                                <div class="block-control">
-                                    <input type="text" class="form-control" id="f-address-workplace-4" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="form-group has-feedback">
-                                <label class="control-label" for="f-tel-4">โทรศัพท / Tel.</label>
-                                <div class="block-control">
-                                    <input type="text" class="form-control" id="f-tel-4" placeholder="060-XXX-XXXX" data-error="">
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gutters-custom">
-                        <div class="col-auto">
-                            <div class="row gutters-custom">
-                                <div class="col-auto">
-                                    <fieldset>
-                                        <legend class="visuallyhidden">Live</legend>
-                                        <div class="form-group form-check">
-                                            <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="live-4" value="option1" checked>
-                                            <label class="control-label" for="live-4">
-                                                Live
-                                            </label>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <div class="col-auto">
-                                    <fieldset>
-                                        <legend class="visuallyhidden">Pass Away</legend>
-                                        <div class="form-group form-check">
-                                            <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="pass-away-4" value="option1" checked>
-                                            <label class="control-label" for="pass-away-4">
-                                                Pass Away
-                                            </label>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-8">
-                            <div class="row gutters-custom">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="fc-select-day-4">Ex</label>
-                                        <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-day-4" style="width: 100%;">
-                                                <option value="SELECT1">Day</option>
-                                                <option value="SELECT2">Day</option>
-                                                <option value="SELECT2">Day</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="fc-select-month-4">Ex</label>
-                                        <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-month-4" style="width: 100%;">
-                                                <option value="SELECT1">Month</option>
-                                                <option value="SELECT2">Month</option>
-                                                <option value="SELECT2">Month</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="fc-select-year-4">Ex</label>
-                                        <div class="select-wrapper select-custom">
-                                            <select class="select-control" name="ordernews" id="fc-select-year-4" style="width: 100%;">
-                                                <option value="SELECT1">Year</option>
-                                                <option value="SELECT2">Year</option>
-                                                <option value="SELECT2">Year</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <!--//////////////////////////////// End Clone Brother /////////////////////////////// -->
+
+                <div class="brethren">
+
                 </div>
             </div>
-            <div class="form-default form-history">
+                        <div class="form-default form-history">
                 <div class="row gutters-custom align-items-center">
                     <div class="col-sm">
                         <div class="title">ประวัติการศึกษา EDUCATION BACKGROUND <span>*</span></div>
                     </div>
                     <div class="col-sm-auto text-right">
-                        <div class="button add-form-2">
-                            <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                        <div class="button">
+                            <a href="javascript:void(0);" class="btn btn-primary clickdel_educational" data-action="adds" title="btn btn-primary">
                                 <span class="feather icon-plus text-white"></span>
                                 Add Education History
                             </a>
@@ -1547,10 +1938,30 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group">
                             <label class="control-label font-size-C label-custom" for="education-level">ระดับการศึกษา / Education history</label>
                             <div class="select-wrapper">
-                                <select class="select-control" name="ordernews" id="education-level" style="width: 100%;">
-                                    <option value="SELECT1">ระดับการศึกษา / Education Level</option>
-                                    <option value="SELECT2">ระดับการศึกษา / Education Level</option>
-                                    <option value="SELECT2">ระดับการศึกษา / Education Level</option>
+                                <select class="select-control" name="education[0][]" id="education-level" style="width: 100%;">
+                                    <option value="0" selected=""><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["edu"];?>
+</option>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["secondary"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["secondary"];?>
+</option>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["highschool"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["highschool"];?>
+</option>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["vocational"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["vocational"];?>
+</option>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["diploma"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["diploma"];?>
+</option>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["bachelor"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["bachelor"];?>
+</option>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["master"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["master"];?>
+</option>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["phd"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["phd"];?>
+</option>
                                 </select>
                             </div>
                         </div>
@@ -1559,7 +1970,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="academy-name">ชื่อสถาบัน / Academy Name</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="academy-name" placeholder="ชื่อสถาบัน / Academy Name" data-error="">
+                                <input type="text" class="form-control" name="education[0][]" id="academy-name" placeholder="ชื่อสถาบัน / Academy Name" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1568,7 +1979,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="you-are-someone-who-2">คุณมาจากที่ไหน / You Are Someone Who?</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="you-are-someone-who-2" placeholder="คุณมาจากที่ไหน / You Are Someone Who?" data-error="">
+                                <input type="text" class="form-control" name="education[0][]" id="you-are-someone-who-2" placeholder="คุณมาจากที่ไหน / You Are Someone Who?" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1579,7 +1990,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="majors">วิชาเอก / Majors</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="majors" placeholder="วิชาเอก / Majors" data-error="">
+                                <input type="text" class="form-control" name="education[0][]" id="majors" placeholder="วิชาเอก / Majors" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1588,7 +1999,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="educational-background">ประวัติการศึกษา / Educational Background</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="educational-background" placeholder="ประวัติการศึกษา / Educational Background" data-error="">
+                                <input type="text" class="form-control" name="education[0][]" id="educational-background" placeholder="ประวัติการศึกษา / Educational Background" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1599,24 +2010,56 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="row gutters-custom">
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label class="control-label label-custom visuallyhidden" for="since-year">Since Year</label>
+                                    <label class="control-label label-custom visuallyhidden" for="chengeemount">Since Year</label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="since-year" style="width: 100%;">
-                                            <option value="SELECT1">Since Year</option>
-                                            <option value="SELECT2">Since Year</option>
-                                            <option value="SELECT2">Since Year</option>
+                                    <?php $_smarty_tpl->_assignInScope('date', date('Y'));?>
+                                    <?php $_smarty_tpl->_assignInScope('dateNow', date('Y')-10);?>
+                                        <select class="select-control" name="education[0][]" id="chengeemount" style="width: 100%;">
+                                            <option value="0" selected=""><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['educat6'];?>
+</option>
+                                            <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = -1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['dateNow']->value+1 - ($_smarty_tpl->tpl_vars['date']->value) : $_smarty_tpl->tpl_vars['date']->value-($_smarty_tpl->tpl_vars['dateNow']->value)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['date']->value, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                                <?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+</option>
+                                                <?php } else { ?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</option>
+                                                <?php }?>
+                                            <?php }
+}
+?>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label class="control-label label-custom visuallyhidden" for="to-year">To Year</label>
+                                    <label class="control-label label-custom visuallyhidden" for="chengeeyear">To Year</label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="to-year" style="width: 100%;">
-                                            <option value="SELECT1">To Year</option>
-                                            <option value="SELECT2">To Year</option>
-                                            <option value="SELECT2">To Year</option>
+                                        <select class="select-control" name="education[0][]" id="chengeeyear" style="width: 100%;">
+                                            <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = -1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['dateNow']->value+1 - ($_smarty_tpl->tpl_vars['date']->value) : $_smarty_tpl->tpl_vars['date']->value-($_smarty_tpl->tpl_vars['dateNow']->value)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['date']->value, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                                <?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+</option>
+                                                <?php } else { ?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</option>
+                                                <?php }?>
+                                            <?php }
+}
+?>
                                         </select>
                                     </div>
                                 </div>
@@ -1629,7 +2072,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="average-score">คะแนนเฉลี่ย / Average Score</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="average-score" placeholder="คะแนนเฉลี่ย / Average Score" data-error="">
+                                        <input type="text" class="form-control" name="education[0][]" id="average-score" placeholder="คะแนนเฉลี่ย / Average Score" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -1637,14 +2080,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
                     </div>
                 </div>
-                <div class="d-none mt-3" id="add-form-2">
+                <!--//////////////////////////////// Start Clone Education /////////////////////////////// -->
+                <div class="d-none mt-3 ele_edu" id="clone_educational">
                     <div class="row align-items-center">
                         <!-- <div class="col">
                             <div class="title"> พี่น้อง / Brother Sister</div>
                         </div> -->
                         <div class="col text-right">
-                            <div class="button delete-form-2">
-                                <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                            <div class="button">
+                                <a href="javascript:void(0);" class="btn btn-primary clickdel_educational" data-action="del" title="btn btn-primary">
                                     <!-- <span class="feather icon-minus text-white"></span> -->
                                     ลบ
                                 </a>
@@ -1656,10 +2100,30 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group">
                                 <label class="control-label font-size-C" for="education-level-2">ระดับการศึกษา / Education history</label>
                                 <div class="select-wrapper">
-                                    <select class="select-control" name="ordernews" id="education-level-2" style="width: 100%;">
-                                        <option value="SELECT1">ระดับการศึกษา / Education Level</option>
-                                        <option value="SELECT2">ระดับการศึกษา / Education Level</option>
-                                        <option value="SELECT2">ระดับการศึกษา / Education Level</option>
+                                    <select class="select-control" name="education[tmp][]" id="education-level-2" style="width: 100%;">
+                                        <option value="0" selected=""><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["edu"];?>
+</option>
+                                        <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["secondary"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["secondary"];?>
+</option>
+                                        <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["highschool"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["highschool"];?>
+</option>
+                                        <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["vocational"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["vocational"];?>
+</option>
+                                        <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["diploma"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["diploma"];?>
+</option>
+                                        <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["bachelor"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["bachelor"];?>
+</option>
+                                        <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["master"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["master"];?>
+</option>
+                                        <option value="<?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["phd"];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value["career"]["phd"];?>
+</option>
                                     </select>
                                 </div>
                             </div>
@@ -1668,7 +2132,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="academy-name-2">ชื่อสถาบัน / Academy Name</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="academy-name-2" placeholder="ชื่อสถาบัน / Academy Name" data-error="">
+                                    <input type="text" class="form-control" name="education[tmp][]" id="academy-name-2" placeholder="ชื่อสถาบัน / Academy Name" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1677,7 +2141,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="you-are-someone-who-3">คุณมาจากที่ไหน / You Are Someone Who?</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="you-are-someone-who-3" placeholder="คุณมาจากที่ไหน / You Are Someone Who?" data-error="">
+                                    <input type="text" class="form-control" name="education[tmp][]" id="you-are-someone-who-3" placeholder="คุณมาจากที่ไหน / You Are Someone Who?" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1688,7 +2152,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="majors-2">วิชาเอก / Majors</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="majors-2" placeholder="วิชาเอก / Majors" data-error="">
+                                    <input type="text" class="form-control" name="education[tmp][]" id="majors-2" placeholder="วิชาเอก / Majors" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1697,7 +2161,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="educational-background-2">ประวัติการศึกษา / Educational Background</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="educational-background-2" placeholder="ประวัติการศึกษา / Educational Background" data-error="">
+                                    <input type="text" class="form-control" name="education[tmp][]" id="educational-background-2" placeholder="ประวัติการศึกษา / Educational Background" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1710,10 +2174,28 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label label-custom visuallyhidden" for="since-year-3">Since Year</label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="since-year-3" style="width: 100%;">
-                                                <option value="SELECT1">Since Year</option>
-                                                <option value="SELECT2">Since Year</option>
-                                                <option value="SELECT2">Since Year</option>
+                                        <?php $_smarty_tpl->_assignInScope('date', date('Y'));?>
+                                        <?php $_smarty_tpl->_assignInScope('dateNow', date('Y')-10);?>
+                                            <select class="select-control" name="education[tmp][]" id="since-year-3" style="width: 100%;">
+                                                <option value="0" selected=""><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['educat6'];?>
+</option>
+                                                <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = -1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['dateNow']->value+1 - ($_smarty_tpl->tpl_vars['date']->value) : $_smarty_tpl->tpl_vars['date']->value-($_smarty_tpl->tpl_vars['dateNow']->value)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['date']->value, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                                    <?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+</option>
+                                                    <?php } else { ?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</option>
+                                                    <?php }?>
+                                                <?php }
+}
+?>
                                             </select>
                                         </div>
                                     </div>
@@ -1722,10 +2204,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label label-custom visuallyhidden" for="to-year-3">To Year</label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="to-year-3" style="width: 100%;">
-                                                <option value="SELECT1">To Year</option>
-                                                <option value="SELECT2">To Year</option>
-                                                <option value="SELECT2">To Year</option>
+                                            <select class="select-control" name="education[tmp][]" id="to-year-3" style="width: 100%;">
+                                                <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = -1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['dateNow']->value+1 - ($_smarty_tpl->tpl_vars['date']->value) : $_smarty_tpl->tpl_vars['date']->value-($_smarty_tpl->tpl_vars['dateNow']->value)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['date']->value, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                                    <?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+</option>
+                                                    <?php } else { ?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</option>
+                                                    <?php }?>
+                                                <?php }
+}
+?>
                                             </select>
                                         </div>
                                     </div>
@@ -1738,7 +2234,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="average-score-2">คะแนนเฉลี่ย / Average Score</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" id="average-score-2" placeholder="คะแนนเฉลี่ย / Average Score" data-error="">
+                                            <input type="text" class="form-control" name="education[tmp][]" id="average-score-2" placeholder="คะแนนเฉลี่ย / Average Score" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1747,15 +2243,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
                     </div>
                 </div>
+                <!--//////////////////////////////// End Clone Education /////////////////////////////// -->
+
+                <div class="educational">
+
+                </div>
             </div>
-            <div class="form-default form-history">
+            
+                        <div class="form-default form-history">
                 <div class="row gutters-custom align-items-center">
                     <div class="col">
                         <div class="title">ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน JOB TRAINING/INSPECTION/APPRENTICESHIP<span>*</span></div>
                     </div>
                     <div class="col-sm-auto">
-                        <div class="button add-form-3">
-                            <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                        <div class="button ">
+                            <a href="javascript:void(0);" class="btn btn-primary clickdel_training" data-action="adds" title="btn btn-primary">
                                 <span class="feather icon-plus text-white"></span>
                                 Add Education History
                             </a>
@@ -1767,7 +2269,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label font-size-C" for="course">ชื่อหลักสูตร/Course</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="course" placeholder="ชื่อหลักสูตร/Course" data-error="">
+                                <input type="text" class="form-control" name="training[0][]" id="course" placeholder="ชื่อหลักสูตร/Course" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1776,7 +2278,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="institute">สถาบัน/Institute</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="institute" placeholder="สถาบัน/Institute" data-error="">
+                                <input type="text" class="form-control" name="training[0][]" id="institute" placeholder="สถาบัน/Institute" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1785,7 +2287,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="degree-certificate">วุฒิที่ได้รับ / Degree/Certificate</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="degree-certificate" placeholder="วุฒิที่ได้รับ / Degree/Certificate" data-error="">
+                                <input type="text" class="form-control" name="training[0][]" id="degree-certificate" placeholder="วุฒิที่ได้รับ / Degree/Certificate" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1798,7 +2300,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="period">ระยะเวลา/Period</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="period" placeholder="ระยะเวลา/Period" data-error="">
+                                        <input type="text" class="form-control" name="training[0][]" id="period" placeholder="ระยะเวลา/Period" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -1809,24 +2311,56 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="row gutters-custom">
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label class="control-label label-custom visuallyhidden" for="since-year-2">Since Year</label>
+                                    <label class="control-label label-custom visuallyhidden" for="chengeemount-2">Since Year</label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="since-year-2" style="width: 100%;">
-                                            <option value="SELECT1">Since Year</option>
-                                            <option value="SELECT2">Since Year</option>
-                                            <option value="SELECT2">Since Year</option>
+                                    <?php $_smarty_tpl->_assignInScope('date', date('Y'));?>
+                                    <?php $_smarty_tpl->_assignInScope('dateNow', date('Y')-10);?>
+                                        <select class="select-control" name="training[0][]" id="chengeemount-2" style="width: 100%;">
+                                            <option value="0" selected=""><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['educat6'];?>
+</option>
+                                            <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = -1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['dateNow']->value+1 - ($_smarty_tpl->tpl_vars['date']->value) : $_smarty_tpl->tpl_vars['date']->value-($_smarty_tpl->tpl_vars['dateNow']->value)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['date']->value, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                                <?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+</option>
+                                                <?php } else { ?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</option>
+                                                <?php }?>
+                                            <?php }
+}
+?>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label class="control-label label-custom visuallyhidden" for="to-year-2">To Year </label>
+                                    <label class="control-label label-custom visuallyhidden" for="chengeeyear-2">To Year </label>
                                     <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="to-year-2" style="width: 100%;">
-                                            <option value="SELECT1">To Year</option>
-                                            <option value="SELECT2">To Year</option>
-                                            <option value="SELECT2">To Year</option>
+                                        <select class="select-control" name="training[0][]" id="chengeeyear-2" style="width: 100%;">
+                                            <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = -1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['dateNow']->value+1 - ($_smarty_tpl->tpl_vars['date']->value) : $_smarty_tpl->tpl_vars['date']->value-($_smarty_tpl->tpl_vars['dateNow']->value)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['date']->value, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                                <?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+</option>
+                                                <?php } else { ?>
+                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</option>
+                                                <?php }?>
+                                            <?php }
+}
+?>
                                         </select>
                                     </div>
                                 </div>
@@ -1834,14 +2368,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
                     </div>
                 </div>
-                <div class="d-none mt-3" id="add-form-3">
+                <!--//////////////////////////////// Start Clone Training /////////////////////////////// -->
+                <div class="d-none mt-3" id="clone_training">
                     <div class="row align-items-center">
                         <!-- <div class="col">
                             <div class="title"> พี่น้อง / Brother Sister</div>
                         </div> -->
                         <div class="col text-right">
-                            <div class="button delete-form-3">
-                                <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                            <div class="button">
+                                <a href="javascript:void(0);" class="btn btn-primary clickdel_training" data-action="dels" title="btn btn-primary">
                                     <!-- <span class="feather icon-minus text-white"></span> -->
                                     ลบ
                                 </a>
@@ -1853,7 +2388,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label font-size-C" for="course-2">ชื่อหลักสูตร/Course</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="course-2" placeholder="ชื่อหลักสูตร/Course" data-error="">
+                                    <input type="text" class="form-control" name="training[tmp][]" id="course-2" placeholder="ชื่อหลักสูตร/Course" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1862,7 +2397,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="institute-2">สถาบัน/Institute</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="institute-2" placeholder="สถาบัน/Institute" data-error="">
+                                    <input type="text" class="form-control" name="training[tmp][]" id="institute-2" placeholder="สถาบัน/Institute" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1871,7 +2406,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="degree-certificate-2">วุฒิที่ได้รับ / Degree/Certificate</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="degree-certificate-2" placeholder="วุฒิที่ได้รับ / Degree/Certificate" data-error="">
+                                    <input type="text" class="form-control" name="training[tmp][]" id="degree-certificate-2" placeholder="วุฒิที่ได้รับ / Degree/Certificate" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1884,7 +2419,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="period-2">ระยะเวลา/Period</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" id="period-2" placeholder="ระยะเวลา/Period" data-error="">
+                                            <input type="text" class="form-control" name="training[tmp][]" id="period-2" placeholder="ระยะเวลา/Period" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1897,10 +2432,26 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label label-custom visuallyhidden" for="since-year-4">Since Year</label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="since-year-4" style="width: 100%;">
-                                                <option value="SELECT1">Since Year</option>
-                                                <option value="SELECT2">Since Year</option>
-                                                <option value="SELECT2">Since Year</option>
+                                            <select class="select-control" name="training[tmp][]" id="since-year-4" style="width: 100%;">
+                                                <option value="0" selected=""><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['educat6'];?>
+</option>
+                                                <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = -1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['dateNow']->value+1 - ($_smarty_tpl->tpl_vars['date']->value) : $_smarty_tpl->tpl_vars['date']->value-($_smarty_tpl->tpl_vars['dateNow']->value)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['date']->value, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                                    <?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+</option>
+                                                    <?php } else { ?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</option>
+                                                    <?php }?>
+                                                <?php }
+}
+?>
                                             </select>
                                         </div>
                                     </div>
@@ -1909,10 +2460,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group">
                                         <label class="control-label label-custom visuallyhidden" for="to-year-4">To Year </label>
                                         <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="to-year-4" style="width: 100%;">
-                                                <option value="SELECT1">To Year</option>
-                                                <option value="SELECT2">To Year</option>
-                                                <option value="SELECT2">To Year</option>
+                                            <select class="select-control" name="training[tmp][]" id="to-year-4" style="width: 100%;">
+                                                <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = -1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['dateNow']->value+1 - ($_smarty_tpl->tpl_vars['date']->value) : $_smarty_tpl->tpl_vars['date']->value-($_smarty_tpl->tpl_vars['dateNow']->value)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['date']->value, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                                    <?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value+543;?>
+</option>
+                                                    <?php } else { ?>
+                                                        <option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</option>
+                                                    <?php }?>
+                                                <?php }
+}
+?>
                                             </select>
                                         </div>
                                     </div>
@@ -1921,8 +2486,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
                     </div>
                 </div>
+                <!--//////////////////////////////// End Clone Training /////////////////////////////// -->
+
+                <div class="training">
+
+                </div>
             </div>
-            <div class="form-default form-history">
+            
+                        <div class="form-default form-history">
                 <div class="row gutters-custom align-items-center">
                     <div class="col-sm">
                         <div class="title">ประวัติการทำงาน (เรียงจากปัจจุบันไปหาอดีต)
@@ -1931,8 +2502,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
                     </div>
                     <div class="col-sm-auto">
-                        <div class="button add-form-4">
-                            <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                        <div class="button ">
+                            <a href="javascript:void(0);" class="btn btn-primary clickdel_works" data-action="adds" title="btn btn-primary">
                                 <span class="feather icon-plus text-white"></span>
                                 Add Education History
                             </a>
@@ -1944,7 +2515,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label font-size-C" for="company-name">1. ชื่อบริษัท</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="company-name" placeholder="ชื่อบริษัท / Company’s Name" data-error="">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="company-name" placeholder="ชื่อบริษัท / Company’s Name" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1953,7 +2524,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="type-of-business">ประเภทธุรกิจ / Type Of Business</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="type-of-business" placeholder="ประเภทธุรกิจ / Type Of Business" data-error="">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="type-of-business" placeholder="ประเภทธุรกิจ / Type Of Business" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1962,7 +2533,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="c-address">ที่อยู่ / Address</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="c-address" placeholder="ที่อยู่ / Address" data-error="">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="c-address" placeholder="ที่อยู่ / Address" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1971,7 +2542,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="c-telephone">โทรศัพท์ / Telephone</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="c-telephone" placeholder="โทรศัพท์ / Telephone" data-error="">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="c-telephone" placeholder="โทรศัพท์ / Telephone" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1982,7 +2553,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="first-position">ตำแหน่งแรกเข้า / First Position</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="first-position" placeholder="ตำแหน่งแรกเข้า / First Position" data-error="">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="first-position" placeholder="ตำแหน่งแรกเข้า / First Position" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1991,7 +2562,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="last-position">ตำแหน่งแรกเข้า / Last Position</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="last-position" placeholder="ตำแหน่งแรกเข้า / Last Position" data-error="">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="last-position" placeholder="ตำแหน่งแรกเข้า / Last Position" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2000,7 +2571,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="last-salary">เงินเดือนสุดท้าย / Last Salary</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="last-salary" placeholder="เงินเดือนสุดท้าย / Last Salary" data-error="">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="last-salary" placeholder="เงินเดือนสุดท้าย / Last Salary" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2009,7 +2580,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="other-salary">รายได้อื่น ๆ / Other</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="other-salary" placeholder="รายได้อื่น ๆ / Other" data-error="">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="other-salary" placeholder="รายได้อื่น ๆ / Other" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2020,7 +2591,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="form-group has-feedback">
                             <label class="control-label font-size-C" for="brief-responsibility">ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" id="brief-responsibility" placeholder="ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility" data-error="">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="brief-responsibility" placeholder="ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2033,7 +2604,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="c-period">ระยะเวลา/Period</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" id="c-period" placeholder="ระยะเวลา/Period" data-error="">
+                                        <input type="text" class="form-control" name="workhistory[0][]" id="c-period" placeholder="ระยะเวลา/Period" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -2043,14 +2614,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <div class="col-md-4 col-sm-6">
                         <div class="row gutters-custom align-items-center">
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="c-start-date">วันเริ่มงาน</label>
-                                    <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="c-start-date" style="width: 100%;">
-                                            <option value="SELECT1">วันเริ่มงาน</option>
-                                            <option value="SELECT2">วันเริ่มงาน</option>
-                                            <option value="SELECT2">วันเริ่มงาน</option>
-                                        </select>
+                                    <div class="block-control">
+                                    <input type="date" class="form-control" name="workhistory[0][]" id="c-start-date" placeholder="วันเริ่มงาน"
+                                        data-error="" required="required">
+                                    <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
@@ -2060,28 +2629,27 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="c-end-date">สิ้นสุดวันที่</label>
-                                    <div class="select-wrapper">
-                                        <select class="select-control" name="ordernews" id="c-end-date" style="width: 100%;">
-                                            <option value="SELECT1">สิ้นสุดวันที่</option>
-                                            <option value="SELECT2">สิ้นสุดวันที่</option>
-                                            <option value="SELECT2">สิ้นสุดวันที่</option>
-                                        </select>
+                                    <div class="block-control">
+                                    <input type="date" class="form-control" name="workhistory[0][]" id="c-end-date" placeholder="สิ้นสุดวันที่"
+                                        data-error="" required="required">
+                                    <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="d-none mt-3" id="add-form-4">
+                <!--//////////////////////////////// Start Clone Training /////////////////////////////// -->
+                <div class="d-none mt-3" id="clone_works">
                     <div class="row align-items-center">
                         <!-- <div class="col">
                             <div class="title"> พี่น้อง / Brother Sister</div>
                         </div> -->
                         <div class="col text-right">
                             <div class="button delete-form-4">
-                                <a href="javascript:void(0);" class="btn btn-primary" title="btn btn-primary">
+                                <a href="javascript:void(0);" class="btn btn-primary clickdel_works" data-action="adds" title="btn btn-primary">
                                     <!-- <span class="feather icon-minus text-white"></span> -->
                                     ลบ
                                 </a>
@@ -2091,9 +2659,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <div class="row gutters-custom align-items-end">
                         <div class="col-md col-sm-auto">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="company-name-2">2. ชื่อบริษัท</label>
+                                <label class="control-label font-size-C -title" for="company-name-2">2. ชื่อบริษัท / Company’s Nam</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="company-name-2" placeholder="ชื่อบริษัท / Company’s Name" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="company-name-2" placeholder="ชื่อบริษัท / Company’s Name" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2102,7 +2670,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="type-of-business-2">ประเภทธุรกิจ / Type Of Business</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="type-of-business-2" placeholder="ประเภทธุรกิจ / Type Of Business" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="type-of-business-2" placeholder="ประเภทธุรกิจ / Type Of Business" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2111,7 +2679,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="c-address-2">ที่อยู่ / Address</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="c-address-2" placeholder="ที่อยู่ / Address" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="c-address-2" placeholder="ที่อยู่ / Address" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2120,7 +2688,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="c-telephone-2">โทรศัพท์ / Telephone</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="c-telephone-2" placeholder="โทรศัพท์ / Telephone" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="c-telephone-2" placeholder="โทรศัพท์ / Telephone" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2131,7 +2699,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="first-position-2">ตำแหน่งแรกเข้า / First Position</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="first-position-2" placeholder="ตำแหน่งแรกเข้า / First Position" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="first-position-2" placeholder="ตำแหน่งแรกเข้า / First Position" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2140,7 +2708,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="last-position-2">ตำแหน่งแรกเข้า / Last Position</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="last-position-2" placeholder="ตำแหน่งแรกเข้า / Last Position" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="last-position-2" placeholder="ตำแหน่งแรกเข้า / Last Position" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2149,7 +2717,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="last-salary-2">เงินเดือนสุดท้าย / Last Salary</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="last-salary-2" placeholder="เงินเดือนสุดท้าย / Last Salary" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="last-salary-2" placeholder="เงินเดือนสุดท้าย / Last Salary" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2158,7 +2726,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label visuallyhidden" for="other-salary-2">รายได้อื่น ๆ / Other</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="other-salary-2" placeholder="รายได้อื่น ๆ / Other" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="other-salary-2" placeholder="รายได้อื่น ๆ / Other" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2169,7 +2737,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group has-feedback">
                                 <label class="control-label font-size-C" for="brief-responsibility-2">ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" id="brief-responsibility-2" placeholder="ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="brief-responsibility-2" placeholder="ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2182,7 +2750,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="c-period-2">ระยะเวลา/Period</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" id="c-period-2" placeholder="ระยะเวลา/Period" data-error="">
+                                            <input type="text" class="form-control" name="workhistory[tmp][]" id="c-period-2" placeholder="ระยะเวลา/Period" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -2192,14 +2760,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="col-md-4 col-sm-6">
                             <div class="row gutters-custom align-items-center">
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="c-start-date-2">วันเริ่มงาน</label>
-                                        <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="c-start-date-2" style="width: 100%;">
-                                                <option value="SELECT1">วันเริ่มงาน</option>
-                                                <option value="SELECT2">วันเริ่มงาน</option>
-                                                <option value="SELECT2">วันเริ่มงาน</option>
-                                            </select>
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label visuallyhidden" for="c-start-date">วันเริ่มงาน</label>
+                                        <div class="block-control">
+                                        <input type="date" class="form-control" name="workhistory[tmp][]" id="c-start-date" placeholder="วันเริ่มงาน"
+                                            data-error="" required="required">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -2209,14 +2775,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label class="control-label visuallyhidden" for="c-end-date-2">สิ้นสุดวันที่</label>
-                                        <div class="select-wrapper">
-                                            <select class="select-control" name="ordernews" id="c-end-date-2" style="width: 100%;">
-                                                <option value="SELECT1">สิ้นสุดวันที่</option>
-                                                <option value="SELECT2">สิ้นสุดวันที่</option>
-                                                <option value="SELECT2">สิ้นสุดวันที่</option>
-                                            </select>
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label visuallyhidden" for="c-end-date">สิ้นสุดวันที่</label>
+                                        <div class="block-control">
+                                        <input type="date" class="form-control" name="workhistory[tmp][]" id="c-end-date" placeholder="สิ้นสุดวันที่"
+                                            data-error="" required="required">
+                                        <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -2224,7 +2788,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
                     </div>
                 </div>
+                <!--//////////////////////////////// End Clone Training /////////////////////////////// -->
+                <div class="working">
+
+                </div>
             </div>
+            
             <div class="form-default form-history">
                 <div class="title">ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน / JOB TRAINING/INSPECTION/APPRENTICESHIP <span>*</span></div>
                 <div class="row gutters-custom align-items-center py-sm-4">
