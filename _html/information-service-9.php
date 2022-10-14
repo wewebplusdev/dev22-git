@@ -66,7 +66,7 @@
                             <!--gallery block -->
                             <div class="gallery-block">
                                 <div class="gallery">
-                                    <ul class="item-list">
+                                    <ul class="item-list">  
                                         <?php for ($i = 1; $i <= 4; $i++) { ?>
                                             <li>
                                                 <div class="row no-gutters">
