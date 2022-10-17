@@ -242,6 +242,7 @@ $lang["career"]["diploma"] = "Diploma";
 $lang["career"]["bachelor"] = "Bachelor's degree";
 $lang["career"]["master"] = "Master's degree";
 $lang["career"]["phd"] = "PhD";
+$lang["career"]["notefile"] = "Note: Only PDF,PNG,JPG files (file size not over 2M)";
 
 // month
 $lang["career"]["month1"] = "January";

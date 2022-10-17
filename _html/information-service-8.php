@@ -101,17 +101,37 @@
                 </div>
 
                 <div class="container">
+                    <div class="h-title">รายนามผู้บริจาค (ปี 2547)</div>
+                    <div class="gallery-block">
+                        <div class="gallery">
+                            <ul class="item-list">
+                                <?php for ($i = 1; $i <= 15; $i++) { ?>
+                                    <li>
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="<?php echo $core_template; ?>/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="editor-content">
-                        <div class="h-title">รายนามผู้บริจาค (ปี 2547)</div>
-                        <!-- <div class="row">
-                            <?php for ($i = 1; $i <= 5; $i++) { ?>
-                                <div class="col">
-                                    <img class="icon" src="<?php echo $core_template; ?>/assets/img/background/image-information-service-2.png" alt="">
-                                    <div class="h-title">นายราเชนทร์ พจนสุนทร</div>
-                                    <p>กลุ่มพลอยสี (Color Stones Club)</p>
-                                </div>
-                            <?php } ?>
-                        </div> -->
                         <div class="pagination-block">
                             <div class="row align-items-center">
                                 <div class="col-sm-6">
@@ -163,6 +183,9 @@
                         <p class="-mc">โทร. 0 2634 4999 ต่อ 312</p>
                         <p class="-mc">อีเมล jewelry@git.or.th </p>
                         <p class="fw-bold">** ผู้มีอุปการคุณต่อพิพิธภัณฑ์จะได้รับใบประกาศเกียรติคุณ และประกาศชื่อไว้เป็นที่ระลึกภายในพิพิธภัณฑ์ **</p>
+                        </br>
+                        </br>
+                        </br>
                     </div>
                     <div class="border-nav-slider pt-5"></div>
                     <div class="youtube-block pt-4">

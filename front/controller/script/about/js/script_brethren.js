@@ -27,10 +27,16 @@ function addcount(action) {
         $(this).find('input[name="brethren['+(count)+'][]"]').val('');
         // radio
         $(this).find('input[name="brethren[temp][alive]"]').attr('name','brethren['+(count)+'][alive]');
-        $(this).find('input[name="brethren['+(count)+'][alive]"]').val('');
+        $(this).find('input[name="brethren['+(count)+'][alive]"]').attr('checked','checked');
         //select2
         $(this).find('select[name="brethren[temp][]"]').attr('name','brethren['+(count)+'][]');
         $(this).find('select.select-control').select2({minimumResultsForSearch: -1}).end();//select2 after appendTo
+        // required inputs
+        $(this).find('input[name="brethren['+(count)+'][]"]').attr('required', "required");
+        $(this).find('select[name="brethren['+(count)+'][]"]').attr('required', "required");
+
+        $(this).validator('destroy');
+        $(this).validator('validate');
       }
 
       if (action == 'del') {
@@ -41,6 +47,9 @@ function addcount(action) {
         //select2
         $(this).find('select[name="brethren['+(count+1)+'][]"]').attr('name','brethren['+(count)+'][]');
         $(this).find('select.select-control').select2({minimumResultsForSearch: -1}).end();//select2 after appendTo
+
+        $(this).validator('destroy');
+        $(this).validator('validate');
       }
   });
 }

@@ -27,7 +27,6 @@ $(document).on('click','.clickdel_educational',function () {
         $('#clone_educational .select-control').select2("destroy").end(); //destroy select2 before clone
         var htmlClone = $('#clone_educational').clone(); //clone after destroy select2
         $('#clone_educational').find('.select-control').select2({ minimumResultsForSearch: Infinity}).end();// select2 after clone html
-        console.log(htmlClone);
 
         if (langs == 'th') {
             $(htmlClone).find('.clickdel_educational').text('ลบ');
@@ -47,8 +46,10 @@ $(document).on('click','.clickdel_educational',function () {
 });
 
 function addcount_edu(action) {
+    console.log('aaaa');
     $('.educational #clone_educational').each(function(index,elem) {
         var count = index+1;
+        console.log('xxx');
         if (action == 'add') {
             $(this).removeClass('d-none');
 
@@ -59,6 +60,10 @@ function addcount_edu(action) {
             $(this).find('select[name="education[tmp][]"]').attr('name','education['+(count)+'][]');
             $(this).find('select.select-control').select2({minimumResultsForSearch: -1}).end();//select2 after appendTo
 
+            // required inputs
+            $(this).find('input[name="education['+(count)+'][]"]').attr('required', "required");
+            $(this).find('select[name="education['+(count)+'][]"]').attr('required', "required");
+            
             $(this).validator('destroy');
             $(this).validator('validate');
         }
@@ -68,7 +73,7 @@ function addcount_edu(action) {
             // input
             $(this).find('input[name="education['+(count+1)+'][]"]').attr('name','education['+(count)+'][]');
             //select2
-            $(this).find('select[name="education['+(count)+'][]"]').attr('name','education['+(count)+'][]');
+            $(this).find('select[name="education['+(count+1)+'][]"]').attr('name','education['+(count)+'][]');
             $(this).find('select.select-control').select2({minimumResultsForSearch: -1}).end();//select2 after appendTo
 
             $(this).validator('destroy');
