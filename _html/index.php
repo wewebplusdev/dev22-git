@@ -21,9 +21,16 @@
         </section>
 
         <?php include('inc/footer.php'); ?>
+        <?php include('inc/gallery.php'); ?>
     </div>
 
     <?php include('inc/loadscript.php'); ?>
+
+    <script>
+        $(document).ready(function(){
+            $('.popup-item').first().trigger('click');
+        });
+    </script>
 
 </body>
 

@@ -225,12 +225,12 @@
     <?php include('inc/loadscript.php'); ?>
 
     <script>
-        // Swal.fire({
-        //     title: 'ยืนยันตัวตนผ่านอีเมล์',
-        //     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
-        //     icon: 'error',
-        //     confirmButtonText: 'Cool'
-        // })
+        Swal.fire({
+            title: 'ยืนยันตัวตนผ่านอีเมล์',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+        })
     </script>
 
 
