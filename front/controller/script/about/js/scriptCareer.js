@@ -1,57 +1,12 @@
 var menuid = $('.site-container').data('menuid');
-// ############## Start Upload ##############
-// $('#clickuploadProfile').click(function() {
-//   $("input[name='uploadProfile']").trigger("click");
-// });
-// $("input[name='uploadProfile']").change(function(e) {
-//   $(".showProfile").append('<div class="loadding" style="position: absolute; top: 50%;left: 50%; transform: translate(-50%, -50%);pointer-events: none; color:red; opacity:0.7;font-size: 35px;"><i class="fas fa-circle-notch fa-spin fa-3x fa-fw"></i></div>');
-
-//   e.preventDefault();
-//   var path = $("path").attr("href");
-//   var key = $("input[name=keyProfile]").val();
-//   //var typeupload = $("input[name=typeupImage]").val();
-
-//   var formData = new FormData($("#form-career")[0]);
-//   // alert(formData);
-  
-//   $.ajax({
-//       url: path + $('html').attr('lang') + "/about/" + menuid + "/upload-profile?type=add",
-//       type: 'POST',
-//       xhr: function() {
-//           var myXhr = $.ajaxSettings.xhr();
-//           return myXhr;
-//       },
-//       success: function(data) {
-//           if (data.status == "error") {
-//             Swal.fire({
-//               title: data.text,
-//               text: data.msg,
-//               icon: data.status,
-//               confirmButtonText: data.btn
-//             });
-//           }else{
-//             $(".showProfile img").attr("src", data.real);
-//             $("input[name='picProfile']").val(data.name);    
-//           }
-
-//       },
-//       data: formData,
-//       cache: false,
-//       contentType: false,
-//       processData: false,
-//       dataType: 'json'
-//   });
-//   return false;
-
-// });
-// ############## End Upload ##############
 
 // ############## Start Submit ##############
 //submit
 function checkFocus() {
   $(":focus").each(function() {
-      console.log(this.id);
-      $("html, body").animate({scrollTop: $('#'+this.id).offset().top - 300}, 1000);
+    console.log($(this).parent().offset().top);
+    console.log($(this));
+    $("html, body").animate({scrollTop: $(this).parent().offset().top - 130}, 1000);
   });
 }
 
@@ -60,16 +15,28 @@ $('#form-career').validator().on('submit', function (e) {
     $('#form-career').validator('validate');
     checkFocus();
   } else {
+      if ($('#from-check-1').is(':checked') == false) {
+        return false;
+      }
+      if ($('#from-check-2').is(':checked') == false) {
+        return false;
+      }
+      if ($('#from-check-3').is(':checked') == false) {
+        return false;
+      }
+      if ($('#from-check-4').is(':checked') == false) {
+        return false;
+      }
       e.preventDefault();
-      $('.clicksubmitfromcar').html('<i class="fa fa-circle-o-notch fa-spin" style="font-size:32px; vertical-align: middle;"></i>');
+      // $('.clicksubmitfromcar').html('<i class="fa fa-circle-o-notch fa-spin" style="font-size:32px; vertical-align: middle;"></i>');
   
       // if ($('.clicksubmitfromcar').hasClass('disabled'))  return false;
 
       // $(".clicksubmitfromcar").removeClass('disabled');
 
-      $(".clicksubmitfromcar").prop("disabled", true);
+      // $(".clicksubmitfromcar").prop("disabled", true);
       var url= path + $('html').attr('lang') + "/about/" + menuid + "/insert-career";
-      
+      var formData = new FormData($("#form-career")[0]); //form data
       $.ajax({
         url: url,
         type: 'POST',
@@ -106,9 +73,11 @@ function hidearmy() {
   //alert(x);
    if(x =="นาง"){
        jQuery('#textarmy').hide();
+      $('.mili-other').removeAttr("required"); // remove required อื่นของ section สถานภาพทางทหาร
    }
    if(x =="นางสาว"){
        jQuery('#textarmy').hide(); 
+      $('.mili-other').removeAttr("required"); // remove required อื่นของ section สถานภาพทางทหาร
    }
    if(x == "นาย"){
      jQuery('#textarmy').show();
@@ -121,16 +90,93 @@ function hidearmyen() {
   var x = document.getElementById("inputPrefixen").value;
   //alert(x);
    if(x =="Mrs."){
-       jQuery('#textarmy').hide();
+      jQuery('#textarmy').hide();
+      $('.mili-other').removeAttr("required"); // remove required อื่นของ section สถานภาพทางทหาร
    }
    if(x =="Miss."){
-       jQuery('#textarmy').hide(); 
+      jQuery('#textarmy').hide(); 
+      $('.mili-other').removeAttr("required"); // remove required อื่นของ section สถานภาพทางทหาร
    }
    if(x == "Mr."){
      jQuery('#textarmy').show();
    }
  
 //  x.value = x.value.toUpperCase();
+}
+$('.military-other').hide();
+$(document).on("click", ".military-checking", function () {
+    let check = $(this).val();
+    if(check == 'อื่นๆ' || check == 'อื่นๆ'){
+      $('.military-other').show();
+      $('.mili-other').attr('required', "required");
+    }else{
+      $('.military-other').hide();
+      $('.mili-other').removeAttr("required");
+    }
+});
+
+$('.family-date').hide();
+$(document).on("click", ".family-checking", function () {
+    let check = $(this).val();
+    if(check == 'เสียชีวิต' || check == 'เสียชีวิต'){
+      $('.family-date').show();
+      $('#family-day-1').attr('required', "required");
+      $('#family-month-1').attr('required', "required");
+      $('#family-year-1').attr('required', "required");
+    }else{
+      $('.family-date').hide();
+      $('#family-day-1').removeAttr("required");
+      $('#family-month-1').removeAttr("required");
+      $('#family-year-1').removeAttr("required");
+    }
+});
+
+$('.family-date-2').hide();
+$(document).on("click", ".family2-checking", function () {
+    let check = $(this).val();
+    if(check == 'เสียชีวิต' || check == 'เสียชีวิต'){
+      $('.family-date-2').show();
+      $('#family-day-2').attr('required', "required");
+      $('#family-month-2').attr('required', "required");
+      $('#family-year-2').attr('required', "required");
+    }else{
+      $('.family-date-2').hide();
+      $('#family-day-2').removeAttr("required");
+      $('#family-month-2').removeAttr("required");
+      $('#family-year-2').removeAttr("required");
+    }
+});
+
+$('.brother-date-1').hide();
+$(document).on("click", ".brethren-checking-1", function () {
+    let check = $(this).val();
+    if(check == 'เสียชีวิต' || check == 'เสียชีวิต'){
+      $('.brother-date-1').show();
+      $('#brother-day-1').attr('required', "required");
+      $('#brother-month-1').attr('required', "required");
+      $('#brother-year-1').attr('required', "required");
+    }else{
+      $('.brother-date-1').hide();
+      $('#brother-day-1').removeAttr("required");
+      $('#brother-month-1').removeAttr("required");
+      $('#brother-year-1').removeAttr("required");
+    }
+});
+
+function swap(html){
+  let target = $(html).parent().parent().parent().parent().parent().parent().find('.borther-date');
+  let check = $(html).val();
+  if(check == 'เสียชีวิต' || check == 'เสียชีวิต'){
+    $(target).show();
+    $(target).find('.select-day').attr('required', "required");
+    $(target).find('.select-month').attr('required', "required");
+    $(target).find('.select-year').attr('required', "required");
+  }else{
+    $(target).hide();
+    $(target).find('.select-day').removeAttr("required");
+    $(target).find('.select-month').removeAttr("required");
+    $(target).find('.select-year').removeAttr("required");
+  }
 }
 
 //call provice
@@ -215,10 +261,106 @@ function hidebrother() {
   var x = document.getElementById("inputNumberbrother").value;
   if(x>0){
       jQuery('#textvaluebro').show();
+      jQuery('.addbrethren').show();
   }else{
       jQuery('#textvaluebro').hide();
+      jQuery('.addbrethren').hide();
   }
  
 //  x.value = x.value.toUpperCase();
 }
 // ############## End Brother ##############
+
+// ############## Start Other ##############
+$('.contagiousExplain').hide();
+$(document).on("click", ".contagious-checking", function () {
+    let check = $(this).val();
+    if(check == 'เคย' || check == 'เคย'){
+      $('.contagiousExplain').show();
+      $('input[name="information[contagiousExplain]"]').attr('required', "required");
+    }else{
+      $('.contagiousExplain').hide();
+      $('input[name="information[contagiousExplain]"]').removeAttr("required");
+    }
+});
+
+$('.handicap').hide();
+$(document).on("click", ".handicap-checking", function () {
+    let check = $(this).val();
+    if(check == 'มี' || check == 'มี'){
+      $('.handicap').show();
+      $('input[name="information[handicap]"]').attr('required', "required");
+    }else{
+      $('.handicap').hide();
+      $('input[name="information[handicap]"]').removeAttr("required");
+    }
+});
+
+$('.arrested').hide();
+$(document).on("click", ".arrested-checking", function () {
+    let check = $(this).val();
+    if(check == 'เคย เพราะ' || check == 'เคย เพราะ'){
+      $('.arrested').show();
+      $('input[name="information[arrestedExplain]"]').attr('required', "required");
+    }else{
+      $('.arrested').hide();
+      $('input[name="information[arrestedExplain]"]').removeAttr("required");
+    }
+});
+
+$('.dischargedemployment').hide();
+$(document).on("click", ".relative-checking", function () {
+    let check = $(this).val();
+    if(check == 'เคย เพราะ' || check == 'เคย เพราะ'){
+      $('.dischargedemployment').show();
+      $('input[name="information[dischargedemploymentExplain]"]').attr('required', "required");
+    }else{
+      $('.dischargedemployment').hide();
+      $('input[name="information[dischargedemploymentExplain]"]').removeAttr("required");
+    }
+});
+
+$('.relativeExplain').hide();
+$(document).on("click", ".relative-checking", function () {
+    let check = $(this).val();
+    if(check == 'เคย เพราะ' || check == 'เคย เพราะ'){
+      $('.relativeExplain').show();
+      $('input[name="information[relativeExplain]"]').attr('required', "required");
+    }else{
+      $('.relativeExplain').hide();
+      $('input[name="information[relativeExplain]"]').removeAttr("required");
+    }
+});
+
+$('.hearingPerson2').hide();
+$(document).on("click", ".hearing-checking", function () {
+    let check = $(this).val();
+    if(check == 'อื่นๆ' || check == 'อื่นๆ'){
+      $('.hearingPerson2').show();
+      $('input[name="information[hearingPerson2]"]').attr('required', "required");
+      $('.hearingPerson1').hide();
+      $('input[name="information[hearingPerson1]"]').removeAttr("required");
+    }else{
+      $('.hearingPerson1').show();
+      $('input[name="information[hearingPerson1]"]').attr('required', "required");
+      $('.hearingPerson2').hide();
+      $('input[name="information[hearingPerson2]"]').removeAttr("required");
+    }
+});
+
+$('.clickdel_reference').hide();
+$('.reference').hide();
+$(document).on("click", ".reference-checking", function () {
+    let check = $(this).val();
+    if(check == 'มี' || check == 'มี'){
+      $('.clickdel_reference').show();
+      $('.reference').show();
+      $('input[name="reference[0][]"]').attr('required', "required");
+    }else{
+      $('.reference_append').empty();
+      $('.clickdel_reference').hide();
+      $('.reference').hide();
+      $('input[name="reference[0][]"]').removeAttr("required");
+    }
+});
+// ############## End Other ##############

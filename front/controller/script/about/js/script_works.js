@@ -27,7 +27,6 @@ $(document).on('click','.clickdel_works',function () {
         $('#clone_works .select-control').select2("destroy").end(); //destroy select2 before clone
         var htmlClone = $('#clone_works').clone(); //clone after destroy select2
         $('#clone_works').find('.select-control').select2({ minimumResultsForSearch: Infinity}).end();// select2 after clone html
-        console.log(htmlClone);
 
         if (langs == 'th') {
             $(htmlClone).find('.clickdel_works').text('ลบ');
@@ -38,15 +37,15 @@ $(document).on('click','.clickdel_works',function () {
         $(htmlClone).find('.clickdel_works').attr('data-action','dels');
         $(htmlClone).appendTo( ".working" );
         let addPara = 'add';
-        addcount_edu(addPara);
+        addcount_work(addPara);
     } else {
         $(this).closest('#clone_works').remove();
         let delPara = 'del';
-        addcount_edu(delPara);
+        addcount_work(delPara);
     }
 });
 
-function addcount_edu(action) {
+function addcount_work(action) {
     $('.working #clone_works').each(function(index,elem) {
         var count = index+1;
         if (action == 'add') {
@@ -55,10 +54,15 @@ function addcount_edu(action) {
             
             // input
             $(this).find('input[name="workhistory[tmp][]"]').attr('name','workhistory['+(count)+'][]');
+            // $(this).find('input[name="workhistory['+(count)+'][]"]').attr('id', $(this).find('input[name="workhistory['+(count)+'][]"]').attr('id')+'-'+count);
             $(this).find('input[name="workhistory['+(count)+'][]"]').val('');
             //select2
             $(this).find('select[name="workhistory[tmp][]"]').attr('name','workhistory['+(count)+'][]');
             $(this).find('select.select-control').select2({minimumResultsForSearch: -1}).end();//select2 after appendTo
+
+            // required inputs
+            $(this).find('input[name="workhistory['+(count)+'][]"]').attr('required', "required");
+            $(this).find('select[name="workhistory['+(count)+'][]"]').attr('required', "required");
 
             $(this).validator('destroy');
             $(this).validator('validate');
@@ -67,9 +71,9 @@ function addcount_edu(action) {
 
         if (action == 'del') {
             // input
-            $(this).find('input[name="training['+(count+1)+'][]"]').attr('name','training['+(count)+'][]');
+            $(this).find('input[name="workhistory['+(count+1)+'][]"]').attr('name','workhistory['+(count)+'][]');
             //select2
-            $(this).find('select[name="training['+(count)+'][]"]').attr('name','training['+(count)+'][]');
+            $(this).find('select[name="workhistory['+(count+1)+'][]"]').attr('name','workhistory['+(count)+'][]');
             $(this).find('select.select-control').select2({minimumResultsForSearch: -1}).end();//select2 after appendTo
 
             $(this).validator('destroy');

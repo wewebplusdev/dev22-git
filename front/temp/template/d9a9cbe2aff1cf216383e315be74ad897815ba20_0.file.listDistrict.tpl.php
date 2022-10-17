@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-11 17:39:01
+/* Smarty version 4.0.0, created on 2022-10-17 16:55:04
   from '/var/www/html/front/controller/script/about/template/listDistrict.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_634547c56d6d99_98027618',
+  'unifunc' => 'content_634d26785c8927_07998374',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd9a9cbe2aff1cf216383e315be74ad897815ba20' => 
     array (
       0 => '/var/www/html/front/controller/script/about/template/listDistrict.tpl',
-      1 => 1665484657,
+      1 => 1666000242,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634547c56d6d99_98027618 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634d26785c8927_07998374 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['infoDistrict']->value->_numOfRows > 0) {?>
-
-	<option disabled value="0" selected=""><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['district'];?>
+	<option value=""><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['district'];?>
 </option>		
 	<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['infoDistrict']->value, 'listDistrict');
@@ -40,7 +39,7 @@ $_smarty_tpl->tpl_vars['listDistrict']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <?php } else { ?>
-	<option disabled value="" selected=""><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['district'];?>
+	<option value=""><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['district'];?>
 </option>
 <?php }
 }

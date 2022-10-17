@@ -1,20 +1,4 @@
 <?php
-// $showslick = false; // slick shows
-// ## default menu lv1
-// $getMenuDetailFc = $policyPage->callCMS($config['about']['plc']['masterkey']);
-// foreach ($getMenuDetailFc as $keygetMenuDetailFc => $valuegetMenuDetailFc) {
-//     $getMenuDetail[$keygetMenuDetailFc]['masterkey'] = $valuegetMenuDetailFc['masterkey'].$valuegetMenuDetailFc['id'];
-//     $getMenuDetail[$keygetMenuDetailFc]['id'] = $valuegetMenuDetailFc['id'];
-//     $getMenuDetail[$keygetMenuDetailFc]['subject'] = $valuegetMenuDetailFc['subject'];
-// }
-// $smarty->assign("getMenuDetail", $getMenuDetail);
-
-$listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptUpload.js' . $lastModify . '"></script>';
-$listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptCareer.js' . $lastModify . '"></script>';
-$listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_brethren.js' . $lastModify . '"></script>';
-$listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_educational.js' . $lastModify . '"></script>';
-$listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_training.js' . $lastModify . '"></script>';
-$listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_works.js' . $lastModify . '"></script>';
 
 switch ($PageActionCareer) {
     // insert-career
@@ -45,12 +29,15 @@ switch ($PageActionCareer) {
         $smarty->assign("fileInclude", $settingPage);
         break;
 
-        // upload pic
-    case 'upload-profile':
-        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/upload-profile.php';
-        break;
-
     case 'career-form':
+        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptUpload.js' . $lastModify . '"></script>';
+        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptCareer.js' . $lastModify . '"></script>';
+        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_brethren.js' . $lastModify . '"></script>';
+        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_educational.js' . $lastModify . '"></script>';
+        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_training.js' . $lastModify . '"></script>';
+        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_works.js' . $lastModify . '"></script>';
+        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_language.js' . $lastModify . '"></script>';
+        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_reference.js' . $lastModify . '"></script>';
         $ContentID = GetContentID($url->segment[3]);
         //select list
         $callListCareerSelect = $aboutPage->callListCareer($config['about']['ab_js']['masterkey'], $page['on'], $limit, $sorting, null, $ContentID);
@@ -146,7 +133,7 @@ switch ($PageActionCareer) {
         }
         $smarty->assign("order", $order);
         $callCMS = $aboutPage->callListCareer($config['about']['ab_js']['masterkey'], $page['on'], $limit, $sorting, $req_params['keywords'], $req_params['selectcareer']);
-
+        
         if ($callCMS->_numOfRows < 1) {
             header('location:' . $linklang . '/404');
             exit(0);
