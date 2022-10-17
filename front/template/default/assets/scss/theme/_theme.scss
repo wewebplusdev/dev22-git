@@ -509,6 +509,9 @@
     .online-services-block .cover::before {
         background: linear-gradient(to bottom left, rgba(255, 255, 255, 0) 0%, #000 100%);
     }
+    .online-services-block .link .title{
+        color: var(--color-light);
+    }
     .online-services-block .link .text-orient {
         color: var(--color-black);
     }
@@ -1281,6 +1284,12 @@
     }
     .online-services-block .cover::before {
         background: linear-gradient(to bottom left, rgba(255, 255, 255, 0) 0%, #000 100%);
+    }
+    .online-services-block .link .title{
+        color: var(--color-yellow);
+    }
+    .online-services-block .link .subtitle{
+        color: var(--color-yellow);
     }
     .online-services-block .link .text-orient {
         color: var(--color-black);
