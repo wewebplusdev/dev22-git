@@ -21,7 +21,7 @@
         </section>
 
         <?php include('inc/footer.php'); ?>
-        <?php include('inc/gallery.php'); ?>
+        <?php include('inc/popup.php'); ?>
     </div>
 
     <?php include('inc/loadscript.php'); ?>

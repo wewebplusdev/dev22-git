@@ -20,10 +20,12 @@
     &.btn-xs {}
     &.btn-sm {}
     &.btn-lg {
+        font-size: var(--typo-sm);
         height: 60px;
         line-height: 58px;
     }
     &.btn-xl {
+        font-size: var(--typo-sm);
         height: 77px;
         line-height: 75px;
         min-width: 200px;

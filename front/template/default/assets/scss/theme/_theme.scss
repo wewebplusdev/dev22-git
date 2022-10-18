@@ -1372,6 +1372,13 @@
     .search-block .item-list .link.detail {
         color: var(--color-black);
     }
+    .research-page .table {
+        background-color: transparent;
+    }
+    .research-page .table thead th,
+    .research-page .table tbody td {
+        color: var(--color-black);
+    }
 }
 
 // .site-header-topbar .text-color .item-list > li a, .site-header-topbar .text-size .item-list > li a
