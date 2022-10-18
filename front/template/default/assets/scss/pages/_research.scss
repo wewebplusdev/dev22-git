@@ -2,3 +2,70 @@
     padding-left: 12px;
     padding-right: 12px;
 }
+
+.research-page {
+    .table thead th {
+        border-bottom-color: #BFBFBF;
+    }
+    .table td, .table th {
+        border-top-color: transparent;
+    }
+    .contact-block {
+        margin-bottom: 3rem;
+    }
+    .divider {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .action-bottom {
+        margin-top: 5rem;
+    }
+    .editor-content img {
+        margin-top: 0;
+    }
+}
+.contact-block {
+    padding-top: 10px;
+    margin-bottom: 30px;
+    .title {
+        margin-bottom: 1.5rem;
+    }
+    .desc {
+        font-size: var(--typo-xs);
+        margin-bottom: 1.5rem;
+    }
+    strong {
+        font-weight: var(--fw-medium);
+    }
+}
+
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+    .research-page .divider {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .research-page .action-bottom {
+        margin-top: 3rem;
+    }
+    .research-page .contact-block {
+        margin-bottom: 2rem;
+    }
+    .contact-block {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 575px) {
+}

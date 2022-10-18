@@ -16,13 +16,31 @@ AOS.init({
 
 $(document).ready(function () {
 
+
+    let href = $(".popup-item").attr("data-href");
+    // let popupId = $(".popup-item").attr("id");
+
+    // console.log(href);
+    // console.log(popupId);
+
+    // if ($('.popup-item').attr("data-href") != '') {
+    //     $( ".fancybox-image" ).wrap( "<a class='link' href='" + href + "' target='_blank'></a>" );
+    // }
+
     $("[data-fancybox='gallery-popup']").fancybox({
         thumbs: false,
         slideShow: true,
         protect: true,
         fullScreen: false,
         zoom: false,
+        // onComplete: function(){
+        //     if ($('.popup-item').attr("data-href") != '') {
+        //         $( ".fancybox-image" ).wrap( "<a class='link' href='" + href + "' target='_blank'></a>" );
+        //     }
+        // }
     });
+
+    
 
     $('.main-menu-list .link-submenu').click(function () {
 

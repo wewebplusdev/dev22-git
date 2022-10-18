@@ -6,17 +6,18 @@ $(document).ready(function() {
         var nameClassFont = new Array();
 
         nameClassFont.push('body');
-        nameClassFont.push('.-fsize-xs');
-        nameClassFont.push('.-fsize-sm');
-        nameClassFont.push('.-fsize-ssm');
-        nameClassFont.push('.-fsize-md');
-        nameClassFont.push('.-fsize-lg');
-        nameClassFont.push('.-fsize-xl');
+        nameClassFont.push('.typo-s');
+        nameClassFont.push('.typo-xs');
+        nameClassFont.push('.typo-sm');
+        nameClassFont.push('.typo-md');
+        nameClassFont.push('.typo-lg');
+        nameClassFont.push('.typo-xl');
+        nameClassFont.push('.typo-default');
         nameClassFont.push('.site-header .text-size .txt');
         nameClassFont.push('.site-header .text-color .txt');
         nameClassFont.push('.site-header .text-color .link');
         nameClassFont.push('.site-header .social-list .txt');
-        // nameClassFont.push('.btn')
+        nameClassFont.push('.btn')
         nameClassFont.push('.control-label')
         nameClassFont.push('input')
         nameClassFont.push('.select2-selection__rendered')

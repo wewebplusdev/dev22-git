@@ -395,7 +395,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="javascript:void(0)" class="link" title="ติดต่อเรา">
+				<a href="contact.php" class="link" title="ติดต่อเรา">
 					ติดต่อเรา
 				</a>
 			</li>

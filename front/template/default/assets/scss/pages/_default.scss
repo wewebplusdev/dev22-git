@@ -256,7 +256,7 @@
             bottom: 3rem;
         }
     }
-    .item-list>li+li {
+    .item-list > li + li {
         margin-top: 7.5rem;
     }
 }
@@ -324,7 +324,7 @@
     }
     .item-list {
         margin: 0 -15px;
-        &>li {
+        & > li {
             width: 33.33%;
             padding: 0 15px;
             margin-bottom: 3rem;
@@ -354,7 +354,7 @@
     }
     .item-list {
         margin: 0 -20px;
-        &>li {
+        & > li {
             width: 50%;
             padding: 0 20px;
             margin-bottom: 40px;
@@ -389,7 +389,7 @@
     }
     .item-list {
         margin: 0 -10px;
-        &>li {
+        & > li {
             width: 25%;
             padding: 0 10px;
             margin-bottom: 20px;
@@ -401,6 +401,7 @@
 }
 
 .image-block {
+    margin-bottom: 30px;
     .cover,
     .image-thumbnail .cover {
         padding-bottom: 32%;
@@ -435,6 +436,11 @@
             font-weight: normal;
         }
     }
+}
+
+.table thead th,
+.table tbody td {
+    line-height: 1.4em;
 }
 
 .table thead th {
@@ -480,7 +486,7 @@ fieldset {
 
 .item-list {
     &.checked {
-        >li {
+        > li {
             float: none;
             padding-left: 1.5rem;
             position: relative;
@@ -496,15 +502,15 @@ fieldset {
                 // background-position: center;
                 background-position: 0 3px;
             }
-            &+li {
+            & + li {
                 margin-top: 0.5rem;
             }
         }
     }
     &.note {
-        >li {
+        > li {
             padding-left: 5rem;
-            &+li {
+            & + li {
                 margin-top: 0.5rem;
             }
         }
@@ -558,7 +564,7 @@ fieldset {
             .-bsc {
                 &::before {
                     border: 1px solid #9f9f9f;
-                    content: '';
+                    content: "";
                 }
             }
         }
@@ -589,17 +595,18 @@ fieldset {
                     color: var(--color-primary);
                 }
                 .-bsc {
-                    border-right: 2px solid #013F94;
+                    border-right: 2px solid #013f94;
                 }
             }
         }
     }
 }
 
-@media (max-width: 1600px) {}
+@media (max-width: 1600px) {
+}
 
 @media (max-width: 1440px) {
-    .detail-link-block .item-list>li+li {
+    .detail-link-block .item-list > li + li {
         margin-top: 5rem;
     }
 }
@@ -633,7 +640,7 @@ fieldset {
     .detail-link-block .detail-desc .btn {
         bottom: 2rem;
     }
-    .detail-link-block .item-list>li+li {
+    .detail-link-block .item-list > li + li {
         margin-top: 3rem;
     }
     .profile-block .profile-desc .profile-name {
@@ -654,14 +661,14 @@ fieldset {
     .gallery-block .item-list {
         margin: 0 -15px;
     }
-    .gallery-block .item-list>li {
+    .gallery-block .item-list > li {
         padding: 0 15px;
         margin-bottom: 30px;
     }
     .related-sites-block .item-list {
         margin: 0 -7.5px;
     }
-    .related-sites-block .item-list>li {
+    .related-sites-block .item-list > li {
         width: 33.33%;
         padding: 0 7.5px;
         margin-bottom: 15px;
@@ -683,10 +690,10 @@ fieldset {
         position: relative;
         bottom: initial;
     }
-    .detail-link-block .item-list>li+li {
+    .detail-link-block .item-list > li + li {
         margin-top: 2rem;
     }
-    .profile-block .item-list>li {
+    .profile-block .item-list > li {
         width: 50%;
         margin-bottom: 2rem;
     }
@@ -702,7 +709,7 @@ fieldset {
     .related-sites-block .related-sites-desc {
         padding: 1rem;
     }
-    .item-list.note>li {
+    .item-list.note > li {
         padding-left: 2rem;
     }
     .nav-slider-block {
@@ -736,7 +743,7 @@ fieldset {
     .detail-link-block .detail-desc {
         padding: 1rem;
     }
-    .profile-block .item-list>li {
+    .profile-block .item-list > li {
         width: 100%;
     }
     .profile-block .profile-desc {
@@ -752,11 +759,11 @@ fieldset {
     .gallery-block .gallery-desc .title {
         margin-bottom: 1rem;
     }
-    .gallery-block .item-list>li {
+    .gallery-block .item-list > li {
         width: 100%;
         margin-bottom: 15px;
     }
-    .related-sites-block .item-list>li {
+    .related-sites-block .item-list > li {
         width: 50%;
     }
 }
