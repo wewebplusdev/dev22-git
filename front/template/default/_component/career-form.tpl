@@ -1,4 +1,4 @@
-<section class="site-container" data-menuid="{$settingModulus['menuid']}">
+<section class="site-container sitekey" data-menuid="{$settingModulus['menuid']}" data-id="{$sitekey}">
 <div class="default-header">
     <div class="top-graphic mb-4">
         <figure class="cover">
@@ -88,7 +88,7 @@
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="salaly">Example input</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" name="info[]" id="salaly" placeholder="เงินเดือนที่ต้องการ" data-error="" required="required">
+                                            <input type="number" class="form-control" name="info[]" id="salaly" placeholder="เงินเดือนที่ต้องการ" data-error="" required="required">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -705,7 +705,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="e-age">Ex</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control text-center" name="emergency[]" id="e-age" placeholder="35" data-error="" required="required">
+                                        <input type="number" class="form-control text-center" name="emergency[]" id="e-age" placeholder="35" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -818,7 +818,7 @@
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="f-age-1">Ex</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control text-center" name="family[]" id="f-age-1" placeholder="35" data-error="" required="required">
+                                            <input type="number" class="form-control text-center" name="family[]" id="f-age-1" placeholder="35" data-error="" required="required">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1004,7 +1004,7 @@
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="f-age-2">Ex</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control text-center" name="family[]" id="f-age-2" placeholder="35" data-error="" required="required">
+                                            <input type="number" class="form-control text-center" name="family[]" id="f-age-2" placeholder="35" data-error="" required="required">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1154,7 +1154,7 @@
                         <div class="row gutters-custom align-items-end">
                             <div class="col-md">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label font-size-C" for="f-name-3">นามสกุล / Surname</label>
+                                    <label class="control-label font-size-C" for="f-name-3">ชื่อ / Name</label>
                                     <div class="block-control">
                                         <input type="text" class="form-control" name="brethren[0][]" id="f-name-3" placeholder="ชื่อ / Name" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
@@ -1223,7 +1223,7 @@
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="f-age-3">Ex</label>
                                             <div class="block-control">
-                                                <input type="text" class="form-control text-center" name="brethren[0][]" id="f-age-3" placeholder="35" data-error="" required="required">
+                                                <input type="number" class="form-control text-center" name="brethren[0][]" id="f-age-3" placeholder="35" data-error="" required="required">
                                                 <span class="form-control-feedback" aria-hidden="true"></span>
                                             </div>
                                         </div>
@@ -1425,7 +1425,7 @@
                                         <div class="form-group has-feedback">
                                             <label class="control-label visuallyhidden" for="f-age-4">Ex</label>
                                             <div class="block-control">
-                                                <input type="text" class="form-control text-center" name="brethren[temp][]" id="f-age-4" placeholder="35" data-error="">
+                                                <input type="number" class="form-control text-center" name="brethren[temp][]" id="f-age-4" placeholder="35" data-error="">
                                                 <span class="form-control-feedback" aria-hidden="true"></span>
                                             </div>
                                         </div>
@@ -2078,9 +2078,9 @@
                     </div>
                     <div class="col-md col-sm-auto">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="last-position">ตำแหน่งแรกเข้า / Last Position</label>
+                            <label class="control-label visuallyhidden" for="last-position">ตำแหน่งสุดท้าย / Last Position</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="last-position" placeholder="ตำแหน่งแรกเข้า / Last Position" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="last-position" placeholder="ตำแหน่งสุดท้าย / Last Position" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2597,7 +2597,7 @@
                                 <div class="form-group has-feedback -nm I">
                                     <label class="control-label visuallyhidden" for="spicyfi-2">Spicyfi</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="information[handicap]" id="spicyfi-2" placeholder="Spicyfi" data-error="">
+                                        <input type="text" class="form-control" name="information[handicapExplain]" id="spicyfi-2" placeholder="Spicyfi" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -3160,7 +3160,7 @@
                 <div class="row gutters-custom mt-lg-5 mt-4">
                     <div class="col-12">
                         <div class=" form-group form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][0]" id="from-check-1">
+                            <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][0]" id="from-check-1" required="required">
                             <label class="control-label c-color" for="from-check-1">
                                 ข้าพเจ้าในฐานะเจ้าของข้อมูลส่วนบุคคล ยินยอมมอบเอกสารและหลักฐานประกอบการสมัครงานนี้ให้แก่สถาบันและอนุญาตให้สถาบันเก็บรวบรวม ใช้ หรือเปิดเผย ข้อมูลส่วนบุคคลของข้าพเจ้า
                                 เพื่อวัตถุประสงค์หลักในการบริหารจัดการเกี่ยวกับความสัมพันธ์ในการจ้างแรงงานและการบริหารงานบุคคลในองค์กร อันเป็นการจำเป็นโดยชอบด้วยกฏหมายและตามพระราชบัญญัติคุ้มครอง
@@ -3175,7 +3175,7 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][1]" id="from-check-2">
+                            <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][1]" id="from-check-2" required="required">
                             <label class="control-label c-color" for="from-check-2">
                                 ข้าพเจ้าขอรับรองว่าข้อความข้างต้นและหลักฐานต่าง ๆ ถูกต้องและเป็นความจริงทุกประการ ข้าพเจ้ายินดีให้สถาบันสอบประวัติเกี่ยวกับตัว I certify that my answers or evidences are true. I understand that any incorrect, incomplete, or false statement of information
                             </label>
@@ -3183,7 +3183,7 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][2]" id="from-check-3">
+                            <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][2]" id="from-check-3" required="required">
                             <label class="control-label c-color" for="from-check-3">
                                 furnished by me will be considered as just cause for rejection of this application or dismissal from employment without advance
                                 </br>
@@ -3193,7 +3193,7 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][3]" id="from-check-4">
+                            <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][3]" id="from-check-4" required="required">
                             <label class="control-label c-color" for="from-check-4">
                                 จ้างของข้าพเจ้าทันที โดยไม่ต้องบอกกล่าวล่วงหน้า และไม่ต้องจ่ายเงินชดเชยหรือค่าเสียหายใด ๆ ทั้งสิ้น
                                 </br>
@@ -3205,7 +3205,8 @@
                 <div class="row gutters-custom mt-5 text-center">
                     <div class="col">
                         {* <button type="submit" id="submitform" class="btn btn-xl btn-primary btn-form" title="SUBMIT AN APPLICATION">SUBMIT AN APPLICATION</button> *}
-                        <input type="submit" class="btn btn-xl btn-primary btn-form" value="SUBMIT AN APPLICATION">
+                        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                        <input type="submit" class="btn btn-xl btn-primary btn-form" id="clicksubmitfromcar" value="SUBMIT AN APPLICATION">
                     </div>
                 </div>
             </div>

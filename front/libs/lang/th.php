@@ -59,6 +59,10 @@ $lang['contact']['msg_success'] = "ทางเราได้รับข้อ
 $lang['contact']['msg_fail'] = "บันทึกข้อมูลไม่สำเร็จ โปรดลองใหม่อีกครั้ง";
 $lang['contact']['working'] = "วันและเวลาทำการ";
 $lang['contact']['timmer'] = "วันจันทร์ - ศุกร์ เวลา 8.30 - 16.30 น. ";
+$lang['contact']['success_msg'] = "ทำรายการสำเร็จ";
+$lang['contact']['success_msg_desc'] = "ทางเราได้รับข้อมูลจากท่านเรียบร้อยแล้ว ขอบคุณที่ใช้บริการ";
+$lang['contact']['error_msg'] = "ขออภัย ทำรายการไม่สำเร็จ";
+$lang['contact']['error_msg_desc'] = "กรุณาลองใหม่อีกครั้งภายหลัง";
 
 //career
 $lang['career']['apply']="ตำแหน่งที่ต้องการสมัคร";

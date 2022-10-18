@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-05 17:11:36
+/* Smarty version 4.0.0, created on 2022-10-18 17:11:12
   from '/var/www/html/front/template/default/_component/weblink.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633d58586cc667_16009244',
+  'unifunc' => 'content_634e7bc00f96f6_85267324',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e4292531c431f8bd6e29802d2a420e4247980e47' => 
     array (
       0 => '/var/www/html/front/template/default/_component/weblink.tpl',
-      1 => 1664964285,
+      1 => 1664964923,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633d58586cc667_16009244 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634e7bc00f96f6_85267324 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
 
   <div class="default-header">
@@ -73,7 +73,7 @@ $_smarty_tpl->tpl_vars['valuecallWel']->do_else = false;
                   <img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['valuecallWel']->value['masterkey'];
 $_prefixVariable1 = ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valuecallWel']->value['pic'],"real",$_prefixVariable1,"linkx");?>
+echo fileinclude($_smarty_tpl->tpl_vars['valuecallWel']->value['pic'],"real",$_prefixVariable1,"link");?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['valuecallWel']->value['subject'];?>
 ">
                 </figure>

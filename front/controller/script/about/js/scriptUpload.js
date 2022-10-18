@@ -16,23 +16,23 @@ const AvatardropArea = document.querySelector(".drag-area");
 const button_avatar = AvatardropArea.querySelector("#clickuploadProfile");
 const avatar = AvatardropArea.querySelector("input");
 // Upload File #1
-// const dropAreaUploadfile_1 = document.querySelector(".-upload-1");
-// const Uploadfile_1 = dropAreaUploadfile_1.querySelector("input");
-// // Upload File #2
-// const dropAreaUploadfile_2 = document.querySelector(".-upload-2");
-// const Uploadfile_2 = dropAreaUploadfile_2.querySelector("input");
-// // Upload File #3
-// const dropAreaUploadfile_3 = document.querySelector(".-upload-3");
-// const Uploadfile_3 = dropAreaUploadfile_3.querySelector("input");
-// // Upload File #4
-// const dropAreaUploadfile_4 = document.querySelector(".-upload-4");
-// const Uploadfile_4 = dropAreaUploadfile_4.querySelector("input");
-// // Upload File #5
-// const dropAreaUploadfile_5 = document.querySelector(".-upload-5");
-// const Uploadfile_5 = dropAreaUploadfile_5.querySelector("input");
-// // Upload File #6
-// const dropAreaUploadfile_6 = document.querySelector(".-upload-6");
-// const Uploadfile_6 = dropAreaUploadfile_6.querySelector("input");
+const dropAreaUploadfile_1 = document.querySelector(".-upload-1");
+const Uploadfile_1 = dropAreaUploadfile_1.querySelector("input");
+// Upload File #2
+const dropAreaUploadfile_2 = document.querySelector(".-upload-2");
+const Uploadfile_2 = dropAreaUploadfile_2.querySelector("input");
+// Upload File #3
+const dropAreaUploadfile_3 = document.querySelector(".-upload-3");
+const Uploadfile_3 = dropAreaUploadfile_3.querySelector("input");
+// Upload File #4
+const dropAreaUploadfile_4 = document.querySelector(".-upload-4");
+const Uploadfile_4 = dropAreaUploadfile_4.querySelector("input");
+// Upload File #5
+const dropAreaUploadfile_5 = document.querySelector(".-upload-5");
+const Uploadfile_5 = dropAreaUploadfile_5.querySelector("input");
+// Upload File #6
+const dropAreaUploadfile_6 = document.querySelector(".-upload-6");
+const Uploadfile_6 = dropAreaUploadfile_6.querySelector("input");
 
 // ####### Start Avatar Profile #######
 button_avatar.onclick = () => {
@@ -89,7 +89,7 @@ dropAreaUploadfile_1.addEventListener("drop", (event) => {
     });
     return false;
   } else {
-    ReaderFile(file, 'file', 'fileMilitary', '#file-01'); //calling function
+    ReaderFile(file, 'file', 'fileTranscript', '#file-01'); //calling function
   }
 });
 Uploadfile_1.addEventListener("change", function() {
@@ -103,7 +103,7 @@ Uploadfile_1.addEventListener("change", function() {
       });
       return false;
   } else {
-    ReaderFile(file, 'file', 'fileMilitary', '#file-01'); //calling function
+    ReaderFile(file, 'file', 'fileTranscript', '#file-01'); //calling function
   }
 });
 // ####### End Upload File 1 #######
@@ -306,7 +306,7 @@ Uploadfile_6.addEventListener("change", function() {
     ReaderFile(file, 'file', 'other', '#file-06'); //calling function
   }
 });
-// ####### End Upload File 5 #######
+// ####### End Upload File 6 #######
 
 // ####### Start Function Global #######
 function removeFile(ele, target){

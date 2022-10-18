@@ -46,10 +46,8 @@ $(document).on('click','.clickdel_educational',function () {
 });
 
 function addcount_edu(action) {
-    console.log('aaaa');
     $('.educational #clone_educational').each(function(index,elem) {
         var count = index+1;
-        console.log('xxx');
         if (action == 'add') {
             $(this).removeClass('d-none');
 

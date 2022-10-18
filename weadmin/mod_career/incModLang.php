@@ -105,6 +105,7 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["txt:regisDe"] = "ข้อมูลผู้สมัคร เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
 		$langMod["ep:name"] ="ชื่อ-นามสกุล";
 		$langMod["ep:address"] ="ที่อยู่";
+		$langMod["ep:addressnow"] ="ที่อยู่ปัจจุบัน";
 		$langMod["ep:province"] ="จังหวัด";
 		$langMod["ep:zipcode"] ="รหัสไปรษณีย์";
 		$langMod["ep:mobile"] ="เบอร์โทรศัพมือถือ";
@@ -218,6 +219,12 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["txt:sortpermiss"] = "". $langMod["meu:setPermis"]." Sort";
 		$langMod["txt:titles"] = "Setting " .getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["txt:titlesDe"] = "Please enter details. For use in display on your website. ";
+		$langMod["ca:place"] = "ภูมิสำเนา";
+		$langMod["ca:iden"] = "เลขที่บัตรประชาชน";
+		$langMod["ca:creat"] = "สถานที่ออกบัตร";
+		$langMod["ca:exp"] = "วันหมดอายุ";
+		$langMod["ca:military"] = "สถานภาพทางทหาร";
+		$langMod["ca:militaryDe"] = "ข้อมูล".$langMod["ca:military"]." เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
 
 }else{
 		$langMod["txt:regis9"]= "ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน";
@@ -383,5 +390,6 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 
 		$langMod["ats:email"] = "อีเมล์ซ้ำกับที่มีอยู่ในระบบแล้ว";
 		$langMod["meu:selectgn"] = $langMod["btn:position"];
+
 }
 ?>

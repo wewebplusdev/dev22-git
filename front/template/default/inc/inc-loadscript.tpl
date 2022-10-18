@@ -13,10 +13,7 @@
 <script src="{$template}/assets/js/aos.js"></script>
 <script src="{$template}/assets/js/select2.min.js"></script>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-
+<script src="{$template}/assets/js/jquery.fancybox.min.js"></script>
 <script src="{$template}/assets/js/sweetalert2@11.js"></script>
 
 <!-- Custom -->

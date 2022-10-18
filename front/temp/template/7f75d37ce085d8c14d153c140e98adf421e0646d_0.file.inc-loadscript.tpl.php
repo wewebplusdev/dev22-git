@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-04 17:41:12
+/* Smarty version 4.0.0, created on 2022-10-18 09:31:12
   from '/var/www/html/front/template/default/inc/inc-loadscript.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633c0dc88385c0_53217177',
+  'unifunc' => 'content_634e0ff0aeecc6_43575708',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7f75d37ce085d8c14d153c140e98adf421e0646d' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-loadscript.tpl',
-      1 => 1664879775,
+      1 => 1666060271,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633c0dc88385c0_53217177 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634e0ff0aeecc6_43575708 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Core -->
 
 <?php echo '<script'; ?>
@@ -73,11 +73,9 @@ function content_633c0dc88385c0_53217177 (Smarty_Internal_Template $_smarty_tpl)
 >
 
 <?php echo '<script'; ?>
- src="//cdn.jsdelivr.net/npm/sweetalert2@11"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/js/jquery.fancybox.min.js"><?php echo '</script'; ?>
 >
-
-
-
 <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/js/sweetalert2@11.js"><?php echo '</script'; ?>
@@ -105,8 +103,8 @@ function content_633c0dc88385c0_53217177 (Smarty_Internal_Template $_smarty_tpl)
 
 <?php ob_start();
 echo (($tmp = $_smarty_tpl->tpl_vars['assignjs']->value ?? null)===null||$tmp==='' ? null ?? null : $tmp);
-$_prefixVariable3 = ob_get_clean();
-if ($_prefixVariable3) {
+$_prefixVariable1 = ob_get_clean();
+if ($_prefixVariable1) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['assignjs']->value, 'addAssetScript');
 $_smarty_tpl->tpl_vars['addAssetScript']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['addAssetScript']->value) {

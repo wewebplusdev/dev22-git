@@ -101,6 +101,10 @@ $incfile['modal'] = "inc/inc-modal.tpl";
 $incfile['preloader'] = "inc/inc-preloader.tpl";
 $incfile['pagination'] = "inc/inc-pagination.tpl";
 $incfile['sitemap'] = "inc/inc-sitemap.tpl";
+$incfile['header2'] = "inc/inc-header-theme-2.tpl";
+$incfile['footer2'] = "inc/inc-footer-theme-2.tpl";
+$incfile['header3'] = "inc/inc-header-theme-3.tpl";
+$incfile['footer3'] = "inc/inc-footer-theme-3.tpl";
 
 
 ## addon js ##

@@ -63,6 +63,10 @@ $lang['contact']['msg_success'] = "We have received your information already. Th
 $lang['contact']['msg_fail'] = "Failed to save data. Please try again.";
 $lang['contact']['working'] = "Working day and hours";
 $lang['contact']['timmer'] = "Monday-Friday 8:30 A.M. - 5:30 P.M. ";
+$lang['contact']['success_msg'] = "Successful transaction";
+$lang['contact']['success_msg_desc'] = "We have received information from you. Thank you for using the service";
+$lang['contact']['error_msg'] = "Sorry, the transaction was not successful.";
+$lang['contact']['error_msg_desc'] = "Please try again later.";
 
 //career
 $lang['career']['apply']="position to apply";

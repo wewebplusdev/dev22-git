@@ -29,6 +29,8 @@ $config['jof']['db']['main'] = "md_jof";
 $config['province']['db']['main'] = "md_ads_provinces";
 $config['amphur']['db']['main'] = "md_ads_amphures";
 $config['district']['db']['main'] = "md_ads_districts";
+$config['career']['join']['main'] = "md_joy";
+$config['career']['file']['main'] = "md_joyf";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';

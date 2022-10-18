@@ -1,11 +1,21 @@
 var menuid = $('.site-container').data('menuid');
 
+// recaptcha v3
+grecaptcha.ready(function () {
+  // do request for recaptcha token
+  // response is promise with passed token
+  grecaptcha
+    .execute($(".sitekey").data("id"), { action: "validate_captcha" })
+    .then(function (token) {
+      // add token value to form
+      document.getElementById("g-recaptcha-response").value = token;
+  });
+});
+
 // ############## Start Submit ##############
 //submit
 function checkFocus() {
   $(":focus").each(function() {
-    console.log($(this).parent().offset().top);
-    console.log($(this));
     $("html, body").animate({scrollTop: $(this).parent().offset().top - 130}, 1000);
   });
 }
@@ -15,28 +25,34 @@ $('#form-career').validator().on('submit', function (e) {
     $('#form-career').validator('validate');
     checkFocus();
   } else {
-      if ($('#from-check-1').is(':checked') == false) {
-        return false;
-      }
-      if ($('#from-check-2').is(':checked') == false) {
-        return false;
-      }
-      if ($('#from-check-3').is(':checked') == false) {
-        return false;
-      }
-      if ($('#from-check-4').is(':checked') == false) {
-        return false;
-      }
+
       e.preventDefault();
-      // $('.clicksubmitfromcar').html('<i class="fa fa-circle-o-notch fa-spin" style="font-size:32px; vertical-align: middle;"></i>');
-  
-      // if ($('.clicksubmitfromcar').hasClass('disabled'))  return false;
 
-      // $(".clicksubmitfromcar").removeClass('disabled');
+      $("#clicksubmitfromcar").prop("disabled", true);
 
-      // $(".clicksubmitfromcar").prop("disabled", true);
       var url= path + $('html').attr('lang') + "/about/" + menuid + "/insert-career";
-      var formData = new FormData($("#form-career")[0]); //form data
+      var formCareer = new FormData($("#form-career")[0]); //form data
+
+      // append file upload to new form career
+      if (formData.get('fileTranscript') !== null) {
+        formCareer.append('fileTranscript', formData.get('fileTranscript'));
+      }
+      if (formData.get('fileMilitary') !== null) {
+        formCareer.append('fileMilitary', formData.get('fileMilitary'));
+      }
+      if (formData.get('workexperience') !== null) {
+        formCareer.append('workexperience', formData.get('workexperience'));
+      }
+      if (formData.get('marriage') !== null) {
+        formCareer.append('marriage', formData.get('marriage'));
+      }
+      if (formData.get('license') !== null) {
+        formCareer.append('license', formData.get('license'));
+      }
+      if (formData.get('other') !== null) {
+        formCareer.append('other', formData.get('license'));
+      }
+      
       $.ajax({
         url: url,
         type: 'POST',
@@ -45,24 +61,21 @@ $('#form-career').validator().on('submit', function (e) {
             return myXhr;
         },
         success: function(data) {
-
+          Swal.fire({
+            title: data.msg,
+            text: data.msg_desc,
+            icon: data.status,
+            confirmButtonText: data.btn
+          }).then(function() {
+            window.location.href = path + $('html').attr('lang') + "/about/" + menuid;
+          });
         },
-        data: formData,
+        data: formCareer,
         cache: false,
         contentType: false,
         processData: false,
         dataType: 'json'
-    }).done(function() {
-          
-      //     // $("#modal_success").on("hidden.bs.modal", function () {
-      //     //     window.location = path  + langs +"/career";
-      //     // });
-          
-      //     // $("#modal_failed").on("hidden.bs.modal", function () {
-      //     //     window.location = path + langs +"/career/career-form/"+ GroupID ;
-      //     // });
-
-      });
+    })
   }
 });
 // ############## End Submit ##############
@@ -309,7 +322,7 @@ $(document).on("click", ".arrested-checking", function () {
 });
 
 $('.dischargedemployment').hide();
-$(document).on("click", ".relative-checking", function () {
+$(document).on("click", ".dischargedemployment-checking", function () {
     let check = $(this).val();
     if(check == 'เคย เพราะ' || check == 'เคย เพราะ'){
       $('.dischargedemployment').show();
