@@ -5682,6 +5682,16 @@ li.fancybox-thumbs-loading {
     opacity: 1;
   }
 }
+@media (max-width: 991px) {
+  .select2-container--option-gray .select2-selection--single {
+    padding: 21px 5px;
+  }
+}
+@media (max-width: 767px) {
+  .select2-container--option-gray .select2-selection--single {
+    padding: 19px 5px;
+  }
+}
 .pagination-block {
   padding: 20px 0;
   -webkit-box-pack: center;
@@ -10259,6 +10269,12 @@ fieldset {
 }
 .diamond-calc-page .form-default .action {
   margin-top: 2rem;
+}
+.diamond-calc-page .form-default .action .item-list {
+  margin: 0 -12px;
+}
+.diamond-calc-page .form-default .action .item-list > li {
+  padding: 0 12px;
 }
 
 @media (max-width: 767px) {

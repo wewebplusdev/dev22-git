@@ -40,6 +40,12 @@
     }
     .form-default .action {
         margin-top: 2rem;
+        .item-list {
+            margin: 0 -12px;
+            > li {
+                padding: 0 12px;
+            }
+        }
     }
 }
 

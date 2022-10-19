@@ -518,3 +518,26 @@
         opacity: 1;
     }
 }
+
+
+
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+    .select2-container--option-gray .select2-selection--single {
+        padding: 21px 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    .select2-container--option-gray .select2-selection--single {
+        padding: 19px 5px;
+    }
+}
