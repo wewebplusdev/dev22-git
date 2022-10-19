@@ -20,8 +20,8 @@
                             <div class="title typo-lg">เกี่ยวกับเรา</div>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">หน้าหลัก</a></li>
-                                <li class="breadcrumb-item"><a href="#">เกี่ยวกับเรา</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">แหล่งงาน</li>
+                                <li class="breadcrumb-item"><a href="#">งานบริการ</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">คณะกรรมการสถาบัน</li>
                             </ol>
                         </div>
                     </div>
@@ -36,43 +36,16 @@
                     </div>
                     <div class="default-bar">
                         <div class="row align-items-center">
-                            <div class="col-md-auto">
+                            <div class="col">
                                 <div class="whead">
                                     <div class="h-title">หัวหน้าฝ่ายวิจัยและพัฒนาอัญมณีและเครื่องประดับ</div>
                                 </div>
                             </div>
-                            <div class="col-md">
-                                <div class="social-block">
-                                    <div class="title">Share :</div>
-                                    <ul class="item-list">
-                                        <li>
-                                            <a href="" class="link">
-                                                <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-facebook.svg" alt="" style=" width: auto; ">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="" class="link">
-                                                <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-twitter.svg" alt="">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="" class="link">
-                                                <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-gmail.svg" alt="">
-                                            </a>
-                                        </li>
-                                        <li class="-bsc"></li>
-                                        <li>
-                                            <a href="" class="link">
-                                                <img src="<?php echo $core_template; ?>/assets/img/icon/icon-print.svg" alt="">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="whead-addon -bsc">
+                        <div class="whead-addon -bsc">
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <div class="detail-info">
                                         <ul class="item-list">
                                             <li>23.07.2564</li>
@@ -83,14 +56,31 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="whead-addon">
-                                    <div class="detail-info">
-                                        <ul class="item-list -c">
-                                            <li>จำนวนเปิดรับสมัคร : 1 ตำแหน่ง</li>
+                                <div class="col-sm-6">
+                                    <div class="social-block">
+                                        <div class="title">Share :</div>
+                                        <ul class="item-list">
+                                            <li>
+                                                <a href="" class="link">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-facebook.svg" alt="" style=" width: auto; ">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="link">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-twitter.svg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="link">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-social-gmail.svg" alt="">
+                                                </a>
+                                            </li>
                                             <li class="-bsc"></li>
-                                            <li>สถานที่ : กรุงเทพมหานคร</li>
+                                            <li>
+                                                <a href="" class="link">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/icon/icon-print.svg" alt="">
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -100,6 +90,36 @@
                 </div>
 
                 <div class="container">
+                    <div class="gallery-block">
+                        <div class="gallery-slider-for">
+                            <?php for ($i = 1; $i <= 4; $i++) { ?>
+                                <div class="item">
+                                    <figure class="cover">
+                                        <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb.jpg" alt="gallery thumbnail">
+                                    </figure>
+                                </div>
+                                <div class="item">
+                                    <figure class="cover">
+                                        <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb-flip.jpg" alt="gallery thumbnail">
+                                    </figure>
+                                </div>
+                            <?php } ?>
+                        </div>
+                        <div class="gallery-slider-nav">
+                            <?php for ($i = 1; $i <= 4; $i++) { ?>
+                                <div class="item">
+                                    <figure class="cover">
+                                        <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb.jpg" alt="gallery thumbnail">
+                                    </figure>
+                                </div>
+                                <div class="item">
+                                    <figure class="cover">
+                                        <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb-flip.jpg" alt="gallery thumbnail">
+                                    </figure>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
                     <div class="editor-content">
                         <div class="title">วัตถุประสงค์ของตำแหน่งงาน</div>
                         <p>ปฏิบัติงานในฐานะหัวหน้าหน่วยงาน โดยใช้ความรู้ ความสามารถ ประสบการณ์และความเชี่ยวชาญในด้านวิจัยและพัฒนา เทคนิคการตรวจสอบ การวิเคราะห์

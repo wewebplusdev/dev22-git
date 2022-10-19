@@ -246,6 +246,39 @@
                                 <?php } ?>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <h2 class="text-black my-5">gallery block</h2>
+                            <div class="gallery-block">
+                                <div class="gallery-slider-for">
+                                    <?php for ($i = 1; $i <= 4; $i++) { ?>
+                                        <div class="item">
+                                            <figure class="cover">
+                                                <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb.jpg" alt="gallery thumbnail">
+                                            </figure>
+                                        </div>
+                                        <div class="item">
+                                            <figure class="cover">
+                                                <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb-flip.jpg" alt="gallery thumbnail">
+                                            </figure>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <div class="gallery-slider-nav">
+                                    <?php for ($i = 1; $i <= 4; $i++) { ?>
+                                        <div class="item">
+                                            <figure class="cover">
+                                                <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb.jpg" alt="gallery thumbnail">
+                                            </figure>
+                                        </div>
+                                        <div class="item">
+                                            <figure class="cover">
+                                                <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb-flip.jpg" alt="gallery thumbnail">
+                                            </figure>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- add -->

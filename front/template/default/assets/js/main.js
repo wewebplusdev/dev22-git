@@ -40,7 +40,7 @@ $(document).ready(function () {
         // }
     });
 
-    
+
 
     $('.main-menu-list .link-submenu').click(function () {
 
@@ -286,6 +286,50 @@ $(document).ready(function () {
             breakpoint: 576,
             settings: {
                 slidesToShow: 3
+            }
+        }
+        ]
+    });
+
+    $('.gallery-slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.gallery-slider-nav'
+    });
+
+    $('.gallery-slider-nav').slick({
+        infinite: false,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        asNavFor: '.gallery-slider-for',
+        dots: true,
+        // centerMode: true,
+        focusOnSelect: true,
+        responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 5
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 426,
+            settings: {
+                slidesToShow: 2
             }
         }
         ]

@@ -5863,6 +5863,9 @@ div.swal2-html-container {
   margin: 0 5px;
 }
 
+.attachment-slider .slick-track {
+  margin-left: 0;
+}
 .attachment-slider .attachment-block {
   border: 1px solid #013f94;
   padding: 40px 15px;
@@ -6133,6 +6136,63 @@ div.swal2-html-container {
   .cookie-tab .action .btn + .btn {
     margin-left: 10px;
     margin-top: 0px;
+  }
+}
+.gallery-block {
+  position: relative;
+  margin-bottom: 30px;
+}
+.gallery-block .cover {
+  padding-bottom: 64%;
+}
+.gallery-block .gallery-slider-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+  padding: 10px 180px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.gallery-block .gallery-slider-nav .item {
+  padding: 10px;
+}
+.gallery-block .gallery-slider-nav .slick-track {
+  margin-left: 0;
+}
+.gallery-block .gallery-slider-nav .slick-prev {
+  left: 40px;
+}
+.gallery-block .gallery-slider-nav .slick-next {
+  right: 40px;
+}
+.gallery-block .gallery-slider-nav .slick-prev:before, .gallery-block .gallery-slider-nav .slick-next:before {
+  color: #fff;
+}
+@media (max-width: 1199px) {
+  .gallery-block .gallery-slider-nav {
+    padding: 10px 160px;
+  }
+}
+@media (max-width: 991px) {
+  .gallery-block .gallery-slider-nav {
+    padding: 10px 120px;
+  }
+}
+@media (max-width: 767px) {
+  .gallery-block .gallery-slider-nav {
+    padding: 10px 108px;
+  }
+}
+@media (max-width: 575px) {
+  .gallery-block .gallery-slider-nav {
+    padding: 10px 60px;
+  }
+  .gallery-block .gallery-slider-nav .slick-prev {
+    left: 20px;
+  }
+  .gallery-block .gallery-slider-nav .slick-next {
+    right: 20px;
   }
 }
 .site-header {
@@ -7700,6 +7760,9 @@ div.swal2-html-container {
   font-size: 28px;
   font-weight: normal;
 }
+.collapse-block .btn:not(.collapsed) span.feather::before {
+  content: "\e894";
+}
 
 .table thead th,
 .table tbody td {
@@ -7800,8 +7863,6 @@ fieldset {
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
-  position: relative;
-  bottom: 10px;
 }
 .default-bar .social-block .title {
   margin: 0;
@@ -7873,12 +7934,6 @@ fieldset {
   .default-bar {
     margin-top: 30px;
     margin-bottom: 40px;
-  }
-  .default-bar .social-block {
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
-    margin: 15px 0;
   }
 }
 @media (max-width: 991px) {
@@ -8014,6 +8069,12 @@ fieldset {
   }
   .related-sites-block .item-list > li {
     width: 50%;
+  }
+  .default-bar .social-block {
+    margin-top: 10px;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
   }
 }
 .site-container {
@@ -8910,7 +8971,7 @@ fieldset {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 55%;
+  padding-top: 56.2%;
   margin: 0 auto;
   margin-bottom: 30px;
 }

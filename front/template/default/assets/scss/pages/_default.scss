@@ -435,6 +435,11 @@
             font-size: 28px;
             font-weight: normal;
         }
+        &:not(.collapsed) {
+            span.feather::before {
+                content: '\e894';
+            }
+        }
     }
 }
 
@@ -542,8 +547,8 @@ fieldset {
     .social-block {
         display: flex;
         justify-content: right;
-        position: relative;
-        bottom: 10px;
+        // position: relative;
+        // bottom: 10px;
         .title {
             margin: 0;
             color: #9f9f9f;
@@ -623,8 +628,8 @@ fieldset {
         margin-top: 30px;
         margin-bottom: 40px;
         .social-block {
-            justify-content: left;
-            margin: 15px 0;
+            // justify-content: left;
+            // margin: 15px 0;
         }
     }
 }
@@ -765,5 +770,10 @@ fieldset {
     }
     .related-sites-block .item-list > li {
         width: 50%;
+    }
+
+    .default-bar .social-block {
+        margin-top: 10px;
+        justify-content: left;
     }
 }
