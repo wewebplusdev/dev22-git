@@ -94,14 +94,18 @@
                         <div class="gallery-slider-for">
                             <?php for ($i = 1; $i <= 4; $i++) { ?>
                                 <div class="item">
-                                    <figure class="cover">
-                                        <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb.jpg" alt="gallery thumbnail">
-                                    </figure>
+                                    <a href="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb.jpg" class="link" data-fancybox="gallery-popup">
+                                        <figure class="cover">
+                                            <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb.jpg" alt="gallery thumbnail">
+                                        </figure>
+                                    </a>
                                 </div>
                                 <div class="item">
-                                    <figure class="cover">
-                                        <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb-flip.jpg" alt="gallery thumbnail">
-                                    </figure>
+                                    <a href="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb-flip.jpg" class="link" data-fancybox="gallery-popup">
+                                        <figure class="cover">
+                                            <img src="<?php echo $core_template; ?>/assets/img/upload/gallery-thumb-flip.jpg" alt="gallery thumbnail">
+                                        </figure>
+                                    </a>
                                 </div>
                             <?php } ?>
                         </div>
