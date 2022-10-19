@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-18 09:43:52
+/* Smarty version 4.0.0, created on 2022-10-19 17:56:44
   from '/var/www/html/front/controller/script/home/template/index-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_634e12e88228a8_32090174',
+  'unifunc' => 'content_634fd7ec6ca251_51551340',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '057545518eb9c85e288de83563778f0bf2474fda' => 
     array (
       0 => '/var/www/html/front/controller/script/home/template/index-3.tpl',
-      1 => 1666061031,
+      1 => 1666177002,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634e12e88228a8_32090174 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634fd7ec6ca251_51551340 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
 <div class="top-graphic">
     <div class="slider">
@@ -175,6 +175,11 @@ function content_634e12e88228a8_32090174 (Smarty_Internal_Template $_smarty_tpl)
             </a>
         </div>
         <div class="slider">
+            <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 5+1 - (0) : 0-(5)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 0, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
                 <div class="item">
                     <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                         <div class="row no-gutters">
@@ -200,6 +205,9 @@ function content_634e12e88228a8_32090174 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                     </a>
                 </div>
+            <?php }
+}
+?>
         </div>
     </div>
 
@@ -281,6 +289,11 @@ function content_634e12e88228a8_32090174 (Smarty_Internal_Template $_smarty_tpl)
         <div class="tab-content" id="updateTabContent">
             <div class="tab-pane fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
                 <div class="slider default-slider">
+                    <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 5+1 - (0) : 0-(5)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 0, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
                         <div class="item">
                             <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                                 <div class="row no-gutters">
@@ -307,11 +320,19 @@ function content_634e12e88228a8_32090174 (Smarty_Internal_Template $_smarty_tpl)
                                 </div>
                             </a>
                         </div>
+                    <?php }
+}
+?>
                 </div>
             </div>
             <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab">
                 <!-- procurement -->
                 <div class="slider default-slider">
+                    <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 5+1 - (0) : 0-(5)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 0, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
                         <div class="item">
                             <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                                 <div class="row no-gutters">
@@ -338,6 +359,9 @@ function content_634e12e88228a8_32090174 (Smarty_Internal_Template $_smarty_tpl)
                                 </div>
                             </a>
                         </div>
+                    <?php }
+}
+?>
                 </div>
             </div>
             <div class="tab-pane fade" id="git-lab-update" role="tabpanel" aria-labelledby="git-lab-update-tab">
@@ -353,6 +377,11 @@ function content_634e12e88228a8_32090174 (Smarty_Internal_Template $_smarty_tpl)
             </div>
         </div>
         <div class="slider default-slider">
+            <?php
+$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 5+1 - (0) : 0-(5)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
+if ($_smarty_tpl->tpl_vars['index']->total > 0) {
+for ($_smarty_tpl->tpl_vars['index']->value = 0, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
+$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
                 <div class="item">
                     <a href="" class="link" title="web link">
                         <div class="thumbnail">
@@ -363,6 +392,9 @@ function content_634e12e88228a8_32090174 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                     </a>
                 </div>
+            <?php }
+}
+?>
         </div>
     </div>
 </div>

@@ -734,7 +734,7 @@
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="e-tel">โทรศัพท / Tel.</label>
+                            <label class="control-label" for="e-tel">โทรศัพท์ / Tel.</label>
                             <div class="block-control">
                                 <input type="text" class="form-control" name="emergency[]" id="e-tel" placeholder="060-XXX-XXXX" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>

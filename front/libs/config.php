@@ -105,6 +105,7 @@ $incfile['header2'] = "inc/inc-header-theme-2.tpl";
 $incfile['footer2'] = "inc/inc-footer-theme-2.tpl";
 $incfile['header3'] = "inc/inc-header-theme-3.tpl";
 $incfile['footer3'] = "inc/inc-footer-theme-3.tpl";
+$incfile['pdpa'] = "inc/inc-pdpa.tpl";
 
 
 ## addon js ##

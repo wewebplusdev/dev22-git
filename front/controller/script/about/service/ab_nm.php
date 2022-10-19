@@ -65,7 +65,7 @@ switch ($PageAction) {
         }
         $smarty->assign("order", $order);
 
-        $ContentID = GetContentID($url->segment[4]);
+        $ContentID = GetContentID($url->segment[2]);
         $callGroup = $aboutPage->callGroup($MenuID, $ContentID);
         if ($callGroup->_numOfRows < 1) {
             header('location:' . $linklang . '/404');
@@ -88,11 +88,6 @@ switch ($PageAction) {
         ## group by year for filter
         $callYear = $aboutPage->callYear($MenuID, $callGroup->fields['id']);
         $smarty->assign("callYear", $callYear);
-
-        ## menu lv 2 active
-        $menuidLv2 = $callGroup->fields['id'];
-        $smarty->assign("menuidLv2", $menuidLv2);
-
 
         /*## Start SEO #####*/
         $seo_desc = "";

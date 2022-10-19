@@ -7,6 +7,7 @@ $mod_tb_root_album = "md_joa";
 $mod_tb_root_albumTemp = "md_joatp";
 $mod_tb_fileTemp = "md_jotp";
 $mod_tb_file = "md_jof";
+$mod_tb_file_apply = "md_joyf";
 $mod_tb_apply = "md_joy";
 $mod_tb_setting = "md_joss";
 // $masterkey="jb";

@@ -51,7 +51,7 @@ $sql .= "
         
          ";
 $sql .= " FROM " . $mod_tb_apply . " WHERE " . $mod_tb_apply . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_apply . "_id='" . $_REQUEST['valEditID'] . "' ";
-print_pre($sql);
+// print_pre($sql);
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
 $valID = $Row[0];
@@ -65,7 +65,6 @@ if ($valStatus == "Enable") {
 }
 $valPicName = $Row[4];
 $valPic = $mod_path_pictures . "/" . $Row[4];
-// print_pre($valPic);
 $valProvince = $Row[5];
 $valSex = $Row[6];
 $valSalary = number_format($Row[7]);
@@ -75,100 +74,19 @@ $valStartDate = dateFormatReal($Row['sdate']);
 
 $valGeneral = json_decode($Row['general'], true);
 $valAddress = json_decode($Row['address'], true);
-$valBdate=$valGeneral['bday']."/".$valGeneral['bmonth']."/".$valGeneral['byear'];
+$valBdate = $valGeneral['bday'] . "/" . $valGeneral['bmonth'] . "/" . $valGeneral['byear'];
 $valMilitary = json_decode($Row['military'], true);
-print_pre($valMilitary);
-
-//   $valHistory=json_decode($Row[7],true);
-//   $valEdu = array_slice($valHistory['grade'],0,1)[0];
-//   $valMobile=rechangeQuot($Row[10]);
-//   $valamphur=$Row[12];
-//   $valdistrict=$Row[13];
-//   $valZipcode=$Row[14];
-//   // $valBdate=substr("0".$Row[15],-2)."&nbsp;".$Row[16]."&nbsp;".$Row[17];
-//   $valReligion=$Row[18];
-//   $valLove=$Row[19]; 
-//   $valW=rechangeQuot($Row[20]);
-//   $valH=rechangeQuot($Row[21]);
-//   $valArmy=$Row[22];
-// 	// $valAcademy=rechangeQuot($Row[23]);
-// 	$valAcademy=rechangeQuot(array_slice($valHistory['school'],0,1)[0]);
-// 	// $valQualification=rechangeQuot($Row[24]);
-// 	$valQualification=rechangeQuot(array_slice($valHistory['graduation'],0,1)[0]);
-// 	// $valEduyear=rechangeQuot($Row[25]);
-// 	$valEduyear=rechangeQuot(array_slice($valHistory['yearfrom'],0,1)[0])." - ".rechangeQuot(array_slice($valHistory['yearto'],0,1)[0]);
-// 	// $valGpa=rechangeQuot($Row[26]);
-// 	$valGpa=rechangeQuot(array_slice($valHistory['gpa'],0,1)[0]);
-//   $valSpecial=rechangeQuot($Row[27]);
-//   $valAddress=json_decode($Row[28],true);
-//   $valFileName=$Row[29];
-//   $valFileNameShow=$Row[29];
-//   $valNationality=$Row[30];
-//   // print_pre();
-//   $valAge=$Row['age'];
-//   $valRace=$Row['race'];
-//   $valBlood=$Row['blood'];
-//   $valPositionID=$Row['positionID'];
-//   $valNationcard=json_decode($Row['nationcard'],true);
-//   $valNationcardID=rechangeQuot($valNationcard['id']);
-//   $valNationcardBY=rechangeQuot($valNationcard['by']);
-//   $valNationcardProvince=rechangeQuot($valNationcard['provin']);
-//   $valRelationparent=rechangeQuot($Row['relationparent']);
-//   $valFather=json_decode($Row['father'],true);
-//   $valMother=json_decode($Row['mother'],true);
-//   $arrBrother=json_decode($Row['brother'],true);
-//   foreach ($arrBrother as $key => $value) {
-//     $valBrothers[$key+1][$key] = $value[$key+1];
-//   }
-//   // print_pre($valBrothers);
-//   // print_pre($arrBrother);
-//   $valMate=json_decode($Row['mate'],true);
-//   // print_pre($valLove);
-
-
-
-// 	// $valThaiL=$Row[31];
-// 	// $valThaiS=$Row[32];
-// 	// $valThaiR=$Row[33];
-// 	// $valThaiW=$Row[34];
-
-// 	// $valEngL=$Row[35];
-// 	// $valEngS=$Row[36];
-// 	// $valEngR=$Row[37];
-// 	// $valEngW=$Row[38];
-
-// 	// $valOtherL=$Row[39];
-// 	// $valOtherS=$Row[40];
-// 	// $valOtherR=$Row[41];
-// 	// $valOtherW=$Row[42];
-
-//    $vallanguageAbility=json_decode($Row['languageAbility'],true);
-
-//    foreach ($vallanguageAbility as $key => $value) {
-//     $vallangฺAb[$key+1][$key] = $value[$key+1];
-//   }
-// 	 $valPrintt=rechangeQuot($Row['wordsTh']);
-// 	 $valPrinte=rechangeQuot($Row['wordsEng']);
-// 	 $valCar=$Row['vehicle'];
-//    $valDriv=$Row['driver'];
-//    $valDriving= json_decode($Row['driverOther']) ;
-//    $valprogram=$Row['program'];
-
-//      $valRef=json_decode($Row['refperson'],true);
-//      foreach ($valRef as $key => $value2) {
-//       $valRefperson[$key+1][$key] = $value2[$key+1];
-//     }
-//    $valgeneral=json_decode($Row['general']);
-//    $valWork=json_decode($Row['work'],true);
-//    foreach ($valWork as $key => $value4) {
-//     $valWorkfrom[$key+1][$key] = $value4[$key+1];
-//   }
-
-//   $valTran=json_decode($Row['training'],true);
-//   foreach ($valTran as $key => $value5) {
-//    $valTranfrom[$key+1][$key] = $value5[$key+1];
-//  }
-// 	  // $valFileNameShow=$Row[51];
+$valEmergency = json_decode($Row['emergency'], true);
+$valFamily = json_decode($Row['family'], true);
+$valBrothers = json_decode($Row['brother'], true);
+$valEducation = json_decode($Row['education'], true);
+$valTraining = json_decode($Row['training'], true);
+$valWorkhistory = json_decode($Row['workhistory'], true);
+$valLanguage = json_decode($Row['language'], true);
+$valInformation = json_decode($Row['information'], true);
+$valReference = json_decode($Row['reference'], true);
+$valReference2 = json_decode($Row['reference'], true);
+// print_pre($valReference);
 
 $valPermission = getUserPermissionOnMenu($_SESSION["core_session_groupid"], $_REQUEST["menukeyid"]);
 
@@ -350,7 +268,7 @@ logs_access('3', 'View');
           </td>
         </tr>
 
-        <tr >
+        <tr>
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:tel"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
             <div class="formDivView"><?php echo $valAddress['tel'] ?></div>
@@ -379,17 +297,23 @@ logs_access('3', 'View');
             <div class="formDivView"><?php echo $valBdate ?></div>
           </td>
         </tr>
-        <tr >
-          <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["ep:w"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valGeneral['weight'] ?></div></td>
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:w"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <div class="formDivView"><?php echo $valGeneral['weight'] ?></div>
+          </td>
         </tr>
-        <tr >
-          <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["ep:h"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valGeneral['height'] ?></div></td>
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:h"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <div class="formDivView"><?php echo $valGeneral['height'] ?></div>
+          </td>
         </tr>
-        <tr >
-          <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["ca:place"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valGeneral['placeofbirth'] ?></div></td>
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:place"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <div class="formDivView"><?php echo $valGeneral['placeofbirth'] ?></div>
+          </td>
         </tr>
         <tr>
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:sex"] ?>:<span class="fontContantAlert"></span></td>
@@ -418,7 +342,10 @@ logs_access('3', 'View');
         <tr>
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:military"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valMilitary['status']; if($valMilitary['status'] == 'ได้รับการยกเว้น'){ echo " อื่นๆ : ". $valMilitary['other']; }?></div>
+            <div class="formDivView"><?php echo $valMilitary['status'];
+                                      if ($valMilitary['status'] == 'อื่นๆ') {
+                                        echo " อื่นๆ : " . $valMilitary['other'];
+                                      } ?></div>
           </td>
         </tr>
 
@@ -427,81 +354,45 @@ logs_access('3', 'View');
         </tr>
         <tr>
           <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-            <span class="formFontSubjectTxt"><?php echo $langMod["ca:military"] ?></span><br />
-            <span class="formFontTileTxt"><?php echo $langMod["ca:militaryDe"] ?></span>
+            <span class="formFontSubjectTxt"><?php echo $langMod["ca:emergency"] ?></span><br />
+            <span class="formFontTileTxt"><?php echo $langMod["ca:emergencyDe"] ?></span>
           </td>
         </tr>
 
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:blood"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:name"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valBlood ?></div>
+            <div class="formDivView"><?php echo $valEmergency['fname'] . " " . $valEmergency['lname'] ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo "อายุ" ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["emergency:bdate"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valAge ?> <?php echo $langMod["age"]; ?></div>
-          </td>
-        </tr>
-
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:nationality"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valNationality ?></div>
+            <div class="formDivView"><?php echo $valEmergency['bdaty'] . "/" . $valEmergency['bmonth'] . "/" . $valEmergency['byear'] ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo "เชื้อชาติ" ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:age"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valRace ?></div>
+            <div class="formDivView"><?php echo $valAge ?> <?php echo $valEmergency["age"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:religion"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:relations"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><? php //=$modTxtBuddhaThai[$valReligion]
-                                      ?><?php echo $valReligion ?></div>
+            <div class="formDivView"><?php echo $valAge ?> <?php echo $valEmergency["relations"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo "เลขที่บัตรประชาชน" ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:addwork"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valNationcardID ?></div>
+            <div class="formDivView"><?php echo $valAge ?> <?php echo $valEmergency["address"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo "ที่อยู่ตามบัตรประชาชน" ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:tel"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valPositionID ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo "ออกให้โดย" ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valNationcardBY ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo "จังหวัด" ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valNationcardProvince ?></div>
-          </td>
-        </tr>
-        
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:army"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><? php //=$modTxtArmyThai[$valArmy]
-                                      ?>
-              <?php echo $valArmy ?>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:status"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valLove ?></div>
+            <div class="formDivView"><?php echo $valAge ?> <?php echo $valEmergency["tel"]; ?></div>
           </td>
         </tr>
 
@@ -515,71 +406,51 @@ logs_access('3', 'View');
             <span class="formFontTileTxt"><?php echo $langMod["txt:regis6De"] ?></span>
           </td>
         </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:parent"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valRelationparent ?>
-            </div>
-          </td>
-        </tr>
         <!-- Father -->
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["father:name"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:name"] . $langMod["family:first"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valFather['prefix'] . " " . $valFather['fname'] . " " . $valFather['lname'] ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily['fname1'] . " " . $valFamily['lname1'] ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["father:bdate"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:bdate"] . $langMod["family:first"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo dateFormatReal($valFather['yearbirth'] . '/' . $valFather['monthbirth'] . '/' . $valFather['daybirth']); ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily['bday1'] . "/" . $valFamily['bmonth1'] . "/" . $valFamily['byear1'] ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["father:age"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:age"] . $langMod["family:first"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valFather['age'] ?> <?php echo $langMod["age"]; ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily["age1"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["father:job"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:relations"] . $langMod["family:first"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valFather['occupation'] ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily["relations1"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["father:office"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:addwork"] . $langMod["family:first"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valFather['office'] ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily["address1"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["father:tel"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:tel"] . $langMod["family:first"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valFather['tel'] ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily["tel1"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["father:status"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["family:status"] . $langMod["family:first"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
             <div class="formDivView">
-              <?php if ($valFather['status'] == 'Live' || $valFather['status'] == 'มีชีวิต') { ?>
-                <?php echo $valFather['status']; ?>
+              <?php if ($valFamily['alive1'] == 'Live' || $valFamily['alive1'] == 'มีชีวิต') { ?>
+                <?php echo $valFamily['alive1']; ?>
               <?php } else { ?>
-                <?php echo $valFather['status'] . ' เมื่อ ' . ($valFather['daydie'] . '/' . $valFather['monthdie'] . '/' . $valFather['yeardie']); ?>
+                <?php echo $valFamily['status'] . ' เมื่อ ' . ($valFamily['dday1'] . '/' . $valFamily['dmonth1'] . '/' . $valFamily['dyear1']); ?>
               <?php } ?>
             </div>
           </td>
@@ -587,110 +458,100 @@ logs_access('3', 'View');
 
         <!-- Mother -->
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mother:name"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:name"] . $langMod["family:seconde"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valMother['prefix'] . " " . $valMother['fname'] . " " . $valMother['lname'] ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily['fname2'] . " " . $valFamily['lname2'] ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mother:bdate"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:bdate"] . $langMod["family:seconde"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo dateFormatReal($valMother['yearbirth'] . '/' . $valMother['monthbirth'] . '/' . $valMother['daybirth']); ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily['bday2'] . "/" . $valFamily['bmonth2'] . "/" . $valFamily['byear2'] ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mother:age"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:age"] . $langMod["family:seconde"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valMother['age'] ?> <?php echo $langMod["age"]; ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily["age2"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mother:job"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:relations"] . $langMod["family:seconde"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valMother['occupation'] ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily["relations2"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mother:office"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:addwork"] . $langMod["family:seconde"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valMother['office'] ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily["address2"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mother:tel"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:tel"] . $langMod["family:seconde"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php echo $valMother['tel'] ?>
-            </div>
+            <div class="formDivView"><?php echo $valFamily["tel2"]; ?></div>
           </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mother:status"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["family:status"] . $langMod["family:seconde"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
             <div class="formDivView">
-              <?php if ($valMother['status'] == 'Live' || $valMother['status'] == 'มีชีวิต') { ?>
-                <?php echo $valMother['status']; ?>
+              <?php if ($valFamily['alive2'] == 'Live' || $valFamily['alive2'] == 'มีชีวิต') { ?>
+                <?php echo $valFamily['alive2']; ?>
               <?php } else { ?>
-                <?php echo $valMother['status'] . ' เมื่อ ' . ($valMother['daydie'] . '/' . $valMother['monthdie'] . '/' . $valMother['yeardie']); ?>
+                <?php echo $valFamily['status'] . ' เมื่อ ' . ($valFamily['dday2'] . '/' . $valFamily['dmonth2'] . '/' . $valFamily['dyear2']); ?>
               <?php } ?>
             </div>
           </td>
         </tr>
 
         <!-- Brother -->
+        <?php $indexBro = 1; ?>
+        <?php unset($valBrothers['main']); ?>
         <?php foreach ($valBrothers as $key => $valBrother) { ?>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:name"] . $key ?>:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:name"] . $indexBro ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php echo $valBrother['prefix'] . " " . $valBrother['fname'] . " " . $valBrother['lname'] ?>
+                <?php echo $valBrother['fname'] . " " . $valBrother['lname'] ?>
               </div>
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:bdate"] . $key ?>:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:bdate"] . $indexBro ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php echo dateFormatReal($valBrother['yearbirth'] . '/' . $valBrother['monthbirth'] . '/' . $valBrother['daybirth']); ?>
+                <?php echo dateFormatReal($valBrother['byear'] . '/' . $valBrother['bmonth'] . '/' . $valBrother['bdaty']); ?>
               </div>
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:age"] . $key ?>:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:age"] . $indexBro ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php echo $valBrother['age'] ?> <?php echo $langMod["age"]; ?>
+                <?php echo $valBrother['age'] ?>
               </div>
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:job"] . $key ?>:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:relations"] . $indexBro ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php echo $valBrother['occupation'] ?>
+                <?php echo $valBrother["relations"]; ?>
               </div>
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:office"] . $key ?>:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:addwork"] . $indexBro ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php echo $valBrother['office'] ?>
+                <?php echo $valBrother['address'] ?>
               </div>
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:tel"] . $key ?>:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:tel"] . $indexBro ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
                 <?php echo $valBrother['tel'] ?>
@@ -698,116 +559,124 @@ logs_access('3', 'View');
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:status"] . $key ?>:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["brother:status"] . $indexBro ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php if ($valBrother['status'] == 'Live' || $valBrother['status'] == 'มีชีวิต') { ?>
-                  <?php echo $valBrother['status']; ?>
+                <?php if ($valBrother['alive'] == 'Live' || $valBrother['alive'] == 'มีชีวิต') { ?>
+                  <?php echo $valBrother['alive']; ?>
                 <?php } else { ?>
-                  <?php echo $valBrother['status'] . ' เมื่อ ' . ($valBrother['daydie'] . '/' . $valBrother['monthdie'] . '/' . $valBrother['yeardie']); ?>
+                  <?php echo $valBrother['alive'] . ' เมื่อ ' . ($valBrother['dday'] . '/' . $valBrother['dmonth'] . '/' . $valBrother['dyear']); ?>
                 <?php } ?>
               </div>
             </td>
           </tr>
+        <?php $indexBro++; ?>
         <?php } ?>
 
-        <!-- Mate -> Husband/Wife -->
-        <?php if ($valLove == "แต่งงาน" || $valLove == "แยกกันอยู่" || $valLove == "marry" || $valLove == "separate") { ?>
-
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mate:name"] ?>:<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo $valMate['prefix'] . " " . $valMate['fname'] . " " . $valMate['lname'] ?>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mate:bdate"] ?>:<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo dateFormatReal($valMate['yearbirth'] . '/' . $valMate['monthbirth'] . '/' . $valMate['daybirth']); ?>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mate:age"] ?>:<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo $valMate['age'] ?> <?php echo $langMod["age"]; ?>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mate:job"] ?>:<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo $valMate['occupation'] ?>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mate:office"] ?>:<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo $valMate['office'] ?>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["mate:tel"] ?>:<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo $valMate['tel'] ?>
-              </div>
-            </td>
-          </tr>
-        <?php } ?>
-
+        <?php if(count($valEducation) > 0){ ?>
 
         <tr colspan="7" height="20">
           <td></td>
         </tr>
 
-        <tr>
-          <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-            <span class="formFontSubjectTxt"><?php echo $langMod["txt:regis3"] ?></span><br />
-            <span class="formFontTileTxt"><?php echo $langMod["txt:regis3De"] ?></span>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:edu"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valEdu ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:academy"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valAcademy ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:qualification"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valQualification ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:eduYear"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valEduyear ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:gpa"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valGpa ?></div>
-          </td>
+        <?php $indexEdu = 1; ?>
+        <?php foreach ($valEducation as $key => $valEducations) { ?>
+          <tr>
+            <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+              <span class="formFontSubjectTxt"><?php echo $langMod["txt:regis3"] ?></span><br />
+              <span class="formFontTileTxt"><?php echo $langMod["txt:regis3De"] ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:edu"]." ".$indexEdu ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valEducations['level'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:academy"]." ".$indexEdu ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valEducations['academy-name'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:from"]." ".$indexEdu ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valEducations['from'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:qualification"]." ".$indexEdu ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valEducations['majors'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:background"]." ".$indexEdu ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valEducations['educational-background'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:eduYear"]." ".$indexEdu ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valEducations['education-end'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:gpa"]." ".$indexEdu ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valEducations['grade'] ?></div>
+            </td>
+          </tr>
+        <?php $indexEdu++; ?>
+        <?php } ?>
+        <?php } ?>
+
+        <?php if(count($valTraining) > 0){ ?>
+
+        <tr colspan="7" height="20">
+          <td></td>
         </tr>
 
+        <?php $indexTra = 1; ?>
+        <?php foreach ($valTraining as $key => $valTrainings) { ?>
+          <tr>
+            <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+              <span class="formFontSubjectTxt"><?php echo $langMod["txt:training"] ?></span><br />
+              <span class="formFontTileTxt"><?php echo $langMod["txt:trainingDe"] ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:trainingname"]." ".$indexTra ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valTrainings['course'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:traininginstitute"]." ".$indexTra ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valTrainings['institute'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:trainingdegree"]." ".$indexTra ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valTrainings['degree'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:trainingperiod"]." ".$indexTra ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valTrainings['period'] ?> <?php echo $langMod["ep:trainingyear"]." ".$valTrainings['training-start']." - ".$valTrainings['training-end']; ?></div>
+            </td>
+          </tr>
+          </tr>
+        <?php $indexTra++; ?>
+        <?php } ?>
+        <?php } ?>
 
-        <?php if ($valWorkfrom != "") { ?>
+        <?php if (count($valWorkhistory)>0) { ?>
           <tr colspan="7" height="20">
             <td></td>
           </tr>
@@ -818,303 +687,433 @@ logs_access('3', 'View');
             </td>
           </tr>
         <?php } ?>
+        <?php $indexWork = 1; ?>
         <?php
-        foreach ($valWorkfrom as $work) {
+        foreach ($valWorkhistory as $valWorkhistorys) {
         ?>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">ระยะเวลาทำงาน:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:office"]." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php echo "เดือน " . $work['Workmonthfrom'] . " ปี " . $work['Workyearfrom'] ?> ถึง <?php echo "เดือน " . $work['Workmonthto'] . " ปี " . $work['Workyearto'] ?>
+                <?php echo $valWorkhistorys['company']; ?>
               </div>
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">บริษัท:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:officetype"]." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-
-                <?php echo $work['Office']; ?>
+                <?php echo $valWorkhistorys['type']; ?>
               </div>
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">ตำแหน่ง:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:address"]." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php echo $work['Workposition']; ?>
+                <?php echo $valWorkhistorys['address']; ?>
               </div>
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">อัตราจ้าง:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:tel"]." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php echo $work['Worksaraly'] . " " . $langMod["ep:bam"]; ?>
+                <?php echo $valWorkhistorys['tel']; ?>
               </div>
             </td>
           </tr>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">เหตุผลที่ลาออก :<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:firstposition"]." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
             <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
               <div class="formDivView">
-                <?php echo $work['WorkNote']; ?>
+                <?php echo $valWorkhistorys['first-position']; ?>
               </div>
             </td>
           </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:lastposition"]." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView">
+                <?php echo $valWorkhistorys['last-position']; ?>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:lastsalary"] ." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView">
+                <?php echo $valWorkhistorys['last-salary']; ?>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:incomeother"] ." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView">
+                <?php echo $valWorkhistorys['other']; ?>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:responsibility"] ." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView">
+                <?php echo $valWorkhistorys['responsibility']; ?>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:trainingperiod"] ." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView">
+                <?php echo $valWorkhistorys['period']; ?> <?php echo $langMod["ep:trainingyear"]." ".$valWorkhistorys['work-start']." - ".$valWorkhistorys['work-end']; ?>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:trainingyear"] ." ".$indexWork; ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView">
+                <?php echo $valWorkhistorys['work-start']." ถึง ".$valWorkhistorys['work-end']; ?>
+              </div>
+            </td>
+          </tr>
+        <?php $indexWork++; ?>
         <?php } ?>
-        <?php if ($valTranfrom != "") { ?>
-          <tr colspan="7" height="20">
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-              <span class="formFontSubjectTxt"><?php echo $langMod["txt:regis9"] ?></span><br />
-              <span class="formFontTileTxt"><?php echo $langMod["txt:regis9De"] ?></span>
-            </td>
-          </tr>
-        <?php } ?>
-        <?php
-        foreach ($valTranfrom as $tran) {
-        ?>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">บริษัท<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo $tran['office']; ?>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">หลักสูตร<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
 
-                <?php echo $tran['education']; ?>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">วุฒิที่ได้<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo $tran['cert']; ?>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">ระยะเวลา<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo $tran['time']; ?>
-              </div>
-            </td>
-          </tr>
-        <?php } ?>
-
+        <?php if(count($valLanguage) > 0){ ?>
 
         <tr colspan="7" height="20">
           <td></td>
         </tr>
 
-        <tr>
-          <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-            <span class="formFontSubjectTxt"><?php echo $langMod["txt:regis5"] ?></span><br />
-            <span class="formFontTileTxt"><?php echo $langMod["txt:regis5De"] ?></span>
-          </td>
-        </tr>
-        <?php foreach ($vallangฺAb as $languageAbility) { ?>
+        <?php $indexLang = 1; ?>
+        <?php foreach ($valLanguage as $key => $valLanguages) { ?>
           <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb">ทักษะภาษา<?php echo $languageAbility['laguage'] ?>:<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivRadioJob"><?php echo $langMod["ep:ts"] ?>(<?php echo $languageAbility['tell'] ?>)</div>
-
-              <div class="formDivRadioJob"><?php echo $langMod["ep:tw"] ?>(<?php echo $languageAbility['write']  ?>)</div>
-              <div class="formDivRadioJob"><?php echo $langMod["ep:tr"] ?>(<?php echo $languageAbility['read'] ?>)</div>
+            <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+              <span class="formFontSubjectTxt"><?php echo $langMod["txt:training"] ?></span><br />
+              <span class="formFontTileTxt"><?php echo $langMod["txt:trainingDe"] ?></span>
             </td>
           </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $valLanguages['language']."/".$langMod["ep:langspeaking"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valLanguages['speaking'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $valLanguages['language']."/".$langMod["ep:langlistening"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valLanguages['listening'] ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $valLanguages['language']."/".$langMod["ep:langwriting"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valLanguages['writing'] ?></div>
+            </td>
+          </tr>
+          </tr>
+        <?php $indexLang++; ?>
         <?php } ?>
-        <!-- <tr  >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["ep:eng"] ?>:<span class="fontContantAlert"></span></td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-        <div class="formDivRadioJob"><?php echo $langMod["ep:tl"] ?>(<?php echo $modTxtLangThai[$valEngL] ?>)</div>
-    <div class="formDivRadioJob"><?php echo $langMod["ep:ts"] ?>(<?php echo $modTxtLangThai[$valEngS] ?>)</div>
-    <div class="formDivRadioJob"><?php echo $langMod["ep:tr"] ?>(<?php echo $modTxtLangThai[$valEngR] ?>)</div>
-    <div class="formDivRadioJob"><?php echo $langMod["ep:tw"] ?>(<?php echo $modTxtLangThai[$valEngW] ?>)</div>
+        <?php } ?>
 
-    </td>
-  </tr>    -->
-        <!-- <tr   >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["ep:other"] ?>(<?php echo $valOtherlang ?>):<span class="fontContantAlert"></span></td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-        <div class="formDivRadioJob"><?php echo $langMod["ep:tl"] ?>(<?php echo $modTxtLangThai[$valOtherL] ?>)</div>
-    <div class="formDivRadioJob"><?php echo $langMod["ep:ts"] ?>(<?php echo $modTxtLangThai[$valOtherS] ?>)</div>
-    <div class="formDivRadioJob"><?php echo $langMod["ep:tr"] ?>(<?php echo $modTxtLangThai[$valOtherR] ?>)</div>
-    <div class="formDivRadioJob"><?php echo $langMod["ep:tw"] ?>(<?php echo $modTxtLangThai[$valOtherW] ?>)</div>
-    </td>
-  </tr>    -->
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:printt"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valPrintt ?></div>
-          </td>
+        <tr colspan="7" height="20">
+          <td></td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:printe"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valPrinte ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb">ทักษะคอมพิวเตอร์:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valprogram ?></div>
-          </td>
-        </tr>
-
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb">ขับรถยนต์:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valDriv ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:car"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valCar ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:driving"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valDriving->drivCard ?> <?php echo $valDriving->id ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:special"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php if ($valSpecial != "") {
-                echo $valSpecial;
-              } else {
-                echo "-";
-              } ?></div>
-          </td>
-        </tr>
-        <?php $i = 1; ?>
-        <?php foreach ($valRefperson as $Refperson) { ?>
-          <tr>
-            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:ref"] ?><?php echo $i; ?>:<span class="fontContantAlert"></span></td>
-            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-              <div class="formDivView">
-                <?php echo "ชื่อ: " . $Refperson['name'] . "  ตำแหน่ง: " . $Refperson['position'] . "  ที่ทำงาน: " . $Refperson['office'] . "  เบอร์โทร: " . $Refperson['tel'] ?>
-
-              </div>
+            <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+              <span class="formFontSubjectTxt"><?php echo $langMod["txt:generalinfo"] ?></span><br />
+              <span class="formFontTileTxt"><?php echo $langMod["txt:generalinfoDe"] ?></span>
             </td>
           </tr>
-        <?php $i++;
-        } ?>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb">ความบกพร่องทางร่างกาย:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:infoworkupcountry"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $langMod["ep:infopermanent"]." : ".$valInformation["country-out-permanent"]?>, <?php echo $langMod["ep:infotemporary"]." : ".$valInformation["country-out-temporary"]?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:infodisease"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valInformation['contagious'] ?> <?php if($$valInformation['contagious'] == 'เคย'){ echo "เพราะ ".$valInformation['contagious-other']; } ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:infohandicap"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valInformation['contagious'] ?> <?php if($$valInformation['handicap'] == 'มี'){ echo "เพราะ ".$valInformation['handicap-other']; } ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:infoquestioning"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valInformation['investigation'] ?> <?php if($$valInformation['investigation'] == 'เคย เพราะ'){ echo "เพราะ ".$valInformation['investigation-other']; } ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:infodischarged"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valInformation['discharged'] ?> <?php if($$valInformation['discharged'] == 'เคย เพราะ'){ echo "เพราะ ".$valInformation['discharged-other']; } ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:inforelative"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valInformation['friend'] ?> <?php if($$valInformation['friend'] == 'เคย เพราะ'){ echo "เพราะ ".$valInformation['friend-other']; } ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:infohearing"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valInformation['vacancy'] ?> <?php if($$valInformation['friend'] == 'เจ้าหน้าที่สภาบัน'){ echo $valInformation['vacancy-other-1']; }else{ echo $valInformation['vacancy-other-2']; } ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:infoother"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valInformation['beneficial'] ?></div>
+            </td>
+          </tr>
 
-              <?php echo $valgeneral->deformed . " " . $valgeneral->deformedref . " ";  ?>
-            </div>
-          </td>
-        </tr>
+          <tr colspan="7" height="20">
+          <td></td>
+          </tr>
+          <tr>
+            <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+              <span class="formFontSubjectTxt"><?php echo $langMod["txt:reference"] ?></span><br />
+              <span class="formFontTileTxt"><?php echo $langMod["txt:referenceDe"] ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:reference"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+              <div class="formDivView"><?php echo $valReference['main']['reference'] ?></div>
+            </td>
+          </tr>
+          <?php $statusRef = $valReference['main']['reference'] ?>
+          <?php unset($valReference2['main']); ?>
+          <?php if(count($valReference2) > 0 && $statusRef == 'มี'){ ?>
+            <?php foreach ($valReference2 as $key => $valReferences) { ?>
+              <tr>
+                <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:name"] ?>:<span class="fontContantAlert"></span></td>
+                <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                  <div class="formDivView"><?php echo $valReferences['fname'] ?></div>
+                </td>
+              </tr>
+              <tr>
+                <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:addwork"] ?>:<span class="fontContantAlert"></span></td>
+                <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                  <div class="formDivView"><?php echo $valReferences['address'] ?></div>
+                </td>
+              </tr>
+              <tr>
+                <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:position1"] ?>:<span class="fontContantAlert"></span></td>
+                <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                  <div class="formDivView"><?php echo $valReferences['position'] ?></div>
+                </td>
+              </tr>
+              <tr>
+                <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:tel"] ?>:<span class="fontContantAlert"></span></td>
+                <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                  <div class="formDivView"><?php echo $valReferences['tel'] ?></div>
+                </td>
+              </tr>
+              <tr>
+                <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ca:relations"] ?>:<span class="fontContantAlert"></span></td>
+                <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                  <div class="formDivView"><?php echo $valReferences['relations'] ?></div>
+                </td>
+              </tr>
+            <?php } ?>
+          <?php } ?>
 
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb">เคยเจ็บป่วยหรือได้รับอุบัติเหตุ:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
+          <tr colspan="7" height="20">
+            <td></td>
+          </tr>
 
-              <?php echo $valgeneral->accident . " " . $valgeneral->accidentref . " ";  ?>
-            </div>
-          </td>
-        </tr>
+          <tr>
+            <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+              <span class="formFontSubjectTxt"><?php echo $langMod["txt:Fileinfo"] ?></span><br />
+              <span class="formFontTileTxt"><?php echo $langMod["txt:FileinfoDe"] ?></span>
+            </td>
+          </tr>
 
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb">สุขภาพโดยทั่วไปของท่าน:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-
-              <?php echo $valgeneral->health;  ?>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb">บุคคลล้มละลาย หรือทำผิดทางอาญา:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-
-              <?php echo $valgeneral->doom . " " . $valgeneral->doomref . " ";  ?>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb">เคยถูกไล่ออกจากงาน:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-
-              <?php echo $valgeneral->resign . " " . $valgeneral->resignref . " ";  ?>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb">ท่านมีเพื่อนหรือญาติทำงานที่บริษัทนี้หรือไม่:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-
-              <?php echo $valgeneral->relation . " " . $valgeneral->relationref . " ";  ?>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb">ท่านรับทราบข่าวการสมัครงานของบริษัทจากช่องทางใด:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView">
-              <?php if ($valgeneral->job1) {
-                echo $valgeneral->job1 . ",";
-              } ?>
-              <?php if ($valgeneral->job2) {
-                echo $valgeneral->job2 . ",";
-              } ?>
-              <?php if ($valgeneral->job3) {
-                echo $valgeneral->job3 . ",";
-              } ?>
-              <?php if ($valgeneral->job4) {
-                echo $valgeneral->job4 . ",";
-              } ?>
-              <?php if ($valgeneral->job5) {
-                echo $valgeneral->job5 . ":";
-              } ?>
-              <?php if ($valgeneral->jobref) {
-                echo $valgeneral->jobref;
-              } ?>
-            </div>
-          </td>
-        </tr>
-
-
-        <!-- <tr colspan="7" height="20"><td></td></tr>
-
- <tr >
-    <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-    <span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] ?></span><br/>
-    <span class="formFontTileTxt"><?php echo $langMod["txt:attfileDe"] ?></span>   </td>
-    </tr>
-
-    <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["txt:attfile"] ?>:<span class="fontContantAlert"></span></td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView">
-
-    </div>    </td>
-  </tr>  -->
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:filetranscript"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                <div class="formDivView">
+                    <?php
+                    $sql = "SELECT " . $mod_tb_file_apply . "_id," . $mod_tb_file_apply . "_filename," . $mod_tb_file_apply . "_name," . $mod_tb_file_apply . "_download FROM " . $mod_tb_file_apply . " WHERE " . $mod_tb_file_apply . "_contantid 	='" . $valID . "' AND " . $mod_tb_file_apply . "_key ='file-1' ORDER BY " . $mod_tb_file_apply . "_id ASC";
+                    $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                    $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                    if ($number_row >= 1) {
+                        $txtFile = "";
+                        while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                            $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                            $downloadFile = $row_file[1];
+                            $downloadID = $row_file[0];
+                            $downloadName = $row_file[2];
+                            $countDownload = $row_file[3];
+                            $imageType = strstr($downloadFile, '.');
+                    ?>
+                            <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                            <div></div>
+                    <?php
+                        }
+                    } else {
+                        echo "-";
+                    }
+                    ?>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:filehouse"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                <div class="formDivView">
+                    <?php
+                    $sql = "SELECT " . $mod_tb_file_apply . "_id," . $mod_tb_file_apply . "_filename," . $mod_tb_file_apply . "_name," . $mod_tb_file_apply . "_download FROM " . $mod_tb_file_apply . " WHERE " . $mod_tb_file_apply . "_contantid 	='" . $valID . "' AND " . $mod_tb_file_apply . "_key ='file-2' ORDER BY " . $mod_tb_file_apply . "_id ASC";
+                    $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                    $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                    if ($number_row >= 1) {
+                        $txtFile = "";
+                        while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                            $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                            $downloadFile = $row_file[1];
+                            $downloadID = $row_file[0];
+                            $downloadName = $row_file[2];
+                            $countDownload = $row_file[3];
+                            $imageType = strstr($downloadFile, '.');
+                    ?>
+                            <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                            <div></div>
+                    <?php
+                        }
+                    } else {
+                        echo "-";
+                    }
+                    ?>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:fileiden"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                <div class="formDivView">
+                    <?php
+                    $sql = "SELECT " . $mod_tb_file_apply . "_id," . $mod_tb_file_apply . "_filename," . $mod_tb_file_apply . "_name," . $mod_tb_file_apply . "_download FROM " . $mod_tb_file_apply . " WHERE " . $mod_tb_file_apply . "_contantid 	='" . $valID . "' AND " . $mod_tb_file_apply . "_key ='file-3' ORDER BY " . $mod_tb_file_apply . "_id ASC";
+                    $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                    $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                    if ($number_row >= 1) {
+                        $txtFile = "";
+                        while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                            $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                            $downloadFile = $row_file[1];
+                            $downloadID = $row_file[0];
+                            $downloadName = $row_file[2];
+                            $countDownload = $row_file[3];
+                            $imageType = strstr($downloadFile, '.');
+                    ?>
+                            <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                            <div></div>
+                    <?php
+                        }
+                    } else {
+                        echo "-";
+                    }
+                    ?>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:filemarriage"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                <div class="formDivView">
+                    <?php
+                    $sql = "SELECT " . $mod_tb_file_apply . "_id," . $mod_tb_file_apply . "_filename," . $mod_tb_file_apply . "_name," . $mod_tb_file_apply . "_download FROM " . $mod_tb_file_apply . " WHERE " . $mod_tb_file_apply . "_contantid 	='" . $valID . "' AND " . $mod_tb_file_apply . "_key ='file-4' ORDER BY " . $mod_tb_file_apply . "_id ASC";
+                    $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                    $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                    if ($number_row >= 1) {
+                        $txtFile = "";
+                        while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                            $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                            $downloadFile = $row_file[1];
+                            $downloadID = $row_file[0];
+                            $downloadName = $row_file[2];
+                            $countDownload = $row_file[3];
+                            $imageType = strstr($downloadFile, '.');
+                    ?>
+                            <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                            <div></div>
+                    <?php
+                        }
+                    } else {
+                        echo "-";
+                    }
+                    ?>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:filelicense"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                <div class="formDivView">
+                    <?php
+                    $sql = "SELECT " . $mod_tb_file_apply . "_id," . $mod_tb_file_apply . "_filename," . $mod_tb_file_apply . "_name," . $mod_tb_file_apply . "_download FROM " . $mod_tb_file_apply . " WHERE " . $mod_tb_file_apply . "_contantid 	='" . $valID . "' AND " . $mod_tb_file_apply . "_key ='file-5' ORDER BY " . $mod_tb_file_apply . "_id ASC";
+                    $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                    $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                    if ($number_row >= 1) {
+                        $txtFile = "";
+                        while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                            $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                            $downloadFile = $row_file[1];
+                            $downloadID = $row_file[0];
+                            $downloadName = $row_file[2];
+                            $countDownload = $row_file[3];
+                            $imageType = strstr($downloadFile, '.');
+                    ?>
+                            <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                            <div></div>
+                    <?php
+                        }
+                    } else {
+                        echo "-";
+                    }
+                    ?>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["ep:fileother"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                <div class="formDivView">
+                    <?php
+                    $sql = "SELECT " . $mod_tb_file_apply . "_id," . $mod_tb_file_apply . "_filename," . $mod_tb_file_apply . "_name," . $mod_tb_file_apply . "_download FROM " . $mod_tb_file_apply . " WHERE " . $mod_tb_file_apply . "_contantid 	='" . $valID . "' AND " . $mod_tb_file_apply . "_key ='file-6' ORDER BY " . $mod_tb_file_apply . "_id ASC";
+                    $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                    $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                    if ($number_row >= 1) {
+                        $txtFile = "";
+                        while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                            $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                            $downloadFile = $row_file[1];
+                            $downloadID = $row_file[0];
+                            $downloadName = $row_file[2];
+                            $countDownload = $row_file[3];
+                            $imageType = strstr($downloadFile, '.');
+                    ?>
+                            <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                            <div></div>
+                    <?php
+                        }
+                    } else {
+                        echo "-";
+                    }
+                    ?>
+                </div>
+            </td>
+          </tr>
 
         <tr colspan="7" height="20">
           <td></td>

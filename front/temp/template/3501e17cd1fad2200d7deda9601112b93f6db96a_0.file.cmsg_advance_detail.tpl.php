@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-05 16:15:15
+/* Smarty version 4.0.0, created on 2022-10-19 16:10:40
   from '/var/www/html/front/template/default/_component/cmsg_advance_detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633d4b2360f158_72575995',
+  'unifunc' => 'content_634fbf10208bd4_11648420',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3501e17cd1fad2200d7deda9601112b93f6db96a' => 
     array (
       0 => '/var/www/html/front/template/default/_component/cmsg_advance_detail.tpl',
-      1 => 1664961101,
+      1 => 1664963069,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633d4b2360f158_72575995 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634fbf10208bd4_11648420 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
@@ -32,7 +32,7 @@ echo $_smarty_tpl->tpl_vars['settingModulus']->value['tgp'];?>
       </figure>
       <div class="container">
         <div class="wrapper">
-          <div class="title typo-lg"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['subject'];?>
+          <div class="title typo-lg"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['title'];?>
 </div>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
