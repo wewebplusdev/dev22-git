@@ -168,7 +168,7 @@
                         </a>
                     </div>
                     <div class="slider">
-                        <?php for ($i = 1; $i <= 8; $i++) { ?>
+                        <?php for ($i = 1; $i <= 2; $i++) { ?>
                             <div class="item">
                                 <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                                     <div class="row no-gutters">
@@ -276,7 +276,7 @@
                     <div class="tab-content" id="updateTabContent">
                         <div class="tab-pane fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
                             <div class="slider default-slider">
-                                <?php for ($i = 1; $i <= 8; $i++) { ?>
+                                <?php for ($i = 1; $i <= 2; $i++) { ?>
                                     <div class="item">
                                         <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                                             <div class="row no-gutters">
@@ -308,7 +308,7 @@
                         <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab">
                             <!-- procurement -->
                             <div class="slider default-slider">
-                                <?php for ($i = 1; $i <= 8; $i++) { ?>
+                                <?php for ($i = 1; $i <= 2; $i++) { ?>
                                     <div class="item">
                                         <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                                             <div class="row no-gutters">
