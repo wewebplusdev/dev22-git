@@ -383,6 +383,11 @@ $(document).ready(function () {
         minimumResultsForSearch: -1,
     });
 
+    $('.select-control.select-gray').select2({
+        theme: 'option-gray',
+        minimumResultsForSearch: -1,
+    });
+
 
     // Swal.fire({
     //     title: 'ยืนยันตัวตนผ่านอีเมล์',

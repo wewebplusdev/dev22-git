@@ -169,7 +169,7 @@
                             </div>
                         </div>
                         <div class="action-bottom">
-                            <a href="" class="btn btn-lg btn-primary" title="ระบบคำณวนเพชร">ระบบคำณวนเพชร</a>
+                            <a href="research-3.php" class="btn btn-lg btn-primary" title="ระบบคำณวนเพชร">ระบบคำณวนเพชร</a>
                         </div>
                     </div>
 

@@ -168,7 +168,7 @@
                         </a>
                     </div>
                     <div class="slider">
-                        <?php for ($i = 1; $i <= 2; $i++) { ?>
+                        <?php for ($i = 1; $i <= 5; $i++) { ?>
                             <div class="item">
                                 <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                                     <div class="row no-gutters">
