@@ -6029,6 +6029,112 @@ div.swal2-html-container {
     right: 27px;
   }
 }
+.cookie-tab {
+  background-color: rgba(1, 63, 148, 0.3);
+  backdrop-filter: blur(62px);
+  -webkit-backdrop-filter: blur(62px);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 98;
+}
+.cookie-tab.hide {
+  display: none;
+}
+.cookie-tab .h-tap {
+  height: 140px;
+}
+.cookie-tab .icon-pdpa {
+  position: relative;
+}
+.cookie-tab .text {
+  font-weight: normal;
+  font-size: 18px;
+  font-style: italic;
+  text-align: left;
+  color: var(--color-light);
+  line-height: 1.2em;
+}
+.cookie-tab .link.-cookie-policy {
+  color: var(--color-light);
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: underline;
+}
+.cookie-tab .link.-cookie-policy:hover {
+  color: var(--color-primary);
+}
+.cookie-tab .action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.cookie-tab .action .btn {
+  min-width: 160px;
+}
+.cookie-tab .action .btn + .btn {
+  margin-left: 15px;
+}
+
+@media (max-width: 1199px) {
+  .cookie-tab .h-tap {
+    height: 100px;
+  }
+  .cookie-tab .icon-pdpa {
+    width: 60px;
+  }
+  .cookie-tab .action .btn {
+    min-width: 120px;
+  }
+  .cookie-tab .text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
+  .cookie-tab .action {
+    display: block;
+  }
+  .cookie-tab .action .btn {
+    display: block;
+    font-size: 14px;
+  }
+  .cookie-tab .action .btn + .btn {
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+  .cookie-tab .text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .cookie-tab .h-tap {
+    height: auto;
+    padding: 15px 0 15px 60px;
+    position: relative;
+  }
+  .cookie-tab .h-tap > div:nth-child(1) {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+  }
+  .cookie-tab .icon-pdpa {
+    width: 50px;
+  }
+  .cookie-tab .action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 10px;
+  }
+  .cookie-tab .action .btn {
+    min-width: 80px;
+  }
+  .cookie-tab .action .btn + .btn {
+    margin-left: 10px;
+    margin-top: 0px;
+  }
+}
 .site-header {
   position: fixed;
   top: 0;

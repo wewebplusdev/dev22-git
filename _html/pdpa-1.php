@@ -23,7 +23,7 @@
                             <div class="title typo-lg">นโยบายส่วนบุคคล</div>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#" class="link">หน้าหลัก</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">นโยบายส่วนบุคคล</li>
+                                <li class="breadcrumb-item active" aria-current="page">นโยบายความเป็นส่วนตัวสำหรับลูกค้า</li>
                             </ol>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
             <div class="default-page pdpa-page">
                 <div class="container">
                     <div class="h-title">
-                        บริการออนไลน์
+                        นโยบายความเป็นส่วนตัวสำหรับลูกค้า
                     </div>
                     <div class="editor-content">
                         <div class="title">

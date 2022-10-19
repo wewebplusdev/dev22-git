@@ -186,6 +186,8 @@
             </div>
         </section>
         <?php include('inc/footer.php'); ?>
+        <?php include('inc/cookiepolicy.php'); ?>
+
     </div>
     <?php include('inc/loadscript.php'); ?>
 </body>
