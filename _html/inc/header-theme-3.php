@@ -72,7 +72,7 @@
 		<div class="row align-items-center no-gutters">
 			<div class="col-auto">
 				<div class="brand">
-					<a href="index.php" class="link" title="Gem and Jewelry Institute of Thailand">
+					<a href="index-theme-3.php" class="link" title="Gem and Jewelry Institute of Thailand">
 						<img src="<?php echo $core_template; ?>/assets/img/static/git-logo.png" alt="Gem and Jewelry Institute of Thailand Logo">
 					</a>
 				</div>
@@ -172,7 +172,7 @@
 							<div class="main-menu-list">
 								<ul class="nav-list level-I">
 									<li class="active">
-										<a href="index.php" class="link" title="หน้าแรก">
+										<a href="index-theme-3.php" class="link" title="หน้าแรก">
 											หน้าแรก
 										</a>
 									</li>
@@ -285,7 +285,7 @@
 	<div class="main-menu">
 		<ul class="nav-list level-I">
 			<li>
-				<a href="index.php" class="link active" title="หน้าแรก">
+				<a href="index-theme-3.php" class="link active" title="หน้าแรก">
 					หน้าแรก
 				</a>
 			</li>

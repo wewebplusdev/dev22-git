@@ -510,6 +510,10 @@
     overflow-y: auto;
 }
 
+.select2-dropdown {
+    border-radius: 0;
+}
+
 @keyframes growDown {
     0% {
         opacity: 0.5;

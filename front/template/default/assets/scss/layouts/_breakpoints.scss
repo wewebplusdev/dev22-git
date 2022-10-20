@@ -4,6 +4,7 @@
         // width: 1210px;
         width: 1280px;
     }
+    .theme-2 .site-header .container {max-width: 1280px;}
 }
 
 @media (max-width: 1600px) {
@@ -15,7 +16,7 @@
 }
 
 @media (max-width: 1440px) {
-     :root {
+    :root {
         // --typo-s: 14px;
         // --typo-xs: 16px;
         // --typo-sm: 20px;
@@ -35,7 +36,7 @@
 }
 
 @media (max-width: 1199px) {
-     :root {
+    :root {
         --typo-s: 12px;
         --typo-xs: 14px;
         --typo-sm: 18px;
@@ -55,7 +56,7 @@
 }
 
 @media (max-width: 991px) {
-     :root {
+    :root {
         --typo-s: 12px;
         --typo-xs: 14px;
         --typo-sm: 16px;

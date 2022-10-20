@@ -1,3 +1,7 @@
+:root {
+    --img-yellow: invert(120%) sepia(48%) saturate(201%) hue-rotate(358deg) brightness(140%) contrast(147%);
+}
+
 .theme-style-2 {
     .text-primary {
         color: var(--color-black) !important;
@@ -50,7 +54,7 @@
     .site-header {
         // background-color: rgb(0 0 0 / 70%);
         background: var(--color-black);
-        border-top: 5px solid var(--color-white);
+        border-color: var(--color-white);
         // -webkit-backdrop-filter: blur(5px);
         // backdrop-filter: blur(5px);
         color: var(--color-light);
@@ -509,7 +513,7 @@
     .online-services-block .cover::before {
         background: linear-gradient(to bottom left, rgba(255, 255, 255, 0) 0%, #000 100%);
     }
-    .online-services-block .link .title{
+    .online-services-block .link .title {
         color: var(--color-light);
     }
     .online-services-block .link .text-orient {
@@ -576,6 +580,43 @@
     }
     .search-block .item-list .link.detail {
         color: var(--color-black);
+    }
+
+    .form-default .block-control .form-control {
+        border-color: var(--color-black);
+    }
+    // .select2-container--option-gray .select2-selection--single {
+    //     background-color: var(--color-black);
+    // }
+    .select2-container--option-gray .select2-selection--single .select2-selection__rendered {
+        color: var(--color-black);
+    }
+    .select2-container--option-gray .select2-selection--single .select2-selection__arrow::before {
+        color: var(--color-black);
+    }
+    .select2-container--option-gray .select2-results__option.select2-results__option--highlighted {
+        background-color: var(--color-black);
+    }
+    .select2-results__option {
+        color: var(--color-black);
+    }
+    .select2-container--default .select2-selection--single,
+    .select2-container--option-year .select2-selection--single {
+        border-color: var(--color-black);
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: var(--color-black);
+    }
+    .select2-container--default .select2-results__option--highlighted {
+        color: var(--color-light);
+        background-color: var(--color-black);
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow::before {
+        color: var(--color-black);
+    }
+
+    .diamond-calc-page .calc-result .calc-shape .icon img {
+        filter: grayscale(1) contrast(2);
     }
 }
 
@@ -669,7 +710,7 @@
         filter: grayscale(1);
     }
     .site-header {
-        border-top: 5px solid var(--color-yellow);
+        border-color: var(--color-yellow);
         color: var(--color-black);
         // background-color: rgb(0 0 0 / 70%);
         background-color: var(--color-black);
@@ -867,6 +908,7 @@
     }
     .select2-container--default .select2-selection--single {
         background-color: var(--color-black);
+        border-color: var(--color-black);
     }
     .select2-container--default .select2-selection--single .select2-selection__rendered {
         color: var(--color-yellow);
@@ -1285,10 +1327,10 @@
     .online-services-block .cover::before {
         background: linear-gradient(to bottom left, rgba(255, 255, 255, 0) 0%, #000 100%);
     }
-    .online-services-block .link .title{
+    .online-services-block .link .title {
         color: var(--color-yellow);
     }
-    .online-services-block .link .subtitle{
+    .online-services-block .link .subtitle {
         color: var(--color-yellow);
     }
     .online-services-block .link .text-orient {
@@ -1378,6 +1420,51 @@
     .research-page .table thead th,
     .research-page .table tbody td {
         color: var(--color-black);
+    }
+
+    .form-default .block-control .form-control {
+        border-color: var(--color-black);
+    }
+    .select2-container--option-gray .select2-selection--single {
+        background-color: var(--color-black);
+    }
+    .select2-container--option-gray .select2-selection--single .select2-selection__rendered {
+        color: var(--color-yellow);
+    }
+    .select2-container--option-gray .select2-selection--single .select2-selection__arrow::before {
+        color: var(--color-yellow);
+    }
+    .select2-container--option-gray .select2-results__option.select2-results__option--highlighted {
+        color: var(--color-yellow);
+        background-color: var(--color-black);
+    }
+    .select2-results__option {
+        color: var(--color-black);
+    }
+    .select2-container--default .select2-results__option--highlighted {
+        color: var(--color-yellow);
+        background-color: var(--color-black);
+    }
+
+    .diamond-calc-page .calc-result .wrapper {
+        color: var(--color-yellow);
+        background-color: var(--color-black);
+    }
+    .diamond-calc-page .calc-result .calc-shape .icon img {
+        filter: var(--img-yellow);
+    }
+    .diamond-calc-page .calc-result .title {
+        color: var(--color-yellow);
+    }
+    .diamond-calc-page .calc-result .divider {
+        border-color: var(--color-yellow);
+        opacity: 0.6;
+    }
+    .diamond-calc-page .calc-result .desc {
+        color: var(--color-yellow) !important;
+    }
+    .divider {
+        border-color: var(--color-black);
     }
 }
 

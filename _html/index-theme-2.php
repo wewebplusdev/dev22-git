@@ -13,9 +13,14 @@
 
         <section class="site-container">
 
+            <div class="top-graphic">
+                <figure class="cover">
+                    <img src="<?php echo $core_template; ?>/assets/img/static/tpg-theme-2.jpg" alt="top graphic">
+                </figure>
+            </div>
+
             <div class="container">
 
-    
             </div>
 
         </section>
