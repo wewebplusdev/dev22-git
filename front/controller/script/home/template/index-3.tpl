@@ -151,6 +151,7 @@
             </a>
         </div>
         <div class="slider">
+            {for $index = 0 to 5}
                 <div class="item">
                     <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                         <div class="row no-gutters">
@@ -175,6 +176,7 @@
                         </div>
                     </a>
                 </div>
+            {/for}
         </div>
     </div>
 
@@ -255,6 +257,7 @@
         <div class="tab-content" id="updateTabContent">
             <div class="tab-pane fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
                 <div class="slider default-slider">
+                    {for $index = 0 to 5}
                         <div class="item">
                             <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                                 <div class="row no-gutters">
@@ -280,11 +283,13 @@
                                 </div>
                             </a>
                         </div>
+                    {/for}
                 </div>
             </div>
             <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab">
                 <!-- procurement -->
                 <div class="slider default-slider">
+                    {for $index = 0 to 5}
                         <div class="item">
                             <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
                                 <div class="row no-gutters">
@@ -310,6 +315,7 @@
                                 </div>
                             </a>
                         </div>
+                    {/for}
                 </div>
             </div>
             <div class="tab-pane fade" id="git-lab-update" role="tabpanel" aria-labelledby="git-lab-update-tab">
@@ -325,6 +331,7 @@
             </div>
         </div>
         <div class="slider default-slider">
+            {for $index = 0 to 5}
                 <div class="item">
                     <a href="" class="link" title="web link">
                         <div class="thumbnail">
@@ -334,6 +341,7 @@
                         </div>
                     </a>
                 </div>
+            {/for}
         </div>
     </div>
 </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-18 16:13:07
+/* Smarty version 4.0.0, created on 2022-10-19 11:06:07
   from '/var/www/html/front/template/default/_component/career-form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_634e6e233d3644_90856242',
+  'unifunc' => 'content_634f77af419675_19003597',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a523170c265681e6c2b26d0727eb06a15c5892a' => 
     array (
       0 => '/var/www/html/front/template/default/_component/career-form.tpl',
-      1 => 1666084122,
+      1 => 1666152308,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634e6e233d3644_90856242 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634f77af419675_19003597 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container sitekey" data-menuid="<?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['menuid'];?>
 " data-id="<?php echo $_smarty_tpl->tpl_vars['sitekey']->value;?>
 ">
@@ -892,7 +892,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="e-tel">โทรศัพท / Tel.</label>
+                            <label class="control-label" for="e-tel">โทรศัพท์ / Tel.</label>
                             <div class="block-control">
                                 <input type="text" class="form-control" name="emergency[]" id="e-tel" placeholder="060-XXX-XXXX" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>

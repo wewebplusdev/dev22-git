@@ -12,6 +12,7 @@
         {include file="{$fileInclude|templateInclude}" title=pageContent}
         {include file="{$incfile.footer3}" title=title}
     </div>
+    {include file="{$incfile.pdpa}" title=title}
     {include file="{$incfile.loadscript}" title=title}
     {include file="{$incfile.modal}" title=title}
     </body>

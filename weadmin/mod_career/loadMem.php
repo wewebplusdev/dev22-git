@@ -75,18 +75,34 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
   // SQL SELECT #########################
   $sql_export = "SELECT 
-              " . $mod_tb_apply . "_id,
-              " . $mod_tb_apply . "_name ,
-              " . $mod_tb_root . "_subject,
-              " . $mod_tb_apply . "_credate ,
-              " . $mod_tb_apply . "_status,
-              " . $mod_tb_apply . "_pic ,
-              " . $mod_tb_apply . "_province,
-              " . $mod_tb_apply . "_sex,
-              " . $mod_tb_apply . "_history,
-              " . $mod_tb_apply . "_salary ,
-              " . $mod_tb_apply . "_email ,
-              " . $mod_tb_apply . "_mobile 
+        " . $mod_tb_apply . "_id              as id,
+        " . $mod_tb_apply . "_name            as name,   
+        " . $mod_tb_apply . "_credate         as credate, 
+				" . $mod_tb_apply . "_status          as status, 
+        " . $mod_tb_apply . "_pic             as pic,        
+				" . $mod_tb_apply . "_province        as province, 
+				" . $mod_tb_apply . "_sex             as sex, 
+        " . $mod_tb_apply . "_salary          as salary, 
+        " . $mod_tb_apply . "_email           as email, 
+				" . $mod_tb_apply . "_jID             as jID,
+				" . $mod_tb_apply . "_prefix          as prefix,
+
+				" . $mod_tb_apply . "_info             as info,
+				" . $mod_tb_apply . "_general             as general,
+				" . $mod_tb_apply . "_address             as address,
+				" . $mod_tb_apply . "_military             as military,
+				" . $mod_tb_apply . "_emergency             as emergency,
+				" . $mod_tb_apply . "_family             as family,
+				" . $mod_tb_apply . "_brother             as brother,
+				" . $mod_tb_apply . "_education             as education,
+				" . $mod_tb_apply . "_training             as training,
+				" . $mod_tb_apply . "_workhistory             as workhistory,
+				" . $mod_tb_apply . "_language             as language,
+				" . $mod_tb_apply . "_information             as information,
+				" . $mod_tb_apply . "_reference             as reference,
+				" . $mod_tb_apply . "_comment             as comment,
+				" . $mod_tb_apply . "_sdate             as sdate,
+				" . $mod_tb_root . "_subject             as subject
         FROM " . $mod_tb_root;
   $sql_export = $sql_export . "  INNER JOIN  " . $mod_tb_apply . "  ON " . $mod_tb_root . "." . $mod_tb_root . "_id=" . $mod_tb_apply . "." . $mod_tb_apply . "_jID   WHERE " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
 
@@ -352,7 +368,8 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 " . $mod_tb_apply . "_sex,
 " . $mod_tb_apply . "_salary ,
 " . $mod_tb_apply . "_email ,
-" . $mod_tb_apply . "_address  as test
+" . $mod_tb_apply . "_address  as addressinfo,
+" . $mod_tb_apply . "_education  as educations
 ";
         $sql = $sql . " FROM  " . $mod_tb_root . "  INNER JOIN  " . $mod_tb_apply . "  ON " . $mod_tb_root . "." . $mod_tb_root . "_id=" . $mod_tb_apply . "." . $mod_tb_apply . "_jID   WHERE " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
 
@@ -440,12 +457,10 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 
             $valProvince = $row[6];
             $valSex = $row[7];
-            // $valHistory=json_decode($row[8],true);
-            // $valEdu = array_slice($valHistory['grade'],0,1)[0];
-            // print_pre($valEdu);
             $valSalary = number_format($row[8]);
             $valEmail = rechangeQuot($row[9]);
-
+            $valAddress = json_decode($row['addressinfo'], true);
+            $valEducation = json_decode($row['educations'], true);
 
             if ($valStatus == "Read") {
               $valStatusClass =  "fontContantTbEnable";
@@ -481,11 +496,11 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                   <tr>
                     <td align="left">&nbsp;</td>
                     <td align="left"><span class="fontContantTbTime">
-                        <?php echo $langMod["ep:email"] ?>: <?php echo $valEmail ?> | <?php echo $langMod["ep:mobile"] ?>: <?php echo $valMobile ?><br />
+                        <?php echo $langMod["ep:email"] ?>: <?php echo $valEmail ?> | <?php echo $langMod["ep:mobile"] ?>: <?php echo $valAddress['tel'] ?><br />
                         <?php echo $langMod["ep:select"] ?>: <?php echo $valSubject ?><br />
                         <?php echo $langMod["ep:province"] ?>: <?php echo loadNameProvince($valProvince) ?><br />
-                        <?php echo $langMod["ep:sex"] ?>: <?php echo $$valSex; ?><br />
-                        <?php echo $langMod["ep:edu"] ?>: <?php echo $valEdu ?><br />
+                        <?php echo $langMod["ep:sex"] ?>: <?php echo $valSex; ?><br />
+                        <?php echo $langMod["ep:edu"] ?>: <?php echo $valEducation[0]['level'] ?><br />
                         <?php echo $langMod["ep:money"] ?>: <?php echo $valSalary ?><br />
 
                       </span></td>

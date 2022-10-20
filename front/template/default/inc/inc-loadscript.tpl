@@ -20,6 +20,11 @@
 <script src="{$template}/assets/js/fontsize.js{$lastModify}"></script>
 <script src="{$template}/assets/js/theme-style.js{$lastModify}"></script>
 <script src="{$template}/assets/js/main.js{$lastModify}"></script>
+
+<!-- JS PDPA -->
+<script src="{$template}/assets/js/cookie.js{$lastModify}"></script>
+<script src="{$template}/assets/js/pdpa.js{$lastModify}"></script>
+
 <script type="text/javascript">var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;</script>
 
 {strip}

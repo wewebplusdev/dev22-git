@@ -139,7 +139,7 @@ if (!empty($_POST) && $responseData->success || true) {
 
   //information
   $arrKeyKeyInfomation = array(
-    'country-out-permanent ', 'country-out-temporary', 'contagious', 'contagious-other', 'handicap', 'handicap-other', 'investigation', 'investigation-other',
+    'country-out-permanent', 'country-out-temporary', 'contagious', 'contagious-other', 'handicap', 'handicap-other', 'investigation', 'investigation-other',
     'discharged', 'discharged-other', 'friend', 'friend-other', 'vacancy', 'vacancy-other-1', 'vacancy-other-2', 'beneficial'
   );
   $index = 0;
