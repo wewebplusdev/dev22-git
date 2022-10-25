@@ -1,0 +1,365 @@
+.calendar-page {
+    .calendar-block {
+        box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+        border-radius: 10px;
+        overflow: hidden;
+        .calendar-tap-select {
+            background-color: var(--color-primary);
+            padding: 20px 0;
+            // height: 90px;
+            .day {
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                position: relative;
+                width: 80%;
+                .txt {
+                    font-size: var(--typo-xl);
+                    color: var(--color-light);
+                    text-align: center;
+                    font-weight: var(--fw-bold);
+                }
+                .border-custom {
+                    width: 7px;
+                    height: 100%;
+                    background-color: var(--color-light);
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .form-group {
+                text-align: center;
+                margin: 0;
+                .select2-container--option-year .select2-selection--single {
+                    background-color: transparent;
+                }
+                .select2-container--option-year .select2-selection--single .select2-selection__rendered {
+                    color: var(--color-light);
+                    font-size: var(--typo-md);
+                }
+                .select2-container--option-year .select2-selection--single .select2-selection__arrow::before {
+                    color: #ffff;
+                    font-size: var(--typo-lg);
+                }
+            }
+            .select2-dropdown {
+                background-color: var(--color-primary);
+                color: var(--color-light);
+                border-radius: 10px;
+            }
+        }
+        table {
+            .calDay {
+                color: var(--color-dafault);
+            }
+            .calDay.text-active {
+                color: #FF3D00;
+            }
+            td {
+                position: relative;
+                width: 60px;
+                height: 60px;
+                .calDayNormal {
+                    position: relative;
+                    font-size: var(--typo-sm);
+                    color: var(--color-dafault);
+                }
+            }
+            td.calDayNameberBgCaseA.calDayEvent::before {
+                content: "";
+                width: 0.4em;
+                height: 0.4em;
+                position: absolute;
+                top: 20px;
+                right: 15px;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                background-color: var(--color-primary);
+                z-index: 1;
+            }
+            td.calDayNameberBgCaseA .calDayToday {
+                background-color: #CFE0FF;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                position: relative;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .calendar-explain {
+            position: relative;
+            list-style: none;
+            padding: 30px 0;
+            margin: 0 45px;
+            background-color: var(--color-light);
+            font-size: var(--typo-sm);
+            font-weight: 600;
+            .explain-I::before {
+                content: "•";
+                position: absolute;
+                top: 20px;
+                left: -20px;
+                font-size: var(--typo-xl);
+                color: var(--color-primary);
+            }
+            .explain-II::before {
+                content: "•";
+                position: absolute;
+                top: 20px;
+                margin-left: -20px;
+                font-size: var(--typo-xl);
+                color: #CFE0FF;
+            }
+        }
+    }
+    #calendarList {
+        box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+        border-radius: 10px;
+        overflow: hidden;
+        .title {
+            height: 90px;
+            background-color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            span {
+                color: var(--color-light);
+                font-size: var(--typo-md);
+                font-weight: var(--fw-bold);
+                padding: 6px 0;
+                padding-left: 20px;
+                // padding-top: 9px;
+                // padding-bottom: 8px;
+                position: relative;
+                border-left: 7px solid #fff;
+            }
+        }
+        .calendar-vertical-block {
+            background-color: var(--color-light);
+            height: 500px;
+            overflow-y: auto;
+            .link {
+                color: var(--color-dark);
+                font-size: var(--typo-sm);
+            }
+            .link:hover .list-wrapper {
+                background: linear-gradient(180deg, #A8BAF4 0%, #F2F5FF 100%);
+            }
+            .list-wrapper {
+                border-bottom: 1px solid #7070702b;
+                padding: 30px 15px 30px 40px;
+                height: 125px;
+                display: flex;
+                align-items: center;
+                .list-inner {
+                    position: relative;
+                    .list-title {
+                        font-size: var(--typo-sm);
+                    }
+                }
+                .list-inner::before {
+                    content: "";
+                    width: 0.5em;
+                    height: 0.5em;
+                    position: absolute;
+                    top: 15px;
+                    left: -17px;
+                    transform: translate(-50%, -50%);
+                    border-radius: 50%;
+                    background-color: var(--color-primary);
+                }
+            }
+            .list-date {
+                font-size: var(--typo-s);
+                color: #859AC1;
+                position: relative;
+                top: 5px;
+            }
+        }
+        .calendar-vertical-block::-webkit-scrollbar {
+            background: linear-gradient(179.99deg, #E4E9ED 0.01%, #FFFFFF 66.14%);
+            width: 10px;
+        }
+        .calendar-vertical-block::-webkit-scrollbar-thumb {
+            background-color: var(--color-primary);
+            border-radius: 5px;
+            height: 10rem;
+            position: relative;
+        }
+    }
+    .calendar-group {
+        margin-top: 30px;
+        .title {
+            font-size: var(--typo-md);
+            font-weight: var(--fw-bold);
+            color: var(--color-dafault);
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: var(--typo-sm);
+            .icon {
+                width: 0.5em;
+                height: 0.5em;
+                position: relative;
+                display: inline-block;
+                top: 1px;
+                margin-right: 8px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .calendar-page {
+        .calendar-block {
+            .calendar-tap-select {
+                height: 80px;
+                .form-group {
+                    .select2-container--option-year .select2-selection--single {
+                        height: 0;
+                        padding: 0;
+                    }
+                }
+            }
+            table {
+                td {
+                    width: 50px;
+                    height: 55px;
+                }
+                td.calDayNameberBgCaseA.calDayEvent::before {
+                    width: 0.3em;
+                    height: 0.3em;
+                }
+            }
+            .calendar-explain {
+                .explain-I::before,
+                .explain-II::before {
+                    top: 23px;
+                }
+            }
+        }
+        #calendarList {
+            .title {
+                height: 80px;
+            }
+            .calendar-vertical-block {
+                height: 463px;
+                .list-wrapper {
+                    height: 115.75px;
+                    .list-inner::before {
+                        top: 12px;
+                    }
+                }
+            }
+            .calendar-vertical-block::-webkit-scrollbar {
+                width: 6px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .calendar-page {
+        .calendar-block {
+            .calendar-tap-select {
+                .form-group {
+                    .select-wrapper {
+                        width: 65%;
+                        margin: auto;
+                        .select2-container--option-year .select2-selection--single .select2-selection__rendered {
+                            font-size: var(--typo-lg);
+                        }
+                    }
+                }
+            }
+            table {
+                td {
+                    width: 60px;
+                    height: 60px;
+                    font-size: var(--typo-md);
+                    .calDayNormal {
+                        font-size: var(--typo-md);
+                    }
+                }
+                td.calDayNameberBgCaseA.calDayEvent::before {
+                    top: 20px;
+                    right: 35px;
+                }
+            }
+            .calendar-explain {
+                font-size: var(--typo-md);
+                .explain-I::before,
+                .explain-II::before {
+                    top: 22px;
+                }
+            }
+        }
+        #calendarList {
+            margin-top: 30px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .calendar-page {
+        .calendar-block {
+            .calendar-tap-select {
+                .form-group {
+                    .select-wrapper {
+                        width: 90%;
+                    }
+                }
+            }
+            table {
+                td {
+                    height: 55px;
+                }
+                td.calDayNameberBgCaseA.calDayEvent::before {
+                    right: 20px;
+                }
+            }
+        }
+        #calendarList {
+            .calendar-vertical-block {
+                height: 400px;
+                .list-wrapper {
+                    height: 100px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .calendar-page {
+        height: 70px;
+        .calendar-block {
+            .calendar-tap-select {
+                .form-group {
+                    .select-wrapper {
+                        width: 100%;
+                        .select2-container--option-year .select2-selection--single .select2-selection__rendered {
+                            font-size: var(--typo-sm);
+                        }
+                    }
+                }
+            }
+            table {
+                td.calDayNameberBgCaseA.calDayEvent::before {
+                    right: 5px;
+                }
+            }
+        }
+        #calendarList {
+            .title {
+                height: 70px;
+            }
+        }
+    }
+}
