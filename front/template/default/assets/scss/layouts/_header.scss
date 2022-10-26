@@ -15,7 +15,7 @@
         width: 100%;
     }
     .brand {
-        transition: 0.3s;
+        transition: all 300ms;
         max-width: 380px;
     }
     .search {
@@ -395,6 +395,7 @@
             right: 0;
             height: 260px;
             background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+            transition: all 300ms;
         }
         .search {
             margin-left: 2.5rem;
@@ -497,6 +498,44 @@
         top: 200px;
         .dropright .dropdown-menu {
             height: calc(100vh - 200px);
+        }
+    }
+
+    .site-header.tiny {
+        height: 74px;
+        &::before {
+            height: 100px;
+        }
+        .brand {
+            // transform: translateY(96px);
+            position: absolute;
+            width: 165px;
+            top: 96px;
+        }
+        .site-header-topbar {
+            display: block;
+            margin: 0;
+        }
+        .search,
+        .site-header-topbar .text-color,
+        .site-header-topbar .text-size,
+        .site-header-topbar .text-language {
+            display: none;
+        }
+        .site-header-main {
+            padding-left: 185px;
+            .main-menu-list .nav-list > li a {
+                font-size: 14px;
+            }
+            .menu {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+    .menu-full.tiny {
+        top: 74px;
+        .dropright .dropdown-menu {
+            height: calc(100vh - 74px);
         }
     }
 }
@@ -723,6 +762,26 @@
         height: calc(100vh - 78px);
     }
 
+    .theme-2 .site-header {
+        height: 144px;
+    }
+    .theme-2 .menu-full {
+        top: 144px;
+    }
+    .theme-2 .menu-full .dropright .dropdown-menu {
+        height: calc(100vh - 144px);
+    }
+    .theme-2 .site-header-main .main-menu-list .nav-list > li a {
+        font-size: 16px;
+    }
+    .theme-2 .site-header.tiny .site-header-main {
+        padding-left: 164px;
+    }
+    .theme-2 .site-header.tiny .brand {
+        width: 145px;
+    }
+    
+
     .theme-3 .site-header {
         height: 124px;
     }
@@ -830,6 +889,9 @@
         .dropright .dropdown-menu {
             height: calc(100vh - 124px);
         }
+    }
+    .theme-2 .site-header.tiny .brand {
+        display: none;
     }
 
     .theme-3 .site-header-topbar {

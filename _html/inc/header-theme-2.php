@@ -74,7 +74,7 @@
 				<div class="col-auto">
 					<div class="brand">
 						<a href="index-theme-2.php" class="link" title="Gem and Jewelry Institute of Thailand">
-							<img src="<?php echo $core_template; ?>/assets/img/static/git-brand-theme-2.svg" alt="Gem and Jewelry Institute of Thailand">
+							<img src="<?php echo $core_template; ?>/assets/img/static/git-brand-2.svg" alt="Gem and Jewelry Institute of Thailand">
 						</a>
 					</div>
 				</div>
@@ -86,7 +86,7 @@
 						<form class="form">
 							<div class="input-group">
 								<div class="form-outline">
-									<input type="text" id="keywords" class="form-control" placeholder="ค้นหา..." />
+									<input type="text" id="keywords" class="form-control" placeholder="ค้นหา...">
 									<label class="visuallyhidden" for="keywords">Search</label>
 								</div>
 								<button type="button" class="btn btn-search">

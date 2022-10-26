@@ -258,7 +258,7 @@
 								<form class="form">
 									<div class="input-group">
 										<div class="form-outline">
-											<input type="search" id="keywords" class="form-control" placeholder="ค้นหา..." />
+											<input type="search" id="keywords" class="form-control" placeholder="ค้นหา...">
 											<label class="visuallyhidden" for="keywords">Search</label>
 										</div>
 										<button type="button" class="btn btn-search">
