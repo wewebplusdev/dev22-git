@@ -284,6 +284,10 @@ $lang['career']['working:period'] = "working period";
 $lang['career']['home:title'] = "From the original business of";
 $lang['career']['home:des'] = "we have expanded our operations into rapidly growing <br>industries of alternative energy, waste management, <br>and public infrastructure.";
 
+//infomation-service
+$lang['infoserv']['pictures'] = "Show Pictures";
+$lang['infoserv']['infoservice'] = "Information Service";
+
 $lang['system']['close'] = "Close";
 $lang['system']['ducdownload'] = "Document Download";
 $lang['system']['share'] = "share";
