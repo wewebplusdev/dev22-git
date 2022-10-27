@@ -250,14 +250,31 @@ $(document).ready(function() {
     });
 
 
-    $('.top-graphic .slider').slick({
+    $('.theme-2 .top-graphic .slider').slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+    });
+
+    $('.services-block .slider').slick({
+        infinite: false,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        rows: 2,
+        arrows: false,
+        dots: true,
+    });
+    
+    $('.theme-3 .top-graphic .slider').slick({
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
         dots: false,
     });
-
+    
     $('.banner-block .slider').slick({
         infinite: false,
         slidesToShow: 1,
