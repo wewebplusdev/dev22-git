@@ -28,7 +28,7 @@
         <ul class="item-list">
           {foreach $callWel as $keycallWel => $valuecallWel}
             <li>
-              <a {if $valuecallWel.url neq "#" && $valuecallWel.url neq ""}href="{$valuecallWel.url}"{else}href="javascript:void(0);"{/if} {if $valuecallWel.target eq 2}target="_blank"{/if} class="link" title="SAMPLE TRACKING">
+              <a {if $valuecallWel.url neq "#" && $valuecallWel.url neq ""}href="{$valuecallWel.url}"{else}href="javascript:void(0);"{/if} {if $valuecallWel.target eq 2}target="_blank"{/if} class="link" title="{$valuecallWel.subject}">
                 <figure class="cover">
                   <img src="{$valuecallWel['pic']|fileinclude:"real":{$valuecallWel['masterkey']}:"link"}" alt="{$valuecallWel.subject}">
                 </figure>

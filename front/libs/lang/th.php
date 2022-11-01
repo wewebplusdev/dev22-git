@@ -280,6 +280,10 @@ $lang['career']['working:period'] = "ระยะเวลาทำงาน";
 $lang['career']['home:title'] = "จากธุรกิจเดิมของ";
 $lang['career']['home:des'] = "เราได้ขยายการดำเนินงานของเราไปสู่การเติบโตอย่างรวดเร็ว <br>อุตสาหกรรมพลังงานทดแทน การจัดการของเสีย <br>และโครงสร้างพื้นฐานสาธารณะ";
 
+//infomation-service
+$lang['infoserv']['pictures'] = "แสดงภาพ";
+$lang['infoserv']['infoservice'] = "งานบริการข้อมูล";
+
 $lang['system']['close'] = "ปิด";
 $lang['system']['ducdownload'] = "เอกสารดาวน์โหลด";
 $lang['system']['share'] = "แบ่งปัน";

@@ -48,6 +48,8 @@ $config['about']['mr']['masterkey'] = 'mr';
 $config['about']['plc']['masterkey'] = 'plc';
 $config['contact']['cu']['masterkey'] = 'cu';
 $config['about']['ab_js']['masterkey'] = "ab_js";
+$config['infoservice']['is_art']['masterkey'] = "is_art";
+$config['infoservice']['is_ms']['masterkey'] = "is_ms";
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';
 $config['policy']['db'] = 'md_ab';

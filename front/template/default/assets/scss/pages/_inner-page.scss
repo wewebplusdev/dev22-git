@@ -226,10 +226,10 @@
                 }
                 a {
                     text-align: center;
-                    color: #091741;
+                    color: var(--color-primary-dark);
                     text-decoration: none;
                     &:hover {
-                        color: #091741;
+                        color: var(--color-primary-dark);
                     }
                 }
             }

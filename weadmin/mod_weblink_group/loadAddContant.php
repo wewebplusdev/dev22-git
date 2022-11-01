@@ -235,6 +235,49 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:picDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="right" valign="top" height="15"></td>
+                </tr>
+
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["inp:album"] ?></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="file-input-wrapper">
+                            <button class="btn-file-input"><?php echo $langTxt["us:inputpicselect"] ?></button>
+                            <input type="file" name="fileToUpload" id="fileToUpload" onchange="ajaxFileUpload();" />
+                        </div>
+
+                        <span class="formFontNoteTxt"><?php echo $langMod["inp:notepic"] ?></span>
+                        <div class="clearAll"></div>
+                        <div id="boxPicNew" class="formFontTileTxt">
+                            <input type="hidden" name="picname" id="picname" />
+                        </div>
+                    </td>
+                </tr>
+                <tr style="display:none;">
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $modTxtShowPic[0] ?></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <label>
+                            <div class="formDivRadioL"><input name="inputTypePic" id="inputTypePic" value="1" type="radio" class="formRadioContantTb" /></div>
+                            <div class="formDivRadioR"><?php echo $modTxtShowPic[1] ?></div>
+                        </label>
+
+                        <label>
+                            <div class="formDivRadioL"><input name="inputTypePic" id="inputTypePic" value="2" type="radio" class="formRadioContantTb" checked="checked" /></div>
+                            <div class="formDivRadioR"><?php echo $modTxtShowPic[2] ?></div>
+                        </label>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:date"] ?></span><br />
                         <span class="formFontTileTxt"><?php echo $langMod["txt:dateDe"] ?></span>
                     </td>

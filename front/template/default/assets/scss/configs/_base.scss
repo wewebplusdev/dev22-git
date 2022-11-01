@@ -383,3 +383,11 @@ textarea {
     width: 100%;
     height: 100%;
 }
+
+.circle {
+    border-radius: 50%;
+}
+.circle-border {
+    border-radius: 50%;
+    border: 1px solid;
+}
