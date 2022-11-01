@@ -2,8 +2,6 @@
 $path_root = ""; #ถ้า root อยู่ public
 define("_http", "http");
 
-
-
 // if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
 //   $protocol = 'https://';
 // }else {
@@ -57,10 +55,10 @@ if (!empty($memberLogin)) {
 ## call page ##
 $url = new url;
 $linklang = configlang($url->pagelang[2]);
-if (empty($url->segment[0])) {
-    header("Location:" . $linklang . "/" . $url_show_default);
-    exit();
-}
+// if (empty($url->segment[0])) {
+//     header("Location:" . $linklang . "/" . $url_show_default);
+//     exit();
+// }
 
 $smarty->assign("ul", $linklang);
 $smarty->assign("langon", $url->pagelang[2]);

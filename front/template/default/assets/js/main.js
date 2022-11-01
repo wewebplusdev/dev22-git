@@ -261,8 +261,20 @@ $(document).ready(function() {
     $('.services-block .slider').slick({
         infinite: false,
         slidesToShow: 2,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         rows: 2,
+        arrows: false,
+        dots: true,
+    });
+
+    $('.training-block .slider').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        infinite: false,
+        vertical: true,
+        verticalSwiping: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
         arrows: false,
         dots: true,
     });

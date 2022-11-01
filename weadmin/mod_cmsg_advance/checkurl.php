@@ -6,39 +6,37 @@ include("../lib/function.php");
 include("incModLang.php");
 include("config.php");
 
-if ($_REQUEST['execute'] == 'update') {
-	$sql = "SELECT 
-	".$mod_tb_root."_id,
-	".$mod_tb_root."_urlfriendly as urlfriendly
+$sql = " SELECT 
+".$mod_tb_root_short.".".$mod_tb_root_short."_id as id,
+".$mod_tb_root_short.".".$mod_tb_root_short."_masterkey as masterkey,
+".$mod_tb_root_short.".".$mod_tb_root_short."_short_url as short_url,
+".$mod_tb_root_short.".".$mod_tb_root_short."_long_url as long_url
+FROM
+".$mod_tb_root_short."
+WHERE
+".$mod_tb_root_short.".".$mod_tb_root_short."_masterkey = '".$_REQUEST['masterkey']."'
+AND ".$mod_tb_root_short.".".$mod_tb_root_short."_short_url = '".$_REQUEST['inputShortUrl']."'
+";
 
-	FROM ".$mod_tb_root." 
-
-	WHERE  ".$mod_tb_root."_masterkey = '".$_REQUEST['masterkey']."'    ";
-	$sql = $sql."  AND ".$mod_tb_root."_urlfriendly ='".$_REQUEST['inputUrlFriendly']."'   ";
-	$sql = $sql."  AND ".$mod_tb_root."_id !='".$_REQUEST['valEditID']."'   ";
-	$query=wewebQueryDB($coreLanguageSQL,$sql);
-}else{
-	$sql = "SELECT 
-	".$mod_tb_root."_id,
-	".$mod_tb_root."_urlfriendly as urlfriendly
-
-	FROM ".$mod_tb_root." 
-
-	WHERE  ".$mod_tb_root."_masterkey = '".$_REQUEST['masterkey']."'    ";
-	$sql = $sql."  AND ".$mod_tb_root."_urlfriendly ='".$_REQUEST['inputUrlFriendly']."'   ";
-	$query=wewebQueryDB($coreLanguageSQL,$sql);
+if (!empty($_REQUEST['valEditID'])) {
+	$sql .= " AND ".$mod_tb_root_short.".".$mod_tb_root_short."_contantid != '".$_REQUEST['valEditID']."' ";
 }
 
-if($query->_numOfRows == 0){
-	$listreturn['status'] = 'Allowed';
-	$listreturn['msg'] = 'สามารถใช้งานได้';
-	$listreturn['color'] = 'green';
+$qeury = wewebQueryDB($coreLanguageSQL, $sql);
+$numOfRow = wewebNumRowsDB($coreLanguageSQL, $qeury);
+
+$arrJson = array();
+if($numOfRow == 0){
+	$arrJson['status'] = 'Allowed';
+	$arrJson['msg'] = 'สามารถใช้งานได้';
+	$arrJson['color'] = 'green';
 }else{
-	$listreturn['status'] = 'Disabled';
-	$listreturn['msg'] = 'ไม่สามารถใช้ได้';
-	$listreturn['color'] = 'red';
+	$arrJson['status'] = 'Disabled';
+	$arrJson['msg'] = 'ไม่สามารถใช้ได้';
+	$arrJson['color'] = 'red';
 }
-echo json_encode($listreturn);
+
+echo json_encode($arrJson);
 
 ?>
 

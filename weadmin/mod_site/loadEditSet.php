@@ -41,7 +41,9 @@ $sql = "SELECT
 " . $mod_tb_set . "_subjectofficecn as subjectofficecn,
 " . $mod_tb_set . "_descriptioncn as descriptioncn,
 " . $mod_tb_set . "_keywordscn as keywordscn,
-" . $mod_tb_set . "_metatitlecn as metatitlecn
+" . $mod_tb_set . "_metatitlecn as metatitlecn,
+" . $mod_tb_set . "_addresspicen as addresspicen,
+" . $mod_tb_set . "_addresspiccn as addresspiccn
 
 
  FROM " . $mod_tb_set . " WHERE " . $mod_tb_set . "_id='" . $_REQUEST["valEditID"] . "'  AND " . $mod_tb_set . "_masterkey='" . $_REQUEST["masterkey"] . "'  ";
@@ -89,6 +91,12 @@ $valSubjectOfficecn = rechangeQuot($Row['subjectofficecn']);
 $valDescriptioncn = $Row['descriptioncn'];
 $valKeywordscn = $Row['keywordscn'];
 $valMetatitlecn = $Row['metatitlecn'];
+
+$valPicen = $mod_path_pictures . "/" . $Row['addresspicen'];
+$valPicNameen = $Row['addresspicen'];
+$valPiccn = $mod_path_pictures . "/" . $Row['addresspiccn'];
+$valPicNamecn = $Row['addresspiccn'];
+
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 
 $myRand = time() . rand(111, 999);
@@ -950,7 +958,7 @@ $myRand = time() . rand(111, 999);
 
 
                 <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["info:picaddress"] ?></td>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["info:picaddress"] ?>(<?php echo $langTxt["lg:thai"]; ?>)</td>
                     <td colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="file-input-wrapper">
                             <button class="btn-file-input"><?php echo  $langTxt["us:inputpicselect"] ?></button>
@@ -967,12 +975,46 @@ $myRand = time() . rand(111, 999);
                                 <input type="hidden" name="picname" id="picname" value="<?php echo  $valPicName ?>" />
                             <?php } ?>
                         </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["info:picaddress"] ?>(<?php echo $langTxt["lg:eng"]; ?>)</td>
+                    <td colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="file-input-wrapper">
+                            <button class="btn-file-input"><?php echo  $langTxt["us:inputpicselect"] ?></button>
+                            <input type="file" name="fileToUploaden" id="fileToUploaden" onchange="ajaxFileUploadMultiple('loadInsertPicen.php', 'fileToUploaden', '#boxPicNewen', 'picnameen');" />
+                        </div>
 
-                        <?php /* ?>
-                            <div id="boxPicNew" class="formFontTileTxt">
-                                <input type="hidden" name="picname" id="picname" />
-                            </div>
-                            <?php */ ?>
+                        <span class="formFontNoteTxt"><?php echo  $langMod["inp:notepic"] ?></span>
+                        <div class="clearAll"></div>
+
+                        <div id="boxPicNewen" class="formFontTileTxt">
+                            <?php if (is_file($valPicen)) { ?>
+                                <img src="<?php echo  $valPicen ?>" style="float:left;border:#c8c7cc solid 1px; width: calc(50% - 20px);" />
+                                <div style="width:22px; height:22px;float:left;z-index:1; margin-left:-22px;cursor:pointer;" onclick="delPicUpload('deletePicen.php')" title="Delete file"><img src="../img/btn/delete.png" width="22" height="22" border="0" /></div>
+                                <input type="hidden" name="picnameen" id="picnameen" value="<?php echo  $valPicNameen ?>" />
+                            <?php } ?>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["info:picaddress"] ?>(<?php echo $langTxt["lg:chi"]; ?>)</td>
+                    <td colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="file-input-wrapper">
+                            <button class="btn-file-input"><?php echo  $langTxt["us:inputpicselect"] ?></button>
+                            <input type="file" name="fileToUploadcn" id="fileToUploadcn" onchange="ajaxFileUploadMultiple('loadInsertPiccn.php', 'fileToUploadcn', '#boxPicNewcn', 'picnamecn');" />
+                        </div>
+
+                        <span class="formFontNoteTxt"><?php echo  $langMod["inp:notepic"] ?></span>
+                        <div class="clearAll"></div>
+
+                        <div id="boxPicNewcn" class="formFontTileTxt">
+                            <?php if (is_file($valPiccn)) { ?>
+                                <img src="<?php echo  $valPiccn ?>" style="float:left;border:#c8c7cc solid 1px; width: calc(50% - 20px);" />
+                                <div style="width:22px; height:22px;float:left;z-index:1; margin-left:-22px;cursor:pointer;" onclick="delPicUpload('deletePiccn.php')" title="Delete file"><img src="../img/btn/delete.png" width="22" height="22" border="0" /></div>
+                                <input type="hidden" name="picnamecn" id="picnamecn" value="<?php echo  $valPicNamecn ?>" />
+                            <?php } ?>
+                        </div>
                     </td>
                 </tr>
                 <!-- 
@@ -1296,6 +1338,49 @@ $myRand = time() . rand(111, 999);
                         } else {
                             jQuery("#boxPicNew").show();
                             jQuery("#boxPicNew").html(data.msg);
+                            setTimeout(jQuery.unblockUI, 200);
+                        }
+                    }
+                },
+                error: function(data, status, e) {
+                    alert(e);
+                }
+            })
+            return false;
+
+        }
+
+        function ajaxFileUploadMultiple(file, ElementTemp, target, picname) {
+            var valuepicname = jQuery("input#" + picname).val();
+
+            jQuery.blockUI({
+                message: jQuery('#tallContent'),
+                css: {
+                    border: 'none',
+                    padding: '35px',
+                    backgroundColor: '#000',
+                    '-webkit-border-radius': '10px',
+                    '-moz-border-radius': '10px',
+                    opacity: .9,
+                    color: '#fff'
+                }
+            });
+
+
+            jQuery.ajaxFileUpload({
+                url: file + '?myID=<?php echo  $myRand ?>&masterkey=<?php echo  $_REQUEST['masterkey'] ?>&langt=<?php echo  $_REQUEST['inputLt'] ?>&delpicname=' + valuepicname + '&menuid=<?php echo  $_REQUEST['menukeyid'] ?>',
+                secureuri: false,
+                fileElementId: ElementTemp,
+                dataType: 'json',
+                success: function(data, status) {
+                    if (typeof(data.error) != 'undefined') {
+
+                        if (data.error != '') {
+                            alert(data.error);
+
+                        } else {
+                            jQuery(target).show();
+                            jQuery(target).html(data.msg);
                             setTimeout(jQuery.unblockUI, 200);
                         }
                     }

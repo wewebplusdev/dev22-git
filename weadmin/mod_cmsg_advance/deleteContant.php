@@ -106,6 +106,10 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 				}
 			}
 			
+			$sql="DELETE FROM ".$mod_tb_root_short." WHERE   ".$mod_tb_root_short."_contantid='".$permissionID."' AND ".$mod_tb_root_short."_masterkey='".$_REQUEST['masterkey']."'";
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			
+			
 			$sql="DELETE FROM ".$mod_tb_root_album." WHERE   ".$mod_tb_root_album."_contantid='".$permissionID."' ";
 			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 			

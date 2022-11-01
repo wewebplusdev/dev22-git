@@ -90,6 +90,8 @@ if ($valPin == "Pin") {
 } else {
     $valStatusPinClass =  "fontContantTbDisable";
 }
+$callCheckUrl = callCheckUrl($valID, $mod_tb_root_short);
+
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 
 logs_access('3', 'View');
@@ -421,6 +423,21 @@ logs_access('3', 'View');
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:short"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:shortDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjecturl"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView"><a href="http://<?php echo $siteurl.$callCheckUrl->fields['short_url']; ?>" target="_blank"><?php echo $callCheckUrl->fields['short_url']; ?></a></div>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:date"] ?></span><br />
                         <span class="formFontTileTxt"><?php echo $langMod["txt:dateDe"] ?></span>
                     </td>
@@ -437,8 +454,6 @@ logs_access('3', 'View');
                         <div class="formDivView"><?php echo $valEdate ?></div>
                     </td>
                 </tr>
-
-
             </table>
             <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">

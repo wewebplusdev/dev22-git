@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-19 17:48:18
+/* Smarty version 4.0.0, created on 2022-11-01 10:05:06
   from '/var/www/html/front/template/default/_component/cms_advance_list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_634fd5f2710552_67038083',
+  'unifunc' => 'content_63608ce2f15838_07385812',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '11cd185fe91e1a5b5fd100c168759688183475b0' => 
     array (
       0 => '/var/www/html/front/template/default/_component/cms_advance_list.tpl',
-      1 => 1666176497,
+      1 => 1667271905,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634fd5f2710552_67038083 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63608ce2f15838_07385812 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
@@ -81,8 +81,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
     <?php if (count($_smarty_tpl->tpl_vars['arrMenu']->value) > 0 && $_smarty_tpl->tpl_vars['showslick']->value) {?>
       <div class="container mt-5">
-        <h2 class="text-primary mb-4"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['breadcrumb'];?>
+        <div class="row aling-items-center gutters-10">
+          <h2 class="text-primary mb-4"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['breadcrumb'];?>
 </h2>
+          <?php if ($_smarty_tpl->tpl_vars['settingModulus']->value['rssfeed']) {?>
+            <div class="col-auto">
+              <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/rss/<?php echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['masterkey'];?>
+GIT<?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['group'];?>
+.xml" target="_blank" class="rss">
+                  <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-rss.png" alt="icon rss">
+              </a>
+            </div>
+          <?php }?>
+        </div>
         <div class="default-tab-slider default-slick" data-slick='<?php echo $_smarty_tpl->tpl_vars['initialSlide2']->value;?>
 '>
           <?php
