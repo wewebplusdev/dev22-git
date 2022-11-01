@@ -8237,6 +8237,11 @@ fieldset {
   overflow: visible;
 }
 
+.rss {
+  display: block;
+  margin-top: 6px;
+}
+
 .nav-slider-block {
   margin-bottom: 2rem;
 }
@@ -10256,6 +10261,192 @@ fieldset {
 .about .form-group .select-custom .select2-container--option-year .select2-selection--single {
   padding: 14px 5px;
 }
+.about .tag-list .item-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.about .tag-list .item-list li {
+  position: relative;
+  padding: 15px 20px;
+  padding-left: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #ECF0F3;
+}
+.about .tag-list .item-list li:hover {
+  background-color: #DEE7F2;
+}
+.about .tag-list .item-list li:hover .detail-hashtag {
+  text-decoration: none;
+  color: #2680EB;
+}
+.about .tag-list .item-list li .detail-hashtag {
+  font-size: var(--typo-xs);
+  color: var(--color-primary);
+}
+.about .tag-list .item-list li .detail-hashtag::before {
+  content: "#";
+  font-size: var(--typo-xs);
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+}
+.about .search-page {
+  -webkit-box-shadow: 0px 3px 20px rgba(167, 198, 255, 0.3);
+          box-shadow: 0px 3px 20px rgba(167, 198, 255, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.about .search-page .search-bar {
+  position: relative;
+  background-color: var(--color-primary);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 30px;
+  -webkit-box-shadow: var(--box-shadow-100);
+          box-shadow: var(--box-shadow-100);
+  color: var(--color-light);
+}
+.about .search-page .search-bar .title {
+  font-size: var(--typo-md);
+  font-weight: var(--fw-semi-bold);
+  color: var(--color-light);
+  border-left: 9px solid #fff;
+  padding: 9px 0 9px 20px;
+}
+.about .search-page .search-bar .form-group .block-control {
+  position: relative;
+}
+.about .search-page .search-bar .form-group .block-control .form-control {
+  border-radius: 2px;
+}
+.about .search-page .search-bar .form-group .block-control .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20px;
+}
+.about .search-page .search-list {
+  background-color: var(--color-light);
+}
+.about .search-page .search-list .title {
+  font-size: var(--typo-sm);
+  color: var(--color-dark);
+  padding: 20px 30px;
+  border-bottom: 2px solid #E4E9ED;
+}
+.about .search-page li {
+  padding: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #E4E9ED;
+  cursor: pointer;
+}
+.about .search-page li:hover {
+  background-color: #CFE0FF;
+}
+.about .search-page li .list-inner {
+  font-size: var(--typo-sm);
+}
+.about .search-page li .list-inner .list-title,
+.about .search-page li .list-inner .list-desc,
+.about .search-page li .list-inner .list-link {
+  margin-bottom: 20px;
+}
+.about .search-page li .list-inner .list-title {
+  color: var(--color-primary);
+  font-weight: var(--fw-medium);
+}
+.about .search-page li .list-inner .tag-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.about .search-page li .list-inner .tag-list .detail-hashtag-block {
+  position: relative;
+  padding: 15px 20px;
+  padding-left: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #ECF0F3;
+}
+.about .search-page li .list-inner .tag-list .detail-hashtag-block:hover {
+  background-color: #DEE7F2;
+}
+.about .search-page li .list-inner .tag-list .detail-hashtag-block:hover .detail-hashtag-link {
+  text-decoration: none;
+  color: #2680EB;
+}
+.about .search-page li .list-inner .tag-list .detail-hashtag-block .detail-hashtag-link {
+  font-size: var(--typo-xs);
+  color: var(--color-primary);
+}
+.about .search-page li .list-inner .tag-list .detail-hashtag-block .detail-hashtag-link::before {
+  content: "#";
+  font-size: var(--typo-xs);
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+}
+.about .complaint-system-form .title {
+  position: relative;
+  font-size: var(--typo-lg);
+  font-weight: var(--fw-medium);
+  color: var(--color-primary);
+  text-align: center;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+.about .complaint-system-form .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 110px;
+  height: 2px;
+  margin: auto;
+  padding-top: 5px;
+  border-radius: 3px;
+  background: var(--color-primary);
+}
+.about .complaint-system-form .desc {
+  margin-bottom: 30px;
+}
+.about .complaint-system-form .form-default {
+  padding: 0;
+}
+.about .complaint-system-form .form-default .form-group {
+  margin-top: 20px;
+}
+.about .complaint-system-form .form-default .form-group .control-label {
+  font-weight: var(--fw-medium);
+  color: var(--color-primary);
+}
+.about .complaint-system-form .form-default .form-group span {
+  color: red;
+}
+.about .complaint-system-form .form-default .form-group .select-wrapper span {
+  color: unset;
+}
+.about .complaint-system-form .form-default .btn-primary {
+  width: 40%;
+}
+.about .complaint-system-form .form-default .btn-primary.-cancel {
+  background-color: #AEAEAE;
+}
 
 .about.form-about .h-title,
 .about.form-about .title {
@@ -10587,6 +10778,21 @@ fieldset {
 .about.form-about .family-datails .font-size-C {
     font-size: 14px !important;
   }
+  .about .search-page .search-bar {
+    padding: 25px;
+  }
+  .about .search-page .search-list .title {
+    padding: 15px 25px;
+  }
+  .about .search-page li {
+    padding: 25px;
+    padding-bottom: 15px;
+  }
+  .about .search-page li .list-inner .list-title,
+.about .search-page li .list-inner .list-desc,
+.about .search-page li .list-inner .list-link {
+    margin-bottom: 15px;
+  }
 }
 @media (max-width: 991px) {
   .gutters-custom {
@@ -10598,6 +10804,9 @@ fieldset {
   .about.form-about .emergency-case .font-size-C,
 .about.form-about .family-datails .font-size-C {
     font-size: 14px !important;
+  }
+  .about .complaint-system-form .form-default .btn-primary {
+    width: 50%;
   }
 }
 @media (max-width: 767px) {
@@ -10667,6 +10876,22 @@ fieldset {
   .about.form-about .form-history {
     padding: 20px 0;
   }
+  .about .search-page .search-bar {
+    padding: 20px;
+  }
+  .about .search-page .search-bar .form-group {
+    margin-top: 20px;
+  }
+  .about .search-page .search-list .title {
+    padding: 15px 20px;
+  }
+  .about .search-page li {
+    padding: 20px;
+    padding-bottom: 10px;
+  }
+  .about .complaint-system-form .form-default .btn-primary {
+    width: 100%;
+  }
 }
 @media (max-width: 375px) {
   .about.form-about .form-default .btn-form {
@@ -10677,6 +10902,11 @@ fieldset {
   }
   .about.form-about .form-default .form-group .control-label {
     height: auto;
+  }
+  .about .tag-list .item-list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 .online-services .h-title {
