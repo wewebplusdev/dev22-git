@@ -60,7 +60,17 @@
                 <div class="border-nav-slider"></div>
 
                 <div class="container mt-5">
-                    <h2 class="text-primary mb-4">นโยบายและแผน</h2>
+                    <div class="row aling-items-center gutters-10">
+                        <div class="col-auto">
+                            <h2 class="text-primary mb-4">นโยบายและแผน</h2>
+                        </div>
+                        <div class="col-auto">
+                            <a href="javascript:void(0)" target="_blank" class="rss">
+                                <img src="<?php echo $core_template; ?>/assets/img/icon/icon-rss.png" alt="icon rss">
+                            </a>
+                        </div>
+                    </div>
+                    
                     <div class="default-tab-slider default-slick">
                         <div class="item">
                             <div class="tab-block active">
