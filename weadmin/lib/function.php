@@ -15,7 +15,6 @@ function logs_access($action, $actionType) {
 
     $myDateNow = date("Y-m-d");
     $myTimeNow = date("H:i:s");
-
     if ($action == 1) {
 
         if (!is_dir($CurrentPath . "/login")) {
