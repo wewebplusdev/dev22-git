@@ -37,6 +37,8 @@ include("config.php");
 
             $update[] = $mod_tb_set . "_config  	='" . serialize($_POST['info']) . "'"; 
             $update[] = $mod_tb_set . "_addresspic  	='" . $_POST['picname'] . "'";
+            $update[] = $mod_tb_set . "_addresspicen  	='" . $_POST['picnameen'] . "'";
+            $update[] = $mod_tb_set . "_addresspiccn  	='" . $_POST['picnamecn'] . "'";
             $update[] = $mod_tb_set . "_qr  	='" . $_POST['picQR'] . "'";
 
 

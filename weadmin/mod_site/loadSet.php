@@ -483,17 +483,35 @@ logs_access('3', 'View');
                     </tr>
 
                 <tr >
-
-                        <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["info:picaddress"] ?>:<span class="fontContantAlert"></span></td>
-                        <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView">
-
-                                <?php if (is_file($valPic)) { ?>
-                                    <img src="<?php echo $valPic ?>"  style="float:left;border:#c8c7cc solid 1px;"  />
-                                <?php } ?>
-
-                            </div></td>
-
-                    </tr>
+                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["info:picaddress"] ?>(<?php echo $langTxt["lg:thai"]; ?>):<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView">
+                            <!-- <?php if (is_file($valPic)) { ?>
+                                <img src="<?php echo $valPic ?>"  style="float:left;border:#c8c7cc solid 1px;"  onerror="this.src='../img/btn/nopic.jpg'"/>
+                            <?php } ?> -->
+                            <img src="<?php echo $valPic ?>"  style="float:left;border:#c8c7cc solid 1px;"  onerror="this.src='../img/btn/nopic.jpg'"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr >
+                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["info:picaddress"] ?>(<?php echo $langTxt["lg:eng"]; ?>):<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView">
+                            <!-- <?php if (is_file($valPicen)) { ?>
+                                <img src="<?php echo $valPicen ?>"  style="float:left;border:#c8c7cc solid 1px;"  onerror="this.src='../img/btn/nopic.jpg'"/>
+                            <?php } ?> -->
+                            <img src="<?php echo $valPicen ?>"  style="float:left;border:#c8c7cc solid 1px;"  onerror="this.src='../img/btn/nopic.jpg'"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr >
+                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["info:picaddress"] ?>(<?php echo $langTxt["lg:chi"]; ?>):<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView">
+                            <!-- <?php if (is_file($valPiccn)) { ?>
+                                <img src="<?php echo $valPiccn ?>"  style="float:left;border:#c8c7cc solid 1px;"  onerror="this.src='../img/btn/nopic.jpg'"/>
+                            <?php } ?> -->
+                            <img src="<?php echo $valPiccn ?>"  style="float:left;border:#c8c7cc solid 1px;"  onerror="this.src='../img/btn/nopic.jpg'"/>
+                        </div>
+                    </td>
+                </tr>
 
                 <tr style="display:none;">
                         <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:video"] ?>:<span class="fontContantAlert"></span></td>

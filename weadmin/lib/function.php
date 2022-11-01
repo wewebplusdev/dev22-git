@@ -2304,3 +2304,20 @@ function loadGetURLMinisiteByType($valTypeUrl,$valMinisite,$valWebsite){ // à¸«à
             return $textReturn;
         }
 
+function callCheckUrl($contantid, $table){
+    global $coreLanguageSQL;
+
+    $sql = "
+    SELECT " . $table . "." . $table . "_id as id,
+    " . $table . "." . $table . "_short_url as short_url,
+    " . $table . "." . $table . "_long_url as long_url
+    FROM
+    " . $table . "
+    WHERE
+    " . $table . "." . $table . "_contantid = '" . $contantid . "'
+    ";
+
+    $query=wewebQueryDB($coreLanguageSQL,$sql);
+    
+    return $query;
+}

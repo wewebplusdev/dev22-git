@@ -33,9 +33,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
     <script language="JavaScript" type="text/javascript" src="../js/select2/js/select2.js"></script>
 
     <script language="JavaScript" type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./js/script.js"></script>
     <script language="JavaScript" type="text/javascript">
         function executeSubmit() {
             with(document.myForm) {
+                
                 var checkbokSetLang = $('input.checkbokSetLang:checkbox:checked').length;
                 if (checkbokSetLang == 0) {
                     alert('<?php echo $langMod["set:lang:web:alert"]; ?>');
@@ -76,6 +78,23 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
                 }
                 jQuery('#inputHtml').val(alleditDetail);
+
+                if (inputUrlEmpty.value == 'true') {
+                    if (inputUrlcheck.value == "Allowed") {
+                        if (isBlank(inputShortUrl)) {
+                            inputShortUrl.focus();
+                            jQuery("#inputShortUrl").addClass("formInputContantTbAlertY");
+                            return false;
+                        } else {
+                            jQuery("#inputShortUrl").removeClass("formInputContantTbAlertY");
+                        }
+                        }else{
+                            inputShortUrl.focus();
+                        return false;
+                    }
+                }
+                
+                
             }
 
 
@@ -104,6 +123,15 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     }
                 }
                 /* End  Enter Check CKeditor */
+            });
+
+
+            jQuery('#myForm').keypress(function(e) {
+                if (e.which == 13) {
+                //e.preventDefault();
+                executeSubmit();
+                return false;
+                }
             });
         });
     </script>
@@ -425,7 +453,28 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     </td>
                 </tr>
             </table>
-            <br class="ckabout" />
+            
+            <br/>
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:short"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:shortDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="right" valign="top" height="15"></td>
+                </tr>
+                <tr>
+                    <input type="hidden" id="inputUrlEmpty" name="inputUrlEmpty" value="true">
+                    <input type="hidden" id="inputUrlcheck" name="inputUrlcheck" value="Allowed">
+                    <td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjecturl"] ?><span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputShortUrl" id="inputShortUrl" type="text" class="formInputContantTbShot" onblur="checkUrl($(this))" /><br />
+                        <span class="formFontNoteTxt">URL : <span id="urlstatus" > - </span></span>
+                    </td>
+                </tr>
+            </table>
+            <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -447,9 +496,6 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         <span class="formFontNoteTxt"><?php echo $langMod["inp:notedate"] ?></span>
                     </td>
                 </tr>
-
-
-
             </table>
             <br />
 
@@ -683,14 +729,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
         }
 
         /*################### Load FCK Editor ######################*/
-        var masterkey = $('input[name="masterkey"]').val();
-        // console.log(masterkey);
-        if (masterkey != 'cus') {
             jQuery(function() {
                 onLoadFCK();
-                // onLoadFCK2();
             });
-        }
     </script>
 
     <script type="text/javascript" src="js/jquery.uploadfile.js"></script>

@@ -268,6 +268,15 @@ $DateThai = array(
 /* =Time&Date Config
 -------------------------------------------------------------- */
 
+### config short url
+$pageconf = array(
+    'ab_' => 'about',
+);
+$tbconf = array();
+$tbconf['short']['db'] = "md_short_urls";
+$tbconf['mnu']['db'] = "sy_mnu";
+$tbconf['cms']['db'] = "md_cms";
+$tbconf['cmg']['db'] = "md_cmg";
 
 
 #########Setting Email##########

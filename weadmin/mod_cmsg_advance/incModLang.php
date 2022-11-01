@@ -102,6 +102,11 @@ $langMod["txt:groupTypenew"] = "Open a new window";
 $langTxt["mg:pin"] = "Pin";
 $langTxt["mg:statuspin"] = "Pin/Unpin";
 
+$langMod["txt:short"] = "Short URL information";
+$langMod["txt:shortDe"] = "Please fill in the section used to define the details of the news display. For use in displaying the website pages";
+$langMod["tit:subjecturl"] = "Short URL";
+$langMod["tit:urlnote"] = "Note : This short URL already exists.";
+
 
 }else{
 
