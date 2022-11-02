@@ -6,7 +6,6 @@ include("../lib/function.php");
 include("../lib/checkMember.php");
 include("config.php");
 
-
 if ($_REQUEST['execute'] == "insert") {
     $randomNumber = randomNameupdate(2);
 
@@ -82,6 +81,9 @@ if ($_REQUEST['execute'] == "insert") {
     } else {
         $insert[$mod_tb_root . "_credate"] = "NOW()";
     }
+
+    $insert[$mod_tb_root . "_ref"] = "'" . $_REQUEST["inputReference"] . "'";
+    $insert[$mod_tb_root . "_refdate"] = "'" . DateFormatInsert($_REQUEST['rdateInput'], $_REQUEST['cHourInput'], $_REQUEST['cMinInput']) . "'";
 
     $insert[$mod_tb_root . "_lastdate"] = "NOW()";
     $insert[$mod_tb_root . "_status"] = "'Disable'";

@@ -62,3 +62,44 @@ function checkUrl(el) {
       }
   });
 }
+
+function executeUrl(el) {
+  // var valPass = 's=' + randomString(2);
+  let length = 5;
+  let result = '';
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength)).toLowerCase();
+  }
+  jQuery('#inputShortUrl').val(result);
+
+  var TYPE = "POST";
+  var URL = "./checkurl.php";
+  var dataSet = jQuery("#myForm").serialize();
+  jQuery.ajax({
+    type: TYPE,
+    url: URL,
+    data: dataSet,
+    success: function(res) {
+      let data = JSON.parse(res);
+      $('#urlstatus').html(data.msg);
+      $('#inputUrlcheck').val(data.status);
+      $('#urlstatus').css('color',data.color);
+      if (data.status == 'Disabled') {
+        jQuery("#inputShortUrl").addClass("formInputContantTbAlertY");
+      }else{
+        jQuery("#inputShortUrl").removeClass("formInputContantTbAlertY");
+      }
+
+      if (!$(el).val()) {
+        $('#inputUrlEmpty').val('false');
+        $('#urlstatus').text(" - ");
+        $('#urlstatus').css('color' ,'#8496aa');
+      }else{
+        $('#inputUrlEmpty').val('true');
+      }
+      setTimeout(jQuery.unblockUI, 200);
+    }
+});
+}

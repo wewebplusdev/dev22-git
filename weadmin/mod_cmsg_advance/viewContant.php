@@ -35,6 +35,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 }
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin";
+$sql .= " , " . $mod_tb_root . "_ref as ref , " . $mod_tb_root . "_refdate as refdate ";
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
@@ -90,6 +91,10 @@ if ($valPin == "Pin") {
 } else {
     $valStatusPinClass =  "fontContantTbDisable";
 }
+
+$valRef = rechangeQuot($Row['ref']);
+$valRefdate = DateFormat($Row['refdate']);
+
 $callCheckUrl = callCheckUrl($valID, $mod_tb_root_short);
 
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
@@ -431,6 +436,27 @@ logs_access('3', 'View');
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjecturl"] ?>:<span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="formDivView"><a href="http://<?php echo $siteurl.$callCheckUrl->fields['short_url']; ?>" target="_blank"><?php echo $callCheckUrl->fields['short_url']; ?></a></div>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:refer"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:referDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:refer"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView"><?php echo $valRef ?></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:referdate"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView"><?php echo $valRefdate ?></div>
                     </td>
                 </tr>
             </table>

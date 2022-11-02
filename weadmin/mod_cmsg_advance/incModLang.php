@@ -107,6 +107,10 @@ $langMod["txt:shortDe"] = "Please fill in the section used to define the details
 $langMod["tit:subjecturl"] = "Short URL";
 $langMod["tit:urlnote"] = "Note : This short URL already exists.";
 
+$langMod["txt:refer"] = "Reference";
+$langMod["txt:referDe"] = "Please fill in the section used to define the details of the news display. For use in displaying the website pages";
+$langMod["tit:refer"] = "Reference";
+$langMod["tit:referdate"] = "Post date";
 
 }else{
 

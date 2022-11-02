@@ -36,7 +36,7 @@ class url
             } else {
                 $this->pagelang = $lang_set[$lang_default];
                 $urlNewDirect = str_replace('//', '/', "/" . $this->onFolder . "/" . $this->pagelang[2]);
-				$urlNewDirect ="th";
+				$urlNewDirect .="/intro";
                 // header("Location:" . _URL . $urlNewDirect);
             }
         } else {
@@ -73,7 +73,6 @@ class url
             $this->uri = $uri;
         }
     }
-	
 
 
     public function onRoot()
@@ -117,6 +116,7 @@ class url
     public function setpagedefault()
     {
         global $url_show_default, $url_error_default;
+
         // call check short url
         $arrUrl = $this->loadShortURL(mb_substr($_SERVER['REDIRECT_URL'], 1));
         $callMenu = $this->callMenu($arrUrl->fields['masterkey']);
@@ -274,8 +274,12 @@ class url
                 break;
             
             default:
-                http_response_code(302);
-                header('location:' . $linklang . "/404");
+                if (!$_SESSION['intro']) {
+                    return $pageloader = " intro";
+                }else {
+                    http_response_code(302);
+                    header('location:' . $linklang . "/404");
+                }
                 break;
         }
     }

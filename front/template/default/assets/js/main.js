@@ -33,13 +33,11 @@ $(document).ready(function() {
     let href = $(".popup-item").attr("data-href");
     // let popupId = $(".popup-item").attr("id");
 
-    // console.log(href);
-    // console.log(popupId);
-
     // if ($('.popup-item').attr("data-href") != '') {
     //     $( ".fancybox-image" ).wrap( "<a class='link' href='" + href + "' target='_blank'></a>" );
     // }
-
+    
+    var arrPopup = new Array();
     $("[data-fancybox='gallery-popup']").fancybox({
         thumbs: false,
         slideShow: true,
@@ -47,14 +45,27 @@ $(document).ready(function() {
         fullScreen: false,
         zoom: false,
         onComplete: function() {
-                $(".fancybox-container").wrap("<div class='fancybox--gallery-popup'></div>");
+            $(".fancybox-container").wrap("<div class='fancybox--gallery-popup'></div>");
+            arrPopup = Array.from(new Set(arrPopup));
+            let onComplete = $(this)[0].src.split('?targetid=');
+            if ($('#'+onComplete[1]).data('href') !== 'javascript:void(0);') {
+                $(".fancybox-image").wrap($("<a></a>"));
+                $(".fancybox-placeholder a").attr("href", base + base_url_lang + "/pageredirect/popup/" + $('#'+onComplete[1]).data('id'));
+                $(".fancybox-placeholder a").attr("target", $('#'+onComplete[1]).data('target'));
+                $(".fancybox-placeholder a").css("pointer-events", 'auto');
+            }else{
+                $(".fancybox-image").wrap($("<a></a>"));
+                $(".fancybox-placeholder a").attr("href", 'javascript:void(0);');
+                $(".fancybox-placeholder a").css("pointer-events", 'none');
             }
-            // onComplete: function(){
-            //     if ($('.popup-item').attr("data-href") != '') {
-            //         $( ".fancybox-image" ).wrap( "<a class='link' href='" + href + "' target='_blank'></a>" );
-            //     }
-            // }
+        },
+        beforeLoad: function () {
+            let explode = $(this)[0].src.split('?targetid=');
+            arrPopup.push(explode[1]);
+        }
     });
+
+
     $("[data-fancybox='gallery']").fancybox({
         thumbs: true,
         slideShow: true,

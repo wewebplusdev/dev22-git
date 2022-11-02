@@ -24,7 +24,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 	$sql .= " , " . $mod_tb_root . "_urlcn,    " . $mod_tb_root . "_piccn, " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
 }
 
-$sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn ";
+$sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn, " . $mod_tb_root . "_ref as ref, " . $mod_tb_root . "_refdate as refdate ";
 $sql .= " 
 			FROM " . $mod_tb_root . " 
 			WHERE " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root . "_id 	='" . $_POST["valEditID"] . "'";
@@ -62,6 +62,11 @@ $valUrlfriendly = rechangeQuot($Row[17]);
 $valLang[0] = $Row[18];
 $valLang[1] = $Row[19];
 $valLang[2] = $Row[20];
+
+$valRef = rechangeQuot($Row['ref']);
+$valRefdate = DateFormatInsertRe($Row['refdate']);
+$valHour = TimeHourFormatInsertRe($Row['refdate']);
+$valMinute = TimeMinFormatInsertRe($Row['refdate']);
 
 $callCheckUrl = callCheckUrl($valid, $mod_tb_root_short);
 
@@ -131,17 +136,17 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 				if (inputUrlEmpty.value == 'true') {
 					if (inputUrlcheck.value == "Allowed") {
-							if (isBlank(inputShortUrl)) {
-									inputShortUrl.focus();
-									jQuery("#inputShortUrl").addClass("formInputContantTbAlertY");
-									return false;
-							} else {
-									jQuery("#inputShortUrl").removeClass("formInputContantTbAlertY");
-							}
-							}else{
-									inputShortUrl.focus();
+						if (isBlank(inputShortUrl)) {
+							inputShortUrl.focus();
+							jQuery("#inputShortUrl").addClass("formInputContantTbAlertY");
 							return false;
+						} else {
+							jQuery("#inputShortUrl").removeClass("formInputContantTbAlertY");
 						}
+					} else {
+						inputShortUrl.focus();
+						return false;
+					}
 				}
 			}
 
@@ -242,8 +247,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						?>
 							<label>
 								<div class="formDivRadioL"><input name="inputSetLang[<?php echo $key ?>]" id="inputSetLang-<?php echo $key ?>" value="1" type="checkbox" class="formRadioContantTb checkbokSetLang" <?php if ($valLang[$key] == 1) {
-																																																						echo 'checked';
-																																																					} ?> /></div>
+																																																																																																			echo 'checked';
+																																																																																																		} ?> /></div>
 								<div class="formDivRadioR"><?php echo $value ?></div>
 							</label>
 						<?php
@@ -335,13 +340,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						<div id="inputEditHTML">
 							<textarea name="editDetail" id="editDetail">
       <?php
-		if (is_file($valhtml)) {
-			$fd = @fopen($valhtml, "r");
-			$contents = @fread($fd, @filesize($valhtml));
-			@fclose($fd);
-			echo txtReplaceHTML($contents);
-		}
-		?>
+			if (is_file($valhtml)) {
+				$fd = @fopen($valhtml, "r");
+				$contents = @fread($fd, @filesize($valhtml));
+				@fclose($fd);
+				echo txtReplaceHTML($contents);
+			}
+			?>
       </textarea>
 						</div>
 					</td>
@@ -545,22 +550,77 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			</table>
 			<br />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+				<tr>
+					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+						<span class="formFontSubjectTxt"><?php echo $langMod["txt:short"] ?></span><br />
+						<span class="formFontTileTxt"><?php echo $langMod["txt:shortDe"] ?></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7" align="right" valign="top" height="15"></td>
+				</tr>
+				<tr>
+					<input type="hidden" id="inputUrlEmpty" name="inputUrlEmpty" value="<?php if (!empty($callCheckUrl->fields['short_url'])) {
+																																								echo "true";
+																																							} else {
+																																								echo "false";
+																																							} ?>">
+					<input type="hidden" id="inputUrlcheck" name="inputUrlcheck" value="Allowed">
+					<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjecturl"] ?><span class="fontContantAlert"></span></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputShortUrl" id="inputShortUrl" type="text" class="formInputContantTbShot" onblur="checkUrl($(this))" value="<?php echo $callCheckUrl->fields['short_url']; ?>" />
+						<span onclick="executeUrl($('#inputShortUrl'))" style="color:#fff; text-align:center; cursor:pointer; background-color:#279e48; border:#1f833b solid 1px; width:150px; height:16px; padding:10px;">Generate Short URL</span>
+						<br />
+						<span class="formFontNoteTxt">URL : <span id="urlstatus"> - </span></span>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 					<tr>
 							<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-									<span class="formFontSubjectTxt"><?php echo $langMod["txt:short"] ?></span><br />
-									<span class="formFontTileTxt"><?php echo $langMod["txt:shortDe"] ?></span>
+									<span class="formFontSubjectTxt"><?= $langMod["txt:refer"] ?></span><br />
+									<span class="formFontTileTxt"><?= $langMod["txt:referDe"] ?></span>
 							</td>
 					</tr>
 					<tr>
 							<td colspan="7" align="right" valign="top" height="15"></td>
 					</tr>
+
 					<tr>
-							<input type="hidden" id="inputUrlEmpty" name="inputUrlEmpty" value="true">
-							<input type="hidden" id="inputUrlcheck" name="inputUrlcheck" value="Allowed">
-							<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjecturl"] ?><span class="fontContantAlert"></span></td>
-							<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputShortUrl" id="inputShortUrl" type="text" class="formInputContantTbShot" onblur="checkUrl($(this))" value="<?php echo $callCheckUrl->fields['short_url']; ?>"/><br />
-									<span class="formFontNoteTxt">URL : <span id="urlstatus" > - </span></span>
+							<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:refer"] ?><span class="fontContantAlert"></span></td>
+							<td colspan="6" align="left" valign="top" class="formRightContantTb">
+									<textarea name="inputReference" id="inputReference" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valRef; ?></textarea>
 							</td>
+					</tr>
+					<tr>
+							<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:referdate"] ?><span class="fontContantAlert"></span></td>
+							<td width="24%" align="left" valign="top" class="formRightContantTb"><input name="rdateInput" id="rdateInput" type="text" autocomplete="off" class="formInputContantTbShot" value="<?php echo  $valRefdate ?>" /></td>
+							<td width="1%"></td>
+							<td width="4%" align="right" valign="top" class="formLeftContantTb"><?= "เวลา" ?><span class="fontContantAlert"></span></td>
+							<td width="10%" align="left" valign="top" class="formRightContantTb">
+									<select class="formSelectContantTb" name="cHourInput" id="cHourInput" style="width:100%;">
+											<option value="xx" disabled selected>ชั่วโมง</option>
+											<?php
+											for ($x = 0; $x <= 23; $x++) {
+													echo '<option value="' . sprintf('%02d', $x) . '">' . sprintf('%02d', $x) . '</option>';
+											}
+											?>
+									</select>
+							</td>
+							<td width="1%"></td>
+							<td width="10%" align="left" valign="top" class="formRightContantTb">
+									<select class="formSelectContantTb" name="cMinInput" id="cMinInput" style="width:100%;">
+											<option value="xx" disabled selected>นาที</option>
+											<?php
+											for ($x = 0; $x <= 59; $x++) {
+													echo '<option value="' . sprintf('%02d', $x) . '">' . sprintf('%02d', $x) . '</option>';
+											}
+											?>
+									</select>
+							</td>
+							<td></td>
+
+					</tr>
 					</tr>
 			</table>
 			<br />
@@ -604,6 +664,12 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	</form>
 	<script type="text/javascript" src="../js/ajaxfileupload.js"></script>
 	<script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        $("#cHourInput").val('<?php echo @$valHour;?>');
+        $("#cMinInput").val('<?php echo @$valMinute;?>');
+    });
+	</script>
 	<script type="text/javascript" language="javascript">
 		/*################################# Upload Pic #######################*/
 		function ajaxFileUpload() {

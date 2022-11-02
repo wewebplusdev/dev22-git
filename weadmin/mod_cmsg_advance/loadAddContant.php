@@ -37,7 +37,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
     <script language="JavaScript" type="text/javascript">
         function executeSubmit() {
             with(document.myForm) {
-                
+
                 var checkbokSetLang = $('input.checkbokSetLang:checkbox:checked').length;
                 if (checkbokSetLang == 0) {
                     alert('<?php echo $langMod["set:lang:web:alert"]; ?>');
@@ -88,13 +88,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         } else {
                             jQuery("#inputShortUrl").removeClass("formInputContantTbAlertY");
                         }
-                        }else{
-                            inputShortUrl.focus();
+                    } else {
+                        inputShortUrl.focus();
                         return false;
                     }
                 }
-                
-                
+
+
             }
 
 
@@ -128,9 +128,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
             jQuery('#myForm').keypress(function(e) {
                 if (e.which == 13) {
-                //e.preventDefault();
-                executeSubmit();
-                return false;
+                    //e.preventDefault();
+                    executeSubmit();
+                    return false;
                 }
             });
         });
@@ -453,8 +453,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     </td>
                 </tr>
             </table>
-            
-            <br/>
+
+            <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -466,12 +466,63 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <td colspan="7" align="right" valign="top" height="15"></td>
                 </tr>
                 <tr>
-                    <input type="hidden" id="inputUrlEmpty" name="inputUrlEmpty" value="true">
+                    <input type="hidden" id="inputUrlEmpty" name="inputUrlEmpty" value="false">
                     <input type="hidden" id="inputUrlcheck" name="inputUrlcheck" value="Allowed">
                     <td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjecturl"] ?><span class="fontContantAlert"></span></td>
-                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputShortUrl" id="inputShortUrl" type="text" class="formInputContantTbShot" onblur="checkUrl($(this))" /><br />
-                        <span class="formFontNoteTxt">URL : <span id="urlstatus" > - </span></span>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputShortUrl" id="inputShortUrl" type="text" class="formInputContantTbShot" onblur="checkUrl($(this))" />
+                        <span onclick="executeUrl($('#inputShortUrl'))" style="color:#fff; text-align:center; cursor:pointer; background-color:#279e48; border:#1f833b solid 1px; width:150px; height:16px; padding:10px;">Generate Short URL</span>
+                        <br />
+                        <span class="formFontNoteTxt">URL : <span id="urlstatus"> - </span></span>
                     </td>
+                </tr>
+            </table>
+            <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?= $langMod["txt:refer"] ?></span><br />
+                        <span class="formFontTileTxt"><?= $langMod["txt:referDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="right" valign="top" height="15"></td>
+                </tr>
+
+                <tr>
+                    <td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:refer"] ?><span class="fontContantAlert"></span></td>
+                    <td colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <textarea name="inputReference" id="inputReference" cols="45" rows="5" class="formTextareaContantTb"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:referdate"] ?><span class="fontContantAlert"></span></td>
+                    <td width="24%" align="left" valign="top" class="formRightContantTb"><input name="rdateInput" id="rdateInput" type="text" autocomplete="off" class="formInputContantTbShot" value="<?php echo  $valrdate ?>" /></td>
+                    <td width="1%"></td>
+                    <td width="4%" align="right" valign="top" class="formLeftContantTb"><?= "เวลา" ?><span class="fontContantAlert"></span></td>
+                    <td width="10%" align="left" valign="top" class="formRightContantTb">
+                        <select class="formSelectContantTb" name="cHourInput" id="cHourInput" style="width:100%;">
+                            <option value="xx" disabled selected>ชั่วโมง</option>
+                            <?php
+                            for ($x = 0; $x <= 23; $x++) {
+                                echo '<option value="' . sprintf('%02d', $x) . '">' . sprintf('%02d', $x) . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </td>
+                    <td width="1%"></td>
+                    <td width="10%" align="left" valign="top" class="formRightContantTb">
+                        <select class="formSelectContantTb" name="cMinInput" id="cMinInput" style="width:100%;">
+                            <option value="xx" disabled selected>นาที</option>
+                            <?php
+                            for ($x = 0; $x <= 59; $x++) {
+                                echo '<option value="' . sprintf('%02d', $x) . '">' . sprintf('%02d', $x) . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </td>
+                    <td></td>
+
+                </tr>
                 </tr>
             </table>
             <br />
@@ -729,9 +780,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
         }
 
         /*################### Load FCK Editor ######################*/
-            jQuery(function() {
-                onLoadFCK();
-            });
+        jQuery(function() {
+            onLoadFCK();
+        });
     </script>
 
     <script type="text/javascript" src="js/jquery.uploadfile.js"></script>

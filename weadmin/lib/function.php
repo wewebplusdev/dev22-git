@@ -890,14 +890,23 @@ return $msg." ".$add." - ".$to." | ".$count." | ".$gid;
 	}
 
 //#################################################
-function DateFormatInsert($DateTime) {
+function DateFormatInsert($DateTime, $Hour = "00", $Minute = "00") {
 //#################################################
     global $core_session_language;
     if ($DateTime == "") {
         $DateTime = "00-00-0000";
     }
 
-    $Time = "00:00:00";
+    // $Time = "00:00:00";
+    $Time = "";
+    if ($Hour != "xx" && $Minute != "xx") {
+        $Time = $Hour.":".$Minute;
+    }else{
+        $Time = Date('H:i');
+    }
+
+    // $Time .= ":".Date('s');
+    $Time .= ":00";
 
     $DateArr = explode("-", $DateTime);
     if ($core_session_language == "Thai") {
@@ -928,6 +937,46 @@ function DateFormatInsert($DateTime) {
 //	 }
     return $valReturn;
 }
+
+//#################################################
+function TimeHourFormatInsertRe($DateTime) {
+    //#################################################
+        // global $core_session_language;
+    
+        if ($DateTime != "") {
+            $DateTimeArr = explode(" ", $DateTime);
+            $Date = $DateTimeArr[0];
+            $Time = $DateTimeArr[1];
+    
+            $DateArr = explode(":", $Time);
+                
+            $valReturnData = $DateArr[0] ;
+        } else {
+            $valReturnData = "";
+        }
+    
+        return $valReturnData;
+    }
+
+    //#################################################
+function TimeMinFormatInsertRe($DateTime) {
+    //#################################################
+        // global $core_session_language;
+    
+        if ($DateTime != "") {
+            $DateTimeArr = explode(" ", $DateTime);
+            $Date = $DateTimeArr[0];
+            $Time = $DateTimeArr[1];
+    
+            $DateArr = explode(":", $Time);
+                
+            $valReturnData = $DateArr[1] ;
+        } else {
+            $valReturnData = "";
+        }
+    
+        return $valReturnData;
+    }
 
 
 //#################################################
