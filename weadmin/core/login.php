@@ -44,15 +44,14 @@ $_SESSION[$valSiteManage."core_session_logout"]=1;
  ".$core_tb_staff."_password,
  ".$core_tb_staff."_fnamethai,
  ".$core_tb_staff."_lnamethai,
- ".$core_tb_staff."_groupid 
+ ".$core_tb_staff."_groupid,
+ ".$core_tb_staff."_status 
  FROM ".$core_tb_staff." WHERE ".$core_tb_staff."_username='".$inputUser."'  AND ".$core_tb_staff."_status !='Disable' ";
 $Query=wewebQueryDB($coreLanguageSQL,$sql);
 $RecordCount=wewebNumRowsDB($coreLanguageSQL,$Query);
-
 	if($RecordCount>=1) {
 		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
-		 $myPassword=decodeStr($Row[1]);
-		
+		$myPassword=decodeStr($Row[1]);
 		if($myPassword==$inputPass) {
 		
 			$_SESSION[$valSiteManage."core_session_id"]		= $Row[0];
@@ -154,6 +153,7 @@ $RecordCount=wewebNumRowsDB($coreLanguageSQL,$Query);
     <?php
 				
 		} else {
+			logs_access('1','Login Fail');
 	?>
 	<script language="JavaScript"  type="text/javascript">
 		jQuery("#loadAlertLogin").show();
@@ -163,6 +163,7 @@ $RecordCount=wewebNumRowsDB($coreLanguageSQL,$Query);
     <?php
 		}
 	} else {
+		logs_access('1','Login Fail');
 	?>
 	<script language="JavaScript"  type="text/javascript">
 		jQuery("#loadAlertLogin").show();

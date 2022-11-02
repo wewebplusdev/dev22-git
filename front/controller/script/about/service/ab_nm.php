@@ -3,6 +3,10 @@
 $arrMenu = $aboutPage->callGroup($MenuID);
 $smarty->assign("arrMenu", $arrMenu);
 
+## RSS feed
+$settingModulus['group'] = $callGroup->fields['id'];
+$settingModulus['rssfeed'] = 1;
+
 switch ($PageAction) {
     case 'detail':
         $ContentID = GetContentID($url->segment[4]);
@@ -66,6 +70,7 @@ switch ($PageAction) {
         $smarty->assign("order", $order);
 
         $ContentID = GetContentID($url->segment[2]);
+
         $callGroup = $aboutPage->callGroup($MenuID, $ContentID);
         if ($callGroup->_numOfRows < 1) {
             header('location:' . $linklang . '/404');

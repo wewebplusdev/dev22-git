@@ -37,7 +37,7 @@ class url
                 $this->pagelang = $lang_set[$lang_default];
                 $urlNewDirect = str_replace('//', '/', "/" . $this->onFolder . "/" . $this->pagelang[2]);
 				$urlNewDirect ="th";
-                header("Location:" . _URL . $urlNewDirect);
+                // header("Location:" . _URL . $urlNewDirect);
             }
         } else {
             if (!empty($_SESSION['pagelang'])) {
@@ -117,13 +117,39 @@ class url
     public function setpagedefault()
     {
         global $url_show_default, $url_error_default;
-        // $path = _DIR . '/front/controller/script/' . $url_show_default;
-        $path = _DIR . '/front/controller/script/' . $url_error_default;
-        $loderpage['pagename'] = $url_show_default;
-        $loderpage['load'][] = $path . "/lang/" . $this->pagelang[2] . ".php";
-        foreach ($this->listfilemodulus as $value) {
-            $loderpage['load'][] = $path . "/" . $value;
-        }
+        // call check short url
+        $arrUrl = $this->loadShortURL(mb_substr($_SERVER['REDIRECT_URL'], 1));
+        $callMenu = $this->callMenu($arrUrl->fields['masterkey']);
+        $callCms = $this->callCms($arrUrl->fields['masterkey'], $arrUrl->fields['contantid']);
+
+        $arrConf = array(
+            'masterkey' => $arrUrl->fields['masterkey'],
+            'contantid' => $arrUrl->fields['contantid'],
+            'menuid' => $callMenu->fields['id'],
+            'gid' => $callCms->fields['gid'],
+        );
+        $convertUrl = $this->convertUrl($arrConf);
+
+        if (!empty($this->segment[0])) {
+            if (!empty($convertUrl)) {
+                $path = _DIR . '/front/controller/script/' . $convertUrl;
+                $loderpage['pagename'] = $convertUrl;
+            }else{
+                $path = _DIR . '/front/controller/script/404';
+                $loderpage['pagename'] = "404";
+            }
+            $loderpage['load'][] = $path . "/lang/" . $this->pagelang[2] . ".php";
+            foreach ($this->listfilemodulus as $value) {
+                $loderpage['load'][] = $path . "/" . $value;
+            }
+		}else{
+			$path = _DIR . '/front/controller/script/' . $url_show_default;
+			$loderpage['pagename'] = $url_show_default;
+			$loderpage['load'][] = $path . "/lang/" . $this->pagelang[2] . ".php";
+			foreach ($this->listfilemodulus as $value) {
+				$loderpage['load'][] = $path . "/" . $value;
+			}
+		}
         return $loderpage;
     }
 
@@ -150,5 +176,110 @@ class url
         }
         return $loderpage;
     }
+
+    ########## Start Add by bonz ##########
+    private function loadShortURL($uri){
+        global $db, $tbconf;
+
+        $sql = "SELECT 
+        " . $tbconf['short']['db'] . "." . $tbconf['short']['db'] . "_id as id,
+        " . $tbconf['short']['db'] . "." . $tbconf['short']['db'] . "_contantid as contantid,
+        " . $tbconf['short']['db'] . "." . $tbconf['short']['db'] . "_masterkey as masterkey,
+        " . $tbconf['short']['db'] . "." . $tbconf['short']['db'] . "_short_url as short_url,
+        " . $tbconf['short']['db'] . "." . $tbconf['short']['db'] . "_long_url as long_url
+        FROM
+        " . $tbconf['short']['db'] . "
+        WHERE
+        " . $tbconf['short']['db'] . "." . $tbconf['short']['db'] . "_short_url = '".$uri."'
+        ";
+        
+        $result = $db->query($sql);
+        return $result;
+    }
+
+    private function callMenu($masterkey){
+        global $db, $tbconf;
+        
+        $sql = "SELECT 
+        " . $tbconf['mnu']['db'] . "." . $tbconf['mnu']['db'] . "_id as id,
+        " . $tbconf['mnu']['db'] . "." . $tbconf['mnu']['db'] . "_masterkey as masterkey
+        FROM
+        " . $tbconf['mnu']['db'] . "
+        WHERE
+        " . $tbconf['mnu']['db'] . "." . $tbconf['mnu']['db'] . "_masterkey = '".$masterkey."'
+        ";
+
+        $result = $db->query($sql);
+        return $result;
+    }
+
+    private function callGroupCms($masterkey, $id = null){
+        global $db, $tbconf;
+        
+        $sql = "SELECT 
+        " . $tbconf['cmg']['db'] . "." . $tbconf['cmg']['db'] . "_id as id,
+        " . $tbconf['cmg']['db'] . "." . $tbconf['cmg']['db'] . "_masterkey as masterkey,
+        " . $tbconf['cmg']['db'] . "." . $tbconf['cmg']['db'] . "_subject as subject
+        FROM
+        " . $tbconf['cmg']['db'] . "
+        WHERE
+        " . $tbconf['cmg']['db'] . "." . $tbconf['cmg']['db'] . "_masterkey = '".$masterkey."'
+        ";
+
+        if (!empty($id)) {
+            $sql .= " AND ".$tbconf['cmg']['db'].".".$tbconf['cmg']['db']."_id = '".$id."' ";
+        }
+
+        $result = $db->query($sql);
+        return $result;
+    }
+
+    private function callCms($masterkey, $id = null){
+        global $db, $tbconf;
+        
+        $sql = "SELECT 
+        " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_id as id,
+        " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_masterkey as masterkey,
+        " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_subject as subject,
+        " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_gid as gid
+        FROM
+        " . $tbconf['cms']['db'] . "
+        WHERE
+        " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_masterkey = '".$masterkey."'
+        ";
+
+        if (!empty($id)) {
+            $sql .= " AND ".$tbconf['cms']['db'].".".$tbconf['cms']['db']."_id = '".$id."' ";
+        }
+
+        $result = $db->query($sql);
+        return $result;
+    }
+
+    private function convertUrl($conf = array()){
+        global $pageconf, $linklang;
+        foreach($pageconf as $key => $value) {
+            if (strpos($conf['masterkey'], $key) !== false) {
+                $pageloader = $value;
+            }
+        }
+
+        switch ($pageloader) {
+            case 'about':
+                $this->segment[0] = $pageloader;
+                $this->segment[1] = $conf['menuid'];
+                $this->segment[3] = 'detail';
+                $this->segment[4] = $conf['contantid'];
+                return $pageloader;
+                break;
+            
+            default:
+                http_response_code(302);
+                header('location:' . $linklang . "/404");
+                break;
+        }
+    }
+
+    ########## End Add by bonz ##########
 
 }

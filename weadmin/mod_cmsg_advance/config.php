@@ -3,6 +3,7 @@ $array_home = array('nw');
 ## Mod Table ###################################
 $mod_tb_root = "md_cms";
 $mod_tb_root_group = "md_cmg";
+$mod_tb_root_short = "md_short_urls";
 
 $mod_tb_file = "md_cmf";
 $mod_tb_fileTemp = "md_cmtp";
@@ -14,6 +15,13 @@ $mod_tb_setting = "md_cuss";
 
 ## Mod Folder ###################################
 $mod_fd_root = "mod_cmsg_advance";
+
+## Mod Url ###################################
+$mod_fd_url = array(
+    'ab_nm' => 'about',
+);
+
+$siteurl = $_SERVER['HTTP_HOST'] . "/";
 
 $mod_fd_frontUrl = "career/list";
 $mod_fd_frontdetailUrl = "career/detail";

@@ -101,9 +101,9 @@ include("config.php");
 
 		## URL Search ###################################
 		if ($_POST["valEditID"] != '') {
-			$valUrlSearchTH = $mod_url_search_th . "/" . encodeStr($_POST["valEditID"]) . "/";
-			$valUrlSearchEN = $mod_url_search_en . "/" . encodeStr($_POST["valEditID"]) . "/";
-			$valUrlSearchCN = $mod_url_search_cn . "/" . encodeStr($_POST["valEditID"]) . "/";
+			$valUrlSearchTH = $mod_url_search_th . "/" . $_POST["valEditID"] . "/";
+			$valUrlSearchEN = $mod_url_search_en . "/" . $_POST["valEditID"] . "/";
+			$valUrlSearchCN = $mod_url_search_cn . "/" . $_POST["valEditID"] . "/";
 		};
 		$updateSch = array();
 		if ($_REQUEST['inputLt'] == "Thai") {
@@ -131,6 +131,15 @@ include("config.php");
 		$querySch = wewebQueryDB($coreLanguageSQL, $sqlSch);
 
 		//include("../lib/incRss.php");
+
+    if (!empty($_REQUEST['inputShortUrl'])) {
+			## Short URL Table
+			$update = array();
+			$update[] = $mod_tb_root_short . "_short_url='" . $_REQUEST['inputShortUrl'] . "'";
+			$update[] = $mod_tb_root_short . "_long_url='" . $valUrlSearchTH . "'";
+			$sqlSch = "UPDATE " . $mod_tb_root_short . " SET " . implode(",", $update) . " WHERE " . $mod_tb_root_short . "_contantid='" . $_POST["valEditID"] . "'  AND " . $mod_tb_root_short . "_masterkey='" . $_POST["masterkey"] . "' ";
+			$querySch = wewebQueryDB($coreLanguageSQL, $sqlSch);
+		}
 	?>
 	<?php } ?>
 	<?php include("../lib/disconnect.php"); ?>
