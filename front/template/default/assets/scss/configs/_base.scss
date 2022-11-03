@@ -20,6 +20,10 @@ body {
 
 .container {
     width: 1210px;
+    &.-lg {
+        max-width: 1520px;
+        width: 100%;
+    }
 }
 
 .gutters-10 {

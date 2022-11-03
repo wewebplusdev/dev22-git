@@ -291,6 +291,16 @@
                     </div>
                 </div>
 
+                <div class="museum-block">
+                    <div class="container">
+                        <div class="text-center">
+                            <div class="h-title fw-semi-bold text-primary text-uppercase">
+                                GIT MUSEUM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="container">
 
                 </div>
