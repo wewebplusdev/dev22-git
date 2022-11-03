@@ -1,0 +1,7 @@
+.video-gallery {
+  background-color: #cc1212;
+}
+.video-gallery .h-title {
+  font-size: var(--typo-xl);
+  color: var(--color-primary);
+}/*# sourceMappingURL=video-gallery.css.map */
