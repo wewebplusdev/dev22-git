@@ -3986,3 +3986,11 @@ th {
     font-weight: unset;
 }
 /* End New Sonar */
+
+/* start hashtag */
+/* hashtag 24-11-2021 */
+.item-list{margin: -5px;}
+.item-list > li{padding: 5px; width: auto; float: left; list-style-type: none;}
+.item-list > li > .link{display: block; border-radius: 5px; padding: 5px 15px; font-size: 14px; line-height: 1; color: #fff; background-color: #03548e; border: 1px solid #0065cc;}
+.item-list > li > .link:hover{color: #0065cc; background-color: #fff;}
+/* end hashtag */

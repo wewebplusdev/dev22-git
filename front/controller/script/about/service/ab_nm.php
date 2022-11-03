@@ -17,6 +17,12 @@ switch ($PageAction) {
         }
         $smarty->assign("callCMS", $callCMS);
 
+        // call hashtag in news
+        if (!empty(unserialize($callCMS->fields['tid']))) {
+            $call_hashtag = $callSetWebsite->call_hashtag($config['tag']['main']['masterkey'], unserialize($callCMS->fields['tid']));
+            $smarty->assign("call_hashtag", $call_hashtag);
+        }
+
         $Call_File = $callSetWebsite->Call_File($callCMS->fields['id']);
         $smarty->assign("Call_File", $Call_File);
 

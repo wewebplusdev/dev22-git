@@ -5,7 +5,7 @@ $secret = $secretkey;
 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
 $responseData = json_decode($verifyResponse);
 
-if (!empty($_POST) && $responseData->success || true) {
+if (!empty($_POST) && $responseData->success) {
   $arrData = array();
 
   // info

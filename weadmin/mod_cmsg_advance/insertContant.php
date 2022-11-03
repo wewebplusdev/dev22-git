@@ -84,6 +84,7 @@ if ($_REQUEST['execute'] == "insert") {
 
     $insert[$mod_tb_root . "_ref"] = "'" . $_REQUEST["inputReference"] . "'";
     $insert[$mod_tb_root . "_refdate"] = "'" . DateFormatInsert($_REQUEST['rdateInput'], $_REQUEST['cHourInput'], $_REQUEST['cMinInput']) . "'";
+	$insert[$mod_tb_root . "_tid"] = "'" . serialize(array_filter($_REQUEST['inputTag'])) . "'"; // remove array at values empty before use fnc serialize
 
     $insert[$mod_tb_root . "_lastdate"] = "NOW()";
     $insert[$mod_tb_root . "_status"] = "'Disable'";
