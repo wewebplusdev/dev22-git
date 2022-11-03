@@ -24,6 +24,10 @@ body {
         max-width: 1520px;
         width: 100%;
     }
+    &.-xl {
+        max-width: 1400px;
+        width: 100%;
+    }
 }
 
 .gutters-10 {
@@ -172,11 +176,9 @@ textarea {
 //     content: ' ';
 //     display: table;
 // }
-
 // .nav-list:after {
 //     clear: both;
 // }
-
 .icon {
     img {
         display: block;
@@ -391,6 +393,7 @@ textarea {
 .circle {
     border-radius: 50%;
 }
+
 .circle-border {
     border-radius: 50%;
     border: 1px solid;
