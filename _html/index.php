@@ -16,7 +16,7 @@
             <div class="container -xl">
                 <div class="video-gallery">
                     <div class="h-title text-center">GIT VDO</div>
-                    <ul class="nav nav-pills">
+                    <ul class="nav nav-pills default-nav-tab">
                         <li>
                             <a class="item active" href="#vdoGallery1" data-toggle="tab">Museum & Gems Treasure</a>
                         </li>
@@ -54,7 +54,7 @@
                                                         <img src="<?php echo $core_template; ?>/assets/img/upload/git-vdo.png" alt="git vdo">
                                                     </figure>
                                                 </div>
-                                                <a class="link" href="javascript:void(0)" target="_blank">
+                                                <a class="link" href="video-gallery-detail.php" target="_blank">
                                                     <div class="desc text-center text-uppercase">
                                                         ซื้อเครื่องประดับเพชร พลอย <br>อย่างไรให้มั่นใจ
                                                     </div>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="tab-pane" id="vdoGallery2">
                             <div class="thumb wow" data-wow-duration="2s">
-                                sss
+                                vdoGallery2
                             </div>
                         </div>
                     </div>

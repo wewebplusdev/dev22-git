@@ -612,6 +612,55 @@ fieldset {
     }
 }
 
+.default-nav-tab {
+    padding-top: 40px;
+    width: 90%;
+    margin: auto;
+    li {
+        width: 50%;
+        text-align: center;
+        position: relative;
+        .item {
+            font-size: var(--typo-lg);
+            color: var(--color-gray);
+            transition: all 200ms ease-out;
+            &:hover {
+                color: var(--color-primary);
+                text-decoration: none;
+                &::before {
+                    content: "";
+                    background-image: url(../img/icon/underline-style.svg);
+                    width: 90%;
+                    background-repeat: no-repeat;
+                    height: 15px;
+                    position: absolute;
+                    background-position: center;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    bottom: -30px;
+                }
+            }
+        }
+        .item.active {
+            color: var(--color-primary);
+            &::before {
+                content: "";
+                background-image: url(../img/icon/underline-style.svg);
+                width: 90%;
+                background-repeat: no-repeat;
+                height: 15px;
+                position: absolute;
+                background-position: center;
+                left: 0;
+                right: 0;
+                margin: auto;
+                bottom: -30px;
+            }
+        }
+    }
+}
+
 @media (max-width: 1600px) {}
 
 @media (max-width: 1440px) {
