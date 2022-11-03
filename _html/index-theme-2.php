@@ -224,17 +224,7 @@
                                                         <a href="" class="link">
                                                             <div class="row no-gutters">
                                                                 <div class="col-auto">
-                                                                    <div class="icon">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="48" viewBox="0 0 39 48">
-                                                                            <g data-name="Icon feather-file-text" transform="translate(1.5 1.5)">
-                                                                                <path data-name="Path 2087" d="M28.5,3h-18A4.5,4.5,0,0,0,6,7.5v36A4.5,4.5,0,0,0,10.5,48h27A4.5,4.5,0,0,0,42,43.5v-27Z" transform="translate(-6 -3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
-                                                                                <path data-name="Path 2088" d="M21,3V16.5H34.5" transform="translate(1.5 -3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
-                                                                                <path data-name="Path 2089" d="M30,19.5H12" transform="translate(-3 5.25)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
-                                                                                <path data-name="Path 2090" d="M30,25.5H12" transform="translate(-3 8.25)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
-                                                                                <path data-name="Path 2091" d="M16.5,13.5H12" transform="translate(-3 2.25)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
-                                                                            </g>
-                                                                        </svg>
-                                                                    </div>
+                                                                    <span class="icon feather-file-text"></span>
                                                                 </div>
                                                                 <div class="col">
                                                                     <div class="inner">
@@ -296,6 +286,67 @@
                         <div class="text-center">
                             <div class="h-title fw-semi-bold text-primary text-uppercase">
                                 GIT MUSEUM
+                            </div>
+                        </div>
+
+                        <div class="row gutters-15">
+                            <div class="col-lg-8 col-md-6 mb-md-0 mb-3">
+                                <a href="" class="link" title="GIT Museum">
+                                    <div class="wrapper biggest" style="background-image: url(<?php echo $core_template; ?>/assets/img/background/bg-museum-01.jpg);">
+                                        <div class="topic">
+                                            <span class="feather-arrow-up-right"></span>
+                                            GIT Museum
+                                        </div>
+                                        <div class="title">
+                                            พิพิธภัณฑ์อัญมณี <br>
+                                            และเครื่องประดับ
+                                        </div>
+                                        <div class="desc text-limit -x2">
+                                            การจัดตั้งพิพิธภัณฑ์อัญมณีและเครื่องประดับ
+                                            เป็นส่วนหนึ่งในแผนงานของสถาบัน
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <div class="row h-100">
+                                    <div class="col-12 mb-3">
+                                        <a href="" class="link" title="GIT Virtual Museum">
+                                            <div class="wrapper" style="background-image: url(<?php echo $core_template; ?>/assets/img/background/bg-museum-02.jpg);">
+                                                <div class="topic">
+                                                    <span class="feather-arrow-up-right"></span>
+                                                    GIT Virtual Museum
+                                                </div>
+                                                <div class="title">
+                                                    พิพิธภัณฑ์เสมือนจริง <br>
+                                                    Virtual Museum
+                                                </div>
+                                                <div class="desc text-limit -x2">
+                                                    แหล่งเรียนรู้ทางด้านอัญมณีและเครื่องประดับ
+                                                    ควบคู่ไปกับการได้ท่องโลกแบบเสมือนจริง
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="" class="link" title="GIT Virtual Exhibition">
+                                            <div class="wrapper" style="background-image: url(<?php echo $core_template; ?>/assets/img/background/bg-museum-03.jpg);">
+                                                <div class="topic">
+                                                    <span class="feather-arrow-up-right"></span>
+                                                    GIT Virtual Exhibition
+                                                </div>
+                                                <div class="title">
+                                                    อีสานเดิ้น <br>
+                                                    (Esan Dern)
+                                                </div>
+                                                <div class="desc text-limit -x2">
+                                                    นิทรรศการเครื่องประดับอัตลักษณ์อีสานใต้
+                                                    ได้รวบรวมผลงานต้นแบบเครื่องประดับ
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
