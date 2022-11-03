@@ -9036,29 +9036,16 @@ fieldset {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.theme-2 .museum-block .biggest {
-  padding: 4rem;
-}
-.theme-2 .museum-block .biggest .topic {
-  font-size: 50px;
-}
-.theme-2 .museum-block .biggest .topic span {
-  font-size: 60px;
-}
-.theme-2 .museum-block .biggest .title {
-  font-size: 70px;
-}
-.theme-2 .museum-block .biggest .desc {
-  font-size: var(--typo-lg);
-}
 .theme-2 .museum-block .topic {
   font-size: var(--typo-md);
   margin-bottom: 3.5rem;
 }
 .theme-2 .museum-block .topic span {
   position: relative;
-  top: 6px;
-  font-size: 34px;
+  top: 4px;
+  font-size: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .theme-2 .museum-block .title {
   font-size: var(--typo-lg);
@@ -9075,8 +9062,112 @@ fieldset {
   position: relative;
   z-index: 1;
 }
+.theme-2 .museum-block .biggest {
+  padding: 4rem;
+}
+.theme-2 .museum-block .biggest .topic {
+  font-size: 50px;
+}
+.theme-2 .museum-block .biggest .topic span {
+  font-size: 56px;
+}
+.theme-2 .museum-block .biggest .title {
+  font-size: 70px;
+}
+.theme-2 .museum-block .biggest .desc {
+  font-size: var(--typo-lg);
+}
 .theme-2 .museum-block .link:hover .wrapper::before {
   opacity: 0.8;
+}
+.theme-2 .museum-block .link:hover .topic span {
+  color: var(--color-primary);
+}
+.theme-2 .git-news-block {
+  color: var(--color-light);
+  padding: 6rem 0;
+  background: url("../img/background/bg-git-news-block.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.theme-2 .git-news-block .h-title::before {
+  background-color: var(--color-light);
+}
+.theme-2 .git-news-block .default-tab-content {
+  padding: 1.5rem 0;
+}
+.theme-2 .git-news-block .default-slider .slick-list {
+  margin: 0 -10px;
+}
+.theme-2 .git-news-block .default-slider .item {
+  padding: 0 10px;
+}
+.theme-2 .git-news-block .slick-dotted.slick-slider {
+  margin-bottom: 110px;
+}
+.theme-2 .git-news-block .default-slider-dots .slick-dots {
+  bottom: -115px;
+}
+.theme-2 .git-news-block .link {
+  color: var(--color-default);
+}
+.theme-2 .git-news-block .link .divider {
+  border-style: dashed;
+}
+.theme-2 .git-news-block .link .cover {
+  padding-bottom: 66%;
+}
+.theme-2 .git-news-block .link .wrapper {
+  background-color: var(--color-light);
+}
+.theme-2 .git-news-block .link .inner {
+  padding: 1.5rem;
+}
+.theme-2 .git-news-block .link .title {
+  font-size: var(--typo-sm);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+.theme-2 .git-news-block .link .desc {
+  color: var(--color-dark);
+  margin-bottom: 2rem;
+}
+.theme-2 .git-news-block .link .date {
+  font-size: var(--typo-xs);
+  color: var(--color-gray);
+}
+.theme-2 .git-news-block .link .date span {
+  float: right;
+  font-size: 24px;
+}
+.theme-2 .git-news-block .action {
+  text-align: center;
+}
+.theme-2 .banner-II-block {
+  position: relative;
+}
+.theme-2 .banner-II-block .cover {
+  padding-bottom: 28.125%;
+}
+.theme-2 .banner-II-block .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.theme-2 .banner-II-block .wrapper .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
 }
 
 .theme-3 .site-container {
@@ -9535,7 +9626,7 @@ fieldset {
 .default-nav-tabs .nav-link {
     padding: 15px;
   }
-  .theme-2 .h-title {
+  .theme-2 .main-page .h-title {
     font-size: 40px;
   }
   .theme-2 .services-block .h-title {
@@ -9550,7 +9641,8 @@ fieldset {
   .theme-2 .services-block,
 .theme-2 .e-service-block,
 .theme-2 .training-block,
-.theme-2 .museum-block {
+.theme-2 .museum-block,
+.theme-2 .git-news-block {
     padding: 5rem 0;
   }
   .theme-2 .e-service-block .item-list {
@@ -9567,6 +9659,9 @@ fieldset {
   }
   .theme-2 .training-block .training-list .link {
     padding: 25px 0 23px 0;
+  }
+  .theme-2 .training-block .training-list .icon {
+    font-size: 50px;
   }
   .theme-2 .banner-I-block {
     height: 420px;
@@ -9592,6 +9687,18 @@ fieldset {
   }
   .theme-2 .museum-block .biggest .title {
     font-size: 60px;
+  }
+  .theme-2 .museum-block .topic span {
+    font-size: 28px;
+  }
+  .theme-2 .museum-block .biggest .topic span {
+    font-size: 50px;
+  }
+  .theme-2 .git-news-block .default-slider-dots .slick-dots {
+    bottom: -100px;
+  }
+  .theme-2 .git-news-block .slick-dotted.slick-slider {
+    margin-bottom: 90px;
   }
   .theme-3 .site-container {
     margin-top: 140px;
@@ -9685,6 +9792,18 @@ fieldset {
   .theme-2 .museum-block .topic {
     margin-bottom: 2rem;
   }
+  .theme-2 .museum-block .topic span {
+    font-size: 26px;
+  }
+  .theme-2 .museum-block .biggest .topic span {
+    font-size: 44px;
+  }
+  .theme-2 .git-news-block .default-slider-dots .slick-dots {
+    bottom: -80px;
+  }
+  .theme-2 .git-news-block .slick-dotted.slick-slider {
+    margin-bottom: 70px;
+  }
   .theme-3 .site-container {
     margin-top: 124px;
   }
@@ -9739,7 +9858,7 @@ fieldset {
 .default-nav-tabs .nav-link {
     font-size: var(--typo-sm);
   }
-  .theme-2 .h-title {
+  .theme-2 .main-page .h-title {
     font-size: 35px;
   }
   .theme-2 .services-block .h-title {
@@ -9748,7 +9867,8 @@ fieldset {
   .theme-2 .services-block,
 .theme-2 .e-service-block,
 .theme-2 .training-block,
-.theme-2 .museum-block {
+.theme-2 .museum-block,
+.theme-2 .git-news-block {
     padding: 3rem 0;
   }
   .theme-2 .e-service-block .icon {
@@ -9757,6 +9877,10 @@ fieldset {
   }
   .theme-2 .training-block .default-slider-dots .slick-dots {
     bottom: -80px;
+  }
+  .theme-2 .training-block .training-list .icon {
+    margin-right: 2rem;
+    font-size: 44px;
   }
   .theme-2 .services-block .left-side,
 .theme-2 .training-block .left-side {
@@ -9796,6 +9920,21 @@ fieldset {
   }
   .theme-2 .museum-block .biggest .title {
     font-size: 40px;
+  }
+  .theme-2 .museum-block .topic span {
+    font-size: 24px;
+  }
+  .theme-2 .museum-block .biggest .topic span {
+    font-size: 38px;
+  }
+  .theme-2 .git-news-block .default-nav-tabs {
+    margin-bottom: 2rem;
+  }
+  .theme-2 .git-news-block .link .date span {
+    font-size: 20px;
+  }
+  .theme-2 .banner-II-block .cover {
+    padding-bottom: 40%;
   }
   .theme-3 .top-graphic {
     margin-top: 0;
@@ -9864,6 +10003,7 @@ fieldset {
   }
   .theme-2 .main-page .h-title {
     font-size: 32px;
+    margin-bottom: 1.5rem;
   }
   .theme-2 .services-block .h-title {
     font-size: 32px;
@@ -9891,7 +10031,10 @@ fieldset {
     margin-bottom: 2rem;
   }
   .theme-2 .training-block .training-list .icon {
-    margin-right: 2rem;
+    margin-right: 1rem;
+  }
+  .theme-2 .training-block .training-list .icon {
+    font-size: 40px;
   }
   .theme-2 .banner-I-block {
     height: auto;
@@ -9931,6 +10074,21 @@ fieldset {
   }
   .theme-2 .museum-block .biggest .desc {
     font-size: var(--typo-xs);
+  }
+  .theme-2 .museum-block .biggest .topic span {
+    font-size: 24px;
+  }
+  .theme-2 .git-news-block .default-slider-dots .slick-dots {
+    bottom: -70px;
+  }
+  .theme-2 .git-news-block .slick-dotted.slick-slider {
+    margin-bottom: 60px;
+  }
+  .theme-2 .git-news-block .default-nav-tabs {
+    margin-bottom: 1.5rem;
+  }
+  .theme-2 .banner-II-block .cover {
+    padding-bottom: 44%;
   }
   .theme-3 .default-nav,
 .theme-3 .knowledge-block {
@@ -9989,7 +10147,8 @@ fieldset {
   .theme-2 .services-block,
 .theme-2 .e-service-block,
 .theme-2 .training-block,
-.theme-2 .museum-block {
+.theme-2 .museum-block,
+.theme-2 .git-news-block {
     padding: 2rem 0;
   }
   .theme-2 .main-page .h-title {
@@ -10017,6 +10176,12 @@ fieldset {
   }
   .theme-2 .museum-block .topic {
     margin-bottom: 1.5rem;
+  }
+  .theme-2 .git-news-block .link .inner {
+    padding: 1rem;
+  }
+  .theme-2 .banner-II-block .cover {
+    padding-bottom: 50%;
   }
   .theme-3 .default-nav .topic {
     padding-left: 1.2rem;
