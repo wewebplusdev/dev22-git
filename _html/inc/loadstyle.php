@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="<?php echo $core_template; ?>/assets/css/plugin/animate.min.css">
 <link rel="stylesheet" href="<?php echo $core_template; ?>/assets/css/plugin/select2.min.css">
 <link rel="stylesheet" href="<?php echo $core_template; ?>/assets/css/plugin/slick.css">
+<link rel="stylesheet" href="<?php echo $core_template; ?>/assets/css/plugin/feather.css">
 
 
 <!-- Custom -->
