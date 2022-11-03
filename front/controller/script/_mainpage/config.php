@@ -33,7 +33,7 @@ $config['career']['join']['main'] = "md_joy";
 $config['career']['file']['main'] = "md_joyf";
 $config['intro']['db']['main'] = "md_int";
 $config['tgp']['db']['main'] = "md_tgp";
-
+$config['tag']['db']['main'] = "md_tag";
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
 $config['about']['ab_odc']['masterkey'] = 'ab_odc';
@@ -54,6 +54,7 @@ $config['infoservice']['is_art']['masterkey'] = "is_art";
 $config['infoservice']['is_ms']['masterkey'] = "is_ms";
 $config['intro']['main']['masterkey'] = "int";
 $config['ban']['main']['masterkey'] = "ban";
+$config['tag']['main']['masterkey'] = "tag";
 
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';
@@ -105,4 +106,10 @@ $menu_masterkey_ab = array(
     'subject' => 'แหล่งงาน',
     'subjecten' => 'Career',
   ),
+);
+
+$fontsize = array(
+  'th' => 'ก',
+  'en' => 'A',
+  'cn' => 'A',
 );

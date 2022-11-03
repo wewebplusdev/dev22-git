@@ -6,15 +6,10 @@ $lang['home']['contact'] = "Contact us";
 $lang['home']['map'] = "Map"; 
 $lang['home']['googlemap'] = "google Map";
 $lang['home']['follow'] = "Follow us";
-$lang['home']['txt:5pd'] = "engages in the business of providing loan services to retail and<br>entrepreneur customers with 4 products as follows:";
-$lang['home']['corporate'] = "Corporate Governance";
-$lang['home']['board'] = "Board of Directors";
-$lang['home']['listofmajor'] = "List of major shareholders";
-$lang['home']['business'] = "Business Network of SG Capital Public Company Limited";
-$lang['home']['inves:important'] = "Investors' important information";
-$lang['home']['inves:detail'] = "Welcome to SGC's Investor Relations Corner. Here you will find all the information. About shareholding information our strategy and important financial information";
-$lang['home']['newslastest'] = "Latest news and activities from <br>SG Capital Public Company Limited.";
-$lang['home']['career:detail'] = "If you are another person who has the ability committed to work And like to work as a team, apply to be part of us here.";
+$lang['home']['changedisplay'] = "Change Display";
+$lang['home']['fontsize'] = "Font Size";
+$lang['home']['findusmap'] = "FIND US ON <br>map";
+$lang['home']['findusgmap'] = "FIND US ON <br>google map";
 
 $lang['menu']['home'] = "HOME";
 $lang['menu']['about'] = "ABOUT US";
@@ -288,6 +283,7 @@ $lang['career']['home:des'] = "we have expanded our operations into rapidly grow
 $lang['infoserv']['pictures'] = "Show Pictures";
 $lang['infoserv']['infoservice'] = "Information Service";
 
+$lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
 $lang['system']['close'] = "Close";
 $lang['system']['ducdownload'] = "Document Download";
 $lang['system']['share'] = "share";

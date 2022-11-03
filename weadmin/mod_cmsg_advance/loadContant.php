@@ -109,7 +109,22 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
       <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
 
         <tr>
-
+          <td width="48%">
+            <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
+                <option value="0"><?php echo $langMod["tit:selectg"] ?></option>
+                <?php
+                $sql_group = "SELECT ";
+                $sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject";
+                $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
+                $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                    $row_groupid = $row_group[0];
+                    $row_groupname = $row_group[1];
+                ?>
+                    <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php } ?>><?php echo $row_groupname ?></option>
+                <?php } ?>
+            </select>
+          </td>
           <td id="boxSelectTest" width="99%">
             <input name="inputSearch" type="text" id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo $langTxt["sch:search"] ?>" />
           </td>

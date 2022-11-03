@@ -123,6 +123,19 @@
           </div>
         </div>
       {/if}
+
+      {if $call_hashtag->_numOfRows gte 1}
+        <div class="tag-list">
+            <ul class="item-list">
+                {foreach $call_hashtag as $keycall_hashtag => $valuecall_hashtag}
+                  <li>
+                      <a href="{$ul}/search/hashtag/{$valuecall_hashtag.id}" class="detail-hashtag">{$valuecall_hashtag.subject}</a>
+                  </li>
+                {/foreach}
+            </ul>
+        </div>
+      {/if}
+
       <div class="row pt-5 text-right">
         <div class="col-12">
           <a href="javascript:history.back();" class="btn btn-border-primary" title="btn btn-primary">{$lang['system']['btn_back']}</a>

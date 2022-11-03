@@ -115,8 +115,8 @@ $langMod["tit:referdate"] = "Post date";
 }else{
 
     	$langMod["viw:subjectgDe"] = "ข้อมูลชื่อ" . $langMod["meu:group"] . " เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
-		$langMod["meu:group"] = "กลุ่ม";
-		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
+			$langMod["meu:group"] = "กลุ่ม".getNameMenu($_REQUEST["menukeyid"]);
+			$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
 		$langMod["txt:titleadd"] = "สร้างข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["txt:titleedit"] = "แก้ไขข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
@@ -218,6 +218,23 @@ $langMod["tit:credit"] ="Credit";
 $langMod["edit:linknote"] ="หมายเหตุ : กรุณากรอกชื่อ URL นำหน้าด้วย \"http://\" เช่น http://www.wewebplus.com เป็นต้น"."<br>"."กรณีไม่มีชื่อ URL ให้ใส่เครื่องหมาย #";
 $langMod["tit:groupType"] = "ประเภทรายละเอียด";
 $langTxt["mg:statuspin"] = "Pin/Unpin";
+
+$langTxt["tit:selectg"] = "เลือก".$langMod["meu:group"];
+
+$langMod["tit:hashtag"] = "ข้อมูลแท็กเชื่อมโยง";
+$langMod["tit:hashtagDes"] = "ข้อมูลนี้คือส่วนที่ใช้ในการกำหนดแท็กเชื่อมโยงในการแสดงผลส่วนนี้ เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
+$langMod["inp:hashtag"] = "แท็กเชื่อมโยง";
+$langMod["tit:selectghasg"] = "เลือก".$langMod["inp:hashtag"];
+
+$langMod["txt:refer"] = "Reference";
+$langMod["txt:referDe"] = "ข้อมูลนี้คือส่วนที่ใช้ในการกำหนด".$langMod["txt:refer"]."ในการแสดงผลส่วนนี้ เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
+$langMod["tit:refer"] = "Reference";
+$langMod["tit:referdate"] = "วันที่โพส";
+
+$langMod["txt:short"] = "ข้อมูล Short URL";
+$langMod["txt:shortDe"] = "ข้อมูลนี้คือส่วนที่ใช้ในการกำหนด".$langMod["txt:short"]."ในการแสดงผลส่วนนี้ เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
+$langMod["tit:subjecturl"] = "Short URL";
+$langMod["tit:urlnote"] = "หมายเหตุ : This short URL already exists.";
 
 }
 ?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-01 10:34:29
+/* Smarty version 4.0.0, created on 2022-11-03 14:11:47
   from '/var/www/html/front/template/default/_component/cmsg_advance_detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636093c5d48710_82257994',
+  'unifunc' => 'content_636369b3b1cec9_49695970',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3501e17cd1fad2200d7deda9601112b93f6db96a' => 
     array (
       0 => '/var/www/html/front/template/default/_component/cmsg_advance_detail.tpl',
-      1 => 1667273668,
+      1 => 1667459506,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636093c5d48710_82257994 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636369b3b1cec9_49695970 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
@@ -211,6 +211,29 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           </div>
         </div>
       <?php }?>
+
+      <?php if ($_smarty_tpl->tpl_vars['call_hashtag']->value->_numOfRows >= 1) {?>
+        <div class="tag-list">
+            <ul class="item-list">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['call_hashtag']->value, 'valuecall_hashtag', false, 'keycall_hashtag');
+$_smarty_tpl->tpl_vars['valuecall_hashtag']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keycall_hashtag']->value => $_smarty_tpl->tpl_vars['valuecall_hashtag']->value) {
+$_smarty_tpl->tpl_vars['valuecall_hashtag']->do_else = false;
+?>
+                  <li>
+                      <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/search/hashtag/<?php echo $_smarty_tpl->tpl_vars['valuecall_hashtag']->value['id'];?>
+" class="detail-hashtag"><?php echo $_smarty_tpl->tpl_vars['valuecall_hashtag']->value['subject'];?>
+</a>
+                  </li>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </ul>
+        </div>
+      <?php }?>
+
       <div class="row pt-5 text-right">
         <div class="col-12">
           <a href="javascript:history.back();" class="btn btn-border-primary" title="btn btn-primary"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['btn_back'];?>

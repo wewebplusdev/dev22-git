@@ -36,6 +36,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin";
 $sql .= " , " . $mod_tb_root . "_ref as ref , " . $mod_tb_root . "_refdate as refdate ";
+$sql .= " , " . $mod_tb_root . "_tid as tid ";
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
@@ -93,7 +94,12 @@ if ($valPin == "Pin") {
 }
 
 $valRef = rechangeQuot($Row['ref']);
-$valRefdate = DateFormat($Row['refdate']);
+if ($valRefdate == "0000-00-00 00:00:00" || empty($valRefdate)) {
+    $valRefdate = "-";
+} else {
+    $valRefdate = DateFormat($Row['refdate']);
+}
+$valTag = unserialize($Row['tid']);
 
 $callCheckUrl = callCheckUrl($valID, $mod_tb_root_short);
 
@@ -224,6 +230,53 @@ logs_access('3', 'View');
                         <div class="formDivView"><?php echo $valTitle ?></div>
                     </td>
                 </tr>
+            </table>
+            <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                    <span class="formFontSubjectTxt"><?php echo  $langMod["tit:hashtag"] ?></span><br />
+                    <span class="formFontTileTxt"><?php echo  $langMod["tit:hashtagDes"] ?></span>
+                </td>
+                </tr>
+
+                <tr>
+                <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["inp:hashtag"] ?><span class="fontContantAlert"></span></td>
+                <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                    <div class="formDivView">
+                    <?php
+                    $sql_group = "SELECT ";
+                    if ($_REQUEST['inputLt'] == "Thai") {
+                        $sql_group .= "  " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subject";
+                    } else if ($_REQUEST['inputLt'] == "Eng") {
+                        $sql_group .= "  " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subjecten";
+                    } else {
+                        $sql_group .= " " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subjectcn ";
+                    }
+
+                    $sql_group .= "  FROM " . $mod_tb_tag . " WHERE  " . $mod_tb_tag . "_masterkey='" . $masterkey_tag . "' AND " . $mod_tb_tag . "_status != 'Disable'  ORDER BY " . $mod_tb_tag . "_order DESC ";
+                    $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                    if (!empty($valTag)) {
+                        echo "<ul class='item-list'>";
+                    while ($row_mem = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                        $row_memid = $row_mem[0];
+                        $row_memname = $row_mem[1];
+                        foreach ($valTag as $keyvalTag => $valvalTag) {
+                            if ($valvalTag == $row_memid) {
+                            // echo "<div class='hashtag' >".$row_memname . "</div>";
+                            echo "<li class='hashtag'><a class='link'>#".$row_memname . "</a></li>";
+                            }
+                        }
+                        }
+                        echo "</ul>";
+                        }else{
+                        echo "-";
+                        }
+                    ?>
+                    </div>
+                </td>
+                </tr>
+
             </table>
             <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
