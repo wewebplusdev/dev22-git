@@ -441,35 +441,53 @@
                     </div>
                 </div>
 
-                <div class="container">
-                <div class="default-nav-slider">
-                    <div class="item">
-                        <a href="javascript:void(0)" class="active">หลักสูตร</a>
-                    </div>
-                    <div class="item">
-                        <a href="javascript:void(0)">สัมมนา/workshop</a>
-                    </div>
-                    <div class="item">
-                        <a href="javascript:void(0))">ราคา</a>
-                    </div>
-                    <div class="item">
-                        <a href="javascript:void(0)">การประกวดออกแบบ</a>
-                    </div>
-                    <div class="item">
-                        <a href="javascript:void(0)">สัมมนา/workshop</a>
-                    </div>
-                    <div class="item">
-                        <a href="javascript:void(0)">ราคา</a>
-                    </div>
-                    <div class="item">
-                        <a href="javascript:void(0)">การประกวดออกแบบ</a>
-                    </div>
-                    <div class="item">
-                        <a href="javascript:void(0)">การบริหารและพัฒนาทรัพยากรบุคคล</a>
+                <div class="lab-update-block">
+                    <div class="container">
+                        <div class="h-title">GIT LAB UPDATE</div>
+                        <ul class="default-nav-tab nav nav-pills">
+                            <li>
+                                <a class="item active" href="#labUpdate1" data-toggle="tab">บันทึกจากห้องปฏิบัติการ</a>
+                            </li>
+                            <li>
+                                <a class="item" href="#labUpdate2" data-toggle="tab">ความรู้เรื่องโลหะมีค่า</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content clearfix">
+                            <div class="tab-pane active" id="labUpdate1">
+                                <div class="default-slider slider">
+                                    <?php for ($i = 1; $i <= 5; $i++) { ?>
+
+                                        <div class="item">
+                                            <a href="" class="link">
+                                                <div class="row no-gutters">
+                                                    <div class="col-auto">
+                                                        <span class="icon feather-file-text"></span>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="inner">
+                                                            <div class="title typo-md fw-medium text-limit">ขอเชิญเข้าร่วม Workshop “เทคนิคการสร้าง</div>
+                                                            <div class="desc typo-s text-limit -x2">
+                                                                ในวันพฤหัสบดี-ศุกร์ที่ 18-19 สิงหาคม 2565 เวลา 09.00 – 16.00 น. (ค่าใช้จ่าย 2,900 บาท/ท่าน) รับเพียง 18 ท่านเท่านั้น)
+                                                            </div>
+                                                            <div class="date typo-s">
+                                                                16 มิถุนายน 2565
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                    <?php } ?>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="labUpdate2">
+                                labUpdate2
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
 
         </section>
 
