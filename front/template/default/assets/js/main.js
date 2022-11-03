@@ -278,7 +278,7 @@ $(document).ready(function() {
         arrows: false,
         dots: true,
     });
-    
+
     $('.theme-3 .top-graphic .slider').slick({
         infinite: false,
         slidesToShow: 1,
@@ -286,7 +286,7 @@ $(document).ready(function() {
         arrows: true,
         dots: false,
     });
-    
+
     $('.banner-block .slider').slick({
         infinite: false,
         slidesToShow: 1,
@@ -541,5 +541,9 @@ $(document).ready(function() {
     // $(".uploadTxt-close").click(function() {
     //     $(".file-return").addClass("d-none");
     //     $('.uploadTxt-close').removeClass('active');
+    // })
+
+    // $(".title-search-filter").click(function() {
+    //     $("#advancedSearchForm").removeClass("d-none")
     // })
 });

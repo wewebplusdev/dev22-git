@@ -29,6 +29,59 @@
             </div>
             <div class="default-page about">
                 <div class="container">
+                    <div class="search-filter-tab">
+                        <div class="collapse-block">
+                            <div class="card-header" id="advancedSearchCollapse">
+                                <div class="title-search-filter" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapse">ค้นหาขั้นสูง</div>
+                            </div>
+                            <div id="collapse" class="collapse" aria-labelledby="advancedSearchCollapse" data-parent="#accordion">
+                                <form role="form" class="form-default" method="post" id="advancedSearchForm">
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <div class="form-group has-feedback">
+                                                <label class="control-label" for="advancedSearchGroup">กลุ่ม</label>
+                                                <div class="select-wrapper">
+                                                    <select class="select-control" name="ordernews" id="advancedSearchGroup" style="width: 100%;">
+                                                        <option value="SELECT1">เลือกกลุ่ม</option>
+                                                        <option value="SELECT2">เลือกกลุ่ม</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="form-group has-feedback">
+                                                <label class="control-label" for="advancedSearchType">ประเภท</label>
+                                                <div class="select-wrapper">
+                                                    <select class="select-control" name="ordernews" id="advancedSearchType" style="width: 100%;">
+                                                        <option value="SELECT1">ประเภท</option>
+                                                        <option value="SELECT2">ประเภท</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="form-group has-feedback">
+                                                <label class="control-label" for="advancedSearchSDate">วันที่เริ่มต้น</label>
+                                                <div class="block-control">
+                                                    <input type="date" class="form-control" id="advancedSearchSDate" ata-error="">
+                                                    <!-- <span class="form-control-feedback" aria-hidden="true"></span> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="form-group has-feedback">
+                                                <label class="control-label" for="advancedSearchEDate">วันที่สิ้นสุด</label>
+                                                <div class="block-control">
+                                                    <input type="date" class="form-control" id="advancedSearchEDate" ata-error="">
+                                                    <!-- <span class="form-control-feedback" aria-hidden="true"></span> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     <div class="search-page">
                         <div class="search-bar">
                             <div class="row align-items-center">

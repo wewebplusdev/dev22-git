@@ -150,6 +150,37 @@
             }
         }
     }
+    .search-filter-tab {
+        .collapse-block {
+            .card-header {
+                background-color: transparent;
+                .title-search-filter {
+                    cursor: pointer;
+                    margin-left: auto;
+                    padding-bottom: 20px;
+                    width: max-content;
+                    font-size: var(--typo-sm);
+                    font-weight: var(--fw-semi-bold);
+                    color: var(--color-dark);
+                }
+            }
+        }
+        .form-default {
+            padding-bottom: 25px;
+            .control-label {
+                font-size: var(--typo-sm);
+            }
+            .select-wrapper {
+                .select2-container--default .select2-selection--single {
+                    border-radius: 5px;
+                }
+            }
+            .form-control {
+                border-radius: 5px;
+                color: var(--color-primary);
+            }
+        }
+    }
     .complaint-system-form {
         .title {
             position: relative;
@@ -720,6 +751,16 @@
             .form-default {
                 .btn-primary {
                     width: 100%;
+                }
+            }
+        }
+        .search-filter-tab {
+            .form-default {
+                .control-label {
+                    margin-bottom: 5px;
+                }
+                .form-group {
+                    padding: 10px 0;
                 }
             }
         }
