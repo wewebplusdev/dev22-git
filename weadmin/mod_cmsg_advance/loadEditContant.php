@@ -25,6 +25,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 }
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn, " . $mod_tb_root . "_ref as ref, " . $mod_tb_root . "_refdate as refdate ";
+$sql .= " , " . $mod_tb_root . "_tid as tid ";
 $sql .= " 
 			FROM " . $mod_tb_root . " 
 			WHERE " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root . "_id 	='" . $_POST["valEditID"] . "'";
@@ -67,6 +68,7 @@ $valRef = rechangeQuot($Row['ref']);
 $valRefdate = DateFormatInsertRe($Row['refdate']);
 $valHour = TimeHourFormatInsertRe($Row['refdate']);
 $valMinute = TimeMinFormatInsertRe($Row['refdate']);
+$valTid = unserialize($Row['tid']);
 
 $callCheckUrl = callCheckUrl($valid, $mod_tb_root_short);
 
@@ -175,6 +177,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				}
 				/* End  Enter Check CKeditor */
 			});
+			$('.select2').select2();
 		});
 	</script>
 </head>
@@ -290,6 +293,48 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title"] ?><span class="fontContantAlert">*</span></td>
 					<td colspan="6" align="left" valign="top" class="formRightContantTb">
 						<textarea name="inputDescription" id="inputDescription" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valTitle ?></textarea>
+					</td>
+				</tr>
+
+			</table>
+			<br />
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+				<tr>
+					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+						<span class="formFontSubjectTxt"><?php echo  $langMod["tit:hashtag"]  ?></span><br />
+						<span class="formFontTileTxt"><?php echo  $langMod["tit:hashtagDes"] ?></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7" align="right" valign="top" height="15"></td>
+				</tr>
+
+				<tr>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["inp:hashtag"] ?><span class="fontContantAlert"></span></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+						<select name="inputTag[]" id="inputTag" class="formSelectContantTb select2" multiple>
+							<option value="0"><?php echo  $langMod["tit:selectghasg"] ?></option>
+							<?php
+							$sql_group = "SELECT ";
+							if ($_REQUEST['inputLt'] == "Thai") {
+								$sql_group .= "  " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subject";
+							} else {
+								$sql_group .= " " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subjecten ";
+							}
+							$sql_group .= "  FROM " . $mod_tb_tag . " WHERE  " . $mod_tb_tag . "_masterkey ='" . $masterkey_tag . "' AND " . $mod_tb_tag . "_status != 'Disable'  ORDER BY " . $mod_tb_tag . "_order DESC ";
+							$query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+
+							while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+								$row_groupid = $row_group[0];
+								$row_groupname = $row_group[1];
+							?>
+								<option value="<?php echo $row_groupid ?>" <?php foreach ($valTid as $keyvalTag => $valuevalTag) {
+																															if ($valuevalTag == $row_groupid) {
+																																echo "selected='selected'";
+																															}
+																														} ?>><?php echo $row_groupname; ?></option>
+							<?php  } ?>
+						</select>
 					</td>
 				</tr>
 
@@ -576,52 +621,52 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			</table>
 			<br />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
-					<tr>
-							<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-									<span class="formFontSubjectTxt"><?= $langMod["txt:refer"] ?></span><br />
-									<span class="formFontTileTxt"><?= $langMod["txt:referDe"] ?></span>
-							</td>
-					</tr>
-					<tr>
-							<td colspan="7" align="right" valign="top" height="15"></td>
-					</tr>
+				<tr>
+					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+						<span class="formFontSubjectTxt"><?php echo $langMod["txt:refer"] ?></span><br />
+						<span class="formFontTileTxt"><?php echo $langMod["txt:referDe"] ?></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7" align="right" valign="top" height="15"></td>
+				</tr>
 
-					<tr>
-							<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:refer"] ?><span class="fontContantAlert"></span></td>
-							<td colspan="6" align="left" valign="top" class="formRightContantTb">
-									<textarea name="inputReference" id="inputReference" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valRef; ?></textarea>
-							</td>
-					</tr>
-					<tr>
-							<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:referdate"] ?><span class="fontContantAlert"></span></td>
-							<td width="24%" align="left" valign="top" class="formRightContantTb"><input name="rdateInput" id="rdateInput" type="text" autocomplete="off" class="formInputContantTbShot" value="<?php echo  $valRefdate ?>" /></td>
-							<td width="1%"></td>
-							<td width="4%" align="right" valign="top" class="formLeftContantTb"><?= "เวลา" ?><span class="fontContantAlert"></span></td>
-							<td width="10%" align="left" valign="top" class="formRightContantTb">
-									<select class="formSelectContantTb" name="cHourInput" id="cHourInput" style="width:100%;">
-											<option value="xx" disabled selected>ชั่วโมง</option>
-											<?php
-											for ($x = 0; $x <= 23; $x++) {
-													echo '<option value="' . sprintf('%02d', $x) . '">' . sprintf('%02d', $x) . '</option>';
-											}
-											?>
-									</select>
-							</td>
-							<td width="1%"></td>
-							<td width="10%" align="left" valign="top" class="formRightContantTb">
-									<select class="formSelectContantTb" name="cMinInput" id="cMinInput" style="width:100%;">
-											<option value="xx" disabled selected>นาที</option>
-											<?php
-											for ($x = 0; $x <= 59; $x++) {
-													echo '<option value="' . sprintf('%02d', $x) . '">' . sprintf('%02d', $x) . '</option>';
-											}
-											?>
-									</select>
-							</td>
-							<td></td>
+				<tr>
+					<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:refer"] ?><span class="fontContantAlert"></span></td>
+					<td colspan="6" align="left" valign="top" class="formRightContantTb">
+						<textarea name="inputReference" id="inputReference" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valRef; ?></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:referdate"] ?><span class="fontContantAlert"></span></td>
+					<td width="24%" align="left" valign="top" class="formRightContantTb"><input name="rdateInput" id="rdateInput" type="text" autocomplete="off" class="formInputContantTbShot" value="<?php echo  $valRefdate ?>" /></td>
+					<td width="1%"></td>
+					<td width="4%" align="right" valign="top" class="formLeftContantTb"><?= "เวลา" ?><span class="fontContantAlert"></span></td>
+					<td width="10%" align="left" valign="top" class="formRightContantTb">
+						<select class="formSelectContantTb" name="cHourInput" id="cHourInput" style="width:100%;">
+							<option value="xx" disabled selected>ชั่วโมง</option>
+							<?php
+							for ($x = 0; $x <= 23; $x++) {
+								echo '<option value="' . sprintf('%02d', $x) . '">' . sprintf('%02d', $x) . '</option>';
+							}
+							?>
+						</select>
+					</td>
+					<td width="1%"></td>
+					<td width="10%" align="left" valign="top" class="formRightContantTb">
+						<select class="formSelectContantTb" name="cMinInput" id="cMinInput" style="width:100%;">
+							<option value="xx" disabled selected>นาที</option>
+							<?php
+							for ($x = 0; $x <= 59; $x++) {
+								echo '<option value="' . sprintf('%02d', $x) . '">' . sprintf('%02d', $x) . '</option>';
+							}
+							?>
+						</select>
+					</td>
+					<td></td>
 
-					</tr>
-					</tr>
+				</tr>
+				</tr>
 			</table>
 			<br />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
@@ -665,10 +710,10 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	<script type="text/javascript" src="../js/ajaxfileupload.js"></script>
 	<script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" language="javascript">
-    $(document).ready(function() {
-        $("#cHourInput").val('<?php echo @$valHour;?>');
-        $("#cMinInput").val('<?php echo @$valMinute;?>');
-    });
+		$(document).ready(function() {
+			$("#cHourInput").val('<?php echo @$valHour; ?>');
+			$("#cMinInput").val('<?php echo @$valMinute; ?>');
+		});
 	</script>
 	<script type="text/javascript" language="javascript">
 		/*################################# Upload Pic #######################*/

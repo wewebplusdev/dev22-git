@@ -322,6 +322,17 @@ $(document).ready(function() {
         arrows: false,
         dots: true,
     });
+    
+    $(".lab-update-block .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        rows: 3,
+        arrows: true,
+        dots: false,
+    });
 
     $(".theme-3 .top-graphic .slider").slick({
         infinite: false,

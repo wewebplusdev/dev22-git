@@ -5,7 +5,7 @@
         <div class="col-auto">
           <div class="text-color">
             <div class="txt">
-              เปลี่ยนการแสดงผล
+              {$lang['home']['changedisplay']}
             </div>
             <ul class="item-list">
               <li class="active">
@@ -23,7 +23,7 @@
         <div class="col-auto">
           <div class="text-size">
             <div class="txt">
-              ขนาดตัวอักษร
+              {$lang['home']['fontsize']}
             </div>
             <ul class="item-list">
               <li class="active">
@@ -72,7 +72,7 @@
     <div class="row align-items-center no-gutters">
       <div class="col-auto">
         <div class="brand">
-          <a href="index.php" class="link" title="Gem and Jewelry Institute of Thailand">
+          <a href="{$ul}/home" class="link" title="Gem and Jewelry Institute of Thailand">
             <img src="{$template}/assets/img/static/git-logo.png"
               alt="Gem and Jewelry Institute of Thailand Logo">
           </a>

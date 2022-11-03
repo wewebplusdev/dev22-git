@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-19 17:56:44
+/* Smarty version 4.0.0, created on 2022-11-03 14:15:36
   from '/var/www/html/front/controller/script/home/template/index-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_634fd7ec6ca251_51551340',
+  'unifunc' => 'content_63636a9829bfd5_88228032',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '057545518eb9c85e288de83563778f0bf2474fda' => 
     array (
       0 => '/var/www/html/front/controller/script/home/template/index-3.tpl',
-      1 => 1666177002,
+      1 => 1667459575,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634fd7ec6ca251_51551340 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63636a9829bfd5_88228032 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
 <div class="top-graphic">
     <div class="slider">
-
-
             <div class="tpg-item">
                 <figure class="cover">
                     <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
@@ -47,8 +45,6 @@ function content_634fd7ec6ca251_51551340 (Smarty_Internal_Template $_smarty_tpl)
                     </div>
                 </div>
             </div>
-
-
     </div>
 </div>
 <div class="default-nav">

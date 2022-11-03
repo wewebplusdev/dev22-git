@@ -5,7 +5,7 @@
 				<div class="col-auto">
 					<div class="text-color">
 						<div class="txt">
-							เปลี่ยนการแสดงผล
+							{$lang['home']['changedisplay']}
 						</div>
 						<ul class="item-list">
 							<li class="active">
@@ -23,17 +23,17 @@
 				<div class="col-auto">
 					<div class="text-size">
 						<div class="txt">
-							ขนาดตัวอักษร
+							{$lang['home']['fontsize']}
 						</div>
 						<ul class="item-list">
 							<li class="active">
-								<a href="javascript:void(0)" class="size size-small typo-s" title="size small">ก</a>
+								<a href="javascript:void(0)" class="size size-small typo-s" title="size small">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">ก</a>
+								<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">ก</a>
+								<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">{$settingWeb['font'][$langon]}</a>
 							</li>
 						</ul>
 					</div>
@@ -41,22 +41,22 @@
 				<div class="col">
 					<div class="text-language" style="float: right;">
 						<ul class="item-list">
-							<li class="active">
-								<a href="javascript:void(0)" class="link lg" title="English language">
+							<li class="{if $langon eq 'en'}active{/if}">
+								<a href="{$ul}/lang/en" class="link lg" title="English language">
 									<div class="icon">
 										<img src="{$template}/assets/img/icon/gb.svg" alt="Flag of the United Kingdom">
 									</div>
 								</a>
 							</li>
-							<li>
-								<a href="javascript:void(0)" class="link lg" title="Thai language">
+							<li class="{if $langon eq 'th'}active{/if}">
+								<a href="{$ul}/lang/th" class="link lg" title="Thai language">
 									<div class="icon">
 										<img src="{$template}/assets/img/icon/th.svg" alt="Flag of the Thailand">
 									</div>
 								</a>
 							</li>
-							<li>
-								<a href="javascript:void(0)" class="link lg" title="Chinese language">
+							<li class="{if $langon eq 'cn'}active{/if}">
+								<a href="{$ul}/lang/cn" class="link lg" title="Chinese language">
 									<div class="icon">
 										<img src="{$template}/assets/img/icon/cn.svg" alt="Flag of China">
 									</div>
@@ -72,7 +72,7 @@
 		<div class="row align-items-center no-gutters">
 			<div class="col-auto">
 				<div class="brand">
-					<a href="index.php" class="link" title="Gem and Jewelry Institute of Thailand">
+					<a href="{$ul}/home" class="link" title="Gem and Jewelry Institute of Thailand">
 						<img src="{$template}/assets/img/static/git-logo.png" alt="Gem and Jewelry Institute of Thailand Logo">
 					</a>
 				</div>
@@ -83,7 +83,7 @@
 						<div class="col-auto">
 							<div class="text-color">
 								<div class="txt">
-									เปลี่ยนการแสดงผล
+									{$lang['home']['changedisplay']}
 								</div>
 								<ul class="item-list">
 									<li class="active">
@@ -101,17 +101,17 @@
 						<div class="col-auto">
 							<div class="text-size">
 								<div class="txt">
-									ขนาดตัวอักษร
+									{$lang['home']['fontsize']}
 								</div>
 								<ul class="item-list">
 									<li class="active">
-										<a href="javascript:void(0)" class="size size-small typo-s" title="size small">ก</a>
+										<a href="javascript:void(0)" class="size size-small typo-s" title="size small">{$settingWeb['font'][$langon]}</a>
 									</li>
 									<li>
-										<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">ก</a>
+										<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">{$settingWeb['font'][$langon]}</a>
 									</li>
 									<li>
-										<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">ก</a>
+										<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">{$settingWeb['font'][$langon]}</a>
 									</li>
 								</ul>
 							</div>
@@ -119,22 +119,22 @@
 						<div class="col-auto">
 							<div class="text-language">
 								<ul class="item-list">
-									<li class="active">
-										<a href="javascript:void(0)" class="link lg" title="English language">
+									<li class="{if $langon eq 'en'}active{/if}">
+										<a href="{$ul}/lang/en" class="link lg" title="English language">
 											<div class="icon">
 												<img src="{$template}/assets/img/icon/gb.svg" alt="Flag of the United Kingdom">
 											</div>
 										</a>
 									</li>
-									<li>
-										<a href="javascript:void(0)" class="link lg" title="Thai language">
+									<li class="{if $langon eq 'th'}active{/if}">
+										<a href="{$ul}/lang/th" class="link lg" title="Thai language">
 											<div class="icon">
 												<img src="{$template}/assets/img/icon/th.svg" alt="Flag of the Thailand">
 											</div>
 										</a>
 									</li>
-									<li>
-										<a href="javascript:void(0)" class="link lg" title="Chinese language">
+									<li class="{if $langon eq 'cn'}active{/if}">
+										<a href="{$ul}/lang/cn" class="link lg" title="Chinese language">
 											<div class="icon">
 												<img src="{$template}/assets/img/icon/cn.svg" alt="Flag of China">
 											</div>
@@ -151,8 +151,8 @@
 								<form class="form">
 									<div class="input-group">
 										<div class="form-outline">
-											<input type="search" id="keywords" class="form-control" placeholder="ค้นหา..." />
-											<label class="visuallyhidden" for="keywords">Search</label>
+											<input type="search" id="keywords" class="form-control" placeholder="{$lang['system']['search']}..." />
+											<label class="visuallyhidden" for="keywords">{$lang['system']['search']}</label>
 										</div>
 										<button type="button" class="btn btn-search">
 											<span class="feather icon-search"></span>
@@ -172,7 +172,7 @@
 							<div class="main-menu-list">
 								<ul class="nav-list level-I">
 									<li class="active">
-										<a href="index.php" class="link" title="หน้าแรก">
+										<a href="{$ul}/home" class="link" title="หน้าแรก">
 											หน้าแรก
 										</a>
 									</li>
@@ -180,25 +180,6 @@
 										<a href="javascript:void(0)" class="link link-submenu" data-link="about-menu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											เกี่ยวกับเรา
 										</a>
-										<!-- <ul class="dropdown-menu multi-level">
-											<li>
-												<a class="dropdown-item" href="#">ทิศทางองค์กร</a>
-											</li>
-											<li class="dropdown-submenu">
-												<a class="dropdown-item" href="javascript:void(0)" tabindex="-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">นโยบายและแผน</a>
-												<ul class="dropdown-menu">
-													<li>
-														<a class="dropdown-item" href="#">รายงานประจำปี</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">การประเมินผล</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">แผนปฏิบัติงานและแผนงบ ประมาณประจำปี</a>
-													</li>
-												</ul>
-											</li>
-										</ul> -->
 									</li>
 									<li>
 										<a href="javascript:void(0)" class="link link-submenu" data-link="service-menu" title="งานบริการ">
@@ -234,25 +215,6 @@
 										<a href="javascript:void(0)" class="link link-submenu" title="ติดต่อเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											ติดต่อเรา
 										</a>
-										<!-- <ul class="dropdown-menu multi-level">
-											<li>
-												<a class="dropdown-item" href="#">ทิศทางองค์กร</a>
-											</li>
-											<li class="dropdown-submenu">
-												<a class="dropdown-item" href="javascript:void(0)" tabindex="-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">นโยบายและแผน</a>
-												<ul class="dropdown-menu">
-													<li>
-														<a class="dropdown-item" href="#">รายงานประจำปี</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">การประเมินผล</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">แผนปฏิบัติงานและแผนงบ ประมาณประจำปี</a>
-													</li>
-												</ul>
-											</li>
-										</ul> -->
 									</li>
 								</ul>
 							</div>
@@ -285,7 +247,7 @@
 	<div class="main-menu">
 		<ul class="nav-list level-I">
 			<li>
-				<a href="index.php" class="link active" title="หน้าแรก">
+				<a href="{$ul}/home" class="link active" title="หน้าแรก">
 					หน้าแรก
 				</a>
 			</li>

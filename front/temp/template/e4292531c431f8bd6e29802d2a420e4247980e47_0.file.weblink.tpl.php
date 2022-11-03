@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-18 17:11:12
+/* Smarty version 4.0.0, created on 2022-11-03 15:26:25
   from '/var/www/html/front/template/default/_component/weblink.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_634e7bc00f96f6_85267324',
+  'unifunc' => 'content_63637b31aa08d6_87953661',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e4292531c431f8bd6e29802d2a420e4247980e47' => 
     array (
       0 => '/var/www/html/front/template/default/_component/weblink.tpl',
-      1 => 1664964923,
+      1 => 1666845594,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634e7bc00f96f6_85267324 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63637b31aa08d6_87953661 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
 
   <div class="default-header">
@@ -68,7 +68,8 @@ $_smarty_tpl->tpl_vars['valuecallWel']->do_else = false;
 ?>
             <li>
               <a <?php if ($_smarty_tpl->tpl_vars['valuecallWel']->value['url'] != "#" && $_smarty_tpl->tpl_vars['valuecallWel']->value['url'] != '') {?>href="<?php echo $_smarty_tpl->tpl_vars['valuecallWel']->value['url'];?>
-"<?php } else { ?>href="javascript:void(0);"<?php }?> <?php if ($_smarty_tpl->tpl_vars['valuecallWel']->value['target'] == 2) {?>target="_blank"<?php }?> class="link" title="SAMPLE TRACKING">
+"<?php } else { ?>href="javascript:void(0);"<?php }?> <?php if ($_smarty_tpl->tpl_vars['valuecallWel']->value['target'] == 2) {?>target="_blank"<?php }?> class="link" title="<?php echo $_smarty_tpl->tpl_vars['valuecallWel']->value['subject'];?>
+">
                 <figure class="cover">
                   <img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['valuecallWel']->value['masterkey'];

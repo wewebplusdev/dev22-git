@@ -81,6 +81,7 @@ include("config.php");
 
 		$update[] = $mod_tb_root . "_ref='" . $_POST["inputReference"] . "'";
 		$update[] = $mod_tb_root . "_refdate='" . DateFormatInsert($rdateInput, $cHourInput, $cMinInput) . "'";
+		$update[] = $mod_tb_root."_tid='".serialize(array_filter($_REQUEST['inputTag']))."'"; // remove array at values empty before use fnc serialize
 
 		$update[] = $mod_tb_root . "_urlfriendly='" . changeQuot($_POST['inputUrlFriendly']) . "'";
 

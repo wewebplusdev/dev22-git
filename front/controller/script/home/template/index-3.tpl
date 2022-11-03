@@ -1,8 +1,6 @@
 <section class="site-container">
 <div class="top-graphic">
     <div class="slider">
-
-
             <div class="tpg-item">
                 <figure class="cover">
                     <img src="{$template}/assets/img/upload/thumb-tpg.jpg" alt="">
@@ -23,8 +21,6 @@
                     </div>
                 </div>
             </div>
-
-
     </div>
 </div>
 <div class="default-nav">

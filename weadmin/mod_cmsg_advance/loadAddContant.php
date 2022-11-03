@@ -133,6 +133,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     return false;
                 }
             });
+
+            $('.select2').select2();
         });
     </script>
 </head>
@@ -249,6 +251,44 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         <textarea name="inputDescription" id="inputDescription" cols="45" rows="5" class="formTextareaContantTb"></textarea>
                     </td>
                 </tr>
+            </table>
+            <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo  $langMod["tit:hashtag"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo  $langMod["tit:hashtagDes"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="right" valign="top" height="15"></td>
+                </tr>
+
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["inp:hashtag"] ?><span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <select name="inputTag[]" id="inputTag" class="formSelectContantTb select2" multiple>
+                            <option value=""><?php echo  $langMod["tit:selectghasg"] ?></option>
+                            <?php
+                            $sql_group = "SELECT ";
+                            if ($_REQUEST['inputLt'] == "Thai") {
+                                $sql_group .= "  " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subject";
+                            } else {
+                                $sql_group .= " " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subjecten ";
+                            }
+
+                            $sql_group .= "  FROM " . $mod_tb_tag . " WHERE  " . $mod_tb_tag . "_masterkey ='" . $masterkey_tag . "'  ORDER BY " . $mod_tb_tag . "_order DESC ";
+                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                            while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                                $row_groupid = $row_group[0];
+                                $row_groupname = $row_group[1];
+                            ?>
+                                <option value="<?php echo  $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo  $row_groupname ?></option>
+                            <?php } ?>
+                        </select>
+                    </td>
+                </tr>
+
             </table>
             <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
