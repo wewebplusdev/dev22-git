@@ -8,43 +8,43 @@ class homePage
     $langOption = $url->pagelang[2];
 
     $sql = "SELECT
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_id as id,
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_masterkey as masterkey,
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_subject".$lang." as subject,
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_pic".$lang." as pic,
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_credate as credate,
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_url".$lang." as url,
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_title as title,
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_target as target
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_id as id,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_masterkey as masterkey,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject".$lang." as subject,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_pic".$lang." as pic,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_credate as credate,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_url".$lang." as url,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_title as title,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_target as target
   
   
     FROM
-    " . $config['tgp']['db'] . "
+    " . $config['tgp']['db']['main'] . "
     WHERE ";
     
    
 if($lang){
-  $sql .= $config['tgp']['db'] . "." . $config['tgp']['db'] . "_subject".$lang." != '' AND ";
-  $sql .= $config['tgp']['db'] . "." . $config['tgp']['db'] . "_pic".$lang." != '' AND ";
+  $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject".$lang." != '' AND ";
+  $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_pic".$lang." != '' AND ";
 }else{
-  $sql .= $config['tgp']['db'] . "." . $config['tgp']['db'] . "_subject != '' AND ";
+  $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject != '' AND ";
 }
 
-   $sql .= $config['tgp']['db'] . "." . $config['tgp']['db'] . "_masterkey = '$masterkey' AND
-   " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_lang".$langOption." = '1' AND
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_status = 'Enable' AND
-    ((" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate='0000-00-00 00:00:00' AND
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate='0000-00-00 00:00:00')   OR
-    (" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate='0000-00-00 00:00:00' AND
-    TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate)>=TO_DAYS(NOW()) ) OR
-    (TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
-    " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate='0000-00-00 00:00:00' )  OR
-    (TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
-    TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate)>=TO_DAYS(NOW())  ))
+   $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_masterkey = '$masterkey' AND
+   " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_lang".$langOption." = '1' AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_status = 'Enable' AND
+    ((" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
+    (" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate)>=TO_DAYS(NOW()) ) OR
+    (TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate='0000-00-00 00:00:00' )  OR
+    (TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
   
     ";
 
-    $sql .= " ORDER  BY " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order DESC ";
 
     $result = $db->execute($sql);
     return $result;

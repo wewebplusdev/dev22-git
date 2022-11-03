@@ -15,5 +15,6 @@
     {include file="{$incfile.pdpa}" title=title}
     {include file="{$incfile.loadscript}" title=title}
     {include file="{$incfile.modal}" title=title}
+    {include file="{$incfile.popup}" title=title}
     </body>
 </html>

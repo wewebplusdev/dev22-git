@@ -31,6 +31,8 @@ $config['amphur']['db']['main'] = "md_ads_amphures";
 $config['district']['db']['main'] = "md_ads_districts";
 $config['career']['join']['main'] = "md_joy";
 $config['career']['file']['main'] = "md_joyf";
+$config['intro']['db']['main'] = "md_int";
+$config['tgp']['db']['main'] = "md_tgp";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
@@ -50,6 +52,9 @@ $config['contact']['cu']['masterkey'] = 'cu';
 $config['about']['ab_js']['masterkey'] = "ab_js";
 $config['infoservice']['is_art']['masterkey'] = "is_art";
 $config['infoservice']['is_ms']['masterkey'] = "is_ms";
+$config['intro']['main']['masterkey'] = "int";
+$config['ban']['main']['masterkey'] = "ban";
+
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';
 $config['policy']['db'] = 'md_ab';

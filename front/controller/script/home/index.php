@@ -6,6 +6,10 @@ $listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script
 $homePage = new homePage;
 $themeWebsite = 'theme-3';
 
+
+$callBanner = $homePage->callTopGraphic($config['ban']['main']['masterkey']);
+$smarty->assign("callBanner", $callBanner);
+
 switch ($themeWebsite) {
     case 'theme-3':
         $settingPage = array(

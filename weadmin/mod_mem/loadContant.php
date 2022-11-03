@@ -215,7 +215,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 		alert('<?php echo $langTxt['mg:selpermis'] ?>');
 }
 				  "></div>
-                    <?php if ($_REQUEST['inputGh'] >= 1) { ?>
+                    <?php if ($_REQUEST['inputGh'] >= 1 || true) { ?>
                       <div class="btnSort" title="<?php echo $langTxt["btn:sortting"] ?>" onclick="sortContactNew('sortContant.php');"></div>
                   <?php }
                   } ?>

@@ -79,6 +79,8 @@ include("config.php");
 		$update[] = $mod_tb_root . "_langen='" . $setLangEN . "'";
 		$update[] = $mod_tb_root . "_langcn='" . $setLangCN . "'";
 
+		$update[] = $mod_tb_root . "_ref='" . $_POST["inputReference"] . "'";
+		$update[] = $mod_tb_root . "_refdate='" . DateFormatInsert($rdateInput, $cHourInput, $cMinInput) . "'";
 
 		$update[] = $mod_tb_root . "_urlfriendly='" . changeQuot($_POST['inputUrlFriendly']) . "'";
 
@@ -132,13 +134,18 @@ include("config.php");
 
 		//include("../lib/incRss.php");
 
+		## Short URL Table ###################################
+		$sqlSch="DELETE FROM ".$mod_tb_root_short." WHERE   ".$mod_tb_root_short."_contantid='".$_POST["valEditID"]."'  AND ".$mod_tb_root_short."_masterkey='".$_POST["masterkey"]."'  ";
+		$querySch=wewebQueryDB($coreLanguageSQL,$sqlSch);
     if (!empty($_REQUEST['inputShortUrl'])) {
-			## Short URL Table
-			$update = array();
-			$update[] = $mod_tb_root_short . "_short_url='" . $_REQUEST['inputShortUrl'] . "'";
-			$update[] = $mod_tb_root_short . "_long_url='" . $valUrlSearchTH . "'";
-			$sqlSch = "UPDATE " . $mod_tb_root_short . " SET " . implode(",", $update) . " WHERE " . $mod_tb_root_short . "_contantid='" . $_POST["valEditID"] . "'  AND " . $mod_tb_root_short . "_masterkey='" . $_POST["masterkey"] . "' ";
-			$querySch = wewebQueryDB($coreLanguageSQL, $sqlSch);
+			$insert = array();
+			$insert[$mod_tb_root_short . "_contantid"] = "'" . $_POST["valEditID"] . "'";
+			$insert[$mod_tb_root_short . "_masterkey"] = "'" . $_REQUEST['masterkey'] . "'";
+			$insert[$mod_tb_root_short . "_long_url"] = "'" . $valUrlSearchTH . "'";
+			$insert[$mod_tb_root_short . "_short_url"] = "'" . $_REQUEST['inputShortUrl'] . "'";
+	
+			$sql = "INSERT INTO " . $mod_tb_root_short . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
+			$Query = wewebQueryDB($coreLanguageSQL,$sql);
 		}
 	?>
 	<?php } ?>
