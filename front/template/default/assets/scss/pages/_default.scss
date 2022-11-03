@@ -613,13 +613,13 @@ fieldset {
 }
 
 .default-nav-tab {
-    padding-top: 40px;
-    width: 90%;
-    margin: auto;
+    margin: 0 -10px;
+    margin-bottom: 60px;
     li {
         width: 50%;
         text-align: center;
         position: relative;
+        padding: 0 10px;
         .item {
             font-size: var(--typo-lg);
             color: var(--color-gray);
@@ -628,34 +628,33 @@ fieldset {
                 color: var(--color-primary);
                 text-decoration: none;
                 &::before {
-                    content: "";
-                    background-image: url(../img/icon/underline-style.svg);
-                    width: 90%;
-                    background-repeat: no-repeat;
-                    height: 15px;
-                    position: absolute;
-                    background-position: center;
-                    left: 0;
-                    right: 0;
-                    margin: auto;
-                    bottom: -30px;
+                    filter: unset;
+                    opacity: 1;
+                    color: var(--color-primary);
+                    text-decoration: none;
                 }
+            }
+            &::before {
+                content: "";
+                opacity: 0.1;
+                filter: grayscale(1);
+                background-image: url(../img/icon/underline-style.svg);
+                background-size: 100%;
+                background-repeat: no-repeat;
+                height: 15px;
+                position: absolute;
+                background-position: center;
+                left: 10px;
+                right: 10px;
+                margin: auto;
+                bottom: -30px;
             }
         }
         .item.active {
             color: var(--color-primary);
             &::before {
-                content: "";
-                background-image: url(../img/icon/underline-style.svg);
-                width: 90%;
-                background-repeat: no-repeat;
-                height: 15px;
-                position: absolute;
-                background-position: center;
-                left: 0;
-                right: 0;
-                margin: auto;
-                bottom: -30px;
+                opacity: 1;
+                filter: unset;
             }
         }
     }
