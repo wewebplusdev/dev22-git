@@ -618,6 +618,10 @@
     .diamond-calc-page .calc-result .calc-shape .icon img {
         filter: grayscale(1) contrast(2);
     }
+
+    .default-slider-dots .slick-dots li.slick-active button::before {
+        background-color: var(--color-light);
+    }
 }
 
 .theme-style-3 {
@@ -1469,7 +1473,61 @@
 }
 
 // .site-header-topbar .text-color .item-list > li a, .site-header-topbar .text-size .item-list > li a
-
+.theme-2 {
+    &.theme-style-2 {
+        .site-header .site-header-main .main-menu-list .nav-list > li.active {
+            background-color: var(--color-light);
+        }
+        .site-header .site-header-main .main-menu-list .nav-list > li a.active {
+            background-color: var(--color-black);
+        }
+        .site-header .site-header-main .main-menu-list .nav-list > li a {
+            color: var(--color-light);
+        }
+        .site-header-main .main-menu-list .nav-list > li.active > a {
+            color: var(--color-black);
+        }
+        .services-block {
+            background: var(--color-black);
+        }
+        .top-graphic .default-slider-dots .slick-dots li.slick-active button::before {
+            background-color: var(--color-light);
+        }
+        .e-service-block {
+            background: var(--color-light);
+        }
+        .e-service-block,
+        .e-service-block .link {
+            color: var(--color-black);
+        }
+        .e-service-block .icon .circle {
+            border-color: var(--color-black);
+        }
+        .e-service-block .link:hover .circle {
+            background: rgb(0, 0, 0);
+        }
+        .e-service-block .link svg path {
+            fill: var(--color-black);
+        }
+        .e-service-block .link:hover svg path {
+            fill: var(--color-light);
+        }
+        .e-service-block .h-title::before {
+            background-color: var(--color-black);
+        }
+        .training-block {
+            background-color: var(--color-black);
+        }
+        .default-list .link:hover,
+        .default-list .link:hover .title,
+        .default-list .link:hover .icon {
+            color: var(--color-black);
+        }
+        .default-list .link:hover{
+            background-color: var(--color-light);
+        }
+    }
+}
 .theme-3 {
     &.theme-style-2 {
         .default-nav .item-.slick-current a,

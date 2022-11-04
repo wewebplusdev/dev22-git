@@ -14008,6 +14008,9 @@ fieldset {
   -webkit-filter: grayscale(1) contrast(2);
           filter: grayscale(1) contrast(2);
 }
+.theme-style-2 .default-slider-dots .slick-dots li.slick-active button::before {
+  background-color: var(--color-light);
+}
 
 .theme-style-3 {
   color: #202020;
@@ -14704,6 +14707,58 @@ fieldset {
 }
 .theme-style-3 .divider {
   border-color: var(--color-black);
+}
+
+.theme-2.theme-style-2 .site-header .site-header-main .main-menu-list .nav-list > li.active {
+  background-color: var(--color-light);
+}
+.theme-2.theme-style-2 .site-header .site-header-main .main-menu-list .nav-list > li a.active {
+  background-color: var(--color-black);
+}
+.theme-2.theme-style-2 .site-header .site-header-main .main-menu-list .nav-list > li a {
+  color: var(--color-light);
+}
+.theme-2.theme-style-2 .site-header-main .main-menu-list .nav-list > li.active > a {
+  color: var(--color-black);
+}
+.theme-2.theme-style-2 .services-block {
+  background: var(--color-black);
+}
+.theme-2.theme-style-2 .top-graphic .default-slider-dots .slick-dots li.slick-active button::before {
+  background-color: var(--color-light);
+}
+.theme-2.theme-style-2 .e-service-block {
+  background: var(--color-light);
+}
+.theme-2.theme-style-2 .e-service-block,
+.theme-2.theme-style-2 .e-service-block .link {
+  color: var(--color-black);
+}
+.theme-2.theme-style-2 .e-service-block .icon .circle {
+  border-color: var(--color-black);
+}
+.theme-2.theme-style-2 .e-service-block .link:hover .circle {
+  background: rgb(0, 0, 0);
+}
+.theme-2.theme-style-2 .e-service-block .link svg path {
+  fill: var(--color-black);
+}
+.theme-2.theme-style-2 .e-service-block .link:hover svg path {
+  fill: var(--color-light);
+}
+.theme-2.theme-style-2 .e-service-block .h-title::before {
+  background-color: var(--color-black);
+}
+.theme-2.theme-style-2 .training-block {
+  background-color: var(--color-black);
+}
+.theme-2.theme-style-2 .default-list .link:hover,
+.theme-2.theme-style-2 .default-list .link:hover .title,
+.theme-2.theme-style-2 .default-list .link:hover .icon {
+  color: var(--color-black);
+}
+.theme-2.theme-style-2 .default-list .link:hover {
+  background-color: var(--color-light);
 }
 
 .theme-3.theme-style-2 .default-nav .item-.slick-current a,
