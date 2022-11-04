@@ -178,7 +178,7 @@
                             <?php } ?>
                         </ul>
                         <div class="action">
-                            <a href="" class="btn btn-lg btn-border-primary" title="อ่านต่อ">อ่านต่อ</a>
+                            <a href="" class="btn btn-lg btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                                         เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542
                                     </div>
                                     <div class="action">
-                                        <a href="" class="btn btn-lg btn-border-light" title="อ่านต่อ">อ่านต่อ</a>
+                                        <a href="" class="btn btn-lg btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
                                     </div>
                                     <div class="graphic">
                                         <img src="<?php echo $core_template; ?>/assets/img/static/graphic-diamonds.png" alt="diamonds">
@@ -216,7 +216,7 @@
                                 </ul>
                                 <div class="default-tab-content tab-content" id="trainingTabContent">
                                     <div class="tab-pane fade show active" id="training-01" role="tabpanel" aria-labelledby="training-01-tab">
-                                        <div class="training-list">
+                                        <div class="default-list">
                                             <div class="default-slider default-slider-dots slider">
                                                 <?php for ($i = 1; $i <= 5; $i++) { ?>
 
@@ -421,7 +421,7 @@
                                     </div>
                                 </div>
                                 <div class="action">
-                                    <a href="" class="btn btn-lg btn-border-light" title="อ่านต่อ">อ่านต่อ</a>
+                                    <a href="" class="btn btn-lg btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
                                 </div>
                             </div>
                         </div>
@@ -454,36 +454,81 @@
                         </ul>
                         <div class="tab-content clearfix">
                             <div class="tab-pane active" id="labUpdate1">
-                                <div class="default-slider slider">
-                                    <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                <div class="default-list">
+                                    <div class="default-slider default-slider-arrows default-slider-dots slider">
+                                        <?php for ($i = 1; $i <= 5; $i++) { ?>
 
-                                        <div class="item">
-                                            <a href="" class="link">
-                                                <div class="row no-gutters">
-                                                    <div class="col-auto">
-                                                        <span class="icon feather-file-text"></span>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="inner">
-                                                            <div class="title typo-md fw-medium text-limit">ขอเชิญเข้าร่วม Workshop “เทคนิคการสร้าง</div>
-                                                            <div class="desc typo-s text-limit -x2">
-                                                                ในวันพฤหัสบดี-ศุกร์ที่ 18-19 สิงหาคม 2565 เวลา 09.00 – 16.00 น. (ค่าใช้จ่าย 2,900 บาท/ท่าน) รับเพียง 18 ท่านเท่านั้น)
-                                                            </div>
-                                                            <div class="date typo-s">
-                                                                16 มิถุนายน 2565
+                                            <div class="item">
+                                                <a href="" class="link">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-auto">
+                                                            <span class="icon feather-file-text"></span>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="inner">
+                                                                <div class="row">
+                                                                    <div class="col-sm">
+                                                                        <div class="title typo-md fw-medium text-limit">
+                                                                            Star Sapphire Doublets
+                                                                        </div>
+                                                                        <div class="desc typo-s text-limit -x2">
+                                                                            PDF File Size: 1 MB
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-auto">
+                                                                        <div class="date typo-s">
+                                                                            16 มิถุนายน 2565
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </div>
+                                                </a>
+                                            </div>
 
-                                    <?php } ?>
+                                        <?php } ?>
 
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="labUpdate2">
                                 labUpdate2
+                            </div>
+                        </div>
+                        <div class="action">
+                            <a href="" class="btn btn-lg btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner-III">
+                    <div class="container">
+                        <div class="wrapper">
+                            <div class="quote text-uppercase">
+                                GIT’s World Jewelry Design <br>
+                                and Faceting Awards
+                            </div>
+                            <div class="frame-img">
+                                <figure class="cover">
+                                    <img src="<?php echo $core_template; ?>/assets/img/static/flint-stone-towards-sky.png" alt="diamonds" style="mix-blend-mode: multiply;">
+                                </figure>
+                            </div>
+                            <div class="box bg-primary text-light">
+                                <div class="inner">
+                                    <div class="title">
+                                        GIT’s World Jewelry Design
+                                        Awards 2021
+                                    </div>
+                                    <div class="subtitle">
+                                        ภายใต้ธีม "Intergeneration Jewelry : <br>
+                                        Jewlry for every generation"
+                                    </div>
+                                    <div class="desc">
+                                        สอบถามรายละเอียดเพิ่มเติมที่ : 02 634 4999 <br>
+                                        ติดตามรายละเอียดการประกวดที่ : www.gitwjda.com
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

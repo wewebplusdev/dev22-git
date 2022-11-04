@@ -1,0 +1,171 @@
+.slick-prev:before,
+.slick-next:before {
+    font-family: "feather";
+    color: var(--color-default);
+    font-size: 26px;
+}
+
+.slick-prev:before {
+    content: "\e843";
+}
+
+.slick-next:before {
+    content: "\e844";
+}
+
+.default-slider-dots {
+    position: relative;
+    .slick-dots {
+        bottom: -30px;
+    }
+    .slick-dots li {
+        width: 20px;
+        height: 60px;
+    }
+    .slick-dots li button {
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--color-light);
+        border-radius: 50%;
+        transition: 300ms ease-in-out;
+    }
+    .slick-dots li button:before {
+        content: "";
+        opacity: 0;
+    }
+    .slick-dots li.slick-active {
+        width: 60px;
+        height: 60px;
+    }
+    .slick-dots li.slick-active button {
+        width: 60px;
+        height: 60px;
+    }
+    .slick-dots li.slick-active button::before {
+        border-radius: 50%;
+        background-color: var(--color-secondary);
+        width: 20px;
+        height: 20px;
+        left: 20px;
+        top: 20px;
+        opacity: 1;
+        transition: 300ms ease-in-out;
+    }
+    .slick-dotted.slick-slider {
+        margin-bottom: 0;
+    }
+}
+
+.default-slider-arrows {
+    .prev-arrow,
+    .next-arrow {
+        top: 44%;
+        width: 36px;
+        height: 62px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: 1;
+        transition: 0.2s;
+
+        &::before {
+            display: none;
+        }
+    }
+    .prev-arrow {
+        left: -150px;
+        &.slick-disabled {
+            opacity: 0.5;
+        }
+    }
+    .next-arrow {
+        right: -150px;
+    }
+    .prev-arrow {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36.312' height='66.055' viewBox='0 0 36.312 66.055'%3E%3Cpath id='Path_1486' data-name='Path 1486' d='M1806.4,2931l-32.03,29.783,32.03,32.03' transform='translate(-1772.207 -2928.88)' fill='none' stroke='%23d1d1d1' stroke-linecap='round' stroke-width='3'/%3E%3C/svg%3E%0A");
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36.312' height='66.055' viewBox='0 0 36.312 66.055'%3E%3Cpath id='Path_1486' data-name='Path 1486' d='M1806.4,2931l-32.03,29.783,32.03,32.03' transform='translate(-1772.207 -2928.88)' fill='none' stroke='%23013f94' stroke-linecap='round' stroke-width='3'/%3E%3C/svg%3E%0A");
+        }
+    }
+    .next-arrow {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36.312' height='66.055' viewBox='0 0 36.312 66.055'%3E%3Cpath id='Path_1487' data-name='Path 1487' d='M1774.367,2931l32.031,29.783-32.031,32.031' transform='translate(-1772.246 -2928.88)' fill='none' stroke='%23d1d1d1' stroke-linecap='round' stroke-width='3'/%3E%3C/svg%3E%0A");
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36.312' height='66.055' viewBox='0 0 36.312 66.055'%3E%3Cpath id='Path_1487' data-name='Path 1487' d='M1774.367,2931l32.031,29.783-32.031,32.031' transform='translate(-1772.246 -2928.88)' fill='none' stroke='%23013f94' stroke-linecap='round' stroke-width='3'/%3E%3C/svg%3E%0A");
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .default-slider-arrows .prev-arrow {
+        left: -60px;
+    }
+    .default-slider-arrows .next-arrow {
+        right: -60px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .default-slider-dots .slick-dots li.slick-active,
+    .default-slider-dots .slick-dots li.slick-active button {
+        width: 50px;
+        height: 50px;
+    }
+    .default-slider-dots .slick-dots li.slick-active button::before {
+        width: 18px;
+        height: 18px;
+        left: 16px;
+        top: 16px;
+    }
+    .default-slider-dots .slick-dots li {
+        height: 50px;
+    }
+    .default-slider-dots .slick-dots li button,
+    .default-slider-dots .slick-dots li button:before {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .default-slider-dots .slick-dots li.slick-active,
+    .default-slider-dots .slick-dots li.slick-active button {
+        width: 44px;
+        height: 44px;
+    }
+    .default-slider-dots .slick-dots li.slick-active button::before {
+        width: 16px;
+        height: 16px;
+        left: 14px;
+        top: 14px;
+    }
+    .default-slider-dots .slick-dots li {
+        height: 44px;
+    }
+    .default-slider-dots .slick-dots li button,
+    .default-slider-dots .slick-dots li button:before {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .default-slider-dots .slick-dots li.slick-active,
+    .default-slider-dots .slick-dots li.slick-active button {
+        width: 36px;
+        height: 36px;
+    }
+    .default-slider-dots .slick-dots li.slick-active button::before {
+        width: 14px;
+        height: 14px;
+        left: 11px;
+        top: 11px;
+    }
+    .default-slider-dots .slick-dots li {
+        height: 36px;
+    }
+    .default-slider-dots .slick-dots li button,
+    .default-slider-dots .slick-dots li button:before {
+        width: 14px;
+        height: 14px;
+    }
+}

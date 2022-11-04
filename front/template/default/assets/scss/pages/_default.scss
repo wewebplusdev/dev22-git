@@ -470,20 +470,7 @@
     }
 }
 
-.slick-prev:before,
-.slick-next:before {
-    font-family: "feather";
-    color: var(--color-default);
-    font-size: 26px;
-}
 
-.slick-prev:before {
-    content: "\e843";
-}
-
-.slick-next:before {
-    content: "\e844";
-}
 
 fieldset {
     padding: 0;
