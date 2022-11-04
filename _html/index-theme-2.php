@@ -497,7 +497,7 @@
                             </div>
                         </div>
                         <div class="action">
-                            <a href="" class="btn btn-lg btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                            <a href="" class="btn btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
                         </div>
                     </div>
                 </div>
@@ -511,7 +511,7 @@
                             </div>
                             <div class="frame-img">
                                 <figure class="cover">
-                                    <img src="<?php echo $core_template; ?>/assets/img/static/flint-stone-towards-sky.png" alt="diamonds" style="mix-blend-mode: multiply;">
+                                    <img src="<?php echo $core_template; ?>/assets/img/static/flint-stone-towards-sky.png" alt="flint stone towards sky" style="mix-blend-mode: multiply;">
                                 </figure>
                             </div>
                             <div class="box bg-primary text-light">
@@ -529,6 +529,116 @@
                                         ติดตามรายละเอียดการประกวดที่ : www.gitwjda.com
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="git-book-block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-8">
+                                <div class="row align-items-center gutters-10">
+                                    <div class="col">
+                                        <div class="title text-uppercase">GIT BOOK</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="action">
+                                            <a href="" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="booklist">
+                                    <div class="default-slider default-slider-dots slider">
+
+                                        <?php for ($i = 1; $i <= 10; $i++) { ?>
+
+                                            <div class="item">
+                                                <a href="" class="link" title="">
+                                                    <figure class="cover">
+                                                        <img src="<?php echo $core_template; ?>/assets/img/static/git-book-02.jpg" alt="GIT BOOK">
+                                                    </figure>
+                                                </a>
+                                            </div>
+
+                                        <?php } ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="git-library-block">
+                    <div class="bg-library">
+                        <div class="row no-gutters">
+                            <div class="col-md bg-left"></div>
+                            <div class="col-md bg-right"></div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="library-content">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md">
+                                    <div class="content-left">
+                                        <div class="title">
+                                            GIT LIBRARY
+                                        </div>
+                                        <div class="desc">
+                                            WEB OPAC 2.0 สืบค้นหนังสือ/วารสาร
+                                            ห้องสมุดอัญมณีและเครื่องประดับ
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="content-right">
+                                        <form data-toggle="validator" role="form" class="form-default" method="post">
+                                            <div class="form-group">
+                                                <label class="control-label visuallyhidden" for="bookSearch">สืบค้นหนังสือ/วารสาร</label>
+                                                <div class="block-control">
+                                                    <input type="text" class="form-control" id="bookSearch" placeholder="">
+                                                </div>
+                                            </div>
+                                            <button type="submit" id="submitForm" class="btn fluid btn-primary" title="ค้นหา">ค้นหา</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weblink-block">
+                    <div class="container">
+                        <div class="row align-items-center gutters-10">
+                            <div class="col">
+                                <div class="title typo-xl fw-medium text-uppercase">GIT WEBLINK</div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="action">
+                                    <a href="" class="btn btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weblink-list">
+                            <div class="default-slider default-slider-dots slider">
+                                <?php for ($i = 1; $i <= 8; $i++) { ?>
+                                    <div class="item">
+                                        <a href="" class="link" title="web link">
+                                            <div class="thumbnail">
+                                                <figure class="cover">
+                                                    <img src="<?php echo $core_template; ?>/assets/img//static/git-weblink.jpg" alt="logo">
+                                                </figure>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

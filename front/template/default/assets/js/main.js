@@ -337,9 +337,44 @@ $(document).ready(function () {
         responsive: [{
             breakpoint: 992,
             settings: {
+                arrows: false,
                 dots: true
             },
         },]
+    });
+
+    $(".git-book-block .slider").slick({
+        // autoplay: true,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        variableWidth: true,
+        responsive: [
+            {
+            breakpoint: 992,
+            settings: {
+                variableWidth: false,
+            },
+        },
+            {
+            breakpoint: 768,
+            settings: {
+                variableWidth: false,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+            },
+        },
+            {
+            breakpoint: 576,
+            settings: {
+                variableWidth: false,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
+        },
+    ]
     });
 
     $(".theme-3 .top-graphic .slider").slick({
@@ -385,7 +420,34 @@ $(document).ready(function () {
         ],
     });
 
-    $(".weblink-block .slider").slick({
+    $(".theme-2 .weblink-block .slider").slick({
+        infinite: false,
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        arrows: false,
+        dots: true,
+        responsive: [{
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 5,
+            },
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4,
+            },
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 3,
+            },
+        },
+        ],
+    });
+
+    $(".theme-3 .weblink-block .slider").slick({
         infinite: false,
         slidesToShow: 5,
         slidesToScroll: 5,
