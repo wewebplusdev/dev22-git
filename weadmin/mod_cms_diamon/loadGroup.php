@@ -98,7 +98,6 @@ if($_REQUEST['masterkey'] == 'news'){
                     <td class="divRightNavTb" align="right">
 
                         <!-- ######### Start Menu Sub Mod ########## -->
-                        <?php if(in_array($_REQUEST['masterkey'], $array)){ ?>
                         <div class="menuSubMod active">
                             <a
                                 href="group.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
@@ -111,7 +110,6 @@ if($_REQUEST['masterkey'] == 'news'){
                                 <?php echo $langMod["meu:contant"] ?>
                             </a>
                         </div>
-                        <?php } ?>
                         <!-- ######### End Menu Sub Mod ########## -->
                     </td>
                 </tr>
@@ -177,16 +175,16 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                             class="formCheckboxHead" />
                     </td>
 
-                    <td align="left" width="22%" valign="middle" class="divRightTitleTb"><span
+                    <td align="left" valign="middle" class="divRightTitleTb"><span
                             class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"]?><?php if($_SESSION[$valSiteManage.'core_session_languageT']==2){ ?>(<?php echo $langTxt["lg:thai"]?>)<?php } ?></span>
                     </td>
 
-                    <?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3){ ?>
+                    <?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3  && false){ ?>
                     <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span
                             class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"]?>(<?php echo $langTxt["lg:eng"]?>)</span>
                     </td>
                     <?php } ?>
-                    <?php if($_SESSION[$valSiteManage.'core_session_languageT']==3){ ?>
+                    <?php if($_SESSION[$valSiteManage.'core_session_languageT']==3  && false){ ?>
                     <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span
                             class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"]?>(<?php echo $langTxt["lg:chi"]?>)</span>
                     </td>
@@ -276,11 +274,11 @@ if($count_record>0) {
                     <td class="divRightContantOverTb" valign="top" align="left">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                                <td class="displayTdImg" width="39" align="left" valign="top">
+                                <!-- <td class="displayTdImg" width="39" align="left" valign="top">
                                     <div class="displayClickImg"
                                         style="background:url(<?php echo $valPic ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  ">
                                     </div>
-                                </td>
+                                </td> -->
                                 <td align="left"><a href="javascript:void(0)" onclick="
     document.myFormHome.inputLt.value='Thai';
    document.myFormHome.valEditID.value=<?php echo $valID?>;
@@ -289,7 +287,7 @@ if($count_record>0) {
                             </tr>
                         </table>
                     </td>
-                    <?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3){ ?>
+                    <?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3 && false){ ?>
                     <td class="divRightContantOverTb" valign="top" align="left">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
@@ -301,7 +299,7 @@ if($count_record>0) {
                         </table>
                     </td>
                     <?php } ?>
-                    <?php if($_SESSION[$valSiteManage.'core_session_languageT']==3){ ?>
+                    <?php if($_SESSION[$valSiteManage.'core_session_languageT']==3  && false){ ?>
                     <td class="divRightContantOverTb" valign="top" align="left">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
@@ -393,7 +391,7 @@ if($count_record>0) {
     editContactNew('topUpdateGroup.php');">
                                         <img src="../img/btn/topbtn.png" /><br />
                                         <span
-                                            class="fontContantTbManage"><?php echo $langTxt["btn:top"]?><?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3){ ?><br />
+                                            class="fontContantTbManage"><?php echo $langTxt["btn:top"]?><?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3 && false){ ?><br />
                                             (<?php echo $langTxt["lg:all"]?>)<?php } ?></span>
                                     </div>
                                 </td>
@@ -404,11 +402,11 @@ if($count_record>0) {
     editContactNew('editGroup.php');">
                                         <img src="../img/btn/edit.png" /><br />
                                         <span
-                                            class="fontContantTbManage"><?php echo $langTxt["btn:edit"]?><?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3){ ?><br />
+                                            class="fontContantTbManage"><?php echo $langTxt["btn:edit"]?><?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3 && false){ ?><br />
                                             (<?php echo $langTxt["lg:thai"]?>)<?php } ?></span>
                                     </div>
                                 </td>
-                                <?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3){ ?>
+                                <?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3  && false){ ?>
                                 <td valign="top" align="center" width="30">
                                     <div class="divRightManage" title="<?php echo $langTxt["btn:edit"]?>" onclick="
    document.myFormHome.inputLt.value='Eng';
@@ -420,7 +418,7 @@ if($count_record>0) {
                                     </div>
                                 </td>
                                 <?php } ?>
-                                <?php if($_SESSION[$valSiteManage.'core_session_languageT']==3){ ?>
+                                <?php if($_SESSION[$valSiteManage.'core_session_languageT']==3  && false){ ?>
                                 <td valign="top" align="center" width="30">
                                     <div class="divRightManage" title="<?php echo $langTxt["btn:edit"]?>" onclick="
    document.myFormHome.inputLt.value='Chi';
@@ -441,7 +439,7 @@ if($count_record>0) {
             ">
                                         <img src="../img/btn/delete.png" /><br />
                                         <span
-                                            class="fontContantTbManage"><?php echo $langTxt["btn:del"]?><?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3){ ?><br />
+                                            class="fontContantTbManage"><?php echo $langTxt["btn:del"]?><?php if($_SESSION[$valSiteManage.'core_session_languageT']==2 || $_SESSION[$valSiteManage.'core_session_languageT']==3 && false){ ?><br />
                                             (<?php echo $langTxt["lg:all"]?>)<?php } ?></span>
                                     </div>
                                 </td>

@@ -1,1 +1,3 @@
 Update|:|34defa35102ec627b37903712501aec9|:|3|:|http://localhost:8080/weadmin/mod_career/updateContant.php|:|ab_js|:|15|:|update|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-17 11:20:40
+Insert Group|:|qf90vt0ghj834t9umm2d1fl7hg|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/insertGroup.php|:|rs_ri|:|23|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-17 21:11:48
+Insert Sub Group|:|qf90vt0ghj834t9umm2d1fl7hg|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn/insertSubGroup.php|:|rs_ri|:|23|:|insert|:|20|:|gitadmin gitadmin|:|172.18.0.1|:|2022-10-17 21:12:19

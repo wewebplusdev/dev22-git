@@ -108,7 +108,7 @@ $langMod["tit:factorrange"] = "Length to Width Ratio";
 }else{
 
     	$langMod["viw:subjectgDe"] = "ข้อมูลชื่อ" . $langMod["meu:group"] . " เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
-		$langMod["meu:group"] = "กลุ่ม";
+		$langMod["meu:group"] = "กลุ่ม" .getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
 		$langMod["txt:titleadd"] = "สร้างข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
@@ -214,6 +214,7 @@ $langTxt["mg:statuspin"] = "Pin/Unpin";
 $langMod["tit:options"] = "Options";
 $langMod["tit:factor"] = "Adjustment Factor";
 $langMod["tit:factorrange"] = "Length to Width Ratio";
+$langMod["tit:selectf"] = "เลือก".$langMod["tit:factor"];
 
 }
 ?>

@@ -25,6 +25,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 }
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_factor as factor ";
+$sql .= " , " . $mod_tb_root . "_factor_arr as factor_arr ";
 $sql .= " 
 			FROM " . $mod_tb_root . " 
 			WHERE " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root . "_id 	='" . $_POST["valEditID"] . "'";
@@ -63,6 +64,7 @@ $valLang[0] = $Row[18];
 $valLang[1] = $Row[19];
 $valLang[2] = $Row[20];
 $valFactor = $Row['factor'];
+$valFactorArr = unserialize($Row['factor_arr']);
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 
 ?>
@@ -99,25 +101,33 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					jQuery("#inputSubject").removeClass("formInputContantTbAlertY");
 				}
 
-				if (isBlank(inputDescription)) {
-					inputDescription.focus();
-					jQuery("#inputDescription").addClass("formInputContantTbAlertY");
-					return false;
-				} else {
-					jQuery("#inputDescription").removeClass("formInputContantTbAlertY");
-				}
+				// if (isBlank(inputDescription)) {
+				// 	inputDescription.focus();
+				// 	jQuery("#inputDescription").addClass("formInputContantTbAlertY");
+				// 	return false;
+				// } else {
+				// 	jQuery("#inputDescription").removeClass("formInputContantTbAlertY");
+				// }
 
 				var option = $('input[name="inputType"]:checked').val();
-				if (option == 1) {
-						if (isBlank(inputFactor)) {
-								inputFactor.focus();
-								jQuery("#inputFactor").addClass("formInputContantTbAlertY");
-								return false;
-						} else {
-								jQuery("#inputFactor").removeClass("formInputContantTbAlertY");
-						}
-				}
-				
+                if (option == 3) {
+                    if (isBlank(inputFactorArr.value == 0)) {
+                        inputFactorArr.focus();
+                        jQuery("#inputFactorArr").addClass("formInputContantTbAlertY");
+                        return false;
+                    } else {
+                        jQuery("#inputFactorArr").removeClass("formInputContantTbAlertY");
+                    }
+                }else{
+                    if (isBlank(inputFactor)) {
+                        inputFactor.focus();
+                        jQuery("#inputFactor").addClass("formInputContantTbAlertY");
+                        return false;
+                    } else {
+                        jQuery("#inputFactor").removeClass("formInputContantTbAlertY");
+                    }
+                }
+
 			}
 
 			updateContactNew('updateContant.php');
@@ -133,14 +143,15 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				if (e.which == 13) {
 					//e.preventDefault();
 					if (!checkFocusTitle) {
-							// if(!checkFocus2){
-							executeSubmit();
-							return false;
-							// }
+						// if(!checkFocus2){
+						executeSubmit();
+						return false;
+						// }
 					}
 				}
 				/* End  Enter Check CKeditor */
 			});
+			$('.select2').select2();
 		});
 	</script>
 </head>
@@ -227,7 +238,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputSubject" id="inputSubject" type="text" class="formInputContantTb" value="<?php echo $valSubject ?>" /></td>
 				</tr>
 				<tr>
-					<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title"] ?><span class="fontContantAlert">*</span></td>
+					<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title"] ?><span class="fontContantAlert"></span></td>
 					<td colspan="6" align="left" valign="top" class="formRightContantTb">
 						<textarea name="inputDescription" id="inputDescription" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valTitle ?></textarea>
 					</td>
@@ -235,22 +246,62 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				<tr>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:options"] ?><span class="fontContantAlert">*</span></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-							<label>
-							<div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="1" <?php if($valType != 2){ echo 'checked="checked"'; }?> onclick="jQuery('.factor').show();"/></div>
+						<label>
+							<div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="1" <?php if ($valType != 2) {
+																																					echo 'checked="checked"';
+																																				} ?> onclick="jQuery('.factor').show();jQuery('.select-factor').hide();" /></div>
 							<div class="formDivRadioR"><?php echo $modTxtOption[1] ?></div>
-							</label>
+						</label>
 
-							<label>
-							<div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="2" <?php if($valType == 2){ echo 'checked="checked"'; }?> onclick="jQuery('.factor').hide();"/></div>
+						<label>
+							<div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="2" <?php if ($valType == 2) {
+																																					echo 'checked="checked"';
+																																				} ?> onclick="jQuery('.factor').show();jQuery('.select-factor').hide();" /></div>
 							<div class="formDivRadioR"><?php echo $modTxtOption[2] ?></div>
-							</label>
-							</label>
+						</label>
+
+						<label>
+							<div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="3" <?php if ($valType == 3) {
+																																					echo 'checked="checked"';
+																																				} ?> onclick="jQuery('.factor').hide();jQuery('.select-factor').show();" /></div>
+							<div class="formDivRadioR"><?php echo $modTxtOption[3] ?></div>
+						</label>
 					</td>
-			</tr>
-			<tr class="factor" <?php if($valType == 2){ echo 'style="display:none;"'; }?>>
+				</tr>
+				<tr class="factor" <?php if ($valType == 3) {
+										echo 'style="display:none;"';
+									} ?>>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:factor"] ?><span class="fontContantAlert">*</span></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputFactor" id="inputFactor" type="number" value="<?php echo $valFactor; ?>" class="formInputContantTbShort" /></td>
-			</tr>
+				</tr>
+				<tr class="select-factor" <?php if ($valType != 3) { echo 'style="display:none;"'; } ?>>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:factor"] ?><span class="fontContantAlert">*</span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <select name="inputFactorArr[]" id="inputFactorArr" class="formSelectContantTb select2" multiple>
+                            <option value="0"><?php echo $langMod["tit:selectf"] ?></option>
+                            <?php
+                            $sql_group = "SELECT ";
+                            if ($_REQUEST['inputLt'] == "Thai") {
+                                $sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject";
+                            } else {
+                                $sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjecten ";
+                            }
+
+                            $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
+                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                            while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                                $row_groupid = $row_group[0];
+                                $row_groupname = $row_group[1];
+                            ?>
+                                <option value="<?php echo $row_groupid ?>" <?php foreach ($valFactorArr as $keyvalFactorArr => $valuevalFactorArr) {
+																															if ($valuevalFactorArr == $row_groupid) {
+																																echo "selected='selected'";
+																															}
+																														} ?>><?php echo $row_groupname; ?></option>
+                            <?php } ?>
+                        </select>
+                    </td>
+                </tr>
 			</table>
 			<br />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">

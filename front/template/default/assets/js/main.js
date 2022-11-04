@@ -602,3 +602,49 @@ $(document).ready(function() {
     //     $("#advancedSearchForm").removeClass("d-none")
     // })
 });
+
+// DEV
+function numberWithCommas(number,str = null) {
+    
+    var yourNumber =  Math.round(number);
+    var n = yourNumber.toString().split(".");
+    var number_empty = 0;
+    var number_return = 0;
+    
+    if(n[1]){
+        yourNumber = parseFloat(yourNumber).toFixed(2);
+        var n = yourNumber.toString().split(".");
+        //Comma-fies the first part
+        n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        //Combines the two sections
+        number_empty = n.join(".");
+    }else{
+
+    var n = yourNumber.toString().split(".");
+    //Comma-fies the first part
+    n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //Combines the two sections
+    number_empty = n.join(".");
+    // return n.join(".");
+    }
+
+    if (str != '' && str != null) {
+
+        if (number_empty <= 0) {
+            number_return = '-';
+        }else{
+    
+            number_return = number_empty+" "+str;
+        }
+       
+    }else{
+        if (str == null && number_empty <= 0) {
+            number_return = '-';
+        } else {
+            number_return = number_empty;
+        }
+    }
+
+
+    return number_return;
+}

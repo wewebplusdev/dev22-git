@@ -25,12 +25,10 @@ include("config.php");
 		$insert[$mod_tb_root_group."_credate"] = "NOW()";
 		$insert[$mod_tb_root_group."_lastdate"] = "NOW()";
 		$insert[$mod_tb_root_group."_status"] = "'Disable'";
+		$insert[$mod_tb_root_group."_ratio"] = "'".$_POST["inputLength"]."'";
+		$insert[$mod_tb_root_group."_factor"] = "'".$_POST["inputFactor"]."'";
 		$insert[$mod_tb_root_group."_pic"] = "'".$_POST["picname"]."'";
-		$insert[$mod_tb_root_group."_pic2"] = "'".$_POST["picname2"]."'";
 		$insert[$mod_tb_root_group."_order"] = "'".$maxOrder."'";
-		$insert[$mod_tb_root_group . "_type"] = "'" . $_REQUEST["inputType"] . "'";
-		$insert[$mod_tb_root_group . "_url"] = "'" . $_REQUEST["inputurl"] . "'";
-		$insert[$mod_tb_root_group . "_target"] = "'" . $_REQUEST["inputTarget"] . "'";
 
 		// $insert[$mod_tb_root_group."_pic"] = "'".$_POST["picname"]."'";
 

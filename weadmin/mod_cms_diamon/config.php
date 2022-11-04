@@ -20,7 +20,7 @@ $mod_fd_frontdetailUrl = "career/detail";
 ## Setting Value ###################################
 $modTxtShowPic=array("แสดงรูปภาพในหน้ารายละเอียด","ไม่แสดง","แสดง");
 $modGroupType =array("","รายละเอียดภายในเว็บไซต์" ,"เชื่อมโยงภายนอก");
-$modTxtOption =array("","Diameter" ,"Length x Width");
+$modTxtOption =array("","Diameter" ,"Length x Width", "Adjustment Factor");
 $modTxtFactor =array("","Adjustment Factor" ,"Adjustment Factor Range");
 // print_pre();
 if ($_SESSION[$valSiteManage."core_session_language"] == 'Eng') {
