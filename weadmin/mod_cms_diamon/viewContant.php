@@ -35,6 +35,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 }
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin, " . $mod_tb_root . "_factor as factor";
+$sql .= " , " . $mod_tb_root . "_factor_arr as factor_arr";
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
@@ -84,6 +85,7 @@ $valLang[0] = $Row[21];
 $valLang[1] = $Row[22];
 $valLang[2] = $Row[23];
 $valFactor = $Row['factor'];
+$valFactorArr = unserialize($Row['factor_arr']);
 
 $valPin = $Row['pin'];
 if ($valPin == "Pin") {
@@ -203,11 +205,47 @@ logs_access('3', 'View');
                         <div class="formDivView"><?php echo $modTxtOption[$valType] ?></div>
                     </td>
                 </tr>
-                <?php if($valType == 1){ ?>
+                <?php if($valType != 3){ ?>
                 <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:factor"] ?>:<span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="formDivView"><?php echo $valFactor ?></div>
+                    </td>
+                </tr>
+                <?php } ?>
+                <?php if($valType == 3){ ?>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:factor"] ?><span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView">
+                        <?php
+                        $sql_group = "SELECT ";
+                        if ($_REQUEST['inputLt'] == "Thai") {
+                            $sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject";
+                        } else if ($_REQUEST['inputLt'] == "Eng") {
+                            $sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjecten";
+                        } else {
+                            $sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjectcn ";
+                        }
+
+                        $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey='" . $_REQUEST['masterkey'] . "' AND " . $mod_tb_root_group . "_status != 'Disable'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
+                        $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                        if (!empty($valFactorArr)) {
+                        while ($row_mem = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                            $row_memid = $row_mem[0];
+                            $row_memname = $row_mem[1];
+                            foreach ($valFactorArr as $keyvalFactorArr => $valvalFactorArr) {
+                                if ($valvalFactorArr == $row_memid) {
+                                // echo "<div class='hashtag' >".$row_memname . "</div>";
+                                echo "- ".$row_memname . " </br>";
+                                }
+                            }
+                            }
+                            }else{
+                            echo "-";
+                            }
+                        ?>
+                        </div>
                     </td>
                 </tr>
                 <?php } ?>

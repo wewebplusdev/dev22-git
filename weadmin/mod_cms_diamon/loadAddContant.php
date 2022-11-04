@@ -51,16 +51,24 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     jQuery("#inputSubject").removeClass("formInputContantTbAlertY");
                 }
 
-                if (isBlank(inputDescription)) {
-                    inputDescription.focus();
-                    jQuery("#inputDescription").addClass("formInputContantTbAlertY");
-                    return false;
-                } else {
-                    jQuery("#inputDescription").removeClass("formInputContantTbAlertY");
-                }
+                // if (isBlank(inputDescription)) {
+                //     inputDescription.focus();
+                //     jQuery("#inputDescription").addClass("formInputContantTbAlertY");
+                //     return false;
+                // } else {
+                //     jQuery("#inputDescription").removeClass("formInputContantTbAlertY");
+                // }
 
                 var option = $('input[name="inputType"]:checked').val();
-                if (option == 1) {
+                if (option == 3) {
+                    if (isBlank(inputFactorArr.value == 0)) {
+                        inputFactorArr.focus();
+                        jQuery("#inputFactorArr").addClass("formInputContantTbAlertY");
+                        return false;
+                    } else {
+                        jQuery("#inputFactorArr").removeClass("formInputContantTbAlertY");
+                    }
+                }else{
                     if (isBlank(inputFactor)) {
                         inputFactor.focus();
                         jQuery("#inputFactor").addClass("formInputContantTbAlertY");
@@ -93,6 +101,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 }
                 /* End  Enter Check CKeditor */
             });
+            $('.select2').select2();
         });
     </script>
 </head>
@@ -180,7 +189,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputSubject" id="inputSubject" type="text" class="formInputContantTb" /></td>
                 </tr>
                 <tr>
-                    <td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title"] ?><span class="fontContantAlert">*</span></td>
+                    <td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title"] ?><span class="fontContantAlert"></span></td>
                     <td colspan="6" align="left" valign="top" class="formRightContantTb">
                         <textarea name="inputDescription" id="inputDescription" cols="45" rows="5" class="formTextareaContantTb"></textarea>
                     </td>
@@ -189,29 +198,18 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:options"] ?><span class="fontContantAlert">*</span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <label>
-                        <div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="1" checked="checked"/></div>
+                        <div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="1" checked="checked" onclick="jQuery('.factor').show();jQuery('.select-factor').hide();"/></div>
                         <div class="formDivRadioR"><?php echo $modTxtOption[1] ?></div>
                         </label>
 
                         <label>
-                        <div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="2" /></div>
+                        <div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="2" onclick="jQuery('.factor').show();jQuery('.select-factor').hide();"/></div>
                         <div class="formDivRadioR"><?php echo $modTxtOption[2] ?></div>
-                        </label>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:options"] ?><span class="fontContantAlert">*</span></td>
-                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                        <label>
-                        <div class="formDivRadioL"><input name="inputTypeFac" id="inputTypeFac" type="radio" class="formRadioContantTb" value="1" checked="checked" onclick="jQuery('.factor').show();jQuery('.factor-range').hide();"/></div>
-                        <div class="formDivRadioR"><?php echo $modTxtFactor[1] ?></div>
                         </label>
 
                         <label>
-                        <div class="formDivRadioL"><input name="inputTypeFac" id="inputTypeFac" type="radio" class="formRadioContantTb" value="2" onclick="jQuery('.factor').hide();jQuery('.factor-range').show();"/></div>
-                        <div class="formDivRadioR"><?php echo $modTxtFactor[2] ?></div>
-                        </label>
+                        <div class="formDivRadioL"><input name="inputType" id="inputType" type="radio" class="formRadioContantTb" value="3" onclick="jQuery('.factor').hide();jQuery('.select-factor').show();"/></div>
+                        <div class="formDivRadioR"><?php echo $modTxtOption[3] ?></div>
                         </label>
                     </td>
                 </tr>
@@ -219,26 +217,28 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:factor"] ?><span class="fontContantAlert">*</span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputFactor" id="inputFactor" type="number" class="formInputContantTbShort" /></td>
                 </tr>
-                <tr class="factor-range" style="display: none;">
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:factorrange"] ?><span class="fontContantAlert">*</span></td>
+                <tr class="select-factor" style="display: none;">
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:factor"] ?><span class="fontContantAlert">*</span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                        <table border="0" cellspacing="0" cellpadding="0" id="test">
-                            <!-- <tr class="data">
-                                <td align="left" valign="top" class="formLeftContantTb">1.</td>
-                                <td><input name="inputFactorLength[]" id="inputFactorLength" placeholder="Length" type="number" class="formInputContantTbShort" /></td>
-                                <td><input name="inputFactorWidth[]" id="inputFactorWidth" placeholder="Width" type="number" class="formInputContantTbShort" /></td>
-                                <td >Adjustment Factor</td>
-                                <td><input name="inputFactorList[]" id="inputFactorList" type="number" class="formInputContantTbShort" /></td>
-                                <td><?php if ($valPermission == "RW") { ?><div  class="btnDel2" title="<?php echo  $langTxt["btn:add"] ?>" onclick="DelFactor($(this))"></div><?php } ?></td>
-                            </tr> -->
-                            <tr>
-                                <td colspan="2" style="padding: 0 0 0 3.7%;"><input name="inputFactorLength[]" id="inputFactorLength" placeholder="Length" type="number" class="formInputContantTbShort" /></td>
-                                <td><input name="inputFactorWidth[]" id="inputFactorWidth" placeholder="Width" type="number" class="formInputContantTbShort" /></td>
-                                <td >Adjustment Factor</td>
-                                <td><input name="inputFactorList[]" id="inputFactorList" type="number" class="formInputContantTbShort" /></td>
-                                <td><?php if ($valPermission == "RW") { ?><div  class="btnAdd2" title="<?php echo  $langTxt["btn:add"] ?>" onclick="executeAddFactor($(this),'<?php echo $valPermission; ?>')"></div><?php } ?></td>
-                            </tr>
-                        </table>
+                        <select name="inputFactorArr[]" id="inputFactorArr" class="formSelectContantTb select2" multiple>
+                            <option value="0"><?php echo $langMod["tit:selectf"] ?></option>
+                            <?php
+                            $sql_group = "SELECT ";
+                            if ($_REQUEST['inputLt'] == "Thai") {
+                                $sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject";
+                            } else {
+                                $sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjecten ";
+                            }
+
+                            $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
+                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                            while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                                $row_groupid = $row_group[0];
+                                $row_groupname = $row_group[1];
+                            ?>
+                                <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php } ?>><?php echo $row_groupname ?></option>
+                            <?php } ?>
+                        </select>
                     </td>
                 </tr>
             </table>

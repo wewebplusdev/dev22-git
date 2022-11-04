@@ -29,9 +29,8 @@ include("config.php");
 		$update[]=$mod_tb_root_group."_lastbyid='".$_SESSION[$valSiteManage.'core_session_id']."'";
 		$update[]=$mod_tb_root_group."_lastby='".$_SESSION[$valSiteManage.'core_session_name']."'";
 		$update[]=$mod_tb_root_group."_lastdate=NOW()";
-		$update[]=$mod_tb_root_group."_type  	='".changeQuot($_POST['inputType'])."'";
-		$update[]=$mod_tb_root_group."_url  	='".changeQuot($_POST['inputurl'])."'";
-		$update[]=$mod_tb_root_group."_target  	='".changeQuot($_POST['inputTarget'])."'";
+		$update[]=$mod_tb_root_group."_ratio  	='".$_POST['inputLength']."'";
+		$update[]=$mod_tb_root_group."_factor  	='".$_POST['inputFactor']."'";
 
 		// $update[]=$mod_tb_root_group."_pic='".$_POST["picname"]."'";
 

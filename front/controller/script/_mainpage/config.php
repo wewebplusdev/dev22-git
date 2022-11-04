@@ -34,6 +34,8 @@ $config['career']['file']['main'] = "md_joyf";
 $config['intro']['db']['main'] = "md_int";
 $config['tgp']['db']['main'] = "md_tgp";
 $config['tag']['db']['main'] = "md_tag";
+$config['cmsss']['db']['main'] = "md_cmss";
+
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
 $config['about']['ab_odc']['masterkey'] = 'ab_odc';
@@ -55,6 +57,7 @@ $config['infoservice']['is_ms']['masterkey'] = "is_ms";
 $config['intro']['main']['masterkey'] = "int";
 $config['ban']['main']['masterkey'] = "ban";
 $config['tag']['main']['masterkey'] = "tag";
+$config['cod_f']['main']['masterkey'] = "cod_f";
 
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';

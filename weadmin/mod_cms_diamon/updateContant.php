@@ -71,7 +71,6 @@ include("config.php");
 
 		$update[] = $mod_tb_root . "_gid='" . $_POST["inputGroupID"] . "'";
 		$update[] = $mod_tb_root . "_picshow='" . $_POST["inputTypePic"] . "'";
-		$update[] = $mod_tb_root . "_type='" . $_POST["inputType"] . "'";
 
 		$setLangTH = (!empty($_REQUEST['inputSetLang'][0])) ? $_REQUEST['inputSetLang'][0] : 0;
 		$setLangEN = (!empty($_REQUEST['inputSetLang'][1])) ? $_REQUEST['inputSetLang'][1] : 0;
@@ -80,7 +79,9 @@ include("config.php");
 		$update[] = $mod_tb_root . "_langen='" . $setLangEN . "'";
 		$update[] = $mod_tb_root . "_langcn='" . $setLangCN . "'";
 
+		$update[] = $mod_tb_root . "_type='" . $_POST["inputType"] . "'";
 		$update[] = $mod_tb_root . "_factor='" . changeQuot($_REQUEST['inputFactor']) . "'";
+		$update[] = $mod_tb_root . "_factor_arr='" . serialize(array_filter($_REQUEST['inputFactorArr'])) . "'";// remove array at values empty before use fnc serialize
 
 		$update[] = $mod_tb_root . "_urlfriendly='" . changeQuot($_POST['inputUrlFriendly']) . "'";
 

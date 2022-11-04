@@ -44,6 +44,22 @@ if($_REQUEST['masterkey'] == 'news'){
             } else {
                 jQuery("#inputSubject").removeClass("formInputContantTbAlertY");
             }
+            
+            if (isBlank(inputLength)) {
+                inputLength.focus();
+                jQuery("#inputLength").addClass("formInputContantTbAlertY");
+                return false;
+            } else {
+                jQuery("#inputLength").removeClass("formInputContantTbAlertY");
+            }
+
+            if (isBlank(inputFactor)) {
+                inputFactor.focus();
+                jQuery("#inputFactor").addClass("formInputContantTbAlertY");
+                return false;
+            } else {
+                jQuery("#inputFactor").removeClass("formInputContantTbAlertY");
+            }
 
             var type = $('#inputType:checked').val();
             if (type == 2) {
@@ -160,6 +176,18 @@ if($_REQUEST['masterkey'] == 'news'){
                             name="inputSubject" id="inputSubject" type="text" class="formInputContantTb" /></td>
                 </tr>
                 <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:factorrange"] ?><span class="fontContantAlert">*</span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <input name="inputLength" id="inputLength" type="number" class="formInputContantTbShort" />
+                        <!-- <input name="inputLength" id="inputLength" type="number" class="formInputContantTbShort" /> -->
+                        : 1
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:factor"] ?><span class="fontContantAlert">*</span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputFactor" id="inputFactor" type="number" class="formInputContantTbShort" /></td>
+                </tr>
+                <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb">
                         <?php echo $langMod["tit:noteg"]?></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
@@ -167,8 +195,6 @@ if($_REQUEST['masterkey'] == 'news'){
                             class="formTextareaContantTb"></textarea>
                     </td>
                 </tr>
-
-
             </table>
             <br />
             <!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">

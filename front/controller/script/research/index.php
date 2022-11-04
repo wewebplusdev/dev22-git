@@ -8,8 +8,9 @@ $researchPage = new researchPage;
 $arrMenu = array();
 $getMenuDetail = array();
 $ContentID = GetContentID($url->segment[2]);
-$PageAction = $url->segment[3];
+$PageAction = $url->segment[2];
 $MenuID = GetContentID($url->segment[1]);
+$settingModulus['menuid'] = $MenuID;
 $MenuID = $callSetWebsite->getMenuID($MenuID);
 $MasterkeyTemp = "rs_"; // master about like this
 $showslick = true; // slick shows
@@ -45,6 +46,10 @@ if (count($getMenuDetail) > 4) {
 $smarty->assign("initialSlide", '{"initialSlide": ' . $initialSlide . '}');
 
 switch ($MenuID) {
+    case 'rs_cod_s': //คำนวนณเพชร
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_cod_s.php';
+        break;
+
     default: //คลังงานวิจัยสถาบัน
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_ri.php';
         break;

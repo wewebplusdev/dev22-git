@@ -43,14 +43,10 @@ if ($_REQUEST['execute'] == "insert") {
     $insert[$mod_tb_root . "_masterkey"] = "'" . $_REQUEST["masterkey"] . "'";
     $insert[$mod_tb_root . "_subject"] = "'" . changeQuot($_REQUEST['inputSubject']) . "'";
     $insert[$mod_tb_root . "_title"] = "'" . changeQuot($_REQUEST['inputDescription']) . "'";
-
     $insert[$mod_tb_root . "_gid"] = "'" . $_POST["inputGroupID"] . "'";
-
     $insert[$mod_tb_root . "_pic"] = "'" . $_POST["picname"] . "'";
     // $insert[$mod_tb_root . "_credit"] = "'" . changeQuot($_REQUEST['inputCredit']) . "'";
     $insert[$mod_tb_root . "_picshow"]="'".$_POST["inputTypePic"]."'";
-
-    $insert[$mod_tb_root . "_type"] = "'" . $_POST["inputType"] . "'";
     $insert[$mod_tb_root . "_url"] = "'" . changeQuot($_REQUEST['inputurl']) . "'";
     $insert[$mod_tb_root . "_filevdo"] = "'" . $_POST["vdoname"] . "'";
     $insert[$mod_tb_root . "_htmlfilename"] = "'" . $filename . "'";
@@ -83,7 +79,9 @@ if ($_REQUEST['execute'] == "insert") {
         $insert[$mod_tb_root . "_credate"] = "NOW()";
     }
 
+    $insert[$mod_tb_root . "_type"] = "'" . $_POST["inputType"] . "'";
     $insert[$mod_tb_root . "_factor"] = "'" . $_POST["inputFactor"] . "'";
+	$insert[$mod_tb_root . "_factor_arr"] = "'" . serialize(array_filter($_REQUEST['inputFactorArr'])) . "'"; // remove array at values empty before use fnc serialize
 
     $insert[$mod_tb_root . "_lastdate"] = "NOW()";
     $insert[$mod_tb_root . "_status"] = "'Disable'";
