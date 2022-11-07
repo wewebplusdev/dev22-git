@@ -1,0 +1,121 @@
+<section class="site-container sitekey" data-page="formcomplain" data-id="{$sitekey}">
+            <div class="default-header">
+                <div class="top-graphic mb-4">
+                    <figure class="cover">
+                        <img class="figure-img img-fluid" src="{$template}/assets/img/background/mock-top-grapphic-2.png" alt="">
+                    </figure>
+                    <div class="container">
+                        <div class="wrapper">
+                            <div class="title typo-lg">{$settingModulus.title}</div>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{$ul}/home">{$lang['menu']['home']}</a></li>
+                                {if $settingModulus.subject neq ""}
+                                    <li class="breadcrumb-item"><a href="{$ul}/{$menuActive}">{$settingModulus.subject}</a></li>
+                                  {/if}
+                                  <li class="breadcrumb-item active" aria-current="page">{$settingModulus.breadcrumb}</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="default-page about">
+                <div class="container">
+                    <div class="complaint-system-form">
+                        <div class="title">WHISTLE BLOWING FORM</div>
+                        <div class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</div>
+                        <form data-toggle="validator" ame="complainForm" id="complainForm" role="form" class="form-default" method="post">
+
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="complaintSystemTopic">{$lang['contact']['group']}</label>
+                                <div class="select-wrapper">
+                                    <select class="select-control select-year" name="inputGroup" id="inputGroup" style="width: 100%;">
+                                        <option value="SELECT1">แจ้งเรื่องร้องเรียนทั่วไป</option>
+                                        <option value="SELECT2">แจ้งเรื่องร้องเรียนทั่วไป</option>
+                                        <option value="SELECT3">แจ้งเรื่องร้องเรียนทั่วไป</option>
+                                        <option value="SELECT4">แจ้งเรื่องร้องเรียนทั่วไป</option>
+                                        <option value="SELECT5">แจ้งเรื่องร้องเรียนทั่วไป</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback -nm">
+                                <label class="control-label" for="complaintSystemTextArea">{$lang['contact']['text']}</label>
+                                <div class="block-control">
+                                    <textarea class="form-control form-text-area h-100" rows="6" cols="100" name="inputMessage" id="inputMessage" value="Spicyfi" data-error=""></textarea>
+                                    <span class="form-control-feedback" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="complaintSystemF-name">{$lang['contact']['name']}</label>
+                                        <span>*</span>
+                                        <div class="block-control">
+                                            <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Tori H Wilson" data-error="">
+                                            <span class="form-control-feedback" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="complaintSystemE-mail">{$lang['contact']['email']}</label>
+                                        <span>*</span>
+                                        <div class="block-control">
+                                            <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Tori.Engineer@Gmail.Com" data-error="">
+                                            <span class="form-control-feedback" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="complaintSystemAdress">{$lang['contact']['address']}</label>
+                                        <div class="block-control">
+                                            <input type="text" class="form-control" name="inputAddress" id="inputAddress" placeholder="3533 Cullen Boulevard, Tx 77204-3001" data-error="">
+                                            <span class="form-control-feedback" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="complaintSystemTelephone">{$lang['contact']['tel']}</label>
+                                        <div class="block-control">
+                                            <input type="tel" class="form-control" name="inputTel" id="inputTel" placeholder="089 253 3356" data-error="">
+                                            <span class="form-control-feedback" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {* <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="complaintSystemPassword">Password</label>
+                                        <div class="block-control">
+                                            <input type="password" class="form-control" id="complaintSystemPassword" placeholder="" data-error="">
+                                            <span class="form-control-feedback" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="CaptchaMockup">Chaptcha Mockup</label>
+                                        <div class="block-control">
+                                            <input type="text" class="form-control" id="CaptchaMockup" placeholder="Captcha Mockup" data-error="">
+                                            <span class="form-control-feedback" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> *}
+                            <div class="row mt-sm-5 mt-4">
+                                <div class="col text-right">
+                                    <input type="submit" class="btn btn-primary" id="submitForm" title="btn btn-primary" value="{$lang['system']['submit']}"></input>
+                                </div>
+                                <div class="col text-left">
+                                    <button class="btn btn-primary -cancel"  title="{$lang['system']['cancel']}">{$lang['system']['cancel']}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>

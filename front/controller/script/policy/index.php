@@ -28,9 +28,14 @@ $smarty->assign("req_params", $req_params);
 
 
 switch ($MenuID) {
-    case 'test':
-        print_pre('xxxxx');
+    case 'complaint-system':
+        $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render='.$sitekey.'"></script>';
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/complaint-system.php';
         break;
+
+        case 'insert-formcomplaint':
+            require_once _DIR . '/front/controller/script/' . $menuActive . '/service/insert-formcomplaint.php';
+            break;
         
     default: //นโยบาย
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/plc.php';
