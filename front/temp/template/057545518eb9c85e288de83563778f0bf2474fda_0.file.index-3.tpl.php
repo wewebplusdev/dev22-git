@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-03 14:15:36
+/* Smarty version 4.0.0, created on 2022-11-07 17:17:52
   from '/var/www/html/front/controller/script/home/template/index-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_63636a9829bfd5_88228032',
+  'unifunc' => 'content_6368db5011e105_42589690',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '057545518eb9c85e288de83563778f0bf2474fda' => 
     array (
       0 => '/var/www/html/front/controller/script/home/template/index-3.tpl',
-      1 => 1667459575,
+      1 => 1667816265,
       2 => 'file',
     ),
   ),
@@ -20,31 +20,41 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63636a9829bfd5_88228032 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6368db5011e105_42589690 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
 <div class="top-graphic">
     <div class="slider">
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callTopGraphic']->value, 'valuecallTopGraphic', false, 'keycallTopGraphic');
+$_smarty_tpl->tpl_vars['valuecallTopGraphic']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keycallTopGraphic']->value => $_smarty_tpl->tpl_vars['valuecallTopGraphic']->value) {
+$_smarty_tpl->tpl_vars['valuecallTopGraphic']->do_else = false;
+?>
             <div class="tpg-item">
                 <figure class="cover">
-                    <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/thumb-tpg.jpg" alt="">
+                    <img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valuecallTopGraphic']->value['masterkey'];
+$_prefixVariable1 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valuecallTopGraphic']->value['pic'],"real",$_prefixVariable1,"link");?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['valuecallTopGraphic']->value['pic'];?>
+">
                 </figure>
                 <div class="info">
                     <div class="container">
                         <div class="wrapper">
-                            <div class="title text-limit -x3">
-                                สถาบันวิจัยและพัฒนาอัญมณี <br>
-                                และเครื่องประดับแห่งชาติ (องค์การมหาชน)
-                            </div>
-                            <div class="desc text-limit -x3">
-                                เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542 จัดตั้งขึ้นตาม
-                                พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ
-                            </div>
-                            <a href="" class="btn btn-border-light" title="btn btn-primary">อ่านต่อ</a>
+                                                        <?php if ($_smarty_tpl->tpl_vars['valuecallTopGraphic']->value['url'] != '' && $_smarty_tpl->tpl_vars['valuecallTopGraphic']->value['url'] != "#") {?>
+                            <a <?php if ($_smarty_tpl->tpl_vars['valuecallTopGraphic']->value['url'] != '' && $_smarty_tpl->tpl_vars['valuecallTopGraphic']->value['url'] != "#") {?>href="<?php echo $_smarty_tpl->tpl_vars['valuecallTopGraphic']->value['url'];?>
+"<?php if ($_smarty_tpl->tpl_vars['valuecallTopGraphic']->value['target'] == 2) {?>target="_blank"<?php }
+} else { ?>href="javascript:void(0);"<?php }?> class="btn btn-border-light" title="btn btn-primary"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewmore'];?>
+</a>
+                            <?php }?>
                         </div>
                     </div>
                 </div>
             </div>
+        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
 </div>
 <div class="default-nav">
@@ -53,14 +63,16 @@ function content_63636a9829bfd5_88228032 (Smarty_Internal_Template $_smarty_tpl)
         <div class="col-xl-2 col-md-3 col-sm-4 col-5">
             <div class="topic">
                 <div class="title">
-                    งานบริการ
+                    <?php echo $_smarty_tpl->tpl_vars['lang']->value['menu']['service'];?>
+
                 </div>
             </div>
         </div>
         <div class="col-xl-8 col-md-9 col-sm-8 col-7">
             <div class="slider">
                 <div class="item-">
-                    <a href="javascript:void(0)" class="link active" title="ตรวจสอบอัญมณี">
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/service/262" class="link active" title="ตรวจสอบอัญมณี">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="52.507" height="52.507" viewBox="0 0 52.507 52.507">
@@ -76,13 +88,15 @@ function content_63636a9829bfd5_88228032 (Smarty_Internal_Template $_smarty_tpl)
                                 </svg>
                             </div>
                             <div class="txt">
-                                ตรวจสอบอัญมณี
+                                <?php echo $_smarty_tpl->tpl_vars['lang']->value['service']['menu1'];?>
+
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="javascript:void(0)" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/service/263" class="link" title="ตรวจสอบอัญมณี">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="57.257" height="58.067" viewBox="0 0 57.257 58.067">
@@ -104,13 +118,15 @@ function content_63636a9829bfd5_88228032 (Smarty_Internal_Template $_smarty_tpl)
                                 </svg>
                             </div>
                             <div class="txt">
-                                ตรวจสอบอัญมณี
+                                <?php echo $_smarty_tpl->tpl_vars['lang']->value['service']['menu2'];?>
+
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="javascript:void(0)" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/service/264" class="link" title="ตรวจสอบอัญมณี">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="50.291" height="50.291" viewBox="0 0 50.291 50.291">
@@ -132,26 +148,29 @@ function content_63636a9829bfd5_88228032 (Smarty_Internal_Template $_smarty_tpl)
                                 </svg>
                             </div>
                             <div class="txt">
-                                ศูนย์ให้คำปรึกษา
+                                <?php echo $_smarty_tpl->tpl_vars['lang']->value['service']['menu3'];?>
+
                             </div>
                         </div>
                     </a>
                 </div>
-                    <div class="item-">
-                        <a href="javascript:void(0)" class="link" title="ตรวจสอบอัญมณี">
-                            <div class="wrapper">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48.72" height="56.59" viewBox="0 0 48.72 56.59">
-                                        <path id="Path_2143" data-name="Path 2143" d="M55.017,37.7c-2.276-2.364-5.934,1.257-3.577,3.571S57.362,39.99,55.017,37.7Zm-1.792,2.741A.962.962,0,1,1,54,39.493.962.962,0,0,1,53.225,40.436Z" transform="translate(-24.32 -16.843)" fill="#9d9d9d" />
-                                        <path id="Path_2144" data-name="Path 2144" d="M11.849,56.271H9.536a.786.786,0,0,0-.786.786v3.728a.786.786,0,0,0,.786.786H56.684a.786.786,0,0,0,.786-.786V57.057a.786.786,0,0,0-.786-.786H54.389A45.553,45.553,0,0,0,42.734,27.278a5.029,5.029,0,0,0-.968-2.659l5.626-5.658c.893-.836-1-1.942-1.4-2.515l4.162-4.162.868.88c.71.729,1.842-.4,1.113-1.106-.05-.069-1.389-1.352-1.414-1.433C49.706,9.6,46.248,6.162,45.287,5.206c-.71-.71-1.848.415-1.113,1.125l.868.868L40.88,11.367c-.566-.4-1.672-2.288-2.515-1.4L19.915,28.428c-.7.673.321,1.421.761,1.886-.365.629-3.105,2.269-2.081,3.193l5.268,5.274a.811.811,0,0,0,.559.226.786.786,0,0,0,.553-.226L27.056,36.7c.453.44,1.2,1.465,1.886.761l5.721-5.721a5.029,5.029,0,0,0,2.4.912c.566,2.056,2.452,9.845-.44,13.8-1.15,1.572-2.911,2.339-5.375,2.339H26.616V46.9h4.627a.786.786,0,0,0,.786-.786v-3.7a.786.786,0,0,0-.786-.786H10.737a.78.78,0,0,0-.786.786V46.15a.78.78,0,0,0,.786.786h4.627v2.232c-2.779,1.509-3.382,5.419-3.514,7.1ZM55.9,60H10.322V57.842H55.9ZM44.821,56.271c-1.427-10.127-1.094-17.545.924-19.846a2.031,2.031,0,0,1,1.125-.71A43.118,43.118,0,0,1,52.83,56.3ZM37.655,31.125c-4.57.069-4.583-7.129,0-7.06,4.57-.044,4.57,7.148,0,7.078Zm8.5-22.813,2.892,2.9-4.162,4.162-2.9-2.9ZM24.422,37.1,20.26,32.936l1.521-1.54,4.162,4.162ZM28.4,35.8l-6.814-6.814L38.925,11.637c1.722,1.741,5.029,5.073,6.8,6.8L40.7,23.493c-4.507-3.458-10.58,2.628-7.129,7.129Zm9.492,11.6c3.181-4.35,1.5-12.114.786-14.786a5.123,5.123,0,0,0,3.772-3.282,44.421,44.421,0,0,1,3.59,4.966,3.715,3.715,0,0,0-1.484,1.069c-3.143,3.627-2.232,14.358-1.32,20.9h-29.8c.138-1.559.71-4.973,3.043-5.884H31.243C34.2,50.387,36.435,49.381,37.887,47.4ZM11.522,43.2H30.457v2.163H11.522Zm13.522,3.734v1.886H16.935V46.935Z" transform="translate(-8.75 -4.98)" fill="#9d9d9d" />
-                                    </svg>
-                                </div>
-                                <div class="txt">
-                                    เครื่องมือ
-                                </div>
+                <div class="item-">
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/service/265" class="link" title="ตรวจสอบอัญมณี">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48.72" height="56.59" viewBox="0 0 48.72 56.59">
+                                    <path id="Path_2143" data-name="Path 2143" d="M55.017,37.7c-2.276-2.364-5.934,1.257-3.577,3.571S57.362,39.99,55.017,37.7Zm-1.792,2.741A.962.962,0,1,1,54,39.493.962.962,0,0,1,53.225,40.436Z" transform="translate(-24.32 -16.843)" fill="#9d9d9d" />
+                                    <path id="Path_2144" data-name="Path 2144" d="M11.849,56.271H9.536a.786.786,0,0,0-.786.786v3.728a.786.786,0,0,0,.786.786H56.684a.786.786,0,0,0,.786-.786V57.057a.786.786,0,0,0-.786-.786H54.389A45.553,45.553,0,0,0,42.734,27.278a5.029,5.029,0,0,0-.968-2.659l5.626-5.658c.893-.836-1-1.942-1.4-2.515l4.162-4.162.868.88c.71.729,1.842-.4,1.113-1.106-.05-.069-1.389-1.352-1.414-1.433C49.706,9.6,46.248,6.162,45.287,5.206c-.71-.71-1.848.415-1.113,1.125l.868.868L40.88,11.367c-.566-.4-1.672-2.288-2.515-1.4L19.915,28.428c-.7.673.321,1.421.761,1.886-.365.629-3.105,2.269-2.081,3.193l5.268,5.274a.811.811,0,0,0,.559.226.786.786,0,0,0,.553-.226L27.056,36.7c.453.44,1.2,1.465,1.886.761l5.721-5.721a5.029,5.029,0,0,0,2.4.912c.566,2.056,2.452,9.845-.44,13.8-1.15,1.572-2.911,2.339-5.375,2.339H26.616V46.9h4.627a.786.786,0,0,0,.786-.786v-3.7a.786.786,0,0,0-.786-.786H10.737a.78.78,0,0,0-.786.786V46.15a.78.78,0,0,0,.786.786h4.627v2.232c-2.779,1.509-3.382,5.419-3.514,7.1ZM55.9,60H10.322V57.842H55.9ZM44.821,56.271c-1.427-10.127-1.094-17.545.924-19.846a2.031,2.031,0,0,1,1.125-.71A43.118,43.118,0,0,1,52.83,56.3ZM37.655,31.125c-4.57.069-4.583-7.129,0-7.06,4.57-.044,4.57,7.148,0,7.078Zm8.5-22.813,2.892,2.9-4.162,4.162-2.9-2.9ZM24.422,37.1,20.26,32.936l1.521-1.54,4.162,4.162ZM28.4,35.8l-6.814-6.814L38.925,11.637c1.722,1.741,5.029,5.073,6.8,6.8L40.7,23.493c-4.507-3.458-10.58,2.628-7.129,7.129Zm9.492,11.6c3.181-4.35,1.5-12.114.786-14.786a5.123,5.123,0,0,0,3.772-3.282,44.421,44.421,0,0,1,3.59,4.966,3.715,3.715,0,0,0-1.484,1.069c-3.143,3.627-2.232,14.358-1.32,20.9h-29.8c.138-1.559.71-4.973,3.043-5.884H31.243C34.2,50.387,36.435,49.381,37.887,47.4ZM11.522,43.2H30.457v2.163H11.522Zm13.522,3.734v1.886H16.935V46.935Z" transform="translate(-8.75 -4.98)" fill="#9d9d9d" />
+                                </svg>
                             </div>
-                        </a>
-                    </div>
+                            <div class="txt">
+                                <?php echo $_smarty_tpl->tpl_vars['lang']->value['service']['menu4'];?>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -166,8 +185,10 @@ function content_63636a9829bfd5_88228032 (Smarty_Internal_Template $_smarty_tpl)
             <div class="h-title">
                 แหล่งความรู้
             </div>
-            <a href="" class="link" title="ดูทั้งหมด">
-                ดูทั้งหมด
+            <a href="" class="link" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewsall'];?>
+">
+                <?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewsall'];?>
+
             </a>
         </div>
         <div class="slider">
@@ -207,192 +228,194 @@ $_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iterat
         </div>
     </div>
 
-    <div class="banner-block">
-        <div class="slider">
+    <?php if ($_smarty_tpl->tpl_vars['callBannerSection']->value->_numOfRows >= 1) {?>
+        <div class="banner-block">
+            <div class="slider">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callBannerSection']->value, 'valuecallBannerSection', false, 'keycallBannerSection');
+$_smarty_tpl->tpl_vars['valuecallBannerSection']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keycallBannerSection']->value => $_smarty_tpl->tpl_vars['valuecallBannerSection']->value) {
+$_smarty_tpl->tpl_vars['valuecallBannerSection']->do_else = false;
+?>
+                    <div>
+                        <div class="box">
+                            <div class="row no-gutters align-items-center" style="height: 100%;">
+                                <div class="col-6">
+                                    <div class="inner">
+                                        <div class="title text-limit -x2">
+                                            <?php echo $_smarty_tpl->tpl_vars['valuecallBannerSection']->value['subject'];?>
 
+                                        </div>
+                                        <div class="desc text-limit -x3">
+                                            <?php echo $_smarty_tpl->tpl_vars['valuecallBannerSection']->value['title'];?>
 
-
-                <div>
-                    <div class="box">
-                        <div class="row no-gutters align-items-center" style="height: 100%;">
-                            <div class="col-6">
-                                <div class="inner">
-                                    <div class="title text-limit -x2">
-                                        พิพิธภัณฑ์เสมือนจริง
+                                        </div>
+                                        <a <?php if ($_smarty_tpl->tpl_vars['valuecallBannerSection']->value['url'] != '' && $_smarty_tpl->tpl_vars['valuecallBannerSection']->value['url'] != "#") {?>href="<?php echo $_smarty_tpl->tpl_vars['valuecallBannerSection']->value['url'];?>
+"<?php if ($_smarty_tpl->tpl_vars['valuecallBannerSection']->value['target'] == 2) {?>target="_blank"<?php }
+} else { ?>href="javascript:void(0);"<?php }?> class="btn btn-light" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewmore'];?>
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewmore'];?>
+</a>
                                     </div>
-                                    <div class="desc text-limit -x3">
-                                        ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณี
-                                    </div>
-                                    <a href="" class="btn btn-light" title="อ่านต่อ">อ่านต่อ</a>
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="graphic">
-                                    <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/static/banner-graphic.png" alt="banner graphic">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="box">
-                        <div class="row no-gutters align-items-center" style="height: 100%;">
-                            <div class="col-6">
-                                <div class="inner">
-                                    <div class="title text-limit -x2">
-                                        พิพิธภัณฑ์เสมือนจริง
+                                <div class="col-6">
+                                    <div class="graphic">
+                                        <img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valuecallBannerSection']->value['masterkey'];
+$_prefixVariable2 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valuecallBannerSection']->value['pic'],"real",$_prefixVariable2,"link");?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['valuecallBannerSection']->value['subject'];?>
+">
                                     </div>
-                                    <div class="desc text-limit -x3">
-                                        ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณี
-                                    </div>
-                                    <a href="" class="btn btn-light" title="อ่านต่อ">อ่านต่อ</a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="graphic">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Gorgosaurus_BW_transparent.png" alt="banner graphic">
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </div>
         </div>
-    </div>
+    <?php }?>
 
     <div class="update-block">
         <div class="default-header-block">
             <div class="h-title">
                 GIT UPDATE
             </div>
-            <a href="" class="link" title="ดูทั้งหมด">
-                ดูทั้งหมด
+            <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/about/<?php echo $_smarty_tpl->tpl_vars['about_newsmenuid']->value;?>
+" class="link" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewsall'];?>
+">
+                <?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewsall'];?>
+
             </a>
         </div>
         <ul class="nav nav-tabs" id="updateTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-controls="news" aria-selected="true">ข่าวสาร</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="procurement-tab" data-toggle="tab" href="#procurement" role="tab" aria-controls="procurement" aria-selected="false">จัดซื้อจัดจ้าง</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="git-lab-update-tab" data-toggle="tab" href="#git-lab-update" role="tab" aria-controls="git-lab-update" aria-selected="false">GIT Lab Update</a>
-            </li>
-        </ul>
+            <?php $_smarty_tpl->_assignInScope('newscount', 0);?>
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arrNewsHome']->value, 'valuearrNewsHome', false, 'keyarrNewsHome');
+$_smarty_tpl->tpl_vars['valuearrNewsHome']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyarrNewsHome']->value => $_smarty_tpl->tpl_vars['valuearrNewsHome']->value) {
+$_smarty_tpl->tpl_vars['valuearrNewsHome']->do_else = false;
+?>
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($_smarty_tpl->tpl_vars['newscount']->value == 0) {?>active<?php }?>" id="news-tab-<?php echo $_smarty_tpl->tpl_vars['keyarrNewsHome']->value;?>
+" data-toggle="tab" href="#news-<?php echo $_smarty_tpl->tpl_vars['keyarrNewsHome']->value;?>
+" role="tab" aria-controls="news-<?php echo $_smarty_tpl->tpl_vars['keyarrNewsHome']->value;?>
+" aria-selected="<?php if ($_smarty_tpl->tpl_vars['newscount']->value == 0) {?>true<?php } else { ?>false<?php }?>"><?php echo $_smarty_tpl->tpl_vars['valuearrNewsHome']->value['group']['subject'];?>
+</a>
+                </li>
+            <?php $_smarty_tpl->_assignInScope('newscount', $_smarty_tpl->tpl_vars['newscount']->value+1);?>
+            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                    </ul>
         <div class="tab-content" id="updateTabContent">
-            <div class="tab-pane fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
-                <div class="slider default-slider">
-                    <?php
-$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 5+1 - (0) : 0-(5)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
-if ($_smarty_tpl->tpl_vars['index']->total > 0) {
-for ($_smarty_tpl->tpl_vars['index']->value = 0, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
-$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
-                        <div class="item">
-                            <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <div class="thumbnail">
-                                            <figure class="cover">
-                                                <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/img02.jpg" alt="thumbnail">
-                                            </figure>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <div class="date text-limit">
-                                            18 ธันวาคม 2565
-                                        </div>
-                                        <div class="title text-limit -x3">
-                                            GIT เดินหน้าสร้างความร่วมมือกับมหาวิทยาลัย
-                                            เกษตรศาสตร์
-                                        </div>
-                                        <button type="button" class="btn btn-primary">อ่านต่อ</button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    <?php }
-}
+            <?php $_smarty_tpl->_assignInScope('newscount', 0);?>
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arrNewsHome']->value, 'valuearrNewsHome', false, 'keyarrNewsHome');
+$_smarty_tpl->tpl_vars['valuearrNewsHome']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyarrNewsHome']->value => $_smarty_tpl->tpl_vars['valuearrNewsHome']->value) {
+$_smarty_tpl->tpl_vars['valuearrNewsHome']->do_else = false;
 ?>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab">
-                <!-- procurement -->
-                <div class="slider default-slider">
-                    <?php
-$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 5+1 - (0) : 0-(5)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
-if ($_smarty_tpl->tpl_vars['index']->total > 0) {
-for ($_smarty_tpl->tpl_vars['index']->value = 0, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
-$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
-                        <div class="item">
-                            <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <div class="thumbnail">
-                                            <figure class="cover">
-                                                <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/img02.jpg" alt="thumbnail">
-                                            </figure>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <div class="date text-limit">
-                                            18 ธันวาคม 2565
-                                        </div>
-                                        <div class="title text-limit -x3">
-                                            GIT เดินหน้าสร้างความร่วมมือกับมหาวิทยาลัย
-                                            เกษตรศาสตร์
-                                        </div>
-                                        <button type="button" class="btn btn-primary">อ่านต่อ</button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    <?php }
-}
+                <div class="tab-pane fade <?php if ($_smarty_tpl->tpl_vars['newscount']->value == 0) {?>show active<?php }?>" id="news-<?php echo $_smarty_tpl->tpl_vars['keyarrNewsHome']->value;?>
+" role="tabpanel" aria-labelledby="news-tab-<?php echo $_smarty_tpl->tpl_vars['keyarrNewsHome']->value;?>
+">
+                    <div class="slider default-slider">
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['valuearrNewsHome']->value['list'], 'valuearrNewsSub', false, 'keyNewsSub');
+$_smarty_tpl->tpl_vars['valuearrNewsSub']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyNewsSub']->value => $_smarty_tpl->tpl_vars['valuearrNewsSub']->value) {
+$_smarty_tpl->tpl_vars['valuearrNewsSub']->do_else = false;
 ?>
+                            <div class="item">
+                                <a class="link" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/about/<?php echo $_smarty_tpl->tpl_vars['valuearrNewsSub']->value['menuid'];?>
+/<?php echo $_smarty_tpl->tpl_vars['valuearrNewsSub']->value['gid'];?>
+/detail/<?php echo $_smarty_tpl->tpl_vars['valuearrNewsSub']->value['id'];?>
+" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
+                                    <div class="row no-gutters">
+                                        <div class="col">
+                                            <div class="thumbnail">
+                                                <figure class="cover">
+                                                    <img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valuearrNewsSub']->value['masterkey'];
+$_prefixVariable3 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valuearrNewsSub']->value['pic'],"real",$_prefixVariable3,"link");?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['valuearrNewsSub']->value['subject'];?>
+">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters">
+                                        <div class="col">
+                                            <div class="date text-limit">
+                                                <?php ob_start();
+echo $_smarty_tpl->tpl_vars['langon']->value;
+$_prefixVariable4 = ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valuearrNewsSub']->value['credate'],'1',$_prefixVariable4,'full');?>
+
+                                            </div>
+                                            <div class="title text-limit -x3">
+                                                <?php echo $_smarty_tpl->tpl_vars['valuearrNewsSub']->value['subject'];?>
+
+                                            </div>
+                                            <button type="button" class="btn btn-primary"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['viewmore'];?>
+</button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                    </div>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="git-lab-update" role="tabpanel" aria-labelledby="git-lab-update-tab">
-                git-lab-update
-            </div>
-        </div>
+                <?php $_smarty_tpl->_assignInScope('newscount', $_smarty_tpl->tpl_vars['newscount']->value+1);?>
+            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                    </div>
 
     </div>
-    <div class="weblink-block">
-        <div class="default-header-block">
-            <div class="h-title">
-                GIT WEBLINK
+
+    <?php if ($_smarty_tpl->tpl_vars['callWeblinkSection']->value->_numOfRows >= 1) {?>
+        <div class="weblink-block">
+            <div class="default-header-block">
+                <div class="h-title">
+                    GIT WEBLINK
+                </div>
+            </div>
+            <div class="slider default-slider">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['callWeblinkSection']->value, 'valuecallWeblinkSection', false, 'keycallWeblinkSection');
+$_smarty_tpl->tpl_vars['valuecallWeblinkSection']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keycallWeblinkSection']->value => $_smarty_tpl->tpl_vars['valuecallWeblinkSection']->value) {
+$_smarty_tpl->tpl_vars['valuecallWeblinkSection']->do_else = false;
+?>
+                    <div class="item">
+                        <a <?php if ($_smarty_tpl->tpl_vars['valuecallWeblinkSection']->value['url'] != '' && $_smarty_tpl->tpl_vars['valuecallWeblinkSection']->value['url'] != "#") {?>href="<?php echo $_smarty_tpl->tpl_vars['valuecallWeblinkSection']->value['url'];?>
+"<?php if ($_smarty_tpl->tpl_vars['valuecallWeblinkSection']->value['target'] == 2) {?>target="_blank"<?php }
+} else { ?>href="javascript:void(0);"<?php }?> class="link" title="web link">
+                            <div class="thumbnail">
+                                <figure class="cover">
+                                    <img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valuecallWeblinkSection']->value['masterkey'];
+$_prefixVariable5 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valuecallWeblinkSection']->value['pic'],"real",$_prefixVariable5,"link");?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['valuecallWeblinkSection']->value['subject'];?>
+">
+                                </figure>
+                            </div>
+                        </a>
+                    </div>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </div>
-        <div class="slider default-slider">
-            <?php
-$_smarty_tpl->tpl_vars['index'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['index']->step = 1;$_smarty_tpl->tpl_vars['index']->total = (int) ceil(($_smarty_tpl->tpl_vars['index']->step > 0 ? 5+1 - (0) : 0-(5)+1)/abs($_smarty_tpl->tpl_vars['index']->step));
-if ($_smarty_tpl->tpl_vars['index']->total > 0) {
-for ($_smarty_tpl->tpl_vars['index']->value = 0, $_smarty_tpl->tpl_vars['index']->iteration = 1;$_smarty_tpl->tpl_vars['index']->iteration <= $_smarty_tpl->tpl_vars['index']->total;$_smarty_tpl->tpl_vars['index']->value += $_smarty_tpl->tpl_vars['index']->step, $_smarty_tpl->tpl_vars['index']->iteration++) {
-$_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iteration === 1;$_smarty_tpl->tpl_vars['index']->last = $_smarty_tpl->tpl_vars['index']->iteration === $_smarty_tpl->tpl_vars['index']->total;?>
-                <div class="item">
-                    <a href="" class="link" title="web link">
-                        <div class="thumbnail">
-                            <figure class="cover">
-                                <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img//static/git-weblink.jpg" alt="logo">
-                            </figure>
-                        </div>
-                    </a>
-                </div>
-            <?php }
-}
-?>
-        </div>
-    </div>
+    <?php }?>
 </div>
 
 </section><?php }

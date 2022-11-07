@@ -14,8 +14,10 @@ $MenuID = $callSetWebsite->getMenuID($MenuID);
 $MasterkeyTemp = "plc"; // master about like this
 $showslick = true; // slick shows
 
-if (empty($MenuID)) {
+if (empty($MenuID) && !in_array( $url->segment[1], $arrFix_menu)) {
     $MenuID = $config['about']['plc']['masterkey'];
+}else{
+   $MenuID = $url->segment[1]; 
 }
 
 ## REQUEST_URI
@@ -24,7 +26,12 @@ $req_params['year'] = $_REQUEST['year'];
 $req_params['order'] = $_REQUEST['order'];
 $smarty->assign("req_params", $req_params);
 
+
 switch ($MenuID) {
+    case 'test':
+        print_pre('xxxxx');
+        break;
+        
     default: //นโยบาย
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/plc.php';
         break;

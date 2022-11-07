@@ -1,35 +1,11 @@
-<?php
-/* Smarty version 4.0.0, created on 2022-11-07 14:41:56
-  from '/var/www/html/front/template/default/inc/inc-header-theme-3.tpl' */
-
-/* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.0.0',
-  'unifunc' => 'content_6368b6c45714f1_24308990',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '8dc6d6f0a524916d830b7640cdd5522326f0bc7c' => 
-    array (
-      0 => '/var/www/html/front/template/default/inc/inc-header-theme-3.tpl',
-      1 => 1667805007,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl) {
-?><header class="site-header">
+<header class="site-header">
 	<div class="site-header-topbar mobile">
 		<div class="container">
 			<div class="row align-items-end no-gutters">
 				<div class="col-auto">
 					<div class="text-color">
 						<div class="txt">
-							<?php echo $_smarty_tpl->tpl_vars['lang']->value['home']['changedisplay'];?>
-
+							{$lang['home']['changedisplay']}
 						</div>
 						<ul class="item-list">
 							<li class="active">
@@ -47,21 +23,17 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 				<div class="col-auto">
 					<div class="text-size">
 						<div class="txt">
-							<?php echo $_smarty_tpl->tpl_vars['lang']->value['home']['fontsize'];?>
-
+							{$lang['home']['fontsize']}
 						</div>
 						<ul class="item-list">
 							<li class="active">
-								<a href="javascript:void(0)" class="size size-small typo-s" title="size small"><?php echo $_smarty_tpl->tpl_vars['settingWeb']->value['font'][$_smarty_tpl->tpl_vars['langon']->value];?>
-</a>
+								<a href="javascript:void(0)" class="size size-small typo-s" title="size small">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium"><?php echo $_smarty_tpl->tpl_vars['settingWeb']->value['font'][$_smarty_tpl->tpl_vars['langon']->value];?>
-</a>
+								<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-large typo-lg" title="size large"><?php echo $_smarty_tpl->tpl_vars['settingWeb']->value['font'][$_smarty_tpl->tpl_vars['langon']->value];?>
-</a>
+								<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">{$settingWeb['font'][$langon]}</a>
 							</li>
 						</ul>
 					</div>
@@ -69,30 +41,24 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 				<div class="col">
 					<div class="text-language" style="float: right;">
 						<ul class="item-list">
-							<li class="<?php if ($_smarty_tpl->tpl_vars['langon']->value == 'en') {?>active<?php }?>">
-								<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/lang/en" class="link lg" title="English language">
+							<li class="{if $langon eq 'en'}active{/if}">
+								<a href="{$ul}/lang/en" class="link lg" title="English language">
 									<div class="icon">
-										<img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/gb.svg" alt="Flag of the United Kingdom">
+										<img src="{$template}/assets/img/icon/gb.svg" alt="Flag of the United Kingdom">
 									</div>
 								</a>
 							</li>
-							<li class="<?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>active<?php }?>">
-								<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/lang/th" class="link lg" title="Thai language">
+							<li class="{if $langon eq 'th'}active{/if}">
+								<a href="{$ul}/lang/th" class="link lg" title="Thai language">
 									<div class="icon">
-										<img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/th.svg" alt="Flag of the Thailand">
+										<img src="{$template}/assets/img/icon/th.svg" alt="Flag of the Thailand">
 									</div>
 								</a>
 							</li>
-							<li class="<?php if ($_smarty_tpl->tpl_vars['langon']->value == 'cn') {?>active<?php }?>">
-								<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/lang/cn" class="link lg" title="Chinese language">
+							<li class="{if $langon eq 'cn'}active{/if}">
+								<a href="{$ul}/lang/cn" class="link lg" title="Chinese language">
 									<div class="icon">
-										<img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/cn.svg" alt="Flag of China">
+										<img src="{$template}/assets/img/icon/cn.svg" alt="Flag of China">
 									</div>
 								</a>
 							</li>
@@ -106,10 +72,8 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 		<div class="row align-items-center no-gutters">
 			<div class="col-auto">
 				<div class="brand">
-					<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/home" class="link" title="Gem and Jewelry Institute of Thailand">
-						<img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/static/git-logo.png" alt="Gem and Jewelry Institute of Thailand Logo">
+					<a href="{$ul}/home" class="link" title="Gem and Jewelry Institute of Thailand">
+						<img src="{$template}/assets/img/static/git-logo.png" alt="Gem and Jewelry Institute of Thailand Logo">
 					</a>
 				</div>
 			</div>
@@ -119,8 +83,7 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 						<div class="col-auto">
 							<div class="text-color">
 								<div class="txt">
-									<?php echo $_smarty_tpl->tpl_vars['lang']->value['home']['changedisplay'];?>
-
+									{$lang['home']['changedisplay']}
 								</div>
 								<ul class="item-list">
 									<li class="active">
@@ -138,21 +101,17 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 						<div class="col-auto">
 							<div class="text-size">
 								<div class="txt">
-									<?php echo $_smarty_tpl->tpl_vars['lang']->value['home']['fontsize'];?>
-
+									{$lang['home']['fontsize']}
 								</div>
 								<ul class="item-list">
 									<li class="active">
-										<a href="javascript:void(0)" class="size size-small typo-s" title="size small"><?php echo $_smarty_tpl->tpl_vars['settingWeb']->value['font'][$_smarty_tpl->tpl_vars['langon']->value];?>
-</a>
+										<a href="javascript:void(0)" class="size size-small typo-s" title="size small">{$settingWeb['font'][$langon]}</a>
 									</li>
 									<li>
-										<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium"><?php echo $_smarty_tpl->tpl_vars['settingWeb']->value['font'][$_smarty_tpl->tpl_vars['langon']->value];?>
-</a>
+										<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">{$settingWeb['font'][$langon]}</a>
 									</li>
 									<li>
-										<a href="javascript:void(0)" class="size size-large typo-lg" title="size large"><?php echo $_smarty_tpl->tpl_vars['settingWeb']->value['font'][$_smarty_tpl->tpl_vars['langon']->value];?>
-</a>
+										<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">{$settingWeb['font'][$langon]}</a>
 									</li>
 								</ul>
 							</div>
@@ -160,30 +119,24 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 						<div class="col-auto">
 							<div class="text-language">
 								<ul class="item-list">
-									<li class="<?php if ($_smarty_tpl->tpl_vars['langon']->value == 'en') {?>active<?php }?>">
-										<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/lang/en" class="link lg" title="English language">
+									<li class="{if $langon eq 'en'}active{/if}">
+										<a href="{$ul}/lang/en" class="link lg" title="English language">
 											<div class="icon">
-												<img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/gb.svg" alt="Flag of the United Kingdom">
+												<img src="{$template}/assets/img/icon/gb.svg" alt="Flag of the United Kingdom">
 											</div>
 										</a>
 									</li>
-									<li class="<?php if ($_smarty_tpl->tpl_vars['langon']->value == 'th') {?>active<?php }?>">
-										<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/lang/th" class="link lg" title="Thai language">
+									<li class="{if $langon eq 'th'}active{/if}">
+										<a href="{$ul}/lang/th" class="link lg" title="Thai language">
 											<div class="icon">
-												<img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/th.svg" alt="Flag of the Thailand">
+												<img src="{$template}/assets/img/icon/th.svg" alt="Flag of the Thailand">
 											</div>
 										</a>
 									</li>
-									<li class="<?php if ($_smarty_tpl->tpl_vars['langon']->value == 'cn') {?>active<?php }?>">
-										<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/lang/cn" class="link lg" title="Chinese language">
+									<li class="{if $langon eq 'cn'}active{/if}">
+										<a href="{$ul}/lang/cn" class="link lg" title="Chinese language">
 											<div class="icon">
-												<img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/cn.svg" alt="Flag of China">
+												<img src="{$template}/assets/img/icon/cn.svg" alt="Flag of China">
 											</div>
 										</a>
 									</li>
@@ -198,10 +151,8 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 								<form class="form">
 									<div class="input-group">
 										<div class="form-outline">
-											<input type="search" id="keywords" class="form-control" placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['search'];?>
-..." />
-											<label class="visuallyhidden" for="keywords"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['search'];?>
-</label>
+											<input type="search" id="keywords" class="form-control" placeholder="{$lang['system']['search']}..." />
+											<label class="visuallyhidden" for="keywords">{$lang['system']['search']}</label>
 										</div>
 										<button type="button" class="btn btn-search">
 											<span class="feather icon-search"></span>
@@ -221,17 +172,29 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 							<div class="main-menu-list">
 								<ul class="nav-list level-I">
 									<li class="active">
-										<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/home" class="link" title="หน้าแรก">
-											หน้าแรก
+										<a href="{$ul}/home" class="link" title="{$lang['menu']['home']}">
+											{$lang['menu']['home']}
 										</a>
 									</li>
-									<li class="dropright">
-										<a href="javascript:void(0)" class="link link-submenu" data-link="about-menu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											เกี่ยวกับเรา
-										</a>
-									</li>
-									<li>
+										{$counter = 1}
+										{$counterArr = count($arrMenu)}
+									{foreach $arrMenu as $keyarrMenu => $valuearrMenu}
+										{if count($valuearrMenu['subgroup']) > 0}
+											<li class="{if $counter eq 1}dropright{/if} {if $counter eq $counterArr}dropleft{/if}">
+												<a href="javascript:void(0)" class="link link-submenu" data-link="{$keyarrMenu}-menu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													{$valuearrMenu['group']['subject']}
+												</a>
+											</li>
+										{else}
+											<li>
+												<a href="{$ul}/{$valuearrMenu['group']['page']}" class="link" title="{$valuearrMenu['group']['subject']}">
+													{$valuearrMenu['group']['subject']}
+												</a>
+											</li>
+										{/if}
+										{$counter = $counter+1}
+									{/foreach}
+									{* <li>
 										<a href="javascript:void(0)" class="link link-submenu" data-link="service-menu" title="งานบริการ">
 											งานบริการ
 										</a>
@@ -265,7 +228,7 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 										<a href="javascript:void(0)" class="link link-submenu" title="ติดต่อเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											ติดต่อเรา
 										</a>
-									</li>
+									</li> *}
 								</ul>
 							</div>
 						</div>
@@ -297,12 +260,49 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 	<div class="main-menu">
 		<ul class="nav-list level-I">
 			<li>
-				<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/home" class="link active" title="หน้าแรก">
-					หน้าแรก
+				<a href="{$ul}/home" class="link active" title="{$lang['menu']['home']}">
+					{$lang['menu']['home']}
 				</a>
 			</li>
-			<li class="about-menu dropright">
+			{foreach $arrMenu as $keyarrMenu => $valuearrMenu}
+					<li class="{$keyarrMenu}-menu dropright">
+							<a href="javascript:void(0)" class="link submenu" title="{$valuearrMenu['group']['subject']}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								{$valuearrMenu['group']['subject']}
+							</a>
+							{if count($valuearrMenu['subgroup']) > 0}
+								<ul class="dropdown-menu level-II">
+									<li class="active mb-3 d-sm-none d-block">
+										<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="{$valuearrMenu['group']['subject']}">
+											<span class="feather icon-chevron-left"></span>
+											{$valuearrMenu['group']['subject']}
+										</a>
+									</li>
+										{foreach $valuearrMenu['subgroup'] as $keySubmenu => $valueSubmenu}
+											<li class="dropdown-item">
+												<a href="javascript:void(0)" class="link text-light typo-sm" title="{$valueSubmenu['subject']}">{$valueSubmenu['subject']}</a>
+											</li>
+										{/foreach}
+										{* <li class="dropdown-item">
+											<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">นโยบายและแผนxxx</a>
+											<ul class="item-list bullet">
+												<li>
+													<a href="https://www.youtube.com/watch?v=IFlB_3KRayk" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
+												</li>
+												<li>
+													<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
+												</li>
+												<li>
+													<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
+												</li>
+											</ul>
+										</li> *}
+								</ul>
+							{else}
+								xxxxx	
+							{/if}
+					</li>
+			{/foreach}
+			{* <li class="about-menu dropright">
 				<a href="javascript:void(0)" class="link submenu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					เกี่ยวกับเรา
 				</a>
@@ -394,8 +394,7 @@ function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl)
 				<a href="javascript:void(0)" class="link" title="ติดต่อเรา">
 					ติดต่อเรา
 				</a>
-			</li>
+			</li> *}
 		</ul>
 	</div>
-</div><?php }
-}
+</div>

@@ -285,6 +285,12 @@ $lang['career']['home:des'] = "we have expanded our operations into rapidly grow
 $lang['infoserv']['pictures'] = "Show Pictures";
 $lang['infoserv']['infoservice'] = "Information Service";
 
+//service
+$lang['service']['menu1'] = "Gem Check";
+$lang['service']['menu2'] = "Precious Metal Check";
+$lang['service']['menu3'] = "Counseling Center";
+$lang['service']['menu4'] = "Tool";
+
 $lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
 $lang['system']['close'] = "Close";
 $lang['system']['ducdownload'] = "Document Download";
