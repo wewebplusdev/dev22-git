@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-03 17:27:16
+/* Smarty version 4.0.0, created on 2022-11-07 14:41:56
   from '/var/www/html/front/template/default/inc/inc-header-theme-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6363978488fbb2_01949656',
+  'unifunc' => 'content_6368b6c45714f1_24308990',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8dc6d6f0a524916d830b7640cdd5522326f0bc7c' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-header-theme-3.tpl',
-      1 => 1667471235,
+      1 => 1667805007,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6363978488fbb2_01949656 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6368b6c45714f1_24308990 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header class="site-header">
 	<div class="site-header-topbar mobile">
 		<div class="container">
@@ -304,13 +304,13 @@ function content_6363978488fbb2_01949656 (Smarty_Internal_Template $_smarty_tpl)
 			</li>
 			<li class="about-menu dropright">
 				<a href="javascript:void(0)" class="link submenu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					เกี่ยวกับเราxx
+					เกี่ยวกับเรา
 				</a>
 				<ul class="dropdown-menu level-II">
 					<li class="active mb-3 d-sm-none d-block">
 						<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="เกี่ยวกับเรา">
 							<span class="feather icon-chevron-left"></span>
-							เกี่ยวกับเราccc
+							เกี่ยวกับเรา
 						</a>
 					</li>
 

@@ -101,6 +101,8 @@ $lang['career']['com'] = "ศาสนา";
 $lang['career']['natcard'] = "เลขที่บัตรประชาชน";
 $lang['career']['natcardby']="ออกให้โดย";
 $lang['career']['natcardpovince']="จังหวัด";
+$lang['career']['Application_form']="ใบสมัครงาน";
+$lang['career']['Personal_details']='ประวัติส่วนตัว';
 
 $lang['career']['army']="อื่นๆ";
 $lang['career']['army1']="ได้รับการยกเว้น";
@@ -348,3 +350,30 @@ $lang["search:total"] = "ทั้งหมด";
 $lang["search:listtotal"] = "จำนวนทั้งหมด";
 
 $lang['member']['logout'] = "ออกจากระบบ";
+//calculator
+$lang['calculator']['title']="ระบบคำนวนเพชร";
+$lang['calculator']['Diamond_shape']="รูปร่างของเพชร";
+$lang['calculator']['Diameter']="เส้นผ่านศูนย์กลาง, มม.";
+$lang['calculator']['Length']="ความยาว, มม.";
+$lang['calculator']['Width']="ความกว้าง, มม.";
+$lang['calculator']['Depth']="ความลึก, มม.";
+$lang['calculator']['Girdle_Thickness']="ความหนาของขอบ";
+$lang['calculator']['Thin_Medium']="บาง-ปานกลาง ";
+$lang['calculator']['Slightly_Thick']="ค่อนข้างหนา";
+$lang['calculator']['Thick']="หนา";
+$lang['calculator']['Very_Thick']="หนามาก";
+$lang['calculator']['Extra_Thick']="หนามากที่สุด";
+$lang['calculator']['Dept_Percentage']="เปอร์เซ็นความลึก";
+$lang['calculator']['Length_to_Width_Ratio']="อัตราส่วนความยาวต่อความกว้าง";
+$lang['calculator']['weighs_approximately']="น้ำหนักของเพชรโดยประมาณ";
+$lang['calculator']['Calculate']="คำนวณ";
+$lang['calculator']['Reset']="รีเซ็ต";
+//
+$lang['contact']['contact_address']="สถานที่ติดต่อ";
+$lang['contact']['establishment_address']="ห้องปฏิบัติการตรวจสอบอัญมณีสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ(องค์การมหาชน)อาคารไอทีเอฟ ทาวเวอร์ ชั้น 4 ถนนสีลมแขวงสุริยวงศ์ เขตบางรัก กรุงเทพฯ 10500";
+$lang['contact']['ext']="ต่อ";
+//pdpa
+$lang['pdpa']['cookie']="เว็บไซต์นี้ให้ความสำคัญต่อข้อมูลส่วนบุคคล เพื่อให้ท่านได้รับประสบการณ์ที่ดีบนเว็บไซต์ของเรา หากท่านใช้บริการเว็บไซต์นี้โดยไม่มีการปรับตั้งค่าใดๆแสดงว่าท่านยอมรับการใช้งานคุกกี้และนโยบายข้อมูลส่วนบุคคลของเรา";
+$lang['pdpa']['accept']="ยอมรับ";
+$lang['pdpa']['more_deatils']="รายละเอียดเพิ่มเติม";
+$lang['pdpa']['decline']="ปฏิเสธ";

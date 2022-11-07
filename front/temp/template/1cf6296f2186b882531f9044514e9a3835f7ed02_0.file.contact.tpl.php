@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-06 17:20:14
+/* Smarty version 4.0.0, created on 2022-11-07 15:19:09
   from '/var/www/html/front/template/default/_component/contact.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633eabde17e432_55974924',
+  'unifunc' => 'content_6368bf7d8e3074_98948871',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cf6296f2186b882531f9044514e9a3835f7ed02' => 
     array (
       0 => '/var/www/html/front/template/default/_component/contact.tpl',
-      1 => 1665051612,
+      1 => 1667807016,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633eabde17e432_55974924 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6368bf7d8e3074_98948871 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container sitekey" data-page="index" data-id="<?php echo $_smarty_tpl->tpl_vars['sitekey']->value;?>
 ">
 
