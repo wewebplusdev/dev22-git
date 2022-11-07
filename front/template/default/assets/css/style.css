@@ -8901,6 +8901,10 @@ fieldset {
   padding-bottom: calc(100vh - 286px);
 }
 
+.main-page .h-title {
+  font-size: 70px;
+}
+
 .top-graphic .tpg-item {
   position: relative;
 }
@@ -9028,6 +9032,58 @@ fieldset {
 }
 .default-list .link:hover .icon svg path {
   stroke: var(--color-primary-light);
+}
+
+.banner-I-block {
+  position: relative;
+  color: var(--color-light);
+  height: 540px;
+  padding: 5rem 0;
+  background: url("../img/background/bg-banner-theme-2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.banner-I-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(200deg, #000 0%, rgba(255, 255, 255, 0) 36%);
+}
+.banner-I-block .action {
+  position: relative;
+  z-index: 2;
+}
+.banner-I-block .action a {
+  display: inline-block;
+}
+.banner-I-block .action a + a {
+  margin-left: 20px;
+}
+.banner-I-block .graphic {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-right: -1084px;
+}
+.banner-I-block .title {
+  font-size: 77px;
+}
+.banner-I-block .subtitle {
+  font-size: 27px;
+  margin-bottom: 2rem;
+}
+.banner-I-block .desc {
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+.banner-I-block .banner-txt {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 1440px) {

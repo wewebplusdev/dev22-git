@@ -10,6 +10,12 @@
     }
 }
 
+.main-page {
+    .h-title {
+        font-size: 70px;
+    }
+}
+
 .top-graphic {
     .tpg-item {
         position: relative;
@@ -170,6 +176,59 @@
                 stroke: var(--color-primary-light);
             }
         }
+    }
+}
+
+.banner-I-block {
+    position: relative;
+    color: var(--color-light);
+    height: 540px;
+    padding: 5rem 0;
+    background: url("../img/background/bg-banner-theme-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(200deg, #000 0%, rgba(255, 255, 255, 0) 36%);
+        // z-index: 1;
+    }
+    .action {
+        position: relative;
+        z-index: 2;
+        a {
+            display: inline-block;
+        }
+        a + a {
+            margin-left: 20px;
+        }
+    }
+    .graphic {
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        margin-right: -1084px;
+    }
+    .title {
+        font-size: 77px;
+    }
+    .subtitle {
+        font-size: 27px;
+        margin-bottom: 2rem;
+    }
+    .desc {
+        font-size: 22px;
+        margin-bottom: 1rem;
+    }
+    .banner-txt {
+        position: relative;
+        z-index: 1;
     }
 }
 
