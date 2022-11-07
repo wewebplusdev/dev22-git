@@ -58,6 +58,10 @@ $config['intro']['main']['masterkey'] = "int";
 $config['ban']['main']['masterkey'] = "ban";
 $config['tag']['main']['masterkey'] = "tag";
 $config['cod_f']['main']['masterkey'] = "cod_f";
+$config['tgp']['main']['masterkey'] = "tgp";
+$config['ban_t3']['main']['masterkey'] = "ban_t3";
+$config['wb_t3']['main']['masterkey'] = "wb_t3";
+$config['ab_nm']['main']['masterkey'] = "ab_nm";
 
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';

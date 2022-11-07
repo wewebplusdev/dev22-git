@@ -1,26 +1,30 @@
 <section class="site-container">
 <div class="top-graphic">
     <div class="slider">
+        {foreach $callTopGraphic as $keycallTopGraphic => $valuecallTopGraphic}
             <div class="tpg-item">
                 <figure class="cover">
-                    <img src="{$template}/assets/img/upload/thumb-tpg.jpg" alt="">
+                    <img src="{$valuecallTopGraphic['pic']|fileinclude:"real":{$valuecallTopGraphic['masterkey']}:"link"}" alt="{$valuecallTopGraphic.pic}">
                 </figure>
                 <div class="info">
                     <div class="container">
                         <div class="wrapper">
-                            <div class="title text-limit -x3">
+                            {* <div class="title text-limit -x3">
                                 สถาบันวิจัยและพัฒนาอัญมณี <br>
                                 และเครื่องประดับแห่งชาติ (องค์การมหาชน)
                             </div>
                             <div class="desc text-limit -x3">
                                 เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542 จัดตั้งขึ้นตาม
                                 พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ
-                            </div>
-                            <a href="" class="btn btn-border-light" title="btn btn-primary">อ่านต่อ</a>
+                            </div> *}
+                            {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}
+                            <a {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="btn btn-border-light" title="btn btn-primary">{$lang['system']['viewmore']}</a>
+                            {/if}
                         </div>
                     </div>
                 </div>
             </div>
+        {/foreach}
     </div>
 </div>
 <div class="default-nav">
@@ -29,14 +33,14 @@
         <div class="col-xl-2 col-md-3 col-sm-4 col-5">
             <div class="topic">
                 <div class="title">
-                    งานบริการ
+                    {$lang['menu']['service']}
                 </div>
             </div>
         </div>
         <div class="col-xl-8 col-md-9 col-sm-8 col-7">
             <div class="slider">
                 <div class="item-">
-                    <a href="javascript:void(0)" class="link active" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/262" class="link active" title="ตรวจสอบอัญมณี">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="52.507" height="52.507" viewBox="0 0 52.507 52.507">
@@ -52,13 +56,13 @@
                                 </svg>
                             </div>
                             <div class="txt">
-                                ตรวจสอบอัญมณี
+                                {$lang['service']['menu1']}
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="javascript:void(0)" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/263" class="link" title="ตรวจสอบอัญมณี">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="57.257" height="58.067" viewBox="0 0 57.257 58.067">
@@ -80,13 +84,13 @@
                                 </svg>
                             </div>
                             <div class="txt">
-                                ตรวจสอบอัญมณี
+                                {$lang['service']['menu2']}
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="javascript:void(0)" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/264" class="link" title="ตรวจสอบอัญมณี">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="50.291" height="50.291" viewBox="0 0 50.291 50.291">
@@ -108,26 +112,26 @@
                                 </svg>
                             </div>
                             <div class="txt">
-                                ศูนย์ให้คำปรึกษา
+                                {$lang['service']['menu3']}
                             </div>
                         </div>
                     </a>
                 </div>
-                    <div class="item-">
-                        <a href="javascript:void(0)" class="link" title="ตรวจสอบอัญมณี">
-                            <div class="wrapper">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48.72" height="56.59" viewBox="0 0 48.72 56.59">
-                                        <path id="Path_2143" data-name="Path 2143" d="M55.017,37.7c-2.276-2.364-5.934,1.257-3.577,3.571S57.362,39.99,55.017,37.7Zm-1.792,2.741A.962.962,0,1,1,54,39.493.962.962,0,0,1,53.225,40.436Z" transform="translate(-24.32 -16.843)" fill="#9d9d9d" />
-                                        <path id="Path_2144" data-name="Path 2144" d="M11.849,56.271H9.536a.786.786,0,0,0-.786.786v3.728a.786.786,0,0,0,.786.786H56.684a.786.786,0,0,0,.786-.786V57.057a.786.786,0,0,0-.786-.786H54.389A45.553,45.553,0,0,0,42.734,27.278a5.029,5.029,0,0,0-.968-2.659l5.626-5.658c.893-.836-1-1.942-1.4-2.515l4.162-4.162.868.88c.71.729,1.842-.4,1.113-1.106-.05-.069-1.389-1.352-1.414-1.433C49.706,9.6,46.248,6.162,45.287,5.206c-.71-.71-1.848.415-1.113,1.125l.868.868L40.88,11.367c-.566-.4-1.672-2.288-2.515-1.4L19.915,28.428c-.7.673.321,1.421.761,1.886-.365.629-3.105,2.269-2.081,3.193l5.268,5.274a.811.811,0,0,0,.559.226.786.786,0,0,0,.553-.226L27.056,36.7c.453.44,1.2,1.465,1.886.761l5.721-5.721a5.029,5.029,0,0,0,2.4.912c.566,2.056,2.452,9.845-.44,13.8-1.15,1.572-2.911,2.339-5.375,2.339H26.616V46.9h4.627a.786.786,0,0,0,.786-.786v-3.7a.786.786,0,0,0-.786-.786H10.737a.78.78,0,0,0-.786.786V46.15a.78.78,0,0,0,.786.786h4.627v2.232c-2.779,1.509-3.382,5.419-3.514,7.1ZM55.9,60H10.322V57.842H55.9ZM44.821,56.271c-1.427-10.127-1.094-17.545.924-19.846a2.031,2.031,0,0,1,1.125-.71A43.118,43.118,0,0,1,52.83,56.3ZM37.655,31.125c-4.57.069-4.583-7.129,0-7.06,4.57-.044,4.57,7.148,0,7.078Zm8.5-22.813,2.892,2.9-4.162,4.162-2.9-2.9ZM24.422,37.1,20.26,32.936l1.521-1.54,4.162,4.162ZM28.4,35.8l-6.814-6.814L38.925,11.637c1.722,1.741,5.029,5.073,6.8,6.8L40.7,23.493c-4.507-3.458-10.58,2.628-7.129,7.129Zm9.492,11.6c3.181-4.35,1.5-12.114.786-14.786a5.123,5.123,0,0,0,3.772-3.282,44.421,44.421,0,0,1,3.59,4.966,3.715,3.715,0,0,0-1.484,1.069c-3.143,3.627-2.232,14.358-1.32,20.9h-29.8c.138-1.559.71-4.973,3.043-5.884H31.243C34.2,50.387,36.435,49.381,37.887,47.4ZM11.522,43.2H30.457v2.163H11.522Zm13.522,3.734v1.886H16.935V46.935Z" transform="translate(-8.75 -4.98)" fill="#9d9d9d" />
-                                    </svg>
-                                </div>
-                                <div class="txt">
-                                    เครื่องมือ
-                                </div>
+                <div class="item-">
+                    <a href="{$ul}/service/265" class="link" title="ตรวจสอบอัญมณี">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48.72" height="56.59" viewBox="0 0 48.72 56.59">
+                                    <path id="Path_2143" data-name="Path 2143" d="M55.017,37.7c-2.276-2.364-5.934,1.257-3.577,3.571S57.362,39.99,55.017,37.7Zm-1.792,2.741A.962.962,0,1,1,54,39.493.962.962,0,0,1,53.225,40.436Z" transform="translate(-24.32 -16.843)" fill="#9d9d9d" />
+                                    <path id="Path_2144" data-name="Path 2144" d="M11.849,56.271H9.536a.786.786,0,0,0-.786.786v3.728a.786.786,0,0,0,.786.786H56.684a.786.786,0,0,0,.786-.786V57.057a.786.786,0,0,0-.786-.786H54.389A45.553,45.553,0,0,0,42.734,27.278a5.029,5.029,0,0,0-.968-2.659l5.626-5.658c.893-.836-1-1.942-1.4-2.515l4.162-4.162.868.88c.71.729,1.842-.4,1.113-1.106-.05-.069-1.389-1.352-1.414-1.433C49.706,9.6,46.248,6.162,45.287,5.206c-.71-.71-1.848.415-1.113,1.125l.868.868L40.88,11.367c-.566-.4-1.672-2.288-2.515-1.4L19.915,28.428c-.7.673.321,1.421.761,1.886-.365.629-3.105,2.269-2.081,3.193l5.268,5.274a.811.811,0,0,0,.559.226.786.786,0,0,0,.553-.226L27.056,36.7c.453.44,1.2,1.465,1.886.761l5.721-5.721a5.029,5.029,0,0,0,2.4.912c.566,2.056,2.452,9.845-.44,13.8-1.15,1.572-2.911,2.339-5.375,2.339H26.616V46.9h4.627a.786.786,0,0,0,.786-.786v-3.7a.786.786,0,0,0-.786-.786H10.737a.78.78,0,0,0-.786.786V46.15a.78.78,0,0,0,.786.786h4.627v2.232c-2.779,1.509-3.382,5.419-3.514,7.1ZM55.9,60H10.322V57.842H55.9ZM44.821,56.271c-1.427-10.127-1.094-17.545.924-19.846a2.031,2.031,0,0,1,1.125-.71A43.118,43.118,0,0,1,52.83,56.3ZM37.655,31.125c-4.57.069-4.583-7.129,0-7.06,4.57-.044,4.57,7.148,0,7.078Zm8.5-22.813,2.892,2.9-4.162,4.162-2.9-2.9ZM24.422,37.1,20.26,32.936l1.521-1.54,4.162,4.162ZM28.4,35.8l-6.814-6.814L38.925,11.637c1.722,1.741,5.029,5.073,6.8,6.8L40.7,23.493c-4.507-3.458-10.58,2.628-7.129,7.129Zm9.492,11.6c3.181-4.35,1.5-12.114.786-14.786a5.123,5.123,0,0,0,3.772-3.282,44.421,44.421,0,0,1,3.59,4.966,3.715,3.715,0,0,0-1.484,1.069c-3.143,3.627-2.232,14.358-1.32,20.9h-29.8c.138-1.559.71-4.973,3.043-5.884H31.243C34.2,50.387,36.435,49.381,37.887,47.4ZM11.522,43.2H30.457v2.163H11.522Zm13.522,3.734v1.886H16.935V46.935Z" transform="translate(-8.75 -4.98)" fill="#9d9d9d" />
+                                </svg>
                             </div>
-                        </a>
-                    </div>
+                            <div class="txt">
+                                {$lang['service']['menu4']}
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -142,8 +146,8 @@
             <div class="h-title">
                 แหล่งความรู้
             </div>
-            <a href="" class="link" title="ดูทั้งหมด">
-                ดูทั้งหมด
+            <a href="" class="link" title="{$lang['system']['viewsall']}">
+                {$lang['system']['viewsall']}
             </a>
         </div>
         <div class="slider">
@@ -176,113 +180,97 @@
         </div>
     </div>
 
-    <div class="banner-block">
-        <div class="slider">
-
-
-
-                <div>
-                    <div class="box">
-                        <div class="row no-gutters align-items-center" style="height: 100%;">
-                            <div class="col-6">
-                                <div class="inner">
-                                    <div class="title text-limit -x2">
-                                        พิพิธภัณฑ์เสมือนจริง
+    {if $callBannerSection->_numOfRows gte 1}
+        <div class="banner-block">
+            <div class="slider">
+                {foreach $callBannerSection as $keycallBannerSection => $valuecallBannerSection}
+                    <div>
+                        <div class="box">
+                            <div class="row no-gutters align-items-center" style="height: 100%;">
+                                <div class="col-6">
+                                    <div class="inner">
+                                        <div class="title text-limit -x2">
+                                            {$valuecallBannerSection.subject}
+                                        </div>
+                                        <div class="desc text-limit -x3">
+                                            {$valuecallBannerSection.title}
+                                        </div>
+                                        <a {if $valuecallBannerSection['url'] neq "" && $valuecallBannerSection['url'] neq "#"}href="{$valuecallBannerSection['url']}"{if $valuecallBannerSection['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="btn btn-light" title="{$lang['system']['viewmore']}">{$lang['system']['viewmore']}</a>
                                     </div>
-                                    <div class="desc text-limit -x3">
-                                        ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณี
-                                    </div>
-                                    <a href="" class="btn btn-light" title="อ่านต่อ">อ่านต่อ</a>
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="graphic">
-                                    <img src="{$template}/assets/img/static/banner-graphic.png" alt="banner graphic">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="box">
-                        <div class="row no-gutters align-items-center" style="height: 100%;">
-                            <div class="col-6">
-                                <div class="inner">
-                                    <div class="title text-limit -x2">
-                                        พิพิธภัณฑ์เสมือนจริง
+                                <div class="col-6">
+                                    <div class="graphic">
+                                        <img src="{$valuecallBannerSection['pic']|fileinclude:"real":{$valuecallBannerSection['masterkey']}:"link"}" alt="{$valuecallBannerSection.subject}">
                                     </div>
-                                    <div class="desc text-limit -x3">
-                                        ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณี
-                                    </div>
-                                    <a href="" class="btn btn-light" title="อ่านต่อ">อ่านต่อ</a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="graphic">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Gorgosaurus_BW_transparent.png" alt="banner graphic">
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
+                {/foreach}
+            </div>
         </div>
-    </div>
+    {/if}
 
     <div class="update-block">
         <div class="default-header-block">
             <div class="h-title">
                 GIT UPDATE
             </div>
-            <a href="" class="link" title="ดูทั้งหมด">
-                ดูทั้งหมด
+            <a href="{$ul}/about/{$about_newsmenuid}" class="link" title="{$lang['system']['viewsall']}">
+                {$lang['system']['viewsall']}
             </a>
         </div>
         <ul class="nav nav-tabs" id="updateTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-controls="news" aria-selected="true">ข่าวสาร</a>
-            </li>
-            <li class="nav-item">
+            {$newscount = 0}
+            {foreach $arrNewsHome as $keyarrNewsHome => $valuearrNewsHome}
+                <li class="nav-item">
+                    <a class="nav-link {if $newscount eq 0}active{/if}" id="news-tab-{$keyarrNewsHome}" data-toggle="tab" href="#news-{$keyarrNewsHome}" role="tab" aria-controls="news-{$keyarrNewsHome}" aria-selected="{if $newscount eq 0}true{else}false{/if}">{$valuearrNewsHome['group']['subject']}</a>
+                </li>
+            {$newscount = $newscount+1}
+            {/foreach}
+            {* <li class="nav-item">
                 <a class="nav-link" id="procurement-tab" data-toggle="tab" href="#procurement" role="tab" aria-controls="procurement" aria-selected="false">จัดซื้อจัดจ้าง</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="git-lab-update-tab" data-toggle="tab" href="#git-lab-update" role="tab" aria-controls="git-lab-update" aria-selected="false">GIT Lab Update</a>
-            </li>
+            </li> *}
         </ul>
         <div class="tab-content" id="updateTabContent">
-            <div class="tab-pane fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
-                <div class="slider default-slider">
-                    {for $index = 0 to 5}
-                        <div class="item">
-                            <a class="link" href="#" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <div class="thumbnail">
-                                            <figure class="cover">
-                                                <img src="{$template}/assets/img/upload/img02.jpg" alt="thumbnail">
-                                            </figure>
+            {$newscount = 0}
+            {foreach $arrNewsHome as $keyarrNewsHome => $valuearrNewsHome}
+                <div class="tab-pane fade {if $newscount eq 0}show active{/if}" id="news-{$keyarrNewsHome}" role="tabpanel" aria-labelledby="news-tab-{$keyarrNewsHome}">
+                    <div class="slider default-slider">
+                        {foreach $valuearrNewsHome['list'] as $keyNewsSub => $valuearrNewsSub}
+                            <div class="item">
+                                <a class="link" href="{$ul}/about/{$valuearrNewsSub.menuid}/{$valuearrNewsSub.gid}/detail/{$valuearrNewsSub.id}" title="ศูนย์ข้อมูลอัญมณีและเครื่องประดับ">
+                                    <div class="row no-gutters">
+                                        <div class="col">
+                                            <div class="thumbnail">
+                                                <figure class="cover">
+                                                    <img src="{$valuearrNewsSub['pic']|fileinclude:"real":{$valuearrNewsSub['masterkey']}:"link"}" alt="{$valuearrNewsSub.subject}">
+                                                </figure>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <div class="date text-limit">
-                                            18 ธันวาคม 2565
+                                    <div class="row no-gutters">
+                                        <div class="col">
+                                            <div class="date text-limit">
+                                                {$valuearrNewsSub.credate|DateThai:'1':{$langon}:'full'}
+                                            </div>
+                                            <div class="title text-limit -x3">
+                                                {$valuearrNewsSub.subject}
+                                            </div>
+                                            <button type="button" class="btn btn-primary">{$lang['system']['viewmore']}</button>
                                         </div>
-                                        <div class="title text-limit -x3">
-                                            GIT เดินหน้าสร้างความร่วมมือกับมหาวิทยาลัย
-                                            เกษตรศาสตร์
-                                        </div>
-                                        <button type="button" class="btn btn-primary">อ่านต่อ</button>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                    {/for}
+                                </a>
+                            </div>
+                        {/foreach}
+                    </div>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab">
+                {$newscount = $newscount+1}
+            {/foreach}
+            {* <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab">
                 <!-- procurement -->
                 <div class="slider default-slider">
                     {for $index = 0 to 5}
@@ -306,7 +294,7 @@
                                             GIT เดินหน้าสร้างความร่วมมือกับมหาวิทยาลัย
                                             เกษตรศาสตร์
                                         </div>
-                                        <button type="button" class="btn btn-primary">อ่านต่อ</button>
+                                        <button type="button" class="btn btn-primary">{$lang['system']['viewmore']}</button>
                                     </div>
                                 </div>
                             </a>
@@ -316,30 +304,33 @@
             </div>
             <div class="tab-pane fade" id="git-lab-update" role="tabpanel" aria-labelledby="git-lab-update-tab">
                 git-lab-update
-            </div>
+            </div> *}
         </div>
 
     </div>
-    <div class="weblink-block">
-        <div class="default-header-block">
-            <div class="h-title">
-                GIT WEBLINK
+
+    {if $callWeblinkSection->_numOfRows gte 1}
+        <div class="weblink-block">
+            <div class="default-header-block">
+                <div class="h-title">
+                    GIT WEBLINK
+                </div>
+            </div>
+            <div class="slider default-slider">
+                {foreach $callWeblinkSection as $keycallWeblinkSection => $valuecallWeblinkSection}
+                    <div class="item">
+                        <a {if $valuecallWeblinkSection['url'] neq "" && $valuecallWeblinkSection['url'] neq "#"}href="{$valuecallWeblinkSection['url']}"{if $valuecallWeblinkSection['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" title="web link">
+                            <div class="thumbnail">
+                                <figure class="cover">
+                                    <img src="{$valuecallWeblinkSection['pic']|fileinclude:"real":{$valuecallWeblinkSection['masterkey']}:"link"}" alt="{$valuecallWeblinkSection.subject}">
+                                </figure>
+                            </div>
+                        </a>
+                    </div>
+                {/foreach}
             </div>
         </div>
-        <div class="slider default-slider">
-            {for $index = 0 to 5}
-                <div class="item">
-                    <a href="" class="link" title="web link">
-                        <div class="thumbnail">
-                            <figure class="cover">
-                                <img src="{$template}/assets/img//static/git-weblink.jpg" alt="logo">
-                            </figure>
-                        </div>
-                    </a>
-                </div>
-            {/for}
-        </div>
-    </div>
+    {/if}
 </div>
 
 </section>

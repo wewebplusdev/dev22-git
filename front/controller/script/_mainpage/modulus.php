@@ -29,7 +29,11 @@ if (count($arrMenu) < 1) {
     $_SESSION['Sitemap'] = $arrSitemap;
 }
 $smarty->assign("arrSitemap", $arrSitemap);
+// print_pre($arrSitemap);
 /* End Site map */
+
+//segment active menu
+$smarty->assign("segment", $url->segment[0]);
 
 /* Start Policy */
 $calPolicy = $callSetWebsite->callCMS($config['about']['plc']['masterkey'], 'Show');
@@ -39,6 +43,12 @@ $smarty->assign("calPolicy", $calPolicy);
 /* Start Menu */
 require_once _DIR . '/front/controller/script/_mainpage/service/menu.php';
 /* End Menu */
+
+/* Start Theme */
+$settingWeb['theme'] = 3;
+$themeWebsite = themeWebsite($settingWeb['theme']);
+$smarty->assign("themeWebsite", $themeWebsite);
+/* End Theme */
 
 Seo();
 function Seo($title = '', $desc = '', $keyword = '', $pic = '')

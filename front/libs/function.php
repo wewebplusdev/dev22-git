@@ -994,3 +994,37 @@ function DateFormat($DateTime)
     }
     return $dataYear . "-" . $dataM . "-" . $dataD;
 }
+
+function url_segment_menu($url){
+    global $linklang;
+    // $this_uri = explode(_URL , $url);
+    $this_uri = explode($linklang , $url);
+    $current_uri = explode("/" , $this_uri[1]);
+    array_splice($current_uri, 0, 1);
+
+    return $current_uri;
+}
+
+function themeWebsite($theme = 3){
+    $arrFile = array();
+    switch ($theme) {
+        case 2:
+            $arrFile['header'] = "inc/inc-header-theme-2.tpl";
+            $arrFile['footer'] = "inc/inc-footer-theme-2.tpl";
+            $arrFile['class'] = "theme-1";
+            break;
+
+        case 1:
+            $arrFile['header'] = "inc/inc-header.tpl";
+            $arrFile['footer'] = "inc/inc-footer.tpl";
+            $arrFile['class'] = "theme-2";
+            break;
+        
+        default:
+            $arrFile['header'] = "inc/inc-header-theme-3.tpl";
+            $arrFile['footer'] = "inc/inc-footer-theme-3.tpl";
+            $arrFile['class'] = "theme-3";
+            break;
+    }
+    return $arrFile;
+}

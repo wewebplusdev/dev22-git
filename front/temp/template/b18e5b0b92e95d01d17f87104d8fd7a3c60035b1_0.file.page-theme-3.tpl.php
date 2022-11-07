@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-02 16:14:45
+/* Smarty version 4.0.0, created on 2022-11-07 14:10:55
   from '/var/www/html/front/template/default/page-theme-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6362350532fb05_77585382',
+  'unifunc' => 'content_6368af7fc7a412_98142742',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b18e5b0b92e95d01d17f87104d8fd7a3c60035b1' => 
     array (
       0 => '/var/www/html/front/template/default/page-theme-3.tpl',
-      1 => 1667380481,
+      1 => 1667804872,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6362350532fb05_77585382 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6368af7fc7a412_98142742 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $_smarty_tpl->tpl_vars['langon']->value;?>
