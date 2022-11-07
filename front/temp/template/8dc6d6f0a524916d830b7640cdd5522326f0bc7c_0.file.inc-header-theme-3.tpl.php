@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-03 17:27:16
+/* Smarty version 4.0.0, created on 2022-11-07 14:14:20
   from '/var/www/html/front/template/default/inc/inc-header-theme-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6363978488fbb2_01949656',
+  'unifunc' => 'content_6368b04ce8d8f8_40711370',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8dc6d6f0a524916d830b7640cdd5522326f0bc7c' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-header-theme-3.tpl',
-      1 => 1667471235,
+      1 => 1667805252,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6363978488fbb2_01949656 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6368b04ce8d8f8_40711370 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header class="site-header">
 	<div class="site-header-topbar mobile">
 		<div class="container">
@@ -220,52 +220,44 @@ function content_6363978488fbb2_01949656 (Smarty_Internal_Template $_smarty_tpl)
 						<div class="col-auto">
 							<div class="main-menu-list">
 								<ul class="nav-list level-I">
-									<li class="active">
+									<li <?php if (strtolower($_smarty_tpl->tpl_vars['segment']->value) == "home") {?>class="active"<?php }?>>
 										<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/home" class="link" title="หน้าแรก">
-											หน้าแรก
+/home" class="link" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['menu']['home'];?>
+">
+											<?php echo $_smarty_tpl->tpl_vars['lang']->value['menu']['home'];?>
+
 										</a>
 									</li>
-									<li class="dropright">
-										<a href="javascript:void(0)" class="link link-submenu" data-link="about-menu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											เกี่ยวกับเรา
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" data-link="service-menu" title="งานบริการ">
-											งานบริการ
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="งานฝึกอบรม">
-											งานฝึกอบรม
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="งานบริการข้อมูล">
-											งานบริการข้อมูล
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="งานวิจัย">
-											งานวิจัย
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="บริการออนไลน์">
-											บริการออนไลน์
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="สมาชิกสัมพันธ์">
-											สมาชิกสัมพันธ์
-										</a>
-									</li>
-									<li class="dropleft">
-										<a href="javascript:void(0)" class="link link-submenu" title="ติดต่อเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											ติดต่อเรา
-										</a>
-									</li>
+									<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arrSitemap']->value, 'valuearrSitemap', false, 'keyarrSitemap');
+$_smarty_tpl->tpl_vars['valuearrSitemap']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyarrSitemap']->value => $_smarty_tpl->tpl_vars['valuearrSitemap']->value) {
+$_smarty_tpl->tpl_vars['valuearrSitemap']->do_else = false;
+?>
+										<?php $_smarty_tpl->_assignInScope('menuSegment', url_segment_menu($_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['url']));?>
+										<?php if (count($_smarty_tpl->tpl_vars['valuearrSitemap']->value['list']) > 0) {?>
+											<li class="<?php if ($_smarty_tpl->tpl_vars['keyarrSitemap']->value == 0) {?>dropright<?php }?> <?php if ($_smarty_tpl->tpl_vars['keyarrSitemap']->value == count($_smarty_tpl->tpl_vars['arrSitemap']->value)) {?>dropleft<?php }?> <?php if ($_smarty_tpl->tpl_vars['segment']->value == $_smarty_tpl->tpl_vars['menuSegment']->value[0]) {?>active<?php }?>">
+												<a href="javascript:void(0)" class="link link-submenu" data-link="<?php echo $_smarty_tpl->tpl_vars['keyarrSitemap']->value;?>
+-menu" title="<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
+" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
+
+												</a>
+										</li>
+										<?php } else { ?>
+											<li class="<?php if ($_smarty_tpl->tpl_vars['segment']->value == $_smarty_tpl->tpl_vars['menuSegment']->value[0]) {?>active<?php }?>">
+												<a <?php if ($_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['url'] != '' && $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['url'] != "#") {?>href="<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['url'];?>
+"<?php if ($_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['target'] == 2) {?>target="_blank"<?php }
+} else { ?>href="javascript:void(0);"<?php }?> class="link" title="<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
+">
+													<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
+
+												</a>
+											</li>
+										<?php }?>
+									<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</ul>
 							</div>
 						</div>
@@ -298,103 +290,94 @@ function content_6363978488fbb2_01949656 (Smarty_Internal_Template $_smarty_tpl)
 		<ul class="nav-list level-I">
 			<li>
 				<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/home" class="link active" title="หน้าแรก">
-					หน้าแรก
-				</a>
-			</li>
-			<li class="about-menu dropright">
-				<a href="javascript:void(0)" class="link submenu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					เกี่ยวกับเราxx
-				</a>
-				<ul class="dropdown-menu level-II">
-					<li class="active mb-3 d-sm-none d-block">
-						<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="เกี่ยวกับเรา">
-							<span class="feather icon-chevron-left"></span>
-							เกี่ยวกับเราccc
-						</a>
-					</li>
+/home" class="link" <?php if (strtolower($_smarty_tpl->tpl_vars['segment']->value) == "home") {?>class="active"<?php }?> title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['menu']['home'];?>
+">
+					<?php echo $_smarty_tpl->tpl_vars['lang']->value['menu']['home'];?>
 
-						<li class="dropdown-item">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">ทิศทางองค์กร</a>
-						</li>
-						<li class="dropdown-item">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">นโยบายและแผน</a>
-							<ul class="item-list bullet">
-								<li>
-									<a href="https://www.youtube.com/watch?v=IFlB_3KRayk" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-							</ul>
-						</li>
-				</ul>
-			</li>
-			<li class="service-menu dropright">
-				<a href="javascript:void(0)" class="link submenu" title="งานบริการ" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					งานบริการ
 				</a>
-				<ul class="dropdown-menu level-II">
-					<li class="active mb-3 d-sm-none d-block">
-						<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="งานบริการ">
-							<span class="feather icon-chevron-left"></span>
-							งานบริการ
-						</a>
-					</li>
+			</li>
+			<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arrSitemap']->value, 'valuearrSitemap', false, 'keyarrSitemap');
+$_smarty_tpl->tpl_vars['valuearrSitemap']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyarrSitemap']->value => $_smarty_tpl->tpl_vars['valuearrSitemap']->value) {
+$_smarty_tpl->tpl_vars['valuearrSitemap']->do_else = false;
+?>
+				<?php $_smarty_tpl->_assignInScope('menuSegment', url_segment_menu($_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['url']));?>
+				<li class="<?php echo $_smarty_tpl->tpl_vars['keyarrSitemap']->value;?>
+-menu dropright">
+					<?php if (count($_smarty_tpl->tpl_vars['valuearrSitemap']->value['list']) > 0) {?>
+					<a href="javascript:void(0)" class="link submenu <?php if ($_smarty_tpl->tpl_vars['segment']->value == $_smarty_tpl->tpl_vars['menuSegment']->value[0]) {?>active<?php }?>" title="<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
+" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
 
+					</a>
+					<?php } else { ?>
+					<a <?php if ($_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['url'] != '' && $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['url'] != "#") {?>href="<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['url'];?>
+"<?php if ($_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['target'] == 2) {?>target="_blank"<?php }
+} else { ?>href="javascript:void(0);"<?php }?> class="link submenu <?php if ($_smarty_tpl->tpl_vars['segment']->value == $_smarty_tpl->tpl_vars['menuSegment']->value[0]) {?>active<?php }?>" title="<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
+">
+						<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
 
-						<li class="dropdown-item active">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">งานบริการ</a>
+					</a>
+					<?php }?>
+					<ul class="dropdown-menu level-II">
+						<li class="active mb-3 d-sm-none d-block">
+							<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
+">
+								<span class="feather icon-chevron-left"></span>
+								<?php echo $_smarty_tpl->tpl_vars['valuearrSitemap']->value['group']['subject'];?>
+
+							</a>
 						</li>
-						<li class="dropdown-item">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">นโยบายและแผน</a>
-							<ul class="item-list bullet">
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-							</ul>
-						</li>
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="งานฝึกอบรม">
-					งานฝึกอบรม
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="งานบริการข้อมูล">
-					งานบริการข้อมูล
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="งานวิจัย">
-					งานวิจัย
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="บริการออนไลน์">
-					บริการออนไลน์
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="สมาชิกสัมพันธ์">
-					สมาชิกสัมพันธ์
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="ติดต่อเรา">
-					ติดต่อเรา
-				</a>
-			</li>
+							<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['valuearrSitemap']->value['list'], 'valueSubmenu', false, 'keySubmenu');
+$_smarty_tpl->tpl_vars['valueSubmenu']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keySubmenu']->value => $_smarty_tpl->tpl_vars['valueSubmenu']->value) {
+$_smarty_tpl->tpl_vars['valueSubmenu']->do_else = false;
+?>
+								<?php if (count($_smarty_tpl->tpl_vars['valueSubmenu']->value['menu']) > 0) {?>
+									<li class="dropdown-item">
+										<a <?php if ($_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['url'] != '' && $_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['url'] != "#") {?>href="<?php echo $_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['url'];?>
+"<?php if ($_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['target'] == 2) {?>target="_blank"<?php }
+} else { ?>href="javascript:void(0);"<?php }?> class="link text-light typo-sm" title="<?php echo $_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['subject'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['subject'];?>
+</a>
+										<ul class="item-list fluid bullet">
+											<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['valueSubmenu']->value['menu'], 'valueMenuLv3', false, 'keyMenuLv3');
+$_smarty_tpl->tpl_vars['valueMenuLv3']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyMenuLv3']->value => $_smarty_tpl->tpl_vars['valueMenuLv3']->value) {
+$_smarty_tpl->tpl_vars['valueMenuLv3']->do_else = false;
+?>
+												<li>
+													<a <?php if ($_smarty_tpl->tpl_vars['valueMenuLv3']->value['url'] != '' && $_smarty_tpl->tpl_vars['valueMenuLv3']->value['url'] != "#") {?>href="<?php echo $_smarty_tpl->tpl_vars['valueMenuLv3']->value['url'];?>
+"<?php if ($_smarty_tpl->tpl_vars['valueMenuLv3']->value['target'] == 2) {?>target="_blank"<?php }
+} else { ?>href="javascript:void(0);"<?php }?> class="link text-light typo-s" title="<?php echo $_smarty_tpl->tpl_vars['valueMenuLv3']->value['subject'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueMenuLv3']->value['subject'];?>
+</a>
+												</li>
+											<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+										</ul>
+									</li>
+								<?php } else { ?>
+									<li class="dropdown-item">
+										<a <?php if ($_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['url'] != '' && $_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['url'] != "#") {?>href="<?php echo $_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['url'];?>
+"<?php if ($_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['target'] == 2) {?>target="_blank"<?php }
+} else { ?>href="javascript:void(0);"<?php }?> class="link text-light typo-sm" title="<?php echo $_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['subject'];?>
+"><?php echo $_smarty_tpl->tpl_vars['valueSubmenu']->value['subgroup']['subject'];?>
+</a>
+									</li>
+								<?php }?>
+							<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+					</ul>
+				</li>
+			<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</ul>
 	</div>
 </div><?php }

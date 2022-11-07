@@ -10,8 +10,28 @@ $themeWebsite = 'theme-3';
 $callBanner = $homePage->callTopGraphic($config['ban']['main']['masterkey']);
 $smarty->assign("callBanner", $callBanner);
 
+$callTopGraphic = $homePage->callTopGraphic($config['tgp']['main']['masterkey']);
+$smarty->assign("callTopGraphic", $callTopGraphic);
+
 switch ($themeWebsite) {
     case 'theme-3':
+        $callBannerSection = $homePage->callTopGraphic($config['ban_t3']['main']['masterkey']);
+        $smarty->assign("callBannerSection", $callBannerSection);
+
+        $callWeblinkSection = $homePage->callTopGraphic($config['wb_t3']['main']['masterkey']);
+        $smarty->assign("callWeblinkSection", $callWeblinkSection);
+
+        $callcms = $homePage->callcms($config['ab_nm']['main']['masterkey']);
+        $arrNews = array();
+        foreach ($callcms as $keycallcms => $valuecallcms) {
+            $arrNews[$valuecallcms['gid']]['group']['subject'] = $valuecallcms['subjectg'];
+            $arrNews[$valuecallcms['gid']]['group']['gid'] = $valuecallcms['gid'];
+            $arrNews[$valuecallcms['gid']]['list'][] = $valuecallcms;
+            $about_newsmenuid = $valuecallcms['menuid'];
+        }
+        $smarty->assign("arrNewsHome", $arrNews);
+        $smarty->assign("about_newsmenuid", $about_newsmenuid);
+        
         $settingPage = array(
             "page" => $menuActive,
             "template" => "index-3.tpl",

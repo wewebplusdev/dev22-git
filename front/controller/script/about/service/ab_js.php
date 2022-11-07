@@ -185,7 +185,7 @@ switch ($PageActionCareer) {
         $settingPage = array(
             "page" => $menuActive,
             "template" => "career-list.tpl",
-            "display" => "page",
+            "display" => "page-theme-3",
             "control" => "component",
         );
         break;

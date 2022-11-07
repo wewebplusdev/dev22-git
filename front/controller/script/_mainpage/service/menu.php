@@ -55,4 +55,4 @@ $arrMenu['member-relations']['group']['page'] = "member-relations";
 $arrMenu['contact']['group']['subject'] = "ติดต่อเรา";
 $arrMenu['contact']['group']['page'] = "contact";
 // print_pre($arrMenu);
-$smarty->assign("arrMenu", $arrMenu);
+// $smarty->assign("arrMenu", $arrMenu);
