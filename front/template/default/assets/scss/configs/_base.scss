@@ -380,6 +380,12 @@ textarea {
             padding: 0 15px;
         }
     }
+    .gutters-lg-40 {
+        margin: 0 -20px;
+        > div {
+            padding: 0 20px;
+        }
+    }
 }
 
 .video-container {

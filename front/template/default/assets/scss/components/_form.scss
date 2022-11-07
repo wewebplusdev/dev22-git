@@ -393,12 +393,14 @@
 }
 
 // .select2-container--default .select2-results__option--selected
+.select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-container--default .select2-results__option--highlighted {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 0;
     height: 100%;
 }
 
@@ -538,10 +540,22 @@
     .select2-container--option-gray .select2-selection--single {
         padding: 21px 5px;
     }
+    .select2-container--default .select2-selection--single, .select2-container--option-year .select2-selection--single {
+        padding: 21px 5px;
+    }
+    .select2-results__option {
+        padding: 15px 15px;
+    }
 }
 
 @media (max-width: 767px) {
     .select2-container--option-gray .select2-selection--single {
         padding: 19px 5px;
+    }
+    .select2-container--default .select2-selection--single, .select2-container--option-year .select2-selection--single {
+        padding: 19px 5px;
+    }
+    .select2-results__option {
+        padding: 13px 15px;
     }
 }

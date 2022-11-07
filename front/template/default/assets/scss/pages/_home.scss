@@ -397,8 +397,63 @@
         }
     }
 
-    .lab-update-block{
+    .lab-update-block {
         margin-bottom: 5rem;
+        .default-slider-dots .slick-dots li button {
+            border-color: var(--color-primary);
+        }
+    }
+    .git-library-block {
+        margin-bottom: 5rem;
+        .h-title {
+            margin-bottom: 2rem;
+        }
+        .library-form {
+            padding: 2rem;
+        }
+        .icon {
+            position: relative;
+            top: 2px;
+            font-size: 50px;
+        }
+        .desc {
+            font-size: var(--typo-sm);
+        }
+        .form-default .block-control .form-control {
+            color: var(--color-light);
+            background-color: #012c7b;
+            border-radius: 5px;
+        }
+        .select2-container--default .select2-selection--single {
+            background-color: #012c7b;
+            border-radius: 5px;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: var(--color-light);
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow::before {
+            color: var(--color-light);
+        }
+    }
+    .weblink-block {
+        .weblink-list {
+            margin-top: 2rem;
+        }
+        .cover {
+            padding-bottom: 100%;
+        }
+        .slick-list {
+            margin: 0 -10px;
+        }
+        .item {
+            padding: 0 10px;
+        }
+        .default-slider-dots .slick-dots {
+            bottom: -110px;
+        }
+        .slick-dotted.slick-slider {
+            margin-bottom: 110px;
+        }
         .default-slider-dots .slick-dots li button {
             border-color: var(--color-primary);
         }
@@ -481,6 +536,9 @@
         .e-services-block .item-list li:last-child {
             margin-top: 3rem;
         }
+        .weblink-block .default-slider-dots .slick-dots {
+            bottom: -100px;
+        }
     }
 }
 
@@ -531,6 +589,18 @@
         .e-services-block .item-list li:nth-child(4),
         .e-services-block .item-list li:last-child {
             margin-top: 1.5rem;
+        }
+        .weblink-block .default-slider-dots .slick-dots {
+            bottom: -80px;
+        }
+        .weblink-block .slick-dotted.slick-slider {
+            margin-bottom: 120px;
+        }
+        .weblink-block .weblink-list {
+            margin-top: 26px;
+        }
+        .git-library-block .icon {
+            font-size: 44px;
         }
     }
 }
@@ -594,6 +664,17 @@
         .e-services-block .link .subtitle {
             font-size: var(--typo-xl);
         }
+        .lab-update-block {
+            .default-slider-dots{
+                margin-bottom: 60px;
+                .slick-dots {
+                    bottom: -50px;
+                }            
+            }
+        }
+        .git-library-block .icon {
+            font-size: 28px;
+        }
     }
 }
 
@@ -627,6 +708,13 @@
     }
 
     .theme-1 {
+        .banner-I-block,
+        .banner-II-block,
+        .banner-III-block,
+        .lab-update-block,
+        .git-library-block {
+            margin-bottom: 3rem;
+        }
         .banner-I-block {
             padding-top: 0;
             .h-title {
@@ -667,6 +755,12 @@
         .e-services-block .link .subtitle {
             font-size: var(--typo-lg);
         }
+        .weblink-block .default-slider-dots .slick-dots {
+            bottom: -70px;
+        }
+        .git-library-block .library-form {
+            padding: 1.5rem;
+        }
     }
 }
 
@@ -703,6 +797,12 @@
         .e-services-block .item-list > li {
             width: 100%;
             margin-bottom: 1rem;
+        }
+        .git-library-block .h-title {
+            margin-bottom: 1rem;
+        }
+        .weblink-block .weblink-list {
+            margin-top: 1rem;
         }
     }
 }
