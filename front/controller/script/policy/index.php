@@ -2,7 +2,7 @@
 
 $menuActive = "policy";
 $menuDetail = "detail";
-$listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script/'.$menuActive.'/js/script.js'.$lastModify.'"></script>';
+$listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script.js' . $lastModify . '"></script>';
 
 $policyPage = new policyPage;
 $arrMenu = array();
@@ -14,10 +14,10 @@ $MenuID = $callSetWebsite->getMenuID($MenuID);
 $MasterkeyTemp = "plc"; // master about like this
 $showslick = true; // slick shows
 
-if (empty($MenuID) && !in_array( $url->segment[1], $arrFix_menu)) {
+if (empty($MenuID) && !in_array($url->segment[1], $arrFix_menu)) {
     $MenuID = $config['about']['plc']['masterkey'];
-}else{
-   $MenuID = $url->segment[1]; 
+} else {
+    $MenuID = $url->segment[1];
 }
 
 ## REQUEST_URI
@@ -29,14 +29,14 @@ $smarty->assign("req_params", $req_params);
 
 switch ($MenuID) {
     case 'complaint-system':
-        $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render='.$sitekey.'"></script>';
+        $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render=' . $sitekey . '"></script>';
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/complaint-system.php';
         break;
 
-        case 'insert-formcomplaint':
-            require_once _DIR . '/front/controller/script/' . $menuActive . '/service/insert-formcomplaint.php';
-            break;
-        
+    case 'insert-formcomplaint':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/insert-formcomplaint.php';
+        break;
+
     default: //นโยบาย
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/plc.php';
         break;

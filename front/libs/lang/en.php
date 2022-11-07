@@ -342,5 +342,6 @@ $lang["search:option"] = "All Search";
 $lang["search:list"] = "List";
 $lang["search:total"] = "Total";
 $lang["search:listtotal"] = "Total";
-
+$lang["policy"]["title"] = "policy";
+$lang["policy"]["complaint"] = "complaint system";
 $lang['member']['logout'] = "Log out";

@@ -10,19 +10,19 @@ $secret = $secretkey;
 
 if (!empty($_POST) /*&& $responseData->success*/) {
   $data = array();
-  $data[$config['cus']['db']['main'] . "_masterkey"] = "'" . changeQuot($config['contact']['cu']['masterkey']) . "'";
-  $data[$config['cus']['db']['main'] . "_gid"] = "'" . encodeStr($_POST["inputGroup"]) . "'";
-  $data[$config['cus']['db']['main'] . "_message"] = "'" . encodeStr($_POST["inputMessage"]) . "'";
-  $data[$config['cus']['db']['main'] . "_fname"] = "'" . encodeStr($_POST["inputName"]) . "'";
-  $data[$config['cus']['db']['main'] . "_email"] = "'" . encodeStr($_POST["inputEmail"]) . "'";
-  $data[$config['cus']['db']['main'] . "_address"] = "'" . encodeStr($_POST["inputAddress"]) . "'";
-  $data[$config['cus']['db']['main'] . "_tel"] = "'" . encodeStr($_POST["inputTel"]) . "'";
-  $data[$config['cus']['db']['main'] . "_language"] = "'" . $url->pagelang[2] . "'";
-  $data[$config['cus']['db']['main'] . "_ip"] = "'" . getip() . "'";
-  $data[$config['cus']['db']['main'] . "_status"] = "'Unread'";
-  $data[$config['cus']['db']['main'] . "_credate"] = "NOW()";
+  $data[$config['coms']['db']['main'] . "_masterkey"] = "'" . changeQuot($config['policy']['complaint']['masterkey']) . "'";
+  $data[$config['coms']['db']['main'] . "_gid"] = "'" . encodeStr($_POST["inputGroup"]) . "'";
+  $data[$config['coms']['db']['main'] . "_message"] = "'" . encodeStr($_POST["inputMessage"]) . "'";
+  $data[$config['coms']['db']['main'] . "_fname"] = "'" . encodeStr($_POST["inputName"]) . "'";
+  $data[$config['coms']['db']['main'] . "_email"] = "'" . encodeStr($_POST["inputEmail"]) . "'";
+  $data[$config['coms']['db']['main'] . "_address"] = "'" . encodeStr($_POST["inputAddress"]) . "'";
+  $data[$config['coms']['db']['main'] . "_tel"] = "'" . encodeStr($_POST["inputTel"]) . "'";
+  $data[$config['coms']['db']['main'] . "_language"] = "'" . $url->pagelang[2] . "'";
+  $data[$config['coms']['db']['main'] . "_ip"] = "'" . getip() . "'";
+  $data[$config['coms']['db']['main'] . "_status"] = "'Unread'";
+  $data[$config['coms']['db']['main'] . "_credate"] = "NOW()";
 
-  $sql = "INSERT INTO " . $config['cus']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
+  $sql = "INSERT INTO " . $config['coms']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
   $insertDb = $db->execute($sql);
 
   formmail();
@@ -54,11 +54,11 @@ exit(0);
 function formmail(){
   global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $contactPage, $lang, $config;
   
-  $mailGorup = $contactPage->callmailcontact($config['contact']['cu']['masterkey'], $_POST["inputGroup"]);
+  $mailGorup = $contactPage->callmailcontact($config['policy']['complaint']['masterkey'], $_POST["inputGroup"]);
   // print_pre($mailGorup);die;
   // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
   $SubjectMail = $lang['menu']['contact']." (" . $_POST['inputName'] . ")";
-  $Group = $contactPage->callGroup($config['contact']['cu']['masterkey'], $_POST["inputGroup"]);
+  $Group = $contactPage->callGroup($config['policy']['complaint']['masterkey'], $_POST["inputGroup"]);
   
   
   $message = "
@@ -81,7 +81,6 @@ function formmail(){
                   <tr style='height: 209px;'>
                     <td style='height: 209px;'>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['group']." ".$Group->fields[2]."<br />".$lang['contact']['name']." ".changeQuot($_POST["inputName"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['subject']." : ".changeQuot($_POST["inputSubject"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["inputMessage"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['name']." : ".changeQuot($_POST["inputName"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['email']." : ".changeQuot($_POST["inputEmail"])."</div>

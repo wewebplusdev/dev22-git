@@ -354,3 +354,5 @@ $lang["search:total"] = "ทั้งหมด";
 $lang["search:listtotal"] = "จำนวนทั้งหมด";
 
 $lang['member']['logout'] = "ออกจากระบบ";
+$lang["policy"]["title"] = "นโยบาย";
+$lang["policy"]["complaint"] = "ระบบรับเรื่องร้องเรียน";
