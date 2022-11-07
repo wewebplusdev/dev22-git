@@ -211,11 +211,11 @@ body {
   width: 1210px;
 }
 .container.-lg {
-  max-width: 1520px;
+  max-width: 1400px;
   width: 100%;
 }
 .container.-xl {
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
 }
 
@@ -543,6 +543,12 @@ textarea {
   }
   .gutters-lg-50 > div {
     padding: 0 25px;
+  }
+  .gutters-lg-20 {
+    margin: 0 -10px;
+  }
+  .gutters-lg-20 > div {
+    padding: 0 10px;
   }
   .gutters-lg-30 {
     margin: 0 -15px;
@@ -9034,18 +9040,26 @@ fieldset {
   stroke: var(--color-primary-light);
 }
 
+.banner .container {
+  max-width: 1780px;
+  width: 100%;
+}
+
 .banner-I-block {
+  overflow: hidden;
+  padding-top: 8rem;
+  margin-bottom: 3rem;
+}
+.banner-I-block .wrapper {
+  padding: 5rem 0;
   position: relative;
   color: var(--color-light);
-  height: 540px;
-  padding: 5rem 0;
   background: url("../img/background/bg-banner-theme-2.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  overflow: hidden;
 }
-.banner-I-block::after {
+.banner-I-block .wrapper::after {
   content: "";
   position: absolute;
   top: 0;
@@ -9061,21 +9075,16 @@ fieldset {
 .banner-I-block .action a {
   display: inline-block;
 }
-.banner-I-block .action a + a {
-  margin-left: 20px;
-}
 .banner-I-block .graphic {
   position: absolute;
   bottom: 0;
   right: 50%;
+  z-index: 1;
   margin-right: -1084px;
 }
-.banner-I-block .title {
-  font-size: 77px;
-}
 .banner-I-block .subtitle {
-  font-size: 27px;
-  margin-bottom: 2rem;
+  font-size: 26px;
+  margin-bottom: 0.5rem;
 }
 .banner-I-block .desc {
   font-size: 22px;
@@ -9086,6 +9095,21 @@ fieldset {
   z-index: 1;
 }
 
+@media (max-width: 1600px) {
+  .main-page .h-title {
+    font-size: 60px;
+  }
+  .banner-I-block .subtitle {
+    font-size: var(--typo-md);
+  }
+  .banner-I-block .desc {
+    font-size: var(--typo-sm);
+  }
+  .banner-I-block .graphic {
+    margin-right: -920px;
+    max-width: 620px;
+  }
+}
 @media (max-width: 1440px) {
   .top-graphic .info .wrapper {
     margin-bottom: 7rem;
@@ -9100,10 +9124,36 @@ fieldset {
   .default-list .icon {
     font-size: 50px;
   }
+  .main-page .h-title {
+    font-size: 50px;
+  }
+  .banner-I-block {
+    padding-top: 5rem;
+  }
+  .banner-I-block .wrapper {
+    padding: 4rem 0;
+  }
+  .banner-I-block .graphic {
+    margin-right: -860px;
+    max-width: 560px;
+  }
 }
 @media (max-width: 1199px) {
   .top-graphic .info .wrapper {
     margin-bottom: 6rem;
+  }
+  .main-page .h-title {
+    font-size: 40px;
+  }
+  .banner-I-block {
+    padding-top: 4rem;
+  }
+  .banner-I-block .wrapper {
+    padding: 3rem 0;
+  }
+  .banner-I-block .graphic {
+    margin-right: -730px;
+    max-width: 470px;
   }
 }
 @media (max-width: 991px) {
@@ -9129,6 +9179,16 @@ fieldset {
     margin-right: 2rem;
     font-size: 44px;
   }
+  .main-page .h-title {
+    font-size: 36px;
+  }
+  .banner-I-block {
+    padding-top: 4rem;
+  }
+  .banner-I-block .graphic {
+    margin-right: -660px;
+    max-width: 440px;
+  }
 }
 @media (max-width: 767px) {
   .top-graphic .info .wrapper {
@@ -9149,6 +9209,33 @@ fieldset {
   }
   .default-list .link {
     padding: 20px 0 18px 0;
+  }
+  .main-page .h-title {
+    font-size: 32px;
+  }
+  .banner-I-block {
+    padding-top: 0;
+  }
+  .banner-I-block .h-title {
+    margin-bottom: 0.5rem;
+  }
+  .banner-I-block .wrapper {
+    padding: 2rem 15px;
+  }
+  .banner-I-block .graphic {
+    display: none;
+  }
+  .banner-I-block .action a {
+    width: 160px;
+  }
+}
+@media (max-width: 575px) {
+  .main-page .h-title {
+    font-size: 30px;
+  }
+  .banner-I-block .action a {
+    width: 135px;
+    margin-bottom: 10px;
   }
 }
 .theme-2 .site-container {

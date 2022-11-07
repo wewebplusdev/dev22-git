@@ -21,11 +21,11 @@ body {
 .container {
     width: 1210px;
     &.-lg {
-        max-width: 1520px;
+        max-width: 1400px;
         width: 100%;
     }
     &.-xl {
-        max-width: 1400px;
+        max-width: 1600px;
         width: 100%;
     }
 }
@@ -366,6 +366,12 @@ textarea {
         margin: 0 -25px;
         >div {
             padding: 0 25px;
+        }
+    }
+    .gutters-lg-20 {
+        margin: 0 -10px;
+        >div {
+            padding: 0 10px;
         }
     }
     .gutters-lg-30 {
