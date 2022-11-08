@@ -12024,6 +12024,11 @@ fieldset {
 .theme-3 .default-header .top-graphic .cover {
   padding-bottom: 162px;
 }
+.theme-3 .default-header .top-graphic .cover::before {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), to(#000));
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #000 100%);
+  opacity: 0.85;
+}
 .theme-3 .default-header .top-graphic .wrapper {
   position: absolute;
   top: 50%;
@@ -12035,7 +12040,7 @@ fieldset {
   z-index: 1;
 }
 .theme-3 .default-header .top-graphic .wrapper .title {
-  color: var(--color-primary);
+  color: var(--color-light);
   margin-bottom: 0;
   text-align: left;
 }
@@ -12046,14 +12051,14 @@ fieldset {
 }
 .theme-3 .default-header .top-graphic .wrapper .breadcrumb .breadcrumb-item {
   margin: 0;
-  color: var(--color-primary);
+  color: var(--color-light);
   font-size: 22px;
 }
 .theme-3 .default-header .top-graphic .wrapper .breadcrumb .breadcrumb-item::before {
-  color: var(--color-primary);
+  color: var(--color-light);
 }
 .theme-3 .default-header .top-graphic .wrapper .breadcrumb .breadcrumb-item a {
-  color: var(--color-primary);
+  color: var(--color-light);
   text-decoration: none;
 }
 .theme-3 .default-header .top-graphic .wrapper .breadcrumb .breadcrumb-item.active {
@@ -12062,12 +12067,6 @@ fieldset {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-}
-.theme-3 .default-header .top-graphic.text-light .wrapper .title,
-.theme-3 .default-header .top-graphic.text-light .wrapper .breadcrumb .breadcrumb-item,
-.theme-3 .default-header .top-graphic.text-light .wrapper .breadcrumb .breadcrumb-item::before,
-.theme-3 .default-header .top-graphic.text-light .wrapper .breadcrumb .breadcrumb-item a {
-  color: var(--color-light);
 }
 
 .default-nav-slider {

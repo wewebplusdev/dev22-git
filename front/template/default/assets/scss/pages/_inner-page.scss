@@ -63,6 +63,10 @@
             .cover {
                 padding-bottom: 162px;
             }
+            .cover::before {
+                background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #000 100%);
+                opacity: 0.85;
+            }
             .wrapper {
                 position: absolute;
                 top: 50%;
@@ -73,7 +77,7 @@
                 // width: 100%;
                 z-index: 1;
                 .title {
-                    color: var(--color-primary);
+                    color: var(--color-light);
                     margin-bottom: 0;
                     text-align: left;
                 }
@@ -81,13 +85,13 @@
                     justify-content: flex-start;
                     .breadcrumb-item {
                         margin: 0;
-                        color: var(--color-primary);
+                        color: var(--color-light);
                         font-size: 22px;
                         &::before {
-                            color: var(--color-primary);
+                            color: var(--color-light);
                         }
                         a {
-                            color: var(--color-primary);
+                            color: var(--color-light);
                             text-decoration: none;
                         }
                     }
@@ -100,14 +104,14 @@
                     }
                 }
             }
-            &.text-light {
-                .wrapper .title,
-                .wrapper .breadcrumb .breadcrumb-item,
-                .wrapper .breadcrumb .breadcrumb-item::before,
-                .wrapper .breadcrumb .breadcrumb-item a {
-                    color: var(--color-light);
-                }
-            }
+            // &.text-light {
+                // .wrapper .title,
+                // .wrapper .breadcrumb .breadcrumb-item,
+                // .wrapper .breadcrumb .breadcrumb-item::before,
+                // .wrapper .breadcrumb .breadcrumb-item a {
+                //     color: var(--color-light);
+                // }
+            // }
         }
     }
 }
@@ -548,7 +552,7 @@
     .breadcrumb {
         display: none;
     }
-    .theme-3 .default-header .top-graphic .wrapper .title{
+    .theme-3 .default-header .top-graphic .wrapper .title {
         text-align: center;
     }
 }
