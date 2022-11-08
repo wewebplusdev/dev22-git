@@ -265,6 +265,14 @@ $(document).ready(function () {
         ],
     });
 
+    $(".theme-1 .top-graphic .slider").slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+    });
+
     $(".theme-2 .top-graphic .slider").slick({
         infinite: false,
         slidesToShow: 1,
@@ -343,7 +351,41 @@ $(document).ready(function () {
         },]
     });
 
-    $(".git-book-block .slider").slick({
+    $(".theme-1 .git-book-block .slider").slick({
+        // autoplay: true,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        arrows: false,
+        dots: true,
+        responsive: [
+            {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+            },
+        },
+            {
+            breakpoint: 768,
+            settings: {
+                variableWidth: false,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+            },
+        },
+            {
+            breakpoint: 576,
+            settings: {
+                variableWidth: false,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
+        },
+    ]
+    });
+
+    $(".theme-2 .git-book-block .slider").slick({
         // autoplay: true,
         infinite: true,
         slidesToShow: 4,

@@ -6,7 +6,8 @@
 
 .top-graphic {
     .cover {
-        padding-bottom: calc(100vh - 286px);
+        // padding-bottom: calc(100vh - 286px);
+        padding-bottom: calc(100vh - 130px);
     }
 }
 
@@ -398,9 +399,17 @@
     }
 
     .lab-update-block {
+        overflow: hidden;
         margin-bottom: 5rem;
         .default-slider-dots .slick-dots li button {
-            border-color: var(--color-primary);
+            border-color: var(--color-default);
+        }
+        .default-slider-dots .slick-dots li.slick-active button {
+            border-color: var(--color-primary-light);
+        }
+        .default-slider-dots .slick-dots li.slick-active button::before {
+            background-color: transparent;
+            border: 1px solid var(--color-primary-light);
         }
     }
     .git-library-block {
@@ -436,8 +445,12 @@
         }
     }
     .weblink-block {
+        margin-bottom: 5rem;
         .weblink-list {
             margin-top: 2rem;
+        }
+        .thumbnail {
+            border: 1px solid var(--color-border);
         }
         .cover {
             padding-bottom: 100%;
@@ -455,7 +468,166 @@
             margin-bottom: 110px;
         }
         .default-slider-dots .slick-dots li button {
-            border-color: var(--color-primary);
+            border-color: var(--color-default);
+        }
+        .default-slider-dots .slick-dots li.slick-active button {
+            border-color: var(--color-primary-light);
+        }
+        .default-slider-dots .slick-dots li.slick-active button::before {
+            background-color: transparent;
+            border: 1px solid var(--color-primary-light);
+        }
+    }
+    .museum-block {
+        position: relative;
+        color: var(--color-light);
+        margin-bottom: 5rem;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 200px;
+            bottom: 11rem;
+            background-color: var(--color-primary);
+            background: url("../img/background/bg-git-museum.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .item-list {
+            > li {
+                width: 33.33%;
+            }
+        }
+        .museum-header {
+            padding: 8rem 0;
+            .desc {
+                font-size: var(--typo-lg);
+                margin-bottom: 2rem;
+            }
+        }
+        .museum-container {
+            margin-right: 0;
+            padding: 0;
+            max-width: 1440px;
+            width: 100%;
+            .wrapper {
+                position: relative;
+                color: var(--color-light);
+                height: 360px;
+                padding: 2rem;
+                background-color: var(--color-primary);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                transition: all 0.3s ease-in-out;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: var(--color-dark);
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+            .topic {
+                font-size: var(--typo-lg);
+                line-height: 1.2em;
+                min-height: 8rem;
+                span {
+                    position: relative;
+                    top: 4px;
+                    font-size: 30px;
+                    transition: 0.3s;
+                }
+            }
+            .title {
+                font-size: var(--typo-xl);
+                line-height: 1.2em;
+                margin-bottom: 1.5rem;
+            }
+            .desc {
+                margin-bottom: 1rem;
+            }
+            .topic,
+            .title,
+            .desc {
+                position: relative;
+                z-index: 1;
+            }
+            .link {
+                &:hover {
+                    .wrapper::before {
+                        opacity: 0.8;
+                    }
+                    .topic span {
+                        color: var(--color-primary);
+                    }
+                }
+            }
+        }
+        .museum-header,
+        .museum-container {
+            position: relative;
+            z-index: 1;
+        }
+    }
+    .git-book-block {
+        margin-bottom: 5rem;
+        .default-nav-tab li {
+            // width: 33.33%;
+            .item {
+                font-size: var(--typo-md);
+                text-transform: uppercase;
+            }
+        }
+        .booklist {
+            // margin-top: -10rem;
+            .cover {
+                position: relative;
+                padding-bottom: 133%;
+                margin-bottom: 1rem;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: var(--color-primary);
+                    opacity: 0;
+                    transition: 0.3s;
+                }
+            }
+            .slick-list {
+                margin: 0 -10px;
+            }
+            .item {
+                padding: 0 10px;
+            }
+            .link {
+                color: var(--color-dark);
+            }
+            .default-slider-dots .slick-dots {
+                bottom: -120px;
+            }
+            .slick-dotted.slick-slider {
+                margin-bottom: 180px;
+            }
+            .default-slider-dots .slick-dots li button {
+                border-color: var(--color-default);
+            }
+            .default-slider-dots .slick-dots li.slick-active button {
+                border-color: var(--color-primary-light);
+            }
+            .default-slider-dots .slick-dots li.slick-active button::before {
+                background-color: transparent;
+                border: 1px solid var(--color-primary-light);
+            }
         }
     }
 }
@@ -479,6 +651,28 @@
                 margin-right: -920px;
                 max-width: 620px;
             }
+        }
+        .museum-block::before {
+            right: 150px;
+            bottom: 10rem;
+        }
+        .museum-block .museum-header {
+            padding: 6rem 0;
+        }
+        .museum-block .museum-container .wrapper {
+            height: 324px;
+        }
+        .museum-block .museum-container {
+            max-width: 1395px;
+        }
+        .museum-block .museum-container .topic {
+            min-height: 5rem;
+        }
+        .git-book-block .booklist .default-slider-dots .slick-dots {
+            bottom: -110px;
+        }
+        .git-book-block .booklist .slick-dotted.slick-slider {
+            margin-bottom: 170px;
         }
     }
 }
@@ -538,6 +732,18 @@
         }
         .weblink-block .default-slider-dots .slick-dots {
             bottom: -100px;
+        }
+        .museum-block .museum-container {
+            max-width: 1210px;
+        }
+        .museum-block .museum-header {
+            padding: 4rem 0;
+        }
+        .git-book-block .booklist .slick-dotted.slick-slider {
+            margin-bottom: 140px;
+        }
+        .git-book-block .booklist .default-slider-dots .slick-dots {
+            bottom: -90px;
         }
     }
 }
@@ -602,6 +808,22 @@
         .git-library-block .icon {
             font-size: 44px;
         }
+        .museum-block::before {
+            right: 35px;
+        }
+        .museum-block .museum-container {
+            max-width: 992px;
+        }
+        .museum-block .museum-container .title {
+            font-size: var(--typo-lg);
+        }
+        .museum-block .museum-container .wrapper {
+            height: 280px;
+            padding: 1.5rem;
+        }
+        .git-book-block .booklist .default-slider-dots .slick-dots {
+            bottom: -80px;
+        }
     }
 }
 
@@ -636,6 +858,24 @@
     }
 
     .theme-1 {
+        .banner-I-block,
+        .banner-II-block,
+        .banner-III-block,
+        .lab-update-block,
+        .git-library-block,
+        .museum-block,
+        .git-book-block,
+        .weblink-block {
+            margin-bottom: 4rem;
+        }
+        .git-library-weblinks,
+        .git-book-block {
+            overflow: hidden;
+        }
+        .weblink-block .slick-list,
+        .git-book-block .booklist .slick-list {
+            overflow: visible;
+        }
         .banner-I-block {
             padding-top: 4rem;
             .graphic {
@@ -651,6 +891,9 @@
                 margin-left: 5.5rem;
             }
         }
+        .e-services-block {
+            margin-bottom: 1rem;
+        }
         .e-services-block .item-list > li {
             width: 50%;
         }
@@ -665,15 +908,34 @@
             font-size: var(--typo-xl);
         }
         .lab-update-block {
-            .default-slider-dots{
+            .default-slider-dots {
                 margin-bottom: 60px;
                 .slick-dots {
                     bottom: -50px;
-                }            
+                }
             }
         }
         .git-library-block .icon {
             font-size: 28px;
+        }
+        .museum-block::before {
+            right: 0;
+            // content: none;
+        }
+        .museum-block .museum-header {
+            padding: 3rem 0;
+        }
+        .museum-block .museum-container .wrapper {
+            height: 260px;
+        }
+        .git-book-block .booklist .slick-list {
+            margin: 0 -7.5px;
+        }
+        .git-book-block .booklist .item {
+            padding: 0 7.5px;
+        }
+        .git-book-block .booklist .slick-dotted.slick-slider {
+            margin-bottom: 66px;
         }
     }
 }
@@ -712,7 +974,10 @@
         .banner-II-block,
         .banner-III-block,
         .lab-update-block,
-        .git-library-block {
+        .git-library-block,
+        .museum-block,
+        .git-book-block,
+        .weblink-block {
             margin-bottom: 3rem;
         }
         .banner-I-block {
@@ -758,8 +1023,38 @@
         .weblink-block .default-slider-dots .slick-dots {
             bottom: -70px;
         }
+        .weblink-block .slick-list {
+            margin: 0 -7.5px;
+        }
+        .weblink-block .item {
+            padding: 0 7.5px;
+        }
+        .weblink-block .slick-dotted.slick-slider {
+            margin-bottom: 90px;
+        }
         .git-library-block .library-form {
             padding: 1.5rem;
+        }
+        .museum-block .item-list > li {
+            width: 100%;
+        }
+        .museum-block .museum-container .wrapper {
+            padding: 25px 15px;
+            height: auto;
+        }
+        .museum-block .museum-container .topic {
+            min-height: auto;
+            margin-bottom: 1.5rem;
+        }
+        .museum-block .museum-header .desc {
+            font-size: var(--typo-md);
+            margin-bottom: 1rem;
+        }
+        .git-book-block .booklist .slick-dotted.slick-slider {
+            margin-bottom: 55px;
+        }
+        .git-book-block .booklist .default-slider-dots .slick-dots {
+            bottom: -65px;
         }
     }
 }
@@ -768,7 +1063,7 @@
     .main-page {
         .h-title {
             font-size: 30px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
     }
 
@@ -803,6 +1098,12 @@
         }
         .weblink-block .weblink-list {
             margin-top: 1rem;
+        }
+        .museum-block .museum-header {
+            padding: 2rem 0;
+        }
+        .museum-block .museum-header .desc br {
+            display: none;
         }
     }
 }

@@ -14,6 +14,71 @@
         <section class="site-container">
             <div class="main-page">
 
+                <div class="top-graphic">
+                    <div class="default-slider-dots slider">
+
+                        <?php for ($i = 1; $i <= 3; $i++) { ?>
+
+                            <div class="tpg-item">
+                                <a href="" class="link">
+                                    <figure class="cover">
+                                        <img src="<?php echo $core_template; ?>/assets/img/static/tpg-01.jpg" alt="top graphic">
+                                    </figure>
+                                    <div class="info">
+                                        <div class="container">
+                                            <div class="wrapper">
+                                                <div class="title text-limit -x2">
+                                                    สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)
+                                                </div>
+                                                <div class="row align-items-end">
+                                                    <div class="col-md">
+                                                        <div class="desc text-limit -x2">
+                                                            เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542 <br>
+                                                            จัดตั้งขึ้นตาม พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ (องค์การมหาชน) พ.ศ. 2546
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto">
+                                                        <button href="" class="btn btn-primary" title="btn btn-primary">อ่านต่อ</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tpg-item">
+                                <a href="" class="link">
+                                    <figure class="cover">
+                                        <img src="<?php echo $core_template; ?>/assets/img/static/tpg-02.jpg" alt="top graphic">
+                                    </figure>
+                                    <div class="info">
+                                        <div class="container">
+                                            <div class="wrapper">
+                                                <div class="title text-limit -x2">
+                                                    สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)
+                                                </div>
+                                                <div class="row align-items-end">
+                                                    <div class="col-md">
+                                                        <div class="desc text-limit -x2">
+                                                            เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542 <br>
+                                                            จัดตั้งขึ้นตาม พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ (องค์การมหาชน) พ.ศ. 2546
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto">
+                                                        <button type="button" class="btn btn-primary">อ่านต่อ</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        <?php } ?>
+
+                    </div>
+                </div>
+
                 <div class="banner">
                     <div class="container">
                         <div class="banner-I-block">
@@ -335,6 +400,129 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="museum-block">
+                    <div class="container">
+                        <div class="museum-header">
+                            <div class="h-title fw-semi-bold text-light text-uppercase mb-1">
+                                GIT MUSEUM
+                            </div>
+                            <div class="desc">
+                                พิพิธภัณฑ์อัญมณีและเครื่องประดับสถาบันวิจัยและพัฒนาอัญมณี <br>
+                                และเครื่องประดับแห่งชาติ (องค์การมหาชน)
+                            </div>
+                            <a href="javascript:void(0)" class="btn btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                        </div>
+                    </div>
+                    <div class="museum-container container">
+                        <ul class="item-list">
+                            <li>
+                                <a href="" class="link" title="GIT Museum">
+                                    <div class="wrapper biggest" style="background-image: url(<?php echo $core_template; ?>/assets/img/background/bg-museum-01.jpg);">
+                                        <div class="topic">
+                                            <span class="feather-arrow-up-right"></span>
+                                            GIT Museum
+                                        </div>
+                                        <div class="title">
+                                            พิพิธภัณฑ์อัญมณี <br>
+                                            และเครื่องประดับ
+                                        </div>
+                                        <div class="desc text-limit -x2">
+                                            การจัดตั้งพิพิธภัณฑ์อัญมณีและเครื่องประดับ
+                                            เป็นส่วนหนึ่งในแผนงานของสถาบัน
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="link" title="GIT Virtual Museum">
+                                    <div class="wrapper" style="background-image: url(<?php echo $core_template; ?>/assets/img/background/bg-museum-02.jpg);">
+                                        <div class="topic">
+                                            <span class="feather-arrow-up-right"></span>
+                                            GIT Virtual Museum
+                                        </div>
+                                        <div class="title">
+                                            พิพิธภัณฑ์เสมือนจริง <br>
+                                            Virtual Museum
+                                        </div>
+                                        <div class="desc text-limit -x2">
+                                            แหล่งเรียนรู้ทางด้านอัญมณีและเครื่องประดับ
+                                            ควบคู่ไปกับการได้ท่องโลกแบบเสมือนจริง
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="link" title="GIT Virtual Exhibition">
+                                    <div class="wrapper" style="background-image: url(<?php echo $core_template; ?>/assets/img/background/bg-museum-03.jpg);">
+                                        <div class="topic">
+                                            <span class="feather-arrow-up-right"></span>
+                                            GIT Virtual Exhibition
+                                        </div>
+                                        <div class="title">
+                                            อีสานเดิ้น <br>
+                                            (Esan Dern)
+                                        </div>
+                                        <div class="desc text-limit -x2">
+                                            นิทรรศการเครื่องประดับอัตลักษณ์อีสานใต้
+                                            ได้รวบรวมผลงานต้นแบบเครื่องประดับ
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="git-book-block">
+                    <div class="container">
+                        <div class="h-title text-primary text-uppercase text-center">
+                            GIT Book
+                        </div>
+                        <ul class="default-nav-tab -x3 nav nav-pills">
+                            <li>
+                                <a class="item" href="#gitBook1" data-toggle="tab">GIT Trade Publication</a>
+                            </li>
+                            <li>
+                                <a class="item active" href="#gitBook2" data-toggle="tab">JEWELRY CONCEPT STORE BY GIT</a>
+                            </li>
+                            <li>
+                                <a class="item" href="#gitBook3" data-toggle="tab">GIT Bookstore</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content clearfix">
+                            <div class="tab-pane" id="gitBook1">
+                                gitBook1
+                            </div>
+                            <div class="tab-pane active" id="gitBook2">
+                                <div class="booklist">
+                                    <div class="default-slider default-slider-dots slider">
+
+                                        <?php for ($i = 1; $i <= 10; $i++) { ?>
+
+                                            <div class="item">
+                                                <a href="" class="link" title="">
+                                                    <figure class="cover">
+                                                        <img src="<?php echo $core_template; ?>/assets/img/static/git-book-02.jpg" alt="GIT BOOK">
+                                                    </figure>
+                                                    <div class="title text-center typo-sm">
+                                                        GIT Gem & Jewelry
+                                                        Review Issue 1/2022
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                        <?php } ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="gitBook3">
+                                gitBook3
                             </div>
                         </div>
                     </div>

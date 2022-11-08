@@ -608,8 +608,10 @@ fieldset {
         position: relative;
         padding: 0 10px;
         .item {
+            display: block;
             font-size: var(--typo-lg);
             color: var(--color-gray);
+            line-height: 1.2em;
             transition: all 200ms ease-out;
             &:hover {
                 color: var(--color-primary);
@@ -643,6 +645,11 @@ fieldset {
                 opacity: 1;
                 filter: unset;
             }
+        }
+    }
+    &.-x3 {
+        li {
+            width: 33.33%;
         }
     }
 }
@@ -759,6 +766,18 @@ fieldset {
     .nav-slider-block {
         margin-bottom: 2rem;
     }
+    .default-nav-tab li {
+        width: 100%;
+        & + li {
+            margin-top: 2.5rem;
+        }
+    }
+    .default-nav-tab.-x3 li {
+        width: 100%;
+        & + li {
+            margin-top: 2.5rem;
+        }
+    }
 }
 
 @media (max-width: 414px) {
@@ -781,6 +800,7 @@ fieldset {
             }
         }
     }
+
 }
 
 @media (max-width: 575px) {
@@ -814,4 +834,5 @@ fieldset {
         margin-top: 10px;
         justify-content: left;
     }
+    
 }
