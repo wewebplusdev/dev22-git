@@ -6,7 +6,8 @@
     <?php include('inc/loadstyle.php'); ?>
 </head>
 
-<body class="theme-2 theme-style-2">
+<body class="theme-2">
+<!-- <body class="theme-2 theme-style-2"> -->
 
     <div class="global-container">
         <?php include('inc/header-theme-2.php'); ?>
@@ -502,7 +503,7 @@
                     </div>
                 </div>
 
-                <div class="banner-III">
+                <div class="banner-III-block">
                     <div class="container">
                         <div class="wrapper">
                             <div class="quote text-uppercase">

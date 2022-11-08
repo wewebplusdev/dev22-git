@@ -171,51 +171,27 @@
 						<div class="col-auto">
 							<div class="main-menu-list">
 								<ul class="nav-list level-I">
-									<li class="active">
-										<a href="{$ul}/home" class="link" title="หน้าแรก">
-											หน้าแรก
+									<li {if strtolower($segment) eq "home"}class="active"{/if}>
+										<a href="{$ul}/home" class="link" title="{$lang['menu']['home']}">
+											{$lang['menu']['home']}
 										</a>
 									</li>
-									<li class="dropright">
-										<a href="javascript:void(0)" class="link link-submenu" data-link="about-menu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											เกี่ยวกับเรา
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" data-link="service-menu" title="งานบริการ">
-											งานบริการ
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="งานฝึกอบรม">
-											งานฝึกอบรม
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="งานบริการข้อมูล">
-											งานบริการข้อมูล
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="งานวิจัย">
-											งานวิจัย
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="บริการออนไลน์">
-											บริการออนไลน์
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" class="link link-submenu" title="สมาชิกสัมพันธ์">
-											สมาชิกสัมพันธ์
-										</a>
-									</li>
-									<li class="dropleft">
-										<a href="javascript:void(0)" class="link link-submenu" title="ติดต่อเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											ติดต่อเรา
-										</a>
-									</li>
+									{foreach $arrSitemap as $keyarrSitemap => $valuearrSitemap}
+										{$menuSegment = url_segment_menu($valuearrSitemap['group']['url'])}
+										{if count($valuearrSitemap['list']) > 0}
+											<li class="{if $keyarrSitemap eq 0}dropright{/if} {if $keyarrSitemap eq count($arrSitemap)}dropleft{/if} {if $segment eq $menuSegment[0]}active{/if}">
+												<a href="javascript:void(0)" class="link link-submenu" data-link="{$keyarrSitemap}-menu" title="{$valuearrSitemap['group']['subject']}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													{$valuearrSitemap['group']['subject']}
+												</a>
+										</li>
+										{else}
+											<li class="{if $segment eq $menuSegment[0]}active{/if}">
+												<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']}"{if $valuearrSitemap['group']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" title="{$valuearrSitemap['group']['subject']}">
+													{$valuearrSitemap['group']['subject']}
+												</a>
+											</li>
+										{/if}
+									{/foreach}
 								</ul>
 							</div>
 						</div>
@@ -247,103 +223,50 @@
 	<div class="main-menu">
 		<ul class="nav-list level-I">
 			<li>
-				<a href="{$ul}/home" class="link active" title="หน้าแรก">
-					หน้าแรก
+				<a href="{$ul}/home" class="link" {if strtolower($segment) eq "home"}class="active"{/if} title="{$lang['menu']['home']}">
+					{$lang['menu']['home']}
 				</a>
 			</li>
-			<li class="about-menu dropright">
-				<a href="javascript:void(0)" class="link submenu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					เกี่ยวกับเรา
-				</a>
-				<ul class="dropdown-menu level-II">
-					<li class="active mb-3 d-sm-none d-block">
-						<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="เกี่ยวกับเรา">
-							<span class="feather icon-chevron-left"></span>
-							เกี่ยวกับเรา
-						</a>
-					</li>
-
-						<li class="dropdown-item">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">ทิศทางองค์กร</a>
+			{foreach $arrSitemap as $keyarrSitemap => $valuearrSitemap}
+				{$menuSegment = url_segment_menu($valuearrSitemap['group']['url'])}
+				<li class="{$keyarrSitemap}-menu dropright">
+					{if count($valuearrSitemap['list']) > 0}
+					<a href="javascript:void(0)" class="link submenu {if $segment eq $menuSegment[0]}active{/if}" title="{$valuearrSitemap['group']['subject']}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						{$valuearrSitemap['group']['subject']}
+					</a>
+					{else}
+					<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']}"{if $valuearrSitemap['group']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link submenu {if $segment eq $menuSegment[0]}active{/if}" title="{$valuearrSitemap['group']['subject']}">
+						{$valuearrSitemap['group']['subject']}
+					</a>
+					{/if}
+					<ul class="dropdown-menu level-II">
+						<li class="active mb-3 d-sm-none d-block">
+							<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="{$valuearrSitemap['group']['subject']}">
+								<span class="feather icon-chevron-left"></span>
+								{$valuearrSitemap['group']['subject']}
+							</a>
 						</li>
-						<li class="dropdown-item">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">นโยบายและแผน</a>
-							<ul class="item-list bullet">
-								<li>
-									<a href="https://www.youtube.com/watch?v=IFlB_3KRayk" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-							</ul>
-						</li>
-				</ul>
-			</li>
-			<li class="service-menu dropright">
-				<a href="javascript:void(0)" class="link submenu" title="งานบริการ" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					งานบริการ
-				</a>
-				<ul class="dropdown-menu level-II">
-					<li class="active mb-3 d-sm-none d-block">
-						<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="งานบริการ">
-							<span class="feather icon-chevron-left"></span>
-							งานบริการ
-						</a>
-					</li>
-
-
-						<li class="dropdown-item active">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">งานบริการ</a>
-						</li>
-						<li class="dropdown-item">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">นโยบายและแผน</a>
-							<ul class="item-list bullet">
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-							</ul>
-						</li>
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="งานฝึกอบรม">
-					งานฝึกอบรม
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="งานบริการข้อมูล">
-					งานบริการข้อมูล
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="งานวิจัย">
-					งานวิจัย
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="บริการออนไลน์">
-					บริการออนไลน์
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="สมาชิกสัมพันธ์">
-					สมาชิกสัมพันธ์
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="ติดต่อเรา">
-					ติดต่อเรา
-				</a>
-			</li>
+							{foreach $valuearrSitemap['list'] as $keySubmenu => $valueSubmenu}
+								{if count($valueSubmenu['menu']) > 0}
+									<li class="dropdown-item">
+										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$valueSubmenu['subgroup']['url']}"{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link text-light typo-sm" title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
+										<ul class="item-list fluid bullet">
+											{foreach $valueSubmenu['menu'] as $keyMenuLv3 => $valueMenuLv3}
+												<li>
+													<a {if $valueMenuLv3['url'] neq "" && $valueMenuLv3['url'] neq "#"}href="{$valueMenuLv3['url']}"{if $valueMenuLv3['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link text-light typo-s" title="{$valueMenuLv3['subject']}">{$valueMenuLv3['subject']}</a>
+												</li>
+											{/foreach}
+										</ul>
+									</li>
+								{else}
+									<li class="dropdown-item">
+										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$valueSubmenu['subgroup']['url']}"{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link text-light typo-sm" title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
+									</li>
+								{/if}
+							{/foreach}
+					</ul>
+				</li>
+			{/foreach}
 		</ul>
 	</div>
 </div>

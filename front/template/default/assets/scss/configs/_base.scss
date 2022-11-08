@@ -4,7 +4,7 @@ body {
 }
 
 body {
-    font-family: 'Prompt';
+    font-family: "Prompt";
     // font-family: 'Prompt', sans-serif;
     background-color: #fff;
     line-height: 1;
@@ -21,67 +21,67 @@ body {
 .container {
     width: 1210px;
     &.-lg {
-        max-width: 1520px;
+        max-width: 1400px;
         width: 100%;
     }
     &.-xl {
-        max-width: 1400px;
+        max-width: 1600px;
         width: 100%;
     }
 }
 
 .gutters-10 {
     margin: 0 -5px;
-    >div {
+    > div {
         padding: 0 5px;
     }
 }
 
 .gutters-15 {
     margin: 0 -7.5px;
-    >div {
+    > div {
         padding: 0 7.5px;
     }
 }
 
 .gutters-20 {
     margin: 0 -10px;
-    >div {
+    > div {
         padding: 0 10px;
     }
 }
 
 .gutters-30 {
     margin: 0 -15px;
-    >div {
+    > div {
         padding: 0 15px;
     }
 }
 
 .gutters-custom {
     margin: 0 -12.5px;
-    >div {
+    > div {
         padding: 0 12.5px;
     }
 }
 
 .gutters-40 {
     margin: 0 -20px;
-    >div {
+    > div {
         padding: 0 20px;
     }
 }
 
 .gutters-50 {
     margin: 0 -25px;
-    >div {
+    > div {
         padding: 0 25px;
     }
 }
 
 .gutters-60 {
     margin: 0 -30px;
-    >div {
+    > div {
         padding: 0 30px;
     }
 }
@@ -92,7 +92,7 @@ img {
 
 .icon {
     position: relative;
-    >img {
+    > img {
         display: block;
     }
 }
@@ -122,12 +122,12 @@ textarea {
 .item-list {
     margin: 0;
     padding: 0;
-    &>li {
+    & > li {
         list-style: none;
         float: left;
     }
     &.fluid {
-        >li {
+        > li {
             width: 100%;
         }
     }
@@ -160,12 +160,12 @@ textarea {
 .nav-list {
     margin: 0;
     padding: 0;
-    >li {
+    > li {
         list-style: none;
         float: left;
     }
     &.fluid {
-        >li {
+        > li {
             width: 100%;
         }
     }
@@ -293,7 +293,7 @@ textarea {
     padding: 0;
 }
 
-.item-list>li {
+.item-list > li {
     list-style: none;
     float: left;
 }
@@ -308,7 +308,7 @@ textarea {
     clear: both;
 }
 
-.item-list.fluid>li {
+.item-list.fluid > li {
     width: 100%;
 }
 
@@ -317,7 +317,7 @@ textarea {
     padding: 0;
 }
 
-.nav-list>li {
+.nav-list > li {
     list-style: none;
     float: left;
 }
@@ -332,7 +332,7 @@ textarea {
     clear: both;
 }
 
-.nav-list.fluid>li {
+.nav-list.fluid > li {
     width: 100%;
 }
 
@@ -364,14 +364,26 @@ textarea {
 @media (min-width: 992px) {
     .gutters-lg-50 {
         margin: 0 -25px;
-        >div {
+        > div {
             padding: 0 25px;
+        }
+    }
+    .gutters-lg-20 {
+        margin: 0 -10px;
+        > div {
+            padding: 0 10px;
         }
     }
     .gutters-lg-30 {
         margin: 0 -15px;
-        >div {
+        > div {
             padding: 0 15px;
+        }
+    }
+    .gutters-lg-40 {
+        margin: 0 -20px;
+        > div {
+            padding: 0 20px;
         }
     }
 }
@@ -397,4 +409,14 @@ textarea {
 .circle-border {
     border-radius: 50%;
     border: 1px solid;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }

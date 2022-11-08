@@ -271,7 +271,7 @@
 						</li>
 						<li class="dropdown-item">
 							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">นโยบายและแผน</a>
-							<ul class="item-list bullet">
+							<ul class="item-list fluid bullet">
 								<li>
 									<a href="https://www.youtube.com/watch?v=IFlB_3KRayk" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
 								</li>

@@ -47,6 +47,7 @@ $lang['contact']['graphic-map'] = "Graphic Map";
 $lang['contact']['google-map'] = "google Map";
 $lang['contact']['download-map'] = "Map Download";
 $lang['contact']['misconduct-complaint'] = "Fraud and Misconduct Complaint System";
+$lang['contact']['complaint-system'] = "Complaint system";
 $lang['contact']['feedback-system'] = "Online Complaint/Feedback System (general)";
 $lang['contact']['success_msg_desc'] = "We have received information from you. <br>Thank you for using the service";
 $lang['contact']['error_msg'] = "Sorry, the transaction was not successful.";
@@ -105,6 +106,8 @@ $lang['career']['com'] = "Religion";
 $lang['career']['natcard'] = "ID card number";
 $lang['career']['natcardby']="Issued by";
 $lang['career']['natcardpovince']="Issued province";
+$lang['career']['Application_form']="Application form";
+$lang['career']['Personal_details']='Personal details';
 
 $lang['career']['army']="Other";
 $lang['career']['army1']="Exempt";
@@ -283,6 +286,12 @@ $lang['career']['home:des'] = "we have expanded our operations into rapidly grow
 $lang['infoserv']['pictures'] = "Show Pictures";
 $lang['infoserv']['infoservice'] = "Information Service";
 
+//service
+$lang['service']['menu1'] = "Gem Check";
+$lang['service']['menu2'] = "Precious Metal Check";
+$lang['service']['menu3'] = "Counseling Center";
+$lang['service']['menu4'] = "Tool";
+
 $lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
 $lang['system']['close'] = "Close";
 $lang['system']['ducdownload'] = "Document Download";
@@ -336,5 +345,33 @@ $lang["search:option"] = "All Search";
 $lang["search:list"] = "List";
 $lang["search:total"] = "Total";
 $lang["search:listtotal"] = "Total";
-
+$lang["policy"]["title"] = "policy";
+$lang["policy"]["complaint"] = "complaint system";
 $lang['member']['logout'] = "Log out";
+//calculator
+$lang['calculator']['title']="Diamond Calculator";
+$lang['calculator']['Diamond_shape']="Diamond Shape";
+$lang['calculator']['Diameter']="Diameter, mm.";
+$lang['calculator']['Length']="Length, mm.";
+$lang['calculator']['Width']="Width, mm.";
+$lang['calculator']['Depth']="Depth, mm.";
+$lang['calculator']['Girdle_Thickness']="Girdle Thickness";
+$lang['calculator']['Thin_Medium']="Thin-Medium ";
+$lang['calculator']['Slightly_Thick']="Slightly Thick";
+$lang['calculator']['Thick']="Thick";
+$lang['calculator']['Very_Thick']="Very Thick";
+$lang['calculator']['Extra_Thick']="Extra Thick";
+$lang['calculator']['Dept_Percentage']="Dept Percentage";
+$lang['calculator']['Length_to_Width_Ratio']="Length to Width Ratio";
+$lang['calculator']['weighs_approximately']="Weighs Approximately";
+$lang['calculator']['Calculate']="Calculate";
+$lang['calculator']['Reset']="Reset";
+//
+$lang['contact']['contact_address']="Address";
+$lang['contact']['establishment_eddress']="The Gem and Jewelry Institute of Thailand (Public Organization)ITF Tower,4th Floor, Silom road, Suriyawong, Bangrak Bangkok, Thailand 10500";
+$lang['contact']['ext']="Ext.";
+//pdpa
+$lang['pdpa']['cookie']="We value your privacy. To give you a good experience on our website. If you use this website without any adjustments,It's mean you are agree to our use of cookies and our privacy policy.";
+$lang['pdpa']['accept']="Accept";
+$lang['pdpa']['more_deatils']="More Details";
+$lang['pdpa']['decline']="Decline";

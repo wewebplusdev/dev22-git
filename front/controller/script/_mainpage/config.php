@@ -22,6 +22,7 @@ $config['cmss']['db']['main'] = "md_cmss2";
 $config['cmsf']['db']['main'] = "md_cmsf";
 $config['cug']['db']['main'] = "md_cug";
 $config['cus']['db']['main'] = "md_cus";
+$config['coms']['db']['main'] = "md_coms";
 $config['cue']['db']['main'] = "md_cue";  
 $config['joss']['db']['main'] = "md_joss";
 $config['jos']['db']['main'] = "md_jos";
@@ -58,12 +59,17 @@ $config['intro']['main']['masterkey'] = "int";
 $config['ban']['main']['masterkey'] = "ban";
 $config['tag']['main']['masterkey'] = "tag";
 $config['cod_f']['main']['masterkey'] = "cod_f";
+$config['tgp']['main']['masterkey'] = "tgp";
+$config['ban_t3']['main']['masterkey'] = "ban_t3";
+$config['wb_t3']['main']['masterkey'] = "wb_t3";
+$config['ab_nm']['main']['masterkey'] = "ab_nm";
 
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';
 $config['policy']['db'] = 'md_ab';
 $config['policy_file']['db'] = 'md_abf';
 $config['policy']['masterkey'] = 'pl';
+$config['policy']['complaint']['masterkey'] = 'complaint';
 $config['pdpa']['masterkey'] = 'accept';
 
 //setting menu
