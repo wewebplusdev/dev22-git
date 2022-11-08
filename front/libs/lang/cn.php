@@ -7,7 +7,7 @@ $lang['home']['map'] = "地图";
 $lang['home']['googlemap'] = "Google地图";
 $lang['home']['follow'] = "跟着我们";
 $lang['home']['changedisplay'] = "更改显示屏";
-$lang['home']['fontsize'] = "的字体大小";
+$lang['home']['fontsize'] = "字体大小";
 $lang['home']['findusmap'] = "找到我们 <br>地图";
 $lang['home']['findusgmap'] = "找到我们 <br>google 地图";
 
