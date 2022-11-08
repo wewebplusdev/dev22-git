@@ -27,6 +27,9 @@
               <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" {if $MenuID eq $valuegetMenuDetail.masterkey}class="active"{/if}>{$arrName[0]}</a>
             </div>
           {/foreach}
+          <div class="item">
+              <a href="{$ul}/{$menuActive}/complaint-system">{$lang["policy"]["complaint"]}</a>
+            </div>
         </div>
       </div>
     {/if}

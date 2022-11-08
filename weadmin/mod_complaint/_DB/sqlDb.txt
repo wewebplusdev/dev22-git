@@ -1,0 +1,58 @@
+
+CREATE TABLE md_cue (
+  md_cue_id int(11) NOT NULL auto_increment,
+  md_cue_gid int(11) NOT NULL default '0',
+  md_cue_email varchar(255) NOT NULL,
+  md_cue_masterkey varchar(150) NOT NULL,
+  PRIMARY KEY  (md_cue_id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- �ç���ҧ���ҧ 'md_comg'
+-- 
+
+CREATE TABLE md_comg (
+  md_comg_id int(11) NOT NULL auto_increment,
+  md_comg_masterkey varchar(20) NOT NULL,
+  md_comg_language varchar(50) NOT NULL,
+  md_comg_subject varchar(200) NOT NULL,
+  md_comg_title text NOT NULL,
+  md_comg_crebyid int(11) NOT NULL default '0',
+  md_comg_creby varchar(100) NOT NULL,
+  md_comg_credate datetime NOT NULL default '0000-00-00 00:00:00',
+  md_comg_lastdate datetime NOT NULL default '0000-00-00 00:00:00',
+  md_comg_status varchar(50) NOT NULL,
+  md_comg_order int(11) NOT NULL default '0',
+  md_comg_subjecten varchar(255) NOT NULL,
+  md_comg_titleen text NOT NULL,
+  md_comg_lastbyid int(11) NOT NULL,
+  md_comg_lastby varchar(255) NOT NULL,
+  PRIMARY KEY  (md_comg_id),
+  UNIQUE KEY md_comg_id (md_comg_id),
+  KEY md_comg_id_2 (md_comg_id)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- �ç���ҧ���ҧ 'md_coms'
+-- 
+
+CREATE TABLE md_coms (
+  md_coms_id int(11) NOT NULL auto_increment,
+  md_coms_gid int(11) NOT NULL default '0',
+  md_coms_masterkey varchar(20) NOT NULL,
+  md_coms_language varchar(50) NOT NULL,
+  md_coms_name varchar(200) NOT NULL,
+  md_coms_email varchar(255) NOT NULL,
+  md_coms_subject varchar(255) NOT NULL,
+  md_coms_address text NOT NULL,
+  md_coms_message text NOT NULL,
+  md_coms_credate datetime NOT NULL default '0000-00-00 00:00:00',
+  md_coms_status varchar(50) NOT NULL,
+  md_coms_tel varchar(25) NOT NULL,
+  md_coms_ip varchar(100) NOT NULL,
+  PRIMARY KEY  (md_coms_id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

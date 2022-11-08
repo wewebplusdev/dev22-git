@@ -47,6 +47,7 @@ $lang['contact']['graphic-map'] = "Graphic Map";
 $lang['contact']['google-map'] = "google Map";
 $lang['contact']['download-map'] = "Map Download";
 $lang['contact']['misconduct-complaint'] = "Fraud and Misconduct Complaint System";
+$lang['contact']['complaint-system'] = "Complaint system";
 $lang['contact']['feedback-system'] = "Online Complaint/Feedback System (general)";
 $lang['contact']['success_msg_desc'] = "We have received information from you. <br>Thank you for using the service";
 $lang['contact']['error_msg'] = "Sorry, the transaction was not successful.";
@@ -342,5 +343,6 @@ $lang["search:option"] = "All Search";
 $lang["search:list"] = "List";
 $lang["search:total"] = "Total";
 $lang["search:listtotal"] = "Total";
-
+$lang["policy"]["title"] = "policy";
+$lang["policy"]["complaint"] = "complaint system";
 $lang['member']['logout'] = "Log out";
