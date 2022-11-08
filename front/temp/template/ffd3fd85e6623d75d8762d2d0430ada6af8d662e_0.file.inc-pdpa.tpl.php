@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-19 15:22:25
+/* Smarty version 4.0.0, created on 2022-11-08 09:08:44
   from '/var/www/html/front/template/default/inc/inc-pdpa.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_634fb3c120ea65_26328554',
+  'unifunc' => 'content_6369ba2c167eb0_86367772',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ffd3fd85e6623d75d8762d2d0430ada6af8d662e' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-pdpa.tpl',
-      1 => 1666167740,
+      1 => 1667810365,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634fb3c120ea65_26328554 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6369ba2c167eb0_86367772 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="cookie-tab pdpa" >
     <div class="container">
         <div class="row align-items-center  h-tap">
@@ -32,16 +32,19 @@ function content_634fb3c120ea65_26328554 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="col-md">
                 <div class="text">
-                    เว็บไซต์นี้ให้ความสำคัญต่อข้อมูลส่วนบุคคล เพื่อให้ท่านได้รับประสบการณ์ที่ดีบนเว็บไซต์ของเรา หากท่านใช้บริการเว็บไซต์นี้
-                    โดยไม่มีการปรับตั้งค่าใดๆแสดงว่าท่านยอมรับการใช้งานคุกกี้และนโยบายข้อมูลส่วนบุคคลของเรา
+                <?php echo $_smarty_tpl->tpl_vars['lang']->value['pdpa']['cookie'];?>
+
                      <a class="link -cookie-policy" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
-/policy" target="_blank">รายละเอียดเพิ่มเติม</a>
+/policy" target="_blank"><?php echo $_smarty_tpl->tpl_vars['lang']->value['pdpa']['more_details'];?>
+</a>
                 </div>
             </div>
             <div class="col-md-auto">
                 <div class="action">
-                    <a class="btn btn-primary acept-btn acceptCookie" id="btn-AcceptPdpa" data-accept="Accept" href="javascript:void(0);">ยอมรับ</a>
-                    <a class="btn btn-light reject-btn" href="javascript:void(0);">ปฏิเสธ</a>
+                    <a class="btn btn-primary acept-btn acceptCookie" id="btn-AcceptPdpa" data-accept="Accept" href="javascript:void(0);"><?php echo $_smarty_tpl->tpl_vars['lang']->value['pdpa']['accept'];?>
+</a>
+                    <a class="btn btn-light reject-btn" href="javascript:void(0);"><?php echo $_smarty_tpl->tpl_vars['lang']->value['pdpa']['decline'];?>
+</a>
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@
     <div class="default-page diamond-calc-page">
         <div class="container">
             <!-- <div class="editor-content"> -->
-            <div class="h-title">ระบบคำนวณเพชร</div>
+            <div class="h-title">{$lang['calculator']['title']}</div>
             <div class="image-block">
                 <div class="image-thumbnail">
                     <figure class="cover">
@@ -33,28 +33,25 @@
             </div>
             <div class="contact-block">
                 <div class="title text-black typo-sm">
-                    สถานที่ติดต่อ
+                    {$lang['contact']['contact_address']}
                 </div>
                 <div class="desc">
-                    ห้องปฏิบัติการตรวจสอบอัญมณีสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ
-                    (องค์การมหาชน)อาคารไอทีเอฟ ทาวเวอร์ ชั้น 4 ถนนสีลม
-                    แขวงสุริยวงศ์ เขตบางรัก กรุงเทพฯ 10500
+                    {$lang['contact']['establishment_address']}
                 </div>
                 <div class="desc">
-                    <strong>โทรศัพท์</strong> 0 2634 4999 ต่อ <strong>409</strong> <br>
-                    <strong>โทรสาร</strong> 0 2634 4970 <br>
-                    <strong>อีเมล</strong> jewelry@git.or.th
+                    <strong>{$lang['system']['tel']}</strong> 0 2634 4999 {$lang['contact']['ext']} <strong>409</strong> <br>
+                    <strong>{$lang['system']['fax']}</strong> 0 2634 4970 <br>
+                    <strong>{$lang['system']['email']}</strong> jewelry@git.or.th
                 </div>
                 <div class="desc">
-                    <strong>เวลาทำการ</strong> <br>
-                    วันจันทร์ - ศุกร์ เวลา 8.30 - 16.30 น. เว้นวันเสาร์ - อาทิตย์ วันนักขัตฤกษ์
-                    และวันหยุดตามประกาศของสถาบัน
+                    <strong>{$lang['contact']['working']}</strong> <br>
+                    {$lang['contact']['timmer']}
                 </div>
             </div>
             <div class="diamond-calc-block">
                 <div class="form-block">
                     <div class="title text-black typo-sm">
-                        ระบบคำนวณเพชร
+                        {$lang['calculator']['title']}
                     </div>
                     <hr class="divider my-3">
                     <form data-toggle="validator" id="form-calculator" role="form" class="form-default mt-xl-5" method="post">
@@ -63,7 +60,7 @@
                         <div class="row gutters-30">
                             <div class="col-md-6">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label" for="diaform">Diamond shape</label>
+                                    <label class="control-label" for="diaform">{$lang['calculator']['Diamond_shape']}</label>
                                     <div class="select-wrapper">
                                         <select class="select-control select-gray" name="diaform" id="diaform"
                                             style="width: 100%;">
@@ -83,42 +80,42 @@
                                     </div>
                                 </div>
                                 <div class="form-group type-1 confition-cal">
-                                    <label class="control-label" for="diamcut1">Diameter, mm</label>
+                                    <label class="control-label" for="diamcut1">{$lang['calculator']['Diameter']}</label>
                                     <div class="block-control">
                                         <input type="number" class="form-control" name="diamcut1" id="diamcut1" min="0"
                                             step="0.1" value="10">
                                     </div>
                                 </div>
                                 <div class="form-group type-other confition-cal" style="display: none;">
-                                    <label class="control-label" for="diamcut">Length, mm</label>
+                                    <label class="control-label" for="diamcut">{$lang['calculator']['Length']}</label>
                                     <div class="block-control">
                                         <input type="number" class="form-control" name="diamcut" id="diamcut" min="0"
                                             step="0.1" value="10">
                                     </div>
                                 </div>
                                 <div class="form-group type-other confition-cal" style="display: none;">
-                                    <label class="control-label" for="widecut">Width, mm</label>
+                                    <label class="control-label" for="widecut">{$lang['calculator']['Width']}</label>
                                     <div class="block-control">
                                         <input type="number" class="form-control" name="widecut" id="widecut" min="0" step="0.1" value="8">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label" for="heightcut">Depth, mm</label>
+                                    <label class="control-label" for="heightcut">{$lang['calculator']['Length']}</label>
                                     <div class="block-control">
                                         <input type="number" class="form-control" name="heightcut" id="heightcut"
                                             min="0" step="0.1" value="6">
                                     </div>
                                 </div>
                                 <div class="form-group has-feedback">
-                                    <label class="control-label" for="girth">Girdle Thickness</label>
+                                    <label class="control-label" for="girth">{$lang['calculator']['Girdle_Thickness']}</label>
                                     <div class="select-wrapper">
                                         <select class="select-control select-gray" name="girth" id="girth"
                                             style="width: 100%;">
-                                            <option value="0">Thin-Medium (0%)</option>
-                                            <option value="0.02">Slightly Thick (+2%)</option>
-                                            <option value="0.04">Thick (+4%)</option>
-                                            <option value="0.06">Very Thick (+6%)</option>
-                                            <option value="0.09">Extra Thick (+9%)</option>
+                                            <option value="0">{$lang['calculator']['Thin_Medium']} (0%)</option>
+                                            <option value="0.02">{$lang['calculator']['Slightly_Thick']} (+2%)</option>
+                                            <option value="0.04">{$lang['calculator']['Thick']}</option>
+                                            <option value="0.06">{$lang['calculator']['Very Thick']} (+6%)</option>
+                                            <option value="0.09">{$lang['calculator']['Extra Thick']} (+9%)</option>
                                         </select>
                                     </div>
                                 </div>
@@ -157,14 +154,14 @@
                                             <div class="col">
                                                 <div class="calc-detail">
                                                     <div class="desc -percentage">
-                                                        Dept Percentage <span>60</span>
+                                                        {$lang['calculator']['Dept_Percentage']} <span>60</span>
                                                     </div>
                                                     <div class="desc -ratio">
-                                                        Length to Width Ratio: <span>1.00</span> to 1
+                                                        {$lang['calculator']['Length_to_Width_Ratio']}: <span>1.00</span> to 1
                                                     </div>
                                                     <div class="desc text-primary -weighs">
                                                         <strong>
-                                                            The daimond weighs approximately <span>3.660</span> carats
+                                                            {$lang['calculator']['weighs_approximately']} <span>3.660</span> carats
                                                         </strong>
                                                     </div>
                                                 </div>
@@ -178,11 +175,11 @@
                                     <div class="item-list">
                                         <li>
                                             <button type="submit" id="submitForm"
-                                                class="btn btn-lg btn-primary disabled" title="คำณวน">คำณวน</button>
+                                                class="btn btn-lg btn-primary disabled" title="คำณวน">{$lang['calculator']['Calculate']="คำนวณ";}</button>
                                         </li>
                                         <li>
                                             <button type="button" id="cancelForm" class="btn btn-lg btn-border-primary"
-                                                title="รีเซ็ต">รีเซ็ต</button>
+                                                title="รีเซ็ต">{$lang['calculator']['Reset']="รีเซ็ต";}</button>
                                         </li>
                                     </div>
                                 </div>

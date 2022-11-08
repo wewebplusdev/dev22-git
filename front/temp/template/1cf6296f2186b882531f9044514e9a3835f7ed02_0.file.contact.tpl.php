@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-06 17:20:14
+/* Smarty version 4.0.0, created on 2022-11-08 09:08:43
   from '/var/www/html/front/template/default/_component/contact.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633eabde17e432_55974924',
+  'unifunc' => 'content_6369ba2ba735e3_96339090',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cf6296f2186b882531f9044514e9a3835f7ed02' => 
     array (
       0 => '/var/www/html/front/template/default/_component/contact.tpl',
-      1 => 1665051612,
+      1 => 1667807016,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633eabde17e432_55974924 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6369ba2ba735e3_96339090 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container sitekey" data-page="index" data-id="<?php echo $_smarty_tpl->tpl_vars['sitekey']->value;?>
 ">
 
@@ -293,15 +293,15 @@ $_smarty_tpl->tpl_vars['valueCall_File']->do_else = false;
 ?>
             <?php ob_start();
 echo $_smarty_tpl->tpl_vars['callCMSS']->value->fields['masterkey'];
-$_prefixVariable1 = ob_get_clean();
-$_smarty_tpl->_assignInScope('fileinfo', get_Icon(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable1)));?>
+$_prefixVariable3 = ob_get_clean();
+$_smarty_tpl->_assignInScope('fileinfo', get_Icon(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable3)));?>
             <div class="item">
               <div class="attachment-block">
                 <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /download/<?php ob_start();
 echo $_smarty_tpl->tpl_vars['callCMSS']->value->fields['masterkey'];
-$_prefixVariable2 = ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable2,'download');?>
+$_prefixVariable4 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable4,'download');?>
 &n=<?php echo $_smarty_tpl->tpl_vars['valueCall_File']->value['name'];?>
 &t=<?php echo encodeStr('md_cmsf');?>
 " class="link" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['attachment'];?>
@@ -333,8 +333,8 @@ echo fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'fi
                       <div class="subtitle typo-x"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['size'];?>
  : <?php ob_start();
 echo $_smarty_tpl->tpl_vars['callCMSS']->value->fields['masterkey'];
-$_prefixVariable3 = ob_get_clean();
-echo get_IconSize(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable3));?>
+$_prefixVariable5 = ob_get_clean();
+echo get_IconSize(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable5));?>
  | <?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['type'];?>
  : <?php echo $_smarty_tpl->tpl_vars['fileinfo']->value['type'];?>
 </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-10-06 14:36:32
+/* Smarty version 4.0.0, created on 2022-11-08 09:08:44
   from '/var/www/html/front/template/default/inc/inc-modal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633e858035ba67_50999616',
+  'unifunc' => 'content_6369ba2c367f15_78584636',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8a5472cb1ee83b5bf04e299dc9fc2da35284d9cd' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-modal.tpl',
-      1 => 1665041782,
+      1 => 1667809499,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633e858035ba67_50999616 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6369ba2c367f15_78584636 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Modal -->
 <div class="modal modal-profile fade" id="profileBlock" tabindex="-1" role="dialog" aria-labelledby="profileBlockTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -56,10 +56,13 @@ function content_633e858035ba67_50999616 (Smarty_Internal_Template $_smarty_tpl)
                                     </div>
                                     <div class="profile-contact">
                                         <div class="email">
-                                            อีเมล: rphusit@git.or.th
+                                            <?php echo $_smarty_tpl->tpl_vars['lang']->value['contact']['email'];?>
+: rphusit@git.or.th
                                         </div>
                                         <div class="telephone">
-                                            เบอร์โทร: 0-2634-4999 ต่อ 633
+                                            <?php echo $_smarty_tpl->tpl_vars['lang']->value['contact']['tel'];?>
+: 0-2634-4999 <?php echo $_smarty_tpl->tpl_vars['lang']->value['contact']['Ext'];?>
+ 633
                                         </div>
                                     </div>
                                 </div>
