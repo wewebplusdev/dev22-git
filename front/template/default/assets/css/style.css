@@ -9089,9 +9089,37 @@ fieldset {
   stroke: var(--color-primary-light);
 }
 
+.theme-1 .main-page > div:nth-child(2) {
+  padding-top: 5rem;
+}
 .theme-1 .site-container {
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f2f5ff));
   background: linear-gradient(#fff 0%, #f2f5ff 100%);
+}
+.theme-1 .git-conference-block {
+  position: relative;
+  margin-bottom: 5rem;
+  padding-bottom: 4rem;
+}
+.theme-1 .git-conference-block::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-primary);
+  background: url("../img/background/bg-git-museum.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.theme-1 .git-conference-block .cover {
+  position: relative;
+  top: -2px;
+}
+.theme-1 .git-conference-block .h-title {
+  margin-bottom: 1.5rem;
 }
 .theme-1 .banner .container {
   max-width: 1780px;
@@ -12003,13 +12031,21 @@ fieldset {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: inherit;
+  padding: 0 15px;
+  z-index: 1;
 }
 .theme-3 .default-header .top-graphic .wrapper .title {
   color: var(--color-primary);
+  margin-bottom: 0;
   text-align: left;
 }
+.theme-3 .default-header .top-graphic .wrapper .breadcrumb {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
 .theme-3 .default-header .top-graphic .wrapper .breadcrumb .breadcrumb-item {
-  margin: 10px 0;
+  margin: 0;
   color: var(--color-primary);
   font-size: 22px;
 }
@@ -12026,6 +12062,12 @@ fieldset {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+}
+.theme-3 .default-header .top-graphic.text-light .wrapper .title,
+.theme-3 .default-header .top-graphic.text-light .wrapper .breadcrumb .breadcrumb-item,
+.theme-3 .default-header .top-graphic.text-light .wrapper .breadcrumb .breadcrumb-item::before,
+.theme-3 .default-header .top-graphic.text-light .wrapper .breadcrumb .breadcrumb-item a {
+  color: var(--color-light);
 }
 
 .default-nav-slider {
@@ -12422,6 +12464,9 @@ fieldset {
   }
   .breadcrumb {
     display: none;
+  }
+  .theme-3 .default-header .top-graphic .wrapper .title {
+    text-align: center;
   }
 }
 @media (max-width: 375px) {

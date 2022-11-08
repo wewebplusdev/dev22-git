@@ -79,6 +79,40 @@
                     </div>
                 </div>
 
+                <div class="git-conference-block">
+                    <div class="container">
+                        <div class="h-title text-primary text-uppercase">
+                            GIT CONFERENCE
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <figure class="cover" style="padding-bottom: 47.5%;">
+                                    <img src="<?php echo $core_template; ?>/assets/img/static/banner1.jpg" alt="banner">
+                                </figure>
+                            </div>
+                            <div class="col">
+                                <div class="row h-50 align-items-center">
+                                    <div class="col">
+                                        <a href="" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                                    </div>
+                                </div>
+                                <div class="row h-50 align-items-end">
+                                    <div class="col text-light">
+                                        <div class="title">
+                                            The 7th International Gem & Jewelry Conference
+                                            (GIT2021) and Corundum Symposium
+                                        </div>
+                                        <div class="desc">
+                                            Keynote Speaker GIT2021 : Dr. Gaetano Cavalieri,
+                                            President of The World Jewellery Confederation (CIBJO)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="banner">
                     <div class="container">
                         <div class="banner-I-block">

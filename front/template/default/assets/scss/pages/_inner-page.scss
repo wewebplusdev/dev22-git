@@ -39,7 +39,7 @@
         }
         &.text-primary {
             .wrapper .title,
-            .breadcrumb li+li:before,
+            .breadcrumb li + li:before,
             .wrapper .breadcrumb .breadcrumb-item,
             .wrapper .breadcrumb .breadcrumb-item a {
                 color: var(--color-primary);
@@ -47,7 +47,7 @@
         }
         &.text-dark {
             .wrapper .title,
-            .breadcrumb li+li:before,
+            .breadcrumb li + li:before,
             .wrapper .breadcrumb .breadcrumb-item,
             .wrapper .breadcrumb .breadcrumb-item a {
                 color: var(--color-dark);
@@ -69,17 +69,18 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 width: inherit;
+                padding: 0 15px;
                 // width: 100%;
+                z-index: 1;
                 .title {
                     color: var(--color-primary);
-                    // margin-bottom: 30px;
+                    margin-bottom: 0;
                     text-align: left;
                 }
                 .breadcrumb {
-                    // flex-wrap: nowrap;
-                    // justify-content: center;
+                    justify-content: flex-start;
                     .breadcrumb-item {
-                        margin: 10px 0;
+                        margin: 0;
                         color: var(--color-primary);
                         font-size: 22px;
                         &::before {
@@ -97,6 +98,14 @@
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 1;
                     }
+                }
+            }
+            &.text-light {
+                .wrapper .title,
+                .wrapper .breadcrumb .breadcrumb-item,
+                .wrapper .breadcrumb .breadcrumb-item::before,
+                .wrapper .breadcrumb .breadcrumb-item a {
+                    color: var(--color-light);
                 }
             }
         }
@@ -398,9 +407,11 @@
     }
 }
 
-@media (max-width: 1600px) {}
+@media (max-width: 1600px) {
+}
 
-@media (max-width: 1400px) {}
+@media (max-width: 1400px) {
+}
 
 @media (max-width: 1199px) {
     .border-nav-slider {
@@ -514,7 +525,7 @@
         .pagination {
             float: none;
             justify-content: center;
-            li+li {
+            li + li {
                 margin-left: 35px;
             }
         }
@@ -536,6 +547,9 @@
     }
     .breadcrumb {
         display: none;
+    }
+    .theme-3 .default-header .top-graphic .wrapper .title{
+        text-align: center;
     }
 }
 

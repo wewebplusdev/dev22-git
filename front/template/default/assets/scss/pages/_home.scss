@@ -181,8 +181,36 @@
 
 // theme 1
 .theme-1 {
+    .main-page > div:nth-child(2) {
+        padding-top: 5rem;
+    }
     .site-container {
         background: linear-gradient(#fff 0%, #f2f5ff 100%);
+    }
+    .git-conference-block {
+        position: relative;
+        margin-bottom: 5rem;
+        padding-bottom: 4rem;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 60%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--color-primary);
+            background: url("../img/background/bg-git-museum.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .cover {
+            position: relative;
+            top: -2px;
+        }
+        .h-title {
+            margin-bottom: 1.5rem;
+        }
     }
     .banner {
         .container {
