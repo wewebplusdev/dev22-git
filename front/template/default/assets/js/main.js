@@ -296,6 +296,7 @@ $(document).ready(function () {
             },
         },],
     });
+
     $('.git-news-block .slider').slick({
         infinite: false,
         slidesToShow: 3,
@@ -383,6 +384,30 @@ $(document).ready(function () {
             },
         },
     ]
+    });
+
+    $(".git-e-Learning-block .slider").slick({
+        // autoplay: true,
+        centerMode: true,
+        // centerPadding: '60px',
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        responsive: [
+            {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                centerMode: false,
+            },
+        }
+    ]
+    });
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        $('.slider.default-slider').slick('setPosition');
     });
 
     $(".theme-2 .git-book-block .slider").slick({

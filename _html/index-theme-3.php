@@ -42,6 +42,22 @@
 
                 </div>
             </div>
+            <!-- <div class="default-header">
+                <div class="top-graphic mb-4">
+                    <figure class="cover">
+                        <img src="<?php echo $core_template; ?>/assets/img/background/mock-top-grapphic-1.png" alt="">
+                    </figure>
+                    <div class="container">
+                        <div class="wrapper">
+                            <div class="title typo-lg">บริการออนไลน์</div>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">หน้าหลัก</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">บริการออนไลน์</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
             <div class="default-nav">
 
                 <div class="row no-gutters">

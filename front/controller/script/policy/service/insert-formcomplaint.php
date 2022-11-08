@@ -12,20 +12,23 @@ if (!empty($_POST) /*&& $responseData->success*/) {
   $data = array();
   $data[$config['coms']['db']['main'] . "_masterkey"] = "'" . changeQuot($config['policy']['complaint']['masterkey']) . "'";
   $data[$config['coms']['db']['main'] . "_gid"] = "'" . encodeStr($_POST["inputGroup"]) . "'";
+  $data[$config['coms']['db']['main'] . "_gid"] = "'" . changeQuot($_POST["inputGroup"]) . "'";
   $data[$config['coms']['db']['main'] . "_message"] = "'" . encodeStr($_POST["inputMessage"]) . "'";
   $data[$config['coms']['db']['main'] . "_fname"] = "'" . encodeStr($_POST["inputName"]) . "'";
+  $data[$config['coms']['db']['main'] . "_name"] = "'" . encodeStr($_POST["inputName"]) . "'";
   $data[$config['coms']['db']['main'] . "_email"] = "'" . encodeStr($_POST["inputEmail"]) . "'";
   $data[$config['coms']['db']['main'] . "_address"] = "'" . encodeStr($_POST["inputAddress"]) . "'";
   $data[$config['coms']['db']['main'] . "_tel"] = "'" . encodeStr($_POST["inputTel"]) . "'";
   $data[$config['coms']['db']['main'] . "_language"] = "'" . $url->pagelang[2] . "'";
   $data[$config['coms']['db']['main'] . "_ip"] = "'" . getip() . "'";
+  $data[$config['coms']['db']['main'] . "_ip"] = "'" . encodeStr(getip()) . "'";
   $data[$config['coms']['db']['main'] . "_status"] = "'Unread'";
   $data[$config['coms']['db']['main'] . "_credate"] = "NOW()";
 
   $sql = "INSERT INTO " . $config['coms']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
   $insertDb = $db->execute($sql);
 
-  formmail();
+  //formmail();
   $data = array(
     'status' => 200,
     'icon' => 'success',
@@ -57,7 +60,7 @@ function formmail(){
   $mailGorup = $contactPage->callmailcontact($config['policy']['complaint']['masterkey'], $_POST["inputGroup"]);
   // print_pre($mailGorup);die;
   // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
-  $SubjectMail = $lang['menu']['contact']." (" . $_POST['inputName'] . ")";
+  $SubjectMail = $lang['menu']['policy']." (" . $_POST['inputName'] . ")";
   $Group = $contactPage->callGroup($config['policy']['complaint']['masterkey'], $_POST["inputGroup"]);
   
   
