@@ -12,7 +12,7 @@
         <?php include('inc/header-theme-3.php'); ?>
 
         <section class="site-container">
-            <!-- <div class="top-graphic">
+            <div class="top-graphic">
                 <div class="slider">
 
                     <?php for ($i = 1; $i <= 8; $i++) { ?>
@@ -41,8 +41,8 @@
                     <?php } ?>
 
                 </div>
-            </div> -->
-            <div class="default-header">
+            </div>
+            <!-- <div class="default-header">
                 <div class="top-graphic mb-4">
                     <figure class="cover">
                         <img src="<?php echo $core_template; ?>/assets/img/background/mock-top-grapphic-1.png" alt="">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="default-nav">
 
                 <div class="row no-gutters">
