@@ -48,7 +48,7 @@ switch ($themeWebsite['class']) {
         $settingPage = array(
             "page" => $menuActive,
             "template" => "index-3.tpl",
-            "display" => "page-theme-3",
+            "display" => "page",
         );
         break;
     
@@ -56,7 +56,7 @@ switch ($themeWebsite['class']) {
         $settingPage = array(
             "page" => $menuActive,
             "template" => "index-2.tpl",
-            "display" => "page-theme-2",
+            "display" => "page",
         );
         break;
     

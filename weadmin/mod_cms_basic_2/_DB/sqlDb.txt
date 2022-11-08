@@ -1,0 +1,176 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 27, 2017 at 03:19 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `dland_new`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_al`
+--
+
+CREATE TABLE `md_al` (
+  `md_al_id` int(11) NOT NULL,
+  `md_al_masterkey` varchar(20) NOT NULL,
+  `md_al_language` varchar(50) NOT NULL,
+  `md_al_htmlfilename` varchar(255) NOT NULL,
+  `md_al_crebyid` int(11) NOT NULL DEFAULT '0',
+  `md_al_creby` varchar(100) NOT NULL,
+  `md_al_credate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_al_lastdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_al_status` varchar(50) NOT NULL,
+  `md_al_description` text NOT NULL,
+  `md_al_keywords` text NOT NULL,
+  `md_al_metatitle` text NOT NULL,
+  `md_al_view` int(11) NOT NULL,
+  `md_al_subject` varchar(255) NOT NULL,
+  `md_al_order` int(11) NOT NULL,
+  `md_al_subjecten` varchar(255) NOT NULL,
+  `md_al_htmlfilenameen` varchar(255) NOT NULL,
+  `md_al_descriptionen` text NOT NULL,
+  `md_al_keywordsen` text NOT NULL,
+  `md_al_metatitleen` text NOT NULL,
+  `md_al_lastbyid` int(11) NOT NULL,
+  `md_al_lastby` varchar(255) NOT NULL,
+  `md_al_book` int(11) NOT NULL,
+  `md_al_url` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_ala`
+--
+
+CREATE TABLE `md_ala` (
+  `md_ala_id` int(11) NOT NULL,
+  `md_ala_contantid` int(11) NOT NULL DEFAULT '0',
+  `md_ala_filename` varchar(200) NOT NULL,
+  `md_ala_name` varchar(200) NOT NULL,
+  `md_ala_download` int(11) NOT NULL DEFAULT '0',
+  `md_ala_language` varchar(25) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_alatp`
+--
+
+CREATE TABLE `md_alatp` (
+  `md_alatp_id` int(11) NOT NULL,
+  `md_alatp_contantid` varchar(255) NOT NULL DEFAULT '0',
+  `md_alatp_filename` varchar(200) NOT NULL,
+  `md_alatp_name` varchar(200) NOT NULL,
+  `md_alatp_download` int(11) NOT NULL DEFAULT '0',
+  `md_alatp_language` varchar(25) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_alf`
+--
+
+CREATE TABLE `md_alf` (
+  `md_alf_id` int(11) NOT NULL,
+  `md_alf_contantid` int(11) NOT NULL DEFAULT '0',
+  `md_alf_filename` varchar(200) NOT NULL,
+  `md_alf_name` varchar(200) NOT NULL,
+  `md_alf_download` int(11) NOT NULL DEFAULT '0',
+  `md_alf_language` varchar(25) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_alftmp`
+--
+
+CREATE TABLE `md_alftmp` (
+  `md_alftmp_id` int(11) NOT NULL,
+  `md_alftmp_contantid` varchar(255) NOT NULL DEFAULT '0',
+  `md_alftmp_filename` varchar(200) NOT NULL,
+  `md_alftmp_name` varchar(200) NOT NULL,
+  `md_alftmp_download` int(11) NOT NULL DEFAULT '0',
+  `md_alftmp_language` varchar(25) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `md_al`
+--
+ALTER TABLE `md_al`
+  ADD PRIMARY KEY (`md_al_id`),
+  ADD UNIQUE KEY `md_al_id` (`md_al_id`),
+  ADD KEY `md_al_id_2` (`md_al_id`);
+
+--
+-- Indexes for table `md_ala`
+--
+ALTER TABLE `md_ala`
+  ADD PRIMARY KEY (`md_ala_id`);
+
+--
+-- Indexes for table `md_alatp`
+--
+ALTER TABLE `md_alatp`
+  ADD PRIMARY KEY (`md_alatp_id`);
+
+--
+-- Indexes for table `md_alf`
+--
+ALTER TABLE `md_alf`
+  ADD PRIMARY KEY (`md_alf_id`);
+
+--
+-- Indexes for table `md_alftmp`
+--
+ALTER TABLE `md_alftmp`
+  ADD PRIMARY KEY (`md_alftmp_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `md_al`
+--
+ALTER TABLE `md_al`
+  MODIFY `md_al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `md_ala`
+--
+ALTER TABLE `md_ala`
+  MODIFY `md_ala_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `md_alatp`
+--
+ALTER TABLE `md_alatp`
+  MODIFY `md_alatp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `md_alf`
+--
+ALTER TABLE `md_alf`
+  MODIFY `md_alf_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `md_alftmp`
+--
+ALTER TABLE `md_alftmp`
+  MODIFY `md_alftmp_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
