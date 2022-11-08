@@ -34,7 +34,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
       <td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:no"]?></td>
       <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:selectgn"]?></td> -->
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:subject"]?></td>
-      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:name"]?></td>
+      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle">name</td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo "Message"; ?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:email"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:tel"]?></td>
@@ -60,14 +60,14 @@ $date_print=DateFormat(date("Y-m-d"));
 			$valID=$rowExport[0];
 			$valCredate=DateFormat($rowExport[1]);
 			$valStatus=$rowExport[2];
-			$valSubject=rechangeQuot($rowExport[3]);
-			$valMessage=rechangeQuot($rowExport[4]);
-			$valCreby=rechangeQuot($rowExport[5]);
-			$valAddress=rechangeQuot($rowExport[6]);
-			$valEmail=rechangeQuot($rowExport[7]);
-			$valTel=rechangeQuot($rowExport[8]);
-			$valIp=rechangeQuot($rowExport[9]);
-			$valGid=$rowExport[10];
+			$valSubject=decodeStr(rechangeQuot($rowExport[3]));
+			$valMessage=decodeStr(rechangeQuot($rowExport[4]));
+			$valAddress=decodeStr(rechangeQuot($rowExport[5]));
+			$valEmail=decodeStr(rechangeQuot($rowExport[6]));
+			$valTel=decodeStr(rechangeQuot($rowExport[7]));
+      $valCreby=decodeStr(rechangeQuot($rowExport[10]));
+			$valIp=decodeStr(rechangeQuot($rowExport[8]));
+			$valGid=$rowExport[9];
 			
 			$sql_group = "SELECT ";
 			if($_SESSION[$valSiteManage.'core_session_language']=="Thai"){

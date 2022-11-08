@@ -5,30 +5,24 @@ $secret = $secretkey;
 // $responseData = json_decode($verifyResponse);
 
 
-// print_pre($_REQUEST['g-recaptcha-response']);
-// die;
 
-if (!empty($_POST) /*&& $responseData->success*/) {
+
+if (!empty($_POST)/*&& $responseData->success*/) {
   $data = array();
-  $data[$config['coms']['db']['main'] . "_masterkey"] = "'" . changeQuot($config['policy']['complaint']['masterkey']) . "'";
-  $data[$config['coms']['db']['main'] . "_gid"] = "'" . encodeStr($_POST["inputGroup"]) . "'";
-  $data[$config['coms']['db']['main'] . "_gid"] = "'" . changeQuot($_POST["inputGroup"]) . "'";
-  $data[$config['coms']['db']['main'] . "_message"] = "'" . encodeStr($_POST["inputMessage"]) . "'";
-  $data[$config['coms']['db']['main'] . "_fname"] = "'" . encodeStr($_POST["inputName"]) . "'";
-  $data[$config['coms']['db']['main'] . "_name"] = "'" . encodeStr($_POST["inputName"]) . "'";
-  $data[$config['coms']['db']['main'] . "_email"] = "'" . encodeStr($_POST["inputEmail"]) . "'";
-  $data[$config['coms']['db']['main'] . "_address"] = "'" . encodeStr($_POST["inputAddress"]) . "'";
-  $data[$config['coms']['db']['main'] . "_tel"] = "'" . encodeStr($_POST["inputTel"]) . "'";
-  $data[$config['coms']['db']['main'] . "_language"] = "'" . $url->pagelang[2] . "'";
-  $data[$config['coms']['db']['main'] . "_ip"] = "'" . getip() . "'";
-  $data[$config['coms']['db']['main'] . "_ip"] = "'" . encodeStr(getip()) . "'";
-  $data[$config['coms']['db']['main'] . "_status"] = "'Unread'";
-  $data[$config['coms']['db']['main'] . "_credate"] = "NOW()";
+  $data[$config['cus']['db']['main'] . "_masterkey"] = "'" . changeQuot($config['req']['main']['masterkey']) . "'";
+  $data[$config['cus']['db']['main'] . "_fname"] = "'" . encodeStr($_POST["inputfName"]) . "'";
+  $data[$config['cus']['db']['main'] . "_lname"] = "'" . encodeStr($_POST["inputlName"]) . "'";
+  $data[$config['cus']['db']['main'] . "_email"] = "'" . encodeStr($_POST["inputEmail"]) . "'";
+  $data[$config['cus']['db']['main'] . "_tel"] = "'" . encodeStr($_POST["inputTel"]) . "'";
+  $data[$config['cus']['db']['main'] . "_language"] = "'" . $url->pagelang[2] . "'";
+  $data[$config['cus']['db']['main'] . "_ip"] = "'" . encodeStr(getip()) . "'";
+  $data[$config['cus']['db']['main'] . "_status"] = "'Unread'";
+  $data[$config['cus']['db']['main'] . "_credate"] = "NOW()";
 
-  $sql = "INSERT INTO " . $config['coms']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
+  $sql = "INSERT INTO " . $config['cus']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
   $insertDb = $db->execute($sql);
 
-  //formmail();
+  // formmail();
   $data = array(
     'status' => 200,
     'icon' => 'success',
@@ -114,4 +108,3 @@ function formmail(){
       // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
   }
 }
-

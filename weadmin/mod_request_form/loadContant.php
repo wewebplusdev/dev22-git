@@ -259,14 +259,14 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 					while ($index < $count_record + 1) {
 						$row = wewebFetchArrayDB($coreLanguageSQL, $query);
 						$valID = $row[0];
-						$valName = rechangeQuot($row[1]) . ' ' . rechangeQuot($row[9]);
+						$valName = decodeStr(rechangeQuot($row[1])) . ' ' . decodeStr(rechangeQuot($row[9]));
 						$valSubject = rechangeQuot($row[2]);
 						$valStatus = $row[3];
 						$valDateCredate = dateFormatReal($row[4]);
 						$valTimeCredate = timeFormatReal($row[4]);
 						$valMessage = rechangeQuot($row[5]);
-						$valEmail = rechangeQuot($row[6]);
-						$valTel = rechangeQuot($row[7]);
+						$valEmail = decodeStr(rechangeQuot($row[6]));
+						$valTel = decodeStr(rechangeQuot($row[7]));
 						$valGidDb = rechangeQuot($row[8]);
 						$valCompany = rechangeQuot($row[10]);
 						$valModel = rechangeQuot($row[11]);
