@@ -47,6 +47,7 @@ $lang['contact']['graphic-map'] = "แผนที่กราฟฟิค";
 $lang['contact']['google-map'] = "แผนที่กูเกิล";
 $lang['contact']['download-map'] = "ดาวน์โหลดแผนที่";
 $lang['contact']['misconduct-complaint'] = "ระบบร้องเรียนการทุจริตและประพฤติมิชอบ";
+$lang['contact']['complaint-system'] = "ระบบรับเรื่องร้องเรียน";
 $lang['contact']['feedback-system'] = "ระบบร้องเรียน/ เสนอแนะออนไลน์ (เรื่องทั่วไป)";
 $lang['contact']['title_success'] = "บันทึกข้อมูลเรียบร้อยแล้ว";
 $lang['contact']['title_fail'] = "เกิดข้อผิดพลาดในการทำงาน";
