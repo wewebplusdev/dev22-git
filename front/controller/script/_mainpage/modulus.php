@@ -56,6 +56,34 @@ $themeWebsite['color'] = $callSettingMainpage->fields['color'] ? $callSettingMai
 $smarty->assign("themeWebsite", $themeWebsite);
 /* End Theme */
 
+/* Start chat FB */
+$getChatFB = file_get_contents('./webservice_json/facebook.json');
+$arr_ChatFB = json_decode($getChatFB, true); // json decode from web service
+if ($arr_ChatFB['status'] != 'Disable') {
+    if(
+            (
+                $arr_ChatFB['date']['sdate'] == "0000-00-00 00:00:00" && 
+                $arr_ChatFB['date']['edate'] == "0000-00-00 00:00:00"
+            ) || 
+            (
+                $arr_ChatFB['date']['sdate'] == "0000-00-00 00:00:00" && 
+                strtotime($arr_ChatFB['date']['edate']) >= strtotime(date('Y-m-d H:i:s'))
+            ) || 
+            (
+                strtotime($arr_ChatFB['date']['sdate']) <= strtotime(date('Y-m-d H:i:s')) && 
+                $arr_ChatFB['date']['edate'] == "0000-00-00 00:00:00"
+            ) || 
+            (
+                strtotime($arr_ChatFB['date']['sdate']) <= strtotime(date('Y-m-d H:i:s')) && 
+                strtotime($arr_ChatFB['date']['edate']) >= strtotime(date('Y-m-d H:i:s'))
+            )
+        ) 
+        {
+            $smarty->assign("arr_ChatFB", rechangeQuot_code($arr_ChatFB['source']));
+    }
+}
+/* Start chat FB */
+
 Seo();
 function Seo($title = '', $desc = '', $keyword = '', $pic = '')
 {

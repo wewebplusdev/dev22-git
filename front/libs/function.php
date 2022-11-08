@@ -1028,3 +1028,10 @@ function themeWebsite($theme = 'theme-3'){
     }
     return $arrFile;
 }
+
+function rechangeQuot_code($Data) {
+############################################
+    $valChangeQuot = sanitize($Data);
+    $valChangeQuot = htmlspecialchars(str_replace("&rsquo;", "'", str_replace('&quot;', '"', $valChangeQuot)));
+    return $valChangeQuot;
+}
