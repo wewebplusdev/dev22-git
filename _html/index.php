@@ -13,9 +13,53 @@
 
         <section class="site-container">
             <div class="main-page">
-
-                <div class="container -xl">
-                    <div class="video-gallery">
+                <div class="service-block">
+                    <div class="container">
+                        <div class="sidebar-menus">
+                            <div class="h-title">GIT SEVICES</div>
+                            <div class="sub-title">บริการของเรา</div>
+                            <div class="load-more-hide text-left mb-4">
+                                <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                            </div>
+                            <ul class="item-list">
+                                <li class="menu-service">
+                                    <a class="link topic" href="javascript:void(0)">บริการห้องปฏิบัติการ</a>
+                                    <ul class="sub-topic">
+                                        <li class="-border-top">ตรวจสอบอัญมณี</li>
+                                        <li class="">ตรวจสอบโลหะมีค่า</li>
+                                        <li class="">Laser Engraving</li>
+                                        <li class="">แกะสลักอัญมณี</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="item-list">
+                                <li class="menu-service">
+                                    <a class="link topic" href="javascript:void(0)">บริการห้องปฏิบัติการ</a>
+                                    <ul class="sub-topic">
+                                        <li class="-border-top">ตรวจสอบอัญมณี</li>
+                                        <li class="">ตรวจสอบโลหะมีค่า</li>
+                                        <li class="">Laser Engraving</li>
+                                        <li class="">แกะสลักอัญมณี</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="item-list">
+                                <li class="menu-service">
+                                    <a class="link topic" href="javascript:void(0)">บริการห้องปฏิบัติการ</a>
+                                    <ul class="sub-topic">
+                                        <li class="-border-top">ตรวจสอบอัญมณี</li>
+                                        <li class="">ตรวจสอบโลหะมีค่า</li>
+                                        <li class="">Laser Engraving</li>
+                                        <li class="">แกะสลักอัญมณี</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="video-gallery-block">
+                    <div class="container -xl">
                         <div class="h-title text-center">GIT VDO</div>
                         <ul class="nav nav-pills default-nav-tab">
                             <li>
