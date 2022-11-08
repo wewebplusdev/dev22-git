@@ -125,7 +125,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	$langMod["meu:group"] = "กลุ่ม";
 
 	$langMod["viw:subjectgDesub"] = "ข้อมูลชื่อ" . $langMod["meu:sub"] . " เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
-	$langMod["meu:sub"] = "กลุ่ม";
+	// $langMod["meu:sub"] = "กลุ่ม";
 	$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
 	$langMod["meu:group"] = "กลุ่มย่อย" . $langMod["meu:contant"];

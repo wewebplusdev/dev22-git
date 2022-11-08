@@ -2,7 +2,7 @@
 // print_pre($_SESSION[$valSiteManage."core_session_language"]);
 if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 	// Group
-	$langMod["meu:group"] = "Group " .getNameMenu($_REQUEST["menukeyid"]);
+	$langMod["meu:group"] = "Group" .getNameMenu($_REQUEST["menukeyid"]);
 $langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
 $langMod["txt:titleadd"] = "" .getNameMenu($_REQUEST["menukeyid"])." New";
