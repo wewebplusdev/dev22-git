@@ -126,7 +126,7 @@ $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. 
 }else{
 
     	$langMod["viw:subjectgDe"] = "ข้อมูลชื่อ" . $langMod["meu:group"] . " เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
-		$langMod["meu:group"] = "กลุ่ม";
+		$langMod["meu:group"] = "กลุ่ม".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
 		$langMod["txt:titleadd"] = "สร้างข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
@@ -138,7 +138,7 @@ $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. 
 		$langMod["txt:titleeditg"] = "แก้ไขข้อมูล".$langMod["meu:group"];
 		$langMod["txt:titleviewg"] = "แสดงผลข้อมูล".$langMod["meu:group"];
 		$langMod["txt:sortpermisg"] = "จัดเรียงข้อมูล".$langMod["meu:group"];
-		$langMod["meu:subgroup"] = "Sub Group ".getNameMenu($_REQUEST["menukeyid"]);
+		$langMod["meu:subgroup"] = "กลุ่มย่อย  ".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["txt:groupType"] = "ข้อมูลประเภทรายละเอียด";
 		$langMod["txt:groupTypeDe"] = "กรุณากรอกส่วนที่ใช้ในกำหนดรายละเอียดการแสดงผลข่าว เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์";
 
@@ -189,6 +189,7 @@ $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. 
 
 		$langMod["tit:subject"] ="ชื่อ".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["tit:subjectg"] ="ชื่อ".$langMod["meu:group"];
+		$langMod["tit:subjectsg"] = "ชื่อ " .$langMod["meu:subgroup"];
 		$langMod["tit:sdate"] ="วันเริ่มต้น";
 		$langMod["tit:edate"] ="วันสิ้นสุด";
 		$langMod["tit:title"] ="คำอธิบาย";

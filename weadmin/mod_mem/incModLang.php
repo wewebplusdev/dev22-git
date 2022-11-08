@@ -2,7 +2,7 @@
 if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	// Group
 	$langMod["meu:sub"] = "Group " . getNameMenu($_REQUEST["menukeyid"]);
-	$langMod["meu:group"] = "ตำแหน่ง " . getNameMenu($_REQUEST["menukeyid"]);
+	$langMod["meu:group"] = "Sub Group " . getNameMenu($_REQUEST["menukeyid"]);
 
 	$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
@@ -71,7 +71,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	$langMod["tit:education"] = "Education";
 	$langMod["tit:train"] = "Train";
 	$langMod["tit:share"] = "Shareholding";
-	$langMod["tit:subjectg"] = "Name " . $langMod["meu:group"];
+	$langMod["tit:subjectg"] = "Name " . $langMod["meu:sub"];
 	$langMod["tit:subjectgg"] = "Name " . $langMod["meu:group"];
 
 	$langMod["tit:subjectgsub"] = "Name " . $langMod["meu:sub"];
@@ -87,7 +87,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	$langMod["tit:uploadvdonote"] = "Note: Please upload only .flv, .wmv, .mp3, .wav, .wma, .avi, and .mpeg files.";
 	$langMod["tit:noteg"] = "Note";
 	$langMod["tit:selectg"] = "Select " . $langMod["meu:group"];
-	$langMod["tit:selectgn"] = "Name " . $langMod["meu:group"];
+	$langMod["tit:selectgn"] = "Name " . $langMod["meu:sub"];
 	$langMod["meu:selectgn"] = "" . $langMod["meu:group"];
 	$langMod["txt:subjectg"] = "" . $langMod["meu:group"] . " Info";
 	$langMod["txt:subjectgDe"] = "Please enter a name " . $langMod["meu:group"] . " to be used for display on your site.";
@@ -128,7 +128,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	$langMod["meu:sub"] = "กลุ่ม";
 	$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
-	$langMod["meu:group"] = "กลุ่ม" . $langMod["meu:contant"];
+	$langMod["meu:group"] = "กลุ่มย่อย" . $langMod["meu:contant"];
 	$langMod["meu:sub"] = "กลุ่ม" . $langMod["meu:contant"];
 	$langMod["txt:titleadd"] = "สร้างข้อมูล" . getNameMenu($_REQUEST["menukeyid"]);
 	$langMod["txt:titleedit"] = "แก้ไขข้อมูล" . getNameMenu($_REQUEST["menukeyid"]);
@@ -186,6 +186,8 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	$langMod["tit:subject"] = "ชื่อ" . getNameMenu($_REQUEST["menukeyid"]);
 	$langMod["tit:subjectg"] = "ชื่อ" . $langMod["meu:group"];
 	$langMod["tit:subjectgsub"] = "ชื่อ" . $langMod["meu:sub"];
+	$langMod["tit:fname"] = "ชื่อ";
+	$langMod["tit:lname"] = "นามสกุล";
 	$langMod["tit:sdate"] = "วันเริ่มต้น";
 	$langMod["tit:edate"] = "วันสิ้นสุด";
 	$langMod["tit:title"] = "คำบรรยาย";
@@ -196,8 +198,9 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	$langMod["tit:uploadvdonote"] = "หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .flv, .wmv, .mp3, .wav, .wma, .avi และ .mpeg เท่านั้น";
 	$langMod["tit:noteg"] = "หมายเหตุ";
 
-	$langMod["tit:selectg"] = "เลือก" . $langMod["meu:group"];
-	$langMod["tit:selectgn"] = $langMod["meu:group"];
+	$langMod["tit:selectg"] = "เลือก" . $langMod["meu:sub"];
+	$langMod["tit:selectsg"] = "เลือก" . $langMod["meu:group"];
+	$langMod["tit:selectgn"] = $langMod["meu:sub"];
 	$langMod["txt:subjectg"] = "ข้อมูล" . $langMod["meu:group"];
 	$langMod["txt:subjectgDe"] = "โปรดป้อนชื่อ" . $langMod["meu:group"] . " เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
 
@@ -243,7 +246,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	$langMod["txt:sortpermiss"] = "จัดเรียงข้อมูล" . $langMod["meu:setPermis"];
 
 	$langMod["txt:titles"] = "Setting " . getNameMenu($_REQUEST["menukeyid"]);
-	$langMod["tit:jobstartdate"] = "Job start date"; 
-	$langMod["tit:email"] = "Email";
-	$langMod["tit:tel"] = "Tel";
+	$langMod["tit:jobstartdate"] = "วันที่เริ่มงาน"; 
+	$langMod["tit:email"] = "อีเมล";
+	$langMod["tit:tel"] = "เบอร์โทรศัพท์";
 }

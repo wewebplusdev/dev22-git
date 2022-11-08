@@ -306,16 +306,17 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["txt:attfile"] = "ข้อมูลเอกสารแนบ";
 		$langMod["txt:attfileDe"] = "ข้อมูลเอกสารแนบ เพื่อใช้ในการแสดงผลเอกสารแนบของเนื้อหานี้ ในรูปแบบของการดาวน์โหลดเอกสารเก็บไว้ในเครื่องคอมพิวเตอร์บนเว็บไซต์ของคุณ";
 		$langMod["btn:export3"] = "PDF";
-		$langMod["btn:set"] = "Setting Email";
-		$langMod["btn:mem"] = "Applicant";
-		$langMod["btn:position"] = "Position";
+		$langMod["btn:set"] = "ตั้งค่าอีเมล";
+		$langMod["btn:mem"] = "แอปพลิเคชั่น";
+		$langMod["btn:position"] = "ตำแหน่ง";
+		$langMod["meu:setPermis"] = "ตั้งค่า";
 
 		$langMod["txt:titleview_app"] = "แสดงผลข้อมูล".$langMod["btn:mem"];
 
 		$langMod["btn:career"] = "Career";
 		$langMod["btn:from"] = "แบบฟอร์ม";
 		
-		$langMod["btn:position"] = "Position";
+		$langMod["btn:position"] = "ตำแหน่ง";
 		
 
 		
