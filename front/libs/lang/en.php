@@ -347,6 +347,24 @@ $lang["search:total"] = "Total";
 $lang["search:listtotal"] = "Total";
 $lang["policy"]["title"] = "policy";
 $lang["policy"]["complaint"] = "complaint system";
++$lang["policy"]["request"] = "Request form for the use of personal data";
+$lang["policy"]["fname"] = "name";
+$lang["policy"]["lname"] = "lastname";
+$lang["policy"]["email"] = "email";
+$lang["policy"]["tel"] = "tel";
+$lang["policy"]["acp"] = "I accept the terms";
+$lang["policy"]["tx1"] = "I hereby certify that the information provided to the Company is true, correct and that the Company may contact me for additional information in order to properly and completely process my request.";
+$lang["policy"]["tx2"] = "In this regard, I acknowledge that
+The company will consider and notify the result of the exercise request within 30
+days from the date of receipt of such request
+And the company reserves the right to consider the request to exercise my rights.
+and may need to reject my request. to comply with relevant laws such as
+In the event that it is unable to clearly show that the owner of the data or has no authority to make a request
+In the event of an unreasonable request is a lavish request
+Processing the request will have a negative impact on the other person.
+The Company needs to use that information for processing in accordance with its legal obligations.
+or the company has destroyed that data because the retention period has expired";
+$lang["policy"]["btn-req"] = "verify your identity";
 $lang['member']['logout'] = "Log out";
 //calculator
 $lang['calculator']['title']="Diamond Calculator";

@@ -1,4 +1,4 @@
-<section class="site-container sitekey" data-page="formcomplain" data-id="{$sitekey}">
+<section class="site-container sitekey" data-page="req" data-id="{$sitekey}">
     <div class="default-header">
         <div class="top-graphic mb-4">
             <figure class="cover">
@@ -20,41 +20,18 @@
     <div class="default-page about">
         <div class="container">
             <div class="complaint-system-form">
-                <div class="title">{$lang["policy"]["complaint"]}</div>
-                <div class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                    has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                    galley of type and</div>
-                <form data-toggle="validator" name="complainForm" id="complainForm" role="form" class="form-default"
+                <div class="title">{$lang["policy"]["request"]}</div>
+                <form data-toggle="validator" name="reqForm" id="reqForm" role="form" class="form-default"
                     method="post">
-
-                    <div class="form-group has-feedback">
-                        <label class="control-label" for="complaintSystemTopic">{$lang['contact']['group']}</label>
-                        <div class="select-wrapper">
-                            <select class="select-control select-year" name="inputGroup" id="inputGroup"
-                                style="width: 100%;">
-                                {foreach $callContactGroup as $keycallContactGroup => $valuecallContactGroup}
-                                <option value="{$valuecallContactGroup.id}">{$valuecallContactGroup.subject}</option>
-                                {/foreach}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group has-feedback -nm">
-                        <label class="control-label" for="complaintSystemTextArea">{$lang['contact']['text']}</label>
-                        <div class="block-control">
-                            <textarea class="form-control form-text-area h-100" rows="6" cols="100" name="inputMessage"
-                                id="inputMessage" value="Spicyfi" data-error="" required></textarea>
-                            <span class="form-control-feedback" aria-hidden="true"></span>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-sm">
                             <div class="form-group has-feedback">
                                 <label class="control-label"
-                                    for="complaintSystemF-name">{$lang['contact']['name']}</label>
+                                    for="complaintSystemF-name">{$lang['policy']['fname']}</label>
                                 <span>*</span>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="inputName" id="inputName"
-                                        placeholder="{$lang['system']['fill']} {$lang['contact']['name']}" data-error=""
+                                    <input type="text" class="form-control" name="inputfName" id="inputfName"
+                                        placeholder="{$lang['system']['fill']} {$lang['policy']['fname']}" data-error=""
                                         required>
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
@@ -63,43 +40,71 @@
                         <div class="col-sm">
                             <div class="form-group has-feedback">
                                 <label class="control-label"
-                                    for="complaintSystemE-mail">{$lang['contact']['email']}</label>
+                                    for="complaintSystemF-name">{$lang['policy']['lname']}</label>
+                                <span>*</span>
+                                <div class="block-control">
+                                    <input type="text" class="form-control" name="inputlName" id="inputlName"
+                                        placeholder="{$lang['system']['fill']} {$lang['policy']['lname']}" data-error=""
+                                        required>
+                                    <span class="form-control-feedback" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group has-feedback">
+                                <label class="control-label"
+                                    for="complaintSystemE-mail">{$lang['policy']['email']}</label>
                                 <span>*</span>
                                 <div class="block-control">
                                     <input type="email" class="form-control" name="inputEmail" id="inputEmail"
-                                        placeholder="{$lang['system']['fill']}{$lang['contact']['email']}" data-error=""
+                                        placeholder="{$lang['system']['fill']}{$lang['policy']['email']}" data-error=""
                                         required>
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group has-feedback">
+                                <label class="control-label"
+                                    for="complaintSystemTelephone">{$lang['policy']['tel']}</label>
+                                    <span>*</span>
+                                <div class="block-control">
+                                    <input type="tel" class="form-control" name="inputTel" id="inputTel"
+                                        placeholder="{$lang['system']['fill']}{$lang['policy']['tel']}" data-error=""
+                                        required>
+                                    <span class="form-control-feedback" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin: 2rem 0">
+                        <div class="col-sm" style="padding: 0;">
+                            <div class="form-group has-feedback" style="background-color: #eeeeee;padding: 30px 25px;">
+                                <label style="font-size: 16px; font-color:#707070;line-height: 1.5em;"
+                                    for="complaintSystemE-mail">{$lang['policy']['tx1']}
+
+                                    </br></br></br>
+                                    {$lang['policy']['tx2']}</label>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label"
-                                    for="complaintSystemAdress">{$lang['contact']['address']}</label>
-                                <div class="block-control">
-                                    <input type="text" class="form-control" name="inputAddress" id="inputAddress"
-                                        placeholder="{$lang['system']['fill']}{$lang['contact']['address']}"
-                                        data-error="" required>
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="form-group has-feedback">
-                                <label class="control-label"
-                                    for="complaintSystemTelephone">{$lang['contact']['tel']}</label>
-                                <div class="block-control">
-                                    <input type="tel" class="form-control" name="inputTel" id="inputTel"
-                                        placeholder="{$lang['system']['fill']}{$lang['contact']['tel']}" data-error=""
-                                        required>
-                                    <span class="form-control-feedback" aria-hidden="true"></span>
+                                <div class="form-check d-flex align-items-center">
+                                    <input class="form-check-input" type="checkbox" value="" name="checkacp" id="checkacp" data-error="" required>
+                                    <label class="form-check-label" for="checkacp">
+                                        <small>{$lang['policy']['acp']}</small>
+                                    </label>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     {* <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group has-feedback">
@@ -121,13 +126,9 @@
                                 </div>
                             </div> *}
                     <div class="row mt-sm-5 mt-4">
-                        <div class="col text-right">
+                        <div class="col text-center">
                             <input type="submit" class="btn btn-primary" id="submitForm" title="btn btn-primary"
-                                value="{$lang['system']['submit']}"></input>
-                        </div>
-                        <div class="col text-left">
-                            <button class="btn btn-primary -cancel" id="cancelForm"
-                                title="{$lang['system']['cancel']}">{$lang['system']['cancel']}</button>
+                                value="{$lang['policy']['btn-req']}"></input>
                         </div>
                     </div>
                 </form>

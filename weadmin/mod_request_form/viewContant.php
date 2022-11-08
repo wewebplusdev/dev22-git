@@ -46,13 +46,13 @@ $valCredate = DateFormat($Row[1]);
 $valStatus = $Row[2];
 $valSubject = rechangeQuot($Row[3]);
 $valMessage = rechangeQuot($Row[4]);
-$valFName = rechangeQuot($Row[5]);
+$valFName = decodeStr(rechangeQuot($Row[5]));
 $valAddress = rechangeQuot($Row[6]);
-$valEmail = rechangeQuot($Row[7]);
-$valTel = rechangeQuot($Row[8]);
-$valIp = rechangeQuot($Row[9]);
+$valEmail = decodeStr(rechangeQuot($Row[7]));
+$valTel = decodeStr(rechangeQuot($Row[8]));
+$valIp = decodeStr(rechangeQuot($Row[9]));
 $valGid = $Row[10];
-$valLName = rechangeQuot($Row[11]);
+$valLName = decodeStr(rechangeQuot($Row[11]));
 $valCompany = rechangeQuot($Row[12]);
 $valModel = rechangeQuot($Row[13]);
 $valQty = rechangeQuot($Row[14]);
@@ -177,14 +177,14 @@ logs_access('3', 'View');
                                     
                                     </div> </td>
                                 </tr> -->
-                                <tr >
+                                <!-- <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:subject"] ?>:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valSubject ?></div></td>
                                 </tr>
                                 <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" >Message:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  nl2br($valMessage) ?></div></td>
-                                </tr>
+                                </tr> -->
 
                                 
                             </table>

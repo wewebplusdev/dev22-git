@@ -65,6 +65,34 @@ class policyPage
     return $result;
   }
 
+  function callContactGroup($masterkey)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_id as id,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_masterkey as masterkey,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_lastdate as lastdate,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_credate as credate
+
+    FROM
+    " . $config['comg']['db']['main'] . "
+    WHERE
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_status != 'Disable' AND
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_subject" . $lang . " != '' 
+    ";
+
+    $sql .= " ORDER  BY " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_order DESC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
   function callGroup($masterkey, $id = null)
   {
     global $config, $db, $url;
