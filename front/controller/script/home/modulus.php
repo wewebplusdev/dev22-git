@@ -14,7 +14,7 @@ class homePage
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_pic".$lang." as pic,
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_credate as credate,
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_url".$lang." as url,
-    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_title as title,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_title".$lang." as title,
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_target as target
   
   
@@ -209,5 +209,42 @@ if($lang){
     $result = $db->execute($sql);
     return $result;
   }
+
+  function callSection($masterkey, $order = null, $theme = null){
+    global $config, $db, $url, $mod_array_conf;
+    $lang = $url->pagelang[3];
   
+    $sql = "SELECT
+    " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_id as id,
+    " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_masterkey as masterkey,
+    " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_namethai as subject
+  
+    FROM
+    " . $config['mnu']['db'] . "
+    WHERE
+    " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_status = 'Enable'
+  
+    ";
+
+    $sql = $sql . "  AND (" . $config['mnu']['db'] . "_masterkey LIKE '%" . $mod_array_conf[$theme]['key'] . "' ";
+
+    if (count($mod_array_conf[$theme]['component']) > 0) {
+        $sql = $sql . "  OR " . $config['mnu']['db'] . "_masterkey IN (" . implode(",", array_values($mod_array_conf[$theme]['component'])) . ") ";
+    }
+
+    $sql = $sql . " ) ";
+
+    $sql .= " AND " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_masterkey != '".$mod_array_conf[$theme]['sortmnu']."'";
+
+    if (!empty($order)) {
+      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "".$order." DESC ";
+    }else{
+      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_order DESC ";
+    }
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
 }

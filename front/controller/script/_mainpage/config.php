@@ -63,6 +63,8 @@ $config['tgp']['main']['masterkey'] = "tgp";
 $config['ban_t3']['main']['masterkey'] = "ban_t3";
 $config['wb_t3']['main']['masterkey'] = "wb_t3";
 $config['ab_nm']['main']['masterkey'] = "ab_nm";
+$config['km_t3']['main']['masterkey'] = "km_t3";
+$config['setting']['main']['masterkey'] = "setting";
 
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';

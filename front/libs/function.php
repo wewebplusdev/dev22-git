@@ -1005,19 +1005,19 @@ function url_segment_menu($url){
     return $current_uri;
 }
 
-function themeWebsite($theme = 3){
+function themeWebsite($theme = 'theme-3'){
     $arrFile = array();
     switch ($theme) {
-        case 2:
+        case 'theme-2':
             $arrFile['header'] = "inc/inc-header-theme-2.tpl";
             $arrFile['footer'] = "inc/inc-footer-theme-2.tpl";
-            $arrFile['class'] = "theme-1";
+            $arrFile['class'] = "theme-2";
             break;
 
-        case 1:
+        case 'theme-1':
             $arrFile['header'] = "inc/inc-header.tpl";
             $arrFile['footer'] = "inc/inc-footer.tpl";
-            $arrFile['class'] = "theme-2";
+            $arrFile['class'] = "theme-1";
             break;
         
         default:
