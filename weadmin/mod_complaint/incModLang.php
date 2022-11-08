@@ -82,6 +82,7 @@ $langMod["inp:sefile"] = "Select attachment";
 }else{
 		$langMod["meu:group"] = "กลุ่ม".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
+		$langMod["txt:titles"] = "ตั้งค่า " .getNameMenu($_REQUEST["menukeyid"]);
 
 		$langMod["txt:titleadd"] = "สร้างข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["txt:titleedit"] = "แก้ไขข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
@@ -99,13 +100,13 @@ $langMod["inp:sefile"] = "Select attachment";
 		$langMod["txt:info"] = "ข้อมูลการติดต่อ";
 		$langMod["txt:infoDe"] = "ข้อมูลนี้คือส่วนที่ใช้ในการติดต่อหน้าเว็บไซต์ของคุณ";
 
-		$langMod["tit:email"] ="Email";
+		$langMod["tit:email"] ="อีเมล";
 		// หัวข้อ
 		// $langMod["tit:subject"] ="".getNameMenu($_REQUEST["menukeyid"]);
 
-		$langMod["tit:subject"] ="Subject";
-		$langMod["tit:subjectg"] ="Group";
-		$langMod["tit:tel"] ="Phone";
+		$langMod["tit:subject"] ="หัวข้อ";
+		$langMod["tit:subjectg"] ="กลุ่ม";
+		$langMod["tit:tel"] ="เบอร์โทรศัพท์";
 		$langMod["tit:by"] ="ผู้ติดต่อ";
 		$langMod["tit:mgs"] ="ข้อความ";
 		$langMod["tit:address"] ="ที่อยู่";
@@ -118,13 +119,13 @@ $langMod["inp:sefile"] = "Select attachment";
 		$langMod["ats:email"] = "อีเมล์ซ้ำกับที่มีอยู่ในระบบแล้ว";
 				
 		$langMod["tit:inpName"] = "ชื่อ".$langMod["meu:group"];
-		$langMod["tit:qty"] ="Quantity (Unit)";
-		$langMod["tit:company"] ="Company Name";
+		$langMod["tit:qty"] ="คุณภาพ (หน่วย)";
+		$langMod["tit:company"] ="ชื่อบริษัท";
 		$langMod["tit:special"] ="Special Requirement";
-		$langMod["tit:fname"] ="First Name";
-		$langMod["tit:lname"] ="Last Name";
-		$langMod["txt:titleemailset"] = "Email Notify Edit";
-		$langMod["tit:emailset"] = "Email";
+		$langMod["tit:fname"] ="ชื่อ";
+		$langMod["tit:lname"] ="นามสกุล";
+		$langMod["txt:titleemailset"] = "แก้ไขแจ้งเตือนอีเมล";
+		$langMod["tit:emailset"] = "อีเมล";
 		
 		$langMod["txt:attfile"] = "ข้อมูลเอกสารแนบ";
 		$langMod["txt:attfileDe"] = "ข้อมูลเอกสารแนบ เพื่อใช้ในการแสดงผลเอกสารแนบของเนื้อหานี้ ในรูปแบบของการดาวน์โหลดเอกสารเก็บไว้ในเครื่องคอมพิวเตอร์บนเว็บไซต์ของคุณ";
