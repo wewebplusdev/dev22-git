@@ -33,10 +33,10 @@
                                     </div>
                                     <div class="profile-contact">
                                         <div class="email">
-                                            อีเมล: rphusit@git.or.th
+                                            {$lang['contact']['email']}: rphusit@git.or.th
                                         </div>
                                         <div class="telephone">
-                                            เบอร์โทร: 0-2634-4999 ต่อ 633
+                                            {$lang['contact']['tel']}: 0-2634-4999 {$lang['contact']['Ext']} 633
                                         </div>
                                     </div>
                                 </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-09-30 09:43:45
+/* Smarty version 4.0.0, created on 2022-11-08 09:08:43
   from '/var/www/html/front/template/default/inc/inc-loadstyle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_633657e15ddb85_95485329',
+  'unifunc' => 'content_6369ba2b4dca68_23948404',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0808b38a737bb839451a44599899888a059b3a9c' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-loadstyle.tpl',
-      1 => 1664505047,
+      1 => 1667790329,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633657e15ddb85_95485329 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6369ba2b4dca68_23948404 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- Core -->
 <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
@@ -37,6 +37,7 @@ function content_633657e15ddb85_95485329 (Smarty_Internal_Template $_smarty_tpl)
 /assets/css/plugin/select2.min.css">
 <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/css/plugin/slick.css">
+<link rel="stylesheet" href="sweetalert2.min.css">
 
 
 <!-- Custom -->
