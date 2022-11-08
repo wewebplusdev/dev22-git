@@ -84,31 +84,59 @@
                         <div class="h-title text-primary text-uppercase">
                             GIT CONFERENCE
                         </div>
-                        <div class="row">
-                            <div class="col">
+                        <div class="row gutters-lg-40">
+                            <div class="col-lg-7 col-md-8">
                                 <figure class="cover" style="padding-bottom: 47.5%;">
                                     <img src="<?php echo $core_template; ?>/assets/img/static/banner1.jpg" alt="banner">
                                 </figure>
                             </div>
-                            <div class="col">
-                                <div class="row h-50 align-items-center">
-                                    <div class="col">
+                            <div class="col-lg">
+                                <div class="row row-1 h-50 align-items-center">
+                                    <div class="col-lg">
                                         <a href="" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
                                     </div>
                                 </div>
-                                <div class="row h-50 align-items-end">
-                                    <div class="col text-light">
-                                        <div class="title">
-                                            The 7th International Gem & Jewelry Conference
-                                            (GIT2021) and Corundum Symposium
-                                        </div>
-                                        <div class="desc">
-                                            Keynote Speaker GIT2021 : Dr. Gaetano Cavalieri,
-                                            President of The World Jewellery Confederation (CIBJO)
+                                <div class="row row-2 h-50 align-items-end">
+                                    <div class="col-lg">
+                                        <div class="wrapper text-light">
+                                            <div class="title">
+                                                The 7th International Gem & Jewelry Conference <br>
+                                                (GIT2021) and Corundum Symposium
+                                            </div>
+                                            <div class="desc">
+                                                Keynote Speaker GIT2021 : Dr. Gaetano Cavalieri, <br>
+                                                President of The World Jewellery Confederation (CIBJO)
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="git-e-Learning-block">
+                    <div class="container -xl">
+                        <div class="h-title text-uppercase text-center text-light">
+                            GIT e-Learning
+                        </div>
+                        <div class="default-slider default-slider-dots slider">
+
+                            <?php for ($i = 1; $i <= 5; $i++) { ?>
+
+                                <div class="item">
+                                    <a href="" class="link" title="">
+                                        <figure class="cover">
+                                            <img src="<?php echo $core_template; ?>/assets/img/static/thumbnail-e-learning.jpg" alt="e-learning thumbnail">
+                                        </figure>
+                                    </a>
+                                </div>
+
+                            <?php } ?>
+
+                        </div>
+                        <div class="action">
+                            <a href="" class="btn btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
                         </div>
                     </div>
                 </div>
@@ -556,7 +584,27 @@
                                 </div>
                             </div>
                             <div class="tab-pane" id="gitBook3">
-                                gitBook3
+                                <div class="booklist">
+                                    <div class="default-slider default-slider-dots slider">
+
+                                        <?php for ($i = 1; $i <= 10; $i++) { ?>
+
+                                            <div class="item">
+                                                <a href="" class="link" title="">
+                                                    <figure class="cover">
+                                                        <img src="<?php echo $core_template; ?>/assets/img/static/git-book-02.jpg" alt="GIT BOOK">
+                                                    </figure>
+                                                    <div class="title text-center typo-sm">
+                                                        GIT Gem & Jewelry
+                                                        Review Is
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                        <?php } ?>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

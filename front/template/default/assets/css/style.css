@@ -9100,6 +9100,7 @@ fieldset {
   position: relative;
   margin-bottom: 5rem;
   padding-bottom: 4rem;
+  overflow: hidden;
 }
 .theme-1 .git-conference-block::before {
   content: "";
@@ -9109,7 +9110,8 @@ fieldset {
   right: 0;
   bottom: 0;
   background-color: var(--color-primary);
-  background: url("../img/background/bg-git-museum.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(#1c45d6), to(#091539));
+  background: linear-gradient(to right, #1c45d6 0%, #091539 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -9120,6 +9122,54 @@ fieldset {
 }
 .theme-1 .git-conference-block .h-title {
   margin-bottom: 1.5rem;
+}
+.theme-1 .git-conference-block .wrapper {
+  position: absolute;
+  width: 700px;
+  bottom: 0;
+}
+.theme-1 .git-conference-block .title {
+  font-size: var(--typo-md);
+  margin-bottom: 1rem;
+}
+.theme-1 .git-e-Learning-block {
+  padding: 6rem 0;
+  background: url("../img/background/bg-git-e-learning.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.theme-1 .git-e-Learning-block .cover {
+  padding-bottom: 60%;
+}
+.theme-1 .git-e-Learning-block .slick-list {
+  margin: 0 -45px;
+  padding: 42px 0 0 0 !important;
+}
+.theme-1 .git-e-Learning-block .item .link {
+  display: block;
+  margin: 35px;
+  padding: 2%;
+}
+.theme-1 .git-e-Learning-block .item.slick-center .link {
+  -webkit-transform: scale(1.3) translateY(-31px);
+          transform: scale(1.3) translateY(-31px);
+}
+.theme-1 .git-e-Learning-block .slick-dotted.slick-slider {
+  margin-bottom: 140px;
+}
+.theme-1 .git-e-Learning-block .default-slider-dots .slick-dots {
+  bottom: -100px;
+}
+.theme-1 .git-e-Learning-block .action {
+  text-align: center;
+}
+.theme-1 .git-e-Learning-block .default-slider-dots .slick-dots li button {
+  background-color: var(--color-light);
+}
+.theme-1 .git-e-Learning-block .default-slider-dots .slick-dots li.slick-active button {
+  background-color: transparent;
 }
 .theme-1 .banner .container {
   max-width: 1780px;
@@ -9594,6 +9644,22 @@ fieldset {
   .theme-1 .git-book-block .booklist .slick-dotted.slick-slider {
     margin-bottom: 170px;
   }
+  .theme-1 .git-conference-block {
+    padding-bottom: 3.5rem;
+  }
+  .theme-1 .git-e-Learning-block .default-slider-dots .slick-dots {
+    bottom: -80px;
+  }
+  .theme-1 .git-e-Learning-block .slick-dotted.slick-slider {
+    margin-bottom: 120px;
+  }
+  .theme-1 .git-e-Learning-block .container {
+    max-width: 1440px;
+  }
+  .theme-1 .git-e-Learning-block .item.slick-center .link {
+    -webkit-transform: scale(1.3) translateY(-28px);
+            transform: scale(1.3) translateY(-28px);
+  }
 }
 @media (max-width: 1440px) {
   .top-graphic .info .wrapper {
@@ -9653,6 +9719,44 @@ fieldset {
   }
   .theme-1 .git-book-block .booklist .default-slider-dots .slick-dots {
     bottom: -90px;
+  }
+  .theme-1 .git-conference-block {
+    padding-bottom: 3rem;
+  }
+  .theme-1 .git-conference-block .wrapper {
+    width: auto;
+  }
+  .theme-1 .git-conference-block .wrapper br {
+    display: none;
+  }
+  .theme-1 .git-conference-block .title {
+    font-size: var(--typo-sm);
+  }
+  .theme-1 .git-conference-block .desc {
+    font-size: var(--typo-xs);
+  }
+  .theme-1 .git-e-Learning-block {
+    padding: 5rem 0;
+  }
+  .theme-1 .git-e-Learning-block .container {
+    max-width: 1280px;
+  }
+  .theme-1 .git-e-Learning-block .default-slider-dots .slick-dots {
+    bottom: -60px;
+  }
+  .theme-1 .git-e-Learning-block .slick-dotted.slick-slider {
+    margin-bottom: 100px;
+  }
+  .theme-1 .git-e-Learning-block .slick-list {
+    margin: 0 -38px;
+    padding: 26px 0 0 0 !important;
+  }
+  .theme-1 .git-e-Learning-block .item .link {
+    margin: 30px;
+  }
+  .theme-1 .git-e-Learning-block .item.slick-center .link {
+    -webkit-transform: scale(1.3) translateY(-24px);
+            transform: scale(1.3) translateY(-24px);
   }
 }
 @media (max-width: 1199px) {
@@ -9724,6 +9828,26 @@ fieldset {
   .theme-1 .git-book-block .booklist .default-slider-dots .slick-dots {
     bottom: -80px;
   }
+  .theme-1 .git-conference-block .title {
+    font-size: 16px;
+  }
+  .theme-1 .git-e-Learning-block .default-slider-dots .slick-dots {
+    bottom: -60px;
+  }
+  .theme-1 .git-e-Learning-block .slick-dotted.slick-slider {
+    margin-bottom: 80px;
+  }
+  .theme-1 .git-e-Learning-block .slick-list {
+    margin: 0 -34px;
+    padding: 28px 0 0 0 !important;
+  }
+  .theme-1 .git-e-Learning-block .item .link {
+    margin: 26px;
+  }
+  .theme-1 .git-e-Learning-block .item.slick-center .link {
+    -webkit-transform: scale(1.3) translateY(-21px);
+            transform: scale(1.3) translateY(-21px);
+  }
 }
 @media (max-width: 991px) {
   .top-graphic .slick-dots {
@@ -9751,6 +9875,9 @@ fieldset {
   .main-page .h-title {
     font-size: 36px;
   }
+  .theme-1 .main-page > div:nth-child(2) {
+    padding-top: 4rem;
+  }
   .theme-1 .banner-I-block,
 .theme-1 .banner-II-block,
 .theme-1 .banner-III-block,
@@ -9758,7 +9885,8 @@ fieldset {
 .theme-1 .git-library-block,
 .theme-1 .museum-block,
 .theme-1 .git-book-block,
-.theme-1 .weblink-block {
+.theme-1 .weblink-block,
+.theme-1 .git-conference-block {
     margin-bottom: 4rem;
   }
   .theme-1 .git-library-weblinks,
@@ -9825,6 +9953,46 @@ fieldset {
   .theme-1 .git-book-block .booklist .slick-dotted.slick-slider {
     margin-bottom: 66px;
   }
+  .theme-1 .git-conference-block .wrapper {
+    position: relative;
+  }
+  .theme-1 .git-conference-block::before {
+    top: 50%;
+  }
+  .theme-1 .git-conference-block .row.h-50 {
+    height: inherit !important;
+  }
+  .theme-1 .git-conference-block .btn {
+    color: var(--color-light);
+    border-color: var(--color-light);
+    background-color: transparent;
+    margin-bottom: 2rem;
+  }
+  .theme-1 .git-conference-block .btn:hover {
+    color: var(--color-primary);
+    background-color: var(--color-light);
+  }
+  .theme-1 .git-conference-block .cover {
+    top: 0;
+    margin-bottom: 2rem;
+  }
+  .theme-1 .git-conference-block .title {
+    font-size: var(--typo-md);
+  }
+  .theme-1 .git-e-Learning-block {
+    padding: 4rem 0;
+  }
+  .theme-1 .git-e-Learning-block .item .link {
+    margin: 24px;
+  }
+  .theme-1 .git-e-Learning-block .slick-list {
+    margin: 0 -31px;
+    padding: 20px 0 0 0 !important;
+  }
+  .theme-1 .git-e-Learning-block .item.slick-center .link {
+    -webkit-transform: scale(1.3) translateY(-19px);
+            transform: scale(1.3) translateY(-19px);
+  }
 }
 @media (max-width: 767px) {
   .top-graphic .info .wrapper {
@@ -9850,6 +10018,9 @@ fieldset {
     font-size: 32px;
     margin-bottom: 2rem;
   }
+  .theme-1 .main-page > div:nth-child(2) {
+    padding-top: 3rem;
+  }
   .theme-1 .banner-I-block,
 .theme-1 .banner-II-block,
 .theme-1 .banner-III-block,
@@ -9857,7 +10028,8 @@ fieldset {
 .theme-1 .git-library-block,
 .theme-1 .museum-block,
 .theme-1 .git-book-block,
-.theme-1 .weblink-block {
+.theme-1 .weblink-block,
+.theme-1 .git-conference-block {
     margin-bottom: 3rem;
   }
   .theme-1 .banner-I-block {
@@ -9933,6 +10105,32 @@ fieldset {
   .theme-1 .git-book-block .booklist .default-slider-dots .slick-dots {
     bottom: -65px;
   }
+  .theme-1 .git-conference-block .btn {
+    margin-bottom: 1.5rem;
+  }
+  .theme-1 .git-conference-block::before {
+    top: 40%;
+  }
+  .theme-1 .git-e-Learning-block {
+    padding: 3rem 0;
+  }
+  .theme-1 .git-e-Learning-block .item .link {
+    margin: 0;
+    padding: 0;
+  }
+  .theme-1 .git-e-Learning-block .item {
+    padding: 0 15px;
+  }
+  .theme-1 .git-e-Learning-block .slick-list {
+    margin: 0 -30px;
+    padding: 0 15px !important;
+  }
+  .theme-1 .git-e-Learning-block .default-slider-dots .slick-dots {
+    bottom: -80px;
+  }
+  .theme-1 .git-e-Learning-block .slick-dotted.slick-slider {
+    margin-bottom: 100px;
+  }
 }
 @media (max-width: 575px) {
   .main-page .h-title {
@@ -9974,6 +10172,15 @@ fieldset {
   }
   .theme-1 .museum-block .museum-header .desc br {
     display: none;
+  }
+  .theme-1 .git-conference-block {
+    padding-bottom: 2rem;
+  }
+  .theme-1 .git-e-Learning-block .default-slider-dots .slick-dots {
+    bottom: -70px;
+  }
+  .theme-1 .git-e-Learning-block .slick-dotted.slick-slider {
+    margin-bottom: 80px;
   }
 }
 .theme-2 .site-container {
@@ -11740,7 +11947,7 @@ fieldset {
 .theme-3 .nav-tabs .nav-item.show .nav-link,
 .theme-3 .nav-tabs .nav-link.active {
   color: var(--color-primary);
-  background-color: #fff;
+  background-color: transparent;
   border-bottom: 3px solid var(--color-primary);
 }
 .theme-3 .prev-arrow,
@@ -14513,6 +14720,11 @@ fieldset {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
 }
+.theme-style-2 .site-header .brand img,
+.theme-style-2 .site-footer .brand img {
+  -webkit-filter: grayscale(1) invert(1);
+          filter: grayscale(1) invert(1);
+}
 .theme-style-2 .site-header {
   background: var(--color-black);
   border-color: var(--color-white);
@@ -14991,6 +15203,26 @@ fieldset {
 .theme-style-2 .default-slider-dots .slick-dots li.slick-active button::before {
   background-color: var(--color-light);
 }
+.theme-style-2 .btn-light,
+.theme-style-2 .btn-light:focus,
+.theme-style-2 .btn-light.focus,
+.theme-style-2 .btn-light:not(:disabled):not(.disabled).active,
+.theme-style-2 .btn-light:not(:disabled):not(.disabled):active,
+.theme-style-2 .show > .btn-light.dropdown-toggle {
+  color: var(--color-black);
+}
+.theme-style-2 .btn-light:hover,
+.theme-style-2 .btn-light:active:hover,
+.theme-style-2 .btn-light.active:hover,
+.theme-style-2 .btn-light:active:focus,
+.theme-style-2 .btn-light.actitve:focus,
+.theme-style-2 .btn-light:active.focus,
+.theme-style-2 .btn-light.active.focus,
+.theme-style-2 .btn-light:focus:hover,
+.theme-style-2 .btn-light.focus:hover {
+  color: var(--color-light);
+  background-color: var(--color-black);
+}
 
 .theme-2.theme-style-2 .site-header .site-header-main .main-menu-list .nav-list > li.active {
   background-color: var(--color-light);
@@ -15053,11 +15285,54 @@ fieldset {
   background: -webkit-gradient(linear, left top, right top, from(#4b4b4b), to(#000));
   background: linear-gradient(to right, #4b4b4b 0%, #000 100%);
 }
+.theme-3.theme-style-2 .site-header-main .main-menu-list .nav-list > li.active a {
+  color: var(--color-black);
+  background-color: var(--color-light);
+}
 .theme-3.theme-style-2 .site-footer .footer-top {
   color: var(--color-light);
 }
 .theme-3.theme-style-2 .site-footer .link {
   color: var(--color-light);
+}
+.theme-3.theme-style-2 .default-header-block .link {
+  color: var(--color-black);
+}
+.theme-3.theme-style-2 .default-header-block .link::before {
+  background-color: var(--color-black);
+}
+.theme-3.theme-style-2 .slider .slick-dots li.slick-active button {
+  background: var(--color-black);
+}
+.theme-3.theme-style-2 .slider .slick-dots li button {
+  background: var(--color-gray);
+}
+.theme-3.theme-style-2 .nav-tabs .nav-item.show .nav-link,
+.theme-3.theme-style-2 .nav-tabs .nav-link.active {
+  color: var(--color-black);
+  border-bottom-color: var(--color-black);
+}
+.theme-3.theme-style-2 .update-block a:hover .title,
+.theme-3.theme-style-2 .update-block .link:hover .title {
+  color: var(--color-black);
+}
+.theme-3.theme-style-2 .update-block a:hover .btn,
+.theme-3.theme-style-2 .update-block .link:hover .btn {
+  background-color: var(--color-black);
+}
+.theme-3.theme-style-2 .knowledge-block .thumbnail {
+  border-color: var(--color-gray);
+}
+.theme-3.theme-style-2 .prev-arrow:hover,
+.theme-3.theme-style-2 .next-arrow:hover {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+.theme-3.theme-style-2 .site-footer .social .item-list > li .link:hover .inner svg path {
+  fill: var(--color-light);
+}
+.theme-3.theme-style-2 .site-footer .social .item-list > li .link:hover .inner {
+  border-color: var(--color-light);
 }
 
 :root {
@@ -15123,14 +15398,15 @@ fieldset {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
 }
+.theme-style-3 .site-header .brand img,
+.theme-style-3 .site-footer .brand img {
+  -webkit-filter: grayscale(1) invert(1);
+          filter: grayscale(1) invert(1);
+}
 .theme-style-3 .site-header {
   border-color: var(--color-yellow);
   color: var(--color-black);
   background-color: var(--color-black);
-}
-.theme-style-3 .site-header .brand img {
-  -webkit-filter: invert(87%) sepia(85%) saturate(3191%) hue-rotate(357deg) brightness(103%) contrast(101%);
-          filter: invert(87%) sepia(85%) saturate(3191%) hue-rotate(357deg) brightness(103%) contrast(101%);
 }
 .theme-style-3 .site-header .site-header-topbar .text-color .item-list > li .theme.theme-style-2 {
   color: var(--color-light);
@@ -15759,4 +16035,124 @@ fieldset {
 }
 .theme-style-3 .divider {
   border-color: var(--color-black);
+}
+.theme-style-3 .btn-light,
+.theme-style-3 .btn-light:focus,
+.theme-style-3 .btn-light.focus,
+.theme-style-3 .btn-light:not(:disabled):not(.disabled).active,
+.theme-style-3 .btn-light:not(:disabled):not(.disabled):active,
+.theme-style-3 .show > .btn-light.dropdown-toggle {
+  color: var(--color-black);
+  background-color: var(--color-yellow);
+}
+.theme-style-3 .btn-light:hover,
+.theme-style-3 .btn-light:active:hover,
+.theme-style-3 .btn-light.active:hover,
+.theme-style-3 .btn-light:active:focus,
+.theme-style-3 .btn-light.actitve:focus,
+.theme-style-3 .btn-light:active.focus,
+.theme-style-3 .btn-light.active.focus,
+.theme-style-3 .btn-light:focus:hover,
+.theme-style-3 .btn-light.focus:hover {
+  color: var(--color-yellow);
+  background-color: var(--color-black);
+}
+.theme-style-3 .btn-border-light,
+.theme-style-3 .btn-border-light:focus,
+.theme-style-3 .btn-border-light.focus,
+.theme-style-3 .btn-border-light:not(:disabled):not(.disabled).active,
+.theme-style-3 .btn-border-light:not(:disabled):not(.disabled):active,
+.theme-style-3 .show > .btn-light.dropdown-toggle {
+  color: var(--color-yellow);
+  border-color: var(--color-yellow);
+}
+.theme-style-3 .btn-border-light:hover,
+.theme-style-3 .btn-border-light:active:hover,
+.theme-style-3 .btn-border-light.active:hover,
+.theme-style-3 .btn-border-light:active:focus,
+.theme-style-3 .btn-border-light.actitve:focus,
+.theme-style-3 .btn-border-light:active.focus,
+.theme-style-3 .btn-border-light.active.focus,
+.theme-style-3 .btn-border-light:focus:hover,
+.theme-style-3 .btn-border-light.focus:hover {
+  color: var(--color-black);
+  background-color: var(--color-yellow);
+}
+
+.theme-3.theme-style-3 .site-header-main .main-menu-list .nav-list > li.active a {
+  color: var(--color-black);
+  background-color: var(--color-yellow);
+}
+.theme-3.theme-style-3 .site-header .search .form .form-control {
+  background-color: var(--color-yellow);
+}
+.theme-3.theme-style-3 .top-graphic .info {
+  color: var(--color-yellow);
+}
+.theme-3.theme-style-3 .default-nav .item-.slick-current a,
+.theme-3.theme-style-3 .default-nav .item- a:hover,
+.theme-3.theme-style-3 .default-nav .item- a.active {
+  color: var(--color-yellow);
+  background: var(--color-black);
+}
+.theme-3.theme-style-3 .default-nav .item-.slick-current a svg path,
+.theme-3.theme-style-3 .default-nav .item- a:hover svg path,
+.theme-3.theme-style-3 .default-nav .item- a.active svg path {
+  fill: var(--color-yellow);
+}
+.theme-3.theme-style-3 .default-header-block .link {
+  color: var(--color-black);
+}
+.theme-3.theme-style-3 .default-header-block .link::before {
+  background-color: var(--color-black);
+}
+.theme-3.theme-style-3 .slider .slick-dots li.slick-active button {
+  background: var(--color-black);
+}
+.theme-3.theme-style-3 .slider .slick-dots li button {
+  background: var(--color-gray);
+}
+.theme-3.theme-style-3 .nav-tabs .nav-item.show .nav-link,
+.theme-3.theme-style-3 .nav-tabs .nav-link.active {
+  color: var(--color-black);
+  border-bottom-color: var(--color-black);
+}
+.theme-3.theme-style-3 .update-block a:hover .title,
+.theme-3.theme-style-3 .update-block .link:hover .title {
+  color: var(--color-black);
+}
+.theme-3.theme-style-3 .update-block a:hover .btn,
+.theme-3.theme-style-3 .update-block .link:hover .btn {
+  background-color: var(--color-black);
+}
+.theme-3.theme-style-3 .update-block .btn {
+  background-color: var(--color-gray);
+}
+.theme-3.theme-style-3 .banner-block .box {
+  background: -webkit-gradient(linear, left top, right top, from(#4b4b4b), to(#000));
+  background: linear-gradient(to right, #4b4b4b 0%, #000 100%);
+}
+.theme-3.theme-style-3 .knowledge-block .thumbnail {
+  border-color: var(--color-gray);
+}
+.theme-3.theme-style-3 .prev-arrow:hover,
+.theme-3.theme-style-3 .next-arrow:hover {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+.theme-3.theme-style-3 .site-footer .maps .item-list > li .btn:hover {
+  color: var(--color-yellow);
+  background-color: var(--color-black);
+}
+.theme-3.theme-style-3 .site-footer .maps .item-list > li .btn.btn-primary {
+  color: var(--color-yellow);
+}
+.theme-3.theme-style-3 .site-footer .social .item-list > li .link:hover .inner svg path {
+  fill: var(--color-yellow);
+}
+.theme-3.theme-style-3 .site-footer .social .item-list > li .link:hover .inner {
+  border-color: var(--color-yellow);
+}
+.theme-3.theme-style-3 .site-footer .policy .link {
+  color: var(--color-yellow);
 }/*# sourceMappingURL=style.css.map */
