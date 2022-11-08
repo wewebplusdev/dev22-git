@@ -271,7 +271,12 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:inpName"] ?><span class="fontContantAlert">*</span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputSubject" id="inputSubject" type="text" class="formInputContantTb" value="<?php echo $valSubject ?>" /></td>
         </tr>
-
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title"] ?><span class="fontContantAlert"></span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <textarea name="inputTitle" id="inputTitle" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valTitle ?></textarea><br />
+          </td>
+        </tr>
         <tr id="">
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkvdo"] ?><span class="fontContantAlert">*</span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><textarea name="inputurl" id="inputurl" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valUrl ?></textarea><br />
@@ -295,12 +300,6 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
           </td>
         </tr>
         <!-- <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title"] ?><span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <textarea name="inputTitle" id="inputTitle" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valTitle ?></textarea><br />
-          </td>
-        </tr>
-        <tr>
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:desc"] ?><span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
             <textarea name="inputDesc" id="inputDesc" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valDescript ?></textarea><br />

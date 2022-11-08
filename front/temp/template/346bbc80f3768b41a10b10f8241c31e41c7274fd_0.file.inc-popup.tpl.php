@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 09:08:44
+/* Smarty version 4.0.0, created on 2022-11-08 16:32:19
   from '/var/www/html/front/template/default/inc/inc-popup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6369ba2c413ae1_44199251',
+  'unifunc' => 'content_636a22235fd541_25824378',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '346bbc80f3768b41a10b10f8241c31e41c7274fd' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-popup.tpl',
-      1 => 1667790329,
+      1 => 1667384682,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6369ba2c413ae1_44199251 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636a22235fd541_25824378 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="gallery-popup d-none">
   <?php if ($_smarty_tpl->tpl_vars['callBanner']->value->_numOfRows >= 1) {?>
     <?php
@@ -31,8 +31,8 @@ $_smarty_tpl->tpl_vars['valuecallBanner']->do_else = false;
 ?>
       <a href="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['valuecallBanner']->value['masterkey'];
-$_prefixVariable7 = ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valuecallBanner']->value['pic'],"real",$_prefixVariable7,"link");?>
+$_prefixVariable5 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valuecallBanner']->value['pic'],"real",$_prefixVariable5,"link");?>
 ?targetid=manual<?php echo $_smarty_tpl->tpl_vars['keycallBanner']->value;?>
 " 
       data-fancybox="gallery-popup" <?php if ($_smarty_tpl->tpl_vars['valuecallBanner']->value['url'] != '' && $_smarty_tpl->tpl_vars['valuecallBanner']->value['url'] != "#") {?>data-href="<?php echo $_smarty_tpl->tpl_vars['valuecallBanner']->value['url'];?>

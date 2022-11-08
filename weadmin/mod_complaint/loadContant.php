@@ -70,7 +70,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		$inputSearch = $_REQUEST['inputSearch'];
 	}
 
-	$sql_export = "SELECT  " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate, " . $mod_tb_root . "_status 	, " . $mod_tb_root . "_subject, " . $mod_tb_root . "_message, " . $mod_tb_root . "_fname  ,  " . $mod_tb_root . "_address  ,  " . $mod_tb_root . "_email  ,  " . $mod_tb_root . "_tel   ,  " . $mod_tb_root . "_ip   ,  " . $mod_tb_root . "_gid  FROM " . $mod_tb_root;
+	+	$sql_export = "SELECT  " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate, " . $mod_tb_root . "_status 	, " . $mod_tb_root . "_subject, " . $mod_tb_root . "_message, " . $mod_tb_root . "_address  ,  " . $mod_tb_root . "_email  ,  " . $mod_tb_root . "_tel   ,  " . $mod_tb_root . "_ip   ,  " . $mod_tb_root . "_gid ,  " . $mod_tb_root . "_name  FROM " . $mod_tb_root;
 	$sql_export = $sql_export . "  WHERE  " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' ";
 
 	if ($_REQUEST['inputGh'] >= 1) {
@@ -211,18 +211,14 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 				// SQL SELECT #########################
 				$sql = "SELECT 
 		" . $mod_tb_root . "_id, 
-		" . $mod_tb_root . "_fname, 
+		" . $mod_tb_root . "_name, 
 		" . $mod_tb_root . "_subject, 
 		" . $mod_tb_root . "_status,
 		" . $mod_tb_root . "_credate ,
 		" . $mod_tb_root . "_message  ,
 		" . $mod_tb_root . "_email  ,
 		" . $mod_tb_root . "_tel  ,
-		" . $mod_tb_root . "_gid ,
-		" . $mod_tb_root . "_lname ,
-		" . $mod_tb_root . "_company ,
-		" . $mod_tb_root . "_model ,
-		" . $mod_tb_root . "_qty 
+		" . $mod_tb_root . "_gid 
 		
 	FROM " . $mod_tb_root;
 				$sql = $sql . "  WHERE " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
@@ -263,14 +259,14 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 					while ($index < $count_record + 1) {
 						$row = wewebFetchArrayDB($coreLanguageSQL, $query);
 						$valID = $row[0];
-						$valName = rechangeQuot($row[1]) . ' ' . rechangeQuot($row[9]);
+						$valName = decodeStr(rechangeQuot($row[1]) . ' ' . rechangeQuot($row[9]));
 						$valSubject = rechangeQuot($row[2]);
 						$valStatus = $row[3];
 						$valDateCredate = dateFormatReal($row[4]);
 						$valTimeCredate = timeFormatReal($row[4]);
-						$valMessage = rechangeQuot($row[5]);
-						$valEmail = rechangeQuot($row[6]);
-						$valTel = rechangeQuot($row[7]);
+						$valMessage = decodeStr(rechangeQuot($row[5]));
+						$valEmail = decodeStr(rechangeQuot($row[6]));
+						$valTel = decodeStr(rechangeQuot($row[7]));
 						$valGidDb = rechangeQuot($row[8]);
 						$valCompany = rechangeQuot($row[10]);
 						$valModel = rechangeQuot($row[11]);

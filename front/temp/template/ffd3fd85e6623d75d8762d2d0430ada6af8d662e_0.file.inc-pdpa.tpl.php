@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 09:08:44
+/* Smarty version 4.0.0, created on 2022-11-08 16:32:19
   from '/var/www/html/front/template/default/inc/inc-pdpa.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6369ba2c167eb0_86367772',
+  'unifunc' => 'content_636a22232cc7a8_84970141',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ffd3fd85e6623d75d8762d2d0430ada6af8d662e' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-pdpa.tpl',
-      1 => 1667810365,
+      1 => 1667877798,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6369ba2c167eb0_86367772 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636a22232cc7a8_84970141 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="cookie-tab pdpa" >
     <div class="container">
         <div class="row align-items-center  h-tap">

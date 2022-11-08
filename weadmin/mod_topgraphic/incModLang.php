@@ -93,4 +93,5 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 
     $langMod["tit:inpName"] = "ชื่อ" . getNameMenu($_REQUEST["menukeyid"]);
     $langMod["tit:desc"] = "หมายเหตุ";
+    $langMod["tit:title"] = "รายละเอียด";
 }

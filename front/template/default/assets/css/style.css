@@ -13667,8 +13667,6 @@ fieldset {
   }
 }
 .calendar-page .calendar-block {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -13788,8 +13786,6 @@ fieldset {
   color: #CFE0FF;
 }
 .calendar-page #calendarList {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 10px;
   overflow: hidden;
 }

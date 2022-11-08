@@ -3994,3 +3994,42 @@ th {
 .item-list > li > .link{display: block; border-radius: 5px; padding: 5px 15px; font-size: 14px; line-height: 1; color: #fff; background-color: #03548e; border: 1px solid #0065cc;}
 .item-list > li > .link:hover{color: #0065cc; background-color: #fff;}
 /* end hashtag */
+
+
+/*######### Start Mainpage Select Minisite #########*/
+.selectMainpage{
+    width: 100%;
+    /* width: 800px; */
+    height: 160px;
+    list-style: none;
+    /*margin: 0;*/
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+.parentMainpage{
+    position: relative;
+    width: 172px;
+    height: 100px;
+    float: left;
+    margin-right: 3px;
+    margin-bottom: 3px;
+}
+.mainpageActive{
+    width: auto;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.212);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(../img/controlpage/correct.png); */
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+.mainpageUnActive{
+    margin: 1px;
+    width: 92px;
+    height: 142px;
+}
+/*######### End Mainpage Select Minisite #########*/
