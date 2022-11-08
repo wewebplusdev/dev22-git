@@ -41,12 +41,18 @@ $smarty->assign("calPolicy", $calPolicy);
 /* End Policy */
 
 /* Start Menu */
-require_once _DIR . '/front/controller/script/_mainpage/service/menu.php';
+// require_once _DIR . '/front/controller/script/_mainpage/service/menu.php';
 /* End Menu */
 
 /* Start Theme */
-$settingWeb['theme'] = 3;
-$themeWebsite = themeWebsite($settingWeb['theme']);
+$previewID = 0;
+if ($url->segment[0] == 'preview') {
+    $previewID = decodeStr($url->segment[1]);
+}
+$callSettingMainpage = $callSetWebsite->callSettingWebsite($config['setting']['main']['masterkey'], $previewID);
+$themeWebsite = $callSettingMainpage->fields['theme'] ? $callSettingMainpage->fields['theme'] : 'theme-3';
+$themeWebsite = themeWebsite($themeWebsite);
+$themeWebsite['color'] = $callSettingMainpage->fields['color'] ? $callSettingMainpage->fields['color'] : '#FFFFFF';
 $smarty->assign("themeWebsite", $themeWebsite);
 /* End Theme */
 
@@ -556,6 +562,35 @@ class settingWebsite
         $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC ";
 
         // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result;
+    }
+
+      
+    function callSettingWebsite($masterkey, $id = null)
+    {
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+        $sql = "SELECT
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_id as id,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_masterkey as masterkey,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subject as subject,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_theme as theme,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_col as color
+        
+        FROM
+        " . $config['setting']['db'] . "
+        WHERE
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_masterkey = '" . $masterkey . "' 
+        ";
+
+
+        if (!empty($id)) {
+            $sql .= " AND " . $config['setting']['db'] . "." . $config['setting']['db'] . "_id = '" . $id . "' ";
+        }else{
+            $sql .= " AND " . $config['setting']['db'] . "." . $config['setting']['db'] . "_status = 'Enable' ";
+        }
+
         $result = $db->execute($sql);
         return $result;
     }

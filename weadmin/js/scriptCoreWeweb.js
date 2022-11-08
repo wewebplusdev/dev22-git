@@ -2891,3 +2891,33 @@ function urlfriendly(target = '', target2 = '', fileAc) {
     });
 }
 
+
+function changeStatusMainpage(loaddder, tablename, statusname, statusid, loadderstatus, fileAc) {
+
+    jQuery("#" + loaddder + "").show();
+
+    var TYPE = "POST";
+    var URL = fileAc;
+    var dataSet = {
+        Valueloaddder: loaddder,
+        Valuetablename: tablename,
+        Valuestatusname: statusname,
+        Valuestatusid: statusid,
+        Valueloadderstatus: loadderstatus,
+        Valuefilestatus: fileAc
+    };
+
+
+    jQuery.ajax({
+        type: TYPE,
+        url: URL,
+        data: dataSet,
+        success: function(html) {
+
+            jQuery("#" + loadderstatus + "").show();
+            jQuery("#" + loadderstatus + "").html(html);
+            jQuery("#" + loaddder + "").hide();
+            window.location.reload();
+        }
+    });
+}

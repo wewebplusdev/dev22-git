@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 09:08:44
+/* Smarty version 4.0.0, created on 2022-11-08 16:32:19
   from '/var/www/html/front/template/default/inc/inc-sitemap.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6369ba2c0115e3_55713440',
+  'unifunc' => 'content_636a222319a3e2_89411441',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a79e88559f9eec5746a24974607cef7eaeeaf829' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-sitemap.tpl',
-      1 => 1667790329,
+      1 => 1664871484,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6369ba2c0115e3_55713440 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636a222319a3e2_89411441 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="sitemap">
     <div class="container">
         <div id="accordion">

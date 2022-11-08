@@ -370,3 +370,5 @@ $lang['pdpa']['cookie']="We value your privacy. To give you a good experience on
 $lang['pdpa']['accept']="Accept";
 $lang['pdpa']['more_deatils']="More Details";
 $lang['pdpa']['decline']="Decline";
+
+

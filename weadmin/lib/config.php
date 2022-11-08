@@ -10,7 +10,7 @@ ini_set('display_startup_errors', 1);
 ini_set('display_errors', 1);
 error_reporting(1);
 ## Core Folder Local  ######################################################
-$core_pathname_folderlocal = "dev22-git/";
+$core_pathname_folderlocal = "";
 
 ## Core Upload  ######################################################
 $core_pathname_upload = "../../upload";
@@ -22,7 +22,7 @@ $core_pathname_crupload = "../../upload/core";
 ## Core Path RSS  ##################################################
 $core_session_language = $_SESSION[$valSiteManage . 'core_session_language'];
 
-$core_fullpath_rss = "https://" . $_SERVER["HTTP_HOST"] . "" . $core_pathname_folderlocal . "/upload";
+$core_fullpath_rss = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://".$_SERVER["HTTP_HOST"] . "" . $core_pathname_folderlocal . "/upload";
 $core_variable_charset = "UTF-8";
 $core_relativepath_rss = "../../rss";
 
