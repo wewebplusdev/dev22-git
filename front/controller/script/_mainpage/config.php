@@ -6,6 +6,7 @@ $config['mnu']['db'] = "sy_mnu";
 // table
 $config['cms']['db']['main'] = "md_cms";
 $config['cmg']['db']['main'] = "md_cmg";
+$config['cma']['db']['main'] = "md_cma";
 $config['popup']['db'] = "md_int";
 $config['cmf']['db']['main'] = "md_cmf";
 $config['cmsg']['db']['main'] = "md_cmsg";
@@ -71,6 +72,8 @@ $config['ab_nm']['main']['masterkey'] = "ab_nm";
 $config['km_t3']['main']['masterkey'] = "km_t3";
 $config['setting']['main']['masterkey'] = "setting";
 $config['lcf_s']['main']['masterkey'] = "lcf_s";
+$config['video']['vdo']['masterkey'] = "vdo";
+$config['photo']['ptg']['masterkey'] = "ptg";
 
 $config['req']['main']['masterkey'] = "req";
 //PDPA

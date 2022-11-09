@@ -23,6 +23,8 @@ $lang['menu']['404'] = "PAGE NOT FOUND";
 $lang['menu']['sitemap'] = "SITEMAP";
 $lang['menu']['search'] = "Search";
 $lang['menu']['calendar'] = "Calendar";
+$lang['menu']['photo-gallary'] = "PHOTO GALLARY";
+$lang['menu']['vdo-gallary'] = "VDO GALLARY";
 
 //career
 $lang['career']['select'] = "Position | Select";
@@ -287,6 +289,7 @@ $lang['career']['home:des'] = "we have expanded our operations into rapidly grow
 //infomation-service
 $lang['infoserv']['pictures'] = "Display Pictures";
 $lang['infoserv']['infoservice'] = "Information Service";
+$lang['video']['detail'] = "Show Video";
 
 //service
 $lang['service']['menu1'] = "Gem Check";
