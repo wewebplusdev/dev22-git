@@ -426,3 +426,6 @@ $lang["calendar"]["eventday"] = "วันที่มีกิจกรรม";
 $lang["calendar"]["datenow"] = "วันปัจจุบัน";
 $lang["calendar"]["activity"] = "กิจกรรมที่จัดในวันที่";
 $lang["calendar"]["activityM"] = "กิจกรรมที่จัดในเดือน";
+
+$lang["counter"]["visited"] = "จำนวนเข้าเยี่ยมชมเว็บไซต์";
+$lang["counter"]["online"] = "ขณะนี้มีผู้ออนไลน์อยู่";
