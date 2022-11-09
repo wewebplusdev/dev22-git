@@ -372,6 +372,25 @@ $lang['pdpa']['accept']="Accept";
 $lang['pdpa']['more_deatils']="More Details";
 $lang['pdpa']['decline']="Decline";
 
+// search
 $lang['search']['subject'] = "Search";
-$lang['search']['result'] = 'Result "<span>{1}</span>" of {2} found(s)';
+$lang['search']['result'] = 'Result of "<span>{1}</span>" All {2} found(s)';
 $lang['search']['more'] = "Detail";
+
+// calendar
+$lang["calendar"]["thismonth"] = "This month";
+$lang["calendar"]["thisday"] = "This day";
+$lang["calendar"]["note1"] ="<strong>Remark</strong> : Click on a date to display various activities. available on that date";
+$lang["calendar"]["note2"] ="current date (If there is an event, the date in this section can be clicked.)";
+$lang["calendar"]["note3"] ="event date";
+$lang["calendar"]["note4"] ="normal date";
+$lang["calendar"]["nodata"] ="no event";
+$lang["calendar"]["at"] = "";
+$lang["calendar"]["alldate"] = "all day";
+$lang["calendar"]["eventday"] = "event date";
+$lang["calendar"]["datenow"] = "current day";
+$lang["calendar"]["activity"] = "Activities organized on the day";
+$lang["calendar"]["activityM"] = "Monthly events";
+
+$lang["counter"]["visited"] = "number of website visits";
+$lang["counter"]["online"] = "Online now";
