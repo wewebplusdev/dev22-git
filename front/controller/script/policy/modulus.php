@@ -93,6 +93,33 @@ class policyPage
     return $result;
   }
 
+  function callComsGroup($masterkey,$id = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_id as id,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_masterkey as masterkey,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_lastdate as lastdate,
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_credate as credate
+
+    FROM
+    " . $config['comg']['db']['main'] . "
+    WHERE
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_id = '" . $id . "' AND
+    " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_masterkey = '" . $masterkey . "'
+    ";
+
+    $sql .= " ORDER  BY " . $config['comg']['db']['main'] . "." . $config['comg']['db']['main'] . "_order DESC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
   function callGroup($masterkey, $id = null)
   {
     global $config, $db, $url;
@@ -303,6 +330,23 @@ class policyPage
 
     // print_pre($sql);
     $result = $db->pageexecute($sql, $limit, $page);
+    return $result;
+  }
+
+  function callmailcontact($masterkey){
+    global $config, $db, $url;
+  
+    $sql = "SELECT
+    " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_id,
+    " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_gid,
+    " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_email
+  FROM
+    " . $config['cue']['db']['main'] . "
+  WHERE
+     " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_masterkey = '".$masterkey."'
+    ";
+    // print_pre($sql);
+    $result = $db->execute($sql);
     return $result;
   }
 

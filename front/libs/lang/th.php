@@ -367,6 +367,7 @@ $lang["search:listtotal"] = "จำนวนทั้งหมด";
 
 $lang['member']['logout'] = "ออกจากระบบ";
 $lang["policy"]["title"] = "นโยบาย";
+$lang['complaint']['group']="เรื่องร้องเรียน";
 $lang["policy"]["complaint"] = "ระบบรับเรื่องร้องเรียน";
 $lang["policy"]["request"] = "แบบคำขอใช้สิทธิข้อมูลส่วนบุคคล";
 $lang["policy"]["fname"] = "ชื่อ";

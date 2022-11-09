@@ -88,8 +88,8 @@ if ($_REQUEST['inputSearch'] != "") {
                         <td  class="divRightNavTb" align="right">
                         <!-- ######### Start Menu Sub Mod ########## -->
                         <div class="menuSubMod ">
-                            <a  href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                <?php echo $langMod["txt:titles"] ?>
+                            <a  href="settingEmail.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
+                                <?php echo $langMod["txt:titleemailset"] ?>
                             </a>
                         </div>
                         <div class="menuSubMod active">

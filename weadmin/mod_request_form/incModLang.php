@@ -119,7 +119,7 @@ $langMod["tit:titlesetting"] = "Title consent";
 		$langMod["tit:special"] ="Special Requirement";
 		$langMod["tit:fname"] ="ชื่อ";
 		$langMod["tit:lname"] ="นามสกุล";
-		$langMod["txt:titleemailset"] = "แก้ไขแจ้งเตืออีเมล";
+		$langMod["txt:titleemailset"] = "แก้ไขแจ้งเตือนอีเมล";
 		$langMod["tit:emailset"] = "อีเมล";
 }
 ?>

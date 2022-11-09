@@ -355,6 +355,7 @@ $lang["search:list"] = "List";
 $lang["search:total"] = "Total";
 $lang["search:listtotal"] = "Total";
 $lang["policy"]["title"] = "policy";
+$lang['complaint']['group']="complaint";
 $lang["policy"]["complaint"] = "complaint system";
 +$lang["policy"]["request"] = "Request form for the use of personal data";
 $lang["policy"]["fname"] = "name";
