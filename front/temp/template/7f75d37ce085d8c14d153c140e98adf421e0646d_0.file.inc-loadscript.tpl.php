@@ -5,6 +5,7 @@
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
+
   'unifunc' => 'content_636b878eda8e12_91963681',
   'has_nocache_code' => false,
   'file_dependency' => 
@@ -20,6 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+
 function content_636b878eda8e12_91963681 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Core -->
 
@@ -131,12 +133,20 @@ function content_636b878eda8e12_91963681 (Smarty_Internal_Template $_smarty_tpl)
 "><?php echo '</script'; ?>
 >
 
+<!-- Embed Code -->
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/js/embed.js<?php echo $_smarty_tpl->tpl_vars['lastModify']->value;?>
+"><?php echo '</script'; ?>
+>
+
 <?php echo '<script'; ?>
  type="text/javascript">var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;<?php echo '</script'; ?>
 >
 
 <?php ob_start();
 echo (($tmp = $_smarty_tpl->tpl_vars['assignjs']->value ?? null)===null||$tmp==='' ? null ?? null : $tmp);
+
 $_prefixVariable3 = ob_get_clean();
 if ($_prefixVariable3) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['assignjs']->value, 'addAssetScript');

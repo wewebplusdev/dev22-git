@@ -13,6 +13,10 @@ switch ($url->segment[1]) {
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/photo.php';
     break;
 
+    case 'get-embed-code': //photo gallery
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/embed-code.php';
+    break;
+
     default: //video
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/video.php';
         break;
