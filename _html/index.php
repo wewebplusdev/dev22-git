@@ -204,7 +204,45 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="information-block">
+                    <div class="container">
+                        <div class="h-title m-0">GIT Information Center</div>
+                        <div class="sub-title">ศูนย์ข้อมูลอัญมณีและเครื่องประดับ</div>
+                        <div class="default-slider default-slider-dots slider">
+                            <?php for ($i = 1; $i <= 7; $i++) { ?>
+                                <div class="item">
+                                    <a href="" class="link" title="">
+                                        <div class="wrapper">
+                                            <div class="inner">
+                                                <div class="title text-limit -x2">
+                                                    บทความวิชาการ เรื่อง “ตลาด อีคอมเมิร์ซเมืองรองของจีนอีคอมเมิร์ซเมืองรองของจีน...
+                                                </div>
+                                                <div class="desc text-limit -x2">
+                                                    บทความวิชาการ เรื่อง “ตลาดอีคอมเมิร์ซเมืองรองของจีน โอกาสทองอัญมณีและเครื่องประดับไทย”
+                                                </div>
+                                                <div class="divider"></div>
+                                                <div class="date">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <span class="feather-calendar"></span>
+                                                            16 มิถุนายน 2565
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <span class="icon feather-chevron-right"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php } ?>
+                        </div>
+                        <div class="load-more-hide text-left mt-4">
+                            <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="service-block">
                     <div class="container -xl">
                         <div class="sidebar-menus">
@@ -750,7 +788,7 @@
                     </div>
                 </div>
 
-                <div class="video-gallery">
+                <div class="video-gallery-block">
                     <div class="container -lg">
                         <div class="h-title text-center">GIT VDO</div>
                         <ul class="nav nav-pills default-nav-tab">
@@ -808,7 +846,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="load-more-hide text-center mb-5">
+                        <div class="load-more-hide text-center pb-5">
                             <a href="javascript:void(0)" class="btn btn-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
                         </div>
                     </div>

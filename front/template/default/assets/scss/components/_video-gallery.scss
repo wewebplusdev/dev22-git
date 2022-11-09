@@ -224,11 +224,12 @@
         }
         .topic-content-block {
             background-color: var(--color-primary);
+            // background-color: #cc1212;
             color: var(--color-light);
             padding: 35px 40px;
             position: absolute;
-            bottom: -38%;
-            left: 13%;
+            margin-top: -50px;
+            left: 10%;
             transform: translate(-50%, -50%);
             width: 480px;
             .h-title {
@@ -246,6 +247,55 @@
             .btn-border-primary {
                 border: 1px solid var(--color-light);
                 color: var(--color-light);
+            }
+        }
+    }
+}
+
+.information-block {
+    color: var(--color-light);
+    background: url(../img/background/information-bg.png), var(--color-primary);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6rem 0;
+    .h-title {
+        color: var(--color-light);
+    }
+    .sub-title {
+        font-size: var(--typo-xl);
+        color: var(--color-light);
+        margin-bottom: 25px;
+    }
+    .slick-dotted.slick-slider {
+        padding-top: 3rem;
+    }
+    .item {
+        padding: 0 10px;
+        .link {
+            .wrapper {
+                background-color: var(--color-light);
+                .inner {
+                    padding: 1.5rem;
+                }
+                .title {
+                    font-size: var(--typo-lg);
+                    font-weight: var(--fw-medium);
+                    color: var(--color-primary);
+                    margin-bottom: 1rem;
+                }
+                .desc {
+                    font-size: var(--typo-xs);
+                    color: var(--color-primary);
+                    margin-bottom: 2rem;
+                }
+                .divider {
+                    border-style: dashed;
+                }
+                .date {
+                    font-size: var(--typo-xs);
+                    color: var(--color-primary);
+                }
             }
         }
     }
@@ -285,6 +335,7 @@
                 width: 100%;
                 left: 0;
                 transform: none;
+                margin-top: 0;
             }
             .item-list {
                 .menu-service {

@@ -320,6 +320,29 @@ $(document).ready(function() {
         ]
     });
 
+    $('.information-block .slider').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows: false,
+        dots: true,
+        responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
     $(".training-block .slider").slick({
         autoplay: true,
         autoplaySpeed: 3000,
@@ -359,31 +382,30 @@ $(document).ready(function() {
         slidesToScroll: 5,
         arrows: false,
         dots: true,
-        responsive: [
-            {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
+        responsive: [{
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                },
             },
-        },
             {
-            breakpoint: 768,
-            settings: {
-                variableWidth: false,
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                breakpoint: 768,
+                settings: {
+                    variableWidth: false,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                },
             },
-        },
             {
-            breakpoint: 576,
-            settings: {
-                variableWidth: false,
-                slidesToShow: 2,
-                slidesToScroll: 2,
+                breakpoint: 576,
+                settings: {
+                    variableWidth: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
             },
-        },
-    ]
+        ]
     });
 
     $(".git-e-Learning-block .slider").slick({
@@ -395,18 +417,16 @@ $(document).ready(function() {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        responsive: [
-            {
+        responsive: [{
             breakpoint: 768,
             settings: {
                 slidesToShow: 1,
                 centerMode: false,
             },
-        }
-    ]
+        }]
     });
 
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
         $('.slider.default-slider').slick('setPosition');
     });
 

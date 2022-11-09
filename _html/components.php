@@ -292,7 +292,7 @@
                             <!-- detail link block -->
                             <div class="detail-link-block">
                                 <div class="detail-link">
-                                    <ul class="item-list">
+                                    <ul class="item-list fluid">
                                         <?php for ($i = 1; $i <= 2; $i++) { ?>
                                             <li>
                                                 <div class="row no-gutters">
