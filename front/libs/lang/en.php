@@ -25,6 +25,7 @@ $lang['menu']['search'] = "Search";
 $lang['menu']['calendar'] = "Calendar";
 $lang['menu']['photo-gallary'] = "PHOTO GALLARY";
 $lang['menu']['vdo-gallary'] = "VDO GALLARY";
+$lang['menu']['training'] = "Training Work";
 
 //career
 $lang['career']['select'] = "Position | Select";
@@ -296,6 +297,9 @@ $lang['service']['menu1'] = "Gem Check";
 $lang['service']['menu2'] = "Precious Metal Check";
 $lang['service']['menu3'] = "Counseling Center";
 $lang['service']['menu4'] = "Tool";
+
+//training work
+$lang['training']['detail'] = "Course Details";
 
 $lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
 $lang['system']['close'] = "Close";

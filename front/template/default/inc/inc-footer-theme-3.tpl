@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="brand">
-                        <a href="link" title="Gem and Jewelry Institute of Thailand">
+                        <a href="{$ul}/home" title="Gem and Jewelry Institute of Thailand">
                             <img src="{$template}/assets/img/static/git-logo.png" alt="Gem and Jewelry Institute of Thailand Logo">
                         </a>
                     </div>

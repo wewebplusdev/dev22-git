@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 17:24:47
+/* Smarty version 4.0.0, created on 2022-11-09 09:50:33
   from '/var/www/html/front/controller/script/home/template/theme-3/section-news.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636a2e6fa2b9f7_35240533',
+  'unifunc' => 'content_636b15798eb645_32786369',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2c361ed7eeb3cbf17d3d5f1f374f6c5c78ae5764' => 
     array (
       0 => '/var/www/html/front/controller/script/home/template/theme-3/section-news.tpl',
-      1 => 1667900202,
+      1 => 1667960081,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636a2e6fa2b9f7_35240533 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636b15798eb645_32786369 (Smarty_Internal_Template $_smarty_tpl) {
 if (count($_smarty_tpl->tpl_vars['arrNewsHome']->value) > 0) {?>
     <div class="update-block">
         <div class="default-header-block">
@@ -85,8 +85,8 @@ $_smarty_tpl->tpl_vars['valuearrNewsSub']->do_else = false;
                                                 <figure class="cover">
                                                     <img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['valuearrNewsSub']->value['masterkey'];
-$_prefixVariable5 = ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valuearrNewsSub']->value['pic'],"real",$_prefixVariable5,"link");?>
+$_prefixVariable3 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valuearrNewsSub']->value['pic'],"real",$_prefixVariable3,"link");?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['valuearrNewsSub']->value['subject'];?>
 ">
                                                 </figure>
@@ -98,8 +98,8 @@ echo fileinclude($_smarty_tpl->tpl_vars['valuearrNewsSub']->value['pic'],"real",
                                             <div class="date text-limit">
                                                 <?php ob_start();
 echo $_smarty_tpl->tpl_vars['langon']->value;
-$_prefixVariable6 = ob_get_clean();
-echo DateThai($_smarty_tpl->tpl_vars['valuearrNewsSub']->value['credate'],'1',$_prefixVariable6,'full');?>
+$_prefixVariable4 = ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valuearrNewsSub']->value['credate'],'1',$_prefixVariable4,'full');?>
 
                                             </div>
                                             <div class="title text-limit -x3">

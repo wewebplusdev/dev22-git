@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 16:02:54
+/* Smarty version 4.0.0, created on 2022-11-09 14:31:55
   from '/var/www/html/front/template/default/_component/cms_advance_detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636a1b3ea3ef47_05963514',
+  'unifunc' => 'content_636b576be75936_98879765',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cccb0f8b45610adc11bec11481460902afd71b8e' => 
     array (
       0 => '/var/www/html/front/template/default/_component/cms_advance_detail.tpl',
-      1 => 1667897506,
+      1 => 1667979114,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636a1b3ea3ef47_05963514 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636b576be75936_98879765 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
@@ -72,7 +72,8 @@ $_smarty_tpl->tpl_vars['valuegetMenuDetail']->do_else = false;
           <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-          <div class="item">
+          <?php if ($_smarty_tpl->tpl_vars['menuActive']->value == "policy") {?>
+            <div class="item">
               <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['menuActive']->value;?>
 /complaint-system"><?php echo $_smarty_tpl->tpl_vars['lang']->value["policy"]["complaint"];?>
@@ -84,6 +85,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 /request"><?php echo $_smarty_tpl->tpl_vars['lang']->value["policy"]["request"];?>
 </a>
             </div>
+          <?php }?>
         </div>
       </div>
     <?php }?>

@@ -25,6 +25,7 @@ $lang['menu']['search'] = "ค้นหา";
 $lang['menu']['calendar'] = "ปฎิทินกิจกรรม";
 $lang['menu']['photo-gallary'] = "แสดงรูปภาพ";
 $lang['menu']['vdo-gallary'] = "แสดงวีดีโอ";
+$lang['menu']['training'] = "งานฝึกอบรม";
 
 //career
 $lang['career']['select'] = "ตำแหน่ง | เลือก";
@@ -292,6 +293,9 @@ $lang['service']['menu1'] = "ตรวจสอบอัญมณี";
 $lang['service']['menu2'] = "ตรวจสอบโลหะมีค่า";
 $lang['service']['menu3'] = "ศูนย์ให้คำปรึกษา";
 $lang['service']['menu4'] = "เครื่องมือ";
+
+//training work
+$lang['training']['detail'] = "รายละเอียดหลักสูตร";
 
 $lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
 $lang['system']['close'] = "ปิด";

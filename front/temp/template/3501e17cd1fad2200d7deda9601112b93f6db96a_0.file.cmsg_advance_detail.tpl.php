@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 17:13:40
-  from '/var/www/html/front/template/default/_component/career-detail.tpl' */
+/* Smarty version 4.0.0, created on 2022-11-09 11:17:03
+  from '/var/www/html/front/template/default/_component/cmsg_advance_detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636a2bd49306f8_92976525',
+  'unifunc' => 'content_636b29bfb6b559_79147298',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '1d7788481d09a1c5b5a5b3bf175019206f0be1a3' => 
+    '3501e17cd1fad2200d7deda9601112b93f6db96a' => 
     array (
-      0 => '/var/www/html/front/template/default/_component/career-detail.tpl',
-      1 => 1665468406,
+      0 => '/var/www/html/front/template/default/_component/cmsg_advance_detail.tpl',
+      1 => 1667967411,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636a2bd49306f8_92976525 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636b29bfb6b559_79147298 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
   <div class="default-header">
     <div class="top-graphic mb-4">
       <figure class="cover">
-        <img class="figure-img img-fluid"
-          src="<?php echo $_smarty_tpl->tpl_vars['template']->value;
+        <img class="figure-img img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;
 echo $_smarty_tpl->tpl_vars['settingModulus']->value['tgp'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['subject'];?>
 ">
@@ -50,7 +49,6 @@ echo $_smarty_tpl->tpl_vars['settingModulus']->value['tgp'];?>
           </ol>
         </div>
       </div>
-    </div>
   </div>
   <div class="default-page about">
     <?php if (count($_smarty_tpl->tpl_vars['getMenuDetail']->value) > 0) {?>
@@ -77,127 +75,71 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
       </div>
     <?php }?>
-
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="h-title -mc"><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['source'];?>
-</div>
-        </div>
-      </div>
-      <div class="default-bar">
-        <div class="row align-items-center">
-          <div class="col-md-auto">
-            <div class="whead">
-              <div class="h-title"><?php echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['subject'];?>
-</div>
+    <div class="border-nav-slider"></div>
+    <?php if (count($_smarty_tpl->tpl_vars['arrMenu']->value) > 0 && $_smarty_tpl->tpl_vars['showslick']->value) {?>
+      <div class="container mt-5">
+        <div class="row aling-items-center gutters-10">
+          <h2 class="text-primary mb-4"><?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['breadcrumb'];?>
+</h2>
+          <?php if ($_smarty_tpl->tpl_vars['settingModulus']->value['rssfeed']) {?>
+            <div class="col-auto">
+              <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/rss/<?php echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['masterkey'];?>
+GIT<?php echo $_smarty_tpl->tpl_vars['settingModulus']->value['group'];?>
+.xml" target="_blank" class="rss">
+                  <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-rss.png" alt="icon rss">
+              </a>
             </div>
-          </div>
-          <div class="col-md">
-            <div class="social-block">
-              <div class="title"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['share'];?>
- :</div>
-              <ul class="item-list">
-                <li>
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $_smarty_tpl->tpl_vars['fullurl']->value;?>
-" target="_blank" class="link">
-                    <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/icon-social-facebook.svg" alt=""
-                      style=" width: auto; ">
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/intent/tweet?url=<?php echo $_smarty_tpl->tpl_vars['fullurl']->value;?>
-" target="_blank" class="link">
-                    <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/icon-social-twitter.svg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:?subject=<?php echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['subject'];?>
-&amp;body=Check out this site : <?php echo $_smarty_tpl->tpl_vars['fullurl']->value;?>
-"
-                  title="<?php echo $_smarty_tpl->tpl_vars['infoSetting']->value->fields['subject'];?>
-" class="link">
-                    <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/icon-social-gmail.svg" alt="">
-                  </a>
-                </li>
-                <li class="-bsc"></li>
-                <li>
-                  <a href="javascript:window.print()" class="link">
-                    <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/icon-print.svg" alt="">
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <?php }?>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="whead-addon -bsc">
-              <div class="detail-info">
-                <ul class="item-list">
-                  <li><?php ob_start();
-echo $_smarty_tpl->tpl_vars['langon']->value;
-$_prefixVariable1 = ob_get_clean();
-echo DateThai($_smarty_tpl->tpl_vars['callCMS']->value->fields['credate'],'23',$_prefixVariable1,'shot3');?>
-</li>
-                  <li>
-                    <span class="feather icon-eye mr-2"></span>
-                    <?php echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['view'];?>
- <?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['view'];?>
-
-                  </li>
-                </ul>
+        <div class="default-tab-slider default-slick" data-slick='<?php echo $_smarty_tpl->tpl_vars['initialSlide2']->value;?>
+'>
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arrMenu']->value, 'valuearrMenu', false, 'keyarrMenu');
+$_smarty_tpl->tpl_vars['valuearrMenu']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keyarrMenu']->value => $_smarty_tpl->tpl_vars['valuearrMenu']->value) {
+$_smarty_tpl->tpl_vars['valuearrMenu']->do_else = false;
+?>
+            <div class="item">
+              <div class="tab-block <?php if ($_smarty_tpl->tpl_vars['menuidLv2']->value == $_smarty_tpl->tpl_vars['valuearrMenu']->value['id']) {?>active<?php }?>">
+                <a class="text-limit" href="<?php echo str_replace("//","/",((string)$_smarty_tpl->tpl_vars['ul']->value)."/".((string)$_smarty_tpl->tpl_vars['menuActive']->value)."/".((string)$_smarty_tpl->tpl_vars['valuearrMenu']->value['menuid'])."/".((string)$_smarty_tpl->tpl_vars['valuearrMenu']->value['id']));?>
+"><?php echo $_smarty_tpl->tpl_vars['valuearrMenu']->value['subject'];?>
+</a>
               </div>
             </div>
-          </div>
-          <div class="col-12">
-            <div class="whead-addon">
-              <div class="detail-info">
-                <ul class="item-list -c">
-                  <li><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['quantity'];?>
- : <?php echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['quantity'];?>
- <?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['position'];?>
-</li>
-                  <li class="-bsc"></li>
-                  <li><?php echo $_smarty_tpl->tpl_vars['lang']->value['career']['location'];?>
- : <?php echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['address'];?>
-</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
       </div>
-    </div>
+    <?php }?>
 
     <div class="container">
-      <div class="editor-content">
-        <?php if ($_smarty_tpl->tpl_vars['callCMS']->value->fields['htmlfilename'] != '') {?>
-            <!-- CK Editor -->
-            <?php echo callHtml(fileinclude($_smarty_tpl->tpl_vars['callCMS']->value->fields['htmlfilename'],"html",$_smarty_tpl->tpl_vars['callCMS']->value->fields['masterkey']));?>
+      <?php if ($_smarty_tpl->tpl_vars['callCMS']->value->fields['htmlfilename'] != '') {?>
+        <div class="editor-content">
+          <!-- CK Editor -->
+          <?php echo callHtml(fileinclude($_smarty_tpl->tpl_vars['callCMS']->value->fields['htmlfilename'],"html",$_smarty_tpl->tpl_vars['callCMS']->value->fields['masterkey']));?>
 
-            <!-- CK Editor -->
-        <?php }?>
-      </div>
-      <div class="border-nav-slider pt-5"></div>
-      <?php if ($_smarty_tpl->tpl_vars['callCMS']->value->fields['url'] != '' && $_smarty_tpl->tpl_vars['callCMS']->value->fields['url'] != '#') {?>
-        <?php $_smarty_tpl->_assignInScope('myUrlArray', explode("v=",$_smarty_tpl->tpl_vars['callCMS']->value->fields['url']));?>
-        <?php $_smarty_tpl->_assignInScope('myUrlCut', $_smarty_tpl->tpl_vars['myUrlArray']->value[1]);?>
-        <?php $_smarty_tpl->_assignInScope('myUrlCutArray', explode("&",$_smarty_tpl->tpl_vars['myUrlCut']->value));?>
-        <?php $_smarty_tpl->_assignInScope('myUrlCutAnd', $_smarty_tpl->tpl_vars['myUrlCutArray']->value[0]);?>
-        <div class="youtube-block pt-4">
-          <div class="iframe-container">
-            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/<?php echo $_smarty_tpl->tpl_vars['myUrlCutAnd']->value;?>
-" title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
+          <!-- CK Editor -->
         </div>
       <?php }?>
+      <div class="border-nav-slider pt-5"></div>
+      <?php if ($_smarty_tpl->tpl_vars['callCMS']->value->fields['url'] != '' && $_smarty_tpl->tpl_vars['callCMS']->value->fields['url'] != '#') {?>
+      <?php $_smarty_tpl->_assignInScope('myUrlArray', explode("v=",$_smarty_tpl->tpl_vars['callCMS']->value->fields['url']));?>
+      <?php $_smarty_tpl->_assignInScope('myUrlCut', $_smarty_tpl->tpl_vars['myUrlArray']->value[1]);?>
+      <?php $_smarty_tpl->_assignInScope('myUrlCutArray', explode("&",$_smarty_tpl->tpl_vars['myUrlCut']->value));?>
+      <?php $_smarty_tpl->_assignInScope('myUrlCutAnd', $_smarty_tpl->tpl_vars['myUrlCutArray']->value[0]);?>
+      <div class="youtube-block pt-4">
+        <div class="iframe-container">
+          <iframe class="responsive-iframe" src="https://www.youtube.com/embed/<?php echo $_smarty_tpl->tpl_vars['myUrlCutAnd']->value;?>
+" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <?php }?>
+
       <?php if ($_smarty_tpl->tpl_vars['Call_File']->value->_numOfRows >= 1) {?>
         <div class="row mt-5">
           <div class="col-12">
@@ -212,19 +154,19 @@ $_smarty_tpl->tpl_vars['valueCall_File']->do_else = false;
 ?>
                 <?php ob_start();
 echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['masterkey'];
-$_prefixVariable2 = ob_get_clean();
-$_smarty_tpl->_assignInScope('fileinfo', get_Icon(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable2)));?>
+$_prefixVariable1 = ob_get_clean();
+$_smarty_tpl->_assignInScope('fileinfo', get_Icon(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable1)));?>
                 <div class="item">
                   <div class="attachment-block">
                     <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /download/<?php ob_start();
 echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['masterkey'];
-$_prefixVariable3 = ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable3,'download');?>
+$_prefixVariable2 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable2,'download');?>
 &n=<?php echo $_smarty_tpl->tpl_vars['valueCall_File']->value['name'];?>
-&t=<?php echo encodeStr('md_jof');?>
+&t=<?php echo encodeStr('md_cmf');?>
 " class="link" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['attachment'];?>
-" class="link" title="เอกสารแนบ">
+">
                       <div class="row no-gutters">
                         <div class="col-auto">
                           <!-- <img class="icon" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
@@ -252,8 +194,8 @@ echo fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'fi
                           <div class="subtitle typo-x"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['size'];?>
  : <?php ob_start();
 echo $_smarty_tpl->tpl_vars['callCMS']->value->fields['masterkey'];
-$_prefixVariable4 = ob_get_clean();
-echo get_IconSize(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable4));?>
+$_prefixVariable3 = ob_get_clean();
+echo get_IconSize(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['filename'],'file',$_prefixVariable3));?>
  | <?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['type'];?>
  : <?php echo $_smarty_tpl->tpl_vars['fileinfo']->value['type'];?>
 </div>
@@ -267,6 +209,28 @@ echo get_IconSize(fileinclude($_smarty_tpl->tpl_vars['valueCall_File']->value['f
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
           </div>
+        </div>
+      <?php }?>
+
+      <?php if ($_smarty_tpl->tpl_vars['call_hashtag']->value->_numOfRows >= 1) {?>
+        <div class="tag-list">
+            <ul class="item-list">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['call_hashtag']->value, 'valuecall_hashtag', false, 'keycall_hashtag');
+$_smarty_tpl->tpl_vars['valuecall_hashtag']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keycall_hashtag']->value => $_smarty_tpl->tpl_vars['valuecall_hashtag']->value) {
+$_smarty_tpl->tpl_vars['valuecall_hashtag']->do_else = false;
+?>
+                  <li>
+                      <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/search/hashtag/<?php echo $_smarty_tpl->tpl_vars['valuecall_hashtag']->value['id'];?>
+" class="detail-hashtag"><?php echo $_smarty_tpl->tpl_vars['valuecall_hashtag']->value['subject'];?>
+</a>
+                  </li>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </ul>
         </div>
       <?php }?>
 

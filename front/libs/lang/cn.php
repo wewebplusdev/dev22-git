@@ -21,8 +21,12 @@ $lang['menu']['career'] = "职业";
 $lang['menu']['contact'] = "联系我们";
 $lang['menu']['404'] = "网页未找到";
 $lang['menu']['sitemap'] = "网站地图";
-$lang['menu']['search'] = "Search";
-$lang['menu']['calendar'] = "Calendar";
+$lang['menu']['search'] = "搜索";
+$lang['menu']['calendar'] = "日曆";
+$lang['menu']['photo-gallary'] = "照片庫";
+$lang['menu']['vdo-gallary'] = "視頻庫";
+$lang['menu']['training'] = "培訓工作";
+
 //career
 $lang['career']['select'] = "位置 | 选择";
 $lang['career']['search'] = '工作 | 搜索';
@@ -288,6 +292,8 @@ $lang['service']['menu2'] = "貴金屬支票";
 $lang['service']['menu3'] = "輔導中心";
 $lang['service']['menu4'] = "工具";
 
+//training work
+$lang['training']['detail'] = "課程詳情";
 
 $lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
 $lang['system']['close'] = "关";
