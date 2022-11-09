@@ -2,8 +2,8 @@
 $lang['seo']['title'] = "The Gem and Jewelry Institute of Thailand (Public Organization)";
 // home page
 $lang['home']['loan'] = "Apply for loan";
-$lang['home']['contact'] = "联系我们"; 
-$lang['home']['map'] = "地图"; 
+$lang['home']['contact'] = "联系我们";
+$lang['home']['map'] = "地图";
 $lang['home']['googlemap'] = "Google地图";
 $lang['home']['follow'] = "跟着我们";
 $lang['home']['changedisplay'] = "更改显示屏";
@@ -21,7 +21,8 @@ $lang['menu']['career'] = "职业";
 $lang['menu']['contact'] = "联系我们";
 $lang['menu']['404'] = "网页未找到";
 $lang['menu']['sitemap'] = "网站地图";
-
+$lang['menu']['search'] = "Search";
+$lang['menu']['calendar'] = "Calendar";
 //career
 $lang['career']['select'] = "位置 | 选择";
 $lang['career']['search'] = '工作 | 搜索';
@@ -371,4 +372,6 @@ $lang['pdpa']['accept']="Accept";
 $lang['pdpa']['more_deatils']="More Details";
 $lang['pdpa']['decline']="Decline";
 
-
+$lang['search']['subject'] = "Search";
+$lang['search']['result'] = 'Result "<span>{1}</span>" of {2} found(s)';
+$lang['search']['more'] = "Detail";
