@@ -186,7 +186,9 @@ $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. 
 		$langMod["inp:notepic"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg, .png และ .gif เท่านั้น, ขนาดของรูปภาพไม่เกิน 2 Mb และรูปภาพที่ให้ในการอัพโหลดควรมีสัดส่วนที่ ".$sizeWidthPic."x".$sizeHeightPic." พิกเซล";
 		$langMod["inp:noteicon"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg, .png และ .gif เท่านั้น, ขนาดของรูปภาพไม่เกิน 2 Mb และรูปภาพที่ให้ในการอัพโหลดควรมีสัดส่วนที่ ".$sizeWidthIcon."x".$sizeHeightIcon." พิกเซล";
 		$langMod["inp:notealbum"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg, .png และ .gif เท่านั้น, ขนาดของรูปภาพไม่เกิน 2 Mb และรูปภาพที่ให้ในการอัพโหลดควรมีสัดส่วนที่ ".$sizeWidthAlbum."x".$sizeHeightAlbum." พิกเซล";
-
+		
+		$langMod["tit:selectsgn"] = "ชื่อกลุ่มย่อย ". $langMod["meu:group"];
+		$langMod["tit:selectsg"] = "เลือกกลุ่มย่อย ". $langMod["meu:group"];
 		$langMod["tit:subject"] ="ชื่อ".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["tit:subjectg"] ="ชื่อ".$langMod["meu:group"];
 		$langMod["tit:subjectsg"] = "ชื่อ " .$langMod["meu:subgroup"];
