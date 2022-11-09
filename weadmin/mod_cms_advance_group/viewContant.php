@@ -220,7 +220,7 @@ logs_access('3', 'View');
                         <div class="formDivView"><?php echo $valTitle ?></div>
                     </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:eregis"] ?>:<span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="formDivView"><?php echo $valUrleregis ?></div>
@@ -231,7 +231,7 @@ logs_access('3', 'View');
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="formDivView"><?php echo $valUrlFoemD ?></div>
                     </td>
-                </tr>
+                </tr> -->
             </table>
             <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">

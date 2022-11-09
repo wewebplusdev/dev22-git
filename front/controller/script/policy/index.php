@@ -27,7 +27,7 @@ $req_params['order'] = $_REQUEST['order'];
 $smarty->assign("req_params", $req_params);
 
 
-switch ($MenuID) {
+switch ($url->segment[1]) {
     case 'complaint-system':
         $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render=' . $sitekey . '"></script>';
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/complaint-system.php';

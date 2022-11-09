@@ -27,12 +27,14 @@
               <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" {if $MenuID eq $valuegetMenuDetail.masterkey}class="active"{/if}>{$arrName[0]}</a>
             </div>
           {/foreach}
-          <div class="item">
+          {if $menuActive == "policy"}
+            <div class="item">
               <a href="{$ul}/{$menuActive}/complaint-system">{$lang["policy"]["complaint"]}</a>
             </div>
             <div class="item">
               <a href="{$ul}/{$menuActive}/request">{$lang["policy"]["request"]}</a>
             </div>
+          {/if}
         </div>
       </div>
     {/if}

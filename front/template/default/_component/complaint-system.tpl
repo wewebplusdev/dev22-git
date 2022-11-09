@@ -21,14 +21,12 @@
         <div class="container">
             <div class="complaint-system-form">
                 <div class="title">{$lang["policy"]["complaint"]}</div>
-                <div class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                    has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                    galley of type and</div>
+                <div class="desc"></div>
                 <form data-toggle="validator" name="complainForm" id="complainForm" role="form" class="form-default"
                     method="post">
 
                     <div class="form-group has-feedback">
-                        <label class="control-label" for="complaintSystemTopic">{$lang['contact']['group']}</label>
+                        <label class="control-label" for="complaintSystemTopic">{$lang['complaint']['group']}</label>
                         <div class="select-wrapper">
                             <select class="select-control select-year" name="inputGroup" id="inputGroup"
                                 style="width: 100%;">

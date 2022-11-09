@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 16:32:18
+/* Smarty version 4.0.0, created on 2022-11-09 11:12:55
   from '/var/www/html/front/template/default/inc/inc-footer-theme-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636a2222f31811_23321661',
+  'unifunc' => 'content_636b28c75eac35_15323162',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '601626cef9b7957a21d276ea7406f351d600cc40' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-footer-theme-3.tpl',
-      1 => 1667462893,
+      1 => 1667967173,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636a2222f31811_23321661 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636b28c75eac35_15323162 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="site-footer">
     <div class="footer-top">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="brand">
-                        <a href="link" title="Gem and Jewelry Institute of Thailand">
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/home" title="Gem and Jewelry Institute of Thailand">
                             <img src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/static/git-logo.png" alt="Gem and Jewelry Institute of Thailand Logo">
                         </a>

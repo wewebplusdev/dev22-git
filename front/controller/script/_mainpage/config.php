@@ -74,14 +74,21 @@ $config['setting']['main']['masterkey'] = "setting";
 $config['lcf_s']['main']['masterkey'] = "lcf_s";
 $config['video']['vdo']['masterkey'] = "vdo";
 $config['photo']['ptg']['masterkey'] = "ptg";
+$config['cou_trw']['main']['masterkey'] = "trw_cou";
+$config['policy']['coms']['masterkey'] = 'coms';
+$config['policy']['req']['masterkey'] = 'req';
+$config['cl']['masterkey'] = "cl";
 
 $config['req']['main']['masterkey'] = "req";
+$config['trw_his']['main']['masterkey'] = "trw_his";
+$config['trw_con']['main']['masterkey'] = "trw_con";
+$config['trw_web']['main']['masterkey'] = "trw_web";
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';
 $config['policy']['db'] = 'md_ab';
 $config['policy_file']['db'] = 'md_abf';
 $config['policy']['masterkey'] = 'pl';
-$config['policy']['complaint']['masterkey'] = 'coms';
+
 $config['pdpa']['masterkey'] = 'accept';
 
 //setting menu

@@ -384,7 +384,7 @@ class settingWebsite
         return $result->fields['masterkey'];
     }
 
-    function getMenuDetail($id = null, $masterkey = null, $notlike = null)
+    function getMenuDetail($id = null, $masterkey = null, $notlike = null, $notlikearr = array(), $inarray = array())
     {
         global $config, $db, $url;
         $lang = $url->pagelang[3];
@@ -409,6 +409,14 @@ class settingWebsite
 
         if (!empty($notlike)) {
             $sql .= " AND " . $config['sy_mnu']['db']['main'] . "_id != '".$notlike."' ";
+        }
+
+        if (!empty($notlikearr)) {
+            $sql .= " AND " . $config['sy_mnu']['db']['main'] . "_id NOT IN (" . implode(",", array_values($notlikearr)) . ") ";
+        }
+
+        if (!empty($inarray)) {
+            $sql .= " AND " . $config['sy_mnu']['db']['main'] . "_masterkey IN (" . implode(",", array_values($inarray)) . ") ";
         }
 
         $sql .= " ORDER BY " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_order ASC ";

@@ -25,6 +25,7 @@ $lang['menu']['search'] = "ค้นหา";
 $lang['menu']['calendar'] = "ปฎิทินกิจกรรม";
 $lang['menu']['photo-gallary'] = "แสดงรูปภาพ";
 $lang['menu']['vdo-gallary'] = "แสดงวีดีโอ";
+$lang['menu']['training'] = "งานฝึกอบรม";
 
 //career
 $lang['career']['select'] = "ตำแหน่ง | เลือก";
@@ -293,6 +294,9 @@ $lang['service']['menu2'] = "ตรวจสอบโลหะมีค่า";
 $lang['service']['menu3'] = "ศูนย์ให้คำปรึกษา";
 $lang['service']['menu4'] = "เครื่องมือ";
 
+//training work
+$lang['training']['detail'] = "รายละเอียดหลักสูตร";
+
 $lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
 $lang['system']['close'] = "ปิด";
 $lang['system']['ducdownload'] = "เอกสารดาวน์โหลด";
@@ -363,6 +367,7 @@ $lang["search:listtotal"] = "จำนวนทั้งหมด";
 
 $lang['member']['logout'] = "ออกจากระบบ";
 $lang["policy"]["title"] = "นโยบาย";
+$lang['complaint']['group']="เรื่องร้องเรียน";
 $lang["policy"]["complaint"] = "ระบบรับเรื่องร้องเรียน";
 $lang["policy"]["request"] = "แบบคำขอใช้สิทธิข้อมูลส่วนบุคคล";
 $lang["policy"]["fname"] = "ชื่อ";
@@ -410,6 +415,22 @@ $lang['pdpa']['accept']="ยอมรับ";
 $lang['pdpa']['more_deatils']="รายละเอียดเพิ่มเติม";
 $lang['pdpa']['decline']="ปฏิเสธ";
 
+// search
 $lang['search']['subject'] = "คำค้นหา";
 $lang['search']['result'] = 'ผลการค้นหา "<span>{1}</span>" ทั้งหมด {2} รายการ';
 $lang['search']['more'] = "รายละเอียด";
+
+// calendar
+$lang["calendar"]["thismonth"] = "เดือนนี้";
+$lang["calendar"]["thisday"] = "วันนี้";
+$lang["calendar"]["note1"] ="<strong>หมายเหตุ</strong> : คลิ๊กที่วันที่เพื่อแสดงผลกิจกรรมต่างๆ ที่มีในวันที่นั้นๆ";
+$lang["calendar"]["note2"] ="วันที่ปัจจุบัน (กรณีมีกิจกรรมวันที่ในส่วนนี้สามารถคลิ๊กได้)";
+$lang["calendar"]["note3"] ="วันที่มีกิจกรรมต่างๆ";
+$lang["calendar"]["note4"] ="วันที่ปกติ (ไม่มีกิจกรรม)";
+$lang["calendar"]["nodata"] ="ไม่มีกิจกรรม";
+$lang["calendar"]["at"] = "น.";
+$lang["calendar"]["alldate"] = "ทั้งวัน";
+$lang["calendar"]["eventday"] = "วันที่มีกิจกรรม";
+$lang["calendar"]["datenow"] = "วันปัจจุบัน";
+$lang["calendar"]["activity"] = "กิจกรรมที่จัดในวันที่";
+$lang["calendar"]["activityM"] = "กิจกรรมที่จัดในเดือน";

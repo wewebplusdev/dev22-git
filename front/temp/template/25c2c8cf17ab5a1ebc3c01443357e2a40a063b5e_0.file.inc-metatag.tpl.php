@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 16:32:18
+/* Smarty version 4.0.0, created on 2022-11-09 09:29:21
   from '/var/www/html/front/template/default/inc/inc-metatag.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636a222272db15_79294050',
+  'unifunc' => 'content_636b1081279978_58107254',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636a222272db15_79294050 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636b1081279978_58107254 (Smarty_Internal_Template $_smarty_tpl) {
 ?><base href="<?php echo $_smarty_tpl->tpl_vars['base']->value;?>
 ">
 <title><?php echo (($tmp = $_smarty_tpl->tpl_vars['seo']->value['title'] ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['settingWeb']->value['metatitle'] ?? null : $tmp);?>

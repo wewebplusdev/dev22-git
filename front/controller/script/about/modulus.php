@@ -31,7 +31,7 @@ class aboutPage
 
     FROM
     " . $config['cms']['db']['main'] . "
-    INNER JOIN 
+    INNER JOIN
     " . $config['sy_mnu']['db']['main'] . "
     ON
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_masterkey
@@ -94,7 +94,7 @@ class aboutPage
 
     FROM
     " . $config['cms']['db']['main'] . "
-    INNER JOIN 
+    INNER JOIN
     " . $config['sy_mnu']['db']['main'] . "
     ON
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_masterkey
@@ -152,17 +152,18 @@ class aboutPage
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_url as url,
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_types as types,
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
-    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_isstatic as isstatic
     FROM
     " . $config['cmg']['db']['main'] . "
-    INNER JOIN 
+    INNER JOIN
     " . $config['sy_mnu']['db']['main'] . "
     ON
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey
     WHERE
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_status != 'Disable' AND
-    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject" . $lang . " != '' 
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject" . $lang . " != ''
     ";
 
     if (!empty($id)) {
@@ -194,7 +195,7 @@ class aboutPage
 
     FROM
     " . $config['cms']['db']['main'] . "
-    INNER JOIN 
+    INNER JOIN
     " . $config['cmg']['db']['main'] . "
     ON
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id = " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid
@@ -239,7 +240,7 @@ class aboutPage
     " . $config['cmsg']['db']['main'] . "." . $config['cmsg']['db']['main'] . "_lastdate as lastdate
     FROM
     " . $config['cmsg']['db']['main'] . "
-    INNER JOIN 
+    INNER JOIN
     " . $config['cms']['db']['main'] . "
     ON
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sid = " . $config['cmsg']['db']['main'] . "." . $config['cmsg']['db']['main'] . "_id
@@ -296,14 +297,14 @@ class aboutPage
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
     FROM
     " . $config['memsg']['db']['main'] . "
-    INNER JOIN 
+    INNER JOIN
     " . $config['sy_mnu']['db']['main'] . "
     ON
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_masterkey
     WHERE
     " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
     " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_status != 'Disable' AND
-    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_subject" . $lang . " != '' 
+    " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_subject" . $lang . " != ''
     ";
 
     if (!empty($id)) {
@@ -334,7 +335,7 @@ class aboutPage
     WHERE
     " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
     " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_status != 'Disable' AND
-    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_subject" . $lang . " != '' 
+    " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_subject" . $lang . " != ''
     ";
 
     if (!empty($id)) {
@@ -359,12 +360,12 @@ class aboutPage
     " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid as gid,
     " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_pid as pid
     FROM
-    " . $config['memp']['db']['main'] . " 
+    " . $config['memp']['db']['main'] . "
     INNER JOIN
-    " . $config['memg']['db']['main'] . " 
+    " . $config['memg']['db']['main'] . "
     ON
     " . $config['memp']['db']['main'] . " . " . $config['memp']['db']['main'] . "_gid = " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_id
-    WHERE 1=1 
+    WHERE 1=1
     AND " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_masterkey = '".$masterkey."'
     AND " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_subject".$lang." != ''
     ";
@@ -381,7 +382,7 @@ class aboutPage
       $sql .= " AND " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_mid = '" . $mid . "' ";
     }
 
-    $sql .= " GROUP BY " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid 
+    $sql .= " GROUP BY " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid
     ORDER  BY " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order DESC ";
 
     // print_pre($sql);
@@ -419,15 +420,15 @@ class aboutPage
 
     FROM
     " . $config['mem']['db']['main'] . "
-    INNER JOIN 
+    INNER JOIN
     " . $config['memp']['db']['main'] . "
     ON
     " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_mid = " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id
-    INNER JOIN 
+    INNER JOIN
     " . $config['memg']['db']['main'] . "
     ON
     " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_id = " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid
-    INNER JOIN 
+    INNER JOIN
     " . $config['sy_mnu']['db']['main'] . "
     ON
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_masterkey
@@ -452,7 +453,7 @@ class aboutPage
     }
 
     $sql .= " GROUP BY " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id
-    ," . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id 
+    ," . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id
     ORDER  BY " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_order ," . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order DESC ";
 
     // print_pre($sql);
@@ -479,7 +480,7 @@ class aboutPage
       FROM
       " . $config['joss']['db']['main'] . "
       WHERE
-      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_masterkey = '" . $masterkey . "' 
+      " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_masterkey = '" . $masterkey . "'
       AND " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_status != 'Disable'
       ";
 
@@ -490,7 +491,7 @@ class aboutPage
     return $result;
   }
 
-  
+
   function callListCareer($masterkey = null, $page = 1, $limit = 10, $order = "DESC", $keywords = null, $id = null)
   {
     global $config, $db, $url;
@@ -516,16 +517,16 @@ class aboutPage
 
       FROM
       " . $config['jos']['db']['main'] . "
-      INNER JOIN 
+      INNER JOIN
       " . $config['sy_mnu']['db']['main'] . "
       ON
       " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey
       WHERE
-      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey = '" . $masterkey . "' 
-      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_status != 'Disable' 
-      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_lang" . $langOption . " = '1' 
-      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " != '' 
-      AND 
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey = '" . $masterkey . "'
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_status != 'Disable'
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_lang" . $langOption . " = '1'
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " != ''
+      AND
       ((" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
       " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
       (" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
@@ -537,7 +538,7 @@ class aboutPage
       ";
 
     if (!empty($keywords)) {
-      $sql .= " AND 
+      $sql .= " AND
       (
       " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject LIKE '%" . $keywords . "%' OR
       " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_title LIKE '%" . $keywords . "%'
@@ -556,7 +557,7 @@ class aboutPage
     return $result;
   }
 
-  
+
   function callCareerDetail($masterkey = null, $id = null)
   {
     global $config, $db, $url;
@@ -585,16 +586,16 @@ class aboutPage
 
       FROM
       " . $config['jos']['db']['main'] . "
-      INNER JOIN 
+      INNER JOIN
       " . $config['sy_mnu']['db']['main'] . "
       ON
       " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey
       WHERE
-      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey = '" . $masterkey . "' 
-      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_status != 'Disable' 
-      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_lang" . $langOption . " = '1' 
-      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " != '' 
-      AND 
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey = '" . $masterkey . "'
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_status != 'Disable'
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_lang" . $langOption . " = '1'
+      AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " != ''
+      AND
       ((" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
       " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
       (" . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
@@ -680,7 +681,7 @@ class aboutPage
   ";
 
     $sql .= "
-  WHERE 
+  WHERE
   " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_amphure_id = $aid AND  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_nameen NOT LIKE '%*%'
   ";
 
