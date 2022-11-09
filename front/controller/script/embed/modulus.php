@@ -2,123 +2,58 @@
 class embedPage
 {
   
-  function callVideoInfo($masterkey, $id = null)
+  function callCMSInfo($id = 0)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
 
     $sql = "SELECT
-    " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_id as id,
-    " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_masterkey as masterkey,
-    " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_subject" . $lang . " as subject,
-    " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_title" . $lang . " as title,
-    " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_lastdate as lastdate,
-    " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
-    " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_credate as credate
-
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_id as id,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_masterkey as masterkey,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_pic" . $lang . " as pic,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lastdate as lastdate,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url as url,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid as gid,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view as view,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_filevdo as filevdo,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate as credate,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_metatitle" . $lang . " as metatitle,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_description" . $lang . " as description,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_keywords" . $lang . " as keywords
     FROM
-    " . $config['cmss']['db']['main'] . "
-    WHERE
-    " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
-    " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_status != 'Disable' 
-    ";
-
-    $sql .= " ORDER  BY " . $config['cmss']['db']['main'] . "." . $config['cmss']['db']['main'] . "_order DESC ";
-
-    // print_pre($sql);
+    " . $config['cms']['db']['main']."
+    WHERE 1 = 1 ";
+    if (!empty($id)) {
+      $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_id = '" . $id . "' ";
+    }
+    //print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
 
-  function callContactGroup($masterkey)
+  function callCMSAlbum($id = null)
   {
     global $config, $db, $url;
-    $lang = $url->pagelang[3];
+    $lang = $url->pagelang[4];
+    $langOption = $url->pagelang[2];
+    $langFull = strtolower($url->pagelang[4]);
 
     $sql = "SELECT
-    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_id as id,
-    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_masterkey as masterkey,
-    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_subject" . $lang . " as subject,
-    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_title" . $lang . " as title,
-    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_lastdate as lastdate,
-    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_credate as credate
-
+    " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_id as id,
+    " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_filename as filename,
+    " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_name as name
     FROM
-    " . $config['cug']['db']['main'] . "
-    WHERE
-    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
-    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_status != 'Disable' AND
-    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_subject" . $lang . " != '' 
-    ";
-
-    $sql .= " ORDER  BY " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_order DESC ";
-
-    // print_pre($sql);
-    $result = $db->execute($sql);
-    return $result;
-  }
-
-  function callmailcontact($masterkey, $id = null){
-    global $config, $db, $url;
-  
-    $sql = "SELECT
-    " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_id,
-    " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_gid,
-    " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_email
-  FROM
-    " . $config['cue']['db']['main'] . "
-  WHERE
-     " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_masterkey = '".$masterkey."'
-    ";
+    " . $config['cma']['db']['main'] . "
+    WHERE 1=1 ";
+      $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_language= '" . $lang . "' ";
     if (!empty($id)) {
-      $sql .= " AND " . $config['cue']['db']['main'] . "_gid = '".$id."'";
-    }
-    // print_pre($sql);
-    $result = $db->execute($sql);
-    return $result;
-  }
-
-  function callGroup($masterkey = null, $id = null, $table = null)
-  {
-    global $config, $db, $url;
-    $lang = $url->pagelang[3];
-    $langOption = $url->pagelang[5];
-
-    if(!empty($table)){
-      $sql = "SELECT 
-      " . $table . "_id as id,
-      " . $table . "_masterkey as masterkey,
-      " . $table . "_subject".$lang." as subject,
-      " . $table . "_title".$lang." as title
-      FROM " . $table . "
-      ";
-      $sql .= " WHERE 
-    " . $table . "_status != 'Disable' AND
-    " . $table . "_masterkey = '".$masterkey."'
-    ";
-    if (!empty($id)) {
-      $sql .= " AND " . $table . "_id = '".$id."'";
-    }
-    }else{
-      $sql = "SELECT 
-    " . $config['cug']['db']['main'] . "_id as id,
-    " . $config['cug']['db']['main'] . "_masterkey as masterkey,
-    " . $config['cug']['db']['main'] . "_subject".$lang." as subject,
-    " . $config['cug']['db']['main'] . "_title".$lang." as title
-    FROM " . $config['cug']['db']['main'] . "
-    ";
-    $sql .= " WHERE 
-  " . $config['cug']['db']['main'] . "_status != 'Disable' AND
-  " . $config['cug']['db']['main'] . "_masterkey = '".$masterkey."'
-  ";
-    if (!empty($id)) {
-      $sql .= " AND " . $config['cug']['db']['main'] . "_id = '".$id."'";
+      $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_contantid= '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_order DESC ";
-    }
-
-    // print_pre($sql);
+    $sql .= " ORDER  BY " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_id ASC ";
     $result = $db->execute($sql);
     return $result;
   }

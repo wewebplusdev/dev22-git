@@ -5,12 +5,12 @@ $listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script
 
 $embedPage = new embedPage;
 switch ($url->segment[1]) {
-    case 'video': //video
+    case 'video': //video gallery
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/video.php';
     break;
 
-    case 'gallery': //photo gallery
-        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/gallery.php';
+    case 'photo': //photo gallery
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/photo.php';
     break;
 
     default: //video

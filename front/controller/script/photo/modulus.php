@@ -67,7 +67,7 @@ class photoPage
   function callCMSAlbum($id = null)
   {
     global $config, $db, $url;
-    $lang = $url->pagelang[3];
+    $lang = $url->pagelang[4];
     $langOption = $url->pagelang[2];
     $langFull = strtolower($url->pagelang[4]);
 
@@ -78,10 +78,10 @@ class photoPage
     FROM
     " . $config['cma']['db']['main'] . "
     WHERE 1=1 ";
+    $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_language= '" . $lang . "' ";
     if (!empty($id)) {
       $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_contantid= '" . $id . "' ";
     }
-
     $sql .= " ORDER  BY " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_id ASC ";
     //print_pre($sql);
     $result = $db->execute($sql);
