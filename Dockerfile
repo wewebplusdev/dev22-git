@@ -5,6 +5,9 @@ RUN docker-php-ext-install mysqli
 # mod rewrite
 RUN a2enmod rewrite
 
+## Curl Libary install for Curl php
+RUN apt-get update -y && apt-get install -y  libcurl3-dev
+
 # GD Libary install for upload image
 RUN apt-get update -y && apt-get install -y  libpng-dev 
 RUN apt-get update -y && apt-get install -y  libjpeg62-turbo-dev

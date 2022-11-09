@@ -2369,3 +2369,44 @@ function callCheckUrl($contantid, $table){
     
     return $query;
 }
+
+function UpdateChat($urlsite){
+	$curl = curl_init();
+
+	curl_setopt_array($curl, array(
+		CURLOPT_URL => $urlsite.'api/update-chat-facebook',
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => '',
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 0,
+		CURLOPT_FOLLOWLOCATION => true,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'GET',
+		CURLOPT_SSL_VERIFYPEER => FALSE,
+	));
+
+	$response = curl_exec($curl);
+
+	curl_close($curl);
+	// echo $response;
+}
+
+function rechangeQuot_code($Data) {
+############################################
+        $valChangeQuot = sanitize($Data);
+        $valChangeQuot = htmlspecialchars(str_replace("&rsquo;", "'", str_replace('&quot;', '"', $valChangeQuot)));
+        //$valChangeQuot = str_replace('\r\n','<br/>',$valChangeQuot);
+        return $valChangeQuot;
+}
+function changeQuot_code($Data) {
+############################################
+        global $coreLanguageSQL;
+
+        $valTrim = trim($Data);
+        $valChangeQuot = $valTrim;
+        // $valChangeQuot = wewebEscape($coreLanguageSQL, $valTrim);
+        //$valChangeQuot=str_replace("'","&rsquo;",str_replace('"','&quot;',$valChangeQuot));
+        $valChangeQuot = str_replace("'", "&rsquo;", str_replace('"', '&quot;', $valChangeQuot));
+
+        return $valChangeQuot;
+}

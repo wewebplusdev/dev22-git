@@ -30,6 +30,9 @@
           <div class="item">
               <a href="{$ul}/{$menuActive}/complaint-system">{$lang["policy"]["complaint"]}</a>
             </div>
+            <div class="item">
+              <a href="{$ul}/{$menuActive}/request">{$lang["policy"]["request"]}</a>
+            </div>
         </div>
       </div>
     {/if}

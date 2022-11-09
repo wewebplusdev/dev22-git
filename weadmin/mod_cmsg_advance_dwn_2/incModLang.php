@@ -126,7 +126,7 @@ $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. 
 }else{
 
     	$langMod["viw:subjectgDe"] = "ข้อมูลชื่อ" . $langMod["meu:group"] . " เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
-		$langMod["meu:group"] = "กลุ่ม";
+		$langMod["meu:group"] = "กลุ่ม".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
 		$langMod["txt:titleadd"] = "สร้างข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
@@ -138,7 +138,7 @@ $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. 
 		$langMod["txt:titleeditg"] = "แก้ไขข้อมูล".$langMod["meu:group"];
 		$langMod["txt:titleviewg"] = "แสดงผลข้อมูล".$langMod["meu:group"];
 		$langMod["txt:sortpermisg"] = "จัดเรียงข้อมูล".$langMod["meu:group"];
-		$langMod["meu:subgroup"] = "Sub Group ".getNameMenu($_REQUEST["menukeyid"]);
+		$langMod["meu:subgroup"] = "กลุ่มย่อย ".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["txt:groupType"] = "ข้อมูลประเภทรายละเอียด";
 		$langMod["txt:groupTypeDe"] = "กรุณากรอกส่วนที่ใช้ในกำหนดรายละเอียดการแสดงผลข่าว เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์";
 
@@ -148,7 +148,7 @@ $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. 
 		$langMod["txt:sortpermissg"] = "จัดเรียงข้อมูล".$langMod["meu:subgroup"];
 	
 		$langMod["tit:groupType"] = "ประเภทรายละเอียด";
-
+		$langMod["meu:setPermis"] = "ตั้งค่า";
 		$langMod["txt:subject"] = "ข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["txt:subjectDe"] = "โปรดป้อนเลือกกลุ่ม, ชื่อและคำบรรยาย เพื่อใช้ในการแสดงผลเนื้อหาในหน้ารวมข้อมูลทั้งหมดของเมนูนี้บนเว็บไซต์ของคุณ";
 		$langMod["txt:title"] = "ข้อมูลรายละเอียด".getNameMenu($_REQUEST["menukeyid"]);
@@ -199,10 +199,10 @@ $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. 
 		$langMod["tit:uploadvdonote"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .flv, .wmv, .mp3, .wav, .wma, .avi และ .mpeg เท่านั้น";
 		$langMod["tit:noteg"] ="หมายเหตุ";
 		$langMod["tit:selectg"] ="เลือก".$langMod["meu:group"];
-		$langMod["tit:selectgn"] =$langMod["meu:group"];
+		$langMod["tit:selectgn"] ="". $langMod["meu:group"];
 		$langMod["txt:subjectg"] = "ข้อมูล".$langMod["meu:group"];
 		$langMod["txt:subjectgDe"] = "โปรดป้อนชื่อ".$langMod["meu:group"]." เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
-
+		$langMod["tit:subjectsg"] = "ชื่อ " .$langMod["meu:subgroup"];
 		$langMod["file:type"] ="ประเภท";
 		$langMod["file:size"] ="ขนาด";
 		$langMod["file:download"] ="ดาวน์โหลด";

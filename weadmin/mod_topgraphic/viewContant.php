@@ -240,9 +240,12 @@ logs_access('3', 'View');
             <div class="formDivView"><?php echo $valSubject ?></div>
           </td>
         </tr>
-
-
-
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <div class="formDivView"><?php echo $valTitle ?></div>
+          </td>
+        </tr>
         <tr>
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkvdo"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
@@ -256,12 +259,6 @@ logs_access('3', 'View');
           </td>
         </tr>
         <!-- <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valTitle ?></div>
-          </td>
-        </tr>
-        <tr>
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:desc"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
             <div class="formDivView"><?php echo $valDesc ?></div>

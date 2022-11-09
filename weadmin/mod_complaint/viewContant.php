@@ -27,16 +27,12 @@ $sql .= "
 " . $mod_tb_root . "_status, 
 " . $mod_tb_root . "_subject, 
 " . $mod_tb_root . "_message, 
-" . $mod_tb_root . "_fname  ,  
+" . $mod_tb_root . "_name  ,  
 " . $mod_tb_root . "_address  ,  
 " . $mod_tb_root . "_email  ,  
 " . $mod_tb_root . "_tel   ,  
 " . $mod_tb_root . "_ip,  
-" . $mod_tb_root . "_gid, 
-" . $mod_tb_root . "_lname ,
-" . $mod_tb_root . "_company ,
-" . $mod_tb_root . "_model ,
-" . $mod_tb_root . "_qty  ";
+" . $mod_tb_root . "_gid";
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
 
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
@@ -45,14 +41,14 @@ $valID = $Row[0];
 $valCredate = DateFormat($Row[1]);
 $valStatus = $Row[2];
 $valSubject = rechangeQuot($Row[3]);
-$valMessage = rechangeQuot($Row[4]);
-$valFName = rechangeQuot($Row[5]);
-$valAddress = rechangeQuot($Row[6]);
-$valEmail = rechangeQuot($Row[7]);
-$valTel = rechangeQuot($Row[8]);
-$valIp = rechangeQuot($Row[9]);
+$valMessage = decodeStr(rechangeQuot($Row[4]));
+$valFName = decodeStr(rechangeQuot($Row[5]));
+$valAddress = decodeStr(rechangeQuot($Row[6]));
+$valEmail = decodeStr(rechangeQuot($Row[7]));
+$valTel = decodeStr(rechangeQuot($Row[8]));
+$valIp = decodeStr(rechangeQuot($Row[9]));
 $valGid = $Row[10];
-$valLName = rechangeQuot($Row[11]);
+$valLName = decodeStr(rechangeQuot($Row[11]));
 $valCompany = rechangeQuot($Row[12]);
 $valModel = rechangeQuot($Row[13]);
 $valQty = rechangeQuot($Row[14]);
@@ -133,7 +129,7 @@ logs_access('3', 'View');
                                         <span class="formFontTileTxt"><?php echo  $langMod["txt:infoDe"] ?></span>    </td>
                                 </tr>
                                 <tr >
-                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:name"] ?>:<span class="fontContantAlert"></span></td>
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php $langMod["tit:fname"] ?>:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valFName ?></div></td>
                                 </tr>
                                 <!-- <tr >
@@ -177,12 +173,12 @@ logs_access('3', 'View');
                                     
                                     </div> </td>
                                 </tr>
-                                <tr >
+                                <!-- <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:subject"] ?>:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valSubject ?></div></td>
-                                </tr>
+                                </tr> -->
                                 <tr >
-                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" >Message:<span class="fontContantAlert"></span></td>
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:mgs"] ?>:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  nl2br($valMessage) ?></div></td>
                                 </tr>
 

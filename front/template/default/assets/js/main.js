@@ -265,6 +265,14 @@ $(document).ready(function() {
         ],
     });
 
+    $(".theme-1 .top-graphic .slider").slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+    });
+
     $(".theme-2 .top-graphic .slider").slick({
         infinite: false,
         slidesToShow: 1,
@@ -288,6 +296,7 @@ $(document).ready(function() {
             },
         }, ],
     });
+
     $('.git-news-block .slider').slick({
         infinite: false,
         slidesToShow: 3,
@@ -343,7 +352,65 @@ $(document).ready(function() {
         }, ]
     });
 
-    $(".git-book-block .slider").slick({
+    $(".theme-1 .git-book-block .slider").slick({
+        // autoplay: true,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        arrows: false,
+        dots: true,
+        responsive: [
+            {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+            },
+        },
+            {
+            breakpoint: 768,
+            settings: {
+                variableWidth: false,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+            },
+        },
+            {
+            breakpoint: 576,
+            settings: {
+                variableWidth: false,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
+        },
+    ]
+    });
+
+    $(".git-e-Learning-block .slider").slick({
+        // autoplay: true,
+        centerMode: true,
+        // centerPadding: '60px',
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        responsive: [
+            {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                centerMode: false,
+            },
+        }
+    ]
+    });
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        $('.slider.default-slider').slick('setPosition');
+    });
+
+    $(".theme-2 .git-book-block .slider").slick({
         // autoplay: true,
         infinite: true,
         slidesToShow: 4,

@@ -61,11 +61,11 @@ $date_print=DateFormat(date("Y-m-d"));
 			$valStatus=$rowExport[2];
 			$valSubject=rechangeQuot($rowExport[3]);
 			$valMessage=rechangeQuot($rowExport[4]);
-			$valCreby=rechangeQuot($rowExport[5]);
-			$valAddress=rechangeQuot($rowExport[6]);
-			$valEmail=rechangeQuot($rowExport[7]);
-			$valTel=rechangeQuot($rowExport[8]);
-			$valIp=rechangeQuot($rowExport[9]);
+			$valCreby=decodeStr(rechangeQuot($rowExport[5]));
+			$valAddress=decodeStr(rechangeQuot($rowExport[6]));
+			$valEmail=decodeStr(rechangeQuot($rowExport[7]));
+			$valTel=decodeStr(rechangeQuot($rowExport[8]));
+			$valIp=decodeStr(rechangeQuot($rowExport[9]));
 			$valGid=$rowExport[10];
 			
 			$sql_group = "SELECT ";
