@@ -6,7 +6,7 @@ foreach ($arrMenuFc as $keyarrMenuFc => $valuearrMenuFc) {
 }
 $smarty->assign("arrMenu", $arrMenu);
 
-switch ($PageAction) {
+switch ($PageAction_default) {
     case 'detail':
         $ContentID = GetContentID($url->segment[4]);
         $callCMS = $researchPage->callCMS($MenuID, $ContentID);

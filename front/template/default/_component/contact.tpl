@@ -43,7 +43,7 @@
               title="{$lang['contact']['misconduct-complaint']}" target="_blank">
               {$lang['contact']['misconduct-complaint']}
             </a>
-            <a href="https://www.git.or.th/complainSystem/General.aspx" class="btn btn-primary"
+            <a href="{$ul}/policy/complaint-system" class="btn btn-primary"
               title="{$lang['contact']['feedback-system']}" target="_blank">
               {$lang['contact']['feedback-system']}
             </a>
