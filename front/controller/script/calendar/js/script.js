@@ -1,9 +1,9 @@
 $(document).ready(function () {
    var pagenow = $('.site-container').data('page');
-
+   console.log(pagenow);
    switch (pagenow) {
       // initialize calendar
-      case 'home':
+      case 'index':
          GetCalendar();
          break;
 

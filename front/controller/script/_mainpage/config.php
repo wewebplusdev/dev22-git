@@ -77,6 +77,7 @@ $config['photo']['ptg']['masterkey'] = "ptg";
 $config['cou_trw']['main']['masterkey'] = "trw_cou";
 $config['policy']['coms']['masterkey'] = 'coms';
 $config['policy']['req']['masterkey'] = 'req';
+$config['cl']['masterkey'] = "cl";
 
 $config['req']['main']['masterkey'] = "req";
 $config['trw_his']['main']['masterkey'] = "trw_his";

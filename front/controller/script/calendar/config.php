@@ -81,8 +81,8 @@ $day_array = array(
 
 //#####  Small Calendar #######################
 //-----------  Day Name & Number ------
-$mod_calendar_config["cell-width"] = "20";
-$mod_calendar_config["cell-height"] = "106";
+$mod_calendar_config["cell-width"] = "60";
+$mod_calendar_config["cell-height"] = "60";
 $mod_calendar_config["calendar-width"] = "180";
 $mod_calendar_config["calendar-height"] = "55";
 

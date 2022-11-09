@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-09 08:59:35
+/* Smarty version 4.0.0, created on 2022-11-09 09:55:07
   from '/var/www/html/front/controller/script/calendar/template/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636b0987008862_51617762',
+  'unifunc' => 'content_636b168b4b06b8_50772437',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e122a6422fd420f51895f04c750ffb300b574bc' => 
     array (
       0 => '/var/www/html/front/controller/script/calendar/template/index.tpl',
-      1 => 1667959172,
+      1 => 1667962454,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636b0987008862_51617762 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636b168b4b06b8_50772437 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container sitekey" data-page="index" data-id="<?php echo $_smarty_tpl->tpl_vars['sitekey']->value;?>
 ">
 
@@ -56,11 +56,9 @@ echo $_smarty_tpl->tpl_vars['settingModulus']->value['tgp'];?>
                <div class="calendar-block">
                   <div id="calendar">
                      <form action="" method="get" name="myCalendarForm" id="myCalendarForm">
-                        <input name="inputLanguage" type="hidden" id="inputLanguage"
-                               value="<?php echo $_smarty_tpl->tpl_vars['langFull']->value;?>
+                        <input name="inputLanguage" type="hidden" id="inputLanguage" value="<?php echo $_smarty_tpl->tpl_vars['langFull']->value;?>
 ">
-                        <input name="inputFolderPath" type="hidden" id="inputFolderPath"
-                               value="<?php echo $_smarty_tpl->tpl_vars['langon']->value;?>
+                        <input name="inputFolderPath" type="hidden" id="inputFolderPath" value="<?php echo $_smarty_tpl->tpl_vars['langon']->value;?>
 ">
                      </form>
                   </div>

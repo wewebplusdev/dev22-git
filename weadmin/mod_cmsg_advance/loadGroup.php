@@ -181,7 +181,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                 </tr>
                 <?php
                 // SQL SELECT #########################
-                $sql = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_lastdate," . $mod_tb_root_group . "_status," . $mod_tb_root_group . "_subjecten," . $mod_tb_root_group . "_subjectcn," . $mod_tb_root_group . "_pic  FROM " . $mod_tb_root_group;
+                $sql = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_lastdate," . $mod_tb_root_group . "_status," . $mod_tb_root_group . "_subjecten," . $mod_tb_root_group . "_subjectcn," . $mod_tb_root_group . "_pic," . $mod_tb_root_group . "_isstatic AS isstatic  FROM " . $mod_tb_root_group;
                 $sql = $sql . "  WHERE " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
                 // print_pre($sql);
                 if ($inputSearch <> "") {
@@ -248,6 +248,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                         } else {
                             $valPic = "../img/btn/nopic.jpg";
                         }
+                        $isstatic = $row['isstatic'];
                 ?>
                         <tr class="<?php echo $valDivTr ?>">
                             <td class="divRightContantOverTbL" valign="top" align="center"><input id="CheckBoxID<?php echo $index ?>" name="CheckBoxID<?php echo $index ?>" type="checkbox" class="formCheckboxList" onClick="Paging_CheckAllHandle(document.myForm.CheckBoxAll,'CheckBoxID',document.myForm.TotalCheckBoxID.value)" value="<?php echo $valID ?>" /> </td>
@@ -398,6 +399,9 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                                                     </div>
                                                 </td>
                                             <?php } ?>
+                                           <?php
+                                           if(!$isstatic){
+                                           ?>
                                             <td valign="top" align="center" width="30">
                                                 <div class="divRightManage" title="<?php echo $langTxt["btn:del"] ?>" onClick="
             if(confirm('<?php echo $langTxt["mg:delpermis"] ?>')) {
@@ -410,6 +414,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                                                         (<?php echo $langTxt["lg:all"] ?>)<?php } ?></span>
                                                 </div>
                                             </td>
+                                           <?php } ?>
                                         </tr>
                                     </table>
                                 <?php } ?>
