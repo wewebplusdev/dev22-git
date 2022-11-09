@@ -1,23 +1,20 @@
 <?php
-$callVideo = $embedPage->callVideoInfo($config['contact']['cu']['masterkey'],0);
-$smarty->assign("callCMSS", $callVideo);
-
-$callContactGroup = $embedPage->callContactGroup($config['contact']['cu']['masterkey']);
-$smarty->assign("callContactGroup", $callContactGroup);
-
-$Call_File = $callSetWebsite->Call_File_table($callVideo->fields['id'], $config['cmsf']['db']['main']);
-$smarty->assign("Call_File", $Call_File);
-
-## breadcrumb
-$settingModulus['breadcrumb'] = $lang['menu']['contact'];
-
-## lang variable
-$lang_concat = $url->pagelang['3'];
-$smarty->assign("lang_concat", "address".$lang_concat);
-
-$settingPage = array(
-    "page" => $menuActive,
-    "template" => "contact.tpl",
-    "display" => "page",
-    "control" => "component",
-);
+    $ContentID = GetContentID($url->segment[2]);
+    $callVideo = $embedPage->callCMSInfo($ContentID);
+    if ($callVideo->_numOfRows < 1) {
+        header('location:'.$linklang.'/404');
+        exit(0);
+    }
+    $smarty->assign("callVideo", $callVideo);
+        $fullpath_vdo = "";
+        if (!empty($callVideo->fields['filevdo'])) {
+            $MenuID = $callVideo->fields['masterkey'];
+            $fullpath_vdo = fileinclude($callVideo->fields['filevdo'], 'vdo', $MenuID, 'link');
+        }
+        $smarty->assign("fullpath_vdo", $fullpath_vdo);
+    $settingPage = array(
+        "page" => $menuActive,
+        "template" => "video.tpl",
+        "display" => "page-single"
+    );
+?>
