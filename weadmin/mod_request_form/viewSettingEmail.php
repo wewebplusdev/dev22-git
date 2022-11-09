@@ -82,7 +82,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
             <!-- ######### Start Menu Sub Mod ########## -->
             <div class="menuSubMod active">
                 <a  href="settingEmail.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                    <?php echo $langMod["txt:titles"] ?>
+                    <?php echo $langMod["txt:titleemailset"] ?>
                 </a>
             </div>
               <div class="menuSubMod ">

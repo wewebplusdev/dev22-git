@@ -67,6 +67,8 @@ $config['ab_nm']['main']['masterkey'] = "ab_nm";
 $config['km_t3']['main']['masterkey'] = "km_t3";
 $config['setting']['main']['masterkey'] = "setting";
 $config['lcf_s']['main']['masterkey'] = "lcf_s";
+$config['policy']['coms']['masterkey'] = 'coms';
+$config['policy']['req']['masterkey'] = 'req';
 
 $config['req']['main']['masterkey'] = "req";
 //PDPA
@@ -74,7 +76,7 @@ $config['pdpa']['db'] = 'md_pdpa';
 $config['policy']['db'] = 'md_ab';
 $config['policy_file']['db'] = 'md_abf';
 $config['policy']['masterkey'] = 'pl';
-$config['policy']['complaint']['masterkey'] = 'coms';
+
 $config['pdpa']['masterkey'] = 'accept';
 
 //setting menu

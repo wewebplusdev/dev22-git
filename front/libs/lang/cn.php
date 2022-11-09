@@ -343,6 +343,30 @@ $lang["search:total"] = "总数";
 $lang["search:listtotal"] = "总数";
 
 $lang['member']['logout'] = "登出";
+
+//policy
+$lang["policy"]["title"] = "政策";
+$lang['complaint']['group']="抱怨";
+$lang["policy"]["complaint"] = "投訴系統";
++$lang["policy"]["request"] = "個人資料使用申請表";
+$lang["policy"]["fname"] = "姓名";
+$lang["policy"]["lname"] = "姓";
+$lang["policy"]["email"] = "電子郵件";
+$lang["policy"]["tel"] = "電話";
+$lang["policy"]["acp"] = "我接受條款";
+$lang["policy"]["tx1"] = "我特此證明，提供給公司的信息是真實、正確的，並且公司可能會聯繫我以獲取更多信息，以便正確和完整地處理我的請求。";
+$lang["policy"]["tx2"] = "在這方面，我承認
+公司將在 30 日內考慮並通知行權請求的結果
+自收到此類請求之日起的天數
+並且公司保留考慮行使本人權利的請求的權利。
+並且可能需要拒絕我的請求。 遵守相關法律，例如
+如果無法清楚地表明數據的所有者或無權提出請求
+在一個不合理的請求的情況下是一個奢侈的請求
+處理請求將對對方產生負面影響。
+公司需要根據其法律義務使用該信息進行處理。
+或公司已銷毀該數據，因為保留期已過";
+$lang["policy"]["btn-req"] = "驗證您的身份";
+
 //calculator
 $lang['calculator']['title']="钻石计算器";
 $lang['calculator']['Diamond_shape']="钻石形状";

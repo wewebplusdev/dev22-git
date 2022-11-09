@@ -10,8 +10,7 @@ $secret = $secretkey;
 
 if (!empty($_POST) /*&& $responseData->success*/) {
   $data = array();
-  $data[$config['coms']['db']['main'] . "_masterkey"] = "'" . changeQuot($config['policy']['complaint']['masterkey']) . "'";
-  $data[$config['coms']['db']['main'] . "_gid"] = "'" . encodeStr($_POST["inputGroup"]) . "'";
+  $data[$config['coms']['db']['main'] . "_masterkey"] = "'" . changeQuot($config['policy']['coms']['masterkey']) . "'";
   $data[$config['coms']['db']['main'] . "_gid"] = "'" . changeQuot($_POST["inputGroup"]) . "'";
   $data[$config['coms']['db']['main'] . "_message"] = "'" . encodeStr($_POST["inputMessage"]) . "'";
   $data[$config['coms']['db']['main'] . "_fname"] = "'" . encodeStr($_POST["inputName"]) . "'";
@@ -28,7 +27,7 @@ if (!empty($_POST) /*&& $responseData->success*/) {
   $sql = "INSERT INTO " . $config['coms']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
   $insertDb = $db->execute($sql);
 
-  //formmail();
+  formmail();
   $data = array(
     'status' => 200,
     'icon' => 'success',
@@ -55,13 +54,12 @@ exit(0);
 
 ####Start MAIL To User####'
 function formmail(){
-  global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $contactPage, $lang, $config;
+  global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $policyPage, $lang, $config;
   
-  $mailGorup = $contactPage->callmailcontact($config['policy']['complaint']['masterkey'], $_POST["inputGroup"]);
-  // print_pre($mailGorup);die;
+  $mailGorup = $policyPage->callmailcontact($config['policy']['coms']['masterkey']);
   // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
-  $SubjectMail = $lang['menu']['policy']." (" . $_POST['inputName'] . ")";
-  $Group = $contactPage->callGroup($config['policy']['complaint']['masterkey'], $_POST["inputGroup"]);
+  $SubjectMail = $lang["policy"]["complaint"]." (" . $_POST['inputName'] . ")";
+  $Group = $policyPage->callComsGroup($config['policy']['coms']['masterkey'], $_POST["inputGroup"]);
   
   
   $message = "
@@ -83,12 +81,12 @@ function formmail(){
                   </tr>
                   <tr style='height: 209px;'>
                     <td style='height: 209px;'>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['group']." ".$Group->fields[2]."<br />".$lang['contact']['name']." ".changeQuot($_POST["inputName"])."</div>
+                    <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['policy']['group']." ".$Group->fields[2]."<br />".$lang['contact']['name']." ".changeQuot($_POST["inputName"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["inputMessage"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['name']." : ".changeQuot($_POST["inputName"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['email']." : ".changeQuot($_POST["inputEmail"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["fname"]."-".$lang["policy"]["lname"]." : ".changeQuot($_POST["inputName"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["email"]." : ".changeQuot($_POST["inputEmail"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['address']." : ".changeQuot($_POST["inputAddress"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['tel']." : ".changeQuot($_POST["inputTel"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["tel"]." : ".changeQuot($_POST["inputTel"])."</div>
                     </td>
                   </tr>
                 </tbody>
@@ -114,4 +112,5 @@ function formmail(){
       // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
   }
 }
+
 

@@ -22,7 +22,7 @@ if (!empty($_POST)/*&& $responseData->success*/) {
   $sql = "INSERT INTO " . $config['cus']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
   $insertDb = $db->execute($sql);
 
-  // formmail();
+  formmail();
   $data = array(
     'status' => 200,
     'icon' => 'success',
@@ -49,13 +49,12 @@ exit(0);
 
 ####Start MAIL To User####'
 function formmail(){
-  global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $contactPage, $lang, $config;
+  global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $policyPage, $lang, $config;
   
-  $mailGorup = $contactPage->callmailcontact($config['policy']['complaint']['masterkey'], $_POST["inputGroup"]);
-  // print_pre($mailGorup);die;
+  $mailGorup = $policyPage->callmailcontact($config['policy']['req']['masterkey']);
   // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
-  $SubjectMail = $lang['menu']['policy']." (" . $_POST['inputName'] . ")";
-  $Group = $contactPage->callGroup($config['policy']['complaint']['masterkey'], $_POST["inputGroup"]);
+  $SubjectMail = $lang["policy"]["request"]." (" . $_POST['inputfName'] ."". $_POST['inputlName'] . ")";
+  // $Group = $policyPage->callGroup($config['policy']['complaint']['masterkey'], $_POST["inputGroup"]);
   
   
   $message = "
@@ -77,12 +76,10 @@ function formmail(){
                   </tr>
                   <tr style='height: 209px;'>
                     <td style='height: 209px;'>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['group']." ".$Group->fields[2]."<br />".$lang['contact']['name']." ".changeQuot($_POST["inputName"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["inputMessage"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['name']." : ".changeQuot($_POST["inputName"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['email']." : ".changeQuot($_POST["inputEmail"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['address']." : ".changeQuot($_POST["inputAddress"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['tel']." : ".changeQuot($_POST["inputTel"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$SubjectMail."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["fname"]."-".$lang["policy"]["lname"]." : ".changeQuot($_POST["inputfName"])." ".changeQuot($_POST["inputlName"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["email"]." : ".changeQuot($_POST["inputEmail"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["tel"]." : ".changeQuot($_POST["inputTel"])."</div>
                     </td>
                   </tr>
                 </tbody>
