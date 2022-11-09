@@ -320,7 +320,7 @@ $(document).ready(function() {
         ]
     });
 
-    $('.information-block .slider').slick({
+    $('.git-information-block .slider').slick({
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 3,

@@ -115,6 +115,18 @@
                     </div>
                 </div>
 
+                <div class="git-news-block">
+                    <div class="container">
+                        <div class="h-title">GIT News</div>
+                    </div>
+                    <div class="default-slider">
+                        
+                    </div>
+                    <div class="container">
+
+                    </div>
+                </div>
+
                 <div class="git-e-Learning-block">
                     <div class="container -xl">
                         <div class="h-title text-uppercase text-center text-light">
@@ -204,8 +216,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="information-block">
-                    <div class="container">
+                <div class="git-information-block">
+                    <div class="container -lg">
                         <div class="h-title m-0">GIT Information Center</div>
                         <div class="sub-title">ศูนย์ข้อมูลอัญมณีและเครื่องประดับ</div>
                         <div class="default-slider default-slider-dots slider">
@@ -222,7 +234,7 @@
                                                 </div>
                                                 <div class="divider"></div>
                                                 <div class="date">
-                                                    <div class="row">
+                                                    <div class="row align-items-center">
                                                         <div class="col">
                                                             <span class="feather-calendar"></span>
                                                             16 มิถุนายน 2565
@@ -238,27 +250,27 @@
                                 </div>
                             <?php } ?>
                         </div>
-                        <div class="load-more-hide text-left mt-4">
-                            <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
+                        <div class="load-more-hide text-center">
+                            <a href="javascript:void(0)" class="btn btn-lg btn-border-light" title="ดูทั้งหมด">อ่านต่อ</a>
                         </div>
                     </div>
                 </div>
-                <div class="service-block">
-                    <div class="container -xl">
-                        <div class="sidebar-menus">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-12 col">
-                                            <div class="h-title">GIT SEVICES</div>
-                                            <div class="sub-title">บริการของเรา</div>
-                                        </div>
-                                        <div class="col-md-12 col-auto">
-                                            <div class="load-more-hide text-left mb-4">
-                                                <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
-                                            </div>
+                <div class="git-service-block">
+                    <div class="container -lg">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12 col">
+                                        <div class="h-title m-0">GIT SEVICES</div>
+                                        <div class="sub-title">บริการของเรา</div>
+                                    </div>
+                                    <div class="col-md-12 col-auto">
+                                        <div class="load-more-hide text-left mb-4">
+                                            <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="sidebar-menus">
                                     <ul class="item-list">
                                         <li class="menu-service">
                                             <a class="link topic active" href="#Tab1" data-toggle="tab">
@@ -332,51 +344,50 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md">
-                                    <figure class="cover">
-                                        <img src="<?php echo $core_template; ?>/assets/img/upload/service-image.png" alt="gallery thumbnail">
-                                    </figure>
-                                    <div class="tab-content clearfix">
-                                        <div class="tab-pane active" id="Tab1">
-                                            <div class="topic-content-block">
-                                                <div class="h-title">บริการห้องปฏิบัติการ1</div>
-                                                <div class="sub-title">ตรวจสอบอัญมณี</div>
-                                                <div class="desc">
-                                                    ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
-                                                </div>
-                                                <div class="load-more-hide text-left mt-4">
-                                                    <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
-                                                </div>
+                            </div>
+                            <div class="col-md">
+                                <figure class="cover">
+                                    <img src="<?php echo $core_template; ?>/assets/img/upload/service-image.png" alt="gallery thumbnail">
+                                </figure>
+                                <div class="tab-content clearfix">
+                                    <div class="tab-pane active" id="Tab1">
+                                        <div class="topic-content-block">
+                                            <div class="h-title m-0">บริการห้องปฏิบัติการ1</div>
+                                            <div class="sub-title">ตรวจสอบอัญมณี</div>
+                                            <div class="desc">
+                                                ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
+                                            </div>
+                                            <div class="load-more-hide text-left mt-4">
+                                                <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
                                             </div>
                                         </div>
-                                        <div class="tab-pane" id="Tab2">
-                                            <div class="topic-content-block">
-                                                <div class="h-title">บริการห้องปฏิบัติการ2</div>
-                                                <div class="sub-title">ตรวจสอบอัญมณี</div>
-                                                <div class="desc">
-                                                    ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
-                                                </div>
-                                                <div class="load-more-hide text-left mt-4">
-                                                    <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
-                                                </div>
+                                    </div>
+                                    <div class="tab-pane" id="Tab2">
+                                        <div class="topic-content-block">
+                                            <div class="h-title m-0">บริการห้องปฏิบัติการ2</div>
+                                            <div class="sub-title">ตรวจสอบอัญมณี</div>
+                                            <div class="desc">
+                                                ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
+                                            </div>
+                                            <div class="load-more-hide text-left mt-4">
+                                                <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
                                             </div>
                                         </div>
-                                        <div class="tab-pane" id="Tab3">
-                                            <div class="topic-content-block tab-pane">
-                                                <div class="h-title">บริการห้องปฏิบัติการ3</div>
-                                                <div class="sub-title">ตรวจสอบอัญมณี</div>
-                                                <div class="desc">
-                                                    ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
-                                                </div>
-                                                <div class="load-more-hide text-left mt-4">
-                                                    <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
-                                                </div>
+                                    </div>
+                                    <div class="tab-pane" id="Tab3">
+                                        <div class="topic-content-block tab-pane">
+                                            <div class="h-title m-0">บริการห้องปฏิบัติการ3</div>
+                                            <div class="sub-title">ตรวจสอบอัญมณี</div>
+                                            <div class="desc">
+                                                ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
+                                            </div>
+                                            <div class="load-more-hide text-left mt-4">
+                                                <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -788,7 +799,7 @@
                     </div>
                 </div>
 
-                <div class="video-gallery-block">
+                <div class="git-vdo-block">
                     <div class="container -lg">
                         <div class="h-title text-center">GIT VDO</div>
                         <ul class="nav nav-pills default-nav-tab">
