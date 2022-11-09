@@ -72,6 +72,8 @@ $config['ab_nm']['main']['masterkey'] = "ab_nm";
 $config['km_t3']['main']['masterkey'] = "km_t3";
 $config['setting']['main']['masterkey'] = "setting";
 $config['lcf_s']['main']['masterkey'] = "lcf_s";
+$config['video']['vdo']['masterkey'] = "vdo";
+$config['photo']['ptg']['masterkey'] = "ptg";
 
 $config['req']['main']['masterkey'] = "req";
 //PDPA
