@@ -71,6 +71,7 @@ class photoPage
     $langOption = $url->pagelang[2];
     $langFull = strtolower($url->pagelang[4]);
 
+
     $sql = "SELECT
     " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_id as id,
     " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_filename as filename,
@@ -78,6 +79,7 @@ class photoPage
     FROM
     " . $config['cma']['db']['main'] . "
     WHERE 1=1 ";
+    $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_contantid= '" . $id . "' ";
     if (!empty($id)) {
       $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_contantid= '" . $id . "' ";
     }
