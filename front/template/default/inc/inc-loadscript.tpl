@@ -16,11 +16,16 @@
 <script src="{$template}/assets/js/jquery.fancybox.min.js"></script>
 <script src="{$template}/assets/js/sweetalert2@11.js"></script>
 
+<script src="{$template}/assets/plugin/fullcalendar/lib/moment.min.js"></script>
+<script src="{$template}/assets/plugin/fullcalendar/fullcalendar.min.js"></script>
+<script src="{$template}/assets/plugin/fullcalendar/locale/th.js"></script>
+<script src="{$template}/assets/plugin/fullcalendar/locale/th.js"></script>
+
 <!-- Custom -->
 <script src="{$template}/assets/js/fontsize.js{$lastModify}"></script>
 <script src="{$template}/assets/js/theme-style.js{$lastModify}"></script>
 <script src="{$template}/assets/js/main.js{$lastModify}"></script>
-
+<script src="{$template}/assets/js/calendar.js{$lastModify}"></script>
 <!-- JS PDPA -->
 <script src="{$template}/assets/js/cookie.js{$lastModify}"></script>
 <script src="{$template}/assets/js/pdpa.js{$lastModify}"></script>
