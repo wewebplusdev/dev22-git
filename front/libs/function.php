@@ -1048,3 +1048,166 @@ function strformat($str_array) {
 
     return $main_string;
 }
+
+
+############################### Start Mod  Calendar #########################################
+############################################
+
+function getDateNow() {
+############################################
+    $today = getdate();
+    $Day = $today['mday'];
+    $Month = $today['mon'];
+    $Year = $today['year'];
+    $DateIs = sprintf("%04d-%02d-%02d", $Year, $Month, $Day);
+    return($DateIs);
+}
+
+//#################################################
+function getEndDayOfMonth($myDate) {
+//#################################################
+    $myEndOfMonth = array(0, 31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+    $myDateArray = explode("-", $myDate);
+    $myMonth = $myDateArray[1] * 1;
+    $myYear = $myDateArray[0] * 1;
+    if ($myMonth >= 1 && $myMonth <= 12) {
+        if ($myMonth == 2) {
+            //check leap year ---
+            if (($myYear % 4) == 0) {
+                return 29;
+            } else {
+                return 28;
+            }
+        } else {
+            return $myEndOfMonth[$myMonth];
+        }
+    } else {
+        return 0;
+    }
+}
+
+function showDateCalendarDay($myDate) {
+    $myDateArray = explode(" ", $myDate);
+    $myDateArray = explode("-", $myDateArray[0]);
+    return $myDateArray[2];
+}
+
+############################################
+
+function getMonthLang($valDate, $valLang) {
+############################################
+    if ($valLang == "en") {
+        $valYearReturn = showDateCalendarMonth($valDate);
+    } else {
+        $valYearReturn = showDateCalendarMonthEn($valDate);
+    }
+    return $valYearReturn;
+}
+
+function showDateCalendarMonth($myDate) {
+    $myDateArray = explode("-", $myDate);
+    $myDay = sprintf("%d", $myDateArray[2]);
+    switch ($myDateArray[1]) {
+        case "01" : $myMonth = "ม.ค.";
+            break;
+        case "02" : $myMonth = "ก.พ.";
+            break;
+        case "03" : $myMonth = "มี.ค.";
+            break;
+        case "04" : $myMonth = "เม.ย.";
+            break;
+        case "05" : $myMonth = "พ.ค.";
+            break;
+        case "06" : $myMonth = "มิ.ย.";
+            break;
+        case "07" : $myMonth = "ก.ค.";
+            break;
+        case "08" : $myMonth = "ส.ค.";
+            break;
+        case "09" : $myMonth = "ก.ย.";
+            break;
+        case "10" : $myMonth = "ต.ค.";
+            break;
+        case "11" : $myMonth = "พ.ย.";
+            break;
+        case "12" : $myMonth = "ธ.ค.";
+            break;
+    }
+    $myYear = sprintf("%d", $myDateArray[0]) + 543;
+    return($myMonth);
+}
+
+function showDateCalendarMonthEn($myDate) {
+    $myDateArray = explode("-", $myDate);
+    $myDay = sprintf("%d", $myDateArray[2]);
+    switch ($myDateArray[1]) {
+        case "01" : $myMonth = "Jan";
+            break;
+        case "02" : $myMonth = "Feb";
+            break;
+        case "03" : $myMonth = "Mar";
+            break;
+        case "04" : $myMonth = "Apr";
+            break;
+        case "05" : $myMonth = "May";
+            break;
+        case "06" : $myMonth = "Jun";
+            break;
+        case "07" : $myMonth = "Jul";
+            break;
+        case "08" : $myMonth = "Aug";
+            break;
+        case "09" : $myMonth = "Sep";
+            break;
+        case "10" : $myMonth = "Oct";
+            break;
+        case "11" : $myMonth = "Nov";
+            break;
+        case "12" : $myMonth = "Dec";
+            break;
+    }
+    $myYear = sprintf("%d", $myDateArray[0]);
+    return($myMonth);
+}
+
+#################################################
+
+function format($num, $length) {
+#################################################
+
+    $formated_num = strval($num);
+    while (strlen($formated_num) < $length) {
+        $formated_num = "0" . $formated_num;
+    }
+    return $formated_num;
+}
+
+############################################
+
+function getYearLang($valYear, $valLang) {
+############################################
+    if ($valLang == "en") {
+        $valYearReturn = $valYear;
+    } else {
+        $valYearReturn = ($valYear + 543);
+    }
+    return $valYearReturn;
+}
+
+#################################################
+
+function concatsmarty($str1, $str2) {
+#################################################
+    $result = $str1.$str2;
+    return $result;
+}
+
+//#################################################
+function formatNum($myNumber) {
+//#################################################
+    $myNumber = intval($myNumber);
+    if ($myNumber < 10)
+        return ("0" . $myNumber);
+    else
+        return ($myNumber);
+}

@@ -23,10 +23,8 @@
                <div class="calendar-block">
                   <div id="calendar">
                      <form action="" method="get" name="myCalendarForm" id="myCalendarForm">
-                        <input name="inputLanguage" type="hidden" id="inputLanguage"
-                               value="{$langFull}">
-                        <input name="inputFolderPath" type="hidden" id="inputFolderPath"
-                               value="{$langon}">
+                        <input name="inputLanguage" type="hidden" id="inputLanguage" value="{$langFull}">
+                        <input name="inputFolderPath" type="hidden" id="inputFolderPath" value="{$langon}">
                      </form>
                   </div>
                </div>

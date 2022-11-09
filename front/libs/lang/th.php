@@ -407,6 +407,22 @@ $lang['pdpa']['accept']="ยอมรับ";
 $lang['pdpa']['more_deatils']="รายละเอียดเพิ่มเติม";
 $lang['pdpa']['decline']="ปฏิเสธ";
 
+// search
 $lang['search']['subject'] = "คำค้นหา";
 $lang['search']['result'] = 'ผลการค้นหา "<span>{1}</span>" ทั้งหมด {2} รายการ';
 $lang['search']['more'] = "รายละเอียด";
+
+// calendar
+$lang["calendar"]["thismonth"] = "เดือนนี้";
+$lang["calendar"]["thisday"] = "วันนี้";
+$lang["calendar"]["note1"] ="<strong>หมายเหตุ</strong> : คลิ๊กที่วันที่เพื่อแสดงผลกิจกรรมต่างๆ ที่มีในวันที่นั้นๆ";
+$lang["calendar"]["note2"] ="วันที่ปัจจุบัน (กรณีมีกิจกรรมวันที่ในส่วนนี้สามารถคลิ๊กได้)";
+$lang["calendar"]["note3"] ="วันที่มีกิจกรรมต่างๆ";
+$lang["calendar"]["note4"] ="วันที่ปกติ (ไม่มีกิจกรรม)";
+$lang["calendar"]["nodata"] ="ไม่มีกิจกรรม";
+$lang["calendar"]["at"] = "น.";
+$lang["calendar"]["alldate"] = "ทั้งวัน";
+$lang["calendar"]["eventday"] = "วันที่มีกิจกรรม";
+$lang["calendar"]["datenow"] = "วันปัจจุบัน";
+$lang["calendar"]["activity"] = "กิจกรรมที่จัดในวันที่";
+$lang["calendar"]["activityM"] = "กิจกรรมที่จัดในเดือน";
