@@ -129,7 +129,7 @@ logs_access('3', 'View');
                                         <span class="formFontTileTxt"><?php echo  $langMod["txt:infoDe"] ?></span>    </td>
                                 </tr>
                                 <tr >
-                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" >ชื่อผู้ร้องเรียน:<span class="fontContantAlert"></span></td>
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php $langMod["tit:fname"] ?>:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valFName ?></div></td>
                                 </tr>
                                 <!-- <tr >
@@ -178,7 +178,7 @@ logs_access('3', 'View');
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valSubject ?></div></td>
                                 </tr> -->
                                 <tr >
-                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" >Message:<span class="fontContantAlert"></span></td>
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:mgs"] ?>:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  nl2br($valMessage) ?></div></td>
                                 </tr>
 

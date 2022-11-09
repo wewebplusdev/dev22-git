@@ -106,9 +106,9 @@ $langTxt["mg:statuspin"] = "Pin/Unpin";
 }else{
 
     	$langMod["viw:subjectgDe"] = "ข้อมูลชื่อ" . $langMod["meu:group"] . " เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
-		$langMod["meu:group"] = "กลุ่ม";
+		$langMod["meu:group"] = "กลุ่ม " .getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
-
+		$langMod["meu:setPermis"] = "ตั้งค่า";
 		$langMod["txt:titleadd"] = "สร้างข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["txt:titleedit"] = "แก้ไขข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["txt:titleview"] = "แสดงผลข้อมูล".getNameMenu($_REQUEST["menukeyid"]);

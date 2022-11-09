@@ -20,7 +20,7 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["txt:attfile"] = "Attachment information";
 		$langMod["txt:attfileDe"] = "Attachment information To use to display the attachment of this content. In the form of downloading documents stored on a computer on your website. ";
 		$langMod["btn:export3"] = "PDF";
-		$langMod["btn:set"] = "Setting Email";
+		$langMod["btn:set"] = "setting email";
 		$langMod["btn:mem"] = "Applicant";
 		$langMod["btn:position"] = "Position";
 
@@ -212,12 +212,12 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["meu:selectgn"] = $langMod["btn:position"];
 		$langMod["txt:regis9"]= "ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน";
 		$langMod["txt:regis9De"] = "ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
-		$langMod["meu:setPermis"] = "Setting";
+		$langMod["meu:setPermis"] = "setting";
 		$langMod["txt:titleadds"] = "". $langMod["meu:setPermis"]." New";
 		$langMod["txt:titleedits"] = "". $langMod["meu:setPermis"]." Edit";
 		$langMod["txt:titleviews"] = "". $langMod["meu:setPermis"]." Display";
 		$langMod["txt:sortpermiss"] = "". $langMod["meu:setPermis"]." Sort";
-		$langMod["txt:titles"] = "Setting " .getNameMenu($_REQUEST["menukeyid"]);
+		$langMod["txt:titles"] = "setting " .getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["txt:titlesDe"] = "Please enter details. For use in display on your website. ";
 		$langMod["ca:place"] = "ภูมิสำเนา";
 		$langMod["ca:iden"] = "เลขที่บัตรประชาชน";
@@ -306,16 +306,17 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["txt:attfile"] = "ข้อมูลเอกสารแนบ";
 		$langMod["txt:attfileDe"] = "ข้อมูลเอกสารแนบ เพื่อใช้ในการแสดงผลเอกสารแนบของเนื้อหานี้ ในรูปแบบของการดาวน์โหลดเอกสารเก็บไว้ในเครื่องคอมพิวเตอร์บนเว็บไซต์ของคุณ";
 		$langMod["btn:export3"] = "PDF";
-		$langMod["btn:set"] = "Setting Email";
-		$langMod["btn:mem"] = "Applicant";
-		$langMod["btn:position"] = "Position";
+		$langMod["btn:set"] = "ตั้งค่าอีเมล";
+		$langMod["btn:mem"] = "แอปพลิเคชั่น";
+		$langMod["btn:position"] = "ตำแหน่ง";
+		$langMod["meu:setPermis"] = "ตั้งค่า";
 
 		$langMod["txt:titleview_app"] = "แสดงผลข้อมูล".$langMod["btn:mem"];
 
 		$langMod["btn:career"] = "Career";
 		$langMod["btn:from"] = "แบบฟอร์ม";
 		
-		$langMod["btn:position"] = "Position";
+		$langMod["btn:position"] = "ตำแหน่ง";
 		
 
 		

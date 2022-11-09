@@ -374,7 +374,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
                                     <td>
                                         <select name="inputGroupID[1]" id="inputGroupID[1]" class="formSelectContantTb">
-                                            <option value="0"><?php echo $langMod["tit:selectg"] ?></option>
+                                            <option value="0"><?php echo $langMod["tit:selectsg"] ?></option>
                                             <?php
                                             $sql_group = "SELECT ";
                                             if ($_REQUEST['inputLt'] == "Thai") {
