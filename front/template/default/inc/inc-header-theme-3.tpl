@@ -148,13 +148,13 @@
 								<a href="javascript:void(0)" class="search-toggle" title="search">
 									<span class="feather icon-search"></span>
 								</a>
-								<form class="form">
+                        <form action="{$ul}/search" method="get" class="form">
 									<div class="input-group">
 										<div class="form-outline">
-											<input type="search" id="keywords" class="form-control" placeholder="{$lang['system']['search']}..." />
+											<input type="search" id="keywords" name="srchtxt_main" value="{$srchtxt_main}" class="form-control" placeholder="{$lang['system']['search']}..." />
 											<label class="visuallyhidden" for="keywords">{$lang['system']['search']}</label>
 										</div>
-										<button type="button" class="btn btn-search">
+                              <button type="submit" class="btn btn-search">
 											<span class="feather icon-search"></span>
 										</button>
 										<button type="button" class="btn close">
@@ -195,7 +195,7 @@
 								</ul>
 							</div>
 						</div>
-						
+
 						<div class="col-auto">
 							<div class="menu">
 								<a href="javascript:void(0)" class="menu-toggle" title="menu">

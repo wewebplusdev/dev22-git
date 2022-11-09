@@ -1,0 +1,223 @@
+
+CREATE TABLE `md_rea` (
+  `md_rea_id` int(11) NOT NULL auto_increment,
+  `md_rea_contantid` int(11) NOT NULL default '0',
+  `md_rea_filename` varchar(200) NOT NULL,
+  `md_rea_name` varchar(200) NOT NULL,
+  `md_rea_download` int(11) NOT NULL default '0',
+  `md_rea_language` varchar(25) NOT NULL,
+  PRIMARY KEY  (`md_rea_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_reatp`
+-- 
+
+CREATE TABLE `md_reatp` (
+  `md_reatp_id` int(11) NOT NULL auto_increment,
+  `md_reatp_contantid` varchar(255) NOT NULL default '0',
+  `md_reatp_filename` varchar(200) NOT NULL,
+  `md_reatp_name` varchar(200) NOT NULL,
+  `md_reatp_download` int(11) NOT NULL default '0',
+  `md_reatp_language` varchar(25) NOT NULL,
+  PRIMARY KEY  (`md_reatp_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_ree`
+-- 
+
+CREATE TABLE `md_ree` (
+  `md_ree_id` int(11) NOT NULL auto_increment,
+  `md_ree_gid` int(11) NOT NULL default '0',
+  `md_ree_email` varchar(255) NOT NULL,
+  `md_ree_masterkey` varchar(150) NOT NULL,
+  PRIMARY KEY  (`md_ree_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_ref`
+-- 
+
+CREATE TABLE `md_ref` (
+  `md_ref_id` int(11) NOT NULL auto_increment,
+  `md_ref_contantid` int(11) NOT NULL default '0',
+  `md_ref_filename` varchar(200) NOT NULL,
+  `md_ref_name` varchar(200) NOT NULL,
+  `md_ref_download` int(11) NOT NULL default '0',
+  `md_ref_language` varchar(25) NOT NULL,
+  PRIMARY KEY  (`md_ref_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_res`
+-- 
+
+CREATE TABLE `md_res` (
+  `md_res_id` int(11) NOT NULL auto_increment,
+  `md_res_masterkey` varchar(20) NOT NULL,
+  `md_res_language` varchar(50) NOT NULL,
+  `md_res_subject` text NOT NULL,
+  `md_res_title` text NOT NULL,
+  `md_res_htmlfilename` varchar(255) NOT NULL,
+  `md_res_pic` varchar(50) NOT NULL,
+  `md_res_crebyid` int(11) NOT NULL default '0',
+  `md_res_creby` varchar(100) NOT NULL,
+  `md_res_credate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_res_lastdate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_res_sdate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_res_edate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_res_status` varchar(50) NOT NULL,
+  `md_res_order` int(11) NOT NULL default '0',
+  `md_res_view` int(11) NOT NULL default '0',
+  `md_res_description` text NOT NULL,
+  `md_res_keywords` text NOT NULL,
+  `md_res_metatitle` text NOT NULL,
+  `md_res_type` varchar(50) NOT NULL,
+  `md_res_filevdo` varchar(255) NOT NULL,
+  `md_res_url` text NOT NULL,
+  `md_res_subjecten` varchar(255) NOT NULL,
+  `md_res_lastbyid` int(11) NOT NULL,
+  `md_res_lastby` varchar(255) NOT NULL,
+  `md_res_htmlfilenameen` varchar(225) NOT NULL,
+  `md_res_titleen` text NOT NULL,
+  `md_res_gid` int(11) NOT NULL,
+  `md_res_keywordsen` text NOT NULL,
+  `md_res_metatitleen` text NOT NULL,
+  `md_res_descriptionen` text NOT NULL,
+  `md_res_typeSal` int(11) NOT NULL,
+  `md_res_salaryFr` int(11) NOT NULL,
+  `md_res_salaryTo` int(11) NOT NULL,
+  `md_res_salaryOne` int(11) NOT NULL,
+  `md_res_quantity` int(11) NOT NULL,
+  `md_res_address` text NOT NULL,
+  `md_res_addressen` text NOT NULL,
+  PRIMARY KEY  (`md_res_id`),
+  UNIQUE KEY `md_res_id` (`md_res_id`),
+  KEY `md_res_id_2` (`md_res_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_ret`
+-- 
+
+CREATE TABLE `md_ret` (
+  `md_ret_id` int(11) NOT NULL auto_increment,
+  `md_ret_masterkey` varchar(20) NOT NULL,
+  `md_ret_language` varchar(50) NOT NULL,
+  `md_ret_crebyid` int(11) NOT NULL default '0',
+  `md_ret_creby` varchar(100) NOT NULL,
+  `md_ret_credate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_ret_lastdate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_ret_lastbyid` int(11) NOT NULL,
+  `md_ret_lastby` varchar(255) NOT NULL,
+  PRIMARY KEY  (`md_ret_id`),
+  UNIQUE KEY `md_ret_id` (`md_ret_id`),
+  KEY `md_ret_id_2` (`md_ret_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_retp`
+-- 
+
+CREATE TABLE `md_retp` (
+  `md_retp_id` int(11) NOT NULL auto_increment,
+  `md_retp_contantid` varchar(255) NOT NULL default '0',
+  `md_retp_filename` varchar(255) NOT NULL,
+  `md_retp_name` varchar(200) NOT NULL,
+  `md_retp_download` int(11) NOT NULL default '0',
+  `md_retp_language` varchar(25) NOT NULL,
+  PRIMARY KEY  (`md_retp_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_rey`
+-- 
+
+CREATE TABLE `md_rey` (
+  `md_rey_id` int(11) NOT NULL auto_increment,
+  `md_rey_masterkey` varchar(20) NOT NULL,
+  `md_rey_language` varchar(50) NOT NULL,
+  `md_rey_name` varchar(255) NOT NULL,
+  `md_rey_email` varchar(255) NOT NULL,
+  `md_rey_date` varchar(10) NOT NULL,
+  `md_rey_month` varchar(10) NOT NULL,
+  `md_rey_year` varchar(10) NOT NULL,
+  `md_rey_credate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_rey_lastdate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_rey_status` varchar(50) NOT NULL,
+  `md_rey_pic` varchar(50) NOT NULL,
+  `md_rey_address` text NOT NULL,
+  `md_rey_jid` int(11) NOT NULL,
+  `md_rey_position1` varchar(255) NOT NULL,
+  `md_rey_position2` varchar(255) NOT NULL,
+  `md_rey_position3` varchar(255) NOT NULL,
+  `md_rey_salary` int(11) NOT NULL,
+  `md_rey_province` int(11) NOT NULL,
+  `md_rey_mobile` varchar(255) NOT NULL,
+  `md_rey_tel` varchar(255) NOT NULL,
+  `md_rey_love` int(11) NOT NULL,
+  `md_rey_sex` int(11) NOT NULL,
+  `md_rey_nationality` int(11) NOT NULL,
+  `md_rey_religion` int(11) NOT NULL,
+  `md_rey_h` varchar(255) NOT NULL,
+  `md_rey_w` varchar(255) NOT NULL,
+  `md_rey_army` int(11) NOT NULL,
+  `md_rey_edu` int(11) NOT NULL,
+  `md_rey_academy` text NOT NULL,
+  `md_rey_qualification` text NOT NULL,
+  `md_rey_eduyear` int(11) NOT NULL,
+  `md_rey_gpa` varchar(255) NOT NULL,
+  `md_rey_otherlang` varchar(255) NOT NULL,
+  `md_rey_thail` int(11) NOT NULL,
+  `md_rey_thais` int(11) NOT NULL,
+  `md_rey_thair` int(11) NOT NULL,
+  `md_rey_thaiw` int(11) NOT NULL,
+  `md_rey_engl` int(11) NOT NULL,
+  `md_rey_engs` int(11) NOT NULL,
+  `md_rey_engr` int(11) NOT NULL,
+  `md_rey_engw` int(11) NOT NULL,
+  `md_rey_otherl` int(11) NOT NULL,
+  `md_rey_others` int(11) NOT NULL,
+  `md_rey_otherr` int(11) NOT NULL,
+  `md_rey_otherw` int(11) NOT NULL,
+  `md_rey_printt` int(11) NOT NULL,
+  `md_rey_printe` int(11) NOT NULL,
+  `md_rey_car` int(11) NOT NULL,
+  `md_rey_driving` int(11) NOT NULL,
+  `md_rey_special` text NOT NULL,
+  `md_rey_ref` text NOT NULL,
+  `md_rey_zipcode` int(11) NOT NULL,
+  PRIMARY KEY  (`md_rey_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_reyf`
+-- 
+
+CREATE TABLE `md_reyf` (
+  `md_reyf_id` int(11) NOT NULL auto_increment,
+  `md_reyf_contantid` varchar(255) NOT NULL default '0',
+  `md_reyf_filename` varchar(255) NOT NULL,
+  `md_reyf_name` varchar(200) NOT NULL,
+  `md_reyf_download` int(11) NOT NULL default '0',
+  `md_reyf_language` varchar(25) NOT NULL,
+  `md_reyf_jID` int(11) NOT NULL,
+  PRIMARY KEY  (`md_reyf_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 17:24:47
+/* Smarty version 4.0.0, created on 2022-11-09 06:29:58
   from '/var/www/html/front/controller/script/home/template/index-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636a2e6f4e56d3_64201226',
+  'unifunc' => 'content_636ae67638cee3_07639731',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '057545518eb9c85e288de83563778f0bf2474fda' => 
     array (
       0 => '/var/www/html/front/controller/script/home/template/index-3.tpl',
-      1 => 1667900202,
+      1 => 1667949245,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636a2e6f4e56d3_64201226 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636ae67638cee3_07639731 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container" style="background-color: #<?php echo (($tmp = $_smarty_tpl->tpl_vars['themeWebsite']->value['color'] ?? null)===null||$tmp==='' ? '#FFFFF' ?? null : $tmp);?>
 ;">
 <div class="top-graphic">

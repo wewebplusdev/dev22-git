@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-08 16:32:18
+/* Smarty version 4.0.0, created on 2022-11-09 07:05:00
   from '/var/www/html/front/template/default/inc/inc-header-theme-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636a22229fd0d6_94072474',
+  'unifunc' => 'content_636aeeac7943f7_28725185',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8dc6d6f0a524916d830b7640cdd5522326f0bc7c' => 
     array (
       0 => '/var/www/html/front/template/default/inc/inc-header-theme-3.tpl',
-      1 => 1667897912,
+      1 => 1667952277,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636a22229fd0d6_94072474 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636aeeac7943f7_28725185 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header class="site-header">
 	<div class="site-header-topbar mobile">
 		<div class="container">
@@ -195,15 +195,17 @@ function content_636a22229fd0d6_94072474 (Smarty_Internal_Template $_smarty_tpl)
 								<a href="javascript:void(0)" class="search-toggle" title="search">
 									<span class="feather icon-search"></span>
 								</a>
-								<form class="form">
+                        <form action="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/search" method="get" class="form">
 									<div class="input-group">
 										<div class="form-outline">
-											<input type="search" id="keywords" class="form-control" placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['search'];?>
+											<input type="search" id="keywords" name="srchtxt_main" value="<?php echo $_smarty_tpl->tpl_vars['srchtxt_main']->value;?>
+" class="form-control" placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['search'];?>
 ..." />
 											<label class="visuallyhidden" for="keywords"><?php echo $_smarty_tpl->tpl_vars['lang']->value['system']['search'];?>
 </label>
 										</div>
-										<button type="button" class="btn btn-search">
+                              <button type="submit" class="btn btn-search">
 											<span class="feather icon-search"></span>
 										</button>
 										<button type="button" class="btn close">
@@ -261,7 +263,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</ul>
 							</div>
 						</div>
-						
+
 						<div class="col-auto">
 							<div class="menu">
 								<a href="javascript:void(0)" class="menu-toggle" title="menu">

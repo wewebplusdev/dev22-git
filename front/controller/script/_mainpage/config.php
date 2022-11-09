@@ -24,7 +24,7 @@ $config['cug']['db']['main'] = "md_cug";
 $config['cus']['db']['main'] = "md_cus";
 $config['coms']['db']['main'] = "md_coms";
 $config['comg']['db']['main'] = "md_comg";
-$config['cue']['db']['main'] = "md_cue";  
+$config['cue']['db']['main'] = "md_cue";
 $config['joss']['db']['main'] = "md_joss";
 $config['jos']['db']['main'] = "md_jos";
 $config['jof']['db']['main'] = "md_jof";
@@ -37,6 +37,10 @@ $config['intro']['db']['main'] = "md_int";
 $config['tgp']['db']['main'] = "md_tgp";
 $config['tag']['db']['main'] = "md_tag";
 $config['cmsss']['db']['main'] = "md_cmss";
+$config['cas']['db']['main'] = "md_cas";
+$config['cag']['db']['main'] = "md_cag";
+$config['caa']['db']['main'] = "md_caa";
+$config['caf']['db']['main'] = "md_caf";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';

@@ -41,7 +41,7 @@ function templateInclude($setting)
         case 'component':
             $page =  _DIR . "/" . $path_template[$templateweb][0] . "/_component/". $setting['template'];
             break;
-        
+
         default:
             $page =  _DIR . "/front/controller/script/" . $setting['page'] . "/template/" . $setting['template'];
             break;
@@ -383,7 +383,7 @@ function DateThai($strDate, $function = null, $lang = "th", $type = "shot")
 
 function checkexpire($date)
 {
-    
+
     $expire = strtotime($date);
     $today = strtotime("today midnight");
 
@@ -402,9 +402,9 @@ function changeQuot($Data)
     global $coreLanguageSQL;
 
     $valTrim = trim($Data);
-    
+
     $valChangeQuot = $valTrim;
-    
+
     $valChangeQuot = str_replace("'", "&rsquo;", str_replace('"', '&quot;', $valChangeQuot));
 
     return $valChangeQuot;
@@ -415,7 +415,7 @@ function changeQuot($Data)
 function pagepagination($uri, $limit = null)
 {
     global $limitpage;
-    
+
     $pageOn = array();
     if (!empty($limit)) {
         $pageOn['limit'] = $limit;
@@ -450,7 +450,7 @@ function pagepagination($uri, $limit = null)
         $pageOn['on'] = 1;
     }
 
-    
+
     return $pageOn;
 }
 
@@ -659,7 +659,7 @@ function checkDiscount($price, $discount)
     } else {
         return 0;
     }
-            
+
 }
 
 function embetyoutube($link)
@@ -948,7 +948,7 @@ function GetContentID($data, $type = null){
         case 'encode':
             $data = decodeStr($data);
             break;
-        
+
         default:
             $data = intval($data);
             break;
@@ -1019,7 +1019,7 @@ function themeWebsite($theme = 'theme-3'){
             $arrFile['footer'] = "inc/inc-footer.tpl";
             $arrFile['class'] = "theme-1";
             break;
-        
+
         default:
             $arrFile['header'] = "inc/inc-header-theme-3.tpl";
             $arrFile['footer'] = "inc/inc-footer-theme-3.tpl";
@@ -1034,4 +1034,17 @@ function rechangeQuot_code($Data) {
     $valChangeQuot = sanitize($Data);
     $valChangeQuot = htmlspecialchars(str_replace("&rsquo;", "'", str_replace('&quot;', '"', $valChangeQuot)));
     return $valChangeQuot;
+}
+
+function strformat($str_array) {
+
+    $num_array = count($str_array);
+
+    $main_string = $str_array[0];
+
+    for ($i = 1; $i <= $num_array; $i++) {
+        $main_string = str_replace('{' . $i . '}', (string) $str_array[$i], $main_string);
+    }
+
+    return $main_string;
 }
