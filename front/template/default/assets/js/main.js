@@ -297,7 +297,7 @@ $(document).ready(function() {
         }, ],
     });
 
-    $('.git-news-block .slider').slick({
+    $('.theme-3 .git-news-block .slider').slick({
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -366,6 +366,24 @@ $(document).ready(function() {
         dots: false,
         prevArrow: '<button class="slick-prev prev-arrow"></button>',
         nextArrow: '<button class="slick-next next-arrow"></button>',
+        responsive: [{
+            breakpoint: 992,
+            settings: {
+                arrows: false,
+                dots: true
+            },
+        }, ]
+    });
+
+    $(".theme-1 .git-news-block .slider").slick({
+        // autoplay: true,
+        centerMode: true,
+        centerPadding: '455px',
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
         responsive: [{
             breakpoint: 992,
             settings: {

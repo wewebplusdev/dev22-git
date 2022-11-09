@@ -324,6 +324,86 @@
     }
 }
 
+.git-news-block {
+    margin-bottom: 5rem;
+    .h-title {
+        text-align: center;
+        color: var(--color-primary);
+    }
+    .default-nav-tab {
+        margin-bottom: 80px;
+        li {
+            width: 33.33%;
+        }
+    }
+    .default-slider {
+        .item {
+            padding: 0 15px;
+            .link {
+                .wrapper {
+                    position: relative;
+                    .cover {
+                        padding-bottom: 50%;
+                    }
+                    .inner {
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0;
+                        padding: 1.5rem;
+                        backdrop-filter: blur(26px);
+                        .title {
+                            font-size: var(--typo-lg);
+                            font-weight: var(--fw-medium);
+                            color: var(--color-light);
+                            margin-bottom: 1rem;
+                        }
+                        .desc {
+                            font-size: var(--typo-md);
+                            color: var(--color-light);
+                            margin-bottom: 1rem;
+                        }
+                        .date {
+                            font-size: var(--typo-md);
+                            color: var(--color-light);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .item-list {
+        .news-block:first-child {
+            margin-top: 3rem;
+            border-top: 1px solid #cccccc;
+        }
+        // .news-block:not(:last-child) {
+        //     border-bottom: 1px solid #cccccc;
+        // }
+        .news-block {
+            margin-bottom: 30px;
+            margin-bottom: 0;
+            border-bottom: 1px solid transparent;
+            .cover {
+                width: 160px;
+                height: auto;
+                padding-bottom: 63%;
+            }
+            .desc,
+            .date {
+                padding-top: 15px;
+                padding: 10px;
+                .icon-calendar {
+                    color: #000;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+    .load-more-hide {
+        margin-top: 5rem;
+    }
+}
+
 @media (max-width: 1440px) {
     .git-information-block {
         .default-slider-dots .slick-dots {

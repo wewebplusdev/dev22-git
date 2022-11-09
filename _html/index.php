@@ -118,13 +118,84 @@
                 <div class="git-news-block">
                     <div class="container">
                         <div class="h-title">GIT News</div>
+                        <ul class="default-nav-tab nav nav-pills">
+                            <li>
+                                <a class="item active" href="#News1" data-toggle="tab">ข่าวสาร/กิจกรรม</a>
+                            </li>
+                            <li>
+                                <a class="item" href="#News2" data-toggle="tab">งานประชุม/สัมมนา</a>
+                            </li>
+                            <li>
+                                <a class="item" href="#News3" data-toggle="tab">การจัดซื้อ/จัดจ้าง</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="default-slider">
-                        
+                    <div class="tab-content clearfix">
+                        <div class="tab-pane active" id="News1">
+                            <div class="default-slider default-slider-dots slider">
+                                <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                    <div class="item">
+                                        <a href="" class="link" title="">
+                                            <div class="wrapper">
+                                                <figure class="cover">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/upload/news-slide-img.png" alt="">
+                                                </figure>
+                                                <div class="inner">
+                                                    <div class="title text-limit -x2">
+                                                        GIT เปิดตัวภาพลักษณ์ใหม่ ชู GIT Standard ยกระดับมาตรฐาน
+                                                    </div>
+                                                    <div class="desc text-limit -x2">
+                                                        GIT เปิดตัวภาพลักษณ์ใหม่ ชู GIT Standard ยกระดับมาตรฐาน ดันอุตสาหกรรมกรรมอัญมณีและเครื่องประดับไทย แข่งขันเวทีโลกอย่างยั่งยืน
+                                                    </div>
+                                                    <div class="date">
+                                                        <span class="feather-calendar"></span>
+                                                        16 มิถุนายน 2565
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <div class="container">
+                                <?php for ($i = 1; $i <= 3; $i++) { ?>
+                                    <ul class="item-list">
+                                        <li>
+                                            <a href="" class="link">
+                                                <div class="news-block">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-sm-auto">
+                                                            <figure class="cover">
+                                                                <img src="<?php echo $core_template; ?>/assets/img/upload/news-list-img.png" alt="news image">
+                                                            </figure>
+                                                        </div>
+                                                        <div class="col-sm">
+                                                            <div class="title">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ</div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="desc">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ หนุนผู้ประกอบการขยายช่องทางการค้าผ่านแพลตฟอร์ม Home Shopping 24 ชั่วโมง</div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="date">
+                                                                        <span class="feather icon-calendar"></span>
+                                                                        <span class="typo-xs text-black">16 มิถุนายน 2565</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                <?php } ?>
+                                <div class="load-more-hide text-center">
+                                    <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="container">
 
-                    </div>
                 </div>
 
                 <div class="git-e-Learning-block">
