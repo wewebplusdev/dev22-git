@@ -1,20 +1,106 @@
 <?php
-// ## default menu lv2
-$getMenuDetailFc = $callSetWebsite->getMenuDetail(0, null, null, null, $arraySubmenu);
-foreach ($getMenuDetailFc as $keygetMenuDetailFc => $valuegetMenuDetailFc) {
-  $arrMenu[$keygetMenuDetailFc][0] = $valuegetMenuDetailFc[0];
-  $arrMenu[$keygetMenuDetailFc]['id'] = $valuegetMenuDetailFc['id'];
-  $arrMenu[$keygetMenuDetailFc][1] = $valuegetMenuDetailFc[1];
-  $arrMenu[$keygetMenuDetailFc]['masterkey'] = $valuegetMenuDetailFc['masterkey'];
-
-  $subjectMnu = explode('-', $valuegetMenuDetailFc['subject']);
-  $arrMenu[$keygetMenuDetailFc][2] = $subjectMnu[1];
-  $arrMenu[$keygetMenuDetailFc]['subject'] = $subjectMnu[1];
+## default menu lv2
+$call_list_first = $trainingPage->callCMS($config['trw_his']['main']['masterkey']);
+$call_list_seconde = $trainingPage->callGroup($config['trw_con']['main']['masterkey']);
+$call_list_thrid = $trainingPage->callGroup($config['trw_web']['main']['masterkey']);
+$call_list_thrid = $callSetWebsite->getMenuDetail(0, $config['trw_web']['main']['masterkey']);
+## merg array
+foreach ($call_list_first as $keycall_list_first => $valuecall_list_first) {
+    $arrMenu[] = $valuecall_list_first;
+}
+foreach ($call_list_seconde as $keycall_list_seconde => $valuecall_list_seconde) {
+    $arrMenu[] = $valuecall_list_seconde;
+}
+foreach ($call_list_thrid as $keycall_list_thrid => $valuecall_list_thrid) {
+    $arrMenu[$keygetMenuDetailFc][0] = $valuecall_list_thrid[0];
+    $arrMenu[$keygetMenuDetailFc]['id'] = $valuecall_list_thrid['id'];
+    $arrMenu[$keygetMenuDetailFc][1] = $valuecall_list_thrid[1];
+    $arrMenu[$keygetMenuDetailFc]['masterkey'] = $valuecall_list_thrid['masterkey'];
+  
+    $subjectMnu = explode('-', $valuecall_list_thrid['subject']);
+    $arrMenu[$keygetMenuDetailFc][2] = $subjectMnu[1];
+    $arrMenu[$keygetMenuDetailFc]['subject'] = $subjectMnu[1];
 }
 $smarty->assign("arrMenu", $arrMenu);
 
 ## case 2 menu
 switch ($MenuID) {
+  case 'trw_web':
+    ## setting list
+    $limit = 10;
+    $order = $req_params['order'];
+    if ($order == 2) {
+        $sorting = "ASC";
+    } else {
+        $sorting = "DESC";
+        $order = 1;
+    }
+    $smarty->assign("order", $order);
+    
+      // $ContentID = $ContentID ? $ContentID : $arrMenu[0]['id'];
+      $callCMS = $trainingPage->callCMSInnerGroup($MenuID);
+      $callCMS_arr = $trainingPage->callCMSInnerGroup($MenuID);
+      if ($callCMS->_numOfRows < 1) {
+          header('location:' . $linklang . '/404');
+          exit(0);
+      }
+      $arrData = array();
+      foreach ($callCMS_arr as $keycallCMS_arr => $valuecallCMS_arr) {
+          $arrData[$valuecallCMS_arr['gid']]['group']['id'] = $valuecallCMS_arr['gid'];
+          $arrData[$valuecallCMS_arr['gid']]['group']['subject'] = $valuecallCMS_arr['subjectg'];
+
+          $arrData[$valuecallCMS_arr['gid']]['list'][] = $valuecallCMS_arr;
+      }
+    //   print_pre($arrData);
+      $smarty->assign("callCMS_arr", $arrData);
+
+      // slick slide
+      $initialSlide2 = 0;
+      if (count($callCMS->_numOfRows) > 4) {
+          foreach ($arrMenu as $key => $valuearrMenu) {
+              if ($valuearrMenu['id'] == $callCMS->fields['menuid'] && $callCMS->fields['masterkey'] == $valuearrMenu['masterkey']) {
+                  break;
+              } else {
+                  $initialSlide2++;
+              }
+          }
+      }
+      $smarty->assign("initialSlide2", '{"initialSlide": ' . $initialSlide2 . '}');
+
+      ## breadcrumb
+      $breadcrumb = explode("-", $callCMS->fields['menuname']);
+      $settingModulus['breadcrumb'] = $breadcrumb[0];
+      $settingModulus['namepage'] = $breadcrumb[1];
+
+      ## menu lv 2 active
+      $menuidLv2 = $callCMS->fields['menuid'];
+      $smarty->assign("menuidLv2", $menuidLv2);
+
+    /*## Start SEO #####*/
+    $seo_desc = "";
+    $seo_title = $breadcrumb[1];
+    $seo_keyword = "";
+    Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
+    /*## End SEO #####*/
+
+    
+    /*## Set up pagination #####*/
+    $pagination['total'] = $callCMS->_maxRecordCount;
+    $pagination['totalpage'] = ceil(($pagination['total'] / $limit));
+    $pagination['limit'] = $limit;
+    $pagination['curent'] = $page['on'];
+    $pagination['method'] = $page;
+    $smarty->assign("pagination", $pagination);
+    /*## Set up pagination #####*/
+
+      $MenuID = "trw_his";
+      $settingPage = array(
+          "page" => $menuActive,
+          "template" => "weblink_group.tpl",
+          "display" => "page",
+          "control" => "component",
+      );
+      break;
   case 'trw_his':
       // $ContentID = $ContentID ? $ContentID : $arrMenu[0]['id'];
       $callCMS = $trainingPage->callCMS($MenuID);
@@ -45,7 +131,7 @@ switch ($MenuID) {
       $settingModulus['breadcrumb'] = $breadcrumb[0];
 
       ## menu lv 2 active
-      $menuidLv2 = $callCMS->fields['menuid'];
+      $menuidLv2 = $callCMS->fields['id'];
       $smarty->assign("menuidLv2", $menuidLv2);
 
       /*## Start Update View #####*/
@@ -78,7 +164,7 @@ switch ($MenuID) {
       );
       break;
 
-  case 'ab_odw':
+  case 'trw_con':
       switch ($PageAction) {
           case 'detail':
               $ContentID = GetContentID($url->segment[4]);
@@ -122,7 +208,7 @@ switch ($MenuID) {
               Seo($seo_title, $seo_desc, $seo_keyword);
               /*## End SEO #####*/
 
-              $MenuID = "ab_odc"; // fixed ไว้ เพื่อ active menu แรกเสมอ
+              $MenuID = $config['trw_his']['main']['masterkey']; // fixed ไว้ เพื่อ active menu แรกเสมอ
               $settingPage = array(
                   "page" => $menuActive,
                   "template" => "cms_advance_detail.tpl",
@@ -154,9 +240,10 @@ switch ($MenuID) {
               ## list data
               if ($callGroup->fields['types'] == 1) { ## for group
                   $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+                  $masterkey_page = $callCMS->fields['masterkey'];
                   $smarty->assign("callCMS", $callCMS);
                   $MaxRecord = $callCMS->_maxRecordCount;
-                  $MenuID = "ab_odc"; // fixed ไว้ เพื่อ active menu แรกเสมอ
+                  $MenuID = $config['trw_his']['main']['masterkey']; // fixed ไว้ เพื่อ active menu แรกเสมอ
                   $settingPage = array(
                       "page" => $menuActive,
                       "template" => "download-list-group.tpl",
@@ -165,6 +252,7 @@ switch ($MenuID) {
                   );
               } else { ## for subgroup
                   $callSubGroup = $trainingPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+                  $masterkey_page = $callSubGroup->fields['masterkey'];
                   $MaxRecord = $callSubGroup->_maxRecordCount;
                   $arrListData = array();
                   foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
@@ -175,7 +263,7 @@ switch ($MenuID) {
                       }
                   }
                   $smarty->assign("arrListData", $arrListData);
-                  $MenuID = "ab_odc"; // fixed ไว้ เพื่อ active menu แรกเสมอ
+                  $MenuID = $config['trw_his']['main']['masterkey']; // fixed ไว้ เพื่อ active menu แรกเสมอ
                   $settingPage = array(
                       "page" => $menuActive,
                       "template" => "download-list-subgroup.tpl",
@@ -193,7 +281,7 @@ switch ($MenuID) {
               $smarty->assign("menuidLv2", $menuidLv2);
 
               ## group by year for filter
-              $callYear = $trainingPage->callYear($MenuID, $callGroup->fields['id']);
+              $callYear = $trainingPage->callYear($masterkey_page, $callGroup->fields['id']);
               $smarty->assign("callYear", $callYear);
 
               /*## Start SEO #####*/

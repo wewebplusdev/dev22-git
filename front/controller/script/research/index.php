@@ -9,6 +9,7 @@ $arrMenu = array();
 $getMenuDetail = array();
 $ContentID = GetContentID($url->segment[2]);
 $PageAction = $url->segment[2];
+$PageAction_default = $url->segment[3];
 $MenuID = GetContentID($url->segment[1]);
 $settingModulus['menuid'] = $MenuID;
 $MenuID = $callSetWebsite->getMenuID($MenuID);

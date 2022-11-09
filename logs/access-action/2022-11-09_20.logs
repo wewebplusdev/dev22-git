@@ -45,3 +45,16 @@ Insert|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mo
 Insert|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_weblink_group/insertContant.php|:|trw_web|:|296|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 13:55:49
 Insert|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_weblink_group/insertContant.php|:|trw_web|:|296|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 13:56:01
 Insert|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn_2/insertContant.php|:|trw_pri|:|293|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 13:56:43
+Delete|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cms/deleteContant.php|:|trw_his|:|294|:||:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:02:16
+Insert|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cms_advance/insertContant.php|:|trw_his|:|294|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:03:37
+Update|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn_2/updateContant.php|:|trw_con|:|295|:|update|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:09:55
+Insert Group|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn_2/insertGroup.php|:|trw_con|:|295|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:13:20
+Insert Sub Group|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn_2/insertSubGroup.php|:|trw_con|:|295|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:13:26
+Insert|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn_2/insertContant.php|:|trw_con|:|295|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:15:28
+View|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn_2/viewContant.php|:|trw_con|:|295|:||:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:15:32
+Delete|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn_2/deleteContant.php|:|trw_con|:|295|:||:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:18:31
+Delete Group|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn_2/deleteSubGroup.php|:|trw_con|:|295|:||:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:18:35
+Delete Group|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_cmsg_advance_dwn_2/deleteGroup.php|:|trw_con|:|295|:||:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:18:37
+View|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_weblink_group/viewContant.php|:|trw_web|:|296|:||:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 17:50:14
+Insert|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_weblink_group/insertContant.php|:|trw_web|:|296|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 18:01:43
+Insert|:|9126ebda6a19e85b19c6d7f71df72816|:|3|:|http://localhost:8080/weadmin/mod_weblink_group/insertContant.php|:|trw_web|:|296|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-09 18:01:52

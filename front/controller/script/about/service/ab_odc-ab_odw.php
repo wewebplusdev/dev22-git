@@ -153,6 +153,7 @@ switch ($MenuID) {
                 ## list data
                 if ($callGroup->fields['types'] == 1) { ## for group
                     $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+                    $masterkey_page = $callCMS->fields['masterkey'];
                     $smarty->assign("callCMS", $callCMS);
                     $MaxRecord = $callCMS->_maxRecordCount;
                     $MenuID = "ab_odc"; // fixed ไว้ เพื่อ active menu แรกเสมอ
@@ -164,6 +165,7 @@ switch ($MenuID) {
                     );
                 } else { ## for subgroup
                     $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+                    $masterkey_page = $callSubGroup->fields['masterkey'];
                     $MaxRecord = $callSubGroup->_maxRecordCount;
                     $arrListData = array();
                     foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
@@ -192,7 +194,7 @@ switch ($MenuID) {
                 $smarty->assign("menuidLv2", $menuidLv2);
 
                 ## group by year for filter
-                $callYear = $aboutPage->callYear($MenuID, $callGroup->fields['id']);
+                $callYear = $aboutPage->callYear($masterkey_page, $callGroup->fields['id']);
                 $smarty->assign("callYear", $callYear);
 
                 /*## Start SEO #####*/

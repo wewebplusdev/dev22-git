@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-09 09:29:21
+/* Smarty version 4.0.0, created on 2022-11-09 17:57:19
   from '/var/www/html/front/template/default/inc/inc-popup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636b1081b529d9_65179964',
+  'unifunc' => 'content_636b878f1449d8_27893302',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636b1081b529d9_65179964 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636b878f1449d8_27893302 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="gallery-popup d-none">
   <?php if ($_smarty_tpl->tpl_vars['callBanner']->value->_numOfRows >= 1) {?>
     <?php
@@ -31,8 +31,8 @@ $_smarty_tpl->tpl_vars['valuecallBanner']->do_else = false;
 ?>
       <a href="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['valuecallBanner']->value['masterkey'];
-$_prefixVariable3 = ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valuecallBanner']->value['pic'],"real",$_prefixVariable3,"link");?>
+$_prefixVariable4 = ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valuecallBanner']->value['pic'],"real",$_prefixVariable4,"link");?>
 ?targetid=manual<?php echo $_smarty_tpl->tpl_vars['keycallBanner']->value;?>
 " 
       data-fancybox="gallery-popup" <?php if ($_smarty_tpl->tpl_vars['valuecallBanner']->value['url'] != '' && $_smarty_tpl->tpl_vars['valuecallBanner']->value['url'] != "#") {?>data-href="<?php echo $_smarty_tpl->tpl_vars['valuecallBanner']->value['url'];?>
