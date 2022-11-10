@@ -29,7 +29,7 @@ $smarty->assign("req_params", $req_params);
 
 switch ($url->segment[1]) {
     case 'complaint-system':
-        $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render=' . $sitekey . '"></script>';
+        // $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render=' . $sitekey . '"></script>';
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/complaint-system.php';
         break;
 
@@ -38,7 +38,7 @@ switch ($url->segment[1]) {
         break;
 
     case 'request':
-        $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render=' . $sitekey . '"></script>';
+        // $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render=' . $sitekey . '"></script>';
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/request-form.php';
         break;
 

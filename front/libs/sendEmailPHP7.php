@@ -40,7 +40,14 @@ new OAuth(
 )
 );
 $mail->setFrom($email, $core_smtp_title); //ชื่อผู้ส่ง กับ Email ผู้ส่ง
-$mail->addAddress($mailTo); //ส่งถึงใคร
+if (gettype($mailTo) == "string") {
+    $mail->addAddress($mailTo); //ส่งถึงใคร
+}else{
+    foreach ($mailTo as $key => $to) {
+        $mail->AddAddress($to);
+    }
+}
+
 $mail->isHTML(true);
 $mail->Subject = $subjectMail; // หัวข้อเรื่อง
 $mail->Body    = $messageMail; // ตัว Body ของ Gmail

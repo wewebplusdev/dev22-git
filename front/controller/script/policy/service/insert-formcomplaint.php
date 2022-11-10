@@ -1,8 +1,8 @@
 <?php
 
 $secret = $secretkey;
-// $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
-// $responseData = json_decode($verifyResponse);
+$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
+$responseData = json_decode($verifyResponse);
 
 
 // print_pre($_REQUEST['g-recaptcha-response']);
@@ -56,7 +56,7 @@ exit(0);
 function formmail(){
   global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $policyPage, $lang, $config;
   
-  $mailGorup = $policyPage->callmailcontact($config['policy']['coms']['masterkey']);
+  $mailGorup = $policyPage->callmailcontact($config['policy']['coms']['masterkey'], $_POST["inputGroup"]);
   // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
   $SubjectMail = $lang["policy"]["complaint"]." (" . $_POST['inputName'] . ")";
   $Group = $policyPage->callComsGroup($config['policy']['coms']['masterkey'], $_POST["inputGroup"]);
@@ -76,7 +76,7 @@ function formmail(){
                   <tr style='height: 50px;'>
                     <td style='height: 16px;'>
                       <div style='font-size: 16px; font-weight: bold; color: #037ee5; line-height: 1em;'>
-                      ติดต่อเรา - ".$settingWeb['subjectoffice']."</div>
+                      รับเรื่องร้องเรียน - ".$settingWeb['subjectoffice']."</div>
                     </td>
                   </tr>
                   <tr style='height: 209px;'>
@@ -106,11 +106,14 @@ function formmail(){
   // /* ################ End Mail To User ########### */
   
   /* ################ Start Mail To Admin ########### */
+  $arrEmailer = array();
+  array_push($arrEmailer, trim($_POST['inputEmail']));
   $templates_admin = $callSetWebsite->template_mail($message);
   foreach ($mailGorup as $key => $to) {
-      loadSendEmailTo($to[2], $SubjectMail, $templates_admin);
       // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
+      array_push($arrEmailer, $to[2]);
   }
+  loadSendEmailTo($arrEmailer, $SubjectMail, $templates_admin);
 }
 
 

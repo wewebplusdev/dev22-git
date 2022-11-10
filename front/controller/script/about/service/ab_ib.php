@@ -16,6 +16,7 @@ $arrSubGroup = array();
 foreach ($callPositionMem as $keycallPositionMem => $valuecallPositionMem) {
     $arrSubGroup[] = "'".$valuecallPositionMem['gid']."'";
 }
+// print_pre($arrMenuActive->fields['id']);
 
 if ($callPositionMem->_numOfRows < 1) {
     header('location:'.$linklang.'/404');

@@ -333,7 +333,7 @@ class policyPage
     return $result;
   }
 
-  function callmailcontact($masterkey){
+  function callmailcontact($masterkey, $id = null){
     global $config, $db, $url;
   
     $sql = "SELECT
@@ -345,6 +345,11 @@ class policyPage
   WHERE
      " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_masterkey = '".$masterkey."'
     ";
+
+    if (!empty($id)) {
+      $sql .=" AND " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_gid = '".$id."'";
+    }
+    
     // print_pre($sql);
     $result = $db->execute($sql);
     return $result;
