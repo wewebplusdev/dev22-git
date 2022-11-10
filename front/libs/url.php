@@ -274,7 +274,7 @@ class url
                 break;
             
             default:
-                if (!$_SESSION['intro']) {
+                if (empty($_SESSION['intro'])) {
                     return $pageloader = " intro";
                 }else {
                     http_response_code(302);
@@ -283,7 +283,5 @@ class url
                 break;
         }
     }
-
     ########## End Add by bonz ##########
-
 }
