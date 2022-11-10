@@ -1,8 +1,8 @@
 <?php
 switch ($PageAction) {
     case 'detail':
-        $lang = $url->pagelang[2];
         $embed_type = "photo";
+        $sitelang = $url->pagelang[2];
         $ContentID = GetContentID($url->segment[2]);
         $callCMS = $photoPage->callCMS($MenuID, $ContentID);
         $callCMSAlbum = $photoPage->callCMSAlbum($ContentID);
@@ -21,7 +21,7 @@ switch ($PageAction) {
             }
         }
         $smarty->assign("albumCMSImageURL", $albumCMSImageURL);
-        $embed_url = _URL.$lang."/embed/".$embed_type."/".$ContentID;
+        $embed_url = _URL.$sitelang."/embed/".$embed_type."/".$ContentID;
         $smarty->assign("embed_url", $embed_url);
         ## breadcrumb
         $breadcrumb = explode("-", $callCMS->fields['menuname']);
