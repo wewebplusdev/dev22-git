@@ -13,7 +13,6 @@ $MenuID = GetContentID($url->segment[0]);
 $MenuID = $callSetWebsite->getMenuID($MenuID);
 $MasterkeyTemp = $config['photo']['ptg']['masterkey']; // master about like this
 $showslick = true; // slick shows
-
 if (empty($MenuID)) {
     $MenuID = $config['photo']['ptg']['masterkey'];
 }

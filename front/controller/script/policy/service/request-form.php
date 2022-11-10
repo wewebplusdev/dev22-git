@@ -17,6 +17,13 @@ $settingModulus['breadcrumb'] = $breadcrumb[0];
 $lang_concat = $url->pagelang['3'];
 $smarty->assign("lang_concat", "address" . $lang_concat);
 
+/*## Start SEO #####*/
+$seo_desc ="";
+$seo_title =$lang["policy"]["request"];
+$seo_keyword ="";
+Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
+/*## End SEO #####*/
+
 $settingPage = array(
     "page" => $menuActive,
     "template" => "req-policy.tpl",

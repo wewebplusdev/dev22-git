@@ -56,12 +56,12 @@ switch ($MenuID) {
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/trw_pri.php';
         break;
 
-    case 'trw_his': //การประกวดออกแบบ
-        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/trw_his.php';
+    case 'trw_cou': //หลักสูตร
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/cms_detail.php';
         break;
 
-    default: //หลักสูตร
-        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/cms_detail.php';
+    default: //การประกวดออกแบบ
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/trw_his.php';
         break;
 }
 

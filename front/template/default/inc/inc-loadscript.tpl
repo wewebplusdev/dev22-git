@@ -30,6 +30,9 @@
 <script src="{$template}/assets/js/cookie.js{$lastModify}"></script>
 <script src="{$template}/assets/js/pdpa.js{$lastModify}"></script>
 
+<!-- Embed Code -->
+<script src="{$template}/assets/js/embed.js{$lastModify}"></script>
+
 <script type="text/javascript">var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;</script>
 
 {strip}

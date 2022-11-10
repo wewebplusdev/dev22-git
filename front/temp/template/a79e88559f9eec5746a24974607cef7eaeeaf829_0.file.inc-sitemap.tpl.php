@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-09 09:29:21
+/* Smarty version 4.0.0, created on 2022-11-09 17:57:18
   from '/var/www/html/front/template/default/inc/inc-sitemap.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636b10817fd879_20374472',
+  'unifunc' => 'content_636b878ebcfcf3_36866886',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636b10817fd879_20374472 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636b878ebcfcf3_36866886 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="sitemap">
     <div class="container">
         <div id="accordion">
