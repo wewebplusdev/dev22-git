@@ -1,53 +1,53 @@
 <?php
-
 $menuActive = "search";
 $menuDetail = "detail";
 $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script.js' . $lastModify . '"></script>';
 
-switch ($PageAction) {
-   default:
-      $limit = 5;
-      $sorting = "DESC";
+$searchPage = new searchPage;
+$arrMenu = array();
+$getMenuDetail = array();
+$PageAction = $url->segment[0];
+$hashtagID = intval($url->segment[2]);
 
-      $srchtxt_main = trim($_REQUEST['srchtxt_main']);
-      $smarty->assign("srchtxt_main", $srchtxt_main);
+$MenuID = GetContentID($url->segment[0]);
+$MenuID = $callSetWebsite->getMenuID($MenuID);
+$MasterkeyTemp = $config['video']['vdo']['masterkey']; // master about like this
+$showslick = true; // slick shows
 
-      $search = new search();
-      $search_result = $search->searching($srchtxt_main, $page['on'], $limit, $sorting);
-      $smarty->assign("search_result", $search_result);
-      /* ## Set up pagination ##### */
-
-      $str_array = array($lang['search']['result'], $srchtxt_main, $search_result->_maxRecordCount);
-      $result_txt = strformat($str_array);
-      $smarty->assign("result_txt", $result_txt);
-
-      $pagination['total'] = $search_result->_maxRecordCount;
-      $pagination['totalpage'] = ceil(($pagination['total'] / $limit));
-      $pagination['limit'] = $limit;
-      $pagination['curent'] = $page['on'];
-      $pagination['method'] = $page;
-      $smarty->assign("pagination", $pagination);
-      /* ## Set up pagination ##### */
-
-## lang variable
-      $lang_concat = $url->pagelang['3'];
-      $smarty->assign("lang_concat", "address" . $lang_concat);
-
-      $settingPage = array(
-          "page" => $menuActive,
-          "template" => "search.tpl",
-          "display" => "page",
-          "control" => "component",
-      );
-      break;
+if (empty($MenuID)) {
+    $MenuID = $config['video']['vdo']['masterkey'];
 }
 
-//require_once _DIR . '/front/controller/script/' . $menuActive . '/service/search.php';
+## REQUEST_URI
+$req_params = array();
+$req_params['year'] = $_REQUEST['year'];
+$req_params['order'] = $_REQUEST['order'];
+$smarty->assign("req_params", $req_params);
+$limit = 12;
+$order = $_REQUEST['order'];
+$keywords = $_REQUEST['keywords'];
+$dateStart = $_REQUEST['trip-start'];
+$dateEnd = $_REQUEST['trip-end'];
+$typeSearch = $_REQUEST['typeSch'] ? $_REQUEST['typeSch'] : "1" ;
+$typeOption = $_REQUEST['typeOption'] ? $_REQUEST['typeOption'] : "1" ;
+$txtMasterkey = $_REQUEST['inputGroup'];
+$smarty->assign("keywords", $keywords);
+
+
+
+switch ($MenuID) {
+
+    default: //
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/search.php';
+        break;
+}
 
 $urlfull = _FullUrl;
-$smarty->assign("domain", _Domain);
 $smarty->assign("urlfull", $urlfull);
+$smarty->assign("domain", _Domain);
 $smarty->assign("menuActive", $menuActive);
 $smarty->assign("menuDetail", $menuDetail);
 $smarty->assign("fileInclude", $settingPage);
+$smarty->assign("MenuID", $MenuID);
 $smarty->assign("settingModulus", $settingModulus);
+$smarty->assign("showslick", $showslick);

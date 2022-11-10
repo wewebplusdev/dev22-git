@@ -26,7 +26,7 @@
                   <div class="col">
                      <div class="block-control form-group">
                         <label class="control-label visuallyhidden" for="keyword">{$lang['search']['subject']}</label>
-                        <input type="text" class="form-control" id="keyword" name="srchtxt_main" value="{$srchtxt_main}" aria-describedby="keyword" placeholder="{$lang['search']['subject']}">
+                        <input type="text" class="form-control" id="keyword" name="keywords" value="{$keywords}" aria-describedby="keyword" placeholder="{$lang['search']['subject']}">
                         <button type="submit" class="btn form-control-icon">
                            <span class="icon-from -icon-search"></span>
                         </button>
@@ -38,10 +38,10 @@
                </div>
             </form>
 
-            {if $search_result->_numOfRows gte 1}
+             {if $callSearchAll->_numOfRows gte 1}
 
                <ul class="item-list">
-                  {foreach $search_result as $result}
+                  {foreach $callSearchAll as $result}
                      <li>
                         <div class="row align-items-end">
                            <div class="col">
@@ -64,6 +64,15 @@
                               </a>
                            </div>
                         </div>
+                        {if $call_hashtag_page->_numOfRows gte 1}
+                           <div class="row align-items-end">
+                           {foreach $call_hashtag_page as $keycall_hashtag_list => $valuecall_hashtag_list}
+                              <div class="col-md-3 col-sm-4 col-12 search-click" data-url="{$ul}/{$menuActive}/hashtag/{$valuecall_hashtag_list.id}">
+                                 <div class="list-link desc" style="margin-top: 10px;">#{$valuecall_hashtag_list.subject}</div>
+                              </div>
+                           {/foreach}
+                           </div>
+                        {/if}
                      </li>
                   {/foreach}
                </ul>
@@ -73,7 +82,7 @@
 
          <div class="editor-content">
          </div>
-         {if $search_result->_numOfRows gte 1 && $pagination['totalpage'] gte 2}
+         {if $callSearchAll->_numOfRows gte 1 && $pagination['totalpage'] gte 2}
             {include file="{$incfile.pagination}"}
          {/if}
       </div>
