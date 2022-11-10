@@ -108,14 +108,14 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				}
 
 				var inputSubgroup = $('input[name="inputSubType"]').val();
-				if(inputSubgroup == 1){
-						if (inputSubGroupID.value == 0) {
-								inputSubGroupID.focus();
-								jQuery("#inputSubGroupID").addClass("formInputContantTbAlertY");
-								return false;
-						} else {
-								jQuery("#inputSubGroupID").removeClass("formInputContantTbAlertY");
-						}
+				if (inputSubgroup == 1) {
+					if (inputSubGroupID.value == 0) {
+						inputSubGroupID.focus();
+						jQuery("#inputSubGroupID").addClass("formInputContantTbAlertY");
+						return false;
+					} else {
+						jQuery("#inputSubGroupID").removeClass("formInputContantTbAlertY");
+					}
 				}
 
 				if (isBlank(inputSubject)) {
@@ -179,7 +179,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 			var GroupID = $('#inputGroupID :selected').val();
 			if (GroupID > 0) {
-				onChangeSelect('openSelectSub.php','#subgroup');
+				onChangeSelect('openSelectSub.php', '#subgroup');
 			}
 		});
 	</script>
@@ -256,8 +256,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						?>
 							<label>
 								<div class="formDivRadioL"><input name="inputSetLang[<?php echo $key ?>]" id="inputSetLang-<?php echo $key ?>" value="1" type="checkbox" class="formRadioContantTb checkbokSetLang" <?php if ($valLang[$key] == 1) {
-																																																																																																			echo 'checked';
-																																																																																																		} ?> /></div>
+																																																						echo 'checked';
+																																																					} ?> /></div>
 								<div class="formDivRadioR"><?php echo $value ?></div>
 							</label>
 						<?php
@@ -293,7 +293,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				</tr>
 				<tr id="subgroup">
 
-        </tr>
+				</tr>
 				<tr>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subject"] ?><span class="fontContantAlert">*</span></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputSubject" id="inputSubject" type="text" class="formInputContantTb" value="<?php echo $valSubject ?>" /></td>
@@ -310,15 +310,15 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
 						<label>
 							<div class="formDivRadioL"><input name="inputTypeShow" id="inputTypeShow" value="1" type="radio" checked="checked" class="formRadioContantTb" onclick="jQuery('.boxDetail').show();" <?php if ($valTypeC == 1) {
-																																																																																																			echo 'checked="checked"';
-																																																																																																		} ?> /></div>
+																																																						echo 'checked="checked"';
+																																																					} ?> /></div>
 							<div class="formDivRadioR"><?php echo  $modType[1] ?></div>
 						</label>
 
 						<label>
 							<div class="formDivRadioL"><input name="inputTypeShow" id="inputTypeShow" value="2" type="radio" class="formRadioContantTb" onclick="jQuery('.boxDetail').hide();" <?php if ($valTypeC != 1) {
-																																																																																										echo 'checked="checked"';
-																																																																																									} ?> /></div>
+																																																	echo 'checked="checked"';
+																																																} ?> /></div>
 							<div class="formDivRadioR"><?php echo  $modType[2] ?></div>
 						</label>
 					</td>
@@ -327,8 +327,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			</table>
 			<br />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxDetail" <?php if ($valTypeC != 1) {
-																																																												echo 'style="display:none;"';
-																																																											} ?>>
+																																echo 'style="display:none;"';
+																															} ?>>
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
@@ -340,24 +340,24 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						<div id="inputEditHTML">
 							<textarea name="editDetail" id="editDetail">
       <?php
-			if (is_file($valhtml)) {
-				$fd = @fopen($valhtml, "r");
-				$contents = @fread($fd, @filesize($valhtml));
-				@fclose($fd);
-				echo txtReplaceHTML($contents);
-			}
-			?>
+		if (is_file($valhtml)) {
+			$fd = @fopen($valhtml, "r");
+			$contents = @fread($fd, @filesize($valhtml));
+			@fclose($fd);
+			echo txtReplaceHTML($contents);
+		}
+		?>
       </textarea>
 						</div>
 					</td>
 				</tr>
 			</table>
 			<br class="boxDetail" <?php if ($valTypeC != 1) {
-															echo 'style="display:none;"';
-														} ?> />
+										echo 'style="display:none;"';
+									} ?> />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxDetail" <?php if ($valTypeC != 1) {
-																																																												echo 'style="display:none;"';
-																																																											} ?>>
+																																echo 'style="display:none;"';
+																															} ?>>
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:video"] ?></span><br />
@@ -412,8 +412,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				</tr>
 			</table>
 			<br class="boxDetail" <?php if ($valTypeC != 1) {
-															echo 'style="display:none;"';
-														} ?> />
+										echo 'style="display:none;"';
+									} ?> />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -471,8 +471,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			<br />
 
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxDetail" <?php if ($valTypeC != 1) {
-																																																												echo 'style="display:none;"';
-																																																											} ?>>
+																																echo 'style="display:none;"';
+																															} ?>>
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:seo"] ?></span><br />
@@ -503,8 +503,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				</tr>
 			</table>
 			<br class="boxDetail" <?php if ($valTypeC != 1) {
-															echo 'style="display:none;"';
-														} ?> />
+										echo 'style="display:none;"';
+									} ?> />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">

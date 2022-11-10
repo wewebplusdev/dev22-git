@@ -113,9 +113,9 @@
                                             style="width: 100%;">
                                             <option value="0">{$lang['calculator']['Thin_Medium']} (0%)</option>
                                             <option value="0.02">{$lang['calculator']['Slightly_Thick']} (+2%)</option>
-                                            <option value="0.04">{$lang['calculator']['Thick']}</option>
-                                            <option value="0.06">{$lang['calculator']['Very Thick']} (+6%)</option>
-                                            <option value="0.09">{$lang['calculator']['Extra Thick']} (+9%)</option>
+                                            <option value="0.04">{$lang['calculator']['Thick']} (+4%)</option>
+                                            <option value="0.06">{$lang['calculator']['Very_Thick']} (+6%)</option>
+                                            <option value="0.09">{$lang['calculator']['Extra_Thick']} (+9%)</option>
                                         </select>
                                     </div>
                                 </div>
@@ -175,11 +175,11 @@
                                     <div class="item-list">
                                         <li>
                                             <button type="submit" id="submitForm"
-                                                class="btn btn-lg btn-primary disabled" title="คำณวน">{$lang['calculator']['Calculate']="คำนวณ";}</button>
+                                                class="btn btn-lg btn-primary disabled" title="คำณวน">{$lang['calculator']['Calculate']}</button>
                                         </li>
                                         <li>
                                             <button type="button" id="cancelForm" class="btn btn-lg btn-border-primary"
-                                                title="รีเซ็ต">{$lang['calculator']['Reset']="รีเซ็ต";}</button>
+                                                title="{$lang['calculator']['Reset']}">{$lang['calculator']['Reset']}</button>
                                         </li>
                                     </div>
                                 </div>

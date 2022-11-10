@@ -66,21 +66,21 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     jQuery("#inputDescription").removeClass("formInputContantTbAlertY");
                 }
 
-                if (inputEregis.value == "http://" || isBlank(inputEregis)) {
-                    inputEregis.focus();
-                    jQuery("#inputEregis").addClass("formInputContantTbAlertY");
-                    return false;
-                } else {
-                    jQuery("#inputEregis").removeClass("formInputContantTbAlertY");
-                }
+                // if (inputEregis.value == "http://" || isBlank(inputEregis)) {
+                //     inputEregis.focus();
+                //     jQuery("#inputEregis").addClass("formInputContantTbAlertY");
+                //     return false;
+                // } else {
+                //     jQuery("#inputEregis").removeClass("formInputContantTbAlertY");
+                // }
 
-                if (inputFormD.value == "http://" || isBlank(inputFormD)) {
-                    inputFormD.focus();
-                    jQuery("#inputFormD").addClass("formInputContantTbAlertY");
-                    return false;
-                } else {
-                    jQuery("#inputFormD").removeClass("formInputContantTbAlertY");
-                }
+                // if (inputFormD.value == "http://" || isBlank(inputFormD)) {
+                //     inputFormD.focus();
+                //     jQuery("#inputFormD").addClass("formInputContantTbAlertY");
+                //     return false;
+                // } else {
+                //     jQuery("#inputFormD").removeClass("formInputContantTbAlertY");
+                // }
 
 
                 var alleditDetail = CKEDITOR.instances.editDetail.getData();
@@ -237,7 +237,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         <textarea name="inputDescription" id="inputDescription" cols="45" rows="5" class="formTextareaContantTb"></textarea>
                     </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:eregis"] ?><span class="fontContantAlert">*</span></td>
                     <td colspan="6" align="left" valign="top" class="formRightContantTb">
                         <textarea name="inputEregis" id="inputEregis" cols="45" rows="5" class="formTextareaContantTb">http://</textarea>
@@ -250,7 +250,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         <textarea name="inputFormD" id="inputFormD" cols="45" rows="5" class="formTextareaContantTb">http://</textarea>
                         <span class="formFontNoteTxt"><?php echo $langMod["edit:linknote"] ?></span>
                     </td>
-                </tr>
+                </tr> -->
             </table>
             <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">

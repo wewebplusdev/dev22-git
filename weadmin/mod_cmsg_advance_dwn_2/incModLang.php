@@ -238,5 +238,7 @@ $langMod["tit:typetheme"] = "การแสดงผล";
 $langMod["tit:typesub"] = "กลุ่มย่อย";
 $langMod["txt:subjectsg"] = "". $langMod["meu:subgroup"]." Info";
 $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. " to be used for display on your site.";
+$langMod["tit:selectsg"] = "เลือกกลุ่มย่อย". $langMod["meu:group"];
+$langMod["tit:selectsgn"] = "ชื่อกลุ่มย่อย". $langMod["meu:group"];
 }
 ?>

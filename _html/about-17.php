@@ -122,7 +122,7 @@
                                 </p>
                             </div>
                             <div class="col">
-                                <img src="<?php echo $core_template; ?>/assets/img/background/image-about-4.png" alt="">
+                                <img src="./front/template/default/assets/img/background/image-about-4.png" alt="">
                             </div>
                         </div>
                     </div>

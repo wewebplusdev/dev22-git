@@ -79,7 +79,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langMod["home:detail"] = "อ่านรายละเอียด";
     $langMod["tit:typevdo"] = "การแสดงผล";
     $langMod["inp:notepic"] = "หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg ,.gif และ .png เท่านั้น ขนาดของรูปภาพที่ใช้ในการอัพโหลด " . $sizeWidthReal . " x " . $sizeHeightReal . " พิกเซล";
-
+    $langMod["tit:title"] = "ชื่อ".getNameMenu($_REQUEST["menukeyid"]);
     $langMod["txt:video"] = "ข้อมูลวิดีโอ ";
     $langMod["tit:uploadvdo"] = "อัพโหลดไฟล์";
     $langMod["tit:linkvdonote"] = "หมายเหตุ : เฉพาะชื่อ URL youtube.com เท่านั้น";

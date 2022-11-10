@@ -63,7 +63,29 @@ class infoServicePage
     $result = $db->execute($sql);
     return $result;
   }
+  function callCMSAlbum($id = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langOption = $url->pagelang[2];
+    $langFull = strtolower($url->pagelang[4]);
 
+    $sql = "SELECT
+    " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_id as id,
+    " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_filename as filename,
+    " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_name as name
+    FROM
+    " . $config['cma']['db']['main'] . "
+    WHERE 1=1 ";
+    if (!empty($id)) {
+      $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_contantid= '" . $id . "' ";
+    }
+
+    $sql .= " ORDER  BY " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_id ASC ";
+    //print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
   function callCMSList($masterkey, $id = null, $gid = null, $page = 1, $limit = 10, $order = "DESC", $year = null, $sid = null)
   {
     global $config, $db, $url;

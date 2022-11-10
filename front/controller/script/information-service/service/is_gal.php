@@ -4,11 +4,22 @@ switch ($PageAction_pic) {
     case 'detail':
         $ContentID = GetContentID($url->segment[3]);
         $callCMS = $infoServicePage->callCMS($MenuID, $ContentID);
+        $callCMSAlbum = $infoServicePage->callCMSAlbum($ContentID);
         if ($callCMS->_numOfRows < 1) {
             header('location:' . $linklang . '/404');
             exit(0);
         }
         $smarty->assign("callCMS", $callCMS);
+
+        $albumCMSImageURL = array();
+        foreach ($callCMSAlbum as $key => $image) {
+            if (!empty($image['filename'])) {
+                $fullpath_pic = fileinclude($image['filename'], 'album', $MenuID, 'link');
+                $albumCMSImageURL[] = $fullpath_pic;
+            }
+        }
+        //print_pre($albumCMSImageURL);
+        $smarty->assign("albumCMSImageURL", $albumCMSImageURL);
 
         $Call_File = $callSetWebsite->Call_File($callCMS->fields['id']);
         $smarty->assign("Call_File", $Call_File);
@@ -44,7 +55,7 @@ switch ($PageAction_pic) {
 
         $settingPage = array(
             "page" => $menuActive,
-            "template" => "cmsg_advance_detail.tpl",
+            "template" => "cmsg_album_detail.tpl",
             "display" => "page",
             "control" => "component",
         );

@@ -114,6 +114,8 @@ $langMod["inp:sefile"] = "Select attachment";
 		$langMod["tit:selectgn"] ="ชื่อ".$langMod["meu:group"];
 		$langMod["txt:subjectg"] = "ข้อมูล".$langMod["meu:group"];
 		$langMod["txt:subjectgDe"] = "โปรดป้อนชื่อ".$langMod["meu:group"]." เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
+		$langMod["txt:titlesDe"] = "กรุณากรอกรายละเอียด เพื่อใช้ในการแสดงบนเว็บไซต์ของคุณ. ";
+		$langMod["tit:titlesetting"] = "คำบรรยาย";
 		$langMod["tit:noteg"] ="หมายเหตุ";
 		$langMod["ats:email"] = "อีเมล์ซ้ำกับที่มีอยู่ในระบบแล้ว";
 				

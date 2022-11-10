@@ -115,6 +115,89 @@
                     </div>
                 </div>
 
+                <div class="git-news-block">
+                    <div class="container">
+                        <div class="h-title">GIT News</div>
+                        <ul class="default-nav-tab nav nav-pills">
+                            <li>
+                                <a class="item active" href="#News1" data-toggle="tab">ข่าวสาร/กิจกรรม</a>
+                            </li>
+                            <li>
+                                <a class="item" href="#News2" data-toggle="tab">งานประชุม/สัมมนา</a>
+                            </li>
+                            <li>
+                                <a class="item" href="#News3" data-toggle="tab">การจัดซื้อ/จัดจ้าง</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content clearfix">
+                        <div class="tab-pane active" id="News1">
+                            <div class="default-slider default-slider-dots slider">
+                                <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                    <div class="item">
+                                        <a href="" class="link" title="">
+                                            <div class="wrapper">
+                                                <figure class="cover">
+                                                    <img src="<?php echo $core_template; ?>/assets/img/upload/news-slide-img.png" alt="">
+                                                </figure>
+                                                <div class="inner">
+                                                    <div class="title text-limit -x2">
+                                                        GIT เปิดตัวภาพลักษณ์ใหม่ ชู GIT Standard ยกระดับมาตรฐาน
+                                                    </div>
+                                                    <div class="desc text-limit -x2">
+                                                        GIT เปิดตัวภาพลักษณ์ใหม่ ชู GIT Standard ยกระดับมาตรฐาน ดันอุตสาหกรรมกรรมอัญมณีและเครื่องประดับไทย แข่งขันเวทีโลกอย่างยั่งยืน
+                                                    </div>
+                                                    <div class="date">
+                                                        <span class="feather-calendar"></span>
+                                                        16 มิถุนายน 2565
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <div class="container">
+                                <?php for ($i = 1; $i <= 3; $i++) { ?>
+                                    <ul class="item-list">
+                                        <li>
+                                            <a href="" class="link">
+                                                <div class="news-block">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-sm-auto">
+                                                            <figure class="cover">
+                                                                <img src="<?php echo $core_template; ?>/assets/img/upload/news-list-img.png" alt="news image">
+                                                            </figure>
+                                                        </div>
+                                                        <div class="col-sm">
+                                                            <div class="title">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ</div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="desc">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ หนุนผู้ประกอบการขยายช่องทางการค้าผ่านแพลตฟอร์ม Home Shopping 24 ชั่วโมง</div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="date">
+                                                                        <span class="feather icon-calendar"></span>
+                                                                        <span class="typo-xs text-black">16 มิถุนายน 2565</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                <?php } ?>
+                                <div class="load-more-hide text-center">
+                                    <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
                 <div class="git-e-Learning-block">
                     <div class="container -xl">
                         <div class="h-title text-uppercase text-center text-light">
@@ -204,6 +287,183 @@
                         </div>
                     </div>
                 </div>
+                <div class="git-information-block">
+                    <div class="container -lg">
+                        <div class="h-title m-0">GIT Information Center</div>
+                        <div class="sub-title">ศูนย์ข้อมูลอัญมณีและเครื่องประดับ</div>
+                        <div class="default-slider default-slider-dots slider">
+                            <?php for ($i = 1; $i <= 7; $i++) { ?>
+                                <div class="item">
+                                    <a href="" class="link" title="">
+                                        <div class="wrapper">
+                                            <div class="inner">
+                                                <div class="title text-limit -x2">
+                                                    บทความวิชาการ เรื่อง “ตลาด อีคอมเมิร์ซเมืองรองของจีนอีคอมเมิร์ซเมืองรองของจีน...
+                                                </div>
+                                                <div class="desc text-limit -x2">
+                                                    บทความวิชาการ เรื่อง “ตลาดอีคอมเมิร์ซเมืองรองของจีน โอกาสทองอัญมณีและเครื่องประดับไทย”
+                                                </div>
+                                                <div class="divider"></div>
+                                                <div class="date">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <span class="feather-calendar"></span>
+                                                            16 มิถุนายน 2565
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <span class="icon feather-chevron-right"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php } ?>
+                        </div>
+                        <div class="load-more-hide text-center">
+                            <a href="javascript:void(0)" class="btn btn-lg btn-border-light" title="ดูทั้งหมด">อ่านต่อ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="git-service-block">
+                    <div class="container -lg">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12 col">
+                                        <div class="h-title m-0">GIT SEVICES</div>
+                                        <div class="sub-title">บริการของเรา</div>
+                                    </div>
+                                    <div class="col-md-12 col-auto">
+                                        <div class="load-more-hide text-left mb-4">
+                                            <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sidebar-menus">
+                                    <ul class="item-list">
+                                        <li class="menu-service">
+                                            <a class="link topic active" href="#Tab1" data-toggle="tab">
+                                                <div class="block-dots">
+                                                    <div class="dots-topic active"></div>
+                                                </div>
+                                                บริการห้องปฏิบัติการ
+                                            </a>
+                                            <ul class="sub-topic -block">
+                                                <li class="-border-top">
+                                                    <a class="link" href="javascript:void(0)">ตรวจสอบอัญมณี</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="link" href="javascript:void(0)">ตรวจสอบโลหะมีค่า</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="link" href="javascript:void(0)">Laser Engraving</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="link" href="javascript:void(0)">แกะสลักอัญมณี</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="item-list">
+                                        <li class="menu-service">
+                                            <a class="link topic" href="#Tab2" data-toggle="tab">
+                                                <div class="block-dots">
+                                                    <div class="dots-topic"></div>
+                                                </div>
+                                                บริการฝึกอบรม
+                                            </a>
+                                            <ul class="sub-topic">
+                                                <li class="-border-top">
+                                                    <a class="link" href="javascript:void(0)">ตรวจสอบอัญมณี</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="link" href="javascript:void(0)">ตรวจสอบโลหะมีค่า</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="link" href="javascript:void(0)">Laser Engraving</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="link" href="javascript:void(0)">แกะสลักอัญมณี</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="item-list">
+                                        <li class="menu-service">
+                                            <a class="link topic" href="#Tab3" data-toggle="tab">
+                                                <div class="block-dots">
+                                                    <div class="dots-topic"></div>
+                                                </div>
+                                                บริการข้อมูลข่าวสาร
+                                            </a>
+                                            <ul class="sub-topic">
+                                                <li class="-border-top">
+                                                    <a class="link" href="javascript:void(0)">ตรวจสอบอัญมณี</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="link" href="javascript:void(0)">ตรวจสอบโลหะมีค่า</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="link" href="javascript:void(0)">Laser Engraving</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="link" href="javascript:void(0)">แกะสลักอัญมณี</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <figure class="cover">
+                                    <img src="<?php echo $core_template; ?>/assets/img/upload/service-image.png" alt="gallery thumbnail">
+                                </figure>
+                                <div class="tab-content clearfix">
+                                    <div class="tab-pane active" id="Tab1">
+                                        <div class="topic-content-block">
+                                            <div class="h-title m-0">บริการห้องปฏิบัติการ1</div>
+                                            <div class="sub-title">ตรวจสอบอัญมณี</div>
+                                            <div class="desc">
+                                                ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
+                                            </div>
+                                            <div class="load-more-hide text-left mt-4">
+                                                <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="Tab2">
+                                        <div class="topic-content-block">
+                                            <div class="h-title m-0">บริการห้องปฏิบัติการ2</div>
+                                            <div class="sub-title">ตรวจสอบอัญมณี</div>
+                                            <div class="desc">
+                                                ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
+                                            </div>
+                                            <div class="load-more-hide text-left mt-4">
+                                                <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="Tab3">
+                                        <div class="topic-content-block tab-pane">
+                                            <div class="h-title m-0">บริการห้องปฏิบัติการ3</div>
+                                            <div class="sub-title">ตรวจสอบอัญมณี</div>
+                                            <div class="desc">
+                                                ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
+                                            </div>
+                                            <div class="load-more-hide text-left mt-4">
+                                                <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="banner">
                     <div class="container">
                         <div class="banner-II-block bg-primary">
@@ -610,7 +870,7 @@
                     </div>
                 </div>
 
-                <div class="video-gallery">
+                <div class="git-vdo-block">
                     <div class="container -lg">
                         <div class="h-title text-center">GIT VDO</div>
                         <ul class="nav nav-pills default-nav-tab">
@@ -668,7 +928,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="load-more-hide text-center mb-5">
+                        <div class="load-more-hide text-center pb-5">
                             <a href="javascript:void(0)" class="btn btn-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
                         </div>
                     </div>

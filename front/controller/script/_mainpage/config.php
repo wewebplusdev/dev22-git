@@ -6,6 +6,7 @@ $config['mnu']['db'] = "sy_mnu";
 // table
 $config['cms']['db']['main'] = "md_cms";
 $config['cmg']['db']['main'] = "md_cmg";
+$config['cma']['db']['main'] = "md_cma";
 $config['popup']['db'] = "md_int";
 $config['cmf']['db']['main'] = "md_cmf";
 $config['cmsg']['db']['main'] = "md_cmsg";
@@ -43,6 +44,7 @@ $config['caa']['db']['main'] = "md_caa";
 $config['caf']['db']['main'] = "md_caf";
 $config['sys']['db']['online'] = "sy_online";
 $config['sys']['db']['counter'] = "sy_counter";
+$config['sea']['db']['main'] = "sy_sea";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
@@ -73,15 +75,23 @@ $config['ab_nm']['main']['masterkey'] = "ab_nm";
 $config['km_t3']['main']['masterkey'] = "km_t3";
 $config['setting']['main']['masterkey'] = "setting";
 $config['lcf_s']['main']['masterkey'] = "lcf_s";
+$config['video']['vdo']['masterkey'] = "vdo";
+$config['photo']['ptg']['masterkey'] = "ptg";
+$config['cou_trw']['main']['masterkey'] = "trw_cou";
+$config['policy']['coms']['masterkey'] = 'coms';
+$config['policy']['req']['masterkey'] = 'req';
 $config['cl']['masterkey'] = "cl";
 
 $config['req']['main']['masterkey'] = "req";
+$config['trw_his']['main']['masterkey'] = "trw_his";
+$config['trw_con']['main']['masterkey'] = "trw_con";
+$config['trw_web']['main']['masterkey'] = "trw_web";
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';
 $config['policy']['db'] = 'md_ab';
 $config['policy_file']['db'] = 'md_abf';
 $config['policy']['masterkey'] = 'pl';
-$config['policy']['complaint']['masterkey'] = 'coms';
+
 $config['pdpa']['masterkey'] = 'accept';
 
 //setting menu
