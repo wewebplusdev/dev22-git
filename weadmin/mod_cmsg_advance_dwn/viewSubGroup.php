@@ -159,7 +159,7 @@ if ($_REQUEST['masterkey'] == 'news') {
             </td>
         </tr>
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjectg"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjectsg"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
             <div class="formDivView"><?php echo $valSubject ?></div>
           </td>
