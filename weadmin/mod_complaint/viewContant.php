@@ -58,7 +58,6 @@ if ($valStatus == "Read") {
     $valStatusClass = "fontContantTbDisable";
 }
 
-
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 
 logs_access('3', 'View');
@@ -129,8 +128,8 @@ logs_access('3', 'View');
                                         <span class="formFontTileTxt"><?php echo  $langMod["txt:infoDe"] ?></span>    </td>
                                 </tr>
                                 <tr >
-                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php $langMod["tit:fname"] ?>:<span class="fontContantAlert"></span></td>
-                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valFName ?></div></td>
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:fname"] ?>:<span class="fontContantAlert"></span></td>
+                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valFName ?>ปปป</div></td>
                                 </tr>
                                 <!-- <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:lname"] ?>:<span class="fontContantAlert"></span></td>

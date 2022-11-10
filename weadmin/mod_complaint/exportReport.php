@@ -32,10 +32,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <tbody>
     <tr >
       <td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:no"]?></td>
-      <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:selectgn"]?></td> -->
-      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:subject"]?></td>
-      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle">name</td>
-      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo "Message"; ?></td>
+      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:selectgn"]?></td>
+      <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:subject"]?></td> -->
+      <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle">name</td> -->
+      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo "ข้อความ"; ?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:email"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:tel"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:address"]?></td>
@@ -48,7 +48,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
     
     <?php
 $sql=str_replace('\\','',$_POST['sql_export']);
-// print_pre($sql);
+print_pre($sql);
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $count_record=wewebNumRowsDB($coreLanguageSQL,$query);
 $date_print=DateFormat(date("Y-m-d"));
@@ -68,6 +68,7 @@ $date_print=DateFormat(date("Y-m-d"));
       $valCreby=decodeStr(rechangeQuot($rowExport[10]));
 			$valIp=decodeStr(rechangeQuot($rowExport[8]));
 			$valGid=$rowExport[9];
+			$valSubject=decodeStr(rechangeQuot($rowExport[10]));
 			
 			$sql_group = "SELECT ";
 			if($_SESSION[$valSiteManage.'core_session_language']=="Thai"){
@@ -87,9 +88,9 @@ $date_print=DateFormat(date("Y-m-d"));
     
     <tr bgcolor="#ffffff">
       <td height="30" align="center"  valign="middle"><?php echo $index?></td>
-      <!-- <td align="left"  valign="middle"><?php echo $row_groupname?></td> -->
-      <td align="left"  valign="middle"><?php echo $valSubject?></td>
-      <td align="left"  valign="middle"><?php echo $valCreby?></td>
+      <td align="left"  valign="middle"><?php echo $row_groupname?></td>
+      <!-- <td align="left"  valign="middle"><?php echo $valSubject?></td> -->
+      <!-- <td align="left"  valign="middle"><?php echo $valCreby?></td> -->
       <td align="left"  valign="middle"><?php echo $valMessage?></td>
       <td align="left" valign="middle"><?php echo $valEmail?></td>
       <td align="left" valign="middle">'<?php echo $valTel?></td>

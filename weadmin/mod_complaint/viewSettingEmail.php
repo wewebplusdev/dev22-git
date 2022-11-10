@@ -86,10 +86,10 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 </a>
             </div>
             <div class="menuSubMod">
-                <a  href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                    <?php echo $langMod["txt:titles"] ?>
-                </a>
-            </div>
+              <a  href="group.php?masterkey=<?php echo $_REQUEST['masterkey']?>&menukeyid=<?php echo $_REQUEST['menukeyid']?>">
+								<?php echo $langMod["meu:group"]?>
+                  </a>
+              </div>
               <div class="menuSubMod ">
                 <a  href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                     <?php echo $langMod["meu:contant"] ?>
