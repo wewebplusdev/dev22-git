@@ -1,4 +1,5 @@
 <?php
+
 $path_root = ""; #ถ้า root อยู่ public
 define("_http", "http");
 
@@ -22,34 +23,32 @@ require_once _DIR . '/front/libs/setting.php'; #load setting
 require_once _DIR . '/front/libs/function.php'; #load function
 require_once _DIR . '/front/libs/url.php'; #load url
 require_once _DIR . '/front/libs/Mobile_Detect.php'; #load url
-
 ##check divice ##
 $detectDivice = new Mobile_Detect;
 ## load modulus ##
 require_once _DIR . '/front/controller/modulus/member.php'; #load member status
-
 ## member ##
 $member = new member;
 if (isset($_SESSION[_URL]['token'])) {
-    $member->tokenCheck();
+   $member->tokenCheck();
 } else {
-    if (isset($_COOKIE['token']) && !isset($_SESSION[_URL]['reboot'])) {
-        $member->reloadUser();
-    } else {
-        $member->tokenCreate();
-    }
+   if (isset($_COOKIE['token']) && !isset($_SESSION[_URL]['reboot'])) {
+      $member->reloadUser();
+   } else {
+      $member->tokenCreate();
+   }
 }
 
 $memberID = $member->tokenGetUser();
 if (!empty($memberID['member_info'])) {
-    $smarty->assign("userinfo", $memberID);
+   $smarty->assign("userinfo", $memberID);
 }
 $member->saveCookie();
 $memberLogin = method_exists($member, 'login_status') ? $member->login_status() : 0;
 if (!empty($memberLogin)) {
-    $smarty->assign("login", true);
+   $smarty->assign("login", true);
 } else {
-    $smarty->assign("login", false);
+   $smarty->assign("login", false);
 }
 
 ## call page ##
@@ -70,24 +69,24 @@ $smarty->assign("page", $page);
 $lang = array();
 require_once _DIR . '/front/libs/lang/' . $lang_default . '.php'; #load url
 if ($lang_default != $url->pagelang[2]) {
-    require_once _DIR . '/front/libs/lang/' . $url->pagelang[2] . '.php'; #load url
+   require_once _DIR . '/front/libs/lang/' . $url->pagelang[2] . '.php'; #load url
 }
 
 ## addon page ##
 $loadcate = $url->loadmodulus(array("_mainpage"));
 foreach ($loadcate as $loadmodulus) {
-    include_once $loadmodulus;
+   include_once $loadmodulus;
 }
 
 ## load page ##
 $pageload = $url->page();
 foreach ($pageload['load'] as $loadpage) {
-    include_once $loadpage;
+   include_once $loadpage;
 }
 
 # assign active menu
 if (empty($menuActive)) {
-    $menuActive = "404";
+   $menuActive = "404";
 }
 
 $smarty->assign("navactive", $menuActive);
@@ -102,10 +101,15 @@ $smarty->assign("fullurl", _FullUrl);
 $smarty->assign("Domain", _Domain);
 $smarty->assign("urlPagination", _URLPagination);
 
+$useronline = userOnline();
+$usercounter = counter_web();
+
+$smarty->assign("useronline", number_format($useronline));
+$smarty->assign("usercounter", number_format($usercounter));
 ####  inc-file
 $smarty->assign("incfile", $incfile);
 if (!empty($settingPage)) {
-    $smarty->display($settingPage['display'] . ".tpl");
+   $smarty->display($settingPage['display'] . ".tpl");
 }
 $db->Close();
 
@@ -117,3 +121,4 @@ $db->Close();
 // $finish = $time;
 // $total_time = round(($finish - $start), 4);
 // echo 'Page generated in '.$total_time.' seconds.';
+
