@@ -42,6 +42,7 @@ $config['cas']['db']['main'] = "md_cas";
 $config['cag']['db']['main'] = "md_cag";
 $config['caa']['db']['main'] = "md_caa";
 $config['caf']['db']['main'] = "md_caf";
+$config['sea']['db']['main'] = "sy_sea";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';

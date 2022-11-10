@@ -24,8 +24,7 @@ $req_params['order'] = $_REQUEST['order'];
 $smarty->assign("req_params", $req_params);
 
 switch ($MenuID) {
-
-    default: //บริการออนไลน์
+    default: 
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/photo.php';
         break;
 }
