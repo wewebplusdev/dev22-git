@@ -109,7 +109,7 @@
                             <br>
                             ว่าด้วย การจัดแบ่งส่วนงานและขอบเขตหน้าที่ของส่วนงาน พ.ศ. ๒๕๖๓
                         </p>
-                        <img src="<?php echo $core_template; ?>/assets/img/static/flow-chart.png" alt="">
+                        <img src="./front/template/default/assets/img/static/flow-chart.png" alt="">
                         <div class="note-flow-chart">
                             <ul class="link">
                                 <li class="-color-1">
