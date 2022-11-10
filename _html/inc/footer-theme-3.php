@@ -132,7 +132,7 @@
     </div>
     <div class="footer-bottom">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg">
                     <div class="copyright">
                         Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved.
@@ -148,12 +148,110 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-auto text-center">
+                <div class="col-lg-auto text-right">
                     <div class="w3c">
                         <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance">
                             <img height="50" width="150" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v.svg" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1">
                             <!-- <img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v.svg" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"> -->
                         </a>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer-stat">
+                                <table class="table">
+                                    <!-- <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="row no-gutters">
+                                                    <div class="col-auto">
+                                                        <span class="feather-bar-chart-2 pr-2"></span>
+                                                    </div>
+                                                    <div class="col">
+                                                        VISITORS STATS
+                                                    </div>
+                                                </div>
+
+                                            </th>
+                                        </tr>
+                                    </thead> -->
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span>จำนวนเข้าเยี่ยมชมเว็บไซต์</span>
+                                            </td>
+                                            <td>
+                                                <span class="count">200</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>ขณะนี้มีผู้ออนไลน์อยู่</span>
+                                            </td>
+                                            <td>
+                                                <span class="count">500</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row pt-4">
+                <div class="col-lg text-right">
+                    <div class="footer-stat">
+                        <div class="row">
+                            <div class="col-12">
+                                <span>จำนวนเข้าเยี่ยมชมเว็บไซต์</span>
+                                <span class="count">200</span>
+                            </div>
+                            <div class="col-12">
+                                <span>ขณะนี้มีผู้ออนไลน์อยู่</span>
+                                <span class="count">500</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row d-none">
+                <div class="col-sm">
+                    <div class="footer-stat">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="row no-gutters">
+                                            <div class="col-auto">
+                                                <span class="feather-bar-chart-2 pr-2"></span>
+                                            </div>
+                                            <div class="col">
+                                                VISITORS STATS
+                                            </div>
+                                        </div>
+
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span>จำนวนเข้าเยี่ยมชมเว็บไซต์</span>
+                                    </td>
+                                    <td>
+                                        <span class="count">200</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>ขณะนี้มีผู้ออนไลน์อยู่</span>
+                                    </td>
+                                    <td>
+                                        <span class="count">500</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

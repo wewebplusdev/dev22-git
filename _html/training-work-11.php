@@ -106,6 +106,9 @@
                                 <a href="javascript:void(0)" class="link">
                                     <img src="<?php echo $core_template; ?>/assets/img/static/sponsor-logo-1.svg" alt="">
                                 </a>
+                                <!-- <a href="javascript:void(0)" class="link">
+                                    <img src="<?php echo $core_template; ?>/assets/img/static/banner1.jpg" alt="">
+                                </a> -->
                             </div>
                             <div class="col-md col-auto">
                                 <a href="javascript:void(0)" class="link">

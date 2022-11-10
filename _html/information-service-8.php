@@ -13,7 +13,7 @@
             <div class="default-header">
                 <div class="top-graphic mb-4">
                     <figure class="cover">
-                        <img class="figure-img img-fluid" src="<?php echo $core_template; ?>/assets/img/background/mock-top-grapphic.png" alt="">
+                        <img class="figure-img img-fluid" src="./front/template/default/assets/img/background/mock-top-grapphic.png" alt="">
                     </figure>
                     <div class="container">
                         <div class="wrapper">
@@ -106,13 +106,13 @@
                         <div class="gallery">
                             <ul class="item-list">
                                 <?php for ($i = 1; $i <= 15; $i++) { ?>
-                                    <li>
+                                    <li style="width: 33.33%;">
                                         <a href="javascript:void(0)" class="link donor-block">
                                             <div class="row no-gutters">
                                                 <div class="col">
                                                     <div class="gallery-thumbnail">
                                                         <figure class="cover">
-                                                            <img src="<?php echo $core_template; ?>/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
                                                         </figure>
                                                     </div>
                                                 </div>
@@ -127,6 +127,323 @@
                                             </div>
                                         </a>
                                     </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li style="width: 33.33%;">
+                                        <a href="javascript:void(0)" class="link donor-block">
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-thumbnail">
+                                                        <figure class="cover">
+                                                            <img src="./front/template/default/assets/img/static/image-donor.png" alt="gallery thumbnail">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col">
+                                                    <div class="gallery-desc">
+                                                        <div class="title">นายราเชนทร์ พจนสุนทร</div>
+                                                        <p>กลุ่มพลอยสี (Color Stones Club)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    
                                 <?php } ?>
                             </ul>
                         </div>
@@ -204,7 +521,7 @@
                                             <a href="#" class="link" title="เอกสารแนบ">
                                                 <div class="row no-gutters">
                                                     <div class="col-auto">
-                                                        <!-- <img class="icon" src="<?php echo $core_template; ?>/assets/img/icon/icon-attachment.svg" alt="attachment icon"> -->
+                                                        <!-- <img class="icon" src="./front/template/default/assets/img/icon/icon-attachment.svg" alt="attachment icon"> -->
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="41" viewBox="0 0 32 41">
                                                             <g data-name="Group 9337" transform="translate(0)">
                                                                 <path data-name="Path 2087" d="M9.75,2h15a1,1,0,0,1,.721.307l11.25,11.7A1,1,0,0,1,37,14.7V38.1A4.832,4.832,0,0,1,32.25,43H9.75A4.832,4.832,0,0,1,5,38.1V6.9A4.832,4.832,0,0,1,9.75,2ZM24.324,4H9.75A2.831,2.831,0,0,0,7,6.9V38.1A2.831,2.831,0,0,0,9.75,41h22.5A2.831,2.831,0,0,0,35,38.1v-23Z" transform="translate(-5 -2)" fill="#013f94" />
