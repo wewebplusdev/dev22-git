@@ -1,6 +1,8 @@
 <?php
 switch ($PageAction) {
     case 'detail':
+        $embed_type = "video";
+        $sitelang = $url->pagelang[2];
         $ContentID = GetContentID($url->segment[2]);
         $callCMS = $videoPage->callCMS($MenuID, $ContentID);
         $callCMSAlbum = $videoPage->callCMSAlbum($ContentID);
@@ -14,6 +16,8 @@ switch ($PageAction) {
             $fullpath_vdo = fileinclude($callCMS->fields['filevdo'], 'vdo', $MenuID, 'link');
         }
         $smarty->assign("fullpath_vdo", $fullpath_vdo);
+        $embed_url = _URL.$sitelang."/embed/".$embed_type."/".$ContentID;
+        $smarty->assign("embed_url", $embed_url);
         ## breadcrumb
         $breadcrumb = explode("-", $callCMS->fields['menuname']);
         $settingModulus['breadcrumb'] = $breadcrumb[0];

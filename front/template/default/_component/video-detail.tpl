@@ -45,9 +45,9 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#p" onclick="getEmbedCode();" >
-                    <img src="{$template}/assets/img/icon/embed.png" alt="Embed code">
-                  </a>
+                  <a href="javascript:void(0);" class="embed-code" embed-url="{$embed_url}" embed-type="VDO">
+                        <img src="{$template}/assets/img/icon/icon-embed.svg" alt="embed">
+                    </a>
                 </li>
                 <li>
                   <a href="mailto:?subject={$callCMS->fields.subject}&amp;body=Check out this site : {$fullurl}"
