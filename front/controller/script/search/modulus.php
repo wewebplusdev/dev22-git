@@ -11,12 +11,14 @@ class searchPage{
     " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_masterkey as masterkey,
     " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_subject".$lang." as subject,
     " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_title".$lang." as title,
-    " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_url as url,
-    " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_tid as tid
+    " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_url as url
 
     FROM
-    " . $config['sea']['db']['main'] . "
-    WHERE
+    " . $config['sea']['db']['main'];
+    if (!empty($tid)) {
+      $sql .= " LEFT JOIN ".$config['cms']['db']['main']." ON   " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_contantid = " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_id";
+    }
+    $sql .= " WHERE
     " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_status != 'Disable' AND
     " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_subject".$lang." != ''
     ";
@@ -28,9 +30,6 @@ class searchPage{
         " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_keyword".$lang." LIKE '%".$keyword."%'
         )";
     }
-    // if (!empty($tid)) {
-    //   $sql .= " AND " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_tid REGEXP '.*;s:[0-9]+:\"".$tid."\".*' ";
-    // }
 
     if (!empty($tid)) {
       $sql .= $tid;
@@ -54,7 +53,7 @@ class searchPage{
     }
   
     $sql .= " ORDER  BY " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_id ".$order." ";
-    // print_pre($sql);
+    //print_pre($sql);
     $result = $db->pageexecute($sql, $limit, $page);
     return $result;
 
@@ -92,7 +91,6 @@ class searchPage{
     FROM
     " . $config['tag']['db']['main'] . "
     WHERE
-    " . $config['tag']['db']['main'] . "." . $config['tag']['db']['main'] . "_masterkey = '".$masterkey."' AND
     " . $config['tag']['db']['main'] . "." . $config['tag']['db']['main'] . "_status = 'Enable' AND
     " . $config['tag']['db']['main'] . "." . $config['tag']['db']['main'] . "_subject".$lang." != '' 
     ";
@@ -109,7 +107,7 @@ class searchPage{
     }
   
     $sql .= " ORDER  BY " . $config['tag']['db']['main'] . "." . $config['tag']['db']['main'] . "_order DESC ";
-    // print_pre($sql);
+    print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
@@ -217,5 +215,4 @@ class searchPage{
   }
   
 }
-?>
 
