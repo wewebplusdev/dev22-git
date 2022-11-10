@@ -355,4 +355,49 @@ class trainingPage
     return $result;
   }
 
+  function callGroupList($masterkey, $id = null, $page = 1, $limit = 10, $order = "DESC")
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id as id,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey as masterkey,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_pic" . $lang . " as pic,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_lastdate as lastdate,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_url as url,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_types as types,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_htmlfilename as htmlfilename,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
+    FROM
+    " . $config['cmg']['db']['main'] . "
+    INNER JOIN 
+    " . $config['sy_mnu']['db']['main'] . "
+    ON
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey
+    INNER JOIN 
+    " . $config['cms']['db']['main'] . "
+    ON
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid = " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id
+    WHERE
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_status != 'Disable' AND
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject" . $lang . " != '' 
+    ";
+
+    if (!empty($id)) {
+      $sql .= " AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id = '" . $id . "' ";
+    }
+
+    $sql .= " GROUP BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order ".$order." ";
+
+    // print_pre($sql);
+    $result = $db->pageexecute($sql, $limit, $page);
+    return $result;
+  }
+
 }

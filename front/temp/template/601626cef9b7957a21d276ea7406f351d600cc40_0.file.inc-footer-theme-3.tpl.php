@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-09 17:57:18
+/* Smarty version 4.0.0, created on 2022-11-10 11:29:44
   from '/var/www/html/front/template/default/inc/inc-footer-theme-3.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636b878ea2ae67_91967612',
+  'unifunc' => 'content_636c7e38e632c2_17743476',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636b878ea2ae67_91967612 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636c7e38e632c2_17743476 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="site-footer">
     <div class="footer-top">
         <div class="container">

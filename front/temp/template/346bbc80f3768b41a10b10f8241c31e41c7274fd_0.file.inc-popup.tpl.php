@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-09 17:57:19
+/* Smarty version 4.0.0, created on 2022-11-10 11:29:45
   from '/var/www/html/front/template/default/inc/inc-popup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636b878f1449d8_27893302',
+  'unifunc' => 'content_636c7e39550307_86294227',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636b878f1449d8_27893302 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636c7e39550307_86294227 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="gallery-popup d-none">
   <?php if ($_smarty_tpl->tpl_vars['callBanner']->value->_numOfRows >= 1) {?>
     <?php

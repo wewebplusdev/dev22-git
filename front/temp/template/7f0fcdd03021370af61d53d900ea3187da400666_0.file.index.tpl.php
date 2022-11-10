@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-09 17:57:19
+/* Smarty version 4.0.0, created on 2022-11-10 11:29:45
   from '/var/www/html/front/controller/script/404/template/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636b878f70f171_48716951',
+  'unifunc' => 'content_636c7e39cf0dc2_62730305',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636b878f70f171_48716951 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636c7e39cf0dc2_62730305 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="site-container">
 
 <div class="error-page">

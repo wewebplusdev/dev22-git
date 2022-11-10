@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-11-09 17:57:19
+/* Smarty version 4.0.0, created on 2022-11-10 11:29:45
   from '/var/www/html/front/template/default/inc/inc-modal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_636b878f0aee54_52457888',
+  'unifunc' => 'content_636c7e3949e491_12782893',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636b878f0aee54_52457888 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636c7e3949e491_12782893 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Modal -->
 <div class="modal modal-profile fade" id="profileBlock" tabindex="-1" role="dialog" aria-labelledby="profileBlockTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">

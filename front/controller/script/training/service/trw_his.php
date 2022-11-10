@@ -36,23 +36,22 @@ switch ($MenuID) {
         $order = 1;
     }
     $smarty->assign("order", $order);
-    
-      // $ContentID = $ContentID ? $ContentID : $arrMenu[0]['id'];
-      $callCMS = $trainingPage->callCMSInnerGroup($MenuID);
-      $callCMS_arr = $trainingPage->callCMSInnerGroup($MenuID);
-      if ($callCMS->_numOfRows < 1) {
-          header('location:' . $linklang . '/404');
-          exit(0);
-      }
-      $arrData = array();
-      foreach ($callCMS_arr as $keycallCMS_arr => $valuecallCMS_arr) {
-          $arrData[$valuecallCMS_arr['gid']]['group']['id'] = $valuecallCMS_arr['gid'];
-          $arrData[$valuecallCMS_arr['gid']]['group']['subject'] = $valuecallCMS_arr['subjectg'];
 
-          $arrData[$valuecallCMS_arr['gid']]['list'][] = $valuecallCMS_arr;
+      $arrData = array();
+      $callGroup = $trainingPage->callGroupList($MenuID, 0, $page['on'], $limit, $sorting);
+      foreach ($callGroup as $keycallGroup => $valuecallGroup) {
+        $arrData[$keycallGroup]['group']['id'] = $valuecallGroup['id'];
+        $arrData[$keycallGroup]['group']['subject'] = $valuecallGroup['subject'];
+
+        $callCMS = $trainingPage->callCMS($MenuID, 0, $valuecallGroup['id']);
+        foreach ($callCMS as $keycallCMS => $valuecallCMS) {
+            $arrData[$keycallGroup]['list'][] = $valuecallCMS;
+            $activeID = $valuecallCMS['menuid'];
+            $activeName = $valuecallCMS['menuname'];
+        }
       }
-    //   print_pre($arrData);
       $smarty->assign("callCMS_arr", $arrData);
+    //   print_pre($arrData);
 
       // slick slide
       $initialSlide2 = 0;
@@ -68,12 +67,12 @@ switch ($MenuID) {
       $smarty->assign("initialSlide2", '{"initialSlide": ' . $initialSlide2 . '}');
 
       ## breadcrumb
-      $breadcrumb = explode("-", $callCMS->fields['menuname']);
+      $breadcrumb = explode("-", $activeName);
       $settingModulus['breadcrumb'] = $breadcrumb[0];
       $settingModulus['namepage'] = $breadcrumb[1];
 
       ## menu lv 2 active
-      $menuidLv2 = $callCMS->fields['menuid'];
+      $menuidLv2 = $activeID;
       $smarty->assign("menuidLv2", $menuidLv2);
 
     /*## Start SEO #####*/
@@ -85,7 +84,7 @@ switch ($MenuID) {
 
     
     /*## Set up pagination #####*/
-    $pagination['total'] = $callCMS->_maxRecordCount;
+    $pagination['total'] = $callGroup->_maxRecordCount;
     $pagination['totalpage'] = ceil(($pagination['total'] / $limit));
     $pagination['limit'] = $limit;
     $pagination['curent'] = $page['on'];
