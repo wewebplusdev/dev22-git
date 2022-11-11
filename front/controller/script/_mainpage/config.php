@@ -80,6 +80,7 @@ $config['photo']['ptg']['masterkey'] = "ptg";
 $config['cou_trw']['main']['masterkey'] = "trw_cou";
 $config['policy']['coms']['masterkey'] = 'coms';
 $config['policy']['req']['masterkey'] = 'req';
+$config['policy']['corruption']['masterkey'] = 'corrupt';
 $config['cl']['masterkey'] = "cl";
 
 $config['req']['main']['masterkey'] = "req";

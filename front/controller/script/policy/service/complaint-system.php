@@ -2,9 +2,14 @@
 
 // $callCMSS = $contactPage->callCMSS($config['contact']['cu']['masterkey']);
 // $smarty->assign("callCMSS", $callCMSS);
-
-$callContactGroup = $policyPage->callContactGroup($config['policy']['coms']['masterkey']);
+$masterkeyID = $url->segment[2];
+$masterkey = !empty($config['policy'][$masterkeyID]['masterkey']) ? $config['policy'][$masterkeyID]['masterkey'] : "";
+if(empty($masterkey)){
+    $masterkey = $config['policy']['coms']['masterkey'];
+}
+$callContactGroup = $policyPage->callContactGroup($masterkey);
 $smarty->assign("callContactGroup", $callContactGroup);
+$smarty->assign("masterkey", $masterkey);
 
 // $Call_File = $callSetWebsite->Call_File_table($callCMSS->fields['id'], $config['cmsf']['db']['main']);
 // $smarty->assign("Call_File", $Call_File);
