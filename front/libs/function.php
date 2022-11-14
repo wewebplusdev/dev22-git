@@ -1184,7 +1184,11 @@ function getYearLang($valYear, $valLang) {
 ############################################
    if ($valLang == "en") {
       $valYearReturn = $valYear;
-   } else {
+   } else 
+   if ($valLang == "cn") {
+      $valYearReturn = $valYear;
+   }else
+   if ($valLang == "th") {
       $valYearReturn = ($valYear + 543);
    }
    return $valYearReturn;

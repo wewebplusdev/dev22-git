@@ -9,7 +9,7 @@ class calendarPage {
       $sql = "SELECT
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_id as id,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_masterkey as masterkey,
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . /*$lang .*/ " as subject,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_sdate as sdate,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_edate as edate,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_typeSal as typeSal,
@@ -26,7 +26,7 @@ class calendarPage {
     WHERE
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_status != 'Disable' AND
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . $lang . " != ''
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . /*$lang .*/ " != ''
     ";
 
       if ($_POST['myCalendarDatePer'] != "") {
@@ -58,7 +58,7 @@ class calendarPage {
     WHERE
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_masterkey = '" . $config['cl']['masterkey'] . "' AND
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_status != 'Disable' AND
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . $lang . " != ''
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . /*$lang .*/ " != ''
     ";
       if ($_POST['myCalendarDatePer'] != "" && $page == 'day') {
          $sql .= " AND  ( ";
@@ -90,8 +90,8 @@ class calendarPage {
       $sql = "SELECT
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_id as id,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_masterkey as masterkey,
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . $lang . " as subject,
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . /*$lang .*/ " as subject,
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_title" . /*$lang .*/ " as title,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_sdate as sdate,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_edate as edate,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_typeSal as typeSal,
@@ -110,16 +110,16 @@ class calendarPage {
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_view as view,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_tid as tid,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_credate as credate,
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_description" . $lang . " as description,
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_keywords" . $lang . " as keywords,
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_metatitle" . $lang . " as metatitle
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_htmlfilename" . /*$lang .*/ " as htmlfilename,
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_description" . /*$lang .*/ " as description,
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_keywords" . /*$lang .*/ " as keywords,
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_metatitle" . /*$lang .*/ " as metatitle
     FROM
     " . $config['cas']['db']['main'] . "
     WHERE
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_status != 'Disable' AND
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . $lang . " != ''
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . /*$lang .*/ " != ''
     ";
       if (!empty($id)) {
          $sql .= " AND " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_id = '" . $id . "'";
@@ -132,20 +132,20 @@ class calendarPage {
 
    function callCalendarGroup($masterkey, $id = null, $lsit = null) {
       global $config, $db, $url;
-      $lang = $url->pagelang[3];
+      // $lang = $url->pagelang[3];
 
       $sql = "SELECT
     " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_id as id,
     " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_masterkey as masterkey,
-    " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_subject" . $lang . " as subject,
-    " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_subject" . /*$lang .*/ " as subject,
+    " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_title" . /*$lang .*/ " as title,
     " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_color as color
     FROM
     " . $config['cag']['db']['main'] . "
     WHERE
     " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
     " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_status != 'Disable' AND
-    " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_subject" . $lang . " != ''
+    " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_subject" . /*$lang .*/ " != ''
     ";
       if (!empty($id) || $lsit == "list") {
          $sql .= " AND " . $config['cag']['db']['main'] . "." . $config['cag']['db']['main'] . "_id = '" . $id . "'";

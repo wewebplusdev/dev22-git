@@ -408,19 +408,19 @@ $lang['search']['result'] = 'Result of "<span>{1}</span>" All {2} found(s)';
 $lang['search']['more'] = "Detail";
 
 // calendar
-$lang["calendar"]["thismonth"] = "This month";
-$lang["calendar"]["thisday"] = "This day";
-$lang["calendar"]["note1"] ="<strong>Remark</strong> : Click on a date to display various activities. available on that date";
-$lang["calendar"]["note2"] ="current date (If there is an event, the date in this section can be clicked.)";
-$lang["calendar"]["note3"] ="event date";
-$lang["calendar"]["note4"] ="normal date";
-$lang["calendar"]["nodata"] ="no event";
+$lang["calendar"]["thismonth"] = "这个月";
+$lang["calendar"]["thisday"] = "这天";
+$lang["calendar"]["note1"] ="<strong>评论</strong> : 单击日期以显示各种活动。在该日期可用";
+$lang["calendar"]["note2"] ="当前日期（如果有事件，可以点击此部分中的日期。）";
+$lang["calendar"]["note3"] ="活动日期";
+$lang["calendar"]["note4"] ="正常日期";
+$lang["calendar"]["nodata"] ="没有事件";
 $lang["calendar"]["at"] = "";
-$lang["calendar"]["alldate"] = "all day";
-$lang["calendar"]["eventday"] = "event date";
-$lang["calendar"]["datenow"] = "current day";
-$lang["calendar"]["activity"] = "Activities organized on the day";
-$lang["calendar"]["activityM"] = "Monthly events";
+$lang["calendar"]["alldate"] = "一整天";
+$lang["calendar"]["eventday"] = "活动日期";
+$lang["calendar"]["datenow"] = "当前日期";
+$lang["calendar"]["activity"] = "当天组织的活动";
+$lang["calendar"]["activityM"] = "每月活动";
 
 $lang["counter"]["visited"] = "number of website visits";
 $lang["counter"]["online"] = "Online now";
