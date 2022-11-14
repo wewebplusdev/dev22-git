@@ -25,7 +25,7 @@ $req_params['order'] = $_REQUEST['order'];
 $smarty->assign("req_params", $req_params);
 $limit = 12;
 $order = $_REQUEST['order'];
-$keywords = $_REQUEST['keywords'];
+$keywords = $_REQUEST['keywords'] ? $_REQUEST['keywords'] : $_REQUEST['srchtxt_main'];
 $dateStart = $_REQUEST['trip-start'];
 $dateEnd = $_REQUEST['trip-end'];
 $typeSearch = $_REQUEST['typeSch'] ? $_REQUEST['typeSch'] : "1" ;

@@ -45,6 +45,8 @@ $config['caf']['db']['main'] = "md_caf";
 $config['sys']['db']['online'] = "sy_online";
 $config['sys']['db']['counter'] = "sy_counter";
 $config['sea']['db']['main'] = "sy_sea";
+$config['seatxt']['db']['main'] = "sy_seatxt";
+$config['seatxts']['db']['main'] = "sy_sea_txts";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
@@ -82,6 +84,7 @@ $config['policy']['coms']['masterkey'] = 'coms';
 $config['policy']['req']['masterkey'] = 'req';
 $config['policy']['corruption']['masterkey'] = 'corrupt';
 $config['cl']['masterkey'] = "cl";
+$config['sch_logs']['masterkey'] = "sch_logs";
 
 $config['req']['main']['masterkey'] = "req";
 $config['trw_his']['main']['masterkey'] = "trw_his";
