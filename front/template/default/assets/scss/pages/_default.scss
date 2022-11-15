@@ -470,8 +470,6 @@
     }
 }
 
-
-
 fieldset {
     padding: 0;
 }
@@ -555,6 +553,58 @@ fieldset {
                         // position: relative;
                         // top: 4px;
                         width: 22px;
+                    }
+                }
+                .dropdown-menu {
+                    padding: 0;
+                    border-radius: 10px;
+                    margin-left: 14px;
+                    margin-right: 14px;
+                    overflow: hidden;
+                    margin-top: 10px;
+                    transition: all 200ms ease-out;
+                    .form-control {
+                        border: 1px solid #b1b0b04a;
+                    }
+                    .embed-label {
+                        display: flex;
+                        align-items: center;
+                        padding: 10px 15px;
+                        .style-scope {
+                            font-size: var(--typo-sm);
+                            font-weight: var(--fw-medium);
+                            color: var(--color-primary);
+                        }
+                        .embed-close {
+                            margin-left: auto;
+                            cursor: pointer;
+                            padding: 5px;
+                            width: 22px;
+                            height: 22px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: #cc1212;
+                            color: #fff;
+                            border-radius: 50%;
+                        }
+                    }
+                    .action-buttons {
+                        position: relative;
+                        .embed-copy {
+                            font-weight: var(--fw-medium);
+                            padding: 10px 15px;
+                            width: 100%;
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                    }
+                    .alert-success {
+                        transition: all 200ms ease-out;
+                        bottom: 0 !important;
+                        margin: 0;
+                        width: 100%;
                     }
                 }
             }
@@ -768,13 +818,13 @@ fieldset {
     }
     .default-nav-tab li {
         width: 100%;
-        & + li {
+        &+li {
             margin-top: 2.5rem;
         }
     }
     .default-nav-tab.-x3 li {
         width: 100%;
-        & + li {
+        &+li {
             margin-top: 2.5rem;
         }
     }
@@ -800,7 +850,6 @@ fieldset {
             }
         }
     }
-
 }
 
 @media (max-width: 575px) {
@@ -834,5 +883,4 @@ fieldset {
         margin-top: 10px;
         justify-content: left;
     }
-    
 }

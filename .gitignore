@@ -6,3 +6,5 @@ dev22-git.zip
 
 /nbproject/private/
 front/template/default/assets/css/style.css
+index.php
+.htaccess
