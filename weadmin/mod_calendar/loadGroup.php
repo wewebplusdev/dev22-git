@@ -150,22 +150,22 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
             <input name="CheckBoxAll" type="checkbox" id="CheckBoxAll" value="Yes" onClick="Paging_CheckAll(this,'CheckBoxID',document.myForm.TotalCheckBoxID.value)" class="formCheckboxHead" />
           </td>
 
-          <td align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span></td>
-          <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>
-            <td width="30%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>(<?php echo $langTxt["lg:eng"] ?>)<?php } ?></span></td>
-          <?php } ?>
+          <td align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?>(<?php echo $langTxt["lg:thai"] ?>)</span></td>
+          <td width="30%" align="center" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?>(<?php echo $langTxt["lg:eng"] ?>)</span></td>
+          <td width="30%" align="center" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?>(<?php echo $langTxt["lg:chi"] ?>)</span></td>
           <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:status"] ?></span></td>
           <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["us:lastdate"] ?></span></td>
           <td width="12%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:manage"] ?></span></td>
         </tr>
         <?php
         // SQL SELECT #########################
-        $sql = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_lastdate," . $mod_tb_root_group . "_status," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group;
+        $sql = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_lastdate," . $mod_tb_root_group . "_status," . $mod_tb_root_group . "_subjecten," . $mod_tb_root_group . "_subjectcn  FROM " . $mod_tb_root_group;
         $sql = $sql . "  WHERE " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
 
         if ($inputSearch <> "") {
           $sql = $sql . "  AND  (
 		" . $mod_tb_root_group . "_subject LIKE '%$inputSearch%'  OR
+    " . $mod_tb_root_group . "_subjectcn LIKE '%$inputSearch%'  OR
 		" . $mod_tb_root_group . "_subjecten LIKE '%$inputSearch%'   ) ";
         }
 
@@ -204,6 +204,8 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
             $valStatus = $row[3];
             $valNameEn = rechangeQuot($row[4]);
             $valNameEn = chechNullVal($valNameEn);
+            $valNameCn = rechangeQuot($row[5]);
+            $valNameCn = chechNullVal($valNameCn);
             if ($valStatus == "Enable") {
               $valStatusClass =  "fontContantTbEnable";
             } else {
@@ -230,20 +232,33 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                   </tr>
                 </table>
               </td>
-              <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>
-                <td class="divRightContantOverTb" valign="top" align="left">
-                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                      <td align="left">
-                        <div class="widthDiv"><a href="javascript:void(0)" onclick="
+
+              <td class="divRightContantOverTb" valign="top" align="left">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="center">
+                      <div class="widthDiv"><a href="javascript:void(0)" onclick="
     document.myFormHome.inputLt.value='Eng';
    document.myFormHome.valEditID.value=<?php echo $valID ?>;
     viewContactNew('viewGroup.php');"><?php echo $valNameEn ?></a></div>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              <?php } ?>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+
+              <td class="divRightContantOverTb" valign="top" align="left">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="center">
+                      <div class="widthDiv"><a href="javascript:void(0)" onclick="
+    document.myFormHome.inputLt.value='Chi';
+   document.myFormHome.valEditID.value=<?php echo $valID ?>;
+    viewContactNew('viewGroup.php');"><?php echo $valNameCn ?></a></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+
               <td class="divRightContantOverTb" valign="top" align="center">
                 <?php if ($valPermission == "RW") { ?>
                   <div id="load_status<?php echo $valID ?>">
@@ -292,11 +307,11 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
    document.myFormHome.valEditID.value=<?php echo $valID ?>;
     editContactNew('editGroup.php');">
                           <img src="../img/btn/edit.png" /><br />
-                          <span class="fontContantTbManage"><?php echo $langTxt["btn:edit"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?><br />
-                            (<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span>
+                          <span class="fontContantTbManage"><?php echo $langTxt["btn:edit"] ?><br />
+                            (<?php echo $langTxt["lg:thai"] ?>)</span>
                         </div>
                       </td>
-                      <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>
+                      
                         <td valign="top" align="center" width="30">
                           <div class="divRightManage" title="<?php echo $langTxt["btn:edit"] ?>" onclick="
    document.myFormHome.inputLt.value='Eng';
@@ -307,7 +322,17 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                               (<?php echo $langTxt["lg:eng"] ?>)</span>
                           </div>
                         </td>
-                      <?php } ?>
+                        <td valign="top" align="center" width="30">
+                          <div class="divRightManage" title="<?php echo $langTxt["btn:edit"] ?>" onclick="
+   document.myFormHome.inputLt.value='Chi';
+   document.myFormHome.valEditID.value=<?php echo $valID ?>;
+    editContactNew('editGroup.php');">
+                            <img src="../img/btn/edit.png" /><br />
+                            <span class="fontContantTbManage"><?php echo $langTxt["btn:edit"] ?><br />
+                              (<?php echo $langTxt["lg:chi"] ?>)</span>
+                          </div>
+                        </td>
+                      
                       <td valign="top" align="center" width="30">
                         <div class="divRightManage" title="<?php echo $langTxt["btn:del"] ?>" onClick="
             if(confirm('<?php echo $langTxt["mg:delpermis"] ?>')) {
@@ -423,7 +448,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
       </table>
       <table width="96%" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 20px;">
         <tr>
-          <td>Link : <a href="<?php echo $core_full_path. "/th/". $urlSegment[$_REQUEST['masterkey']]; ?>" target="_blank"><?php echo $core_full_path. "/th/". $urlSegment[$_REQUEST['masterkey']]; ?></a></td>
+          <td>Link : <a href="<?php echo $core_full_path . "/th/" . $urlSegment[$_REQUEST['masterkey']]; ?>" target="_blank"><?php echo $core_full_path . "/th/" . $urlSegment[$_REQUEST['masterkey']]; ?></a></td>
         </tr>
       </table>
       <input name="TotalCheckBoxID" type="hidden" id="TotalCheckBoxID" value="<?php echo $index - 1 ?>" />

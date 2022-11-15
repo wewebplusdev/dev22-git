@@ -7,19 +7,22 @@
         margin: 30px 0;
     }
     .sponsor-block {
-        margin-top: 60px;
-        display: block !important;
+        padding-bottom: 4rem;
         .title {
-            border-bottom: 1px solid #cccccc;
-            margin: 0;
-            padding-bottom: 20px;
+            font-weight: var(--fw-medium);
+            color: var(--color-dark);
+            border-bottom: 1px solid #E1E1E1;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
         }
-        .link {
-            width: calc(100%/6);
-            img {
-                margin: 30px 0;
-                // margin: 0;
-                // margin-top: 30px;
+        .item-list {
+            margin: 0 -10px;
+            li {
+                width: calc(100%/6);
+                padding: 10px;
+                .cover {
+                    padding-bottom: 100%;
+                }
             }
         }
     }
@@ -28,10 +31,9 @@
 @media (max-width: 767px) {
     .training-work {
         .sponsor-block {
-            .link {
-                width: calc(100%/4);
-                img {
-                    margin: 0;
+            .item-list {
+                li {
+                    width: calc(100%/5);
                 }
             }
         }
@@ -41,8 +43,10 @@
 @media (max-width: 575px) {
     .training-work {
         .sponsor-block {
-            .link {
-                width: calc(100%/2);
+            .item-list {
+                li {
+                    width: calc(100%/3);
+                }
             }
         }
     }

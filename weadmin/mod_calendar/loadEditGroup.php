@@ -16,8 +16,11 @@ $valLinkNav1 = "../core/index.php";
 $sql = "SELECT  ";
 if ($_REQUEST['inputLt'] == "Thai") {
     $sql .= "  " . $mod_tb_root_group . "_id ,  " . $mod_tb_root_group . "_lastdate, " . $mod_tb_root_group . "_creby, " . $mod_tb_root_group . "_status ,    " . $mod_tb_root_group . "_subject  ,    " . $mod_tb_root_group . "_title  ,    " . $mod_tb_root_group . "_color ";
-} else {
+} else if ($_REQUEST['inputLt'] == "Eng"){
     $sql .= "  " . $mod_tb_root_group . "_id , " . $mod_tb_root_group . "_lastdate, " . $mod_tb_root_group . "_creby, " . $mod_tb_root_group . "_status  ,    " . $mod_tb_root_group . "_subjecten  ,    " . $mod_tb_root_group . "_titleen  ,    " . $mod_tb_root_group . "_color ";
+}
+else {
+    $sql .= "  " . $mod_tb_root_group . "_id , " . $mod_tb_root_group . "_lastdate, " . $mod_tb_root_group . "_creby, " . $mod_tb_root_group . "_status  ,    " . $mod_tb_root_group . "_subjectcn  ,    " . $mod_tb_root_group . "_titlecn  ,    " . $mod_tb_root_group . "_color ";
 }
 
 $sql .= " 	FROM " . $mod_tb_root_group . " WHERE " . $mod_tb_root_group . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root_group . "_id 	='" . $_POST["valEditID"] . "'";
