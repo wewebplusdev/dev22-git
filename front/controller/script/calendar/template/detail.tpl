@@ -1,4 +1,4 @@
-<section class="site-container">
+<section class="site-container calendar-page">
 
    <div class="default-page">
       <div class="default-header">

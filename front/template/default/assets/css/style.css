@@ -13421,6 +13421,9 @@ fieldset {
   .about .tag-list .item-list {
     justify-content: center;
   }
+  .calendar-page .tag-list .item-list {
+    justify-content: center;
+  }
 }
 .online-services .h-title {
   margin-bottom: 3rem;
@@ -14011,6 +14014,38 @@ fieldset {
   top: 1px;
   margin-right: 8px;
   border-radius: 50%;
+}
+.calendar-page .tag-list .item-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.calendar-page .tag-list .item-list li {
+  position: relative;
+  padding: 15px 20px;
+  padding-left: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #ECF0F3;
+}
+.calendar-page .tag-list .item-list li:hover {
+  background-color: #DEE7F2;
+}
+.calendar-page .tag-list .item-list li:hover .detail-hashtag {
+  text-decoration: none;
+  color: #2680EB;
+}
+.calendar-page .tag-list .item-list li .detail-hashtag {
+  font-size: var(--typo-xs);
+  color: var(--color-primary);
+}
+.calendar-page .tag-list .item-list li .detail-hashtag::before {
+  content: "#";
+  font-size: var(--typo-xs);
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translate(-50%, -40%);
 }
 
 @media (max-width: 1199px) {
