@@ -83,7 +83,7 @@ class photoPage
     if (!empty($id)) {
       $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_contantid= '" . $id . "' ";
     }
-    $sql .= " ORDER  BY " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_id ASC ";
+    $sql .= " ORDER  BY " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_order ASC ";
     //print_pre($sql);
     $result = $db->execute($sql);
     return $result;

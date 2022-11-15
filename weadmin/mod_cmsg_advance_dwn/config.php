@@ -33,9 +33,9 @@ if ($_SESSION[$valSiteManage."core_session_language"] == 'Eng') {
 
 
 ## URL Search ###################################
-$mod_url_search_th = "th/|page|/detail";
-$mod_url_search_en = "en/|page|/detail";
-$mod_url_search_cn = "cn/|page|/detail";
+$mod_url_search_th = "th/|page|";
+$mod_url_search_en = "en/|page|";
+$mod_url_search_cn = "cn/|page|";
 
 
 ## Size Photo ###################################

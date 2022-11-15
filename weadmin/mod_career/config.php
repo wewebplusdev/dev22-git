@@ -18,9 +18,9 @@ $mod_tb_root_group = "md_josg";
 //$mod_tb_set = "md_cut";
 
 ## URL Search ###################################
-$mod_url_search_th = "th/career";
-$mod_url_search_en = "en/career";
-$mod_url_search_cn = "cn/career";
+$mod_url_search_th = "th/|page|";
+$mod_url_search_en = "en/|page|";
+$mod_url_search_cn = "cn/|page|";
 
 ## Mod Folder ###################################
 $mod_fd_root = "mod_career";

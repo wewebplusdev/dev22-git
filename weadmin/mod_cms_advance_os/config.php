@@ -11,6 +11,8 @@ $mod_tb_root_albumTemp = "md_cmatp";
 
 $mod_tb_setting = "md_cuss";
 
+## Mod Folder ###################################
+$arrFix = array('ptg');
 
 ## Mod Folder ###################################
 $mod_fd_root = "mod_cms_advance_os";

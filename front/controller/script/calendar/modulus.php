@@ -9,7 +9,7 @@ class calendarPage {
       $sql = "SELECT
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_id as id,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_masterkey as masterkey,
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . /*$lang .*/ " as subject,
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . $lang . " as subject,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_sdate as sdate,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_edate as edate,
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_typeSal as typeSal,
@@ -26,7 +26,7 @@ class calendarPage {
     WHERE
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_status != 'Disable' AND
-    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . /*$lang .*/ " != ''
+    " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_subject" . $lang . " != ''
     ";
 
       if ($_POST['myCalendarDatePer'] != "") {

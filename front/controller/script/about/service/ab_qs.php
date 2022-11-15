@@ -1,5 +1,5 @@
 <?php
-$showslick = false; // slick shows
+$showslick = true; // slick shows
 ## default menu lv2
 $call_list_first = $aboutPage->callCMS($config['about']['ab_qs']['masterkey']);
 ## merg array
@@ -11,13 +11,26 @@ $smarty->assign("arrMenu", $arrMenu);
 switch ($PageAction) {
   
   default:
-    $ContentID = GetContentID($url->segment[4]);
+    $ContentID = GetContentID($url->segment[2]);
     $callCMS = $aboutPage->callCMS($MenuID, $ContentID);
     if ($callCMS->_numOfRows < 1) {
         header('location:'.$linklang.'/404');
         exit(0);
     }
     $smarty->assign("callCMS", $callCMS);
+
+    // slick slide
+    $initialSlide2 = 0;
+    if (count($call_list_first->_numOfRows) > 4) {
+        foreach ($arrMenu as $key => $valuearrMenu) {
+            if ($valuearrMenu['id'] == $callCMS->fields['id']) {
+                break;
+            } else {
+                $initialSlide2++;
+            }
+        }
+    }
+    $smarty->assign("initialSlide2", '{"initialSlide": ' . $initialSlide2 . '}');
 
     $Call_File = $callSetWebsite->Call_File($callCMS->fields['id']);
     $smarty->assign("Call_File", $Call_File);
@@ -27,7 +40,7 @@ switch ($PageAction) {
     $settingModulus['breadcrumb'] = $breadcrumb[0];
 
     ## menu lv 2 active
-    $menuidLv2 = $callCMS->fields['gid'];
+    $menuidLv2 = $callCMS->fields['id'];
     $smarty->assign("menuidLv2", $menuidLv2);
 
     /*## Start Update View #####*/

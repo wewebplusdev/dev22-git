@@ -91,6 +91,10 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 			######################### Delete  Contant ###############################
 			$sql="DELETE FROM ".$mod_tb_root." WHERE ".$mod_tb_root."_id=".$permissionID." ";
 			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+						
+			## URL Search ###################################
+			$sqlSch="DELETE FROM ".$core_tb_search." WHERE   ".$core_tb_search."_contantid='".$permissionID."'  AND ".$core_tb_search."_masterkey='".$_POST["masterkey"]."'  ";
+			$querySch=wewebQueryDB($coreLanguageSQL,$sqlSch);
 		
 		}}
 		 logs_access('3','Delete');

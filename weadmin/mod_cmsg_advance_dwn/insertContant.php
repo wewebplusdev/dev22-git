@@ -6,7 +6,6 @@ include("../lib/function.php");
 include("../lib/checkMember.php");
 include("config.php");
 
-
 if ($_REQUEST['execute'] == "insert") {
     $randomNumber = randomNameupdate(2);
 
@@ -162,10 +161,11 @@ if ($_REQUEST['execute'] == "insert") {
 
     ## URL Search ###################################
     $txt_value_to = encodeURL("c=" . $contantID . "");
+    $GroupID = $_POST["inputGroupID"];
 
-    $valUrlSearchTH = $mod_url_search_th . "/" . encodeStr($contantID) . "/";
-    $valUrlSearchEN = $mod_url_search_en . "/" . encodeStr($contantID) . "/";
-    $valUrlSearchCN = $mod_url_search_cn . "/" . encodeStr($contantID) . "/";
+    $valUrlSearchTH = $mod_url_search_th . "/" . $GroupID . "/detail/" . $contantID . "/";
+    $valUrlSearchEN = $mod_url_search_en . "/" . $GroupID . "/detail/" . $contantID . "/";
+    $valUrlSearchCN = $mod_url_search_cn . "/" . $GroupID . "/detail/" . $contantID . "/";
 
 
     $insertSch = array();
