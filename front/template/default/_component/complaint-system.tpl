@@ -22,9 +22,8 @@
             <div class="complaint-system-form">
                 <div class="title">{$lang["policy"]["complaint"]}</div>
                 <div class="desc"></div>
-                <form data-toggle="validator" name="complainForm" id="complainForm" role="form" class="form-default"
-                    method="post">
-
+                <form data-toggle="validator" name="complainForm" id="complainForm" role="form" class="form-default" method="post">
+                    <input type="hidden" name="masterkey" value="{$masterkey}">
                     <div class="form-group has-feedback">
                         <label class="control-label" for="complaintSystemTopic">{$lang['complaint']['group']}</label>
                         <div class="select-wrapper">

@@ -180,6 +180,7 @@ class searchPage{
 		$insert[$config['seatxt']['db']['main']."_count"] = "'1'";
 		$insert[$config['seatxt']['db']['main']."_credate"] = "NOW()";
 		$sql_sch="INSERT INTO ".$config['seatxt']['db']['main']."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
+    print_pre($sql_sch);
     $result = $db->execute($sql_sch);
     return $result;
   }

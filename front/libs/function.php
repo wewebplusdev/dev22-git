@@ -989,12 +989,16 @@ function DateFormat($DateTime) {
 }
 
 function url_segment_menu($url) {
-   global $linklang;
+   global $linklang, $path_root;
    // $this_uri = explode(_URL , $url);
-   $this_uri = explode($linklang, $url);
+   $this_uri = explode($linklang."/".$path_root, $url);
    $current_uri = explode("/", $this_uri[1]);
-   array_splice($current_uri, 0, 1);
-
+   if (!empty($path_root)) {
+      array_splice($current_uri, 0, 1);
+   }else{
+      array_splice($current_uri, 0, 0);
+   }
+   
    return $current_uri;
 }
 
@@ -1180,7 +1184,11 @@ function getYearLang($valYear, $valLang) {
 ############################################
    if ($valLang == "en") {
       $valYearReturn = $valYear;
-   } else {
+   } else 
+   if ($valLang == "cn") {
+      $valYearReturn = $valYear;
+   }else
+   if ($valLang == "th") {
       $valYearReturn = ($valYear + 543);
    }
    return $valYearReturn;

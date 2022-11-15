@@ -11,6 +11,7 @@ $valNav1 = $langTxt["nav:home2"];
 $valLinkNav1 = "../core/index.php";
 $valNav2 = getNameMenu($_REQUEST["menukeyid"]);
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
+$valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -158,7 +159,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?>
                     <td align="left" width="22%" valign="middle" class="divRightTitleTb divRightTitleTbLeft"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?>(<?php echo $langTxt["lg:chi"] ?>)<?php } ?></span></td>
                     <?php } ?>
-                    
+                    <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:status"] ?></span></td>
                     <td width="9%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["us:credate"] ?></span></td>
                     <td width="10%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:manage"] ?></span></td>
                 </tr>
@@ -168,7 +169,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 " . $mod_tb_root . "_namethai,
                 " . $mod_tb_root . "_credate,
                 " . $mod_tb_root . "_nameeng,
-                " . $mod_tb_root . "_namechi
+                " . $mod_tb_root . "_namechi,
+                " . $mod_tb_root . "_status_theme
                 ";
 
 
@@ -226,7 +228,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         $valName = rechangeQuot($row[1]);
                         $valDateCredate = dateFormatReal($row[2]);
                         $valTimeCredate = timeFormatReal($row[2]);
-                        $valStatus = $row[3];
+                        $valStatus = $row[5];
                         $valPic = $mod_path_office . "/" . $row[4];
                         if (is_file($valPic)) {
                             $valPic = $valPic;
@@ -292,7 +294,24 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                                 </table>
                             </td>
                             <?php } ?>
-
+                            <td class="divRightContantOverTb" valign="top" align="center">
+                                <?php if ($valPermissionContent == "RW") { ?>
+                                    <div id="load_status<?php echo  $valID ?>">
+                                        <?php if ($valStatus == "Enable") { ?>
+                                            <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMg.php')"><span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span></a>
+                                        <?php } else { ?>
+                                            <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMg.php')"> <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span> </a>
+                                        <?php } ?>
+                                        <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting<?php echo  $valID ?>" />
+                                    </div>
+                                <?php } else { ?>
+                                    <?php if ($valStatus == "Enable") { ?>
+                                        <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
+                                    <?php } else { ?>
+                                        <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
+                                    <?php } ?>
+                                <?php } ?>
+                            </td>
                             <td class="divRightContantOverTb" valign="top" align="center">
                                 <span class="fontContantTbupdate"><?php echo  $valDateCredate ?></span><br />
                                 <span class="fontContantTbTime"><?php echo  $valTimeCredate ?></span>

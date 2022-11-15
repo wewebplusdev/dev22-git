@@ -10,7 +10,7 @@ $responseData = json_decode($verifyResponse);
 
 if (!empty($_POST) /*&& $responseData->success*/) {
   $data = array();
-  $data[$config['coms']['db']['main'] . "_masterkey"] = "'" . changeQuot($config['policy']['coms']['masterkey']) . "'";
+  $data[$config['coms']['db']['main'] . "_masterkey"] = "'" . changeQuot($_POST["masterkey"]) . "'";
   $data[$config['coms']['db']['main'] . "_gid"] = "'" . changeQuot($_POST["inputGroup"]) . "'";
   $data[$config['coms']['db']['main'] . "_message"] = "'" . encodeStr($_POST["inputMessage"]) . "'";
   $data[$config['coms']['db']['main'] . "_fname"] = "'" . encodeStr($_POST["inputName"]) . "'";

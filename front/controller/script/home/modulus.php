@@ -223,6 +223,7 @@ if($lang){
     " . $config['mnu']['db'] . "
     WHERE
     " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_status = 'Enable'
+    AND " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_status_theme = 'Enable'
   
     ";
 
