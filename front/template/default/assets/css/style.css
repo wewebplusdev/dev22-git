@@ -12670,32 +12670,34 @@ fieldset {
   margin: 30px 0;
 }
 .training-work .sponsor-block {
-  margin-top: 60px;
-  display: block !important;
+  padding-bottom: 4rem;
 }
 .training-work .sponsor-block .title {
-  border-bottom: 1px solid #cccccc;
-  margin: 0;
-  padding-bottom: 20px;
+  font-weight: var(--fw-medium);
+  color: var(--color-dark);
+  border-bottom: 1px solid #E1E1E1;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
-.training-work .sponsor-block .link {
+.training-work .sponsor-block .item-list {
+  margin: 0 -10px;
+}
+.training-work .sponsor-block .item-list li {
   width: 16.6666666667%;
+  padding: 10px;
 }
-.training-work .sponsor-block .link img {
-  margin: 30px 0;
+.training-work .sponsor-block .item-list li .cover {
+  padding-bottom: 100%;
 }
 
 @media (max-width: 767px) {
-  .training-work .sponsor-block .link {
-    width: 25%;
-  }
-  .training-work .sponsor-block .link img {
-    margin: 0;
+  .training-work .sponsor-block .item-list li {
+    width: 20%;
   }
 }
 @media (max-width: 575px) {
-  .training-work .sponsor-block .link {
-    width: 50%;
+  .training-work .sponsor-block .item-list li {
+    width: 33.3333333333%;
   }
 }
 .information-service .h-title {

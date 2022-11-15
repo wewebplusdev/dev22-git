@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="default-page training-work">
+            <div class="default-page training-work d-none">
                 <div class="container">
                     <div class="default-nav-slider">
                         <div class="item">
@@ -425,6 +425,83 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="default-page training-work">
+                <div class="container">
+                    <div class="h-title">ผู้สนับสนุน</div>
+                    <div class="sponsor-block">
+                        <div class="title">ผู้สนับสนุนงานประกวดออกแบบเครื่องประดับ ครั้งที่ 10 "Perfect Ten; Playful & Luxurious Designs"</div>
+                        <ul class="item-list">
+                            <?php for ($i = 1; $i <= 12; $i++) { ?>
+                                <li>
+                                    <a href="javascript:void(0)" class="link">
+                                        <figure class="cover">
+                                            <img src="<?php echo $core_template; ?>/assets/img/static/sponsor-logo-1.svg" alt="gallery thumbnail">
+                                        </figure>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <div class="sponsor-block">
+                        <div class="title">ผู้สนับสนุนงานประกวดออกแบบเครื่องประดับ ครั้งที่ 10 "Perfect Ten; Playful & Luxurious Designs"</div>
+                        <ul class="item-list">
+                            <?php for ($i = 1; $i <= 10; $i++) { ?>
+                                <li>
+                                    <a href="javascript:void(0)" class="link">
+                                        <figure class="cover">
+                                            <img src="<?php echo $core_template; ?>/assets/img/static/sponsor-logo-1.svg" alt="gallery thumbnail">
+                                        </figure>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <div class="sponsor-block">
+                        <div class="title">ผู้สนับสนุนงานประกวดออกแบบเครื่องประดับ ครั้งที่ 10 "Perfect Ten; Playful & Luxurious Designs"</div>
+                        <ul class="item-list">
+                            <?php for ($i = 1; $i <= 9; $i++) { ?>
+                                <li>
+                                    <a href="javascript:void(0)" class="link">
+                                        <figure class="cover">
+                                            <img src="<?php echo $core_template; ?>/assets/img/static/sponsor-logo-1.svg" alt="gallery thumbnail">
+                                        </figure>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <div class="sponsor-block">
+                        <div class="title">ผู้สนับสนุนงานประกวดออกแบบเครื่องประดับ ครั้งที่ 10 "Perfect Ten; Playful & Luxurious Designs"</div>
+                        <ul class="item-list">
+                            <?php for ($i = 1; $i <= 12; $i++) { ?>
+                                <li>
+                                    <a href="javascript:void(0)" class="link">
+                                        <figure class="cover">
+                                            <img src="<?php echo $core_template; ?>/assets/img/static/sponsor-logo-1.svg" alt="gallery thumbnail">
+                                        </figure>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <div class="sponsor-block">
+                        <div class="title">ผู้สนับสนุนงานประกวดออกแบบเครื่องประดับ ครั้งที่ 10 "Perfect Ten; Playful & Luxurious Designs"</div>
+                        <ul class="item-list">
+                            <?php for ($i = 1; $i <= 8; $i++) { ?>
+                                <li>
+                                    <a href="javascript:void(0)" class="link">
+                                        <figure class="cover">
+                                            <img src="<?php echo $core_template; ?>/assets/img/static/sponsor-logo-1.svg" alt="gallery thumbnail">
+                                        </figure>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </div>
             </div>
