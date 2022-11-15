@@ -109,7 +109,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 <tr>
 
                     <td style="padding-right:10px;" width="42%">
-                        <input name="sdateInputH" type="text" id="sdateInputH" placeholder="<?php echo  $langMod["tit:sSedate"] ?>" value="<?php echo  trim($_REQUEST['sdateInputSe']) ?>" class="sdateInputSe" style="width:98%;" />
+                        <input name="sdateInputH" type="text" id="sdateInputH" placeholder="<?php echo  $langMod["tit:sSedate"] ?>" value="<?php echo  trim($_REQUEST['sdateInputSe']) ?>" class="formInputSearchI sdateInputSe" style="width:98%;" />
                     </td>
                     <td width="42%" id="boxSelectTest">
 
@@ -121,24 +121,24 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <td colspan="3" style="padding-right:10px;" height="10"></td>
                 </tr>
                 <tr>
-                    <td style="padding-right:10px;" width="42%" >
+                    <td style="padding-right:10px;" width="42%">
                         <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchL">
-                        <option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
-                        <?php
-                        $sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ORDER BY " . $mod_tb_root_group . "_order DESC ";
-                        $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
-                        while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
-                            $row_groupid = $row_group[0];
-                            $row_groupname = $row_group[1];
-                            $row_groupnameeng = $row_group[2];
-                            if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
-                            $valNameShow = $row_groupname;
-                            } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
-                            $valNameShow = $row_groupnameeng;
-                            }
-                        ?>
-                            <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $valNameShow ?></option>
-                        <?php } ?>
+                            <option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
+                            <?php
+                            $sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ORDER BY " . $mod_tb_root_group . "_order DESC ";
+                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                            while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                                $row_groupid = $row_group[0];
+                                $row_groupname = $row_group[1];
+                                $row_groupnameeng = $row_group[2];
+                                if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
+                                    $valNameShow = $row_groupname;
+                                } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
+                                    $valNameShow = $row_groupnameeng;
+                                }
+                            ?>
+                                <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $valNameShow ?></option>
+                            <?php } ?>
                         </select>
                     </td>
                     <td>
@@ -183,10 +183,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         <input name="CheckBoxAll" type="checkbox" id="CheckBoxAll" value="Yes" onClick="Paging_CheckAll(this, 'CheckBoxID', document.myForm.TotalCheckBoxID.value)" class="formCheckboxHead" />
                     </td>
 
-                    <td align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>(<?php echo  $langTxt["lg:thai"] ?>)<?php } ?></span></td>
-                    <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>
-                        <td width="20%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>(<?php echo  $langTxt["lg:eng"] ?>)<?php } ?></span></td>
-                    <?php } ?>
+                    <td align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?>(<?php echo  $langTxt["lg:thai"] ?>)</span></td>
+                    <td width="20%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?>(<?php echo  $langTxt["lg:eng"] ?>)</span></td>
+                    <td width="20%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?>(<?php echo  $langTxt["lg:chi"] ?>)</span></td>
                     <td width="10%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:status"] ?></span></td>
                     <td width="10%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["us:lastdate"] ?></span></td>
                     <td width="12%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:manage"] ?></span></td>
@@ -199,7 +198,10 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
  " . $mod_tb_root . "_lastdate,
  " . $mod_tb_root . "_status,
  " . $mod_tb_root . "_subjecten,
- " . $mod_tb_root . "_pic ";
+ " . $mod_tb_root . "_subjectcn,
+ " . $mod_tb_root . "_pic,
+ " . $mod_tb_root . "_picen,
+ " . $mod_tb_root . "_piccn";
 
                 $sql = $sql . "  FROM " . $mod_tb_root;
                 $sql = $sql . "  INNER JOIN " . $mod_tb_date;
@@ -221,6 +223,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 if ($inputSearch <> "") {
                     $sql = $sql . "  AND  (
 		" . $mod_tb_root . "_subject LIKE '%$inputSearch%'  OR
+        " . $mod_tb_root . "_subjectcn LIKE '%$inputSearch%'  OR
 		" . $mod_tb_root . "_subjecten LIKE '%$inputSearch%'   ) ";
                 }
 
@@ -259,11 +262,25 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         $valStatus = $row[3];
                         $valNameEn = rechangeQuot($row[4]);
                         $valNameEn = chechNullVal($valNameEn);
-                        $valPic = $mod_path_office . "/" . $row[5];
+                        $valNameCn = rechangeQuot($row[5]);
+                        $valNameCn = chechNullVal($valNameCn);
+                        $valPic = $mod_path_office . "/" . $row[6];
                         if (is_file($valPic)) {
                             $valPic = $valPic;
                         } else {
                             $valPic = "../img/btn/nopic.jpg";
+                        }
+                        $valPicEn = $mod_path_office . "/" . $row[7];
+                        if (is_file($valPicEn)) {
+                            $valPicEn = $valPicEn;
+                        } else {
+                            $valPicEn = "../img/btn/nopic.jpg";
+                        }
+                        $valPicCn = $mod_path_office . "/" . $row[8];
+                        if (is_file($valPicCn)) {
+                            $valPicCn = $valPicCn;
+                        } else {
+                            $valPicCn = "../img/btn/nopic.jpg";
                         }
 
                         if ($valStatus == "Enable") {
@@ -296,30 +313,55 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                                                                     document.myFormHome.inputLt.value = 'Thai';
                                                                     document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                                     viewContactNew('viewContant.php');"><?php echo  $valName ?></a><br />
-                        <span class="fontContantTbTime">
-                          <?php echo $langTxt["txt:url"] ?><a href="<?php echo $core_full_pathMinisite . "/th/".$urlSegment[$_REQUEST['masterkey']]."/detail/" . encodeStr($valID);  ?>" class="fontLinksub" target="_blank"><?php echo $core_full_pathMinisite . "/th/".$urlSegment[$_REQUEST['masterkey']]."/detail/" . encodeStr($valID);  ?></a>
-                        </span></div>
+                                                <!-- <span class="fontContantTbTime">
+                                                    <?php echo $langTxt["txt:url"] ?><a href="<?php echo $core_full_pathMinisite . "/th/" . $urlSegment[$_REQUEST['masterkey']] . "/detail/" . encodeStr($valID);  ?>" class="fontLinksub" target="_blank"><?php echo $core_full_pathMinisite . "/th/" . $urlSegment[$_REQUEST['masterkey']] . "/detail/" . encodeStr($valID);  ?></a>
+                                                </span> -->
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
                             </td>
-                            <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>
-                                <td class="divRightContantOverTb" valign="top" align="left">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                            <td align="left">
-                                                <div class="widthDivM"><a href="javascript:void(0)" onclick="
+
+                            <td class="divRightContantOverTb" valign="top" align="left">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="39" align="left" valign="top">
+                                            <div style="width:29px; height:29px;  background:url(<?php echo  $valPicEn ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
+                                        </td>
+                                        <td align="left">
+                                            <div class="widthDivM"><a href="javascript:void(0)" onclick="
                                                                         document.myFormHome.inputLt.value = 'Eng';
                                                                         document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                                         viewContactNew('viewContant.php');"><?php echo  $valNameEn ?></a><br />
-                        <span class="fontContantTbTime">
-                          <?php echo $langTxt["txt:url"] ?><a href="<?php echo $core_full_pathMinisite . "/en/".$urlSegment[$_REQUEST['masterkey']]."/detail/" . encodeStr($valID);  ?>" class="fontLinksub" target="_blank"><?php echo $core_full_pathMinisite . "/en/".$urlSegment[$_REQUEST['masterkey']]."/detail/" . encodeStr($valID);  ?></a>
-                        </span></div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            <?php } ?>
+                                                <!-- <span class="fontContantTbTime">
+                                                    <?php echo $langTxt["txt:url"] ?><a href="<?php echo $core_full_pathMinisite . "/en/" . $urlSegment[$_REQUEST['masterkey']] . "/detail/" . encodeStr($valID);  ?>" class="fontLinksub" target="_blank"><?php echo $core_full_pathMinisite . "/en/" . $urlSegment[$_REQUEST['masterkey']] . "/detail/" . encodeStr($valID);  ?></a>
+                                                </span> -->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td class="divRightContantOverTb" valign="top" align="left">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="39" align="left" valign="top">
+                                            <div style="width:29px; height:29px;  background:url(<?php echo  $valPicCn ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
+                                        </td>
+                                        <td align="left">
+                                            <div class="widthDivM"><a href="javascript:void(0)" onclick="
+                                                                        document.myFormHome.inputLt.value = 'Chi';
+                                                                        document.myFormHome.valEditID.value =<?php echo  $valID ?>;
+                                                                        viewContactNew('viewContant.php');"><?php echo  $valNameCn ?></a><br />
+                                                <!-- <span class="fontContantTbTime">
+                                                    <?php echo $langTxt["txt:url"] ?><a href="<?php echo $core_full_pathMinisite . "/cn/" . $urlSegment[$_REQUEST['masterkey']] . "/detail/" . encodeStr($valID);  ?>" class="fontLinksub" target="_blank"><?php echo $core_full_pathMinisite . "/en/" . $urlSegment[$_REQUEST['masterkey']] . "/detail/" . encodeStr($valID);  ?></a>
+                                                </span> -->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
                             <td class="divRightContantOverTb" valign="top" align="center">
                                 <?php if ($valPermission == "RW") { ?>
                                     <div id="load_status<?php echo  $valID ?>">
@@ -348,6 +390,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
                                 <?php } ?>
                             </td>
+
                             <td class="divRightContantOverTb" valign="top" align="center">
                                 <span class="fontContantTbupdate"><?php echo  $valDateCredate ?></span><br />
                                 <span class="fontContantTbTime"><?php echo  $valTimeCredate ?></span>
@@ -373,11 +416,10 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                                                                             document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                                             editContactNew('editContant.php');">
                                                     <img src="../img/btn/edit.png" /><br />
-                                                    <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?><br />
-                                                        (<?php echo  $langTxt["lg:thai"] ?>)<?php } ?></span>
+                                                    <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br />
+                                                        (<?php echo  $langTxt["lg:thai"] ?>)</span>
                                                 </div>
                                             </td>
-                                            <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>
                                                 <td valign="top" align="center" width="30">
                                                     <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
                                                                                 document.myFormHome.inputLt.value = 'Eng';
@@ -388,7 +430,16 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                                                             (<?php echo  $langTxt["lg:eng"] ?>)</span>
                                                     </div>
                                                 </td>
-                                            <?php } ?>
+                                                <td valign="top" align="center" width="30">
+                                                    <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
+                                                                                document.myFormHome.inputLt.value = 'Chi';
+                                                                                document.myFormHome.valEditID.value =<?php echo  $valID ?>;
+                                                                                editContactNew('editContant.php');">
+                                                        <img src="../img/btn/edit.png" /><br />
+                                                        <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br />
+                                                            (<?php echo  $langTxt["lg:chi"] ?>)</span>
+                                                    </div>
+                                                </td>
                                             <td valign="top" align="center" width="30">
                                                 <div class="divRightManage" title="<?php echo  $langTxt["btn:del"] ?>" onClick="
                                                                             if (confirm('<?php echo  $langTxt["mg:delpermis"] ?>')) {
@@ -515,7 +566,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
             </table>
             <table width="96%" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 20px;">
                 <tr>
-                <td>Link : <a href="<?php echo $core_full_path. "/th/". $urlSegment[$_REQUEST['masterkey']]; ?>" target="_blank"><?php echo $core_full_path. "/th/". $urlSegment[$_REQUEST['masterkey']]; ?></a></td>
+                    <td>Link : <a href="<?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']]; ?>" target="_blank"><?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']]; ?></a></td>
                 </tr>
             </table>
             <input name="TotalCheckBoxID" type="hidden" id="TotalCheckBoxID" value="<?php echo  $index - 1 ?>" />

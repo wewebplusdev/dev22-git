@@ -2,7 +2,7 @@
 $config['setting']['db'] = "md_sit";
 $config['setting']['masterkey'] = "set";
 $config['mnu']['db'] = "sy_mnu";
-
+$config['tag']['masterkey'] = "tag";
 // table
 $config['cms']['db']['main'] = "md_cms";
 $config['cmg']['db']['main'] = "md_cmg";

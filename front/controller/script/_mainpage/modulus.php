@@ -350,8 +350,7 @@ class settingWebsite
             " . $table . "." . $table . "_contantid         AS contantid,
             " . $table . "." . $table . "_filename          AS filename,
             " . $table . "." . $table . "_name              AS name,
-            " . $table . "." . $table . "_download          AS download,
-            " . $table . "." . $table . "_credate          AS credate
+            " . $table . "." . $table . "_download          AS download
     FROM " . $table . "  
     WHERE 1=1 
     AND " . $table . "." . $table . "_contantid = '" . $id . "'
@@ -359,7 +358,7 @@ class settingWebsite
     ";
 
         $sql .= " ORDER BY " . $table . "." . $table . "_id ASC ";
-        // print_pre($sql);
+        // print_pre($sql);die;
         $result = $db->execute($sql);
         return $result;
     }
@@ -543,7 +542,7 @@ class settingWebsite
       }
     
       $sql .= " ORDER  BY " . $config['tag']['db']['main'] . "." . $config['tag']['db']['main'] . "_order DESC ";
-    //   print_pre($sql);
+    //    print_pre($sql);die;
       $result = $db->execute($sql);
       return $result;
     }

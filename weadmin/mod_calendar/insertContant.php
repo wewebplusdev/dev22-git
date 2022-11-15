@@ -90,6 +90,13 @@ if ($_REQUEST['execute'] == "insert") {
     $insert[$mod_tb_root . "_resdate"] = "'" . DateFormatInsert($_REQUEST['resdateInput']) . "'";
     $insert[$mod_tb_root . "_reedate"] = "'" . DateFormatInsert($_REQUEST['reedateInput']) . "'";
 
+    $setLangTH = (!empty($_REQUEST['inputSetLang'][0])) ? $_REQUEST['inputSetLang'][0] : 0 ;
+    $setLangEN = (!empty($_REQUEST['inputSetLang'][1])) ? $_REQUEST['inputSetLang'][1] : 0 ;
+    $setLangCN = (!empty($_REQUEST['inputSetLang'][2])) ? $_REQUEST['inputSetLang'][2] : 0 ;
+    $insert[$mod_tb_root . "_langth"]="'".$setLangTH."'";
+    $insert[$mod_tb_root . "_langen"]="'".$setLangEN."'";
+    $insert[$mod_tb_root . "_langcn"]="'".$setLangCN."'";
+
     $insert[$mod_tb_root . "_credate"] = "NOW()";
     $insert[$mod_tb_root . "_lastdate"] = "NOW()";
     $insert[$mod_tb_root . "_status"] = "'Disable'";

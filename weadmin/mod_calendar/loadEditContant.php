@@ -16,8 +16,10 @@ $valLinkNav1 = "../core/index.php";
 $sql = "SELECT  ";
 if ($_REQUEST['inputLt'] == "Thai") {
     $sql .= "  " . $mod_tb_root . "_id , " . $mod_tb_root . "_htmlfilename, " . $mod_tb_root . "_lastdate, " . $mod_tb_root . "_creby, " . $mod_tb_root . "_status ,    " . $mod_tb_root . "_subject  	,    " . $mod_tb_root . "_sdate,    " . $mod_tb_root . "_edate,    " . $mod_tb_root . "_title,    " . $mod_tb_root . "_pic , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo , " . $mod_tb_root . "_url  ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords , " . $mod_tb_root . "_address      ";
-} else {
-    $sql .= "  " . $mod_tb_root . "_id , " . $mod_tb_root . "_htmlfilenameen, " . $mod_tb_root . "_lastdate, " . $mod_tb_root . "_creby, " . $mod_tb_root . "_status  ,    " . $mod_tb_root . "_subjecten  	,    " . $mod_tb_root . "_sdate,    " . $mod_tb_root . "_edate,    " . $mod_tb_root . "_titleen,    " . $mod_tb_root . "_pic , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo , " . $mod_tb_root . "_url ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen , " . $mod_tb_root . "_addressen   ";
+} else if ($_REQUEST['inputLt'] == "Eng") {
+    $sql .= "  " . $mod_tb_root . "_id , " . $mod_tb_root . "_htmlfilenameen, " . $mod_tb_root . "_lastdate, " . $mod_tb_root . "_creby, " . $mod_tb_root . "_status  ,    " . $mod_tb_root . "_subjecten  	,    " . $mod_tb_root . "_sdate,    " . $mod_tb_root . "_edate,    " . $mod_tb_root . "_titleen,    " . $mod_tb_root . "_picen , " . $mod_tb_root . "_typeen , " . $mod_tb_root . "_filevdoen, " . $mod_tb_root . "_urlen ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen , " . $mod_tb_root . "_addressen   ";
+}else if ($_REQUEST['inputLt'] == "Chi") {
+    $sql .= "  " . $mod_tb_root . "_id , " . $mod_tb_root . "_htmlfilenamecn, " . $mod_tb_root . "_lastdate, " . $mod_tb_root . "_creby, " . $mod_tb_root . "_status  ,    " . $mod_tb_root . "_subjectcn  	,    " . $mod_tb_root . "_sdate,    " . $mod_tb_root . "_edate,    " . $mod_tb_root . "_titlecn,    " . $mod_tb_root . "_piccn , " . $mod_tb_root . "_typecn , " . $mod_tb_root . "_filevdocn , " . $mod_tb_root . "_urlcn ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn , " . $mod_tb_root . "_addresscn   ";
 }
 
 $sql .= "  ,
@@ -42,8 +44,9 @@ $sql .= "  ,
 			" . $mod_tb_root . "_reedate,
 			" . $mod_tb_root . "_dwswitch
 			 ";
-$sql .= " , " . $mod_tb_root . "_tid as tid ";
+$sql .= " , " . $mod_tb_root . "_tid as tid, " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn ";
 $sql .= " 	FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root . "_id 	='" . $_POST["valEditID"] . "'";
+// print_r($sql);
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
 $valid = $Row[0];
@@ -97,6 +100,16 @@ if ($Row[35] != "0000-00-00 00:00:00") {
     $valReEdate = DateFormatInsertRe($Row[35]);
 }
 $valDwswitch = $Row[36];
+if ($_REQUEST['inputLt'] == "Thai"){
+    $lang = "";
+} else if ($_REQUEST['inputLt'] == "Eng"){
+    $lang = "en";
+}else {
+    $lang = "cn";
+}
+$valLang[0] = $Row[38];
+$valLang[1] = $Row[39];
+$valLang[2] = $Row[40];
 $valTid = unserialize($Row['tid']);
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 ?>
@@ -377,6 +390,23 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <td colspan="7" align="right" valign="top" height="15"></td>
                 </tr>
                 <tr>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["set:lang:web"] ?><span class="fontContantAlert">*</span></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+						<?php
+						foreach ($modTxtSetLang as $key => $value) {
+						?>
+							<label>
+								<div class="formDivRadioL"><input name="inputSetLang[<?php echo $key ?>]" id="inputSetLang-<?php echo $key ?>" value="1" type="checkbox" class="formRadioContantTb checkbokSetLang" <?php if ($valLang[$key] == 1) {
+																																																																																																			echo 'checked';
+																																																																																																		} ?> /></div>
+								<div class="formDivRadioR"><?php echo $value ?></div>
+							</label>
+						<?php
+						}
+						?>
+					</td>
+				</tr>
+                <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:selectgn"] ?><span class="fontContantAlert">*</span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <select name="inputGroupID" id="inputGroupID" class="formSelectContantTb">
@@ -390,8 +420,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                             } else {
                                 $sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjectcn ";
                             }
+                            
 
-                            $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ORDER BY " . $mod_tb_root_group . "_order DESC ";
+                            $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "' AND ". $mod_tb_root_group ."_subject".$lang." !='' ORDER BY " . $mod_tb_root_group . "_order DESC ";
                             $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
                             while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
                                 $row_groupid = $row_group[0];
@@ -629,8 +660,10 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                             $sql_group = "SELECT ";
                             if ($_REQUEST['inputLt'] == "Thai") {
                                 $sql_group .= "  " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subject";
-                            } else {
+                            } else if ($_REQUEST['inputLt'] == "Eng"){
                                 $sql_group .= " " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subjecten ";
+                            }else {
+                                $sql_group .= " " . $mod_tb_tag . "_id," . $mod_tb_tag . "_subjectcn ";
                             }
                             $sql_group .= "  FROM " . $mod_tb_tag . " WHERE  " . $mod_tb_tag . "_masterkey ='" . $masterkey_tag . "' AND " . $mod_tb_tag . "_status != 'Disable'  ORDER BY " . $mod_tb_tag . "_order DESC ";
                             $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
@@ -697,7 +730,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         <div id="status" class="formFontTileTxt"></div>
                         <div id="boxAlbumNew" class="formFontTileTxt">
                             <?php
-                            $sql_filetemp = "SELECT  " . $mod_tb_root_album . "_id," . $mod_tb_root_album . "_filename," . $mod_tb_root_album . "_name," . $mod_tb_root_album . "_download  FROM " . $mod_tb_root_album . " WHERE " . $mod_tb_root_album . "_contantid 	='" . $_REQUEST['valEditID'] . "'    ORDER BY " . $mod_tb_root_album . "_id ASC";
+                            $sql_filetemp = "SELECT  " . $mod_tb_root_album . "_id," . $mod_tb_root_album . "_filename," . $mod_tb_root_album . "_name," . $mod_tb_root_album . "_download  FROM " . $mod_tb_root_album . " WHERE " . $mod_tb_root_album . "_contantid 	='" . $_REQUEST['valEditID'] . "' AND   " . $mod_tb_root_album . "_language ='" . $_REQUEST['inputLt'] . "'   ORDER BY " . $mod_tb_root_album . "_id ASC";
                             $query_filetemp = wewebQueryDB($coreLanguageSQL, $sql_filetemp);
                             $number_filetemp = wewebNumRowsDB($coreLanguageSQL, $query_filetemp);
                             if ($number_filetemp >= 1) {
@@ -786,7 +819,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     </td>
                 </tr>
 
-                <tr>
+                <tr style="display:none;">
                     <td width="18%" align="right" valign="top" class="formLeftContantTb">แสดงเอกสารแนบ</td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <label>
@@ -820,7 +853,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         <div class="clearAll"></div>
                         <div id="boxFileNew" class="formFontTileTxt">
                             <?php
-                            $sql = "SELECT " . $mod_tb_file . "_id," . $mod_tb_file . "_filename," . $mod_tb_file . "_name," . $mod_tb_file . "_download FROM " . $mod_tb_file . " WHERE " . $mod_tb_file . "_contantid 	='" . $valid . "' ORDER BY " . $mod_tb_file . "_id ASC";
+                            $sql = "SELECT " . $mod_tb_file . "_id," . $mod_tb_file . "_filename," . $mod_tb_file . "_name," . $mod_tb_file . "_download FROM " . $mod_tb_file . " WHERE " . $mod_tb_file . "_contantid 	='" . $valid . "' AND   " . $mod_tb_file . "_language ='" . $_REQUEST['inputLt'] . "'  ORDER BY " . $mod_tb_file . "_id ASC";
                             $query_file = wewebQueryDB($coreLanguageSQL, $sql);
                             $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
                             if ($number_row >= 1) {
