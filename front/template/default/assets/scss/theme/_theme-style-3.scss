@@ -1,5 +1,4 @@
 // YELLOW
-
 :root {
     --img-yellow: invert(120%) sepia(48%) saturate(201%) hue-rotate(358deg) brightness(140%) contrast(147%);
 }
@@ -86,6 +85,17 @@
     // }
     .site-container {
         background-color: var(--color-yellow);
+        .git-conference-block,
+        .git-news-block,
+        .git-training-movement-block,
+        .git-service-block,
+        .e-services-block,
+        .lab-update-block,
+        .git-library-weblinks,
+        .git-book-block,
+        .git-vdo-block {
+            background-color: var(--color-yellow);
+        }
     }
     img {
         filter: grayscale(1);
@@ -93,10 +103,10 @@
     .iframe-container {
         filter: grayscale(1);
     }
-    .site-header .brand img,
-    .site-footer .brand img {
-        filter: grayscale(1) invert(1);
-    }
+    // .site-header .brand img,
+    // .site-footer .brand img {
+    //     filter: grayscale(1) invert(1);
+    // }
     .site-header {
         border-color: var(--color-yellow);
         color: var(--color-black);
@@ -109,7 +119,7 @@
         //     }
         // }
         .site-header-topbar {
-            .text-color .item-list > li .theme {
+            .text-color .item-list>li .theme {
                 &.theme-style-2 {
                     color: var(--color-light);
                 }
@@ -123,11 +133,11 @@
                 }
             }
             .text-size {
-                .item-list > li.active a {
+                .item-list>li.active a {
                     border: 1px solid var(--color-yellow);
                     color: var(--color-yellow);
                 }
-                .item-list > li a {
+                .item-list>li a {
                     color: var(--color-yellow);
                 }
                 .txt {
@@ -158,7 +168,7 @@
                 }
             }
             .main-menu-list {
-                .nav-list > li {
+                .nav-list>li {
                     a {
                         color: var(--color-yellow);
                     }
@@ -195,21 +205,21 @@
     // .menu-full .dropright .dropdown-menu>li .item-list li a {
     //     color: var(--color-yellow) !important;
     // }
-    .menu-full .main-menu .nav-list > li > a,
-    .menu-full .dropright .dropdown-menu .level-II > li > a {
+    .menu-full .main-menu .nav-list>li>a,
+    .menu-full .dropright .dropdown-menu .level-II>li>a {
         color: var(--color-yellow) !important;
     }
-    .menu-full .dropright .dropdown-menu .dropdown-item > li > a {
+    .menu-full .dropright .dropdown-menu .dropdown-item>li>a {
         color: var(--color-black) !important;
     }
-    .menu-full .dropright .dropdown-menu > li .item-list li a {
+    .menu-full .dropright .dropdown-menu>li .item-list li a {
         color: var(--color-black) !important;
     }
-    .menu-full .dropright .dropdown-menu > li > a {
+    .menu-full .dropright .dropdown-menu>li>a {
         color: var(--color-black) !important;
         border-bottom: 1px solid var(--color-black);
     }
-    .menu-full .item-list.bullet > li::before {
+    .menu-full .item-list.bullet>li::before {
         background: var(--color-black);
     }
     .btn-primary,
@@ -217,7 +227,7 @@
     .btn-primary.focus,
     .btn-primary:not(:disabled):not(.disabled).active,
     .btn-primary:not(:disabled):not(.disabled):active,
-    .show > .btn-primary.dropdown-toggle {
+    .show>.btn-primary.dropdown-toggle {
         color: var(--color-yellow);
         background-color: var(--color-black);
         border-color: transparent;
@@ -245,7 +255,7 @@
     .btn-border-primary.focus,
     .btn-border-primary:not(:disabled):not(.disabled).active,
     .btn-border-primary:not(:disabled):not(.disabled):active,
-    .show > .btn-border-primary.dropdown-toggle {
+    .show>.btn-border-primary.dropdown-toggle {
         color: var(--color-black);
         background-color: transparent;
         border-color: var(--color-black);
@@ -463,6 +473,448 @@
             }
         }
     }
+    .default-nav-tab {
+        li {
+            &:hover {
+                filter: grayscale(1);
+            }
+            .item.active {
+                color: var(--color-black);
+                &::before {
+                    filter: grayscale(1);
+                }
+            }
+            .item {
+                color: var(--color-gray);
+            }
+        }
+    }
+    .git-conference-block {
+        &::before {
+            filter: grayscale(1);
+        }
+        .title,
+        .desc {
+            color: var(--color-yellow);
+        }
+    }
+    .download-block {
+        .title,
+        .download-block-btn .btn {
+            color: var(--color-black);
+        }
+        .download-block-type {
+            img {
+                filter: brightness(0%);
+            }
+            .desc {
+                color: var(--color-black);
+                span {
+                    color: var(--color-black);
+                }
+            }
+        }
+    }
+    .git-news-block {
+        .item-list {
+            .news-block-item {
+                border-top: 1px solid var(--color-black);
+                border-bottom: 1px solid var(--color-black);
+                .title {
+                    color: var(--color-black);
+                }
+            }
+        }
+        .default-slider {
+            .item.slick-active.slick-center .link .wrapper .inner {
+                .title,
+                .desc,
+                .date {
+                    color: var(--color-yellow);
+                }
+            }
+            .item .link .wrapper .inner {
+                .title,
+                .desc,
+                .date {
+                    color: var(--color-yellow);
+                }
+            }
+        }
+    }
+    .git-e-Learning-block {
+        background-color: #000;
+        background-blend-mode: luminosity;
+        .h-title {
+            color: var(--color-yellow) !important;
+        }
+        .default-slider-dots .slick-dots li.slick-active button {
+            border: 1px solid var(--color-yellow);
+            &::before {
+                background-color: var(--color-yellow);
+            }
+        }
+        .default-slider-dots .slick-dots li button {
+            border: 1px solid var(--color-yellow);
+            background-color: var(--color-yellow);
+        }
+    }
+    .git-training-movement-block {
+        .h-title {
+            color: var(--color-black);
+        }
+        .tab-content {
+            .item {
+                border: 1px solid var(--color-black);
+                &:hover {
+                    background-color: var(--color-black);
+                    .link {
+                        .wrapper {
+                            .inner {
+                                .title,
+                                .desc,
+                                .date {
+                                    color: var(--color-yellow);
+                                    span {
+                                        color: var(--color-yellow);
+                                    }
+                                }
+                                .divider {
+                                    border-color: var(--color-yellow);
+                                }
+                            }
+                        }
+                    }
+                }
+                .link {
+                    .wrapper {
+                        .inner {
+                            .title {
+                                color: var(--color-black);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .default-slider-arrows .next-arrow:hover,
+        .default-slider-arrows .prev-arrow:hover {
+            filter: grayscale(1) !important;
+        }
+    }
+    .banner {
+        background-color: var(--color-yellow);
+    }
+    .banner-I-block {
+        .wrapper {
+            background-color: #000;
+            background-blend-mode: luminosity;
+            .text-secondary {
+                color: var(--color-yellow) !important;
+            }
+            .h-title,
+            .subtitle,
+            .desc {
+                color: var(--color-yellow);
+            }
+        }
+    }
+    .banner-II-block {
+        background-color: var(--color-yellow) !important;
+        .text-light {
+            color: var(--color-yellow) !important;
+        }
+    }
+    .banner-III-block {
+        background-color: var(--color-yellow);
+        .wrapper {
+            .h-title {
+                color: var(--color-black);
+            }
+        }
+        .box {
+            .inner {
+                background-color: var(--color-black);
+                .title,
+                .subtitle,
+                .desc {
+                    color: var(--color-yellow);
+                }
+            }
+        }
+    }
+    .git-information-block {
+        background-color: #000;
+        background-blend-mode: luminosity;
+        .h-title,
+        .sub-title {
+            color: var(--color-yellow);
+        }
+        .item {
+            .link {
+                .wrapper {
+                    .inner {
+                        background-color: var(--color-black);
+                        .title,
+                        .desc,
+                        .divider {
+                            color: var(--color-yellow);
+                        }
+                        .date {
+                            color: var(--color-yellow);
+                            span {
+                                color: var(--color-yellow);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .default-slider-dots .slick-dots li.slick-active button {
+            border: 1px solid var(--color-yellow);
+            background-color: transparent;
+            &::before {
+                background-color: var(--color-yellow);
+            }
+        }
+        .default-slider-dots .slick-dots li button {
+            border: 1px solid var(--color-yellow);
+            background-color: var(--color-yellow);
+        }
+    }
+    .git-service-block {
+        .h-title,
+        .sub-title {
+            color: var(--color-black);
+        }
+        .sidebar-menus {
+            .item-list {
+                .menu-service {
+                    .topic.active {
+                        color: var(--color-black);
+                        .dots-topic {
+                            border: 1px solid var(--color-black);
+                            &::before {
+                                background-color: var(--color-black);
+                            }
+                        }
+                    }
+                    .topic {
+                        color: var(--color-black);
+                    }
+                    .sub-topic {
+                        .-border-top {
+                            border-top: 1px solid var(--color-black);
+                        }
+                        li {
+                            border-bottom: 1px solid var(--color-black);
+                            a {
+                                color: var(--color-black);
+                                &:hover {
+                                    color: var(--color-black);
+                                }
+                            }
+                        }
+                    }
+                    .dots-topic {
+                        &::before {
+                            border: 1px solid var(--color-black);
+                        }
+                    }
+                }
+            }
+        }
+        .topic-content-block {
+            background-color: var(--color-black);
+            .h-title,
+            .sub-title,
+            .desc {
+                color: var(--color-yellow);
+            }
+            .btn-border-primary {
+                border: 1px solid var(--color-yellow);
+                color: var(--color-yellow);
+                &:hover {
+                    color: var(--color-yellow);
+                    background-color: var(--color-gray);
+                }
+            }
+        }
+    }
+    .e-services-block {
+        .cover {
+            &::before {
+                background: linear-gradient(to bottom left, rgba(255, 255, 255, 0) 0%, #000 100%);
+            }
+        }
+        .link {
+            .title,
+            .subtitle {
+                color: var(--color-yellow);
+            }
+            .text-orient {
+                color: var(--color-black);
+            }
+        }
+    }
+    .lab-update-block {
+        filter: none !important;
+        background-color: var(--color-yellow);
+        background: unset;
+        .h-title {
+            color: var(--color-black);
+        }
+        .default-nav-tab li .item.active {
+            color: var(--color-black);
+        }
+        .default-nav-tab li .item {
+            color: var(--color-gray);
+        }
+        .default-list {
+            .link {
+                border-bottom: 1px solid var(--color-black);
+                .icon {
+                    color: var(--color-black);
+                }
+                .inner {
+                    .title,
+                    .desc,
+                    .date {
+                        color: var(--color-black) !important;
+                    }
+                }
+            }
+        }
+        .default-slider-arrows .next-arrow,
+        .default-slider-arrows .prev-arrow {
+            filter: grayscale(1) !important;
+        }
+        .default-slider-arrows .next-arrow:hover,
+        .default-slider-arrows .prev-arrow:hover {
+            filter: grayscale(1) !important;
+        }
+        .btn-border-light {
+            color: var(--color-black);
+            border-color: var(--color-black);
+        }
+        .btn-border-light:hover {
+            color: var(--color-yellow);
+            background-color: var(--color-black);
+        }
+    }
+    .git-library-weblinks {
+        .git-library-block {
+            .library-form {
+                background-color: var(--color-black) !important;
+                .icon,
+                .desc {
+                    color: var(--color-yellow);
+                }
+            }
+            .form-default {
+                .block-control {
+                    .form-control {
+                        background-color: var(--color-gray);
+                        color: var(--color-yellow);
+                    }
+                }
+            }
+            .select2-container--default .select2-selection--single {
+                background-color: var(--color-gray);
+            }
+            .select2-selection--single .select2-selection__rendered,
+            .select2-selection--single .select2-selection__arrow::before {
+                color: var(--color-yellow);
+            }
+        }
+        .weblink-block .default-slider-dots .slick-dots li.slick-active button {
+            border-color: var(--color-black);
+        }
+        .weblink-block .default-slider-dots .slick-dots li.slick-active button::before {
+            border-color: var(--color-black);
+        }
+    }
+    .museum-block {
+        background-color: var(--color-yellow);
+        .h-title,
+        .desc {
+            color: var(--color-yellow) !important;
+        }
+        &::before {
+            filter: grayscale(1);
+        }
+        .museum-header {
+            .desc {
+                .btn-border-light {
+                    background-color: var(--color-black);
+                }
+            }
+        }
+        .museum-container {
+            .link {
+                .topic,
+                .title,
+                .desc {
+                    color: var(--color-yellow);
+                }
+                &:hover {
+                    .topic {
+                        span {
+                            color: var(--color-yellow);
+                        }
+                    }
+                    .wrapper {
+                        &::before {
+                            opacity: 0.5;
+                            background-color: #000;
+                            background-blend-mode: luminosity;
+                        }
+                    }
+                }
+            }
+            .wrapper {
+                // filter: grayscale(1);
+                background-color: #000;
+                background-blend-mode: luminosity;
+            }
+        }
+    }
+    .git-book-block {
+        .booklist .default-slider-dots .slick-dots li.slick-active button {
+            border-color: var(--color-black);
+        }
+        .booklist .default-slider-dots .slick-dots li.slick-active button::before {
+            border-color: var(--color-black);
+        }
+    }
+    .git-vdo-block {
+        .h-title {
+            color: var(--color-black);
+        }
+        .tab-content {
+            .video-gallery-banner {
+                .link {
+                    background-color: var(--color-black);
+                    .title,
+                    .desc,
+                    span {
+                        color: var(--color-yellow);
+                    }
+                }
+            }
+            .item-list {
+                li {
+                    &:hover {
+                        .link {
+                            .desc {
+                                color: var(--color-black);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .news-block {
         border-top: 1px solid var(--color-black);
         border-bottom: 1px solid var(--color-black);
@@ -510,7 +962,8 @@
     }
     .top-graphic {
         .wrapper {
-            .title {
+            .title,
+            .desc {
                 color: var(--color-yellow);
             }
             .breadcrumb {
@@ -526,6 +979,15 @@
                     }
                 }
             }
+        }
+        .default-slider-dots .slick-dots li button {
+            border: 1px solid var(--color-yellow);
+        }
+        .default-slider-dots .slick-dots li.slick-active button {
+            border: 1px solid var(--color-yellow);
+        }
+        .default-slider-dots .slick-dots li.slick-active button::before {
+            background-color: var(--color-yellow);
         }
     }
     // .breadcrumb {
@@ -545,18 +1007,18 @@
         }
         .footer-top .title,
         .footer-top .desc,
-        .contact .item-list > li,
+        .contact .item-list>li,
         .link,
         .copyright {
             color: var(--color-yellow);
         }
-        .policy .item-list > li + li {
+        .policy .item-list>li+li {
             border-left: 1px solid var(--color-yellow);
         }
-        .contact .item-list > li a span {
+        .contact .item-list>li a span {
             background-color: var(--color-black);
         }
-        .social .item-list > li .btn {
+        .social .item-list>li .btn {
             background-color: var(--color-black);
             svg {
                 path {
@@ -584,8 +1046,8 @@
             color: var(--color-yellow);
         }
         .footer-sitemap .card-body .list-group .list-group-item,
-        .footer-sitemap .card-body .list-group .list-group-item > a,
-        .footer-sitemap .card-body .list-group .list-group-item > .link {
+        .footer-sitemap .card-body .list-group .list-group-item>a,
+        .footer-sitemap .card-body .list-group .list-group-item>.link {
             color: var(--color-yellow);
             &::before {
                 border: 1px solid var(--color-yellow);
@@ -681,9 +1143,7 @@
         border-bottom: 1px solid var(--color-black);
         z-index: 2;
     }
-    .form-check .form-check-input {
-    }
-
+    .form-check .form-check-input {}
     .form-control-feedback.glyphicon-remove,
     .form-control-feedback.glyphicon-ok {
         filter: grayscale(1);
@@ -694,17 +1154,17 @@
     .contact-page .graphic-map .link {
         color: var(--color-black);
     }
-    .contact-page .contact-list .item-list > li a span {
+    .contact-page .contact-list .item-list>li a span {
         background-color: var(--color-black);
     }
     .default-header .top-graphic.text-primary .wrapper .title,
-    .default-header .top-graphic.text-primary .breadcrumb li + li:before,
+    .default-header .top-graphic.text-primary .breadcrumb li+li:before,
     .default-header .top-graphic.text-primary .wrapper .breadcrumb .breadcrumb-item,
     .default-header .top-graphic.text-primary .wrapper .breadcrumb .breadcrumb-item a {
         color: var(--color-black);
     }
     .default-header .top-graphic.text-dark .wrapper .title,
-    .default-header .top-graphic.text-dark .breadcrumb li + li:before,
+    .default-header .top-graphic.text-dark .breadcrumb li+li:before,
     .default-header .top-graphic.text-dark .wrapper .breadcrumb .breadcrumb-item,
     .default-header .top-graphic.text-dark .wrapper .breadcrumb .breadcrumb-item a {
         color: var(--color-black);
@@ -731,10 +1191,9 @@
     .member-block .subtitle {
         color: var(--color-black);
     }
-    .item-list.checked > li::before {
+    .item-list.checked>li::before {
         filter: grayscale(1);
     }
-
     h2.swal2-title {
         color: var(--color-black);
     }
@@ -764,7 +1223,6 @@
     .swal2-styled.swal2-confirm {
         color: var(--color-yellow);
     }
-
     .form-default .control-label {
         color: var(--color-black);
     }
@@ -772,7 +1230,6 @@
         background-color: var(--color-black);
         color: var(--color-yellow);
     }
-
     .search-block .search-result span {
         color: var(--color-black);
     }
@@ -782,21 +1239,21 @@
     .default-page .title {
         color: var(--color-black);
     }
-    .search-block .item-list > li {
+    .search-block .item-list>li {
         border-color: var(--color-black);
     }
-    .search-block .item-list > li:hover {
+    .search-block .item-list>li:hover {
         color: var(--color-yellow);
         background-color: var(--color-black);
     }
-    .search-block .item-list > li:hover .title {
+    .search-block .item-list>li:hover .title {
         color: var(--color-yellow);
     }
-    .search-block .item-list > li:hover .desc,
-    .search-block .item-list > li:hover .link {
+    .search-block .item-list>li:hover .desc,
+    .search-block .item-list>li:hover .link {
         color: var(--color-yellow);
     }
-    .search-block .item-list > li:hover .link.detail img {
+    .search-block .item-list>li:hover .link.detail img {
         filter: invert(1);
     }
     .search-block .item-list .link.detail {
@@ -809,7 +1266,6 @@
     .research-page .table tbody td {
         color: var(--color-black);
     }
-
     .form-default .block-control .form-control {
         border-color: var(--color-black);
     }
@@ -833,7 +1289,6 @@
         color: var(--color-yellow);
         background-color: var(--color-black);
     }
-
     .diamond-calc-page .calc-result .wrapper {
         color: var(--color-yellow);
         background-color: var(--color-black);
@@ -854,13 +1309,12 @@
     .divider {
         border-color: var(--color-black);
     }
-
     .btn-light,
     .btn-light:focus,
     .btn-light.focus,
     .btn-light:not(:disabled):not(.disabled).active,
     .btn-light:not(:disabled):not(.disabled):active,
-    .show > .btn-light.dropdown-toggle {
+    .show>.btn-light.dropdown-toggle {
         color: var(--color-black);
         background-color: var(--color-yellow);
     }
@@ -876,13 +1330,12 @@
         color: var(--color-yellow);
         background-color: var(--color-black);
     }
-
     .btn-border-light,
     .btn-border-light:focus,
     .btn-border-light.focus,
     .btn-border-light:not(:disabled):not(.disabled).active,
     .btn-border-light:not(:disabled):not(.disabled):active,
-    .show > .btn-light.dropdown-toggle {
+    .show>.btn-light.dropdown-toggle {
         color: var(--color-yellow);
         border-color: var(--color-yellow);
     }
@@ -903,11 +1356,352 @@
 // .site-header-topbar .text-color .item-list > li a, .site-header-topbar .text-size .item-list > li a
 .theme-2 {
     &.theme-style-3 {
+        .site-header-main .main-menu-list .nav-list>li>a.active {
+            background-color: var(--color-gray);
+        }
+        .site-header .search .form-control,
+        .site-header .search span,
+        .form-control::placeholder {
+            color: var(--color-yellow);
+        }
+        .site-header-main .main-menu-list .nav-list>li.active {
+            background-color: var(--color-black);
+        }
+        .site-header-main .main-menu-list .nav-list>li a:hover {
+            border-color: var(--color-yellow);
+        }
+        .e-service-block {
+            background: var(--color-yellow);
+        }
+        .e-service-block,
+        .e-service-block .link {
+            color: var(--color-black);
+        }
+        .e-service-block .icon .circle {
+            border-color: var(--color-black);
+        }
+        .e-service-block .link:hover .circle {
+            background: rgb(0, 0, 0);
+        }
+        .link svg path {
+            fill: var(--color-black);
+        }
+        .e-service-block .link:hover svg path {
+            fill: var(--color-light);
+        }
+        .e-service-block .h-title::before {
+            background-color: var(--color-black);
+        }
+        .e-service-block .link:hover svg path {
+            fill: var(--color-yellow);
+        }
+        .e-service-block .icon .circle {
+            background-color: var(--color-yellow);
+        }
+        .services-block {
+            background-color: #000;
+            background-blend-mode: luminosity;
+            .h-title,
+            .desc {
+                color: var(--color-yellow);
+                &::before {
+                    background-color: var(--color-yellow);
+                }
+            }
+            .default-nav-tabs a.active,
+            .default-nav-tabs .nav-link.active {
+                color: var(--color-yellow);
+                border-color: var(--color-yellow);
+            }
+            .default-nav-tabs a,
+            .default-nav-tabs .nav-link {
+                color: var(--color-yellow);
+            }
+            .default-nav-tabs a:hover,
+            .default-nav-tabs .nav-link:hover {
+                border-bottom-color: var(--color-yellow);
+            }
+            .default-slider .inner .title {
+                color: var(--color-yellow);
+            }
+            .default-slider-dots .slick-dots li button {
+                border: 1px solid var(--color-yellow);
+            }
+            .default-slider-dots .slick-dots li.slick-active button::before {
+                background-color: var(--color-yellow);
+            }
+        }
+        .training-block {
+            background-color: #000;
+            background-blend-mode: luminosity;
+            .left-side {
+                .h-title,
+                .desc {
+                    color: var(--color-yellow);
+                    &::before {
+                        background-color: var(--color-yellow);
+                    }
+                }
+            }
+            .default-list .link {
+                span {
+                    color: var(--color-yellow);
+                }
+                .inner {
+                    .title,
+                    .desc,
+                    .date {
+                        color: var(--color-yellow);
+                    }
+                }
+                &:hover {
+                    background-color: var(--color-yellow);
+                    span {
+                        color: var(--color-black);
+                    }
+                    .inner {
+                        .title,
+                        .desc,
+                        .date {
+                            color: var(--color-black);
+                        }
+                    }
+                }
+            }
+            .default-nav-tabs a.active,
+            .default-nav-tabs .nav-link.active {
+                color: var(--color-yellow);
+                border-color: var(--color-yellow);
+            }
+            .default-nav-tabs a,
+            .default-nav-tabs .nav-link {
+                color: var(--color-yellow);
+            }
+            .default-nav-tabs a:hover,
+            .default-nav-tabs .nav-link:hover {
+                border-bottom-color: var(--color-yellow);
+            }
+            .default-slider .inner .title {
+                color: var(--color-yellow);
+            }
+            .default-slider-dots .slick-dots li button {
+                border: 1px solid var(--color-yellow);
+            }
+            .default-slider-dots .slick-dots li.slick-active button::before {
+                background-color: var(--color-yellow);
+            }
+        }
+        .banner-I-block {
+            background-color: #000;
+            background-blend-mode: luminosity;
+            .title,
+            .text-secondary {
+                color: var(--color-yellow) !important;
+            }
+            .h-title,
+            .subtitle,
+            .desc {
+                color: var(--color-yellow);
+            }
+        }
+        .museum-block {
+            background-color: #000;
+            background-blend-mode: luminosity;
+            .h-title {
+                color: var(--color-black) !important;
+            }
+            .wrapper {
+                background-color: #000;
+                background-blend-mode: luminosity;
+                .topic,
+                .title,
+                desc {
+                    color: var(--color-yellow);
+                }
+            }
+            .biggest {
+                .topic,
+                .title,
+                desc {
+                    color: var(--color-yellow);
+                }
+            }
+            .link {
+                &:hover {
+                    .wrapper::before {
+                        opacity: 0.5;
+                        background-color: var(--color-black);
+                    }
+                    .topic {
+                        span {
+                            color: var(--color-yellow);
+                        }
+                    }
+                }
+            }
+        }
+        .git-news-block {
+            background-color: #000;
+            background-blend-mode: luminosity;
+            .h-title {
+                color: var(--color-yellow);
+                &::before {
+                    background-color: var(--color-yellow);
+                }
+            }
+            .link .inner {
+                background-color: var(--color-black);
+            }
+            .divider {
+                border-color: var(--color-yellow);
+            }
+            .desc {
+                color: var(--color-yellow);
+            }
+            .default-nav-tabs a.active,
+            .default-nav-tabs .nav-link.active {
+                color: var(--color-yellow);
+                border-color: var(--color-yellow);
+            }
+            .default-nav-tabs a,
+            .default-nav-tabs .nav-link {
+                color: var(--color-yellow);
+            }
+            .default-nav-tabs a:hover,
+            .default-nav-tabs .nav-link:hover {
+                border-bottom-color: var(--color-yellow);
+            }
+            .default-slider .inner .title {
+                color: var(--color-yellow);
+            }
+            .default-slider-dots .slick-dots li button {
+                border: 1px solid var(--color-yellow);
+            }
+            .default-slider-dots .slick-dots li.slick-active button::before {
+                background-color: var(--color-yellow);
+            }
+        }
+        .lab-update-block {
+            filter: grayscale(1);
+            .default-list {
+                .link {
+                    .title,
+                    .desc {
+                        color: var(--color-light);
+                    }
+                    &:hover {
+                        .title,
+                        .desc {
+                            color: var(--color-black);
+                        }
+                    }
+                }
+            }
+        }
+        .banner-III-block {
+            .quote {
+                color: var(--color-black);
+            }
+        }
+        .git-book-block {
+            background-color: var(--color-yellow);
+            .title {
+                color: var(--color-black);
+            }
+            .booklist .default-slider .slick-track>.item.slick-current .cover {
+                box-shadow: unset;
+            }
+            .booklist .link:hover .cover::after {
+                background-color: var(--color-black);
+            }
+            .booklist .default-slider-dots .slick-dots li.slick-active button {
+                border-color: var(--color-black);
+                background-color: transparent;
+                &::before {
+                    background-color: var(--color-black);
+                }
+            }
+            .default-slider-dots .slick-dots li.slick-active button {
+                background-color: transparent;
+            }
+            .default-slider-dots .slick-dots li button {
+                border: 1px solid var(--color-black);
+            }
+            .booklist .default-slider-dots .slick-dots li button {
+                background-color: var(--color-black);
+                // border: var(--color-black);
+            }
+        }
+        .git-library-block {
+            .bg-library {
+                .bg-left,
+                .bg-right {
+                    background-color: #000;
+                    background-blend-mode: luminosity;
+                }
+            }
+            .library-content {
+                .title,
+                .desc {
+                    color: var(--color-yellow);
+                }
+            }
+            .btn-primary {
+                background-color: transparent;
+                border: 1px solid var(--color-yellow);
+                color: var(--color-yellow);
+                &:hover {
+                    background-color: var(--color-yellow);
+                    color: var(--color-black);
+                }
+            }
+        }
+        .weblink-block {
+            background-color: #000;
+            background-blend-mode: luminosity;
+            .title {
+                color: var(--color-yellow);
+            }
+            .link:hover .cover::after {
+                background-color: var(--color-yellow);
+            }
+            .default-slider-dots .slick-dots li.slick-active button,
+            .default-slider-dots .slick-dots li button {
+                border: 1px solid var(--color-yellow);
+            }
+            .default-slider-dots .slick-dots li.slick-active button {
+                &::before {
+                    background-color: var(--color-yellow);
+                }
+            }
+        }
+        .site-footer {
+            .social .item-list>li a:hover {
+                background-color: var(--color-yellow);
+                color: var(--color-yellow);
+            }
+            .link:hover {
+                color: var(--color-yellow);
+            }
+            .links .link {
+                border-bottom: 1px solid var(--color-yellow);
+            }
+            svg path {
+                fill: var(--color-yellow);
+            }
+            .link:hover svg path {
+                fill: var(--color-yellow);
+            }
+            .links .link span {
+                color: var(--color-yellow);
+            }
+        }
     }
 }
+
 .theme-3 {
     &.theme-style-3 {
-        .site-header-main .main-menu-list .nav-list > li.active a {
+        .site-header-main .main-menu-list .nav-list>li.active a {
             color: var(--color-black);
             background-color: var(--color-yellow);
         }
@@ -964,17 +1758,17 @@
         .next-arrow:hover {
             filter: grayscale(1);
         }
-        .site-footer .maps .item-list > li .btn:hover {
+        .site-footer .maps .item-list>li .btn:hover {
             color: var(--color-yellow);
             background-color: var(--color-black);
         }
-        .site-footer .maps .item-list > li .btn.btn-primary {
+        .site-footer .maps .item-list>li .btn.btn-primary {
             color: var(--color-yellow);
         }
-        .site-footer .social .item-list > li .link:hover .inner svg path {
+        .site-footer .social .item-list>li .link:hover .inner svg path {
             fill: var(--color-yellow);
         }
-        .site-footer .social .item-list > li .link:hover .inner {
+        .site-footer .social .item-list>li .link:hover .inner {
             border-color: var(--color-yellow);
         }
         .site-footer .policy .link {

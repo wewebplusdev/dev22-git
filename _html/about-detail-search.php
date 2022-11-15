@@ -106,10 +106,10 @@
                             <ul class="item-list">
                                 <?php for ($i = 1; $i <= 4; $i++) { ?>
                                     <li>
-                                        <a href="javascript:void(0)" class="link list-wrapper">
+                                        <a href="javascript:void(0)" class="link list-wrapper w-100">
                                             <div class="list-inner">
                                                 <div class="list-title">ตำรามาตรฐานยาสมุนไพรไทยฉบับเพิ่มเติมล่าสุด</div>
-                                                <div class="list-desc text-limit -x2">สำนักยาและวัตถุเสพติด กรมวิทยาศาสตร์การแพทย์ ได้จัดทำตำรามาตรฐานยาสมุนไพรไทย ฉบับเพิ่มเติม ปี พ.ศ.2565 (Thai Herbal Pharmacopoeia 2021 Supplement 2022, THP 2021 Suppl.2022)</div>
+                                                <div class="list-desc text-limit -x2">สำนักยาและวัตถุเสพติด กรมวิทยาศาสตร์การแพทย์ ได้จัดทำตำรามาตรฐานยาสมุนไพรไทย ฉบับเพิ่มเติม ปี พ.ศ.2565</div>
                                                 <div class="list-link">https://website.bdn.go.th/news/detail/qQAcZKtl</div>
                                                 <div class="tag-list">
                                                     <div class="detail-hashtag-block">
