@@ -156,9 +156,9 @@ if ($_REQUEST['execute'] == "insert") {
     ## URL Search ###################################
     $txt_value_to = encodeURL("c=" . $contantID . "");
 
-    $valUrlSearchTH = $mod_url_search_th . "/" . encodeStr($contantID) . "/";
-    $valUrlSearchEN = $mod_url_search_en . "/" . encodeStr($contantID) . "/";
-    $valUrlSearchCN = $mod_url_search_cn . "/" . encodeStr($contantID) . "/";
+    $valUrlSearchTH = $mod_url_search_th . "/" . $contantID . "/";
+    $valUrlSearchEN = $mod_url_search_en . "/" . $contantID . "/";
+    $valUrlSearchCN = $mod_url_search_cn . "/" . $contantID . "/";
 
 
     $insertSch = array();

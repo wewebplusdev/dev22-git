@@ -55,30 +55,29 @@ if ($_REQUEST['execute'] == "insert") {
     logs_access('3', 'Insert');
 
     ## URL Search ###################################
-    $txt_value_to = encodeURL("c=" . $contantID . "");
+    // $txt_value_to = encodeURL("c=" . $contantID . "");
 
-    $valUrlSearchTH = $mod_url_search_th . "/" . encodeStr($contantID) . "/";
-    $valUrlSearchEN = $mod_url_search_en . "/" . encodeStr($contantID) . "/";
-    $valUrlSearchCN = $mod_url_search_cn . "/" . encodeStr($contantID) . "/";
+    // $valUrlSearchTH = $mod_url_search_th . "/" . encodeStr($contantID) . "/";
+    // $valUrlSearchEN = $mod_url_search_en . "/" . encodeStr($contantID) . "/";
+    // $valUrlSearchCN = $mod_url_search_cn . "/" . encodeStr($contantID) . "/";
 
 
-    $insertSch = array();
-    $insertSch[$core_tb_search . "_language"] = "'" . $_REQUEST['inputLt'] . "'";
-    $insertSch[$core_tb_search . "_contantid"] = "'" . $contantID . "'";
-    $insertSch[$core_tb_search . "_masterkey"] = "'" . $_POST["masterkey"] . "'";
-    $insertSch[$core_tb_search . "_subject"] = "'" . changeQuot($_POST["inputSubject"]) . "'";
-    $insertSch[$core_tb_search . "_title"] = "'" . changeQuot($_POST["inputDescription"]) . "'";
-    $insertSch[$core_tb_search . "_keyword"] = "'" . addslashes($_POST["inputSubject"]) . " " . addslashes($_POST["inputDescription"]) . " " . htmlspecialchars($_POST['inputHtml']) . "'";
-    $insertSch[$core_tb_search . "_url"] = "'" . $valUrlSearchTH . "'";
-    $insertSch[$core_tb_search . "_urlen"] = "'" . $valUrlSearchEN . "'";
-    $insertSch[$core_tb_search . "_urlcn"] = "'" . $valUrlSearchCN . "'";
-    $insertSch[$core_tb_search . "_edate"] = "'" . DateFormatInsert($_POST["edateInput"]) . "'";
-    $insertSch[$core_tb_search . "_sdate"] = "'" . DateFormatInsert($_POST["sdateInput"]) . "'";
-    $insertSch[$core_tb_search . "_status"] = "'Disable'";
-    $sqlSch = "INSERT " . $core_tb_search . " (" . implode(",", array_keys($insertSch)) . ") VALUES (" . implode(",", array_values($insertSch)) . ")";
-    $querySch = wewebQueryDB($coreLanguageSQL,$sqlSch);
+    // $insertSch = array();
+    // $insertSch[$core_tb_search . "_language"] = "'" . $_REQUEST['inputLt'] . "'";
+    // $insertSch[$core_tb_search . "_contantid"] = "'" . $contantID . "'";
+    // $insertSch[$core_tb_search . "_masterkey"] = "'" . $_POST["masterkey"] . "'";
+    // $insertSch[$core_tb_search . "_subject"] = "'" . changeQuot($_POST["inputSubject"]) . "'";
+    // $insertSch[$core_tb_search . "_title"] = "'" . changeQuot($_POST["inputDescription"]) . "'";
+    // $insertSch[$core_tb_search . "_keyword"] = "'" . addslashes($_POST["inputSubject"]) . " " . addslashes($_POST["inputDescription"]) . " " . htmlspecialchars($_POST['inputHtml']) . "'";
+    // $insertSch[$core_tb_search . "_url"] = "'" . $valUrlSearchTH . "'";
+    // $insertSch[$core_tb_search . "_urlen"] = "'" . $valUrlSearchEN . "'";
+    // $insertSch[$core_tb_search . "_urlcn"] = "'" . $valUrlSearchCN . "'";
+    // $insertSch[$core_tb_search . "_edate"] = "'" . DateFormatInsert($_POST["edateInput"]) . "'";
+    // $insertSch[$core_tb_search . "_sdate"] = "'" . DateFormatInsert($_POST["sdateInput"]) . "'";
+    // $insertSch[$core_tb_search . "_status"] = "'Disable'";
+    // $sqlSch = "INSERT " . $core_tb_search . " (" . implode(",", array_keys($insertSch)) . ") VALUES (" . implode(",", array_values($insertSch)) . ")";
+    // $querySch = wewebQueryDB($coreLanguageSQL,$sqlSch);
 
-    // print_pre($sqlSch);
 }
 ?>
 <?php include("../lib/disconnect.php"); ?>

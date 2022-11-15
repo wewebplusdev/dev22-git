@@ -117,6 +117,40 @@
             }
         }
     }
+    .tag-list {
+        .item-list {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                position: relative;
+                padding: 15px 20px;
+                padding-left: 35px;
+                border-radius: 5px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                background-color: #ECF0F3;
+                &:hover {
+                    background-color: #DEE7F2;
+                    .detail-hashtag {
+                        text-decoration: none;
+                        color: #2680EB;
+                    }
+                }
+                .detail-hashtag {
+                    font-size: var(--typo-xs);
+                    color: var(--color-primary);
+                    &::before {
+                        content: "#";
+                        font-size: var(--typo-xs);
+                        position: absolute;
+                        top: 50%;
+                        left: 25px;
+                        transform: translate(-50%, -40%);
+                    }
+                }
+            }
+        }
+    }
     #calendarList {
         // box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
         border-radius: 10px;
@@ -359,6 +393,11 @@
         #calendarList {
             .title {
                 height: 70px;
+            }
+        }
+        .tag-list {
+            .item-list {
+                justify-content: center;
             }
         }
     }

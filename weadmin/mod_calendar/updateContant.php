@@ -54,7 +54,9 @@ include("config.php");
 			$update[] = $mod_tb_root . "_description='" . changeQuot($_POST['inputTagDescription']) . "'";
 			$update[] = $mod_tb_root . "_keywords='" . changeQuot($_POST['inputTagKeywords']) . "'";
 			$update[] = $mod_tb_root . "_metatitle='" . changeQuot($_POST['inputTagTitle']) . "'";
-		} else {
+			$update[] = $mod_tb_root . "_type='" . $_POST["inputType"] . "'";
+			$update[] = $mod_tb_root . "_url='" . changeQuot($_REQUEST['inputurl']) . "'";
+		} else if ($_REQUEST['inputLt'] == "Eng"){
 			$update[] = $mod_tb_root . "_subjecten='" . changeQuot($_POST['inputSubject']) . "'";
 			$update[] = $mod_tb_root . "_titleen='" . changeQuot($_POST['inputDescription']) . "'";
 			$update[] = $mod_tb_root . "_addressen='" . changeQuot($_POST['inputAddress']) . "'";
@@ -62,6 +64,18 @@ include("config.php");
 			$update[] = $mod_tb_root . "_descriptionen='" . changeQuot($_POST['inputTagDescription']) . "'";
 			$update[] = $mod_tb_root . "_keywordsen='" . changeQuot($_POST['inputTagKeywords']) . "'";
 			$update[] = $mod_tb_root . "_metatitleen='" . changeQuot($_POST['inputTagTitle']) . "'";
+			$update[] = $mod_tb_root . "_typeen='" . $_POST["inputType"] . "'";
+			$update[] = $mod_tb_root . "_urlen='" . changeQuot($_REQUEST['inputurl']) . "'";
+		}else{
+			$update[] = $mod_tb_root . "_subjectcn='" . changeQuot($_POST['inputSubject']) . "'";
+			$update[] = $mod_tb_root . "_titlecn='" . changeQuot($_POST['inputDescription']) . "'";
+			$update[] = $mod_tb_root . "_addresscn='" . changeQuot($_POST['inputAddress']) . "'";
+			$update[] = $mod_tb_root . "_htmlfilenamecn  	='" . $filename . "'";
+			$update[] = $mod_tb_root . "_descriptioncn='" . changeQuot($_POST['inputTagDescription']) . "'";
+			$update[] = $mod_tb_root . "_keywordscn='" . changeQuot($_POST['inputTagKeywords']) . "'";
+			$update[] = $mod_tb_root . "_metatitlecn='" . changeQuot($_POST['inputTagTitle']) . "'";
+			$update[] = $mod_tb_root . "_typecn='" . $_POST["inputType"] . "'";
+			$update[] = $mod_tb_root . "_urlcn='" . changeQuot($_REQUEST['inputurl']) . "'";
 		}
 
 		$update[] = $mod_tb_root . "_showicon='" . changeQuot($_POST['inputShowIcon']) . "'";
@@ -83,12 +97,16 @@ include("config.php");
 		$update[] = $mod_tb_root . "_person='" . changeQuot($_POST['inputPerson']) . "'";
 		$update[] = $mod_tb_root . "_hotelname='" . changeQuot($_POST['inputHotelName']) . "'";
 
-		$update[] = $mod_tb_root . "_type='" . $_POST["inputType"] . "'";
-		$update[] = $mod_tb_root . "_url='" . changeQuot($_REQUEST['inputurl']) . "'";
 		$update[] = $mod_tb_root . "_lastbyid='" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";
 		$update[] = $mod_tb_root . "_lastby='" . $_SESSION[$valSiteManage . 'core_session_name'] . "'";
 		$update[] = $mod_tb_root . "_lastdate=NOW()";
-
+		
+		$setLangTH = (!empty($_REQUEST['inputSetLang'][0])) ? $_REQUEST['inputSetLang'][0] : 0;
+		$setLangEN = (!empty($_REQUEST['inputSetLang'][1])) ? $_REQUEST['inputSetLang'][1] : 0;
+		$setLangCN = (!empty($_REQUEST['inputSetLang'][2])) ? $_REQUEST['inputSetLang'][2] : 0;
+		$update[] = $mod_tb_root . "_langth='" . $setLangTH . "'";
+		$update[] = $mod_tb_root . "_langen='" . $setLangEN . "'";
+		$update[] = $mod_tb_root . "_langcn='" . $setLangCN . "'";
 
 		$update[] = $mod_tb_root . "_sdate  	='" . DateFormatInsert($sdateInput) . "'";
 		$update[] = $mod_tb_root . "_edate  	='" . $valInsertEdate . "'";
@@ -137,10 +155,14 @@ include("config.php");
 			$updateSch[] = $core_tb_search . "_subject='" . changeQuot($_REQUEST['inputSubject']) . "'";
 			$updateSch[] = $core_tb_search . "_title='" . changeQuot($_REQUEST['inputDescription']) . "'";
 			$updateSch[] = $core_tb_search . "_keyword='" . addslashes($_POST["inputSubject"]) . " " . htmlspecialchars($_POST['inputHtml']) . "'";
-		} else {
+		} else if ($_REQUEST['inputLt'] == "Eng"){
 			$updateSch[] = $core_tb_search . "_subjecten='" . changeQuot($_REQUEST['inputSubject']) . "'";
 			$updateSch[] = $core_tb_search . "_titleen='" . changeQuot($_REQUEST['inputDescription']) . "'";
 			$updateSch[] = $core_tb_search . "_keyworden='" . addslashes($_POST["inputSubject"]) . " " . htmlspecialchars($_POST['inputHtml']) . "'";
+		}else{
+			$updateSch[] = $core_tb_search . "_subjectcn='" . changeQuot($_REQUEST['inputSubject']) . "'";
+			$updateSch[] = $core_tb_search . "_titlecn='" . changeQuot($_REQUEST['inputDescription']) . "'";
+			$updateSch[] = $core_tb_search . "_keywordcn='" . addslashes($_POST["inputSubject"]) . " " . htmlspecialchars($_POST['inputHtml']) . "'";
 		}
 		$updateSch[] = $core_tb_search . "_tid='" . serialize(array_filter($_REQUEST['inputTag'])) . "'"; // remove array at values empty before use fnc serialize
 

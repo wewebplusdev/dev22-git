@@ -3,24 +3,43 @@
 switch ($PageAction) {
 
     default:
-
         if ($url->segment[1] == 'hashtag') {
             $newhashtag = array();
-            if (!empty($hashtagID)) {
-                array_push($newhashtag, $hashtagID);
-                // setting txt search 
-                $txt = " AND (";
-                foreach ($newhashtag as $keynewhashtag => $valuenewhashtag) {
-                    if ($keynewhashtag > 0) {
-                        $txt .= " OR ";
+            if ($typeSearch == 2) {
+                if (!empty($keywords)) {
+                    $call_hashtag_page = $searchPage->call_hashtag($config['tag']['masterkey'], null, $keywords);
+                    foreach ($call_hashtag_page as $keycall_hashtag => $valuecall_hashtag) {
+                        array_push($newhashtag, $valuecall_hashtag['id']);
                     }
-                    $txt .= "" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_tid REGEXP '.*;s:[0-9]+:\"" . $valuenewhashtag . "\".*'";
+                    // setting txt search 
+                    $txt =" AND (";
+                    foreach ($newhashtag as $keynewhashtag => $valuenewhashtag) {
+                        if ($keynewhashtag > 0) {
+                            $txt .= " OR ";
+                        }
+                        $txt .= "" . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_tid REGEXP '.*;s:[0-9]+:\"".$valuenewhashtag."\".*'";
+                    }
+                    $txt .=")";
+                    $smarty->assign("call_hashtag_page", $call_hashtag_page);
                 }
-                $txt .= ")";
-                $call_hashtag_page = $searchPage->call_hashtag($config['tag']['masterkey'], $newhashtag);
-                $smarty->assign("call_hashtag_page", $call_hashtag_page);
+            }else{
+                if (!empty($hashtagID)) {
+                    array_push($newhashtag, $hashtagID);
+                    // setting txt search 
+                    $txt = " AND (";
+                    foreach ($newhashtag as $keynewhashtag => $valuenewhashtag) {
+                        if ($keynewhashtag > 0) {
+                            $txt .= " OR ";
+                        }
+                        $txt .= "" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_tid REGEXP '.*;s:[0-9]+:\"" . $valuenewhashtag . "\".*'";
+                    }
+                    $txt .= ")";
+                    $call_hashtag_page = $searchPage->call_hashtag($config['tag']['masterkey'], $newhashtag);
+                    $smarty->assign("call_hashtag_page", $call_hashtag_page);
+                }
             }
-            $callSearchAll = $searchPage->callSearchAll($page['on'], $limit, $sorting, $keywords, $txt, $dateStart, $dateEnd, $txtMasterkey);
+
+            $callSearchAll = $searchPage->callSearchAll($page['on'], $limit, $sorting, null, $txt, $dateStart, $dateEnd, $txtMasterkey);
             $smarty->assign("callSearchAll", $callSearchAll);
 
             $type_logs = 2;
@@ -31,7 +50,7 @@ switch ($PageAction) {
         }
 
         $callText = $searchPage->callText($keywords);
-        if (!isset($_COOKIE['SEARCH_UPDATE_' . $config['sch_logs']['masterkey'] . '_' . urldecode($keywords)]) && !empty($keywords) || true) {
+        if (!isset($_COOKIE['SEARCH_UPDATE_' . $config['sch_logs']['masterkey'] . '_' . urldecode($keywords)]) && !empty($keywords)) {
             setcookie("SEARCH_UPDATE_" . $config['sch_logs']['masterkey'] . '_' . urldecode($keywords), true, time() + 600);
             $getip = getip();
             if ($callText->_numOfRows < 1) {
@@ -45,15 +64,13 @@ switch ($PageAction) {
         }
         /*## End Logs Search #####*/
 
-        /*## Start Options Group #####*/
-        $getSjon = file_get_contents('./webservice_json/menu.json');
-        $arr_Json = json_decode($getSjon, true); // json decode from web service
-        $arrNameMenu = array();
-        foreach ($arr_Json as $keyarr_Json => $valuearr_Json) {
-            array_push($arrNameMenu, "'" . $valuearr_Json['menulv1']['dataset']['subject'] . "'");
-        }
-        $callSystemMenu = $searchPage->callSystemMenu($arrNameMenu);
-        $smarty->assign("callSystemMenu", $callSystemMenu);
+        // /*## Start Options Group #####*/
+        // $arrNameMenu = array();
+        // foreach ($arrconm as $keyarrconm => $valuearrconm) {
+        //     array_push($arrNameMenu, $keyarrconm);
+        // }
+        // $callSystemMenu = $searchPage->callSystemMenu($arrNameMenu);
+        // $smarty->assign("callSystemMenu", $callSystemMenu);
 
         /*## Start SEO #####*/
         $seo_desc = "";

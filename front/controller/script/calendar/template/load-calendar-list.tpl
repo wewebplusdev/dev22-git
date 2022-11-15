@@ -20,7 +20,13 @@
                      <div class="list-inner">
                         <div class="list-title text-limit -x2">
                            <span class="icon"></span>
-                           {$valueCallActivityData.3}
+                           {if $langon == 'th'}
+                              {$valueCallActivityData.3}
+                           {else if $langon == 'en'}
+                              {$valueCallActivityData.5}
+                           {else if $langon == 'cn'}
+                              {$valueCallActivityData.4}
+                           {/if}
                         </div>
                      </div>
                   </div>
@@ -53,11 +59,11 @@
          slidesToScroll: 1,
          vertical: true,
          responsive: [{
-               breakpoint: 1200,
-               settings: {
-                  slidesToShow: 3
-               }
-            }]
+            breakpoint: 1200,
+            settings: {
+               slidesToShow: 3
+            }
+         }]
       });
    </script>
 {/literal}

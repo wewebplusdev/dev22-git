@@ -19,9 +19,12 @@ include("config.php");
             if ($_REQUEST['inputLt'] == "Thai") {
                 $update[] = $mod_tb_root_group . "_subject='" . changeQuot($_POST['inputSubject']) . "'";
                 $update[] = $mod_tb_root_group . "_title  	='" . changeQuot($_POST['inputComment']) . "'";
-            } else {
+            } else if ($_REQUEST['inputLt'] == "Eng"){
                 $update[] = $mod_tb_root_group . "_subjecten='" . changeQuot($_POST['inputSubject']) . "'";
                 $update[] = $mod_tb_root_group . "_titleen  	='" . changeQuot($_POST['inputComment']) . "'";
+            }else{
+                $update[] = $mod_tb_root_group . "_subjectcn='" . changeQuot($_POST['inputSubject']) . "'";
+                $update[] = $mod_tb_root_group . "_titlecn  	='" . changeQuot($_POST['inputComment']) . "'";
             }
             $update[] = $mod_tb_root_group . "_lastbyid='" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";
             $update[] = $mod_tb_root_group . "_lastby='" . $_SESSION[$valSiteManage . 'core_session_name'] . "'";

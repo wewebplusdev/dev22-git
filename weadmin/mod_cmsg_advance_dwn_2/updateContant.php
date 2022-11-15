@@ -103,9 +103,11 @@ include("config.php");
 
 		## URL Search ###################################
 		if ($_POST["valEditID"] != '') {
-			$valUrlSearchTH = $mod_url_search_th . "/" . encodeStr($_POST["valEditID"]) . "/";
-			$valUrlSearchEN = $mod_url_search_en . "/" . encodeStr($_POST["valEditID"]) . "/";
-			$valUrlSearchCN = $mod_url_search_cn . "/" . encodeStr($_POST["valEditID"]) . "/";
+			$GroupID = $_POST["inputGroupID"];
+			
+			$valUrlSearchTH = $mod_url_search_th . "/" . $GroupID . "/detail/" . $_POST["valEditID"] . "/";
+			$valUrlSearchEN = $mod_url_search_en . "/" . $GroupID . "/detail/" . $_POST["valEditID"] . "/";
+			$valUrlSearchCN = $mod_url_search_cn . "/" . $GroupID . "/detail/" . $_POST["valEditID"] . "/";
 		};
 		$updateSch = array();
 		if ($_REQUEST['inputLt'] == "Thai") {
