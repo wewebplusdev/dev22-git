@@ -18,7 +18,7 @@
                 <div class="top-graphic">
 
                     <div class="default-slider-dots slider">
-
+    
                         <?php for ($i = 1; $i <= 3; $i++) { ?>
 
                             <div class="tpg-item">

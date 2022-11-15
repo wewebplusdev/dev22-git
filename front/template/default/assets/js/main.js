@@ -375,6 +375,26 @@ $(document).ready(function() {
         }, ]
     });
 
+    $(".git-training-movement-block .slider").slick({
+        // autoplay: true,
+        autoplaySpeed: 3000,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        rows: 3,
+        arrows: true,
+        dots: false,
+        prevArrow: '<button class="slick-prev prev-arrow"></button>',
+        nextArrow: '<button class="slick-next next-arrow"></button>',
+        responsive: [{
+            breakpoint: 992,
+            settings: {
+                arrows: false,
+                dots: true
+            },
+        }, ]
+    });
+
     $(".theme-1 .git-news-block .slider").slick({
         // autoplay: true,
         centerMode: true,
@@ -385,12 +405,67 @@ $(document).ready(function() {
         arrows: false,
         dots: false,
         responsive: [{
-            breakpoint: 992,
-            settings: {
-                arrows: false,
-                dots: true
+                breakpoint: 1601,
+                settings: {
+                    centerPadding: '300px',
+                },
             },
-        }, ]
+            {
+                breakpoint: 1200,
+                settings: {
+                    centerPadding: '200px',
+                },
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    centerPadding: '100px',
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    centerPadding: '40px',
+                },
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    centerPadding: '20px',
+                },
+            },
+        ]
+    });
+
+    $(".theme-2 .git-news-block .slider").slick({
+        // autoplay: true,
+        // centerMode: true,
+
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    // centerPadding: '20px',
+                },
+            },
+        ]
     });
 
     $(".theme-1 .git-book-block .slider").slick({
@@ -648,7 +723,7 @@ $(document).ready(function() {
         ],
     });
 
-    $(".video-gallery-block .yt-frame").click(function() {
+    $(".git-vdo-block .yt-frame").click(function() {
         $(this).addClass("hide");
         // $(".yt-frame .icon").addClass("d-none");
         // $(".yt-frame .cover").addClass("d-none");
@@ -767,7 +842,7 @@ $(document).ready(function() {
 
 
 
-    $('.service-block .topic').on('click', function() {
+    $('.git-service-block .topic').on('click', function() {
         if ($(this).hasClass('active')) {
 
             $(this).siblings('.sub-topic').slideUp();

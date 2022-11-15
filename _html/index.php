@@ -117,7 +117,7 @@
 
                 <div class="git-news-block">
                     <div class="container">
-                        <div class="h-title">GIT News</div>
+                        <div class="h-title text-primary text-uppercase">GIT News</div>
                         <ul class="default-nav-tab nav nav-pills">
                             <li>
                                 <a class="item active" href="#News1" data-toggle="tab">ข่าวสาร/กิจกรรม</a>
@@ -158,11 +158,11 @@
                                 <?php } ?>
                             </div>
                             <div class="container">
-                                <?php for ($i = 1; $i <= 3; $i++) { ?>
-                                    <ul class="item-list">
+                                <ul class="item-list">
+                                    <?php for ($i = 1; $i <= 3; $i++) { ?>
                                         <li>
                                             <a href="" class="link">
-                                                <div class="news-block">
+                                                <div class="news-block-item">
                                                     <div class="row align-items-center">
                                                         <div class="col-sm-auto">
                                                             <figure class="cover">
@@ -172,10 +172,10 @@
                                                         <div class="col-sm">
                                                             <div class="title">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ</div>
                                                             <div class="row">
-                                                                <div class="col">
+                                                                <div class="col-sm">
                                                                     <div class="desc">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ หนุนผู้ประกอบการขยายช่องทางการค้าผ่านแพลตฟอร์ม Home Shopping 24 ชั่วโมง</div>
                                                                 </div>
-                                                                <div class="col-auto">
+                                                                <div class="col-sm-auto">
                                                                     <div class="date">
                                                                         <span class="feather icon-calendar"></span>
                                                                         <span class="typo-xs text-black">16 มิถุนายน 2565</span>
@@ -187,12 +187,18 @@
                                                 </div>
                                             </a>
                                         </li>
-                                    </ul>
-                                <?php } ?>
+                                    <?php } ?>
+                                </ul>
                                 <div class="load-more-hide text-center">
                                     <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
                                 </div>
                             </div>
+                        </div>
+                        <div class="tab-pane" id="News2">
+                            <div class="h-title">News2</div>
+                        </div>
+                        <div class="tab-pane" id="News3">
+                            <div class="h-title">News3</div>
                         </div>
                     </div>
 
@@ -220,6 +226,70 @@
                         </div>
                         <div class="action">
                             <a href="" class="btn btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="git-training-movement-block">
+                    <div class="container">
+                        <div class="h-title text-uppercase text-center">GIT TRAINING MOVEMENT</div>
+                        <ul class="default-nav-tab nav nav-pills">
+                            <li>
+                                <a class="item active" href="#TMovement1" data-toggle="tab">หลักสูตรฝึกอบรมระยะยาว</a>
+                            </li>
+                            <li>
+                                <a class="item" href="#TMovement2" data-toggle="tab">หลักสูตรฝึกอบรมระยะสั้น</a>
+                            </li>
+                            <li>
+                                <a class="item" href="#TMovement3" data-toggle="tab">หลักสูตรฝึกอบรม (ออนไลน์)</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content clearfix">
+                            <div class="tab-pane active" id="TMovement1">
+                                <div class="default-slider default-slider-arrows default-slider-dots slider">
+                                    <?php for ($i = 1; $i <= 7; $i++) { ?>
+                                        <div class="item">
+                                            <a href="" class="link" title="">
+                                                <div class="wrapper">
+                                                    <div class="inner">
+                                                        <div class="title text-limit -x2">
+                                                            ขอเชิญเข้าร่วม Workshop "เทคนิคการสร้าง
+                                                        </div>
+                                                        <div class="desc text-limit -x2">
+                                                            ในวันพฤหัสบดี-ศุกร์ที่ 18-19 สิงหาคม 2565 เวลา 09.00 – 16.00 น. (ค่าใช้จ่าย 2,900 บาท/ท่าน) รับเพียง 18 ท่านเท่านั้น)
+                                                        </div>
+                                                        <div class="divider"></div>
+                                                        <div class="date">
+                                                            <div class="row align-items-center">
+                                                                <div class="col">
+                                                                    <span class="feather-calendar"></span>
+                                                                    16 มิถุนายน 2565
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <span class="icon feather-chevron-right"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <div class="load-more-hide text-center">
+                                    <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="TMovement2">
+                                <div class="default-slider default-slider-dots slider">
+                                    <div class="h-title">GIT TRAINING MOVEMENT 2</div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="TMovement3">
+                                <div class="default-slider default-slider-dots slider">
+                                    <div class="h-title">GIT TRAINING MOVEMENT 3</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
