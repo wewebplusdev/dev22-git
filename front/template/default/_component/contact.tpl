@@ -177,7 +177,7 @@
                 <label class="control-label" for="phoneNumber">{$lang['contact']['tel']}</label>
                 <div class="block-control">
                   <input type="tel" class="form-control" name="inputTel" id="phoneNumber" placeholder="{$lang['system']['fill']}{$lang['contact']['tel']}" data-error=""
-                    value="" required>
+                    value="" required onkeypress="return isNumberKey(event)">
                   <span class="form-control-feedback" aria-hidden="true"></span>
                 </div>
               </div>

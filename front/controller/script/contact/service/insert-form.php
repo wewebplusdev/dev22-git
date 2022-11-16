@@ -55,8 +55,8 @@ exit(0);
 function formmail(){
   global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $contactPage, $lang, $config;
   
-  $mailGorup = $contactPage->callmailcontact($config['contact']['cu']['masterkey'], $_POST["inputGroup"]);
-  // print_pre($mailGorup);die;
+  $mailGroup = $contactPage->callmailcontact($config['contact']['cu']['masterkey'], $_POST["inputGroup"]);
+  // print_pre($mailGroup);die;
   // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
   $SubjectMail = $lang['menu']['contact']." (" . $_POST['inputName'] . ")";
   $Group = $contactPage->callGroup($config['contact']['cu']['masterkey'], $_POST["inputGroup"]);
@@ -108,9 +108,18 @@ function formmail(){
   
   /* ################ Start Mail To Admin ########### */
   $templates_admin = $callSetWebsite->template_mail($message);
-  foreach ($mailGorup as $key => $to) {
-      loadSendEmailTo($to[2], $SubjectMail, $templates_admin);
-      // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
-  }
+
+  $arrEmail = array();
+    //array_push($arrEmail,trim($_POST['inputEmail']));
+    foreach($mailGroup as $key => $to){
+      array_push($arrEmail,$to[2]);
+    }
+    // print_pre($arrEmail);
+    loadSendEmailTo($arrEmail, $SubjectMail, $templates_admin);
+
+  // foreach ($mailGroup as $key => $to) {
+  //     loadSendEmailTo($to[2], $SubjectMail, $templates_admin);
+  //     // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
+  // }
 }
 

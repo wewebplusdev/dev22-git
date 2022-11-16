@@ -164,7 +164,7 @@
                                                         value=""
                                                         placeholder=""
                                                         data-error=""
-                                                        required="">
+                                                        required="" onkeypress="return isNumberKey(event)">
                                                     <span class="floating-label">เบอร์โทรศัพท์</span>
                                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                                 </div>
