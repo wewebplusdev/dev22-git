@@ -25,15 +25,24 @@ $req_params['order'] = $_REQUEST['order'];
 $smarty->assign("req_params", $req_params);
 $limit = 12;
 $order = $_REQUEST['order'];
-$keywords = $_REQUEST['keywords'] ? $_REQUEST['keywords'] : $_REQUEST['srchtxt_main'];
+$keywords = $_REQUEST['keywords'] ? trim($_REQUEST['keywords']) : trim($_REQUEST['srchtxt_main']);
 $dateStart = $_REQUEST['trip-start'];
 $dateEnd = $_REQUEST['trip-end'];
 $typeSearch = $_REQUEST['typeSch'] ? $_REQUEST['typeSch'] : "1" ;
 $typeOption = $_REQUEST['typeOption'] ? $_REQUEST['typeOption'] : "1" ;
 $txtMasterkey = $_REQUEST['inputGroup'];
+if (!empty($order)) {
+    $sorting = $order;
+} else {
+    $sorting = "DESC";
+}
+$smarty->assign("typeOption", $typeOption);
+$smarty->assign("typeSearch", $typeSearch);
+$smarty->assign("order", $sorting);
 $smarty->assign("keywords", $keywords);
-
-
+$smarty->assign("dateStart", $dateStart);
+$smarty->assign("dateEnd", $dateEnd);
+$smarty->assign("txtMasterkey", $txtMasterkey);
 
 switch ($MenuID) {
 
@@ -51,3 +60,6 @@ $smarty->assign("fileInclude", $settingPage);
 $smarty->assign("MenuID", $MenuID);
 $smarty->assign("settingModulus", $settingModulus);
 $smarty->assign("showslick", $showslick);
+$smarty->assign("arrconm", $arrconm);
+$smarty->assign("arrcong", $arrcong);
+$smarty->assign("searchPage", $searchPage);

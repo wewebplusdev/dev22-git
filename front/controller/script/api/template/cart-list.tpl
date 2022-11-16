@@ -139,7 +139,7 @@
                             <div class="col-sm-3 ">
                                 <div class="form-group">
                                     <label class="control-label" for="">{$lang['order']['tel']}</label>
-                                    <input class="form-control" type="text" id="inputTel" name="inputTel" placeholder="{$lang['cart']['like']} 0856458742">
+                                    <input class="form-control" type="text" id="inputTel" name="inputTel" placeholder="{$lang['cart']['like']} 0856458742" onkeypress="return isNumberKey(event)">
                                 </div>
                             </div>
                             <div class="col-sm-3">

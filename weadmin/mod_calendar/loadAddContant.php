@@ -296,6 +296,21 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <td colspan="7" align="right" valign="top" height="15"></td>
                 </tr>
                 <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["set:lang:web"] ?><span class="fontContantAlert">*</span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <?php
+                        foreach ($modTxtSetLang as $key => $value) {
+                        ?>
+                            <label>
+                                <div class="formDivRadioL"><input name="inputSetLang[<?php echo $key ?>]" id="inputSetLang-<?php echo $key ?>" value="1" type="checkbox" class="formRadioContantTb checkbokSetLang" /></div>
+                                <div class="formDivRadioR"><?php echo $value ?></div>
+                            </label>
+                        <?php
+                        }
+                        ?>
+                    </td>
+                </tr>
+                <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:selectgn"] ?><span class="fontContantAlert">*</span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <select name="inputGroupID" id="inputGroupID" class="formSelectContantTb">

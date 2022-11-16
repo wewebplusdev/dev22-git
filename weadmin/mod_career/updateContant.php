@@ -90,6 +90,37 @@ include("config.php");
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 		
 		logs_access('3','Update');
+
+		## URL Search ###################################
+		if ($_POST["valEditID"] != '') {
+			$valUrlSearchTH = $mod_url_search_th . "/detail/" . $_POST["valEditID"] . "/";
+			$valUrlSearchEN = $mod_url_search_en . "/detail/" . $_POST["valEditID"] . "/";
+			$valUrlSearchCN = $mod_url_search_cn . "/detail/" . $_POST["valEditID"] . "/";
+		};
+		$updateSch = array();
+		if ($_REQUEST['inputLt'] == "Thai") {
+			$updateSch[] = $core_tb_search . "_subject='" . changeQuot($_REQUEST['inputSubject']) . "'";
+			$updateSch[] = $core_tb_search . "_title='" . changeQuot($_REQUEST['inputDescription']) . "'";
+			$updateSch[] = $core_tb_search . "_keyword='" . addslashes($_POST["inputSubject"]) . " " . addslashes($_POST["inputDescription"]) . " " . htmlspecialchars($_POST['inputHtml']) . "'";
+		} else if ($_REQUEST['inputLt'] == "Eng") {
+			$updateSch[] = $core_tb_search . "_subjecten='" . changeQuot($_REQUEST['inputSubject']) . "'";
+			$updateSch[] = $core_tb_search . "_titleen='" . changeQuot($_REQUEST['inputDescription']) . "'";
+			$updateSch[] = $core_tb_search . "_keyworden='" . addslashes($_POST["inputSubject"]) . " " . addslashes($_POST["inputDescription"]) . " " . htmlspecialchars($_POST['inputHtml']) . "'";
+		} else {
+			$updateSch[] = $core_tb_search . "_subjectcn='" . changeQuot($_REQUEST['inputSubject']) . "'";
+			$updateSch[] = $core_tb_search . "_titlecn='" . changeQuot($_REQUEST['inputDescription']) . "'";
+			$updateSch[] = $core_tb_search . "_keywordcn='" . addslashes($_POST["inputSubject"]) . " " . addslashes($_POST["inputDescription"]) . " " . htmlspecialchars($_POST['inputHtml']) . "'";
+		}
+
+		$updateSch[] = $core_tb_search . "_url='" . $valUrlSearchTH . "'";
+		$updateSch[] = $core_tb_search . "_urlen='" . $valUrlSearchEN . "'";
+		$updateSch[] = $core_tb_search . "_urlcn='" . $valUrlSearchCN . "'";
+
+		$updateSch[] = $core_tb_search . "_sdate  	='" . DateFormatInsert($_REQUEST['sdateInput']) . "'";
+		$updateSch[] = $core_tb_search . "_edate  	='" . DateFormatInsert($_REQUEST['edateInput']) . "'";
+
+		$sqlSch = "UPDATE " . $core_tb_search . " SET " . implode(",", $updateSch) . " WHERE " . $core_tb_search . "_contantid='" . $_POST["valEditID"] . "'  AND " . $core_tb_search . "_masterkey='" . $_POST["masterkey"] . "' ";
+		$querySch = wewebQueryDB($coreLanguageSQL, $sqlSch);
 		?>
         <?php } ?>
  <?php include("../lib/disconnect.php");?>

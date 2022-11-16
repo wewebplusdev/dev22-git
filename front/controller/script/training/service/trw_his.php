@@ -101,8 +101,8 @@ switch ($MenuID) {
       );
       break;
   case 'trw_his':
-      // $ContentID = $ContentID ? $ContentID : $arrMenu[0]['id'];
-      $callCMS = $trainingPage->callCMS($MenuID);
+        $ContentID = GetContentID($url->segment[2]);
+      $callCMS = $trainingPage->callCMS($MenuID, $ContentID);
       if ($callCMS->_numOfRows < 1) {
           header('location:' . $linklang . '/404');
           exit(0);

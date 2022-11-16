@@ -295,6 +295,16 @@ $lang['service']['menu4'] = "工具";
 //training work
 $lang['training']['detail'] = "課程詳情";
 
+// search
+$lang["search"]["txtSch"] = "內容";
+$lang["search"]["hashtag"] = "井號";
+$lang["search"]["type"] = "類型";
+$lang["search"]["group"] = "團體";
+$lang["search"]["select"] = "選擇 ".$lang["search"]["group"];
+$lang["search"]["sdate"] = "開始日期";
+$lang["search"]["edate"] = "結束日期";
+$lang["search"]["advance:search"] = "高級搜索";
+
 $lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
 $lang['system']['close'] = "关";
 $lang['system']['ducdownload'] = "文件下载";
@@ -348,6 +358,7 @@ $lang["search:option"] = "全部搜索";
 $lang["search:list"] = "列表";
 $lang["search:total"] = "总数";
 $lang["search:listtotal"] = "总数";
+$lang["search:listfound"] = "找到的號碼";
 
 $lang['member']['logout'] = "登出";
 

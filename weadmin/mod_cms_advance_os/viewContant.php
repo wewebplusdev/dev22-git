@@ -93,6 +93,11 @@ if ($valPin == "Pin") {
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 
 logs_access('3', 'View');
+
+if(in_array($_REQUEST['masterkey'], $arrFix)){
+    $style_none = "style='display:none;'";
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -238,7 +243,7 @@ logs_access('3', 'View');
             </table>
             <br />
 
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php echo $style_none; ?>>
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
@@ -258,14 +263,19 @@ logs_access('3', 'View');
                     </td>
                 </tr>
             </table>
-            <br />
+            <br <?php echo $style_none; ?>/>
 
 
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
-                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                    <td align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:album"] ?></span><br />
                         <span class="formFontTileTxt"><?php echo $langMod["txt:albumDe"] ?></span>
+                    </td>
+                    <td style="padding-right:20px;" align="right" class="tbBoxViewBorderBottom">
+                       <a href="javascript:void(0)" onclick="document.myFormHome.valEditID.value=<?php echo $valID ?>;document.myFormHome.inputLt.value='<?php echo $_REQUEST['inputLt'] ?>';editContactNew('../<?php echo $mod_fd_root ?>/sortPhoto.php')">
+                            <img src="../img/btn/sort.png" alt="" border="0">
+                        </a>
                     </td>
                 </tr>
                 <tr>
@@ -281,7 +291,7 @@ logs_access('3', 'View');
                                      FROM " . $mod_tb_root_album . " 
                                      WHERE " . $mod_tb_root_album . "_contantid 	='" . $_REQUEST['valEditID'] . "'
                                      AND " . $mod_tb_root_album . "_language 	='" . $_REQUEST['inputLt'] . "'
-                                      ORDER BY " . $mod_tb_root_album . "_id ASC";
+                                      ORDER BY " . $mod_tb_root_album . "_order ASC";
                             $query_filetemp = wewebQueryDB($coreLanguageSQL, $sql_filetemp);
                             $number_filetemp = wewebNumRowsDB($coreLanguageSQL, $query_filetemp);
                             if ($number_filetemp >= 1) {
@@ -309,7 +319,7 @@ logs_access('3', 'View');
                 </tr>
             </table>
             <br />
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php echo $style_none; ?>>
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:video"] ?></span><br />
@@ -349,8 +359,8 @@ logs_access('3', 'View');
                     </td>
                 </tr>
             </table>
-            <br />
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+            <br <?php echo $style_none; ?>/>
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php echo $style_none; ?>>
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] ?></span><br />
@@ -389,7 +399,7 @@ logs_access('3', 'View');
                     </td>
                 </tr>
             </table>
-            <br />
+            <br <?php echo $style_none; ?>/>
 
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>

@@ -52,6 +52,49 @@
             }
         }
     }
+    .item-list.procurement-process {
+        margin: 0 -20px;
+        li {
+            width: calc(100%/3);
+            padding: 20px;
+            .list-wrapper {
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                .cover {
+                    padding-bottom: 155%;
+                }
+                .inner {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    background-color: rgba(9, 23, 65, .7);
+                    opacity: 0;
+                    transition: all ease-in-out 300ms;
+                    .btn-primary {
+                        background-color: var(--color-light);
+                        color: var(--color-primary);
+                        min-width: 180px;
+                        &:hover {
+                            background-color: var(--color-primary);
+                            color: var(--color-light);
+                        }
+                    }
+                }
+                &:hover {
+                    .inner {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
     .search-page {
         box-shadow: 0px 3px 20px rgba(167, 198, 255, 0.3);
         border-radius: 15px;
@@ -692,6 +735,13 @@
             }
         }
     }
+    .about {
+        .item-list.procurement-process {
+            li {
+                width: calc(100%/2);
+            }
+        }
+    }
 }
 
 @media (max-width: 575px) {
@@ -789,6 +839,11 @@
         .tag-list {
             .item-list {
                 justify-content: center;
+            }
+        }
+        .item-list.procurement-process {
+            li {
+                width: calc(100%/1);
             }
         }
     }

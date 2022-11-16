@@ -91,7 +91,7 @@
                                 <div class="block-control">
                                     <input type="tel" class="form-control" name="inputTel" id="inputTel"
                                         placeholder="{$lang['system']['fill']}{$lang['contact']['tel']}" data-error=""
-                                        required>
+                                        required onkeypress="return isNumberKey(event)">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>

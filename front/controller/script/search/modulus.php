@@ -11,10 +11,22 @@ class searchPage{
     " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_masterkey as masterkey,
     " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_subject".$lang." as subject,
     " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_title".$lang." as title,
-    " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_url as url
+    " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_url as url,
+    " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_tid as tid,
+
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as mnuid,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_namethai as mnusubject,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey as mnumasterkey
+
 
     FROM
     " . $config['sea']['db']['main'];
+    $sql .= "
+    INNER JOIN
+    " . $config['sy_mnu']['db']['main'] . "
+    ON
+    " . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['sea']['db']['main'] . "_masterkey
+    ";
     if (!empty($tid)) {
       $sql .= " LEFT JOIN ".$config['cms']['db']['main']." ON   " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_contantid = " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_id";
     }
@@ -49,11 +61,11 @@ class searchPage{
     }
 
     if (!empty($masterkey)) {
-      $sql .= " AND " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_masterkey = '".$masterkey."' ";
+      $sql .= " AND " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_masterkey LIKE '%".$masterkey."%' ";
     }
   
     $sql .= " ORDER  BY " . $config['sea']['db']['main'] . "." . $config['sea']['db']['main'] . "_id ".$order." ";
-    //print_pre($sql);
+    // print_pre($sql);
     $result = $db->pageexecute($sql, $limit, $page);
     return $result;
 
@@ -107,7 +119,7 @@ class searchPage{
     }
   
     $sql .= " ORDER  BY " . $config['tag']['db']['main'] . "." . $config['tag']['db']['main'] . "_order DESC ";
-    print_pre($sql);
+    // print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
@@ -180,7 +192,7 @@ class searchPage{
 		$insert[$config['seatxt']['db']['main']."_count"] = "'1'";
 		$insert[$config['seatxt']['db']['main']."_credate"] = "NOW()";
 		$sql_sch="INSERT INTO ".$config['seatxt']['db']['main']."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-    print_pre($sql_sch);
+    // print_pre($sql_sch);
     $result = $db->execute($sql_sch);
     return $result;
   }

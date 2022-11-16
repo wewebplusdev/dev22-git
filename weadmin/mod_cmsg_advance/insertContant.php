@@ -158,10 +158,11 @@ if ($_REQUEST['execute'] == "insert") {
 
     ## URL Search ###################################
     $txt_value_to = encodeURL("c=" . $contantID . "");
-
-    $valUrlSearchTH = $mod_url_search_th . "/" . $contantID . "";
-    $valUrlSearchEN = $mod_url_search_en . "/" . $contantID . "";
-    $valUrlSearchCN = $mod_url_search_cn . "/" . $contantID . "";
+    $GroupID = $_POST["inputGroupID"];
+    
+    $valUrlSearchTH = $mod_url_search_th . "/" . $GroupID . "/detail/" . $contantID . "";
+    $valUrlSearchEN = $mod_url_search_en . "/" . $GroupID . "/detail/" .  $contantID . "";
+    $valUrlSearchCN = $mod_url_search_cn . "/" . $GroupID . "/detail/" .  $contantID . "";
 
 
     $insertSch = array();
@@ -177,6 +178,7 @@ if ($_REQUEST['execute'] == "insert") {
     $insertSch[$core_tb_search . "_edate"] = "'" . DateFormatInsert($_POST["edateInput"]) . "'";
     $insertSch[$core_tb_search . "_sdate"] = "'" . DateFormatInsert($_POST["sdateInput"]) . "'";
     $insertSch[$core_tb_search . "_status"] = "'Disable'";
+	$insertSch[$core_tb_search . "_tid"] = "'" . serialize(array_filter($_REQUEST['inputTag'])) . "'"; // remove array at values empty before use fnc serialize
     $sqlSch = "INSERT " . $core_tb_search . " (" . implode(",", array_keys($insertSch)) . ") VALUES (" . implode(",", array_values($insertSch)) . ")";
     $querySch = wewebQueryDB($coreLanguageSQL,$sqlSch);
 

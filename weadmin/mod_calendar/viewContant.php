@@ -17,8 +17,10 @@ $valLinkNav1 = "../core/index.php";
 $sql = "SELECT   ";
 if ($_REQUEST['inputLt'] == "Thai") {
     $sql .= "   " . $mod_tb_root . "_id , " . $mod_tb_root . "_htmlfilename, " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate  	, " . $mod_tb_root . "_lastdate, " . $mod_tb_root . "_subject , " . $mod_tb_root . "_lastbyid,    " . $mod_tb_root . "_title,    " . $mod_tb_root . "_pic , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo , " . $mod_tb_root . "_url  ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords , " . $mod_tb_root . "_address    ";
-} else {
-    $sql .= "  " . $mod_tb_root . "_id , " . $mod_tb_root . "_htmlfilenameen, " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate  	, " . $mod_tb_root . "_lastdate, " . $mod_tb_root . "_subjecten , " . $mod_tb_root . "_lastbyid ,    " . $mod_tb_root . "_titleen,    " . $mod_tb_root . "_pic , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo , " . $mod_tb_root . "_url 	 ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen , " . $mod_tb_root . "_addressen ";
+} else if ($_REQUEST['inputLt'] == "Eng"){
+    $sql .= "  " . $mod_tb_root . "_id , " . $mod_tb_root . "_htmlfilenameen, " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate  	, " . $mod_tb_root . "_lastdate, " . $mod_tb_root . "_subjecten , " . $mod_tb_root . "_lastbyid ,    " . $mod_tb_root . "_titleen,    " . $mod_tb_root . "_picen , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdoen , " . $mod_tb_root . "_urlen 	 ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen , " . $mod_tb_root . "_addressen ";
+}else {
+    $sql .= "  " . $mod_tb_root . "_id , " . $mod_tb_root . "_htmlfilenamecn, " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate  	, " . $mod_tb_root . "_lastdate, " . $mod_tb_root . "_subjectcn , " . $mod_tb_root . "_lastbyid ,    " . $mod_tb_root . "_titlecn,    " . $mod_tb_root . "_piccn , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdocn , " . $mod_tb_root . "_urlcn 	 ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn , " . $mod_tb_root . "_addresscn ";
 }
 
 $sql .= "  ,
@@ -43,7 +45,7 @@ $sql .= "  ,
 			" . $mod_tb_root . "_reedate,
 			" . $mod_tb_root . "_dwswitch
 			";
-$sql .= " , " . $mod_tb_root . "_tid as tid ";
+$sql .= " , " . $mod_tb_root . "_tid as tid , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn ";
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
@@ -117,6 +119,9 @@ if ($Row[37] == "0000-00-00 00:00:00") {
 }
 $valDwswitch = $Row[38];
 $valTag = unserialize($Row['tid']);
+$valLang[0] = $Row[40];
+$valLang[1] = $Row[41];
+$valLang[2] = $Row[42];
 
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 
@@ -194,6 +199,24 @@ logs_access('3', 'View');
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo  $langMod["txt:subject"] ?></span><br />
                         <span class="formFontTileTxt"><?php echo  $langMod["viw:subjectDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["set:lang:web"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <?php
+                        foreach ($modTxtSetLang as $key => $value) {
+                        ?>
+                            <div class="formDivView">
+                                <?php
+                                if ($valLang[$key] == 1) {
+                                    echo '- ' . $value;
+                                }
+                                ?>
+                            </div>
+                        <?php
+                        }
+                        ?>
                     </td>
                 </tr>
                 <tr>
@@ -446,8 +469,8 @@ logs_access('3', 'View');
                 </tr>
 
                 <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb">แสดงเอกสารแนบ : <span class="fontContantAlert"></span></td>
-                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb" style="display: none;">แสดงเอกสารแนบ : <span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb" style="display: none;">
                         <div class="formDivView">
                             <?php if ($valDwswitch == 'On') { ?>
                                 เปิด

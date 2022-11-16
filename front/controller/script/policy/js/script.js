@@ -1,5 +1,13 @@
 var origin_url = window.location.href;
 var page = $('.site-container').data('page');
+
+function isNumberKey(evt){
+  var charCode = (evt.which) ? evt.which : event.keyCode
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+      return false;
+  return true;
+}
+
 $(document).ready(function () {
   // select year
   $('#yearSelect').on('change', function () {

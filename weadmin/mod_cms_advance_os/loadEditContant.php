@@ -64,6 +64,10 @@ $valLang[1] = $Row[19];
 $valLang[2] = $Row[20];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 
+if(in_array($_REQUEST['masterkey'], $arrFix)){
+	$style_none = "style='display:none;'";
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -115,6 +119,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					jQuery("#inputDescription").removeClass("formInputContantTbAlertY");
 				}
 
+				<?php if(!in_array($_REQUEST['masterkey'], $arrFix)){ ?>
 				var alleditDetail = CKEDITOR.instances.editDetail.getData();
 				if (alleditDetail == "") {
 					jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
@@ -124,6 +129,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
 				}
 				jQuery('#inputHtml').val(alleditDetail);
+				<?php } ?>
 			}
 
 			updateContactNew('updateContant.php');
@@ -304,7 +310,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			</table>
 			<br />
 
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout" <?php echo $style_none; ?>>
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
@@ -328,7 +334,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					</td>
 				</tr>
 			</table>
-			<br class="ckabout" />
+			<br class="ckabout" <?php echo $style_none; ?>/>
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -358,7 +364,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 								FROM " . $mod_tb_root_album . " WHERE 
 								" . $mod_tb_root_album . "_contantid 	='" . $_REQUEST['valEditID'] . "' 
 								AND " . $mod_tb_root_album . "_language 	='" . $_REQUEST['inputLt'] . "'
-								ORDER BY " . $mod_tb_root_album . "_id ASC";
+								ORDER BY " . $mod_tb_root_album . "_order ASC";
 							$query_filetemp = wewebQueryDB($coreLanguageSQL, $sql_filetemp);
 							$number_filetemp = wewebNumRowsDB($coreLanguageSQL, $query_filetemp);
 							if ($number_filetemp >= 1) {
@@ -383,7 +389,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				</tr>
 			</table>
 			<br class="ckabout" />
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout" <?php echo $style_none; ?>>
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:video"] ?></span><br />
@@ -437,8 +443,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					</td>
 				</tr>
 			</table>
-			<br class="ckabout" />
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+			<br class="ckabout" <?php echo $style_none; ?>/>
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout" <?php echo $style_none; ?>>
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] ?></span><br />
@@ -492,7 +498,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					</td>
 				</tr>
 			</table>
-			<br class="ckabout" />
+			<br class="ckabout" <?php echo $style_none; ?>/>
 
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
 				<tr>
