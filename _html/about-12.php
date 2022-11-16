@@ -109,8 +109,7 @@
                                         <img src="<?php echo $core_template; ?>/assets/img/static/procurement-process-image1.png" alt="procurement process">
                                     </figure>
                                     <div class="inner">
-                                        <!-- <div class="seemore"> -->
-                                        <div class="row align-items-centre">
+                                        <div class="row align-items-center w100 m-auto">
                                             <div class="col-12 text-center">
                                                 <a href="javascript:void(0)" class="btn btn-primary mb-4" title="อ่านต่อ">อ่านต่อ</a>
                                             </div>
@@ -118,9 +117,6 @@
                                                 <a href="javascript:void(0)" class="btn btn-primary" title="ดาวน์โหลด">ดาวน์โหลด</a>
                                             </div>
                                         </div>
-
-
-                                        <!-- </div> -->
                                     </div>
                                 </div>
                             </li>

@@ -687,6 +687,11 @@
                 }
             }
         }
+        .item-list.procurement-process {
+            li {
+                padding: 15px;
+            }
+        }
     }
 }
 
@@ -814,6 +819,11 @@
                 .form-group {
                     padding: 10px 0;
                 }
+            }
+        }
+        .item-list.procurement-process {
+            li {
+                padding: 10px;
             }
         }
     }
