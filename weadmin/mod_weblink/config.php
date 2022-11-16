@@ -5,6 +5,11 @@ $mod_tb_root = "md_wel";
 ## Mod Folder ###################################
 $mod_fd_root = "mod_weblink";
 
+## Mod Link ###################################
+$urlSegment = array(
+  'osv' => 'online-service',
+);
+
 ## Setting Value ###################################
 $modTxtTarget = array("", "เปิดหน้าต่างเดิม", "เปิดหน้าต่างใหม่");
 

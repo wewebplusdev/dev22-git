@@ -16,6 +16,7 @@ $arrconm = array(
   'plc' => 'policy',
   'vdo' => 'video',
   'ptg' => 'photo',
+  'cl' => 'calendar',
 );
 
 $arrcong = array(
@@ -63,6 +64,11 @@ $arrcong = array(
     'th' => 'แกลเลอรี่ภาพ',
     'en' => 'Photo Gallery',
     'cn' => '照片庫',
+  ),
+  'cl' => array(
+    'th' => 'ปฏิทินกิจกรรม',
+    'en' => 'Calendar',
+    'cn' => '活動日曆',
   ),
 );
 ?>

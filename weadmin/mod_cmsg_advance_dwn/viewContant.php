@@ -39,7 +39,13 @@ $sql .= "  , " . $mod_tb_root . "_picshow, " . $mod_tb_root . "_typec, " . $mod_
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin";
 $sql .= " , " . $mod_tb_root . "_sid as sid";
-$sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
+$sql .= " , " . $mod_tb_root_group . "_type as gtype  ";
+$sql .= " FROM " . $mod_tb_root . " 
+LEFT JOIN
+" . $mod_tb_root_group . "
+ON
+" . $mod_tb_root_group . "_id = " . $mod_tb_root . "_gid
+WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
 $valID = $Row[0];
@@ -104,6 +110,7 @@ $sql_g_type = "SELECT ".$mod_tb_root_group."_types FROM ".$mod_tb_root_group." W
 $query_g_type = wewebQueryDB($coreLanguageSQL, $sql_g_type);
 $row_g_type = wewebFetchArrayDB($coreLanguageSQL, $query_g_type);
 $valSid = $Row['sid'];
+$valGtype = $Row['gtype'];
 
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 
@@ -260,6 +267,25 @@ logs_access('3', 'View');
             </table>
 
             <br />
+
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php if($valGtype != 2){ echo "style='display:none;'"; } ?>>
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:picDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView">
+                            <img src="<?php echo $valPic ?>" style="float:left;border:#c8c7cc solid 1px; max-width:600px;" onerror="this.src='<?php echo "../img/btn/nopic.jpg" ?>'" />
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+            <br <?php if($valGtype != 2){ echo "style='display:none;'"; } ?>/>
 
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php if($valTypec != 1){ echo 'style="display:none;"'; } ?>>
                 <tr>

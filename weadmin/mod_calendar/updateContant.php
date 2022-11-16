@@ -168,11 +168,7 @@ include("config.php");
 
 		$updateSch[] = $core_tb_search . "_sdate  	='" . DateFormatInsert($_REQUEST['sdateInput']) . "'";
 		$updateSch[] = $core_tb_search . "_edate  	='" . DateFormatInsert($_REQUEST['edateInput']) . "'";
-		if ($_REQUEST['cdateInput'] != "") {
-			$updateSch[] = $core_tb_search . "_credate='" . DateFormatInsert($_REQUEST['cdateInput']) . "'";
-		} else {
-			$updateSch[] = $core_tb_search . "_credate='" . wewebNow($coreLanguageSQL) . "'";
-		}
+
 
 		$sqlSch = "UPDATE " . $core_tb_search . " SET " . implode(",", $updateSch) . " WHERE " . $core_tb_search . "_contantid='" . $_POST["valEditID"] . "'  AND " . $core_tb_search . "_masterkey='" . $_POST["masterkey"] . "' ";
 		$querySch = wewebQueryDB($coreLanguageSQL, $sqlSch);

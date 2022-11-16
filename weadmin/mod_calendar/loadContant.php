@@ -448,7 +448,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                                                                             }
                                                                          ">
                                                     <img src="../img/btn/delete.png" /><br />
-                                                    <span class="fontContantTbManage"><?php echo  $langTxt["btn:del"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?><br />
+                                                    <span class="fontContantTbManage"><?php echo  $langTxt["btn:del"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?><br />
                                                         (<?php echo  $langTxt["lg:all"] ?>)<?php } ?></span>
                                                 </div>
                                             </td>
@@ -464,12 +464,12 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 } else {
                     ?>
                     <tr>
-                        <td colspan="6" align="center" valign="middle" class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;"><?php echo  $langTxt["mg:nodate"] ?></td>
+                        <td colspan="8" align="center" valign="middle" class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;"><?php echo  $langTxt["mg:nodate"] ?></td>
                     </tr>
                 <?php } ?>
 
                 <tr>
-                    <td colspan="6" align="center" valign="middle" class="divRightContantTbRL">
+                    <td colspan="8" align="center" valign="middle" class="divRightContantTbRL">
                         <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
                             <tr>
                                 <td class="divRightNavTb" align="left"><span class="fontContantTbNavPage"><?php echo  $langTxt["pr:All"] ?> <b><?php echo  number_format($count_totalrecord) ?></b> <?php echo  $langTxt["pr:record"] ?></span></td>

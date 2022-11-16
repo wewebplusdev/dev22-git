@@ -27,6 +27,10 @@ $modTxtTarget=array("","เปิดหน้าต่างเดิม","เ�
 $mod_url_search_th = "th/news_detail";
 $mod_url_search_en = "en/news_detail";
 
+## Mod Link ###################################
+$urlSegment = array(
+  'ab_ib' => 'about',
+);
 
 ## Size Photo ###################################
 // $sizeWidthPic="380";

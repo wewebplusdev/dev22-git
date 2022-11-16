@@ -33,6 +33,11 @@ $mod_url_search_th = "th/|page|/detail";
 $mod_url_search_en = "en/|page|/detail";
 $mod_url_search_cn = "cn/|page|/detail";
 
+## Mod Link ###################################
+$urlSegment = array(
+    'trw_web' => 'training',
+    'is_rs' => 'information-service',
+);
 
 ## Size Photo ###################################
 // $sizeWidthPic="380";

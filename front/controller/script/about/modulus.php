@@ -151,6 +151,7 @@ class aboutPage
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_lastdate as lastdate,
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_url as url,
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_types as types,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_type as type,
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname,
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_isstatic as isstatic
@@ -390,7 +391,7 @@ class aboutPage
     return $result;
   }
 
-  function callMem($masterkey, $gid = null)
+  function callMem($masterkey, $gid = null, $pid = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -448,8 +449,23 @@ class aboutPage
     TO_DAYS(" . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
     ";
 
+    // if (!empty($gid)) {
+    //   $sql .= " AND ( ";
+    //   foreach ($gid as $key => $value) {
+    //     if ($key > 0) {
+    //       $sql .= " OR ";
+    //     }
+    //     $sql .= " " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_gid REGEXP '.*;s:[0-9]+:\"".$value."\".*'";
+    //   }
+    //   $sql .= " ) ";
+    // }
+
     if (!empty($gid)) {
       $sql .= " AND " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid IN (" . $gid . ") ";
+    }
+
+    if (!empty($pid)) {
+      $sql .= " AND " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_pid = '" . $pid . "' ";
     }
 
     $sql .= " GROUP BY " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id

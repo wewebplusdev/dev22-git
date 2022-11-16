@@ -62,3 +62,12 @@ function onChangeSelect2(fileAc, elemID) {
         }
     });
   }
+
+$('select[name="inputGroupID"]').on('change', function(){
+    let type = $('option:selected', $(this)).data('type');
+    if (type == 2) {
+        $('.boxPic').show();
+    }else{
+        $('.boxPic').hide();
+    }
+});

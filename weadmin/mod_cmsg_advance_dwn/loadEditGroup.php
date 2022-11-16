@@ -181,14 +181,14 @@ if ($_REQUEST['masterkey'] == 'news') {
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:typetheme"] ?></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
 						<label>
-							<div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="1" type="radio" checked="checked" class="formRadioContantTb" onclick="jQuery('.boxDetail').show();jQuery('.boxPic').hide();" <?php if ($valType == 1) {
+							<div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="1" type="radio" checked="checked" class="formRadioContantTb" onclick="jQuery('.boxDetail').show();" <?php if ($valType == 1) {
 																																																																																																			echo 'checked="checked"';
 																																																																																																		} ?> /></div>
 							<div class="formDivRadioR"><?php echo  $modTypeTheme[1] ?></div>
 						</label>
 
 						<label>
-							<div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="2" type="radio" class="formRadioContantTb" onclick="jQuery('.boxDetail').hide();jQuery('.boxPic').show();" <?php if ($valType != 1) {
+							<div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="2" type="radio" class="formRadioContantTb" onclick="jQuery('.boxDetail').hide();" <?php if ($valType != 1) {
 																																																																																										echo 'checked="checked"';
 																																																																																									} ?> /></div>
 							<div class="formDivRadioR"><?php echo  $modTypeTheme[2] ?></div>
@@ -215,41 +215,6 @@ if ($_REQUEST['masterkey'] == 'news') {
 			</table>
 			<br />
 
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic" <?php if($valType != 2){ echo "style='display:none;'"; } ?>>
-				<tr>
-					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-						<span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
-						<span class="formFontTileTxt"><?php echo $langMod["txt:picDe"] ?></span>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="7" align="right" valign="top" height="15"></td>
-				</tr>
-
-				<tr>
-					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["inp:album"] ?></td>
-					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-						<div class="file-input-wrapper">
-							<button class="btn-file-input"><?php echo  $langTxt["us:inputpicselect"] ?></button>
-							<input type="file" name="fileToUpload" id="fileToUpload" onchange="ajaxFileUpload();" />
-						</div>
-
-						<span class="formFontNoteTxt"><?php echo $langMod["inp:noteG"] ?></span>
-						<div class="clearAll"></div>
-						<div id="boxPicNew" class="formFontTileTxt">
-							<?php if (is_file($valPic)) { ?>
-								<img src="<?php echo $valPic ?>" style="float:left;border:#c8c7cc solid 1px;max-width:600px;" />
-								<div style="width:22px; height:22px;float:left;z-index:1; margin-left:-22px;cursor:pointer;" onclick="delPicUpload('deletePic.php')" title="Delete file"><img src="../img/btn/delete.png" width="22" height="22" border="0" /></div>
-								<input type="hidden" name="picname" id="picname" value="<?php echo $valPicName ?>" />
-							<?php } ?>
-						</div>
-					</td>
-				</tr>
-
-
-
-			</table>
-			<br class="boxPic"/>
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
 				<tr>
 					<td colspan="7" align="right" valign="top" height="20"></td>

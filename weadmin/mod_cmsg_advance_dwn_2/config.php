@@ -37,6 +37,13 @@ $mod_url_search_th = "th/|page|";
 $mod_url_search_en = "en/|page|";
 $mod_url_search_cn = "cn/|page|";
 
+## Mod Link ###################################
+$urlSegment = array(
+    'trw_semi' => 'training',
+    'trw_pri' => 'training',
+    'trw_con' => 'training',
+    'is_art' => 'information-service',
+);
 
 ## Size Photo ###################################
 // $sizeWidthPic="380";

@@ -33,6 +33,11 @@ $mod_url_search_th = "th/|page|";
 $mod_url_search_en = "en/|page|";
 $mod_url_search_cn = "cn/|page|";
 
+## Mod Link ###################################
+$urlSegment = array(
+    'ab_st' => 'about',
+    'mr' => 'member-relations',
+);
 
 ## Size Photo ###################################
 // $sizeWidthPic="380";

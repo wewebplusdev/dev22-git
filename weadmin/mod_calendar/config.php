@@ -38,6 +38,10 @@ $sizeHeightAlbum = "463";
 $sizeWidthAlbumOff = "50";
 $sizeHeightAlbumOff = "50";
 
+## URL Search ###################################
+$mod_url_search_th = "th/|page|/detail";
+$mod_url_search_en = "en/|page|/detail";
+$mod_url_search_cn = "cn/|page|/detail";
 
 ## Setting Value ###################################
 $modTxtSalary = array("", "ทั้งวัน", "ช่วงเวลา");

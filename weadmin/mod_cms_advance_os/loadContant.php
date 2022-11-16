@@ -603,6 +603,11 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
           </td>
         </tr>
       </table>
+      <table width="96%" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 20px;">
+          <tr>
+              <td>Link : <a href="<?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']] . "/" . $_REQUEST['menukeyid']; ?>" target="_blank"><?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']] . "/" . $_REQUEST['menukeyid']; ?></a></td>
+          </tr>
+      </table>
       <input name="TotalCheckBoxID" type="hidden" id="TotalCheckBoxID" value="<?php echo $index - 1 ?>" />
       <div class="divRightContantEnd"></div>
     </div>

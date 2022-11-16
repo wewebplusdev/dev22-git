@@ -22,6 +22,11 @@ $mod_url_search_th = "th/|page|";
 $mod_url_search_en = "en/|page|";
 $mod_url_search_cn = "cn/|page|";
 
+## Mod Link ###################################
+$urlSegment = array(
+  'ab_js' => 'about',
+);
+
 ## Mod Folder ###################################
 $mod_fd_root = "mod_career";
 
