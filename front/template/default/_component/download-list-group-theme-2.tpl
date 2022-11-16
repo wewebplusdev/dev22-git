@@ -61,7 +61,7 @@
                     </figure>
                     <div class="inner">
                         <!-- <div class="seemore"> -->
-                        <div class="row align-items-centre">
+                        <div class="row align-items-centre w100 m-auto">
                             {if $valuecallCMS.typec eq 1}
                               <div class="col-12 text-center">
                                   <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}" class="btn btn-primary mb-4" title="{$lang['system']['viewmore']}">{$lang['system']['viewmore']}</a>
