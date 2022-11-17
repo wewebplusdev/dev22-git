@@ -45,6 +45,7 @@ $core_tb_setting = "sy_stt";
 $core_tb_usercar = "md_srd";
 $core_tb_service = "md_srs";
 $core_tb_user = "sy_usr";
+$core_tb_tag = "md_tag";
 
 ## Other Table  ######################################################
 $other_tb_geography = "ot_geo";

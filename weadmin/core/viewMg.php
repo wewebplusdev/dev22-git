@@ -12,7 +12,7 @@ $valLinkNav1 = "../core/index.php";
 $valNav2 = $langTxt["nav:menuManage2"];
 
 
-$sql = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_icon, " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_moduletype, " . $core_tb_menu . "_linkpath, " . $core_tb_menu . "_masterkey, " . $core_tb_menu . "_target, " . $core_tb_menu . "_nameeng  , " . $core_tb_menu . "_credate, " . $core_tb_menu . "_nameeng  FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["valEditID"] . "'";
+$sql = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_icon, " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_moduletype, " . $core_tb_menu . "_linkpath, " . $core_tb_menu . "_masterkey, " . $core_tb_menu . "_target, " . $core_tb_menu . "_nameeng  , " . $core_tb_menu . "_credate, " . $core_tb_menu . "_nameeng, " . $core_tb_menu . "_tid  FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["valEditID"] . "'";
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $row = wewebFetchArrayDB($coreLanguageSQL, $query);
 $valId = $row[0];
@@ -25,6 +25,7 @@ $valTarget = $row[6];
 $valNameeng = $row[7];
 $valCredate = DateFormat($row[8]);
 $valNamechi = $row[9];
+$valTid = unserialize($row['sy_mnu_tid']);
 
 $sqlP = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_nameeng, " . $core_tb_menu . "_namechi    FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["myParentID"] . "'";
 $queryP = wewebQueryDB($coreLanguageSQL, $sqlP);
@@ -251,6 +252,53 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
           </td>
         </tr>
       </table>
+      <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo  $langMod["tit:hashtag"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo  $langMod["tit:hashtagDes"] ?></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["inp:hashtag"] ?><span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView">
+                            <?php
+                            $sql_group = "SELECT ";
+                            if ($_REQUEST['inputLt'] == "Thai") {
+                                $sql_group .= "  " . $core_tb_tag . "_id," . $core_tb_tag . "_subject";
+                            } else if ($_REQUEST['inputLt'] == "Eng") {
+                                $sql_group .= "  " . $core_tb_tag . "_id," . $core_tb_tag . "_subjecten";
+                            } else {
+                                $sql_group .= " " . $core_tb_tag . "_id," . $core_tb_tag . "_subjectcn ";
+                            }
+
+                            $sql_group .= "  FROM " . $core_tb_tag . " WHERE  " . $core_tb_tag . "_masterkey='theme' ORDER BY " . $core_tb_tag . "_order DESC ";
+                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                            if (!empty($valTid)) {
+                                echo "<ul class='item-list'>";
+                                while ($row_mem = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                                    $row_memid = $row_mem[0];
+                                    $row_memname = $row_mem[1];
+                                    foreach ($valTid as $keyvalTag => $valvalTag) {
+                                        if ($valvalTag == $row_memid) {
+                                            // echo "<div class='hashtag' >".$row_memname . "</div>";
+                                            echo "<li class='hashtag'><a class='link'>#" . $row_memname . "</a></li>";
+                                        }
+                                    }
+                                }
+                                echo "</ul>";
+                            } else {
+                                echo "-";
+                            }
+                            ?>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
       <br />
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 
