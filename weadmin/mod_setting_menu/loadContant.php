@@ -59,11 +59,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
         $module_adesc = $_REQUEST['module_adesc'];
     }
 
-    if ($_REQUEST['module_orderby'] == "") {
-        $module_orderby = $mod_tb_root . "_order";
-    } else {
-        $module_orderby = $mod_tb_root . "_order";
-    }
+    // if ($_REQUEST['module_orderby'] == "") {
+    //     $module_orderby = $mod_tb_root . "_order";
+    // } else {
+    //     $module_orderby = $mod_tb_root . "_order";
+    // }
 
     if ($_REQUEST['inputSearch'] != "") {
         $inputSearch = trim($_REQUEST['inputSearch']);
@@ -72,8 +72,16 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     }
     if ($_REQUEST['inputTag'] != "") {
         $inputTag = trim($_REQUEST['inputTag']);
+        if ($_REQUEST["inputTag"] == '2') {
+            $module_orderby = $mod_tb_root ."_order_theme_1";
+        } else if ($_REQUEST["inputTag"] == '3') {
+            $module_orderby = $mod_tb_root ."_order_theme_2";
+        } else if ($_REQUEST["inputTag"] == '4') {
+            $module_orderby = $mod_tb_root ."_order_theme_3";
+        }
     } else {
         $inputTag = $_REQUEST['inputTag'];
+        $module_orderby = $mod_tb_root . "_order";
     }
 
     //REGEXP '.*;s:[0-9]+:\"".$value."\".*'
@@ -260,7 +268,6 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                 } else {
                     $sql .= " ORDER BY $module_orderby $module_adesc LIMIT $recordstart , $module_pagesize ";
                 }
-                // print_pre($sql);
 
                 $query = wewebQueryDB($coreLanguageSQL, $sql);
                 $count_record = wewebNumRowsDB($coreLanguageSQL, $query);
