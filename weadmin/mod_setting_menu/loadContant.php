@@ -60,9 +60,9 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     }
 
     if ($_REQUEST['module_orderby'] == "") {
-        $module_orderby = $mod_tb_root . $mod_array_conf[$_REQUEST['masterkey']]['order'];
+        $module_orderby = $mod_tb_root . "_order";
     } else {
-        $module_orderby = $_REQUEST['module_orderby'];
+        $module_orderby = $mod_tb_root . "_order";
     }
 
     if ($_REQUEST['inputSearch'] != "") {
@@ -76,7 +76,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
         $inputTag = $_REQUEST['inputTag'];
     }
 
-
+    //REGEXP '.*;s:[0-9]+:\"".$value."\".*'
 
     // Search Value SQL #########################
     $sqlSearch = "";
@@ -88,7 +88,10 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
         ) ";
     }
 
-    $valTagID = "";
+    if ($inputTag <> "") {
+        $sqlSearch = $sqlSearch . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $inputTag . "\".*')";
+    }
+
     ?>
     <form action="?" method="post" name="myForm" id="myForm">
         <input name="masterkey" type="hidden" id="masterkey" value="<?php echo  $_REQUEST['masterkey'] ?>" />
@@ -131,7 +134,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                 $row_groupid = $row_group[0];
                                 $row_groupname = $row_group[1];
                             ?>
-                                <option value="<?php echo  $row_groupid ?>" <?php if ($_REQUEST['inputTag'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo  $row_groupname ?></option>
+                                <option value="<?php echo  $row_groupid ?>" <?php if ($inputTag == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo  $row_groupname ?></option>
                             <?php } ?>
                         </select>
                     </td>
@@ -164,8 +167,21 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                                         alert('<?php echo  $langTxt["mg:selpermis"] ?>');
                                                     }
                                                   "></div> -->
-
-                                        <div class="btnSort" title="<?php echo  $langTxt["btn:sortting"] ?>" onclick="sortContactNew('sortContant.php');"></div>
+                                        <div style="float: left; text-align: -webkit-center;margin-left:10px;">
+                                            <div class="btnSort" style="margin: 0; !important" title="<?php echo  $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  2 ?>;sortContactNew('sortContant.php');"></div>
+                                            <br />
+                                            <span class="fontContantTbManage"><?php echo $langMod["txt:t1"] ?></span>
+                                        </div>
+                                        <div style="float: left; text-align: -webkit-center;margin-left:10px;">
+                                            <div class="btnSort" style="margin: 0; !important" title="<?php echo  $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  3 ?>;sortContactNew('sortContant.php');"></div>
+                                            <br />
+                                            <span class="fontContantTbManage"><?php echo $langMod["txt:t2"] ?></span>
+                                        </div>
+                                        <div style="float: left; text-align: -webkit-center;margin-left:10px;">
+                                            <div class="btnSort" style="margin: 0; !important" title="<?php echo  $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  4 ?>;sortContactNew('sortContant.php');"></div>
+                                            <br />
+                                            <span class="fontContantTbManage"><?php echo $langMod["txt:t3"] ?></span>
+                                        </div>
                                     <?php } ?>
                                 </td>
                             </tr>
@@ -204,21 +220,20 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                 ";
 
 
-                // SQL SELECT #########################
+                // SQL SELECT #########################  //REGEXP '.*;s:[0-9]+:\"".$value."\".*'
                 $sql = "SELECT " . $sqlSelect . "    FROM " . $mod_tb_root;
                 $sql = $sql . "  WHERE 1=1 ";
-                $sql = $sql . "  AND " . $mod_tb_root . "_masterkey NOT LIKE '" . $_REQUEST['masterkey'] . "' ";
+                // $sql = $sql . "  AND " . $mod_tb_root . "_masterkey NOT LIKE '" . $_REQUEST['masterkey'] . "' ";
 
-                $sql = $sql . "  AND (" . $mod_tb_root . "_masterkey LIKE '%" . $mod_array_conf[$_REQUEST['masterkey']]['key'] . "' ";
+                // $sql = $sql . "  AND (" . $mod_tb_root . "_masterkey LIKE '%" . $mod_array_conf[$_REQUEST['masterkey']]['key'] . "' ";
 
-                if (count($mod_array_conf[$_REQUEST['masterkey']]['component']) > 0) {
-                    $sql = $sql . "  OR " . $mod_tb_root . "_masterkey IN (" . implode(",", array_values($mod_array_conf[$_REQUEST['masterkey']]['component'])) . ") ";
-                }
+                $sql = $sql . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"2\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"3\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"4\".*')";
 
-                $sql = $sql . " ) ";
+
+                // $sql = $sql . " ) ";
 
                 $sql = $sql . $sqlSearch;
-
+                // print_pre($sql);
                 $query = wewebQueryDB($coreLanguageSQL, $sql);
                 $count_totalrecord = wewebNumRowsDB($coreLanguageSQL, $query);
 
@@ -245,11 +260,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                 } else {
                     $sql .= " ORDER BY $module_orderby $module_adesc LIMIT $recordstart , $module_pagesize ";
                 }
-                //  print_pre($sql);
+                // print_pre($sql);
 
                 $query = wewebQueryDB($coreLanguageSQL, $sql);
                 $count_record = wewebNumRowsDB($coreLanguageSQL, $query);
-                
+
                 $index = 1;
                 $valDivTr = "divSubOverTb";
                 if ($count_record > 0) {
@@ -284,126 +299,126 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                             $valDivTr = "divSubOverTb";
                             $valImgCycle = "boxprofile_w.png";
                         }
-                        if (in_array($_REQUEST['inputTag'], $valTag)) { ?>
-                            <tr class="<?php echo  $valDivTr ?>">
-                                <!-- <td class="divRightContantOverTbL" valign="top" align="center"><input id="CheckBoxID<?php echo  $index ?>" name="CheckBoxID<?php echo  $index ?>" type="checkbox" class="formCheckboxList" onClick="Paging_CheckAllHandle(document.myForm.CheckBoxAll, 'CheckBoxID', document.myForm.TotalCheckBoxID.value)" value="<?php echo  $valID ?>" /> </td> -->
-                                <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                            <!-- <td class="displayTdImg" align="left" valign="top">
+                ?>
+                        <tr class="<?php echo  $valDivTr ?>">
+                            <!-- <td class="divRightContantOverTbL" valign="top" align="center"><input id="CheckBoxID<?php echo  $index ?>" name="CheckBoxID<?php echo  $index ?>" type="checkbox" class="formCheckboxList" onClick="Paging_CheckAllHandle(document.myForm.CheckBoxAll, 'CheckBoxID', document.myForm.TotalCheckBoxID.value)" value="<?php echo  $valID ?>" /> </td> -->
+                            <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <!-- <td class="displayTdImg" align="left" valign="top">
                                             <div class="displayClickImg" style=" background:url(<?php echo  $valPic ?>) center no-repeat;"></div>
                                         </td> -->
-                                            <td align="left"><a href="javascript:void(0)" onclick="
+                                        <td align="left"><a href="javascript:void(0)" onclick="
                                                     document.myFormHome.inputLt.value = 'Thai';
                                                     document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                     viewContactNew('viewContant.php');"><?php echo  $valName ?> </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+                                <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="left"><a href="javascript:void(0)" onclick="
+                                                    document.myFormHome.inputLt.value = 'Eng';
+                                                    document.myFormHome.valEditID.value =<?php echo  $valID ?>;
+                                                    viewContactNew('viewContant.php');"><?php echo  $valNameEng ?> </a>
                                             </td>
                                         </tr>
                                     </table>
                                 </td>
-                                <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                                    <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="left"><a href="javascript:void(0)" onclick="
-                                                    document.myFormHome.inputLt.value = 'Eng';
-                                                    document.myFormHome.valEditID.value =<?php echo  $valID ?>;
-                                                    viewContactNew('viewContant.php');"><?php echo  $valNameEng ?> </a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                <?php } ?>
-                                <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                                    <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="left"><a href="javascript:void(0)" onclick="
+                            <?php } ?>
+                            <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+                                <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="left"><a href="javascript:void(0)" onclick="
                                                     document.myFormHome.inputLt.value = 'Chi';
                                                     document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                     viewContactNew('viewContant.php');"><?php echo  $valNameChi ?> </a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                <?php } ?>
-                                <td class="divRightContantOverTb" valign="top" align="center">
-                                    <?php if ($valPermissionContent == "RW") { ?>
-                                        <div id="load_status<?php echo  $valID ?>">
-                                            <?php if ($valStatus == "Enable") { ?>
-                                                <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMg.php')"><span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span></a>
-                                            <?php } else { ?>
-                                                <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMg.php')"> <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span> </a>
-                                            <?php } ?>
-                                            <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting<?php echo  $valID ?>" />
-                                        </div>
-                                    <?php } else { ?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            <?php } ?>
+                            <td class="divRightContantOverTb" valign="top" align="center">
+                                <?php if ($valPermissionContent == "RW") { ?>
+                                    <div id="load_status<?php echo  $valID ?>">
                                         <?php if ($valStatus == "Enable") { ?>
-                                            <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
+                                            <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMg.php')"><span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span></a>
                                         <?php } else { ?>
-                                            <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
+                                            <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMg.php')"> <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span> </a>
                                         <?php } ?>
+                                        <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting<?php echo  $valID ?>" />
+                                    </div>
+                                <?php } else { ?>
+                                    <?php if ($valStatus == "Enable") { ?>
+                                        <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
+                                    <?php } else { ?>
+                                        <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
                                     <?php } ?>
-                                </td>
-                                <td class="divRightContantOverTb" valign="top" align="center">
-                                    <span class="fontContantTbupdate"><?php echo  $valDateCredate ?></span><br />
-                                    <span class="fontContantTbTime"><?php echo  $valTimeCredate ?></span>
-                                </td>
-                                <td class="divRightContantOverTbR" valign="top" align="center">
-                                    <?php if ($valPermission == "RW") { ?>
-                                        <table border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td valign="top" align="center" width="30">
+                                <?php } ?>
+                            </td>
+                            <td class="divRightContantOverTb" valign="top" align="center">
+                                <span class="fontContantTbupdate"><?php echo  $valDateCredate ?></span><br />
+                                <span class="fontContantTbTime"><?php echo  $valTimeCredate ?></span>
+                            </td>
+                            <td class="divRightContantOverTbR" valign="top" align="center">
+                                <?php if ($valPermission == "RW") { ?>
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <!-- <td valign="top" align="center" width="30">
 
-                                                    <div class="divRightManage" title="<?php echo  $langTxt["btn:top"] ?>" onclick="
+                                                <div class="divRightManage" title="<?php echo  $langTxt["btn:top"] ?>" onclick="
                                                             document.myFormHome.inputLt.value = 'Thai';
                                                             document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                             editContactNew('topUpdateContant.php');">
-                                                        <img src="../img/btn/topbtn.png" /><br />
-                                                        <span class="fontContantTbManage"><?php echo  $langTxt["btn:top"] ?><br>(<?php echo  $langTxt["lg:all"] ?>)</span>
-                                                    </div>
-                                                </td>
+                                                    <img src="../img/btn/topbtn.png" /><br />
+                                                    <span class="fontContantTbManage"><?php echo  $langTxt["btn:top"] ?><br>(<?php echo  $langTxt["lg:all"] ?>)</span>
+                                                </div>
+                                            </td> -->
 
-                                                <td valign="top" align="center" width="30">
-                                                    <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
+                                            <td valign="top" align="center" width="30">
+                                                <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
                                                             document.myFormHome.inputLt.value = 'Thai';
                                                             document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                             editContactNew('editContant.php');">
-                                                        <img src="../img/btn/edit.png" /><br />
-                                                        <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br>
-                                                            (<?php echo  $langTxt["lg:thai"] ?>)
-                                                        </span>
-                                                    </div>
-                                                </td>
+                                                    <img src="../img/btn/edit.png" /><br />
+                                                    <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br>
+                                                        (<?php echo  $langTxt["lg:thai"] ?>)
+                                                    </span>
+                                                </div>
+                                            </td>
 
 
-                                                <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                                                    <td valign="top" align="center" width="30">
-                                                        <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
+                                            <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+                                                <td valign="top" align="center" width="30">
+                                                    <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
                                                                             document.myFormHome.inputLt.value = 'Eng';
                                                                             document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                                             editContactNew('editContant.php');">
-                                                            <img src="../img/btn/edit.png" /><br />
-                                                            <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br />
-                                                                (<?php echo  $langTxt["lg:eng"] ?>)</span>
-                                                        </div>
-                                                    </td>
-                                                <?php } ?>
+                                                        <img src="../img/btn/edit.png" /><br />
+                                                        <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br />
+                                                            (<?php echo  $langTxt["lg:eng"] ?>)</span>
+                                                    </div>
+                                                </td>
+                                            <?php } ?>
 
-                                                <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                                                    <td valign="top" align="center" width="30">
-                                                        <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
+                                            <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+                                                <td valign="top" align="center" width="30">
+                                                    <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
                                                                             document.myFormHome.inputLt.value = 'Chi';
                                                                             document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                                             editContactNew('editContant.php');">
-                                                            <img src="../img/btn/edit.png" /><br />
-                                                            <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br />
-                                                                (<?php echo  $langTxt["lg:chi"] ?>)</span>
-                                                        </div>
-                                                    </td>
-                                                <?php } ?>
+                                                        <img src="../img/btn/edit.png" /><br />
+                                                        <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br />
+                                                            (<?php echo  $langTxt["lg:chi"] ?>)</span>
+                                                    </div>
+                                                </td>
+                                            <?php } ?>
 
-                                                <!-- <td valign="top" align="center" width="30">
+                                            <!-- <td valign="top" align="center" width="30">
                                                 <div class="divRightManage" title="<?php echo  $langTxt["btn:del"] ?>" onClick="
                                                             if (confirm('<?php echo  $langTxt["mg:delpermis"] ?>')) {
                                                                 Paging_CheckedThisItem(document.myForm.CheckBoxAll, <?php echo  $index ?>, 'CheckBoxID', document.myForm.TotalCheckBoxID.value);
@@ -414,151 +429,12 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                                     <span class="fontContantTbManage"><?php echo  $langTxt["btn:del"] ?></span>
                                                 </div>
                                             </td> -->
-                                            </tr>
-                                        </table>
-                                    <?php } ?>
-                                </td>
-                            </tr>
-
-                        <?php
-                     
-                        } else if ($_REQUEST['inputTag'] == "") { ?>
-                            <tr class="<?php echo  $valDivTr ?>">
-                                <!-- <td class="divRightContantOverTbL" valign="top" align="center"><input id="CheckBoxID<?php echo  $index ?>" name="CheckBoxID<?php echo  $index ?>" type="checkbox" class="formCheckboxList" onClick="Paging_CheckAllHandle(document.myForm.CheckBoxAll, 'CheckBoxID', document.myForm.TotalCheckBoxID.value)" value="<?php echo  $valID ?>" /> </td> -->
-                                <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                            <!-- <td class="displayTdImg" align="left" valign="top">
-                                            <div class="displayClickImg" style=" background:url(<?php echo  $valPic ?>) center no-repeat;"></div>
-                                        </td> -->
-                                            <td align="left"><a href="javascript:void(0)" onclick="
-                                                    document.myFormHome.inputLt.value = 'Thai';
-                                                    document.myFormHome.valEditID.value =<?php echo  $valID ?>;
-                                                    viewContactNew('viewContant.php');"><?php echo  $valName ?> </a>
-                                            </td>
                                         </tr>
                                     </table>
-                                </td>
-                                <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                                    <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="left"><a href="javascript:void(0)" onclick="
-                                                    document.myFormHome.inputLt.value = 'Eng';
-                                                    document.myFormHome.valEditID.value =<?php echo  $valID ?>;
-                                                    viewContactNew('viewContant.php');"><?php echo  $valNameEng ?> </a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
                                 <?php } ?>
-                                <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                                    <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="left"><a href="javascript:void(0)" onclick="
-                                                    document.myFormHome.inputLt.value = 'Chi';
-                                                    document.myFormHome.valEditID.value =<?php echo  $valID ?>;
-                                                    viewContactNew('viewContant.php');"><?php echo  $valNameChi ?> </a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                <?php } ?>
-                                <td class="divRightContantOverTb" valign="top" align="center">
-                                    <?php if ($valPermissionContent == "RW") { ?>
-                                        <div id="load_status<?php echo  $valID ?>">
-                                            <?php if ($valStatus == "Enable") { ?>
-                                                <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMg.php')"><span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span></a>
-                                            <?php } else { ?>
-                                                <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMg.php')"> <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span> </a>
-                                            <?php } ?>
-                                            <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting<?php echo  $valID ?>" />
-                                        </div>
-                                    <?php } else { ?>
-                                        <?php if ($valStatus == "Enable") { ?>
-                                            <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
-                                        <?php } else { ?>
-                                            <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span>
-                                        <?php } ?>
-                                    <?php } ?>
-                                </td>
-                                <td class="divRightContantOverTb" valign="top" align="center">
-                                    <span class="fontContantTbupdate"><?php echo  $valDateCredate ?></span><br />
-                                    <span class="fontContantTbTime"><?php echo  $valTimeCredate ?></span>
-                                </td>
-                                <td class="divRightContantOverTbR" valign="top" align="center">
-                                    <?php if ($valPermission == "RW") { ?>
-                                        <table border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td valign="top" align="center" width="30">
-
-                                                    <div class="divRightManage" title="<?php echo  $langTxt["btn:top"] ?>" onclick="
-                                                            document.myFormHome.inputLt.value = 'Thai';
-                                                            document.myFormHome.valEditID.value =<?php echo  $valID ?>;
-                                                            editContactNew('topUpdateContant.php');">
-                                                        <img src="../img/btn/topbtn.png" /><br />
-                                                        <span class="fontContantTbManage"><?php echo  $langTxt["btn:top"] ?><br>(<?php echo  $langTxt["lg:all"] ?>)</span>
-                                                    </div>
-                                                </td>
-
-                                                <td valign="top" align="center" width="30">
-                                                    <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
-                                                            document.myFormHome.inputLt.value = 'Thai';
-                                                            document.myFormHome.valEditID.value =<?php echo  $valID ?>;
-                                                            editContactNew('editContant.php');">
-                                                        <img src="../img/btn/edit.png" /><br />
-                                                        <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br>
-                                                            (<?php echo  $langTxt["lg:thai"] ?>)
-                                                        </span>
-                                                    </div>
-                                                </td>
-
-
-                                                <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                                                    <td valign="top" align="center" width="30">
-                                                        <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
-                                                                            document.myFormHome.inputLt.value = 'Eng';
-                                                                            document.myFormHome.valEditID.value =<?php echo  $valID ?>;
-                                                                            editContactNew('editContant.php');">
-                                                            <img src="../img/btn/edit.png" /><br />
-                                                            <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br />
-                                                                (<?php echo  $langTxt["lg:eng"] ?>)</span>
-                                                        </div>
-                                                    </td>
-                                                <?php } ?>
-
-                                                <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                                                    <td valign="top" align="center" width="30">
-                                                        <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
-                                                                            document.myFormHome.inputLt.value = 'Chi';
-                                                                            document.myFormHome.valEditID.value =<?php echo  $valID ?>;
-                                                                            editContactNew('editContant.php');">
-                                                            <img src="../img/btn/edit.png" /><br />
-                                                            <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br />
-                                                                (<?php echo  $langTxt["lg:chi"] ?>)</span>
-                                                        </div>
-                                                    </td>
-                                                <?php } ?>
-
-                                                <!-- <td valign="top" align="center" width="30">
-                                                <div class="divRightManage" title="<?php echo  $langTxt["btn:del"] ?>" onClick="
-                                                            if (confirm('<?php echo  $langTxt["mg:delpermis"] ?>')) {
-                                                                Paging_CheckedThisItem(document.myForm.CheckBoxAll, <?php echo  $index ?>, 'CheckBoxID', document.myForm.TotalCheckBoxID.value);
-                                                                delContactNew('deleteContant.php');
-                                                            }
-                                                         ">
-                                                    <img src="../img/btn/delete.png" /><br />
-                                                    <span class="fontContantTbManage"><?php echo  $langTxt["btn:del"] ?></span>
-                                                </div>
-                                            </td> -->
-                                            </tr>
-                                        </table>
-                                    <?php } ?>
-                                </td>
-                            </tr>
+                            </td>
+                        </tr>
                     <?php
-                        }
 
                         $index++;
                     }
