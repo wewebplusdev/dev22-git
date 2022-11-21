@@ -337,13 +337,13 @@ if ($_REQUEST['inputSearch'] != "") {
       $sql = $sql . "  WHERE " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "' ";
 
       if ($_REQUEST['sdateInput'] != "") {
-        $valSdate = DateFormatInsertNoTimeAccpet($_REQUEST['sdateInput']);
+        $valSdate = DateFormatInsertNoTime($_REQUEST['sdateInput']);
 
         if ($_REQUEST['edateInput'] != "") {
-          $valEdate = DateFormatInsertNoTimeAccpet($_REQUEST['edateInput']);
+          $valEdate = DateFormatInsertNoTime($_REQUEST['edateInput']);
         } else {
           $year = date("Y") + 543;
-          $valEdate = DateFormatInsertNoTimeAccpet(date("d-m") . "-" . $year);
+          $valEdate = DateFormatInsertNoTime(date("d-m") . "-" . $year);
         }
 
         $sql = $sql . "  AND  (" . $mod_tb_root . "_credate BETWEEN '" . $valSdate . " 00:00:00' AND '" . $valEdate . " 23:59:59')  ";
