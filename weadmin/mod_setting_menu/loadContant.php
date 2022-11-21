@@ -73,11 +73,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     if ($_REQUEST['inputTag'] != "") {
         $inputTag = trim($_REQUEST['inputTag']);
         if ($_REQUEST["inputTag"] == '2') {
-            $module_orderby = $mod_tb_root ."_order_theme_1";
+            $module_orderby = $mod_tb_root . "_order_theme_1";
         } else if ($_REQUEST["inputTag"] == '3') {
-            $module_orderby = $mod_tb_root ."_order_theme_2";
+            $module_orderby = $mod_tb_root . "_order_theme_2";
         } else if ($_REQUEST["inputTag"] == '4') {
-            $module_orderby = $mod_tb_root ."_order_theme_3";
+            $module_orderby = $mod_tb_root . "_order_theme_3";
         }
     } else {
         $inputTag = $_REQUEST['inputTag'];
@@ -175,21 +175,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                                         alert('<?php echo  $langTxt["mg:selpermis"] ?>');
                                                     }
                                                   "></div> -->
-                                        <div style="float: left; text-align: -webkit-center;margin-left:10px;">
-                                            <div class="btnSort" style="margin: 0; !important" title="<?php echo  $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  2 ?>;sortContactNew('sortContant.php');"></div>
-                                            <br />
-                                            <span class="fontContantTbManage"><?php echo $langMod["txt:t1"] ?></span>
-                                        </div>
-                                        <div style="float: left; text-align: -webkit-center;margin-left:10px;">
-                                            <div class="btnSort" style="margin: 0; !important" title="<?php echo  $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  3 ?>;sortContactNew('sortContant.php');"></div>
-                                            <br />
-                                            <span class="fontContantTbManage"><?php echo $langMod["txt:t2"] ?></span>
-                                        </div>
-                                        <div style="float: left; text-align: -webkit-center;margin-left:10px;">
-                                            <div class="btnSort" style="margin: 0; !important" title="<?php echo  $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  4 ?>;sortContactNew('sortContant.php');"></div>
-                                            <br />
-                                            <span class="fontContantTbManage"><?php echo $langMod["txt:t3"] ?></span>
-                                        </div>
+                                        <div class="btnSort" id="btnSort" name="btnSort" title="<?php echo $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  $inputTag ?>;sortContactNew('sortContant.php');"></div>
                                     <?php } ?>
                                 </td>
                             </tr>
@@ -557,7 +543,16 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
     </form>
     <?php include("../lib/disconnect.php"); ?>
+    <script>
+        $(document).ready(function() {
 
+                if ($('#inputTag').val() === "") {
+                    $('#btnSort').hide();
+                } else {
+                    $('#btnSort').show();
+                }
+        });
+    </script>
 </body>
 
 </html>
