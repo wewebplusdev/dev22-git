@@ -11,24 +11,31 @@ $smarty->assign("callBanner", $callBanner);
 $callTopGraphic = $homePage->callTopGraphic($config['tgp']['main']['masterkey']);
 $smarty->assign("callTopGraphic", $callTopGraphic);
 
-if ($_GET['tmp'] >=1 ) {
+if ($_GET['tmp'] ==1 ) {
     $themeWebsite['class'] = 'theme-1';
+    $tagKey = '2';
+    $orderTheme = '_order_theme_1';
 }else if($_GET['tmp'] == 2 ){
     $themeWebsite['class'] = 'theme-2';
+    $tagKey = '3';
+    $orderTheme = '_order_theme_2';
 }else{
     $themeWebsite['class'] = 'theme-3';
+    $tagKey = '4';
+    $orderTheme = '_order_theme_3';
 }
+
+// call section sorting
+$callSection = $homePage->callSection($tagKey, $orderTheme);
+$sectionMainpage = array();
+foreach ($callSection as $keycallSection => $valuecallSection) {
+    $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$valuecallSection['masterkey']];
+}
+//print_pre($sectionMainpage);
+$smarty->assign("sectionMainpage", $sectionMainpage);
+
 switch ($themeWebsite['class']) {
     case 'theme-3':
-        // call section sorting
-        $callSection = $homePage->callSection($mod_array_conf['theme-3']['key'], $mod_array_conf['theme-3']['order'], 'theme-3');
-        $sectionMainpage = array();
-        foreach ($callSection as $keycallSection => $valuecallSection) {
-            $sectionMainpage[$keycallSection]['file'] = $arrThemeFile['theme-3'][$valuecallSection['masterkey']];
-        }
-        // print_pre($sectionMainpage);
-        $smarty->assign("sectionMainpage", $sectionMainpage);
-        
         // call top graphic
         $callBannerSection = $homePage->callTopGraphic($config['ban_t3']['main']['masterkey']);
         $smarty->assign("callBannerSection", $callBannerSection);

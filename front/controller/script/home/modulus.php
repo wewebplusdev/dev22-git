@@ -210,7 +210,7 @@ if($lang){
     return $result;
   }
 
-  function callSection($masterkey, $order = null, $theme = null){
+  function callSection($tagkey, $order = null){
     global $config, $db, $url, $mod_array_conf;
     $lang = $url->pagelang[3];
   
@@ -227,15 +227,10 @@ if($lang){
   
     ";
 
-    $sql = $sql . "  AND (" . $config['mnu']['db'] . "_masterkey LIKE '%" . $mod_array_conf[$theme]['key'] . "' ";
+    $sql = $sql . "  AND (" . $config['mnu']['db'] . "_tid REGEXP '.*;s:[0-9]+:\"" . $tagkey . "\".*'";
 
-    if (count($mod_array_conf[$theme]['component']) > 0) {
-        $sql = $sql . "  OR " . $config['mnu']['db'] . "_masterkey IN (" . implode(",", array_values($mod_array_conf[$theme]['component'])) . ") ";
-    }
 
     $sql = $sql . " ) ";
-
-    $sql .= " AND " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_masterkey != '".$mod_array_conf[$theme]['sortmnu']."'";
 
     if (!empty($order)) {
       $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "".$order." DESC ";

@@ -21,22 +21,8 @@ $mod_array_conf = array(
 );
 
 $arrThemeFile = array(
-  'theme-3' => array(
     'km_t3' => 'front/controller/script/home/template/theme-3/section-km.tpl',
     'ban_t3' => 'front/controller/script/home/template/theme-3/section-banner.tpl',
     'ab_nm' => 'front/controller/script/home/template/theme-3/section-news.tpl',
     'wb_t3' => 'front/controller/script/home/template/theme-3/section-weblink.tpl',
-  ),
-  'theme-2' => array(
-    'km_t2' => 'front/controller/script/home/template/theme-3/section-km.tpl',
-    'ban_t2' => 'front/controller/script/home/template/theme-3/section-banner.tpl',
-    'ab_nm' => 'front/controller/script/home/template/theme-3/section-news.tpl',
-    'wb_t2' => 'front/controller/script/home/template/theme-3/section-weblink.tpl',
-  ),
-  'theme-1' => array(
-    'km_t1' => 'front/controller/script/home/template/theme-3/section-km.tpl',
-    'ban_t1' => 'front/controller/script/home/template/theme-3/section-banner.tpl',
-    'ab_nm' => 'front/controller/script/home/template/theme-3/section-news.tpl',
-    'wb_t1' => 'front/controller/script/home/template/theme-3/section-weblink.tpl',
-  ),
 );
