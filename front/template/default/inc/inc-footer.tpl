@@ -178,6 +178,16 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg text-right">
+                    <div class="footer-stat">
+                        <span>{$lang["counter"]["visited"]}</span>
+                        <span class="count">{$usercounter}</span>
+                        <span>{$lang["counter"]["online"]}</span>
+                        <span class="count">{$useronline}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </footer>

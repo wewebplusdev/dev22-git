@@ -182,7 +182,7 @@
                 font-size: var(--typo-sm);
             }
             .link:hover .list-wrapper {
-                background: linear-gradient(180deg, #A8BAF4 0%, #F2F5FF 100%);
+                background-color: var(--color-gray-light);
             }
             .list-wrapper {
                 border-bottom: 1px solid #7070702b;
