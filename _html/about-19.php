@@ -120,34 +120,46 @@
                             </div>
                         </div>
                     </div>
-                    <?php for ($i = 1; $i <= 5; $i++) { ?>
-                        <div class="news-block">
-                            <div class="row align-items-center">
-                                <div class="col-sm-auto">
-                                    <figure class="cover">
-                                        <img src="<?php echo $core_template; ?>/assets/img/static/news-image.png" alt="news image">
+
+                    <div class="news-block -video">
+                        <div class="row align-items-center">
+                            <div class="col-sm-auto">
+                                <div class="video-gallery-banner">
+                                    <figure class="cover -banner">
+                                        <img src="<?php echo $core_template; ?>/assets/img/upload/git-vdo.png" alt="git vdo">
                                     </figure>
+                                    <a class="link" href="javascript:void(0)">
+                                        <span class="feather icon-play-circle"></span>
+                                    </a>
                                 </div>
-                                <div class="col-sm">
-                                    <div class="title">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ</div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="desc">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ หนุนผู้ประกอบการขยายช่องทางการค้าผ่านแพลตฟอร์ม Home Shopping 24 ชั่วโมง</div>
-                                        </div>
-                                        <div class="col-12">
-                                            <!-- <img class="" src="<?php echo $core_template; ?>/assets/img/icon/icon-calendar.svg" alt="icon calendar"> -->
-                                            <span class="feather icon-calendar"></span>
-                                            <span class="typo-xs text-black">16 มิถุนายน 2565</span>
-                                        </div>
-                                        <div class="col-12">
-                                            <a href="javascript:void(0)" class="btn" title="btn">อ่านต่อ</a>
-                                        </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="title">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ</div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="desc">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ หนุนผู้ประกอบการขยายช่องทางการค้าผ่านแพลตฟอร์ม Home Shopping 24 ชั่วโมง</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <!-- <img class="" src="<?php echo $core_template; ?>/assets/img/icon/icon-calendar.svg" alt="icon calenda  r"> -->
+                                        <span class="feather icon-calendar"></span>
+                                        <span class="typo-xs text-black">16 มิถุนายน 2565</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="/dev22-git/th/information-service/29/detail/206" class="btn btn-primary" title="แสดงวิดีโอ">
+                                            แสดงวิดีโอ
+                                            <!-- <img class="icon ml-3" src="https://project.wewebcloud.com/dev22-git/front/template/default/assets/img/icon/icon-deatail.svg" alt="icon"> -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="51.235" height="7.199" viewBox="0 0 51.235 7.199">
+                                                <path data-name="Path 5" d="M4670.6,5544.179h50.033l-6.306-6.347" transform="translate(-4670.602 -5537.48)" fill="none" stroke="#fff" stroke-width="1"></path>
+                                            </svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
-                    
+
+                    </div>
+
+
                     <div class="editor-content">
                     </div>
                     <div class="pagination-block">
