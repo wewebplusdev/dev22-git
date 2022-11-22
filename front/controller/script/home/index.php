@@ -13,20 +13,15 @@ $smarty->assign("callTopGraphic", $callTopGraphic);
 
 if ($_GET['tmp'] == 1 ) {
     $themeWebsite['class'] = 'theme-1';
-    $tagKey = '2';
-    $orderTheme = '_order_theme_1';
 }else if($_GET['tmp'] == 2 ){
     $themeWebsite['class'] = 'theme-2';
-    $tagKey = '3';
-    $orderTheme = '_order_theme_2';
 }else{
     $themeWebsite['class'] = 'theme-3';
-    $tagKey = '4';
-    $orderTheme = '_order_theme_3';
 }
 
 $core_theme_web = explode("-", $themeWebsite['class']);
 $callSection = $homePage->callSection($core_theme_web[1], $mod_array_conf[$themeWebsite['class']]['order'], $themeWebsite['class']);
+
 switch ($themeWebsite['class']) {
     case 'theme-3':
         // call top graphic

@@ -32,8 +32,22 @@ $mod_array_conf = array(
 );
 
 $arrThemeFile = array(
+  '3' => array(
     'km_t3' => 'front/controller/script/home/template/theme-3/section-km.tpl',
     'ban_t3' => 'front/controller/script/home/template/theme-3/section-banner.tpl',
     'ab_nm' => 'front/controller/script/home/template/theme-3/section-news.tpl',
     'wb_t3' => 'front/controller/script/home/template/theme-3/section-weblink.tpl',
+  ),
+  '2' => array(
+    'km_t3' => 'front/controller/script/home/template/theme-3/section-km.tpl',
+    'ban_t3' => 'front/controller/script/home/template/theme-3/section-banner.tpl',
+    'ab_nm' => 'front/controller/script/home/template/theme-3/section-news.tpl',
+    'wb_t3' => 'front/controller/script/home/template/theme-3/section-weblink.tpl',
+  ),
+  '1' => array(
+    'km_t3' => 'front/controller/script/home/template/theme-3/section-km.tpl',
+    'ban_t3' => 'front/controller/script/home/template/theme-3/section-banner.tpl',
+    'ab_nm' => 'front/controller/script/home/template/theme-3/section-news.tpl',
+    'wb_t3' => 'front/controller/script/home/template/theme-3/section-weblink.tpl',
+  ),
 );

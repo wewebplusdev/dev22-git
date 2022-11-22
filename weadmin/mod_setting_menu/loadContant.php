@@ -72,11 +72,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     }
     if ($_REQUEST['inputTag'] != "") {
         $inputTag = trim($_REQUEST['inputTag']);
-        if ($_REQUEST["inputTag"] == '2') {
+        if ($_REQUEST["inputTag"] == '1') {
             $module_orderby = $mod_tb_root . "_order_theme_1";
-        } else if ($_REQUEST["inputTag"] == '3') {
+        } else if ($_REQUEST["inputTag"] == '2') {
             $module_orderby = $mod_tb_root . "_order_theme_2";
-        } else if ($_REQUEST["inputTag"] == '4') {
+        } else if ($_REQUEST["inputTag"] == '3') {
             $module_orderby = $mod_tb_root . "_order_theme_3";
         }
     } else {
@@ -127,22 +127,10 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                 <tr>
                     <td style="padding-right:10px;" width="50%">
                         <select name="inputTag" id="inputTag" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
-                            <option value=""><?php echo  $langMod["tit:selectghasg"] ?></option>
+                        <option value=""><?php echo  $langMod["tit:selectgtheme"] ?></option>
                             <?php
-                            $sql_group = "SELECT ";
-                            if ($_REQUEST['inputLt'] == "Thai") {
-                                $sql_group .= "  " . $core_tb_tag . "_id," . $core_tb_tag . "_subject";
-                            } else {
-                                $sql_group .= " " . $core_tb_tag . "_id," . $core_tb_tag . "_subjecten ";
-                            }
-
-                            $sql_group .= "  FROM " . $core_tb_tag . " WHERE  " . $core_tb_tag . "_masterkey ='theme'  ORDER BY " . $core_tb_tag . "_order DESC ";
-                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
-                            while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
-                                $row_groupid = $row_group[0];
-                                $row_groupname = $row_group[1];
-                            ?>
-                                <option value="<?php echo  $row_groupid ?>" <?php if ($inputTag == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo  $row_groupname ?></option>
+                            foreach ($core_arr_theme as $keycore_arr_theme => $valuecore_arr_theme) { ?>
+                                <option value="<?php echo  $keycore_arr_theme ?>" <? if ($inputTag == $keycore_arr_theme) { ?> selected="selected" <?php  }?>><?php echo  $valuecore_arr_theme ?></option>
                             <?php } ?>
                         </select>
                     </td>
