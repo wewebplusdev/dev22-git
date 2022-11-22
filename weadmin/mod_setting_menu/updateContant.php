@@ -24,6 +24,7 @@ if ($_REQUEST['execute'] == "update") {
 	<input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_REQUEST['masterkey'] ?>" />
 	<input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST['menukeyid'] ?>" />
 	<input name="inputSearch" type="hidden" id="inputSearch" value="<?php echo $_REQUEST['inputSearch'] ?>" />
+	<input name="tagEditID" type="hidden" id="tagEditID" value="<?php echo $_REQUEST['tagEditID'] ?>" />
 </form>
 <script language="JavaScript" type="text/javascript">
 	document.myFormAction.submit();

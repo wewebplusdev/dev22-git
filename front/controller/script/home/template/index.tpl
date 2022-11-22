@@ -3,359 +3,47 @@
 
     <div class="top-graphic">
       <div class="default-slider-dots slider">
-
-        <?php for ($i = 1; $i <= 3; $i++) { ?>
-
+      {foreach $callTopGraphic as $keycallTopGraphic => $valuecallTopGraphic}
         <div class="tpg-item">
           <a href="" class="link">
             <figure class="cover">
-              <img src="{$template}/assets/img/static/tpg-01.jpg" alt="top graphic">
+              <img src="{$valuecallTopGraphic['pic']|fileinclude:"real":{$valuecallTopGraphic['masterkey']}:"link"}" alt="{$valuecallTopGraphic.pic}">
             </figure>
             <div class="info">
               <div class="container">
                 <div class="wrapper">
+                  {if $valuecallTopGraphic['subject'] neq ""}
                   <div class="title text-limit -x2">
-                    สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)
+                    {$valuecallTopGraphic['subject']}
                   </div>
+                  {/if}
                   <div class="row align-items-end">
+                    {if $valuecallTopGraphic['title'] neq ""}
                     <div class="col-md">
                       <div class="desc text-limit -x2">
-                        เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542 <br>
-                        จัดตั้งขึ้นตาม พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ
-                        (องค์การมหาชน) พ.ศ. 2546
+                        {$valuecallTopGraphic['title']}
                       </div>
                     </div>
+                    {/if}
+                    {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}
                     <div class="col-md-auto">
-                      <button href="" class="btn btn-primary" title="btn btn-primary">อ่านต่อ</button>
+                      <button {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="btn btn-primary" title="btn btn-primary">{$lang['system']['viewmore']}</button>
                     </div>
+                    {/if}
                   </div>
                 </div>
               </div>
             </div>
           </a>
         </div>
-        <div class="tpg-item">
-          <a href="" class="link">
-            <figure class="cover">
-              <img src="{$template}/assets/img/static/tpg-02.jpg" alt="top graphic">
-            </figure>
-            <div class="info">
-              <div class="container">
-                <div class="wrapper">
-                  <div class="title text-limit -x2">
-                    สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)
-                  </div>
-                  <div class="row align-items-end">
-                    <div class="col-md">
-                      <div class="desc text-limit -x2">
-                        เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542 <br>
-                        จัดตั้งขึ้นตาม พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ
-                        (องค์การมหาชน) พ.ศ. 2546
-                      </div>
-                    </div>
-                    <div class="col-md-auto">
-                      <button type="button" class="btn btn-primary">อ่านต่อ</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <?php } ?>
-
+      {/foreach}
       </div>
     </div>
 
-    <div class="git-conference-block">
-      <div class="container">
-        <div class="h-title text-primary text-uppercase">
-          GIT CONFERENCE
-        </div>
-        <div class="row gutters-lg-40">
-          <div class="col-lg-7 col-md-8">
-            <figure class="cover" style="padding-bottom: 47.5%;">
-              <img src="{$template}/assets/img/static/banner1.jpg" alt="banner">
-            </figure>
-          </div>
-          <div class="col-lg">
-            <div class="row row-1 h-50 align-items-center">
-              <div class="col-lg">
-                <a href="" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
-              </div>
-            </div>
-            <div class="row row-2 h-50 align-items-end">
-              <div class="col-lg">
-                <div class="wrapper text-light">
-                  <div class="title">
-                    The 7th International Gem & Jewelry Conference <br>
-                    (GIT2021) and Corundum Symposium
-                  </div>
-                  <div class="desc">
-                    Keynote Speaker GIT2021 : Dr. Gaetano Cavalieri, <br>
-                    President of The World Jewellery Confederation (CIBJO)
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {foreach $sectionMainpage as $keysectionMainpage => $valuesectionMainpage}
+      {include file={$valuesectionMainpage.file}}
+    {/foreach}
 
-    <div class="git-news-block">
-      <div class="container">
-        <div class="h-title text-primary text-uppercase">GIT News</div>
-        <ul class="default-nav-tab nav nav-pills">
-          <li>
-            <a class="item active" href="#News1" data-toggle="tab">ข่าวสาร/กิจกรรม</a>
-          </li>
-          <li>
-            <a class="item" href="#News2" data-toggle="tab">งานประชุม/สัมมนา</a>
-          </li>
-          <li>
-            <a class="item" href="#News3" data-toggle="tab">การจัดซื้อ/จัดจ้าง</a>
-          </li>
-        </ul>
-      </div>
-      <div class="tab-content clearfix">
-        <div class="tab-pane active" id="News1">
-          <div class="default-slider default-slider-dots slider">
-            <?php for ($i = 1; $i <= 5; $i++) { ?>
-            <div class="item">
-              <a href="" class="link" title="">
-                <div class="wrapper">
-                  <figure class="cover">
-                    <img src="{$template}/assets/img/upload/news-slide-img.png" alt="">
-                  </figure>
-                  <div class="inner">
-                    <div class="title text-limit -x2">
-                      GIT เปิดตัวภาพลักษณ์ใหม่ ชู GIT Standard ยกระดับมาตรฐาน
-                    </div>
-                    <div class="desc text-limit -x2">
-                      GIT เปิดตัวภาพลักษณ์ใหม่ ชู GIT Standard ยกระดับมาตรฐาน ดันอุตสาหกรรมกรรมอัญมณีและเครื่องประดับไทย
-                      แข่งขันเวทีโลกอย่างยั่งยืน
-                    </div>
-                    <div class="date">
-                      <span class="feather-calendar"></span>
-                      16 มิถุนายน 2565
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <?php } ?>
-          </div>
-          <div class="container">
-            <ul class="item-list">
-              <?php for ($i = 1; $i <= 3; $i++) { ?>
-              <li>
-                <a href="" class="link">
-                  <div class="news-block-item">
-                    <div class="row align-items-center">
-                      <div class="col-sm-auto">
-                        <figure class="cover">
-                          <img src="{$template}/assets/img/upload/news-list-img.png" alt="news image">
-                        </figure>
-                      </div>
-                      <div class="col-sm">
-                        <div class="title">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ
-                        </div>
-                        <div class="row">
-                          <div class="col-sm">
-                            <div class="desc">GIT จับมือ Shop Channel สร้างความเชื่อมั่นผู้บริโภคอัญมณีและเครื่องประดับ
-                              หนุนผู้ประกอบการขยายช่องทางการค้าผ่านแพลตฟอร์ม Home Shopping 24 ชั่วโมง</div>
-                          </div>
-                          <div class="col-sm-auto">
-                            <div class="date">
-                              <span class="feather icon-calendar"></span>
-                              <span class="typo-xs text-black">16 มิถุนายน 2565</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <?php } ?>
-            </ul>
-            <div class="load-more-hide text-center">
-              <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane" id="News2">
-          <div class="h-title">News2</div>
-        </div>
-        <div class="tab-pane" id="News3">
-          <div class="h-title">News3</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="git-e-Learning-block">
-      <div class="container -xl">
-        <div class="h-title text-uppercase text-center text-light">
-          GIT e-Learning
-        </div>
-        <div class="default-slider default-slider-dots slider">
-
-          <?php for ($i = 1; $i <= 5; $i++) { ?>
-
-          <div class="item">
-            <a href="" class="link" title="">
-              <figure class="cover">
-                <img src="{$template}/assets/img/static/thumbnail-e-learning.jpg"
-                  alt="e-learning thumbnail">
-              </figure>
-            </a>
-          </div>
-
-          <?php } ?>
-
-        </div>
-        <div class="action">
-          <a href="" class="btn btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="git-training-movement-block">
-      <div class="container">
-        <div class="h-title text-uppercase text-center">GIT TRAINING MOVEMENT</div>
-        <ul class="default-nav-tab nav nav-pills">
-          <li>
-            <a class="item active" href="#TMovement1" data-toggle="tab">หลักสูตรฝึกอบรมระยะยาว</a>
-          </li>
-          <li>
-            <a class="item" href="#TMovement2" data-toggle="tab">หลักสูตรฝึกอบรมระยะสั้น</a>
-          </li>
-          <li>
-            <a class="item" href="#TMovement3" data-toggle="tab">หลักสูตรฝึกอบรม (ออนไลน์)</a>
-          </li>
-        </ul>
-        <div class="tab-content clearfix">
-          <div class="tab-pane active" id="TMovement1">
-            <div class="default-slider default-slider-arrows default-slider-dots slider">
-              <?php for ($i = 1; $i <= 7; $i++) { ?>
-              <div class="item">
-                <a href="" class="link" title="">
-                  <div class="wrapper">
-                    <div class="inner">
-                      <div class="title text-limit -x2">
-                        ขอเชิญเข้าร่วม Workshop "เทคนิคการสร้าง
-                      </div>
-                      <div class="desc text-limit -x2">
-                        ในวันพฤหัสบดี-ศุกร์ที่ 18-19 สิงหาคม 2565 เวลา 09.00 – 16.00 น. (ค่าใช้จ่าย 2,900 บาท/ท่าน)
-                        รับเพียง 18 ท่านเท่านั้น)
-                      </div>
-                      <div class="divider"></div>
-                      <div class="date">
-                        <div class="row align-items-center">
-                          <div class="col">
-                            <span class="feather-calendar"></span>
-                            16 มิถุนายน 2565
-                          </div>
-                          <div class="col-auto">
-                            <span class="icon feather-chevron-right"></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <?php } ?>
-            </div>
-            <div class="load-more-hide text-center">
-              <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
-            </div>
-          </div>
-          <div class="tab-pane" id="TMovement2">
-            <div class="default-slider default-slider-dots slider">
-              <div class="h-title">GIT TRAINING MOVEMENT 2</div>
-            </div>
-          </div>
-          <div class="tab-pane" id="TMovement3">
-            <div class="default-slider default-slider-dots slider">
-              <div class="h-title">GIT TRAINING MOVEMENT 3</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="banner">
-      <div class="container">
-        <div class="banner-I-block">
-          <div class="wrapper">
-            <div class="banner-txt text-center">
-              <div class="h-title text-uppercase fw-normal">
-                GIT <span class="text-secondary">Carat</span> Application
-              </div>
-              <div class="subtitle">Platform ให้คำปรึกษา ทุกเรื่องอัญมณีและเครื่องประดับครั้งแรกบนมือถือวันนี้</div>
-              <div class="desc">ดาวน์โหลดฟรีได้แล้วทั้ง IOS และ Android</div>
-              <div class="action">
-                <div class="row justify-content-center gutters-lg-20 gutters-15">
-                  <div class="col-auto">
-                    <a href="https://apps.apple.com/th/app/carat/id1498901876?itsct=apps_box_badge&amp;itscg=30200"
-                      title="Download on the App Store" target="_blank">
-                      <img src="{$template}/assets/img/icon/appstore.svg"
-                        alt="Download on the App Store">
-                    </a>
-                  </div>
-                  <div class="col-auto">
-                    <a href="https://play.google.com/store/apps/details?id=com.ultimate.carat&hl=th"
-                      title="Get it on Google Play" target="_blank">
-                      <img src="{$template}/assets/img/icon/playstore.svg"
-                        alt="Get it on Google Play">
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="graphic">
-              <img src="{$template}/assets/img/static/graphic-smartphone.png" alt="smartphone">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="banner-III-block">
-      <div class="container">
-        <div class="wrapper">
-          <div class="h-title text-uppercase">
-            GIT’s World Jewelry Design <br>
-            and Faceting Awards
-          </div>
-          <div class="frame-img">
-            <figure class="cover">
-              <img src="{$template}/assets/img/static/flint-stone-towards-sky.png"
-                alt="flint stone towards sky" style="mix-blend-mode: multiply;">
-            </figure>
-          </div>
-          <div class="box bg-primary text-light">
-            <div class="inner">
-              <div class="title">
-                GIT’s World Jewelry Design
-                Awards 2021
-              </div>
-              <div class="subtitle">
-                ภายใต้ธีม "Intergeneration Jewelry : <br>
-                Jewlry for every generation"
-              </div>
-              <div class="desc">
-                สอบถามรายละเอียดเพิ่มเติมที่ : 02 634 4999 <br>
-                ติดตามรายละเอียดการประกวดที่ : www.gitwjda.com
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="git-information-block">
       <div class="container -lg">
         <div class="h-title m-0">GIT Information Center</div>
@@ -529,134 +217,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-
-    <div class="banner">
-      <div class="container">
-        <div class="banner-II-block bg-primary">
-          <figure class="cover">
-            <img src="{$template}/assets/img/background/bg-banner-02.jpg" alt="banner II">
-          </figure>
-          <div class="wrapper">
-            <div class="inner">
-              <div class="h-title typo-xl fw-semi-bold text-light text-uppercase text-center px-3 noselect">
-                GEM AND JEWELRY TOURIST ATTRACTION
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="e-services-block">
-      <div class="container">
-        <div class="h-title text-uppercase text-center text-primary">
-          GIT E-Services
-        </div>
-        <ul class="item-list">
-          <li>
-            <a href="" class="link" title="SAMPLE TRACKING">
-              <figure class="cover">
-                <img src="{$template}/assets/img/static/online-service-01.jpg" alt="diamond">
-              </figure>
-              <div class="inner">
-                <!-- <div class="wrapper"> -->
-                <div class="title text-uppercase text-limit -x2">
-                  SAMPLE <br>
-                  TRACKING
-                </div>
-
-                <div class="subtitle">
-                  Gem & <br>
-                  Precious <br>
-                  Metals <br>
-                  Testing
-                </div>
-                <!-- </div> -->
-              </div>
-              <div class="text-orient text-limit">
-                SAMPLE
-                TRACKING
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="" class="link" title="Report Verification">
-              <figure class="cover">
-                <img src="{$template}/assets/img/static/online-service-02.jpg" alt="diamond">
-              </figure>
-              <div class="inner">
-                <!-- <div class="wrapper"> -->
-                <div class="title text-uppercase text-limit -x2">
-                  Report <br>
-                  Verification
-                </div>
-
-                <div class="subtitle">
-                  The online <br>
-                  report <br>
-                  verification <br>
-                  system
-                </div>
-                <!-- </div> -->
-              </div>
-              <div class="text-orient text-limit">
-                REPORT VERIFICATION
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="" class="link" title="E-Service">
-              <figure class="cover">
-                <img src="{$template}/assets/img/static/online-service-03.jpg" alt="E-Service">
-              </figure>
-              <div class="inner">
-                <!-- <div class="wrapper"> -->
-                <div class="title text-limit -x2">
-                  E-Service
-                </div>
-
-                <div class="subtitle">
-                  GEM & <br>
-                  JEWELRY <br>
-                  E-SERVICE
-                </div>
-                <!-- </div> -->
-              </div>
-              <div class="text-orient text-limit">
-                E-Service
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="" class="link" title="Report Complaints">
-              <figure class="cover">
-                <img src="{$template}/assets/img/static/online-service-04.jpg"
-                  alt="Report Complaints">
-              </figure>
-              <div class="inner">
-                <!-- <div class="wrapper"> -->
-                <div class="title text-uppercase text-limit -x2">
-                  Report <br>
-                  Complaints
-                </div>
-
-                <div class="subtitle">
-                  Suggestions <br>
-                  / Report <br>
-                  Complaints
-                </div>
-                <!-- </div> -->
-              </div>
-              <div class="text-orient text-limit">
-                Suggestions / Report Complaints
-              </div>
-            </a>
-          </li>
-
-        </ul>
       </div>
     </div>
 
