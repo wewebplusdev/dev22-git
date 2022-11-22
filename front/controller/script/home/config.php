@@ -1,22 +1,33 @@
 <?php
+// $mod_array_conf = array(
+//   'theme-3' => array(
+//     'key' => '_t3',
+//     'order' => '_order_theme_3',
+//     'component' => array(
+//       "'ab_nm'",
+//     ),
+//     'sortmnu' => 'sort_t3',
+//   ),
+//   'theme-2' => array(
+//     'key' => '_t2',
+//     'order' => '_order_theme_2',
+//     'sortmnu' => 'sort_t2',
+//   ),
+//   'theme-1' => array(
+//     'key' => '_t1',
+//     'order' => '_order_theme_1',
+//     'sortmnu' => 'sort_t1',
+//   ),
+// );
 $mod_array_conf = array(
   'theme-3' => array(
-    'key' => '_t3',
     'order' => '_order_theme_3',
-    'component' => array(
-      "'ab_nm'",
-    ),
-    'sortmnu' => 'sort_t3',
   ),
   'theme-2' => array(
-    'key' => '_t2',
     'order' => '_order_theme_2',
-    'sortmnu' => 'sort_t2',
   ),
   'theme-1' => array(
-    'key' => '_t1',
     'order' => '_order_theme_1',
-    'sortmnu' => 'sort_t1',
   ),
 );
 

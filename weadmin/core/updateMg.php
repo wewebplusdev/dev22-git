@@ -16,7 +16,6 @@ if ($_REQUEST['execute'] == "update") {
 		$inputModuleName = "Group";
 	}
 
-
 	$update = array();
 	$update[] = $core_tb_menu . "_target  	='" . changeQuot($_REQUEST['inputmenutarget']) . "'";
 	$update[] = $core_tb_menu . "_icon  	='" . changeQuot($_REQUEST['inputIconName']) . "'";

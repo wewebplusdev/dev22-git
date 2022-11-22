@@ -256,42 +256,24 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-                        <span class="formFontSubjectTxt"><?php echo  $langMod["tit:hashtag"] ?></span><br />
-                        <span class="formFontTileTxt"><?php echo  $langMod["tit:hashtagDes"] ?></span>
+                        <span class="formFontSubjectTxt"><?php echo  $langMod["tit:theme"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo  $langMod["tit:themeDe"] ?></span>
                     </td>
                 </tr>
 
                 <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["inp:hashtag"] ?><span class="fontContantAlert"></span></td>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["inp:theme"] ?><span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="formDivView">
                             <?php
-                            $sql_group = "SELECT ";
-                            if ($_REQUEST['inputLt'] == "Thai") {
-                                $sql_group .= "  " . $core_tb_tag . "_id," . $core_tb_tag . "_subject";
-                            } else if ($_REQUEST['inputLt'] == "Eng") {
-                                $sql_group .= "  " . $core_tb_tag . "_id," . $core_tb_tag . "_subjecten";
-                            } else {
-                                $sql_group .= " " . $core_tb_tag . "_id," . $core_tb_tag . "_subjectcn ";
-                            }
-
-                            $sql_group .= "  FROM " . $core_tb_tag . " WHERE  " . $core_tb_tag . "_masterkey='theme' ORDER BY " . $core_tb_tag . "_order DESC ";
-                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
-                            if (!empty($valTid)) {
-                                echo "<ul class='item-list'>";
-                                while ($row_mem = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
-                                    $row_memid = $row_mem[0];
-                                    $row_memname = $row_mem[1];
-                                    foreach ($valTid as $keyvalTag => $valvalTag) {
-                                        if ($valvalTag == $row_memid) {
-                                            // echo "<div class='hashtag' >".$row_memname . "</div>";
-                                            echo "<li class='hashtag'><a class='link'>#" . $row_memname . "</a></li>";
-                                        }
-                                    }
-                                }
-                                echo "</ul>";
-                            } else {
-                                echo "-";
+                            foreach ($core_arr_theme as $keycore_arr_theme => $valuecore_arr_theme) { ?>
+                                <?php foreach ($valTid as $keyvalTag => $valuevalTag) {
+                                                                                if ($valuevalTag == $keycore_arr_theme) {
+                                                                                  echo " - " . $valuecore_arr_theme;
+                                                                                  echo "<br>";
+                                                                                }
+                                                                            } ?>
+                            <?php
                             }
                             ?>
                         </div>
