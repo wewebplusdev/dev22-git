@@ -27,9 +27,13 @@ if ($_REQUEST['inputLt'] == "Thai") {
 $sql .= " , " . $mod_tb_root . "_picshow, " . $mod_tb_root . "_typec , " . $mod_tb_root . "_urlc, " . $mod_tb_root . "_target ";
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn ";
-$sql .= " , " . $mod_tb_root . "_sid  ";
+$sql .= " , " . $mod_tb_root . "_sid, " . $mod_tb_root_group . "_type  ";
 $sql .= " 
-			FROM " . $mod_tb_root . " 
+			FROM " . $mod_tb_root . "
+			LEFT JOIN
+			" . $mod_tb_root_group . "
+			ON
+			" . $mod_tb_root_group . "_id = " . $mod_tb_root . "_gid
 			WHERE " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root . "_id 	='" . $_POST["valEditID"] . "'";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
@@ -70,6 +74,7 @@ $valLang[0] = $Row[22];
 $valLang[1] = $Row[23];
 $valLang[2] = $Row[24];
 $valSid = $Row[25];
+$valGtype = $Row[26];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 
 ?>
@@ -279,6 +284,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 							} else {
 								$sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjectcn ";
 							}
+							$sql_group .= " ," . $mod_tb_root_group . "_type ";
 
 							$sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ORDER BY " . $mod_tb_root_group . "_order DESC ";
 							$query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
@@ -286,7 +292,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 								$row_groupid = $row_group[0];
 								$row_groupname = $row_group[1];
 							?>
-								<option value="<?php echo $row_groupid ?>" <?php if ($valGid == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $row_groupname ?></option>
+								<option value="<?php echo $row_groupid ?>" data-type="<?php echo $row_group[2] ?>" <?php if ($valGid == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $row_groupname ?></option>
 							<?php } ?>
 						</select>
 					</td>
@@ -326,6 +332,39 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 			</table>
 			<br />
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic" <?php if($valGtype != 2){ echo "style='display:none;'"; } ?>>
+				<tr>
+					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+						<span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
+						<span class="formFontTileTxt"><?php echo $langMod["txt:picDe"] ?></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7" align="right" valign="top" height="15"></td>
+				</tr>
+
+				<tr>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["inp:album"] ?></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+						<div class="file-input-wrapper">
+							<button class="btn-file-input"><?php echo $langTxt["us:inputpicselect"] ?></button>
+							<input type="file" name="fileToUpload" id="fileToUpload" onchange="ajaxFileUpload();" />
+						</div>
+
+						<span class="formFontNoteTxt"><?php echo $langMod["inp:notepic"] ?></span>
+						<div class="clearAll"></div>
+						<div id="boxPicNew" class="formFontTileTxt">
+							<?php if (is_file($valPic)) { ?>
+								<img src="<?php echo $valPic ?>" style="float:left;border:#c8c7cc solid 1px;max-width:600px;" />
+								<div style="width:22px; height:22px;float:left;z-index:1; margin-left:-22px;cursor:pointer;" onclick="delPicUpload('deletePic.php')" title="Delete file"><img src="../img/btn/delete.png" width="22" height="22" border="0" /></div>
+								<input type="hidden" name="picname" id="picname" value="<?php echo $valPicName ?>" />
+							<?php } ?>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br class="boxPic" <?php if($valGtype != 2){ echo "style='display:none;'"; } ?>/>
+
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxDetail" <?php if ($valTypeC != 1) {
 																																echo 'style="display:none;"';
 																															} ?>>

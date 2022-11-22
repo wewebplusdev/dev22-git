@@ -11,6 +11,13 @@ $smarty->assign("callBanner", $callBanner);
 $callTopGraphic = $homePage->callTopGraphic($config['tgp']['main']['masterkey']);
 $smarty->assign("callTopGraphic", $callTopGraphic);
 
+if ($_GET['tmp'] >=1 ) {
+    $themeWebsite['class'] = 'theme-1';
+}else if($_GET['tmp'] == 2 ){
+    $themeWebsite['class'] = 'theme-2';
+}else{
+    $themeWebsite['class'] = 'theme-3';
+}
 switch ($themeWebsite['class']) {
     case 'theme-3':
         // call section sorting
@@ -19,6 +26,7 @@ switch ($themeWebsite['class']) {
         foreach ($callSection as $keycallSection => $valuecallSection) {
             $sectionMainpage[$keycallSection]['file'] = $arrThemeFile['theme-3'][$valuecallSection['masterkey']];
         }
+        // print_pre($sectionMainpage);
         $smarty->assign("sectionMainpage", $sectionMainpage);
         
         // call top graphic
@@ -45,6 +53,8 @@ switch ($themeWebsite['class']) {
         $callKmSection = $homePage->callTopGraphic($config['km_t3']['main']['masterkey']);
         $smarty->assign("callKmSection", $callKmSection);
 
+        // $smarty->assign("headerBody", $incfile['header3']);
+
         $settingPage = array(
             "page" => $menuActive,
             "template" => "index-3.tpl",
@@ -53,6 +63,7 @@ switch ($themeWebsite['class']) {
         break;
     
     case 'theme-2':
+        // $smarty->assign("headerBody", $incfile['header2']);
         $settingPage = array(
             "page" => $menuActive,
             "template" => "index-2.tpl",
@@ -84,3 +95,4 @@ $smarty->assign("fileInclude", $settingPage);
 $smarty->assign("MenuID", $MenuID);
 $smarty->assign("settingModulus", $settingModulus);
 $smarty->assign("showslick", $showslick);
+$smarty->assign("themeWebsite", $themeWebsite);

@@ -54,6 +54,7 @@ $themeWebsite = $callSettingMainpage->fields['theme'] ? $callSettingMainpage->fi
 $themeWebsite = themeWebsite($themeWebsite);
 $themeWebsite['color'] = $callSettingMainpage->fields['color'] ? $callSettingMainpage->fields['color'] : '#FFFFFF';
 $smarty->assign("themeWebsite", $themeWebsite);
+// print_pre($themeWebsite);
 /* End Theme */
 
 /* Start chat FB */
@@ -83,6 +84,8 @@ if ($arr_ChatFB['status'] != 'Disable') {
     }
 }
 /* Start chat FB */
+
+$smarty->assign("langweb", $url->pagelang[3]);
 
 Seo();
 function Seo($title = '', $desc = '', $keyword = '', $pic = '')

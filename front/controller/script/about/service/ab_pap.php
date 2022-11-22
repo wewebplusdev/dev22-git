@@ -75,31 +75,43 @@ switch ($PageAction) {
     $smarty->assign("order", $order);
 
     ## list data
-    if ($callGroup->fields['types'] == 1) { ## for group
+    if ($callGroup->fields['type'] == 1) {
+        if ($callGroup->fields['types'] == 1) { ## for group
+            $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+            $smarty->assign("callCMS", $callCMS);
+            $MaxRecord = $callCMS->_maxRecordCount;
+            $settingPage = array(
+                "page" => $menuActive,
+                "template" => "download-list-group.tpl",
+                "display" => "page",
+                "control" => "component",
+            );
+        }else{ ## for subgroup
+            $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+            $MaxRecord = $callSubGroup->_maxRecordCount;
+            $arrListData = array();
+            foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
+                $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']), $valuecallSubGroup['id']);
+                $arrListData[$keycallSubGroup]['subgroup'] = $valuecallSubGroup;
+                foreach ($callCMS as $keycallCMS => $valuecallCMS) {
+                    $arrListData[$keycallSubGroup]['list'][] = $valuecallCMS;
+                }
+            }
+            $smarty->assign("arrListData", $arrListData);
+            $settingPage = array(
+                "page" => $menuActive,
+                "template" => "download-list-subgroup.tpl",
+                "display" => "page",
+                "control" => "component",
+            );
+        }
+    }else{
         $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
         $smarty->assign("callCMS", $callCMS);
         $MaxRecord = $callCMS->_maxRecordCount;
         $settingPage = array(
             "page" => $menuActive,
-            "template" => "download-list-group.tpl",
-            "display" => "page",
-            "control" => "component",
-        );
-    }else{ ## for subgroup
-        $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
-        $MaxRecord = $callSubGroup->_maxRecordCount;
-        $arrListData = array();
-        foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
-            $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']), $valuecallSubGroup['id']);
-            $arrListData[$keycallSubGroup]['subgroup'] = $valuecallSubGroup;
-            foreach ($callCMS as $keycallCMS => $valuecallCMS) {
-                $arrListData[$keycallSubGroup]['list'][] = $valuecallCMS;
-            }
-        }
-        $smarty->assign("arrListData", $arrListData);
-        $settingPage = array(
-            "page" => $menuActive,
-            "template" => "download-list-subgroup.tpl",
+            "template" => "download-list-group-theme-2.tpl",
             "display" => "page",
             "control" => "component",
         );

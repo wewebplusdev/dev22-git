@@ -42,6 +42,7 @@ include("../lib/checkMember.php");
 		$insert[$core_tb_menu."_parentid"] = "'".$valMyParentID."'";
 		$insert[$core_tb_menu."_language"] = "'".$core_session_language."'";
 		$insert[$core_tb_menu."_credate"] = "".wewebNow($coreLanguageSQL)."";
+		$insert[$core_tb_menu."_tid"] = "'".serialize(array_filter($_REQUEST['inputTag']))."'";
 
 		  $sql="INSERT INTO ".$core_tb_menu."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);		

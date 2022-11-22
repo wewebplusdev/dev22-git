@@ -37,6 +37,14 @@ $mod_url_search_th = "th/|page|";
 $mod_url_search_en = "en/|page|";
 $mod_url_search_cn = "cn/|page|";
 
+## Mod Link ###################################
+$urlSegment = array(
+    'ab_odw' => 'about',
+    'ab_pap' => 'about',
+    'ab_pcm' => 'about',
+    'ab_hrm' => 'about',
+    'rs_ri' => 'research',
+);
 
 ## Size Photo ###################################
 // $sizeWidthPic="380";

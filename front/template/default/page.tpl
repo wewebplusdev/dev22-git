@@ -12,7 +12,6 @@
         {include file="{$fileInclude|templateInclude}" title=pageContent}
         {include file="{$themeWebsite.footer}" title=title}
         
-        <!-- Chat Facebook Plugin -->
         {$arr_ChatFB|htmlspecialchars_decode}
     </div>
     {include file="{$incfile.pdpa}" title=title}

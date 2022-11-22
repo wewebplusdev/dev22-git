@@ -108,10 +108,10 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
                 <tr>
 
-                    <td style="padding-right:10px;" width="42%">
+                    <td style="padding-right:10px;" width="50%">
                         <input name="sdateInputH" type="text" id="sdateInputH" placeholder="<?php echo  $langMod["tit:sSedate"] ?>" value="<?php echo  trim($_REQUEST['sdateInputSe']) ?>" class="formInputSearchI sdateInputSe" style="width:98%;" />
                     </td>
-                    <td width="42%" id="boxSelectTest">
+                    <td width="50%" id="boxSelectTest">
 
                         <input name="edateInputH" type="text" id="edateInputH" placeholder="<?php echo  $langMod["tit:eSedate"] ?>" value="<?php echo  trim($_REQUEST['edateInputSe']) ?>" class="formInputSearchI edateInputSe" />
                     </td>
@@ -121,8 +121,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <td colspan="3" style="padding-right:10px;" height="10"></td>
                 </tr>
                 <tr>
-                    <td style="padding-right:10px;" width="42%">
-                        <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchL">
+                    <td style="padding-right:10px;" width="50%">
+                        <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
                             <option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
                             <?php
                             $sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ORDER BY " . $mod_tb_root_group . "_order DESC ";
@@ -448,7 +448,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                                                                             }
                                                                          ">
                                                     <img src="../img/btn/delete.png" /><br />
-                                                    <span class="fontContantTbManage"><?php echo  $langTxt["btn:del"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?><br />
+                                                    <span class="fontContantTbManage"><?php echo  $langTxt["btn:del"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?><br />
                                                         (<?php echo  $langTxt["lg:all"] ?>)<?php } ?></span>
                                                 </div>
                                             </td>
@@ -464,12 +464,12 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 } else {
                     ?>
                     <tr>
-                        <td colspan="6" align="center" valign="middle" class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;"><?php echo  $langTxt["mg:nodate"] ?></td>
+                        <td colspan="8" align="center" valign="middle" class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;"><?php echo  $langTxt["mg:nodate"] ?></td>
                     </tr>
                 <?php } ?>
 
                 <tr>
-                    <td colspan="6" align="center" valign="middle" class="divRightContantTbRL">
+                    <td colspan="8" align="center" valign="middle" class="divRightContantTbRL">
                         <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
                             <tr>
                                 <td class="divRightNavTb" align="left"><span class="fontContantTbNavPage"><?php echo  $langTxt["pr:All"] ?> <b><?php echo  number_format($count_totalrecord) ?></b> <?php echo  $langTxt["pr:record"] ?></span></td>

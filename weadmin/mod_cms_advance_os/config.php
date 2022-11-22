@@ -35,6 +35,11 @@ $mod_url_search_th = "th/|page|/detail";
 $mod_url_search_en = "en/|page|/detail";
 $mod_url_search_cn = "cn/|page|/detail";
 
+## Mod Link ###################################
+$urlSegment = array(
+    'is_gal' => 'information-service',
+    'ptg' => 'photo',
+);
 
 ## Size Photo ###################################
 // $sizeWidthPic="380";

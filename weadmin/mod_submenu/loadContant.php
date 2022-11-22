@@ -219,8 +219,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
       <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
         <tr>
-          <td style="padding-right:10px;" width="42%">
-            <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchL">
+          <td style="padding-right:10px;" width="50%">
+            <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
               <option value="0"><?php echo  $langMod["tit:selectg"] ?> </option>
               <?php
               $sql_group = "SELECT " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subject," . $mod_tb_root_subgroup . "_subjecten  FROM " . $mod_tb_root_subgroup . " WHERE  " . $mod_tb_root_subgroup . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ORDER BY " . $mod_tb_root_subgroup . "_order DESC ";
@@ -239,7 +239,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
               <?php } ?>
             </select>
           </td>
-          <td id="boxSelectTest">
+          <td id="boxSelectTest" width="50%">
             <input name="inputSearch" type="text" id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo $langTxt["sch:search"] ?>" />
           </td>
           <td class="bottonSearchStyle" align="right" style="padding-right:10px;" width="6%"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>

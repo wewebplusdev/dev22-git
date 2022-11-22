@@ -6,6 +6,23 @@ include("../lib/function.php");
 include("../lib/checkMember.php");
 include("../core/incLang.php");
 include("config.php");
+
+if($_REQUEST['sdateInput']=="" && $_REQUEST['sdateInputSe']==""){
+    $_REQUEST['sdateInput']=date('01')."-".date('m')."-".(date('Y')+543);
+}elseif ($_REQUEST['sdateInput']!="" && $_REQUEST['sdateInputSe']=="") {
+    # code... noting doing
+}else{
+    $_REQUEST['sdateInput'] = $_REQUEST['sdateInputSe'];
+}
+
+if($_REQUEST['edateInput']=="" && $_REQUEST['edateInputSe']==""){
+    $_REQUEST['edateInput']=date('d')."-".date('m')."-".(date('Y')+543);
+}elseif ($_REQUEST['edateInput']!="" && $_REQUEST['edateInputSe']=="") {
+    # code... noting doing
+}else{
+    $_REQUEST['edateInput'] = $_REQUEST['edateInputSe'];
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -71,8 +88,8 @@ include("config.php");
                 <input name="valEditID" type="hidden" id="valEditID" value="" />
                 <input name="inputLt" type="hidden" id="inputLt" value="" />
                 <input name="inputTh" type="hidden" id="inputTh" value="<?php echo $_REQUEST['inputTh']?>" />
-                <input name="sdateInput" type="hidden" id="sdateInput" value="<?php echo $_REQUEST['sdateInputSe']?>" />
-                <input name="edateInput" type="hidden" id="edateInput" value="<?php echo $_REQUEST['edateInputSe']?>" />
+                <input name="sdateInput" type="hidden" id="sdateInput" value="<?php echo $_REQUEST['sdateInput']?>" />
+                <input name="edateInput" type="hidden" id="edateInput" value="<?php echo $_REQUEST['edateInput']?>" />
                 </form>
                 	<div class="mRightBackOffice" id="boxContantLoad">
                     			<?php include("../core/incWaitting.php")?>

@@ -223,6 +223,7 @@ class searchPage{
 		$insert[$config['seatxts']['db']['main']."_session"] = "'".$_COOKIE['PHPSESSID']."'";
 		$insert[$config['seatxts']['db']['main']."_credate"] = "NOW()";
 		$sql_sch="INSERT INTO ".$config['seatxts']['db']['main']."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
+    // print_pre($sql_sch);
     $result = $db->execute($sql_sch);
     return $result;
   }

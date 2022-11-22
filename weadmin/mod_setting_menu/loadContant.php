@@ -59,21 +59,35 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
         $module_adesc = $_REQUEST['module_adesc'];
     }
 
-    if ($_REQUEST['module_orderby'] == "") {
-        $module_orderby = $mod_tb_root . $mod_array_conf[$_REQUEST['masterkey']]['order'];
-    } else {
-        $module_orderby = $_REQUEST['module_orderby'];
-    }
+    // if ($_REQUEST['module_orderby'] == "") {
+    //     $module_orderby = $mod_tb_root . "_order";
+    // } else {
+    //     $module_orderby = $mod_tb_root . "_order";
+    // }
 
     if ($_REQUEST['inputSearch'] != "") {
         $inputSearch = trim($_REQUEST['inputSearch']);
     } else {
         $inputSearch = $_REQUEST['inputSearch'];
     }
+    if ($_REQUEST['inputTag'] != "") {
+        $inputTag = trim($_REQUEST['inputTag']);
+        if ($_REQUEST["inputTag"] == '2') {
+            $module_orderby = $mod_tb_root . "_order_theme_1";
+        } else if ($_REQUEST["inputTag"] == '3') {
+            $module_orderby = $mod_tb_root . "_order_theme_2";
+        } else if ($_REQUEST["inputTag"] == '4') {
+            $module_orderby = $mod_tb_root . "_order_theme_3";
+        }
+    } else {
+        $inputTag = $_REQUEST['inputTag'];
+        $module_orderby = $mod_tb_root . "_order";
+    }
+
+    //REGEXP '.*;s:[0-9]+:\"".$value."\".*'
 
     // Search Value SQL #########################
     $sqlSearch = "";
-
     if ($inputSearch <> "") {
         $sqlSearch = $sqlSearch . "  AND  (
 		" . $mod_tb_root . "_namethai LIKE '%$inputSearch%' OR
@@ -81,6 +95,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 		" . $mod_tb_root . "_namechi LIKE '%$inputSearch%' 
         ) ";
     }
+
+    if ($inputTag <> "") {
+        $sqlSearch = $sqlSearch . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $inputTag . "\".*')";
+    }
+
     ?>
     <form action="?" method="post" name="myForm" id="myForm">
         <input name="masterkey" type="hidden" id="masterkey" value="<?php echo  $_REQUEST['masterkey'] ?>" />
@@ -106,7 +125,28 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
                 <tr>
-                <td id="boxSelectTest" class="textSearch2">
+                    <td style="padding-right:10px;" width="50%">
+                        <select name="inputTag" id="inputTag" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
+                            <option value=""><?php echo  $langMod["tit:selectghasg"] ?></option>
+                            <?php
+                            $sql_group = "SELECT ";
+                            if ($_REQUEST['inputLt'] == "Thai") {
+                                $sql_group .= "  " . $core_tb_tag . "_id," . $core_tb_tag . "_subject";
+                            } else {
+                                $sql_group .= " " . $core_tb_tag . "_id," . $core_tb_tag . "_subjecten ";
+                            }
+
+                            $sql_group .= "  FROM " . $core_tb_tag . " WHERE  " . $core_tb_tag . "_masterkey ='theme'  ORDER BY " . $core_tb_tag . "_order DESC ";
+                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                            while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                                $row_groupid = $row_group[0];
+                                $row_groupname = $row_group[1];
+                            ?>
+                                <option value="<?php echo  $row_groupid ?>" <?php if ($inputTag == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo  $row_groupname ?></option>
+                            <?php } ?>
+                        </select>
+                    </td>
+                    <td id="boxSelectTest" class="textSearch2">
                         <input name="inputSearch" type="text" id="inputSearch" value="<?php echo  trim($_REQUEST['inputSearch']) ?>" class="formInputSearchStyle" placeholder="<?php echo  $langTxt["sch:search"] ?>" />
                     </td>
                     <td class="bottonSearchStyle" align="right"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>
@@ -135,8 +175,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                                         alert('<?php echo  $langTxt["mg:selpermis"] ?>');
                                                     }
                                                   "></div> -->
-
-                                        <div class="btnSort" title="<?php echo  $langTxt["btn:sortting"] ?>" onclick="sortContactNew('sortContant.php');"></div>
+                                        <div class="btnSort" id="btnSort" name="btnSort" title="<?php echo $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  $inputTag ?>;sortContactNew('sortContant.php');"></div>
                                     <?php } ?>
                                 </td>
                             </tr>
@@ -152,12 +191,12 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                         <input name="CheckBoxAll" type="checkbox" id="CheckBoxAll" value="Yes" onClick="Paging_CheckAll(this, 'CheckBoxID', document.myForm.TotalCheckBoxID.value)" class="formCheckboxHead" />
                     </td> -->
 
-                    <td align="left" width="22%"  valign="middle" class="divRightTitleTb divRightTitleTbLeft"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] > 1) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span></td>
+                    <td align="left" width="22%" valign="middle" class="divRightTitleTb divRightTitleTbLeft"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] > 1) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span></td>
                     <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?>
-                    <td align="left" width="22%" valign="middle" class="divRightTitleTb divRightTitleTbLeft"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?>(<?php echo $langTxt["lg:eng"] ?>)<?php } ?></span></td>
+                        <td align="left" width="22%" valign="middle" class="divRightTitleTb divRightTitleTbLeft"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?>(<?php echo $langTxt["lg:eng"] ?>)<?php } ?></span></td>
                     <?php } ?>
                     <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?>
-                    <td align="left" width="22%" valign="middle" class="divRightTitleTb divRightTitleTbLeft"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?>(<?php echo $langTxt["lg:chi"] ?>)<?php } ?></span></td>
+                        <td align="left" width="22%" valign="middle" class="divRightTitleTb divRightTitleTbLeft"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] >= 2) { ?>(<?php echo $langTxt["lg:chi"] ?>)<?php } ?></span></td>
                     <?php } ?>
                     <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:status"] ?></span></td>
                     <td width="9%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["us:credate"] ?></span></td>
@@ -170,25 +209,25 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                 " . $mod_tb_root . "_credate,
                 " . $mod_tb_root . "_nameeng,
                 " . $mod_tb_root . "_namechi,
-                " . $mod_tb_root . "_status_theme
+                " . $mod_tb_root . "_status_theme,
+                " . $mod_tb_root . "_tid
                 ";
 
 
-                // SQL SELECT #########################
+                // SQL SELECT #########################  //REGEXP '.*;s:[0-9]+:\"".$value."\".*'
                 $sql = "SELECT " . $sqlSelect . "    FROM " . $mod_tb_root;
                 $sql = $sql . "  WHERE 1=1 ";
-                $sql = $sql . "  AND " . $mod_tb_root . "_masterkey NOT LIKE '" . $_REQUEST['masterkey'] . "' ";
+                // $sql = $sql . "  AND " . $mod_tb_root . "_masterkey NOT LIKE '" . $_REQUEST['masterkey'] . "' ";
 
-                $sql = $sql . "  AND (" . $mod_tb_root . "_masterkey LIKE '%" . $mod_array_conf[$_REQUEST['masterkey']]['key'] . "' ";
+                // $sql = $sql . "  AND (" . $mod_tb_root . "_masterkey LIKE '%" . $mod_array_conf[$_REQUEST['masterkey']]['key'] . "' ";
 
-                if (count($mod_array_conf[$_REQUEST['masterkey']]['component']) > 0) {
-                    $sql = $sql . "  OR " . $mod_tb_root . "_masterkey IN (" . implode(",", array_values($mod_array_conf[$_REQUEST['masterkey']]['component'])) . ") ";
-                }
+                $sql = $sql . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"2\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"3\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"4\".*')";
 
-                $sql = $sql . " ) ";
+
+                // $sql = $sql . " ) ";
 
                 $sql = $sql . $sqlSearch;
-
+                // print_pre($sql);
                 $query = wewebQueryDB($coreLanguageSQL, $sql);
                 $count_totalrecord = wewebNumRowsDB($coreLanguageSQL, $query);
 
@@ -215,10 +254,10 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                 } else {
                     $sql .= " ORDER BY $module_orderby $module_adesc LIMIT $recordstart , $module_pagesize ";
                 }
-                // print_pre($sql);
 
                 $query = wewebQueryDB($coreLanguageSQL, $sql);
                 $count_record = wewebNumRowsDB($coreLanguageSQL, $query);
+
                 $index = 1;
                 $valDivTr = "divSubOverTb";
                 if ($count_record > 0) {
@@ -238,6 +277,8 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
                         $valNameEng = rechangeQuot($row[3]);
                         $valNameChi = rechangeQuot($row[4]);
+                        $valTag = unserialize($row['sy_mnu_tid']);
+                        // print_pre($valTag);
 
                         if ($valStatus == "Enable") {
                             $valStatusClass = "fontContantTbEnable";
@@ -269,30 +310,30 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                 </table>
                             </td>
                             <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                            <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                    <tr>
-                                        <td align="left"><a href="javascript:void(0)" onclick="
+                                <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="left"><a href="javascript:void(0)" onclick="
                                                     document.myFormHome.inputLt.value = 'Eng';
                                                     document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                     viewContactNew('viewContant.php');"><?php echo  $valNameEng ?> </a>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
                             <?php } ?>
                             <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                            <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                    <tr>
-                                        <td align="left"><a href="javascript:void(0)" onclick="
+                                <td class="divRightContantOverTb divRightTitleTbLeft2" valign="top" align="left">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="left"><a href="javascript:void(0)" onclick="
                                                     document.myFormHome.inputLt.value = 'Chi';
                                                     document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                     viewContactNew('viewContant.php');"><?php echo  $valNameChi ?> </a>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
                             <?php } ?>
                             <td class="divRightContantOverTb" valign="top" align="center">
                                 <?php if ($valPermissionContent == "RW") { ?>
@@ -320,7 +361,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                 <?php if ($valPermission == "RW") { ?>
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                            <td valign="top" align="center" width="30">
+                                            <!-- <td valign="top" align="center" width="30">
 
                                                 <div class="divRightManage" title="<?php echo  $langTxt["btn:top"] ?>" onclick="
                                                             document.myFormHome.inputLt.value = 'Thai';
@@ -329,7 +370,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                                     <img src="../img/btn/topbtn.png" /><br />
                                                     <span class="fontContantTbManage"><?php echo  $langTxt["btn:top"] ?><br>(<?php echo  $langTxt["lg:all"] ?>)</span>
                                                 </div>
-                                            </td>
+                                            </td> -->
 
                                             <td valign="top" align="center" width="30">
                                                 <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
@@ -338,7 +379,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                                             editContactNew('editContant.php');">
                                                     <img src="../img/btn/edit.png" /><br />
                                                     <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?><br>
-                                                    (<?php echo  $langTxt["lg:thai"] ?>)
+                                                        (<?php echo  $langTxt["lg:thai"] ?>)
                                                     </span>
                                                 </div>
                                             </td>
@@ -386,8 +427,8 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                 <?php } ?>
                             </td>
                         </tr>
-
                     <?php
+
                         $index++;
                     }
                 } else {
@@ -502,7 +543,16 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
     </form>
     <?php include("../lib/disconnect.php"); ?>
+    <script>
+        $(document).ready(function() {
 
+                if ($('#inputTag').val() === "") {
+                    $('#btnSort').hide();
+                } else {
+                    $('#btnSort').show();
+                }
+        });
+    </script>
 </body>
 
 </html>

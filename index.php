@@ -1,6 +1,6 @@
 <?php
 
-$path_root = "/dev22-git"; #ถ้า root อยู่ public
+$path_root = ""; #ถ้า root อยู่ public
 define("_http", "http");
 
 // if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {

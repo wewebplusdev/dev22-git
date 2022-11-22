@@ -33,6 +33,10 @@ $mod_url_search_th = "th/|page|/detail";
 $mod_url_search_en = "en/|page|/detail";
 $mod_url_search_cn = "cn/|page|/detail";
 
+## Mod Link ###################################
+$urlSegment = array(
+    'vdo' => 'video',
+);
 
 ## Size Photo ###################################
 // $sizeWidthPic="380";

@@ -15,8 +15,9 @@ $callPositionMem  = $aboutPage->callPositionMem($MenuID, 0, $arrMenuActive->fiel
 $arrSubGroup = array();
 foreach ($callPositionMem as $keycallPositionMem => $valuecallPositionMem) {
     $arrSubGroup[] = "'".$valuecallPositionMem['gid']."'";
+    // $arrSubGroup[] = $valuecallPositionMem['gid'];
 }
-// print_pre($arrMenuActive->fields['id']);
+// print_pre($arrSubGroup);
 
 if ($callPositionMem->_numOfRows < 1) {
     header('location:'.$linklang.'/404');
@@ -25,7 +26,7 @@ if ($callPositionMem->_numOfRows < 1) {
 
 ## create array of member
 $sid = implode(",", $arrSubGroup);
-$callMem = $aboutPage->callMem($MenuID, $sid);
+$callMem = $aboutPage->callMem($MenuID, $sid, $arrMenuActive->fields['id']);
 $menuname = $callMem->fields['menuname'];
 $arrMem = array();
 foreach ($callMem as $keycallMem => $valuecallMem) {
@@ -33,7 +34,7 @@ foreach ($callMem as $keycallMem => $valuecallMem) {
     $arrMem[$valuecallMem['posi_gid']]['list'][] = $valuecallMem;
 }
 $smarty->assign("arrMem", $arrMem);
-// print_pre($arrMem);
+// print_pre($callMem);
 
 ## breadcrumb
 $breadcrumb = explode("-", $menuname);

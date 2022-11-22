@@ -146,7 +146,7 @@
 						</div>
 						<div class="col-auto">
 							<div class="search">
-								<a href="javascript:void(0)" class="search-toggle" title="search">
+								<a href="javascript:void(0)" class="search-toggle" title="{$lang['system']['search']}">
 									<span class="feather icon-search"></span>
 								</a>
                         <form action="{$ul}/search" method="get" class="form">
@@ -187,7 +187,7 @@
 										</li>
 										{else}
 											<li class="{if $segment eq $menuSegment[0]}active{/if}">
-												<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']}"{if $valuearrSitemap['group']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" title="{$valuearrSitemap['group']['subject']}">
+												<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']}"{if $valuearrSitemap['group']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" data-link="{$keyarrSitemap}-menu" title="{$valuearrSitemap['group']['subject']}">
 													{$valuearrSitemap['group']['subject']}
 												</a>
 											</li>

@@ -40,5 +40,9 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["tit:inpName"] = "ชื่อ".getNameMenu($_REQUEST["menukeyid"]);
 		$langTxt["mg:statusshow"] = "Show";
 		$langTxt["mg:titleDe"] = "โปรดป้อนชื่อเมนูไทยและไอคอน เพื่อใช้ในการแสดงผลเมนูในการจัดการเว็บไซต์ของคุณ";
+		$langMod["tit:selectghasg"] ="เลือกแท็กเชื่อมโยงธีม";
+		$langMod["txt:t1"] ="theme 1";
+		$langMod["txt:t2"] ="theme 2";
+		$langMod["txt:t3"] ="theme 3";
 }
 ?>

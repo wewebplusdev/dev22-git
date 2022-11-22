@@ -16,7 +16,7 @@
                      {$settingWeb['subject']}
                   </h2>
                   <p class="desc">
-                     {$address = "address{$langon}"}
+                     {$address = "address{$langweb}"}
                      {$settingWeb['contact'][$address]}
                   </p>
                   <div class="contact">

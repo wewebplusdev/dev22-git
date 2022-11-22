@@ -188,6 +188,7 @@ if ($_REQUEST['execute'] == "insert") {
 
 	$valUrlSearchTH = $mod_url_search_th . "/" . $txt_value_to . "/";
 	$valUrlSearchEN = $mod_url_search_en . "/" . $txt_value_to . "/";
+	$valUrlSearchCN = $mod_url_search_cn . "/" . $txt_value_to . "/";
 
 
 	$insertSch = array();
@@ -199,15 +200,12 @@ if ($_REQUEST['execute'] == "insert") {
 	$insertSch[$core_tb_search . "_keyword"] =  "'" . addslashes($_POST["inputSubject"]) . " " . htmlspecialchars($_POST['inputHtml']) . "'";
 	$insertSch[$core_tb_search . "_url"] = "'" . $valUrlSearchTH . "'";
 	$insertSch[$core_tb_search . "_urlen"] = "'" . $valUrlSearchEN . "'";
+	$insertSch[$core_tb_search . "_urlcn"] = "'" . $valUrlSearchCN . "'";
 	$insertSch[$core_tb_search . "_edate"] = "'" . DateFormatInsert($_POST["edateInput"]) . "'";
 	$insertSch[$core_tb_search . "_sdate"] = "'" . DateFormatInsert($_POST["sdateInput"]) . "'";
 	$insertSch[$core_tb_search . "_status"] = "'Disable'";
 	$insertSch[$core_tb_search . "_tid"] = "'" . serialize(array_filter($_REQUEST['inputTag'])) . "'"; // remove array at values empty before use fnc serialize
-	if ($_REQUEST['cdateInput'] != "") {
-		$insertSch[$core_tb_search . "_credate"] = "'" . DateFormatInsert($_REQUEST['cdateInput']) . "'";
-	} else {
-		$insertSch[$core_tb_search . "_credate"] = "" . wewebNow($coreLanguageSQL) . "";
-	}
+
 	$sqlSch = "INSERT " . $core_tb_search . " (" . implode(",", array_keys($insertSch)) . ") VALUES (" . implode(",", array_values($insertSch)) . ")";
 	$querySch = wewebQueryDB($coreLanguageSQL, $sqlSch);
 }

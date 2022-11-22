@@ -109,7 +109,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
       <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
 
         <tr>
-          <td style="padding-right:10px;" width="42%">
+          <td style="padding-right:10px;" width="50%">
             <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchL">
               <option value="0"><?php echo  $langMod["tit:selectg"] ?> </option>
               <?php
@@ -129,7 +129,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
               <?php } ?>
             </select>
           </td>
-          <td id="boxSelectTest" width="42%">
+          <td id="boxSelectTest" width="50%">
             <input name="inputSearch" type="text" id="inputSearch" value="<?php echo  trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo  $langTxt["sch:search"] ?>" />
           </td>
           <td style="padding-right:10px;" align="right" style="padding-right:10px;" width="6%"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>

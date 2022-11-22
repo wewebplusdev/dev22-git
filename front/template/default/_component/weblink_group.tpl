@@ -46,39 +46,31 @@
             </div>
           {/foreach}
         {/if}
-        </div>
+    </div>
+</div>
 
+
+<div class="default-page training-work">
+    <div class="container">
         <div class="h-title">{$settingModulus.namepage}</div>
         {foreach $callCMS_arr as $keycallCMS_arr => $valuecallCMS_arr}
           <div class="sponsor-block">
-              <div class="title">{$valuecallCMS_arr['group']['subject']}</div>
-              {if count($valuecallCMS_arr['list'] > 0)}
-                {$counter = 0}
+            <div class="title">{$valuecallCMS_arr['group']['subject']}</div>
+            {if count($valuecallCMS_arr['list'] > 0)}
+              <ul class="item-list">
                 {foreach $valuecallCMS_arr['list'] as $keySub => $valueSub}
-                  {if $counter eq 0}
-                    <div class="row justify-content-md-start justify-content-center">
-                      <div class="col">
-                  {else}
-                      <div class="col-md col-auto">
-                  {/if}
-                        <a {if $valueSub.url neq "#" && $valueSub.url neq ""}href="{$valueSub.url}"{else}href="javascript:void(0);"{/if} {if $valueSub.target eq 2}target="_blank"{/if} class="link">
-                          <img src="{$valueSub['pic']|fileinclude:"real":{$valueSub['masterkey']}:"link"}" alt="{$valueSub.subject}" >
-                        </a>
-                      </div>
-                  {if $counter eq 4}
-                    </div>
-                    {$counter = 0}
-                  {else}
-                    {$counter = $counter+1}
-                  {/if}
+                  <li>
+                      <a {if $valueSub.url neq "#" && $valueSub.url neq ""}href="{$valueSub.url}"{else}href="javascript:void(0);"{/if} {if $valueSub.target eq 2}target="_blank"{/if} class="link">
+                          <figure class="cover">
+                              <img src="{$valueSub['pic']|fileinclude:"real":{$valueSub['masterkey']}:"link"}" alt="{$valueSub.subject}">
+                          </figure>
+                      </a>
+                  </li>
                 {/foreach}
-              {/if}
+              </ul>
+            {/if}
           </div>
         {/foreach}
-
-        {if $pagination['total'] gte 1 && $pagination['totalpage'] gte 2}
-          {include file="{$incfile.pagination}"}
-        {/if}
     </div>
 </div>
 

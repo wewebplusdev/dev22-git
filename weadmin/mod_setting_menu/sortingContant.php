@@ -7,13 +7,15 @@ include("../lib/checkMember.php");
 include("config.php");
 
 $valSortArray=explode("&listItem[]=","&".$_POST['inputSort']);
+$order = $_REQUEST['orderTheme'];
+print_pre($order);
  $valSortCount= count($valSortArray);
  
 	for($i=0;$i<$valSortCount;$i++){
 		$valSort =$valSortArray[$i];
 		$valOrder = $valSortCount-$i;
 		if($valSort>=1){
-			 $sql = "UPDATE ".$mod_tb_root." SET ".$mod_tb_root."".$mod_array_conf[$_REQUEST['masterkey']]['order']." = $valOrder WHERE ".$mod_tb_root."_id = $valSort";
+			 $sql = "UPDATE ".$mod_tb_root." SET ".$mod_tb_root."".$_REQUEST['orderTheme']." = $valOrder WHERE ".$mod_tb_root."_id = $valSort";
 			$query=wewebQueryDB($coreLanguageSQL,$sql);
 		}
 			

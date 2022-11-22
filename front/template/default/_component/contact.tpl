@@ -39,7 +39,7 @@
             {$lang['contact']['working']} : {$lang['contact']['timmer']}
           </p>
           <div class="report-link">
-            <a href="https://www.git.or.th/complainSystem/default.aspx" class="btn btn-primary"
+            <a href="{$ul}/policy/complaint-system/corruption" class="btn btn-primary"
               title="{$lang['contact']['misconduct-complaint']}" target="_blank">
               {$lang['contact']['misconduct-complaint']}
             </a>

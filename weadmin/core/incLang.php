@@ -472,6 +472,8 @@ $langMod["opti:department_sub"] = "เลือกหน่วยงานย่
 
 $langMod["set:lang:web"] = "แสดงเนื้อหาบนเว็บไซต์";
 $langMod["set:lang:web:alert"] = 'โปรดตรวจสอบ "แสดงเนื้อหาบนเว็บไซต์"';
-
+$langMod["tit:hashtag"] = "ข้อมูลแท็กเชื่อมโยงธีม";
+$langMod["tit:hashtagDes"] = "ข้อมูลนี้คือส่วนที่ใช้ในการกำหนดแท็กเชื่อมโยงในการแสดงผลส่วนนี้ เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
+$langMod["inp:hashtag"] = "แท็กเชื่อมโยงธีม";
+$langMod["tit:selectghasg"] = "เลือก".$langMod["inp:hashtag"];
 }
-?>

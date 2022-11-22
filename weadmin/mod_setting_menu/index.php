@@ -43,10 +43,12 @@ include("config.php");
                 <input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_REQUEST['masterkey']?>" />
                 <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST['menukeyid']?>" />
                 <input name="inputSearch" type="hidden" id="inputSearch" value="<?php echo $_REQUEST['inputSearch']?>" />
+                <input name="inputTag" type="hidden" id="inputTag" value="<?php echo $_REQUEST['inputTag']?>" />
                 <input name="module_pageshow" type="hidden" id="module_pageshow" value="<?php echo $_REQUEST['module_pageshow']?>" />
                 <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo $_REQUEST['module_pagesize']?>" />
                 <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $_REQUEST['module_orderby']?>" />
                 <input name="valEditID" type="hidden" id="valEditID" value="" />
+                <input name="tagEditID" type="hidden" id="tagEditID" value="" />
                 <input name="inputLt" type="hidden" id="inputLt" value="" />
                 <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
                 <input name="inputTh" type="hidden" id="inputTh" value="<?php echo $_REQUEST['inputTh']?>" />

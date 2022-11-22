@@ -125,8 +125,8 @@ if ($module_pageshow == "") {
 if ($module_adesc == "") {
   $module_adesc = $module_sort_number;
 }
-if ($module_orderby == "") {
-  $module_orderby = $mod_tb_root_group . "_credate";
+if ($module_orderby_sub == "") {
+  $module_orderby_sub = $mod_tb_root_group . "_credate";
 }
 if ($inputSearch != "") {
   $inputSearch = trim($inputSearch);
@@ -203,7 +203,7 @@ $sql_export = "SELECT " . $sqlSelect . "  FROM " . $mod_tb_root_group;
 $sql_export = $sql_export . "  WHERE   " . $mod_tb_root_group . "_masterkey='" . $_POST["masterkey"] . "'  ";
 $sql_export .= $sqlSearch;
 
-$sql_export .= " ORDER BY $module_orderby  DESC ";
+$sql_export .= " ORDER BY $module_orderby_sub  DESC ";
 
 // print_pre($sql_export);
 // print_pre($_REQUEST);
@@ -233,10 +233,10 @@ if ($_REQUEST['module_adesc'] == "") {
   $module_adesc = $_REQUEST['module_adesc'];
 }
 
-if ($_REQUEST['module_orderby'] == "") {
-  $module_orderby = $mod_tb_root_group . "_credate";
+if ($_REQUEST['module_orderby_sub'] == "") {
+  $module_orderby_sub = $mod_tb_root_group . "_credate";
 } else {
-  $module_orderby = $_REQUEST['module_orderby'];
+  $module_orderby_sub = $_REQUEST['module_orderby_sub'];
 }
 
 if ($_REQUEST['inputSearch'] != "") {
@@ -258,7 +258,7 @@ if ($_REQUEST['inputSearch'] != "") {
   <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST['menukeyid'] ?>" />
   <input name="module_pageshow" type="hidden" id="module_pageshow" value="<?php echo $module_pageshow ?>" />
   <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo $module_pagesize ?>" />
-  <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $module_orderby ?>" />
+  <input name="module_orderby_sub" type="hidden" id="module_orderby_sub" value="<?php echo $module_orderby_sub ?>" />
   <input name="valEditID" type="hidden" id="valEditID" value="<?php echo $_REQUEST['valEditID'] ?>" />
 
   <div class="divRightNav">
@@ -362,13 +362,13 @@ if ($_REQUEST['inputSearch'] != "") {
       $sql = $sql . "  AND " . $mod_tb_root_group . "_gid ='" . $_REQUEST['valEditID'] . "' ";
 
       if ($_REQUEST['sdateInput'] != "") {
-        $valSdate = DateFormatInsertNoTimeAccpet($_REQUEST['sdateInput']);
+        $valSdate = DateFormatInsertNoTime($_REQUEST['sdateInput']);
 
         if ($_REQUEST['edateInput'] != "") {
-          $valEdate = DateFormatInsertNoTimeAccpet($_REQUEST['edateInput']);
+          $valEdate = DateFormatInsertNoTime($_REQUEST['edateInput']);
         } else {
           $year = date("Y") + 543;
-          $valEdate = DateFormatInsertNoTimeAccpet(date("d-m") . "-" . $year);
+          $valEdate = DateFormatInsertNoTime(date("d-m") . "-" . $year);
         }
 
         $sql = $sql . "  AND  (" . $mod_tb_root_group . "_credate BETWEEN '" . $valSdate . " 00:00:00' AND '" . $valEdate . " 23:59:59')  ";
@@ -399,7 +399,7 @@ if ($_REQUEST['inputSearch'] != "") {
       // Select only paging range #########################
       $recordstart = ($module_pageshow - 1) * $module_pagesize;
 
-      $sql .= " ORDER BY $module_orderby $module_adesc LIMIT $recordstart , $module_pagesize ";
+      $sql .= " ORDER BY $module_orderby_sub $module_adesc LIMIT $recordstart , $module_pagesize ";
       // print_pre($sql);
       
       $query = wewebQueryDB($coreLanguageSQL, $sql);

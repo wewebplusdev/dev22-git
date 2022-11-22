@@ -138,7 +138,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 							<option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
 							<?php
 							$sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ORDER BY " . $mod_tb_root_group . "_order DESC ";
-							print_r($sql_group);
+							// print_r($sql_group);
 							$query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
 							while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
 								$row_groupid = $row_group[0];
@@ -154,7 +154,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 							<?php } ?>
 						</select>
 					</td> -->
-					<td id="boxSelectTest" width="50%">
+					<td id="boxSelectTest" width="100%">
 						<input name="inputSearch" type="text" id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo $langTxt["sch:search"] ?>" />
 					</td>
 					<td style="padding-right:10px;" align="right" width="1%"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>

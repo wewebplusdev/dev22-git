@@ -12,7 +12,7 @@ $valLinkNav1 = "../core/index.php";
 $valNav2 = $langTxt["nav:menuManage2"];
 
 
-$sql = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_icon, " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_moduletype, " . $core_tb_menu . "_linkpath, " . $core_tb_menu . "_masterkey, " . $core_tb_menu . "_target, " . $core_tb_menu . "_nameeng, " . $core_tb_menu . "_namechi    FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["valEditID"] . "'";
+$sql = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_icon, " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_moduletype, " . $core_tb_menu . "_linkpath, " . $core_tb_menu . "_masterkey, " . $core_tb_menu . "_target, " . $core_tb_menu . "_nameeng, " . $core_tb_menu . "_namechi, " . $core_tb_menu . "_tid  FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["valEditID"] . "'";
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $row = wewebFetchArrayDB($coreLanguageSQL, $query);
 $valId = $row[0];
@@ -24,6 +24,7 @@ $valMasterkey = $row[5];
 $valTarget = $row[6];
 $valNameeng = $row[7];
 $valNamechi = $row[8];
+$valTid = unserialize($row['sy_mnu_tid']);
 
 $sqlP = "SELECT " . $core_tb_menu . "_id , " . $core_tb_menu . "_namethai, " . $core_tb_menu . "_nameeng, " . $core_tb_menu . "_namechi    FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $_REQUEST["myParentID"] . "'";
 $queryP = wewebQueryDB($coreLanguageSQL, $sqlP);
@@ -48,6 +49,8 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
   <link href="../css/theme.css" rel="stylesheet" />
 
   <title><?php echo $core_name_title ?></title>
+  <link href="../js/select2/css/select2.css" rel="stylesheet" />
+    <script language="JavaScript" type="text/javascript" src="../js/select2/js/select2.js"></script>
   <script language="JavaScript" type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
   <script language="JavaScript" type="text/javascript">
     function executeSubmit() {
@@ -133,6 +136,7 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
           return false;
         }
       });
+      $('.select2').select2();
     });
   </script>
 </head>
@@ -222,6 +226,7 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
     jQuery('#rowModuleKey').show();
     jQuery('#rowURL').hide();
     jQuery('#rowTarget').show();
+    jQuery('#tags').show();
     " /></div>
               <div class="formDivRadioR">Application</div>
             </label>
@@ -232,6 +237,7 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
     jQuery('#rowModuleKey').hide();
     jQuery('#rowURL').show();
     jQuery('#rowTarget').show();
+    jQuery('#tags').hide();
     " /></div>
               <div class="formDivRadioR">Link</div>
             </label>
@@ -242,6 +248,7 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
     jQuery('#rowModuleKey').hide();
     jQuery('#rowURL').hide();
     jQuery('#rowTarget').hide();
+    jQuery('#tags').hide();
     " /></div>
                 <div class="formDivRadioR">Group</div>
               </label>
@@ -294,6 +301,48 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
           </td>
         </tr>
       </table>
+      <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" id="tags" class="tbBoxViewBorder">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo  $langMod["tit:hashtag"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo  $langMod["tit:hashtagDes"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="right" valign="top" height="15"></td>
+                </tr>
+
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["inp:hashtag"] ?><span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <select name="inputTag[]" id="inputTag" class="formSelectContantTb select2" multiple>
+                            <option value=""><?php echo  $langMod["tit:selectghasg"] ?></option>
+                            <?php
+                            $sql_group = "SELECT ";
+                            if ($_REQUEST['inputLt'] == "Thai") {
+                                $sql_group .= "  " . $core_tb_tag . "_id," . $core_tb_tag . "_subject";
+                            } else {
+                                $sql_group .= " " . $core_tb_tag . "_id," . $core_tb_tag . "_subjecten ";
+                            }
+
+                            $sql_group .= "  FROM " . $core_tb_tag . " WHERE  " . $core_tb_tag . "_masterkey ='theme'  ORDER BY " . $core_tb_tag . "_order DESC ";
+                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                            while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                                $row_groupid = $row_group[0];
+                                $row_groupname = $row_group[1];
+                            ?>
+                                <option value="<?php echo $row_groupid ?>" <?php foreach ($valTid as $keyvalTag => $valuevalTag) {
+                                                                                if ($valuevalTag == $row_groupid) {
+                                                                                    echo "selected='selected'";
+                                                                                }
+                                                                            } ?>><?php echo $row_groupname; ?></option>
+                            <?php } ?>
+                        </select>
+                    </td>
+                </tr>
+
+            </table>
       <br />
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 

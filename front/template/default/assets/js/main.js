@@ -181,6 +181,7 @@ $(document).ready(function() {
         ],
     });
 
+    // var count_slick = $('.default-tab-slider div div').length ? count_slick : true;
     $(".default-tab-slider").slick({
         infinite: false,
         slidesToShow: 4,
@@ -199,6 +200,7 @@ $(document).ready(function() {
                 breakpoint: 576,
                 settings: {
                     slidesToShow: 2,
+                    dots: true,
                 },
             },
             {

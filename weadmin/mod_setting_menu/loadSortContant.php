@@ -14,14 +14,24 @@ $valLinkNav1 = "../core/index.php";
 $valNav2 = $langTxt["nav:menuManage2"];
 
 $masterkey_arr = explode('sit', $_REQUEST['masterkey']);
-$sql = "SELECT " . $mod_tb_root . "_id , " . $mod_tb_root . "_namethai, " . $mod_tb_root . "_nameeng    FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey LIKE '" . $masterkey_arr[0] . "%'";
+$sql = "SELECT " . $mod_tb_root . "_id , " . $mod_tb_root . "_namethai, " . $mod_tb_root . "_nameeng    FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $_REQUEST["tagEditID"] . "\".*'";
+
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $row = wewebFetchArrayDB($coreLanguageSQL, $query);
+// print_pre($sql);
 $valId = $row[0];
 if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
   $valName = rechangeQuot($row[$mod_tb_root . "_namethai"]);
 } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
   $valName = rechangeQuot($row[$mod_tb_root . "_nameeng"]);
+}
+
+if($_REQUEST["tagEditID"]=='2'){
+$order = "_order_theme_1";
+}else if($_REQUEST["tagEditID"]=='3'){
+  $order = "_order_theme_2";
+}else if($_REQUEST["tagEditID"]=='4'){
+  $order = "_order_theme_3";
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -58,6 +68,8 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
     <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST['menukeyid'] ?>" />
     <input name="myParentID" type="hidden" id="myParentID" value="<?php echo $_REQUEST['myParentID'] ?>" />
     <input name="inputSearch" type="hidden" id="inputSearch" value="<?php echo $_REQUEST['inputSearch'] ?>" />
+    <input name="tagEditID" type="hidden" id="tagEditID" value="<?php echo $_REQUEST['tagEditID'] ?>" />
+    <input name="orderTheme" type="hidden" id="orderTheme" value="<?php echo $order ?>" />
     <input name="inputSort" type="hidden" id="inputSort" value="" />
 
     <div class="divRightNav">
@@ -96,14 +108,16 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
             <?php
             $sql = "SELECT " . $mod_tb_root . "_id , " . $mod_tb_root . "_namethai, " . $mod_tb_root . "_nameeng , " . $mod_tb_root . "_credate   FROM 
             " . $mod_tb_root . " WHERE 1=1 ";
-            $sql = $sql . "  AND " . $mod_tb_root . "_masterkey NOT LIKE '" . $_REQUEST['masterkey'] . "' ";
+            $sql .= "AND  " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $_REQUEST["tagEditID"] . "\".*'";
+            // $sql = $sql . "  AND " . $mod_tb_root . "_masterkey NOT LIKE '" . $_REQUEST['masterkey'] . "' ";
 
-            $sql = $sql . "  AND " . $mod_tb_root . "_masterkey LIKE '%" . $mod_array_conf[$_REQUEST['masterkey']]['key'] . "' ";
+            // $sql = $sql . "  AND " . $mod_tb_root . "_masterkey LIKE '%" . $mod_array_conf[$_REQUEST['masterkey']]['key'] . "' ";
+            
+            // if (count($mod_array_conf[$_REQUEST['masterkey']]['component']) > 0) {
+            //     $sql = $sql . "  OR " . $mod_tb_root . "_masterkey IN (" . implode(",", array_values($mod_array_conf[$_REQUEST['masterkey']]['component'])) . ") ";
+            // }
 
-            if (count($mod_array_conf[$_REQUEST['masterkey']]['component']) > 0) {
-                $sql = $sql . "  OR " . $mod_tb_root . "_masterkey IN (" . implode(",", array_values($mod_array_conf[$_REQUEST['masterkey']]['component'])) . ") ";
-            }
-            $sql .= " ORDER BY " . $mod_tb_root . "".$mod_array_conf[$_REQUEST['masterkey']]['order']." DESC";
+            $sql .= " ORDER BY " . $mod_tb_root . "".$order." DESC";
             $query = wewebQueryDB($coreLanguageSQL, $sql);
             $recordCount = wewebNumRowsDB($coreLanguageSQL, $query);
             if ($recordCount >= 1) {

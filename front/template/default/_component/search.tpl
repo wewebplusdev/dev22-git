@@ -147,6 +147,9 @@
                      {* video *}
                      {elseif $keyarrconm eq 'ptg'}
                         {$url_sch = str_replace('|page|', "{$valuearrconm}" ,$result.url)}
+                     {* calendar *}
+                     {elseif $keyarrconm eq 'cl'}
+                        {$url_sch = str_replace('|page|', "{$valuearrconm}" ,$result.url)}
                      {/if}
                   {/if}
                {/foreach}
