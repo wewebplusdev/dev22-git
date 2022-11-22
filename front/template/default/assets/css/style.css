@@ -6248,6 +6248,8 @@ div.swal2-html-container {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--color-light);
+  white-space: normal;
+  height: 2.4em;
 }
 .menu-full .dropright .dropdown-menu > li.active {
   background: transparent;
@@ -6643,6 +6645,9 @@ div.swal2-html-container {
   }
   .site-header-main .main-menu-list .nav-list > li a {
     font-size: var(--typo-s);
+  }
+  .menu-full .dropright .dropdown-menu > li {
+    width: 20%;
   }
 }
 @media (max-width: 1440px) {
@@ -12818,6 +12823,41 @@ fieldset {
   margin: 0;
   border-bottom: 1px solid transparent;
 }
+.about .news-block.-video {
+  padding: 0;
+}
+.about .news-block.-video .video-gallery-banner {
+  position: relative;
+}
+.about .news-block.-video .video-gallery-banner .cover img {
+  transition: All 400ms ease;
+}
+.about .news-block.-video .video-gallery-banner .link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.about .news-block.-video .video-gallery-banner .link span {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 50%;
+  color: var(--color-light);
+  transition: all 400ms ease-out;
+  font-size: 70px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+.about .news-block.-video .video-gallery-banner:hover .cover img {
+  transform: scale(1.1);
+}
+.about .news-block.-video .btn {
+  color: var(--color-light);
+  text-align: unset;
+  padding: inherit;
+}
 .about .form-group {
   margin: 0;
 }
@@ -12963,6 +13003,9 @@ fieldset {
 .about .search-page li .list-inner .list-title {
   color: var(--color-primary);
   font-weight: var(--fw-medium);
+}
+.about .search-page li .list-inner .list-desc {
+  color: var(--color-default);
 }
 .about .search-page li .list-inner .tag-list {
   display: flex;
@@ -14087,7 +14130,7 @@ fieldset {
   font-size: var(--typo-sm);
 }
 .calendar-page #calendarList .calendar-vertical-block .link:hover .list-wrapper {
-  background: linear-gradient(180deg, #A8BAF4 0%, #F2F5FF 100%);
+  background-color: var(--color-gray-light);
 }
 .calendar-page #calendarList .calendar-vertical-block .list-wrapper {
   border-bottom: 1px solid rgba(112, 112, 112, 0.168627451);
