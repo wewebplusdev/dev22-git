@@ -64,6 +64,71 @@ switch ($themeWebsite['class']) {
         break;
     
     case 'theme-2':
+        // call html ban 1
+        $calHTML_ban_1 = $homePage->callCMSS($arr_conf['banI_t2']['masterkey']);
+        $smarty->assign("calHTML_ban_1", $calHTML_ban_1);
+        // call html ban 2
+        $calHTML_ban_2 = $homePage->callCMSS($arr_conf['banII_t2']['masterkey']);
+        $smarty->assign("calHTML_ban_2", $calHTML_ban_2);
+        // call html ban 3
+        $calHTML_ban_3 = $homePage->callCMSS($arr_conf['banIII_t2']['masterkey']);
+        $smarty->assign("calHTML_ban_3", $calHTML_ban_3);
+        // call library
+        $calHTML_library_t2 = $homePage->callCMSS($arr_conf['library_t2']['masterkey']);
+        $smarty->assign("calHTML_library_t2", $calHTML_library_t2);
+        // call weblink
+        $callWeblinkSection = $homePage->callTopGraphic($config['wb_t3']['main']['masterkey']);
+        $smarty->assign("callWeblinkSection", $callWeblinkSection);
+        // call online service
+        $callService = $homePage->callWel($arr_conf['osv']['masterkey']);
+        $smarty->assign("callService", $callService);
+        // call git book
+        $callGitBookSection = $homePage->callTopGraphic($arr_conf['book']['masterkey']);
+        $smarty->assign("callGitBookSection", $callGitBookSection);
+        // call training
+        $callGroupTraining = $homePage->callcmg_thmem_1($arr_conf['trw_semi']['masterkey']);
+        $arrTrainingList = array();
+        foreach ($callGroupTraining as $keycallGroupTraining => $valuecallGroupTraining) {
+            $arrTrainingList[$keycallGroupTraining]['group']['id'] = $valuecallGroupTraining['id'];
+            $arrTrainingList[$keycallGroupTraining]['group']['subject'] = $valuecallGroupTraining['subject'];
+
+            $callNews = $homePage->callcms_thmem_1($arr_conf['trw_semi']['masterkey'], $valuecallGroupTraining['id'],7);
+            foreach ($callNews as $keycallNews => $valuecallNews) {
+                $arrTrainingList[$keycallGroupTraining]['list'][] = $valuecallNews;
+            }
+        }
+        $smarty->assign("arrTrainingList", $arrTrainingList);
+
+        // call news
+        $callGroupNews = $homePage->callcmg_thmem_1($arr_conf['ab_nm']['masterkey']);
+        $arrNewsList = array();
+        foreach ($callGroupNews as $keycallGroupNews => $valuecallGroupNews) {
+            $arrNewsList[$keycallGroupNews]['group']['id'] = $valuecallGroupNews['id'];
+            $arrNewsList[$keycallGroupNews]['group']['subject'] = $valuecallGroupNews['subject'];
+
+            $callNews = $homePage->callcms_thmem_1($arr_conf['ab_nm']['masterkey'], $valuecallGroupNews['id'], 4);
+            foreach ($callNews as $keycallNews => $valuecallNews) {
+                if ($keycallNews < 7) {
+                    $arrNewsList[$keycallGroupNews]['list']['pin'][] = $valuecallNews;
+                }else{
+                    $arrNewsList[$keycallGroupNews]['list']['unpin'][] = $valuecallNews;
+                }
+            }
+        }
+        $smarty->assign("arrNewsList", $arrNewsList);
+
+
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banI_t2']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banII_t2']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banIII_t2']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['library_t2']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['trw_semi']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
+        //  print_pre($sectionMainpage);
+
         $smarty->assign("headerBody", $incfile['header2']);
         $smarty->assign("footerBody", $incfile['footer2']);
         $settingPage = array(

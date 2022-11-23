@@ -1,3 +1,4 @@
+{if $callGitBookSection->_numOfRows gte 1}
 <div class="git-book-block">
       <div class="container">
         <div class="row">
@@ -9,7 +10,7 @@
               </div>
               <div class="col-auto">
                 <div class="action">
-                  <a href="" class="btn btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                  <a href="javascript:void(0);" class="btn btn-border-primary" title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
                 </div>
               </div>
             </div>
@@ -20,17 +21,17 @@
             <div class="booklist">
               <div class="default-slider default-slider-dots slider">
 
-                {for $index=1 to 10}
+              {foreach $callGitBookSection as $keycallGitBookSection => $valuecallGitBookSection}
 
                 <div class="item">
-                  <a href="" class="link" title="">
+                  <a {if $valuecallGitBookSection['url'] neq "" && $valuecallGitBookSection['url'] neq "#"}href="{$valuecallGitBookSection['url']}"{if $valuecallGitBookSection['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" title="web link">
                     <figure class="cover">
-                      <img src="{$template}/assets/img/static/git-book-02.jpg" alt="GIT BOOK">
+                      <img src="{$valuecallGitBookSection['pic']|fileinclude:"real":{$valuecallGitBookSection['masterkey']}:"link"}" alt="{$valuecallGitBookSection.subject}">
                     </figure>
                   </a>
                 </div>
 
-                {/for}
+                {{/foreach}}
 
               </div>
             </div>
@@ -38,3 +39,4 @@
         </div>
       </div>
     </div>
+  {/if}
