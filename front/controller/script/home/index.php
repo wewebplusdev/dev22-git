@@ -98,7 +98,6 @@ switch ($themeWebsite['class']) {
             }
         }
         $smarty->assign("arrTrainingList", $arrTrainingList);
-
         // call news
         $callGroupNews = $homePage->callcmg_thmem_1($arr_conf['ab_nm']['masterkey']);
         $arrNewsList = array();
@@ -116,6 +115,19 @@ switch ($themeWebsite['class']) {
             }
         }
         $smarty->assign("arrNewsList", $arrNewsList);
+        // call git lab update
+        $callGroupGitLab = $homePage->callcmsg($arr_conf['is_art']['masterkey']);
+        $arrGitLabList = array();
+        foreach ($callGroupGitLab as $keycallGroupGitLab => $valuecallGroupGitLab) {
+            $arrGitLabList[$keycallGroupGitLab]['group']['id'] = $valuecallGroupGitLab['id'];
+            $arrGitLabList[$keycallGroupGitLab]['group']['subject'] = $valuecallGroupGitLab['subject'];
+
+            $callGitLab = $homePage->callcmsBySid($arr_conf['is_art']['masterkey'], $valuecallGroupGitLab['id'],10);
+            foreach ($callGitLab as $keycallGitLab => $valuecallGitLab) {
+                $arrGitLabList[$keycallGroupGitLab]['list'][] = $valuecallGitLab;
+            }
+        }
+        $smarty->assign("arrGitLabList", $arrGitLabList);
 
 
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banI_t2']['masterkey']];
@@ -127,8 +139,9 @@ switch ($themeWebsite['class']) {
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_art']['masterkey']];
         //  print_pre($sectionMainpage);
-
+        
         $smarty->assign("headerBody", $incfile['header2']);
         $smarty->assign("footerBody", $incfile['footer2']);
         $settingPage = array(

@@ -3,6 +3,7 @@ $arr_conf['gcon_t1']['masterkey'] = "gcon_t1";
 $arr_conf['ab_nm']['masterkey'] = $config['ab_nm']['main']['masterkey'];
 $arr_conf['gel_t1']['masterkey'] = "gel_t1";
 $arr_conf['trw_semi']['masterkey'] = "trw_semi";
+$arr_conf['is_art']['masterkey'] = "is_art";
 $arr_conf['gca_t1']['masterkey'] = "gca_t1";
 $arr_conf['gwj_t1']['masterkey'] = "gwj_t1";
 $arr_conf['gjt_t1']['masterkey'] = "gjt_t1";
