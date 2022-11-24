@@ -101,6 +101,7 @@ $langMod["txt:groupTypeori"] = "Open the original window";
 $langMod["txt:groupTypenew"] = "Open a new window";
 $langTxt["mg:pin"] = "Pin";
 $langTxt["mg:statuspin"] = "Pin/Unpin";
+$langMod["tit:head"] = "Subtitle header";
 
 
 }else{
@@ -209,6 +210,6 @@ $langMod["tit:credit"] ="Credit";
 $langMod["edit:linknote"] ="หมายเหตุ : กรุณากรอกชื่อ URL นำหน้าด้วย \"http://\" เช่น http://www.wewebplus.com เป็นต้น"."<br>"."กรณีไม่มีชื่อ URL ให้ใส่เครื่องหมาย #";
 $langMod["tit:groupType"] = "ประเภทรายละเอียด";
 $langTxt["mg:statuspin"] = "Pin/Unpin";
-
+$langMod["tit:head"] = "คำอธิบายส่วนหัว";
 }
 ?>

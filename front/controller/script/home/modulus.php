@@ -333,7 +333,7 @@ if($lang){
     return $result;
   }
   
-  function callcmg_thmem_1($masterkey)
+  function callcmg_thmem_1($masterkey, $status = 'Enable')
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -356,13 +356,17 @@ if($lang){
 
     $sql .= " AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_isstatic != '1' ";
 
+    if (!empty($status)) {
+      $sql .= " AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_status = '" . $status . "' ";
+    }
+
     $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order DESC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
-  function callcms_thmem_1($masterkey, $gid = null, $limit = 10)
+  function callcms_thmem_1($masterkey, $gid = null, $limit = 10, $status = 'Home')
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -399,7 +403,7 @@ if($lang){
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_masterkey
     WHERE
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
-    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_status = 'Home' AND
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_status = '".$status."' AND
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lang".$langOption." = '1' AND
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_subject" . $lang . " != '' AND
     ((" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND

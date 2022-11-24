@@ -182,7 +182,8 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
         " . $mod_tb_root . "_pin   ,
         " . $mod_tb_root . "_gid,
         " . $mod_tb_root . "_subjectcn,
-        " . $mod_tb_root . "_picen   
+        " . $mod_tb_root . "_picen,  
+        " . $mod_tb_root . "_piccn   
          FROM " . $mod_tb_root;
         $sql = $sql . "  WHERE " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
 
@@ -277,6 +278,13 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
               $valPicen = "../img/btn/nopic.jpg";
             }
 
+            $valPiccn = $mod_path_office . "/" . $row[11];
+            if (is_file($valPiccn)) {
+              $valPiccn = $valPiccn;
+            } else {
+              $valPiccn = "../img/btn/nopic.jpg";
+            }
+
             if ($valPin == "Pin") {
               $valPinClass =  "fontContantTbNew";
             } else {
@@ -288,10 +296,10 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
               <td class="divRightContantOverTb" valign="top" align="left">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <!-- <td class="displayTdImg" width="39" align="left" valign="top">
+                    <td class="displayTdImg" width="39" align="left" valign="top">
 
                       <div class="displayClickImg" style="background:url(<?php echo $valPic ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
-                    </td> -->
+                    </td>
                     <td align="left">
                       <!--style="padding-left:10px; "-->
                       <div class="widthDiv">
@@ -312,10 +320,10 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                 <td class="divRightContantOverTb" valign="top" align="left">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <!-- <td class="displayTdImg" width="39" align="left" valign="top">
+                      <td class="displayTdImg" width="39" align="left" valign="top">
 
                         <div class="displayClickImg" style="background:url(<?php echo $valPicen ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
-                      </td> -->
+                      </td>
                       <td align="left"><a href="javascript:void(0)" onclick="
     document.myFormHome.inputLt.value='Eng';
    document.myFormHome.valEditID.value=<?php echo $valID ?>;
@@ -328,6 +336,10 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                 <td class="divRightContantOverTb" valign="top" align="left">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
+                      <td class="displayTdImg" width="39" align="left" valign="top">
+
+                        <div class="displayClickImg" style="background:url(<?php echo $valPiccn ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
+                      </td>
                       <td align="left"><a href="javascript:void(0)" onclick="
     document.myFormHome.inputLt.value='Chi';
    document.myFormHome.valEditID.value=<?php echo $valID ?>;

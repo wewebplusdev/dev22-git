@@ -1,5 +1,7 @@
 <?php
 if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
+    $langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
+    $langMod["meu:group"] = "GROUP " . getNameMenu($_REQUEST["menukeyid"]);
     $langMod["tit:subject"] = "Name" . getNameMenu($_REQUEST["menukeyid"]);
     $langMod["txt:titleadd"] = "" .getNameMenu($_REQUEST["menukeyid"])." New";
     $langMod["txt:titleedit"] = "" .getNameMenu($_REQUEST["menukeyid"])." Edit";
@@ -51,6 +53,8 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langMod["txt:logo"] = "Image Logo";
 
 } else {
+    $langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
+    $langMod["meu:group"] = "กลุ่ม " . getNameMenu($_REQUEST["menukeyid"]);
     $langMod["txt:titleadd"] = "สร้างข้อมูล" . getNameMenu($_REQUEST["menukeyid"]);
     $langMod["txt:titleedit"] = "แก้ไขข้อมูล" . getNameMenu($_REQUEST["menukeyid"]);
     $langMod["txt:titleview"] = "แสดงผลข้อมูล" . getNameMenu($_REQUEST["menukeyid"]);

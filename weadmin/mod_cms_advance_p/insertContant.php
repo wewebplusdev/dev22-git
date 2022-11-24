@@ -43,6 +43,7 @@ if ($_REQUEST['execute'] == "insert") {
     $insert[$mod_tb_root . "_masterkey"] = "'" . $_REQUEST["masterkey"] . "'";
     $insert[$mod_tb_root . "_subject"] = "'" . changeQuot($_REQUEST['inputSubject']) . "'";
     $insert[$mod_tb_root . "_title"] = "'" . changeQuot($_REQUEST['inputDescription']) . "'";
+    $insert[$mod_tb_root . "_head"] = "'" . changeQuot($_REQUEST['inputHead']) . "'";
 
     $insert[$mod_tb_root . "_gid"] = "'" . $_POST["inputGroupID"] . "'";
 

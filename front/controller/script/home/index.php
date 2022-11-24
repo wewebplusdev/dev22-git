@@ -208,6 +208,42 @@ switch ($themeWebsite['class']) {
         $callService = $homePage->callWel($arr_conf['osv']['masterkey']);
         $smarty->assign("callService", $callService);
 
+        // call GIT LAB UPDATE
+        $callGroupGit = $homePage->callcmg_thmem_1($arr_conf['is_art']['masterkey'], 'Home');
+        $arrGitList = array();
+        foreach ($callGroupGit as $keycallGroupGit => $valuecallGroupGit) {
+            $arrGitList[$keycallGroupGit]['group']['id'] = $valuecallGroupGit['id'];
+            $arrGitList[$keycallGroupGit]['group']['subject'] = $valuecallGroupGit['subject'];
+
+            $callGit = $homePage->callcms_thmem_1($arr_conf['is_art']['masterkey'], $valuecallGroupGit['id'], 9);
+            foreach ($callGit as $keycallGit => $valuecallGit) {
+                $arrGitList[$keycallGroupGit]['list'][] = $valuecallGit;
+            }
+        }
+        $smarty->assign("arrGitList", $arrGitList);
+
+        // call git book
+        $callGroupTraining = $homePage->callcmg_thmem_1($arr_conf['book']['masterkey']);
+        $arrGitbookList = array();
+        foreach ($callGroupTraining as $keycallGroupTraining => $valuecallGroupTraining) {
+            $arrGitbookList[$keycallGroupTraining]['group']['id'] = $valuecallGroupTraining['id'];
+            $arrGitbookList[$keycallGroupTraining]['group']['subject'] = $valuecallGroupTraining['subject'];
+
+            $callGitbook = $homePage->callcms_thmem_1($arr_conf['book']['masterkey'], $valuecallGroupTraining['id'], 10, 'Enable');
+            foreach ($callGitbook as $keycallGitbook => $valuecallGitbook) {
+                $arrGitbookList[$keycallGroupTraining]['list'][] = $valuecallGitbook;
+            }
+        }
+        $smarty->assign("arrGitbookList", $arrGitbookList);
+
+        // call weblink
+        $callWeblink = $homePage->callTopGraphic($config['wb_t3']['main']['masterkey']);
+        $smarty->assign("callWeblink", $callWeblink);
+
+        // call MUSEUM
+        $callGitMuseum = $homePage->callcms_thmem_1($config['infoservice']['is_ms']['masterkey'], 0, 3);
+        $smarty->assign("callGitMuseum", $callGitMuseum);
+
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gcon_t1']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gel_t1']['masterkey']];
@@ -216,10 +252,16 @@ switch ($themeWebsite['class']) {
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gwj_t1']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gjt_t1']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_art']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['infoservice']['is_ms']['masterkey']];
         // print_pre($sectionMainpage);
 
         $smarty->assign("headerBody", $incfile['header']);
         $smarty->assign("footerBody", $incfile['footer']);
+
+        $smarty->assign("arrGitLibary", $arrGitLibary);
         $settingPage = array(
             "page" => $menuActive,
             "template" => "index.tpl",

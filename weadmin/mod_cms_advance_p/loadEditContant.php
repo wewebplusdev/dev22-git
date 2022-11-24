@@ -17,11 +17,11 @@ $sql = "SELECT   ";
 $sql .= "   " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo ,  " . $mod_tb_root . "_gid    ";
 
 if ($_REQUEST['inputLt'] == "Thai") {
-	$sql .= " , " . $mod_tb_root . "_url,    " . $mod_tb_root . "_pic, " . $mod_tb_root . "_subject  ,    " . $mod_tb_root . "_title , " . $mod_tb_root . "_htmlfilename   ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords    ";
+	$sql .= " , " . $mod_tb_root . "_url,    " . $mod_tb_root . "_pic, " . $mod_tb_root . "_subject  ,    " . $mod_tb_root . "_title , " . $mod_tb_root . "_htmlfilename   ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords, " . $mod_tb_root . "_head    ";
 } elseif ($_REQUEST['inputLt'] == "Eng") {
-	$sql .= " , " . $mod_tb_root . "_urlen,    " . $mod_tb_root . "_picen, " . $mod_tb_root . "_subjecten  ,    " . $mod_tb_root . "_titleen , " . $mod_tb_root . "_htmlfilenameen   ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen    ";
+	$sql .= " , " . $mod_tb_root . "_urlen,    " . $mod_tb_root . "_picen, " . $mod_tb_root . "_subjecten  ,    " . $mod_tb_root . "_titleen , " . $mod_tb_root . "_htmlfilenameen   ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen, " . $mod_tb_root . "_headen";
 } else {
-	$sql .= " , " . $mod_tb_root . "_urlcn,    " . $mod_tb_root . "_picen, " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
+	$sql .= " , " . $mod_tb_root . "_urlcn,    " . $mod_tb_root . "_piccn, " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn, " . $mod_tb_root . "_headcn";
 }
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn ";
@@ -57,11 +57,12 @@ $valhtmlname = $Row[13];
 $valMetatitle = rechangeQuot($Row[14]);
 $valDescription = rechangeQuot($Row[15]);
 $valKeywords = rechangeQuot($Row[16]);
+$valHead = rechangeQuot($Row[17]);
 
-$valUrlfriendly = rechangeQuot($Row[17]);
-$valLang[0] = $Row[18];
-$valLang[1] = $Row[19];
-$valLang[2] = $Row[20];
+$valUrlfriendly = rechangeQuot($Row[18]);
+$valLang[0] = $Row[19];
+$valLang[1] = $Row[20];
+$valLang[2] = $Row[21];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 
 ?>
@@ -268,10 +269,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						<textarea name="inputDescription" id="inputDescription" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valTitle ?></textarea>
 					</td>
 				</tr>
-
+				<tr>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:head"] ?><span class="fontContantAlert"></span></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputHead" id="inputHead" type="text" class="formInputContantTb" value="<?php echo $valHead ?>" /></td>
+				</tr>
 			</table>
 			<br />
-			<!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
@@ -302,7 +306,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					</td>
 				</tr>
 			</table>
-			<br /> -->
+			<br />
 
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
 				<tr>

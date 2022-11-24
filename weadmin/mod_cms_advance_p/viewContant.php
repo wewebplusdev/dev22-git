@@ -27,11 +27,11 @@ $sql .= "   " . $mod_tb_root . "_id ,
       " . $mod_tb_root . "_gid    ";
 
 if ($_REQUEST['inputLt'] == "Thai") {
-    $sql .= "," . $mod_tb_root . "_url," . $mod_tb_root . "_pic , " . $mod_tb_root . "_subject  ,    " . $mod_tb_root . "_title , " . $mod_tb_root . "_htmlfilename   ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords    ";
+    $sql .= "," . $mod_tb_root . "_url," . $mod_tb_root . "_pic , " . $mod_tb_root . "_subject  ,    " . $mod_tb_root . "_title , " . $mod_tb_root . "_htmlfilename   ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords, " . $mod_tb_root . "_head";
 } elseif ($_REQUEST['inputLt'] == "Eng") {
-    $sql .= "," . $mod_tb_root . "_urlen," . $mod_tb_root . "_picen , " . $mod_tb_root . "_subjecten  ,    " . $mod_tb_root . "_titleen , " . $mod_tb_root . "_htmlfilenameen   ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen    ";
+    $sql .= "," . $mod_tb_root . "_urlen," . $mod_tb_root . "_picen , " . $mod_tb_root . "_subjecten  ,    " . $mod_tb_root . "_titleen , " . $mod_tb_root . "_htmlfilenameen   ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen, " . $mod_tb_root . "_headen";
 } else {
-    $sql .= "," . $mod_tb_root . "_urlcn," . $mod_tb_root . "_picen , " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
+    $sql .= "," . $mod_tb_root . "_urlcn," . $mod_tb_root . "_piccn , " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn, " . $mod_tb_root . "_headcn";
 }
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin";
@@ -79,10 +79,11 @@ $valHtml = $mod_path_html . "/" . $Row[16];
 $valMetatitle = rechangeQuot($Row[17]);
 $valDescription = rechangeQuot($Row[18]);
 $valKeywords = rechangeQuot($Row[19]);
-$valUrlfriendly = rechangeQuot($Row[20]);
-$valLang[0] = $Row[21];
-$valLang[1] = $Row[22];
-$valLang[2] = $Row[23];
+$valHead = rechangeQuot($Row[20]);
+$valUrlfriendly = rechangeQuot($Row[21]);
+$valLang[0] = $Row[22];
+$valLang[1] = $Row[23];
+$valLang[2] = $Row[24];
 
 $valPin = $Row['pin'];
 if ($valPin == "Pin") {
@@ -217,9 +218,15 @@ logs_access('3', 'View');
                         <div class="formDivView"><?php echo $valTitle ?></div>
                     </td>
                 </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:head"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView"><?php echo $valHead ?></div>
+                    </td>
+                </tr>
             </table>
             <br />
-            <!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
@@ -236,7 +243,7 @@ logs_access('3', 'View');
                 </tr>
                 
             </table>
-            <br /> -->
+            <br />
 
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>

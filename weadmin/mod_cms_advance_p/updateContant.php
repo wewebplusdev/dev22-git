@@ -51,6 +51,7 @@ include("config.php");
 			$update[] = $mod_tb_root . "_keywords='" . changeQuot($_POST['inputTagKeywords']) . "'";
 			$update[] = $mod_tb_root . "_metatitle='" . changeQuot($_POST['inputTagTitle']) . "'";
 			$update[] = $mod_tb_root . "_url='" . changeQuot($_REQUEST['inputurl']) . "'";
+			$update[] = $mod_tb_root . "_head='" . changeQuot($_REQUEST['inputHead']) . "'";
 		} else if ($_REQUEST['inputLt'] == "Eng") {
 			$update[] = $mod_tb_root . "_subjecten='" . changeQuot($_POST['inputSubject']) . "'";
 			$update[] = $mod_tb_root . "_titleen='" . changeQuot($_POST['inputDescription']) . "'";
@@ -59,6 +60,7 @@ include("config.php");
 			$update[] = $mod_tb_root . "_keywordsen='" . changeQuot($_POST['inputTagKeywords']) . "'";
 			$update[] = $mod_tb_root . "_metatitleen='" . changeQuot($_POST['inputTagTitle']) . "'";
 			$update[] = $mod_tb_root . "_urlen='" . changeQuot($_REQUEST['inputurl']) . "'";
+			$update[] = $mod_tb_root . "_headen='" . changeQuot($_REQUEST['inputHead']) . "'";
 		} else {
 			$update[] = $mod_tb_root . "_subjectcn='" . changeQuot($_POST['inputSubject']) . "'";
 			$update[] = $mod_tb_root . "_titlecn='" . changeQuot($_POST['inputDescription']) . "'";
@@ -67,6 +69,7 @@ include("config.php");
 			$update[] = $mod_tb_root . "_keywordscn='" . changeQuot($_POST['inputTagKeywords']) . "'";
 			$update[] = $mod_tb_root . "_metatitlecn='" . changeQuot($_POST['inputTagTitle']) . "'";
 			$update[] = $mod_tb_root . "_urlcn='" . changeQuot($_REQUEST['inputurl']) . "'";
+			$update[] = $mod_tb_root . "_headcn='" . changeQuot($_REQUEST['inputHead']) . "'";
 		}
 
 		$update[] = $mod_tb_root . "_gid='" . $_POST["inputGroupID"] . "'";

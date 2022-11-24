@@ -86,6 +86,7 @@ if ($arr_ChatFB['status'] != 'Disable') {
 /* Start chat FB */
 
 $smarty->assign("langweb", $url->pagelang[3]);
+$smarty->assign("langonweb", $url->pagelang[2]);
 
 Seo();
 function Seo($title = '', $desc = '', $keyword = '', $pic = '')

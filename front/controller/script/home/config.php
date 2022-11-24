@@ -67,20 +67,53 @@ $arrThemeFile = array(
     'library_t2' => 'front/controller/script/home/template/theme-2/section-library.tpl',
   ),
   '1' => array(
-    'gcon_t1' => 'front/controller/script/home/template/theme-1/section-html-1.tpl',
-    'ab_nm' => 'front/controller/script/home/template/theme-1/section-news.tpl',
-    'gel_t1' => 'front/controller/script/home/template/theme-1/section-weblink-1.tpl',
-    'gca_t1' => 'front/controller/script/home/template/theme-1/section-html-2.tpl',
-    'gwj_t1' => 'front/controller/script/home/template/theme-1/section-html-3.tpl',
+    'gcon_t1' => 'front/controller/script/home/template/theme-1/section-html-1.tpl', // true
+    'ab_nm' => 'front/controller/script/home/template/theme-1/section-news.tpl', // true
+    'gel_t1' => 'front/controller/script/home/template/theme-1/section-weblink-1.tpl', // true
+    'gca_t1' => 'front/controller/script/home/template/theme-1/section-html-2.tpl', // true
+    'gwj_t1' => 'front/controller/script/home/template/theme-1/section-html-3.tpl', // true
     'trw_cou' => 'front/controller/script/home/template/theme-1/section-training-1.tpl',
     'service' => 'front/controller/script/home/template/theme-1/section-service.tpl',
-    'gjt_t1' => 'front/controller/script/home/template/theme-1/section-html-4.tpl',
-    'osv' => 'front/controller/script/home/template/theme-1/section-online-service.tpl',
-    'information-service' => 'front/controller/script/home/template/theme-1/section-information-service.tpl',
-    'wb_t3' => 'front/controller/script/home/template/theme-1/section-weblink-2.tpl',
+    'gjt_t1' => 'front/controller/script/home/template/theme-1/section-html-4.tpl', // true
+    'osv' => 'front/controller/script/home/template/theme-1/section-online-service.tpl', // true
+    'is_art' => 'front/controller/script/home/template/theme-1/section-information-service.tpl',
+    'wb_t3' => 'front/controller/script/home/template/theme-1/section-weblink-2.tpl', // true
     'is_ms' => 'front/controller/script/home/template/theme-1/section-museum.tpl',
-    'wb_book' => 'front/controller/script/home/template/theme-1/section-weblink-3.tpl',
+    'wb_book' => 'front/controller/script/home/template/theme-1/section-weblink-3.tpl', // true
     'vdo' => 'front/controller/script/home/template/theme-1/section-video.tpl',
-    'trw_semi' => 'front/controller/script/home/template/theme-1/section-training-2.tpl',
+    'trw_semi' => 'front/controller/script/home/template/theme-1/section-training-2.tpl', // true
+  ),
+);
+
+$arrGitLibary = array(
+  'ti=' => array(
+    'th' => 'ชื่อเรื่อง(สำคัญ)',
+    'en' => 'Title Keyword',
+    'cn' => '標題關鍵字',
+  ),
+  'au=' => array(
+    'th' => 'ผู้แต่ง(คำสำคัญ)',
+    'en' => 'Author Keyword',
+    'cn' => '作者關鍵字',
+  ),
+  'su=' => array(
+    'th' => 'หัวเรื่อง(คำสำคัญ)',
+    'en' => 'Subject Keyword',
+    'cn' => '主題關鍵詞',
+  ),
+  'se=' => array(
+    'th' => 'ชื่อชุด (คำสำคัญ)',
+    'en' => 'Series Keyword',
+    'cn' => '系列關鍵詞',
+  ),
+  'jn=' => array(
+    'th' => 'ชื่อวารสาร(คำสำคัญ)',
+    'en' => 'Journal Title Keyword',
+    'cn' => '期刊名稱關鍵字',
+  ),
+  'all=' => array(
+    'th' => 'ไม่กำหนด',
+    'en' => 'All Fields',
+    'cn' => '所有領域',
   ),
 );
