@@ -128,8 +128,15 @@ switch ($themeWebsite['class']) {
             }
         }
         $smarty->assign("arrGitLabList", $arrGitLabList);
-
-
+        // call git museum
+        $callGitMsSection = $homePage->callcmsTheme2($arr_conf['is_ms']['masterkey']);
+        $arrGitMsList = array();
+        foreach ($callGitMsSection as $keycallGitMsSection => $valuecallGitMsSection) {
+            $arrGitMsList[$keycallGitMsSection] = $valuecallGitMsSection;
+        }
+        $smarty->assign("arrGitMsList", $arrGitMsList);
+        // sprint_pre($arrGitMsList);
+        
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banI_t2']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banII_t2']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banIII_t2']['masterkey']];
@@ -140,6 +147,7 @@ switch ($themeWebsite['class']) {
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_art']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_ms']['masterkey']];
         //  print_pre($sectionMainpage);
         
         $smarty->assign("headerBody", $incfile['header2']);

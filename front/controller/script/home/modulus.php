@@ -170,7 +170,69 @@ if($lang){
 
     $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order DESC," . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order LIMIT ".$limit." ";
 
-    // print_pre($sql);
+     print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callcmsTheme2($masterkey, $id = null, $status = 'Home', $limit = 3)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langOption = $url->pagelang[2];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_id as id,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_masterkey as masterkey,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_subjecten" . $lang . " as subjecten,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_pic" . $lang . " as pic,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lastdate as lastdate,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url as url,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_target as target,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid as gid,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view as view,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate as credate,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_typeFile" . $lang . " as typeFile,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_urlFile" . $lang . " as urlFile,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_metatitle" . $lang . " as metatitle,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_description" . $lang . " as description,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_keywords" . $lang . " as keyword
+
+    FROM
+    " . $config['cms']['db']['main'] . "
+   
+    WHERE
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lang".$langOption." = '1' AND
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_subject" . $lang . " != '' AND
+    ((" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
+    (" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    TO_DAYS(" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_edate)>=TO_DAYS(NOW()) ) OR
+    (TO_DAYS(" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_edate='0000-00-00 00:00:00' )  OR
+    (TO_DAYS(" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    TO_DAYS(" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))";
+
+    if (!empty($status)) {
+      $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_status = '" . $status . "' ";
+    }
+
+    if (!empty($id)) {
+      $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_id = '" . $id . "' ";
+    }
+
+    if (!empty($gid)) {
+      $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid = '" . $gid . "' ";
+    }
+
+    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC LIMIT ".$limit." ";
+
+    //  print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
