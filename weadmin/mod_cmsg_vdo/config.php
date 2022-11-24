@@ -1,5 +1,5 @@
 <?php
-$array_home = array('nw');
+$array_home = array('vdo');
 ## Mod Table ###################################
 $mod_tb_root = "md_cms";
 $mod_tb_root_group = "md_cmg";

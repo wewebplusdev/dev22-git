@@ -212,7 +212,7 @@ switch ($themeWebsite['class']) {
         $calHTML_section_4 = $homePage->callCMSS($arr_conf['gjt_t1']['masterkey']);
         $smarty->assign("calHTML_section_4", $calHTML_section_4);
 
-        // call service
+        // call online service
         $callService = $homePage->callWel($arr_conf['osv']['masterkey']);
         $smarty->assign("callService", $callService);
 
@@ -259,12 +259,28 @@ switch ($themeWebsite['class']) {
             $arrVdoList[$keycallGroupVdo]['group']['id'] = $valuecallGroupVdo['id'];
             $arrVdoList[$keycallGroupVdo]['group']['subject'] = $valuecallGroupVdo['subject'];
 
-            $callVdo = $homePage->callcms_thmem_1($config['video']['vdo']['masterkey'], $valuecallGroupVdo['id'], 4, 'Enable');
+            $callVdo = $homePage->callcms_thmem_1($config['video']['vdo']['masterkey'], $valuecallGroupVdo['id'], 4, 'Home');
             foreach ($callVdo as $keycallVdo => $valuecallVdo) {
                 $arrVdoList[$keycallGroupVdo]['list'][] = $valuecallVdo;
             }
         }
         $smarty->assign("arrVdoList", $arrVdoList);
+
+        // call service
+        $getMenuDetailHome = $callSetWebsite->getMenuDetail(null, 'sv_', null, null, null);
+        $arrServiceList = array();
+        foreach ($getMenuDetailHome as $keygetMenuDetailHome => $valuegetMenuDetailHome) {
+            $arrServiceList[$keygetMenuDetailHome]['group']['id'] = $valuegetMenuDetailHome['id'];
+            $arrServiceList[$keygetMenuDetailHome]['group']['subject'] = $valuegetMenuDetailHome['subject'];
+            
+            $callService = $homePage->callcms_thmem_1($valuegetMenuDetailHome['masterkey'], 0, 5, 'Enable');
+            foreach ($callService as $keycallService => $valuecallService) {
+                $arrServiceList[$keygetMenuDetailHome]['list'][] = $valuecallService;
+            }
+        }
+        $smarty->assign("arrServiceList", $arrServiceList);
+        // print_pre($arrServiceList);
+        
 
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gcon_t1']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
@@ -279,6 +295,8 @@ switch ($themeWebsite['class']) {
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['infoservice']['is_ms']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['video']['vdo']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['feed']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['service']['masterkey']];
         // print_pre($sectionMainpage);
 
         $smarty->assign("headerBody", $incfile['header']);
