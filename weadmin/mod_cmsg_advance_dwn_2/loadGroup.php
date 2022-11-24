@@ -296,19 +296,19 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                                 </td>
                             <?php } ?>
                             <td class="divRightContantOverTb" valign="top" align="center">
-                                <?php if (in_array($_REQUEST['masterkey'], $masterkeyArr)) { ?>
+                                <?php if (in_array($_REQUEST['masterkey'], $array_home_g)) { ?>
                                     <?php if ($valPermissionContent == "RW") { ?>
                                         <div id="load_status<?php echo $valID ?>">
                                             <?php if ($valStatus == "Enable") { ?>
 
-                                                <a href="javascript:void(0)" onclick="changeStatusHome('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_group ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php','<?php echo $_REQUEST['masterkey'] ?>')"><span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span></a>
+                                                <a href="javascript:void(0)" onclick="changeStatusMasterkey('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_group ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php','<?php echo $_REQUEST['masterkey'] ?>')"><span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span></a>
 
                                             <?php } elseif ($valStatus == "Home") { ?>
-                                                <a href="javascript:void(0)" onclick="changeStatusHome('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_group ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php','<?php echo $_REQUEST['masterkey'] ?>')">
+                                                <a href="javascript:void(0)" onclick="changeStatusMasterkey('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_group ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php','<?php echo $_REQUEST['masterkey'] ?>')">
                                                     <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span> </a>
                                             <?php } else { ?>
 
-                                                <a href="javascript:void(0)" onclick="changeStatusHome('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_group ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php','<?php echo $_REQUEST['masterkey'] ?>')">
+                                                <a href="javascript:void(0)" onclick="changeStatusMasterkey('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_group ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php','<?php echo $_REQUEST['masterkey'] ?>')">
                                                     <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span> </a>
 
                                             <?php } ?>

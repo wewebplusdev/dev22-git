@@ -1,5 +1,6 @@
 <?php
-$array_home = array('trw_semi');
+$array_home = array('trw_semi', 'is_art');
+$array_home_g = array('is_art');
 ## Mod Table ###################################
 $mod_tb_root = "md_cms";
 $mod_tb_root_group = "md_cmg";
