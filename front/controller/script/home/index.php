@@ -252,6 +252,20 @@ switch ($themeWebsite['class']) {
         $callGitMuseum = $homePage->callcms_thmem_1($config['infoservice']['is_ms']['masterkey'], 0, 3);
         $smarty->assign("callGitMuseum", $callGitMuseum);
 
+        // call vdo
+        $callGroupVdo = $homePage->callcmg_thmem_1($config['video']['vdo']['masterkey']);
+        $arrVdoList = array();
+        foreach ($callGroupVdo as $keycallGroupVdo => $valuecallGroupVdo) {
+            $arrVdoList[$keycallGroupVdo]['group']['id'] = $valuecallGroupVdo['id'];
+            $arrVdoList[$keycallGroupVdo]['group']['subject'] = $valuecallGroupVdo['subject'];
+
+            $callVdo = $homePage->callcms_thmem_1($config['video']['vdo']['masterkey'], $valuecallGroupVdo['id'], 4, 'Enable');
+            foreach ($callVdo as $keycallVdo => $valuecallVdo) {
+                $arrVdoList[$keycallGroupVdo]['list'][] = $valuecallVdo;
+            }
+        }
+        $smarty->assign("arrVdoList", $arrVdoList);
+
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gcon_t1']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gel_t1']['masterkey']];
@@ -264,6 +278,7 @@ switch ($themeWebsite['class']) {
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['infoservice']['is_ms']['masterkey']];
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['video']['vdo']['masterkey']];
         // print_pre($sectionMainpage);
 
         $smarty->assign("headerBody", $incfile['header']);
