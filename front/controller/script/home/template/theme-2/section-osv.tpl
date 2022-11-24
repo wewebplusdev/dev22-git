@@ -39,7 +39,7 @@
                 {/foreach}
             </ul>
             <div class="action">
-                <a href="javascript:void(0);" class="btn btn-lg btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
+                <a href="{$ul}/online-service" class="btn btn-lg btn-border-primary" title="ดูทั้งหมด">ดูทั้งหมด</a>
             </div>
         </div>
     </div>

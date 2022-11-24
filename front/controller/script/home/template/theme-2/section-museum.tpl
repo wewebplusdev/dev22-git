@@ -11,7 +11,7 @@
         {foreach $arrGitMsList as $keyarrGitMsList => $valuearrGitMsList}
           {if $keyarrGitMsList == 0}
             <div class="col-lg-8 col-md-6 mb-md-0 mb-3">
-              <a href="javascript:void(0);" class="link" title="GIT Museum">
+              <a href="{$ul}/information-service/28/{$valuearrGitMsList.id}" class="link" title="GIT Museum">
                 <div class="wrapper biggest"
                   style="background-image: url({$template}/assets/img/background/bg-museum-01.jpg);">
                   <div class="topic">
@@ -34,7 +34,7 @@
           {foreach $arrGitMsList as $keyarrGitMsList => $valuearrGitMsList}
             {if $keyarrGitMsList == 1}
               <div class="col-12 mb-3">
-                <a href="" class="link" title="GIT Virtual Museum">
+                <a href="{$ul}/information-service/28/{$valuearrGitMsList.id}" class="link" title="GIT Virtual Museum">
                   <div class="wrapper" style="background-image: url({$template}/assets/img/background/bg-museum-02.jpg);">
                     <div class="topic">
                       <span class="feather-arrow-up-right"></span>
@@ -52,7 +52,7 @@
             {/if}
             {if $keyarrGitMsList == 2}
               <div class="col-12">
-                <a href="" class="link" title="GIT Virtual Exhibition">
+                <a href="{$ul}/information-service/28/{$valuearrGitMsList.id}" class="link" title="GIT Virtual Exhibition">
                   <div class="wrapper" style="background-image: url({$template}/assets/img/background/bg-museum-03.jpg);">
                     <div class="topic">
                       <span class="feather-arrow-up-right"></span>

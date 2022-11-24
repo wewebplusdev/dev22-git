@@ -175,7 +175,7 @@ if($lang){
     return $result;
   }
 
-  function callcmsTheme2($masterkey, $id = null, $status = 'Home', $limit = 3)
+  function callcmsTheme2($masterkey, $id = null, $status, $limit)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -232,7 +232,7 @@ if($lang){
 
     $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC LIMIT ".$limit." ";
 
-    //  print_pre($sql);
+    // print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }

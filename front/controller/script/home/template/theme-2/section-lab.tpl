@@ -27,7 +27,7 @@
                     {$Call_File = $callSetWebsite::Call_File($valueSubGitLab['id'])}
                     {$fileinfo = $Call_File->fields['filename']|fileinclude:'file':{$valueSubGitLab.masterkey}|get_Icon}
                     {if $valueSubGitLab.typec eq 1}
-                      {$path_gitlab = "{$ul}/training/{$valueSubGitLab.menuid}/{$valueSubGitLab.gid}/detail/{$valueSubGitLab.id}"}
+                      {$path_gitlab = "{$ul}/information-service/{$valueSubGitLab.menuid}/{$valueSubGitLab.gid}/detail/{$valueSubGitLab.id}"}
                     {else}
                       {if $Call_File->_numOfRows gte 1}
                         {$path_gitlab = "{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valueSubGitLab.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"}
@@ -36,7 +36,7 @@
                       {/if}
                     {/if}
                     <div class="item">
-                      <a href="javascript:void(0);" class="link">
+                      <a href="{$path_gitlab}" class="link">
                         <div class="row no-gutters">
                           <div class="col-auto">
                             <span class="icon feather-file-text"></span>
@@ -73,7 +73,7 @@
         {/foreach}
       </div>
       <div class="action">
-        <a href="javascript:void(0);" class="btn btn-border-light" title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
+        <a href="{$ul}/information-service" class="btn btn-border-light" title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
       </div>
     </div>
   </div>
