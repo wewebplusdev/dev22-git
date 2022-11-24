@@ -25,20 +25,27 @@
                                         <img src="<?php echo $core_template; ?>/assets/img/static/tpg-01.jpg" alt="top graphic">
                                     </figure>
                                     <div class="info">
-                                        <div class="container">
+                                        <div class="container -lg">
                                             <div class="wrapper">
-                                                <div class="title text-limit -x2">
+                                                <div class="title text-limit -x3">
                                                     สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)
                                                 </div>
-                                                <div class="row align-items-end">
-                                                    <div class="col-md">
-                                                        <div class="desc text-limit -x2">
-                                                            เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542 <br>
-                                                            จัดตั้งขึ้นตาม พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ (องค์การมหาชน) พ.ศ. 2546
+                                                <div class="border-topic"></div>
+                                                <div class="desc text-limit -x3">
+                                                    เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542
+                                                    จัดตั้งขึ้นตาม พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ (องค์การมหาชน) พ.ศ. 2546
+                                                </div>
+                                                <button href="" class="btn btn-primary" title="btn btn-primary">อ่านต่อ</button>
+                                                <div class="git-update-content">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-sm-auto">
+                                                            <button href="" class="btn btn-primary" title="btn btn-primary">GIT UPDATE</button>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-auto">
-                                                        <button href="" class="btn btn-primary" title="btn btn-primary">อ่านต่อ</button>
+                                                        <div class="col-sm">
+                                                            <div class="desc text-limit -x1">
+                                                                GIT แนะผู้บริโภคเรียกดูใบรับรอง ก่อนซื้ออัญมณีออนไลน์ และเครื่องประดับแห่งชาติ (องค์การมหาชน) พ.ศ. 2546
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -52,20 +59,27 @@
                                         <img src="<?php echo $core_template; ?>/assets/img/static/tpg-02.jpg" alt="top graphic">
                                     </figure>
                                     <div class="info">
-                                        <div class="container">
+                                        <div class="container -lg">
                                             <div class="wrapper">
-                                                <div class="title text-limit -x2">
+                                                <div class="title text-limit -x3">
                                                     สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)
                                                 </div>
-                                                <div class="row align-items-end">
-                                                    <div class="col-md">
-                                                        <div class="desc text-limit -x2">
-                                                            เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542 <br>
-                                                            จัดตั้งขึ้นตาม พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ (องค์การมหาชน) พ.ศ. 2546
+                                                <div class="border-topic"></div>
+                                                <div class="desc text-limit -x3">
+                                                    เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542 <br>
+                                                    จัดตั้งขึ้นตาม พระราชกฤษฎีกาจัดตั้งสถาบันวิจัยและพัฒนาอัญมณี และเครื่องประดับแห่งชาติ (องค์การมหาชน) พ.ศ. 2546
+                                                </div>
+                                                <button type="button" class="btn btn-primary">อ่านต่อ</button>
+                                                <div class="git-update-content">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-sm-auto">
+                                                            <button href="" class="btn btn-primary" title="btn btn-primary">GIT UPDATE</button>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-auto">
-                                                        <button type="button" class="btn btn-primary">อ่านต่อ</button>
+                                                        <div class="col-sm">
+                                                            <div class="desc text-limit -x1">
+                                                                GIT แนะผู้บริโภคเรียกดูใบรับรอง ก่อนซื้ออัญมณีออนไลน์ และเครื่องประดับแห่งชาติ (องค์การมหาชน) พ.ศ. 2546
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -133,7 +147,7 @@
                     <div class="tab-content clearfix">
                         <div class="tab-pane active" id="News1">
                             <div class="default-slider default-slider-dots slider">
-                                <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                <?php for ($i = 1; $i <= 1; $i++) { ?>
                                     <div class="item">
                                         <a href="" class="link" title="">
                                             <div class="wrapper">
@@ -211,7 +225,7 @@
                         </div>
                         <div class="default-slider default-slider-dots slider">
 
-                            <?php for ($i = 1; $i <= 5; $i++) { ?>
+                            <?php for ($i = 1; $i <= 3; $i++) { ?>
 
                                 <div class="item">
                                     <a href="" class="link" title="">
@@ -974,8 +988,13 @@
                                                         <div class="icon">
                                                             <span class="feather icon-play-circle"></span>
                                                         </div>
-                                                        <div class="iframe-container">
+                                                        <!-- <div class="iframe-container">
                                                             <iframe class="responsive-iframe" src="https://www.youtube.com/embed/4r9TbKLCus0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                        </div> -->
+                                                        <div class="iframe-mp4">
+                                                            <video class="slide-video slide-media" loop muted autoplay controls preload="metadata" poster="">
+                                                                <source src="https://en.nrct.go.th/upload/int/vdo/vdo-2-20221205-1652353475-910.mp4" type="video/mp4" />
+                                                            </video>
                                                         </div>
                                                         <figure class="cover">
                                                             <img src="<?php echo $core_template; ?>/assets/img/upload/git-vdo.png" alt="git vdo">
