@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="default-nav">
+    <div>
         <div class="nav-slider-block">
             {if count($getMenuDetail) > 0}
                 <div class="container">

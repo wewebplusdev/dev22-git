@@ -121,6 +121,7 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
     <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST['menukeyid'] ?>" />
     <input name="myParentID" type="hidden" id="myParentID" value="<?php echo $_REQUEST['myParentID'] ?>" />
     <input name="valEditID" type="hidden" id="valEditID" value="<?php echo $_REQUEST['valEditID'] ?>" />
+    <input name="tagEditID" type="hidden" id="tagEditID" value="<?php echo $_REQUEST['tagEditID'] ?>" />
 
     <div class="divRightNav">
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">

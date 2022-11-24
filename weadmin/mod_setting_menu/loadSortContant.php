@@ -26,11 +26,11 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
   $valName = rechangeQuot($row[$mod_tb_root . "_nameeng"]);
 }
 
-if($_REQUEST["tagEditID"]=='2'){
+if($_REQUEST["tagEditID"]=='1'){
 $order = "_order_theme_1";
-}else if($_REQUEST["tagEditID"]=='3'){
+}else if($_REQUEST["tagEditID"]=='2'){
   $order = "_order_theme_2";
-}else if($_REQUEST["tagEditID"]=='4'){
+}else if($_REQUEST["tagEditID"]=='3'){
   $order = "_order_theme_3";
 }
 ?>

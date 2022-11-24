@@ -8,7 +8,6 @@ include("config.php");
 
 $valSortArray=explode("&listItem[]=","&".$_POST['inputSort']);
 $order = $_REQUEST['orderTheme'];
-print_pre($order);
  $valSortCount= count($valSortArray);
  
 	for($i=0;$i<$valSortCount;$i++){
@@ -34,5 +33,6 @@ logs_access('3','Sort');
     <input name="inputSearch" type="hidden" id="inputSearch" value="<?php echo $_REQUEST['inputSearch']?>" />
     <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
     <input name="inputTh" type="hidden" id="inputTh" value="<?php echo $_REQUEST['inputTh']?>" />
+    <input name="tagEditID" type="hidden" id="tagEditID" value="<?php echo $_REQUEST['tagEditID']?>" />
 </form>            
 <script language="JavaScript" type="text/javascript"> document.myFormAction.submit(); </script>

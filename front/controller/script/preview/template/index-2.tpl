@@ -609,7 +609,7 @@
             </div>
             <div class="col-md">
               <div class="content-right">
-                <form data-toggle="validator" role="form" class="form-default" method="post">
+                <form data-toggle="validator" id="search-opac-t2" role="form" class="form-default" method="post" onsubmit="SearchOPACT2()">
                   <div class="form-group">
                     <label class="control-label visuallyhidden" for="bookSearch">สืบค้นหนังสือ/วารสาร</label>
                     <div class="block-control">

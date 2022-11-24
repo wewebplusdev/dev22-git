@@ -70,17 +70,17 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     } else {
         $inputSearch = $_REQUEST['inputSearch'];
     }
-    if ($_REQUEST['inputTag'] != "") {
-        $inputTag = trim($_REQUEST['inputTag']);
-        if ($_REQUEST["inputTag"] == '2') {
+    if ($_REQUEST['tagEditID'] != "") {
+        $tagEditID = trim($_REQUEST['tagEditID']);
+        if ($_REQUEST["tagEditID"] == '1') {
             $module_orderby = $mod_tb_root . "_order_theme_1";
-        } else if ($_REQUEST["inputTag"] == '3') {
+        } else if ($_REQUEST["tagEditID"] == '2') {
             $module_orderby = $mod_tb_root . "_order_theme_2";
-        } else if ($_REQUEST["inputTag"] == '4') {
+        } else if ($_REQUEST["tagEditID"] == '3') {
             $module_orderby = $mod_tb_root . "_order_theme_3";
         }
     } else {
-        $inputTag = $_REQUEST['inputTag'];
+        $tagEditID = $_REQUEST['tagEditID'];
         $module_orderby = $mod_tb_root . "_order";
     }
 
@@ -96,8 +96,8 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
         ) ";
     }
 
-    if ($inputTag <> "") {
-        $sqlSearch = $sqlSearch . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $inputTag . "\".*')";
+    if ($tagEditID <> "") {
+        $sqlSearch = $sqlSearch . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $tagEditID . "\".*')";
     }
 
     ?>
@@ -126,23 +126,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
                 <tr>
                     <td style="padding-right:10px;" width="50%">
-                        <select name="inputTag" id="inputTag" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
-                            <option value=""><?php echo  $langMod["tit:selectghasg"] ?></option>
+                        <select name="tagEditID" id="tagEditID" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
+                        <option value=""><?php echo  $langMod["tit:selectgtheme"] ?></option>
                             <?php
-                            $sql_group = "SELECT ";
-                            if ($_REQUEST['inputLt'] == "Thai") {
-                                $sql_group .= "  " . $core_tb_tag . "_id," . $core_tb_tag . "_subject";
-                            } else {
-                                $sql_group .= " " . $core_tb_tag . "_id," . $core_tb_tag . "_subjecten ";
-                            }
-
-                            $sql_group .= "  FROM " . $core_tb_tag . " WHERE  " . $core_tb_tag . "_masterkey ='theme'  ORDER BY " . $core_tb_tag . "_order DESC ";
-                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
-                            while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
-                                $row_groupid = $row_group[0];
-                                $row_groupname = $row_group[1];
-                            ?>
-                                <option value="<?php echo  $row_groupid ?>" <?php if ($inputTag == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo  $row_groupname ?></option>
+                            foreach ($core_arr_theme as $keycore_arr_theme => $valuecore_arr_theme) { ?>
+                                <option value="<?php echo  $keycore_arr_theme ?>" <? if ($tagEditID == $keycore_arr_theme) { ?> selected="selected" <?php  }?>><?php echo  $valuecore_arr_theme ?></option>
                             <?php } ?>
                         </select>
                     </td>
@@ -175,7 +163,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                                         alert('<?php echo  $langTxt["mg:selpermis"] ?>');
                                                     }
                                                   "></div> -->
-                                        <div class="btnSort" id="btnSort" name="btnSort" title="<?php echo $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  $inputTag ?>;sortContactNew('sortContant.php');"></div>
+                                        <div class="btnSort" id="btnSort" name="btnSort" title="<?php echo $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  $tagEditID ?>;sortContactNew('sortContant.php');"></div>
                                     <?php } ?>
                                 </td>
                             </tr>
@@ -221,10 +209,19 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
                 // $sql = $sql . "  AND (" . $mod_tb_root . "_masterkey LIKE '%" . $mod_array_conf[$_REQUEST['masterkey']]['key'] . "' ";
 
-                $sql = $sql . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"2\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"3\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"4\".*')";
+                // $sql = $sql . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"2\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"3\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"4\".*')";
 
+                $sql = $sql . "  AND  ( ";
+                $index_loop = 1;
+                foreach ($core_arr_theme as $keycore_arr_theme => $valuecore_arr_theme) {
+                    $sql = $sql . " " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"".$keycore_arr_theme."\".*'";
+                    if ($index_loop < count($core_arr_theme)) {
+                        $sql = $sql . " OR ";
+                    }
+                    $index_loop++;
+                }
+                $sql = $sql . " ) ";
 
-                // $sql = $sql . " ) ";
 
                 $sql = $sql . $sqlSearch;
                 // print_pre($sql);
@@ -546,7 +543,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     <script>
         $(document).ready(function() {
 
-                if ($('#inputTag').val() === "") {
+                if ($('#tagEditID').val() === "") {
                     $('#btnSort').hide();
                 } else {
                     $('#btnSort').show();

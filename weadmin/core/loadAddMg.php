@@ -284,8 +284,8 @@ if ($_REQUEST["myParentID"] >= 1) {
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" id="tags" class="tbBoxViewBorder">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-                        <span class="formFontSubjectTxt"><?php echo  $langMod["tit:hashtag"] ?></span><br />
-                        <span class="formFontTileTxt"><?php echo  $langMod["tit:hashtagDes"] ?></span>
+                        <span class="formFontSubjectTxt"><?php echo  $langMod["tit:theme"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo  $langMod["tit:themeDe"] ?></span>
                     </td>
                 </tr>
                 <tr>
@@ -293,26 +293,16 @@ if ($_REQUEST["myParentID"] >= 1) {
                 </tr>
 
                 <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["inp:hashtag"] ?><span class="fontContantAlert"></span></td>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["inp:theme"] ?><span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <select name="inputTag[]" id="inputTag" class="formSelectContantTb select2" multiple>
-                            <option value=""><?php echo  $langMod["tit:selectghasg"] ?></option>
+                            <option value=""><?php echo  $langMod["tit:selectgtheme"] ?></option>
                             <?php
-                            $sql_group = "SELECT ";
-                            if ($_REQUEST['inputLt'] == "Thai") {
-                                $sql_group .= "  " . $core_tb_tag . "_id," . $core_tb_tag . "_subject";
-                            } else {
-                                $sql_group .= " " . $core_tb_tag . "_id," . $core_tb_tag . "_subjecten ";
+                            foreach ($core_arr_theme as $keycore_arr_theme => $valuecore_arr_theme) { ?>
+                                <option value="<?php echo  $keycore_arr_theme ?>" ><?php echo  $valuecore_arr_theme ?></option>
+                            <?php
                             }
-
-                            $sql_group .= "  FROM " . $core_tb_tag . " WHERE  " . $core_tb_tag . "_masterkey ='theme'  ORDER BY " . $core_tb_tag . "_order DESC ";
-                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
-                            while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
-                                $row_groupid = $row_group[0];
-                                $row_groupname = $row_group[1];
                             ?>
-                                <option value="<?php echo  $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo  $row_groupname ?></option>
-                            <?php } ?>
                         </select>
                     </td>
                 </tr>
