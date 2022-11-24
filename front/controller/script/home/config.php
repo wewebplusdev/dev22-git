@@ -79,9 +79,9 @@ $arrThemeFile = array(
     'osv' => 'front/controller/script/home/template/theme-1/section-online-service.tpl', // true
     'is_art' => 'front/controller/script/home/template/theme-1/section-information-service.tpl',
     'wb_t3' => 'front/controller/script/home/template/theme-1/section-weblink-2.tpl', // true
-    'is_ms' => 'front/controller/script/home/template/theme-1/section-museum.tpl',
+    'is_ms' => 'front/controller/script/home/template/theme-1/section-museum.tpl', // true
     'wb_book' => 'front/controller/script/home/template/theme-1/section-weblink-3.tpl', // true
-    'vdo' => 'front/controller/script/home/template/theme-1/section-video.tpl',
+    'vdo' => 'front/controller/script/home/template/theme-1/section-video.tpl', // true
     'trw_semi' => 'front/controller/script/home/template/theme-1/section-training-2.tpl', // true
   ),
 );

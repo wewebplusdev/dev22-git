@@ -453,6 +453,8 @@ if($lang){
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_description" . $lang . " as description,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_keywords" . $lang . " as keywords,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_tid as tid,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_head" . $lang . " as head,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_filevdo as filevdo,
 
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
