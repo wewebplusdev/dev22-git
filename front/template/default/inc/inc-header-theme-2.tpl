@@ -5,17 +5,19 @@
 				<div class="col-auto">
 					<div class="text-color">
 						<div class="txt">
-							เปลี่ยนการแสดงผล
+							{$lang['home']['changedisplay']}
 						</div>
 						<ul class="item-list">
 							<li class="active">
 								<a href="javascript:void(0)" class="theme theme-style-1" title="default theme">C</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="theme theme-style-2" title="black and white theme">C</a>
+								<a href="javascript:void(0)" class="theme theme-style-2"
+									title="black and white theme">C</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="theme theme-style-3" title="black and yellow theme">C</a>
+								<a href="javascript:void(0)" class="theme theme-style-3"
+									title="black and yellow theme">C</a>
 							</li>
 						</ul>
 					</div>
@@ -23,17 +25,20 @@
 				<div class="col-auto">
 					<div class="text-size">
 						<div class="txt">
-							ขนาดตัวอักษร
+							{$lang['home']['fontsize']}
 						</div>
 						<ul class="item-list">
 							<li class="active">
-								<a href="javascript:void(0)" class="size size-small typo-s" title="size small">ก</a>
+								<a href="javascript:void(0)" class="size size-small typo-s"
+									title="size small">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">ก</a>
+								<a href="javascript:void(0)" class="size size-medium typo-md"
+									title="size medium">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">ก</a>
+								<a href="javascript:void(0)" class="size size-large typo-lg"
+									title="size large">{$settingWeb['font'][$langon]}</a>
 							</li>
 						</ul>
 					</div>
@@ -41,22 +46,22 @@
 				<div class="col">
 					<div class="text-language" style="float: right;">
 						<ul class="item-list">
-							<li class="active">
-								<a href="javascript:void(0)" class="link lg" title="English language">
+							<li class="{if $langon eq 'en'}active{/if}">
+								<a href="{$ul}/lang/en" class="link lg" title="English language">
 									<div class="icon">
 										<img src="{$template}/assets/img/icon/gb.svg" alt="Flag of the United Kingdom">
 									</div>
 								</a>
 							</li>
-							<li>
-								<a href="javascript:void(0)" class="link lg" title="Thai language">
+							<li class="{if $langon eq 'th'}active{/if}">
+								<a href="{$ul}/lang/th" class="link lg" title="Thai language">
 									<div class="icon">
 										<img src="{$template}/assets/img/icon/th.svg" alt="Flag of the Thailand">
 									</div>
 								</a>
 							</li>
-							<li>
-								<a href="javascript:void(0)" class="link lg" title="Chinese language">
+							<li class="{if $langon eq 'cn'}active{/if}">
+								<a href="{$ul}/lang/cn" class="link lg" title="Chinese language">
 									<div class="icon">
 										<img src="{$template}/assets/img/icon/cn.svg" alt="Flag of China">
 									</div>
@@ -73,8 +78,9 @@
 			<div class="row no-gutters align-items-center">
 				<div class="col-auto">
 					<div class="brand">
-						<a href="index-theme-2.php" class="link" title="Gem and Jewelry Institute of Thailand">
-							<img src="{$template}/assets/img/static/git-brand-2.svg" alt="Gem and Jewelry Institute of Thailand">
+						<a href="{$ul}/home" class="link" title="Gem and Jewelry Institute of Thailand">
+							<img src="{$template}/assets/img/static/git-brand-2.svg"
+								alt="Gem and Jewelry Institute of Thailand">
 						</a>
 					</div>
 				</div>
@@ -102,17 +108,19 @@
 				<div class="col-auto">
 					<div class="text-color">
 						<div class="txt">
-							เปลี่ยนการแสดงผล
+							{$lang['home']['changedisplay']}
 						</div>
 						<ul class="item-list">
 							<li class="active">
 								<a href="javascript:void(0)" class="theme theme-style-1" title="default theme">C</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="theme theme-style-2" title="black and white theme">C</a>
+								<a href="javascript:void(0)" class="theme theme-style-2"
+									title="black and white theme">C</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="theme theme-style-3" title="black and yellow theme">C</a>
+								<a href="javascript:void(0)" class="theme theme-style-3"
+									title="black and yellow theme">C</a>
 							</li>
 						</ul>
 					</div>
@@ -120,17 +128,20 @@
 				<div class="col-auto">
 					<div class="text-size">
 						<div class="txt">
-							ขนาดตัวอักษร
+							{$lang['home']['fontsize']}
 						</div>
 						<ul class="item-list">
 							<li class="active">
-								<a href="javascript:void(0)" class="size size-small typo-s" title="size small">ก</a>
+								<a href="javascript:void(0)" class="size size-small typo-s"
+									title="size small">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">ก</a>
+								<a href="javascript:void(0)" class="size size-medium typo-md"
+									title="size medium">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">ก</a>
+								<a href="javascript:void(0)" class="size size-large typo-lg"
+									title="size large">{$settingWeb['font'][$langon]}</a>
 							</li>
 						</ul>
 					</div>
@@ -138,22 +149,22 @@
 				<div class="col-auto">
 					<div class="text-language">
 						<ul class="item-list">
-							<li class="active">
-								<a href="javascript:void(0)" class="link lg" title="English language">
+							<li class="{if $langon eq 'en'}active{/if}">
+								<a href="{$ul}/lang/en" class="link lg" title="English language">
 									<div class="icon">
 										<img src="{$template}/assets/img/icon/gb.svg" alt="Flag of the United Kingdom">
 									</div>
 								</a>
 							</li>
-							<li>
-								<a href="javascript:void(0)" class="link lg" title="Thai language">
+							<li class="{if $langon eq 'th'}active{/if}">
+								<a href="{$ul}/lang/th" class="link lg" title="Thai language">
 									<div class="icon">
 										<img src="{$template}/assets/img/icon/th.svg" alt="Flag of the Thailand">
 									</div>
 								</a>
 							</li>
-							<li>
-								<a href="javascript:void(0)" class="link lg" title="Chinese language">
+							<li class="{if $langon eq 'cn'}active{/if}">
+								<a href="{$ul}/lang/cn" class="link lg" title="Chinese language">
 									<div class="icon">
 										<img src="{$template}/assets/img/icon/cn.svg" alt="Flag of China">
 									</div>
@@ -169,58 +180,43 @@
 				<div class="col-auto">
 					<div class="brand d-lg-none d-block">
 						<a href="index-theme-2.php" class="link" title="Gem and Jewelry Institute of Thailand">
-							<img src="{$template}/assets/img/static/git-brand-theme-2.svg" alt="Gem and Jewelry Institute of Thailand">
+							<img src="{$template}/assets/img/static/git-brand-theme-2.svg"
+								alt="Gem and Jewelry Institute of Thailand">
 						</a>
 					</div>
 				</div>
 				<div class="col">
 					<div class="main-menu-list">
 						<ul class="nav-list level-I">
-							<li class="active">
-								<a href="index-theme-2.php" class="link" title="หน้าแรก">
-									หน้าแรก
+							<li {if strtolower($segment) eq "home"}class="active" {/if}>
+								<a href="{$ul}/home" class="link" title="{$lang['menu']['home']}">
+									{$lang['menu']['home']}
 								</a>
 							</li>
-							<li class="dropright">
-								<a href="javascript:void(0)" class="link link-submenu" data-link="about-menu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									เกี่ยวกับเรา
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" class="link link-submenu" data-link="service-menu" title="งานบริการ">
-									งานบริการ
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" class="link link-submenu" title="งานฝึกอบรม">
-									งานฝึกอบรม
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" class="link link-submenu" title="งานบริการข้อมูล">
-									งานบริการข้อมูล
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" class="link link-submenu" title="งานวิจัย">
-									งานวิจัย
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" class="link link-submenu" title="บริการออนไลน์">
-									บริการออนไลน์
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" class="link link-submenu" title="สมาชิกสัมพันธ์">
-									สมาชิกสัมพันธ์
-								</a>
-							</li>
-							<li class="dropleft">
-								<a href="javascript:void(0)" class="link link-submenu" title="ติดต่อเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									ติดต่อเรา
-								</a>
-							</li>
+							{foreach $arrSitemap as $keyarrSitemap => $valuearrSitemap}
+								{$menuSegment = url_segment_menu($valuearrSitemap['group']['url'])}
+								{if count($valuearrSitemap['list']) > 0}
+									<li
+										class="{if $keyarrSitemap eq 0}dropright{/if} {if $keyarrSitemap eq count($arrSitemap)}dropleft{/if} {if $segment eq $menuSegment[0]}active{/if}">
+										<a href="javascript:void(0)" class="link link-submenu" data-link="{$keyarrSitemap}-menu"
+											title="{$valuearrSitemap['group']['subject']}" data-toggle="dropdown"
+											aria-haspopup="true" aria-expanded="false">
+											{$valuearrSitemap['group']['subject']}
+										</a>
+									</li>
+								{else}
+									<li class="{if $segment eq $menuSegment[0]}active{/if}">
+										<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']}"
+												{if $valuearrSitemap['group']['target'] eq 2}target="_blank" {/if}
+											{else}href="javascript:void(0);" 
+											{/if} class="link link-submenu"
+											data-link="{$keyarrSitemap}-menu" title="{$valuearrSitemap['group']['subject']}"
+											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											{$valuearrSitemap['group']['subject']}
+										</a>
+									</li>
+								{/if}
+							{/foreach}
 						</ul>
 					</div>
 				</div>
@@ -249,105 +245,69 @@
 	<div class="main-menu">
 		<ul class="nav-list level-I">
 			<li>
-				<a href="index-theme-2.php" class="link active" title="หน้าแรก">
-					หน้าแรก
+				<a href="{$ul}/home" class="link {if strtolower($segment) eq "home"}active{/if}"
+					title="{$lang['menu']['home']}">
+					{$lang['menu']['home']}
 				</a>
 			</li>
-			<li class="about-menu dropright">
-				<a href="javascript:void(0)" class="link submenu" title="เกี่ยวกับเรา" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					เกี่ยวกับเรา
-				</a>
-				<ul class="dropdown-menu level-II">
-					<li class="active mb-3 d-sm-none d-block">
-						<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="เกี่ยวกับเรา">
-							<span class="feather icon-chevron-left"></span>
-							เกี่ยวกับเรา
+			{foreach $arrSitemap as $keyarrSitemap => $valuearrSitemap}
+				{$menuSegment = url_segment_menu($valuearrSitemap['group']['url'])}
+				<li class="{$keyarrSitemap}-menu dropright">
+					{if count($valuearrSitemap['list']) > 0}
+						<a href="javascript:void(0)" class="link submenu {if $segment eq $menuSegment[0]}active{/if}"
+							title="{$valuearrSitemap['group']['subject']}" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							{$valuearrSitemap['group']['subject']}
 						</a>
+					{else}
+						<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']}"
+								{if $valuearrSitemap['group']['target'] eq 2}target="_blank" {/if}{else}href="javascript:void(0);"
+								{/if} class="link submenu {if $segment eq $menuSegment[0]}active{/if}"
+								title="{$valuearrSitemap['group']['subject']}">
+								{$valuearrSitemap['group']['subject']}
+							</a>
+						{/if}
+						<ul class="dropdown-menu level-II">
+							<li class="active mb-3 d-sm-none d-block">
+								<a href="javascript:void(0)" class="link text-light typo-lg fw-medium"
+									title="{$valuearrSitemap['group']['subject']}">
+									<span class="feather icon-chevron-left"></span>
+									{$valuearrSitemap['group']['subject']}
+								</a>
+							</li>
+							{foreach $valuearrSitemap['list'] as $keySubmenu => $valueSubmenu}
+								{if count($valueSubmenu['menu']) > 0}
+									<li class="dropdown-item">
+										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$valueSubmenu['subgroup']['url']}"
+												{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank" {/if}
+											{else}href="javascript:void(0);" 
+											{/if} class="link text-light typo-sm"
+											title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
+										<ul class="item-list fluid bullet">
+											{foreach $valueSubmenu['menu'] as $keyMenuLv3 => $valueMenuLv3}
+												<li>
+													<a {if $valueMenuLv3['url'] neq "" && $valueMenuLv3['url'] neq "#"}href="{$valueMenuLv3['url']}"
+															{if $valueMenuLv3['target'] eq 2}target="_blank" {/if}
+														{else}href="javascript:void(0);" 
+														{/if} class="link text-light typo-s"
+														title="{$valueMenuLv3['subject']}">{$valueMenuLv3['subject']}</a>
+												</li>
+											{/foreach}
+										</ul>
+									</li>
+								{else}
+									<li class="dropdown-item">
+										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$valueSubmenu['subgroup']['url']}"
+												{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank" {/if}
+											{else}href="javascript:void(0);" 
+											{/if} class="link text-light typo-sm"
+											title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
+									</li>
+								{/if}
+							{/foreach}
+						</ul>
 					</li>
-          {for $index=1 to 5}
-						<li class="dropdown-item">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">ทิศทางองค์กร</a>
-						</li>
-						<li class="dropdown-item">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">นโยบายและแผน</a>
-							<ul class="item-list fluid bullet">
-								<li>
-									<a href="https://www.youtube.com/watch?v=IFlB_3KRayk" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-							</ul>
-						</li>
-					{/for}
-				</ul>
-			</li>
-			<li class="service-menu dropright">
-				<a href="javascript:void(0)" class="link submenu" title="งานบริการ" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					งานบริการ
-				</a>
-				<ul class="dropdown-menu level-II">
-					<li class="active mb-3 d-sm-none d-block">
-						<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="งานบริการ">
-							<span class="feather icon-chevron-left"></span>
-							งานบริการ
-						</a>
-					</li>
-
-          {for $index=1 to 2}
-						<li class="dropdown-item active">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">งานบริการ</a>
-						</li>
-						<li class="dropdown-item">
-							<a href="javascript:void(0)" class="link text-light typo-sm" title="ทิศทางองค์กร">นโยบายและแผน</a>
-							<ul class="item-list bullet">
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="link text-light typo-s" title="รายงานประจำปี">รายงานประจำปี</a>
-								</li>
-							</ul>
-						</li>
-					{/for}
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="งานฝึกอบรม">
-					งานฝึกอบรม
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="งานบริการข้อมูล">
-					งานบริการข้อมูล
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="งานวิจัย">
-					งานวิจัย
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="บริการออนไลน์">
-					บริการออนไลน์
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="สมาชิกสัมพันธ์">
-					สมาชิกสัมพันธ์
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" class="link" title="ติดต่อเรา">
-					ติดต่อเรา
-				</a>
-			</li>
-		</ul>
+				{/foreach}
+			</ul>
+		</div>
 	</div>
-</div>

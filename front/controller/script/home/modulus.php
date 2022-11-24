@@ -170,7 +170,7 @@ if($lang){
 
     $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order DESC," . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order LIMIT ".$limit." ";
 
-     print_pre($sql);
+    //  print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
