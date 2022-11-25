@@ -150,19 +150,25 @@ switch ($themeWebsite['class']) {
         $smarty->assign("arrServiceList", $arrServiceList);
         // print_pre($arrServiceList);
         
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['service']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['trw_semi']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banI_t2']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_ms']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banII_t2']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_art']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banIII_t2']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['library_t2']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
-        //  print_pre($sectionMainpage);
+
+        $sectionMainpage = array();
+        foreach ($callSection as $keycallSection => $valuecallSection) {
+            $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
+        }
+        $smarty->assign("sectionMainpage", $sectionMainpage);
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['service']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['trw_semi']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banI_t2']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_ms']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banII_t2']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_art']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banIII_t2']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['library_t2']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
+        // print_pre($sectionMainpage);
         
         $smarty->assign("headerBody", $incfile['header2']);
         $smarty->assign("footerBody", $incfile['footer2']);
