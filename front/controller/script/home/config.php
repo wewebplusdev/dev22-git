@@ -16,6 +16,7 @@ $arr_conf['book']['masterkey'] = "wb_book";
 $arr_conf['osv']['masterkey'] = $config['about']['osv']['masterkey'];
 $arr_conf['feed']['masterkey'] = "is_art";
 $arr_conf['service']['masterkey'] = "service";
+$arr_conf['information-service']['masterkey'] = "information-service";
 // $mod_array_conf = array(
 //   'theme-3' => array(
 //     'key' => '_t3',
@@ -70,24 +71,23 @@ $arrThemeFile = array(
     'library_t2' => 'front/controller/script/home/template/theme-2/section-library.tpl',
   ),
   '1' => array(
-    'gcon_t1' => 'front/controller/script/home/template/theme-1/section-html-1.tpl', // true
-    'ab_nm' => 'front/controller/script/home/template/theme-1/section-news.tpl', // true
-    'gel_t1' => 'front/controller/script/home/template/theme-1/section-weblink-1.tpl', // true
-    'gca_t1' => 'front/controller/script/home/template/theme-1/section-html-2.tpl', // true
-    'gwj_t1' => 'front/controller/script/home/template/theme-1/section-html-3.tpl', // true
-    'trw_cou' => 'front/controller/script/home/template/theme-1/section-training-1.tpl',
-    'is_art' => 'front/controller/script/home/template/theme-1/section-feed.tpl', // true
-    'gjt_t1' => 'front/controller/script/home/template/theme-1/section-html-4.tpl', // true
-    'osv' => 'front/controller/script/home/template/theme-1/section-online-service.tpl', // true
-    'service' => 'front/controller/script/home/template/theme-1/section-service.tpl',
-    'wb_t3' => 'front/controller/script/home/template/theme-1/section-weblink-2.tpl', // true
-    'is_ms' => 'front/controller/script/home/template/theme-1/section-museum.tpl', // true
-    'wb_book' => 'front/controller/script/home/template/theme-1/section-weblink-3.tpl', // true
-    'vdo' => 'front/controller/script/home/template/theme-1/section-video.tpl', // true
-    'trw_semi' => 'front/controller/script/home/template/theme-1/section-training-2.tpl', // true
+    'gcon_t1' => 'front/controller/script/home/template/theme-1/section-html-1.tpl', // true //
+    'ab_nm' => 'front/controller/script/home/template/theme-1/section-news.tpl', // true //
+    'gel_t1' => 'front/controller/script/home/template/theme-1/section-weblink-1.tpl', // true //
+    'gca_t1' => 'front/controller/script/home/template/theme-1/section-html-2.tpl', // true //
+    'gwj_t1' => 'front/controller/script/home/template/theme-1/section-html-3.tpl', // true //
+    'information-service' => 'front/controller/script/home/template/theme-1/section-feed.tpl', // true //
+    'gjt_t1' => 'front/controller/script/home/template/theme-1/section-html-4.tpl', // true //
+    'osv' => 'front/controller/script/home/template/theme-1/section-online-service.tpl', // true //
+    'service' => 'front/controller/script/home/template/theme-1/section-service.tpl', // true //
+    'wb_t3' => 'front/controller/script/home/template/theme-1/section-weblink-2.tpl', // true //
+    'is_ms' => 'front/controller/script/home/template/theme-1/section-museum.tpl', // true //
+    'wb_book' => 'front/controller/script/home/template/theme-1/section-weblink-3.tpl', // true //
+    'vdo' => 'front/controller/script/home/template/theme-1/section-video.tpl', // true //
+    'trw_semi' => 'front/controller/script/home/template/theme-1/section-training-2.tpl', // true //
   ),
 );
-
+// information-service
 $arrGitLibary = array(
   'ti=' => array(
     'th' => 'ชื่อเรื่อง(สำคัญ)',

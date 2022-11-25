@@ -82,21 +82,23 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
           <td class="divRightNavTb" align="right">
 
             <!-- ######### Start Menu Sub Mod ########## -->
-            <!-- <div class="menuSubMod">
+            <?php if(in_array($_REQUEST['masterkey'], $array_setting)){ ?>
+            <div class="menuSubMod">
               <a href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                 <?php echo $langMod["meu:setPermis"] ?>
               </a>
             </div>
-            <div class="menuSubMod">
+            <!-- <div class="menuSubMod">
               <a href="group.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                 <?php echo $langMod["meu:group"] ?>
               </a>
-            </div>
+            </div> -->
             <div class="menuSubMod active">
               <a href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                 <?php echo $langMod["meu:contant"] ?>
               </a>
-            </div> -->
+            </div>
+            <?php } ?>
             <!-- ######### End Menu Sub Mod ########## -->
 
           </td>

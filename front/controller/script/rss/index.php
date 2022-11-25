@@ -15,8 +15,9 @@ switch ($explo2[0]) {
     case 'ab_nm':
         $MenuID = $callSetWebsite->getMenuDetail(null, $masterkey);
         $callNews = $rssPage->rssNews($masterkey, $group);
-        $callNameGroup = $rssPage->callDataTableNoneDate($config['cmg']['db']['main'], $masterkey,$group);
-        $linkRSSDetail = _URL.''. $url->pagelang[2] ."/about/" . $MenuID->fields['id'] . "/" . $callNameGroup->fields['id'] . "/detail";
+        // $callNameGroup = $rssPage->callDataTableNoneDate($config['cmg']['db']['main'], $masterkey,$group);
+        // print_pre($callNameGroup);die;
+        $linkRSSDetail = _URL.''. $url->pagelang[2] ."/about/" . $MenuID->fields['id'] . "/" . $callNews->fields['gid'] . "/detail";
         $TitleRSS = $callNameGroup->fields[2] != "" ? $callNameGroup->fields[2] : $lang['menu']['news'];
         $urlRss = _URL.''. $url->pagelang[2] .'/about/'. $MenuID->fields['id'];
         if ($callNews->_numOfRows > 0) {

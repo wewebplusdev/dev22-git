@@ -48,11 +48,11 @@ switch ($themeWebsite['class']) {
         $callKmSection = $homePage->callTopGraphic($config['km_t3']['main']['masterkey']);
         $smarty->assign("callKmSection", $callKmSection);
 
-        // $sectionMainpage = array();
-        // foreach ($callSection as $keycallSection => $valuecallSection) {
-        //     $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$callSection[1]][$valuecallSection['masterkey']];
-        // }
-        // $smarty->assign("sectionMainpage", $sectionMainpage);
+        $sectionMainpage = array();
+        foreach ($callSection as $keycallSection => $valuecallSection) {
+            $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
+        }
+        $smarty->assign("sectionMainpage", $sectionMainpage);
 
         $smarty->assign("headerBody", $incfile['header3']);
         $smarty->assign("footerBody", $incfile['footer3']);
@@ -288,29 +288,37 @@ switch ($themeWebsite['class']) {
             $arrServiceList[$keygetMenuDetailHome]['group']['subject'] = $valuegetMenuDetailHome['subject'];
             
             $callService = $homePage->callcms_thmem_1($valuegetMenuDetailHome['masterkey'], 0, 5, 'Enable');
+            $calHTML_setting = $homePage->callCMSS_2($valuegetMenuDetailHome['masterkey']);
+            $arrServiceList[$keygetMenuDetailHome]['setting'][] = $calHTML_setting->fields;
             foreach ($callService as $keycallService => $valuecallService) {
                 $arrServiceList[$keygetMenuDetailHome]['list'][] = $valuecallService;
             }
         }
         $smarty->assign("arrServiceList", $arrServiceList);
         // print_pre($arrServiceList);
-        
 
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gcon_t1']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gel_t1']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['trw_semi']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gca_t1']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gwj_t1']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gjt_t1']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_art']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['infoservice']['is_ms']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['video']['vdo']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['feed']['masterkey']];
-        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['service']['masterkey']];
+        $sectionMainpage = array();
+        foreach ($callSection as $keycallSection => $valuecallSection) {
+            $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
+            $sectionMainpage[$keycallSection]['masterkey'] = $valuecallSection['masterkey'];
+            $$sectionMainpage[$keycallSection]['file'] = array_filter($sectionMainpage[$keycallSection]['file']);
+        }
+
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gcon_t1']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gel_t1']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['trw_semi']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gca_t1']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gwj_t1']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gjt_t1']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['information-service']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['infoservice']['is_ms']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['video']['vdo']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['feed']['masterkey']];
+        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['service']['masterkey']];
         // print_pre($sectionMainpage);
 
         $smarty->assign("headerBody", $incfile['header']);

@@ -1,5 +1,6 @@
 <?php
 $array_home = array('nw');
+$array_setting = array('sv_gc', 'sv_pmc', 'sv_cc');
 ## Mod Table ###################################
 $mod_tb_root = "md_cms";
 $mod_tb_root_group = "md_cmg";
@@ -9,7 +10,7 @@ $mod_tb_fileTemp = "md_cmtp";
 $mod_tb_root_album = "md_cma";
 $mod_tb_root_albumTemp = "md_cmatp";
 
-$mod_tb_setting = "md_cuss";
+$mod_tb_setting = "md_cmss";
 
 
 ## Mod Folder ###################################

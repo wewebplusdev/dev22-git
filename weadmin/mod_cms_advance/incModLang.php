@@ -193,7 +193,7 @@ $langTxt["mg:statuspin"] = "Pin/Unpin";
 		$langTxt["mg:ribbon"] = "Ribbon";
 
 		$langMod["txt:picG"] = "รูปภาพประกอบ";
-		$langMod["txt:picGDe"] = "ข้อมูลรูปภาพประกอบ เพื่อใช้ในการแสดงผลรูปภาพไอคอนของเนื้อหานี";
+		$langMod["txt:picGDe"] = "ข้อมูลรูปภาพประกอบ เพื่อใช้ในการแสดงผลรูปภาพไอคอนของเนื้อหานี้";
 		$langMod["inp:noteG"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg,.png และ .gif เท่านั้น, รูปภาพควรเป็นสีขาว และ ขนาดของรูปภาพไม่เกิน 2 Mb และรูปภาพที่ให้ในการอัพโหลดควรมีสัดส่วนที่ 580 x 295 พิกเซล";
 		$langMod["inp:noteG2"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .png เท่านั้น, รูปภาพควรเป็นสีเข้ม และ ขนาดของรูปภาพไม่เกิน 2 Mb และรูปภาพที่ให้ในการอัพโหลดควรมีสัดส่วนที่ 580 x 295 พิกเซล";
 		$langTT["us:inputpicselect1"] = "เลือกรูปภาพสีขาว";
@@ -209,6 +209,9 @@ $langMod["tit:credit"] ="Credit";
 $langMod["edit:linknote"] ="หมายเหตุ : กรุณากรอกชื่อ URL นำหน้าด้วย \"http://\" เช่น http://www.wewebplus.com เป็นต้น"."<br>"."กรณีไม่มีชื่อ URL ให้ใส่เครื่องหมาย #";
 $langMod["tit:groupType"] = "ประเภทรายละเอียด";
 $langTxt["mg:statuspin"] = "Pin/Unpin";
-
+$langMod["meu:setPermis"] = "ตั้งค่า";
+$langMod["txt:titles"] = "ตั้งค่า" .getNameMenu($_REQUEST["menukeyid"]);
+$langMod["txt:titleedits"] = "แก้ไขตั้งค่า" .getNameMenu($_REQUEST["menukeyid"]);
+$langMod["txt:titleeditsDe"] = "ข้อมูลตั้งค่า เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
 }
 ?>

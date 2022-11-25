@@ -204,64 +204,21 @@ logs_access('3', 'View');
                         <td class="divRightNavTb" align="right">
 
                             <!-- ######### Start Menu Sub Mod ########## -->
-                            <!-- <div class="menuSubMod active">
+                            <div class="menuSubMod active">
                             <a  href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                                 <?php echo $langMod["meu:setPermis"] ?>
                             </a>
-                        </div>
-                        <div class="menuSubMod">
-                            <a  href="group.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-								<?php echo $langMod["meu:group"] ?>
-                            </a>
-                        </div>
-                        <div class="menuSubMod ">
-                            <a  href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-								<?php echo $langMod["meu:contant"] ?>
-                            </a>
-                        </div> -->
-
-                            <?php if (in_array($_REQUEST['masterkey'], $array)) { ?>
-
-                                <?php if (in_array($_REQUEST['masterkey'], $array_masterkey_setting)) { ?>
-                                    <div class="menuSubMod active">
-                                        <a href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                            <?php echo $langMod["meu:setPermis"] ?>
-                                        </a>
-                                    </div>
-                                    <div class="menuSubMod">
-                                        <a href="group.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                            <?php echo $langMod["meu:group"] ?>
-                                        </a>
-                                    </div>
-                                    <div class="menuSubMod ">
-                                        <a href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                            <?php echo $langMod["meu:contant"] ?>
-                                        </a>
-                                    </div>
-                                <?php } else { ?>
-                                    <div class="menuSubMod">
-                                        <a href="group.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                            <?php echo $langMod["meu:group"] ?>
-                                        </a>
-                                    </div>
-                                    <div class="menuSubMod active">
-                                        <a href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                            <?php echo $langMod["meu:contant"] ?>
-                                        </a>
-                                    </div>
-                                <?php } ?>
-                            <?php } elseif (in_array($_REQUEST['masterkey'], $array_masterkey_setting)) { ?>
-                                <div class="menuSubMod active">
-                                    <a href="setting.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                        <?php echo $langMod["meu:setPermis"] ?>
-                                    </a>
-                                </div>
-                                <div class="menuSubMod ">
-                                    <a href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                                        <?php echo $langMod["meu:contant"] ?>
-                                    </a>
-                                </div>
-                            <?php } ?>
+                            </div>
+                            <!-- <div class="menuSubMod">
+                                <a  href="group.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
+                                    <?php echo $langMod["meu:group"] ?>
+                                </a>
+                            </div> -->
+                            <div class="menuSubMod ">
+                                <a  href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
+                                    <?php echo $langMod["meu:contant"] ?>
+                                </a>
+                            </div>
                             <!-- ######### End Menu Sub Mod ########## -->
 
 
@@ -318,143 +275,66 @@ logs_access('3', 'View');
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:subject"] ?></span><br />
-                        <span class="formFontTileTxt"><?php echo $langMod["txt:subjectDe"] ?></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subject:setting"] ?>:<span class="fontContantAlert"></span></td>
-                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                        <div class="formDivView"><?php echo $valSubject ?></div>
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
                     </td>
                 </tr>
                 <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title:setting"] ?>:<span class="fontContantAlert"></span></td>
-                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                        <div class="formDivView"><?php echo $valTitle ?></div>
+                    <td colspan="7" align="left" valign="top" class="formTileTxt">
+                        <div class="viewEditorTileTxt">
+                            <?php
+                            $fd = @fopen($valHtml, "r");
+                            $contents = @fread($fd, filesize($valHtml));
+                            @fclose($fd);
+                            echo txtReplaceHTML($contents);
+                            ?>
+                        </div>
                     </td>
                 </tr>
             </table>
             <br />
-            <?php if ($_REQUEST['menukeyid'] == '83' || $_REQUEST['menukeyid'] == '84') { ?>
-                <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
-                    <tr>
-                        <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-                            <span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] . " (TH)" ?></span><br />
-                            <span class="formFontTileTxt"><?php echo $langMod["txt:attfileDe"] ?></span>
-                        </td>
-                    </tr>
-                    <tr <?php if (empty($valTypeFile) || $valTypeFile == 1) { ?> style="display: none;" <?php } ?>>
-                        <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkdownload"] ?>:<span class="fontContantAlert"></span></td>
-                        <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                            <div class="formDivView"><?php echo $valUrlFile ?></div>
-                        </td>
-                    </tr>
-                    <tr <?php if ($valTypeFile == 2) { ?> style="display: none;" <?php } ?>>
-                        <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:attfile"] ?>:<span class="fontContantAlert"></span></td>
-                        <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                            <div class="formDivView">
-                                <?php if ($Row['file'] != '') { ?>
-                                    <?php
-                                    // print_pre($Row['file']);
-                                    $linkRelativePath = $mod_path_file . "/" . $Row['file'];
-                                    $downloadFile = $Row['file'];
-                                    $downloadFilename = $Row['filename'];
-                                    $downloadID = $Row[0];
-                                    $imageType = strstr($downloadFile, '.');
-                                    ?>
-
-                                    <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadFilename . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> </div>
-                                    <!-- | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?> -->
-                                    <div></div>
-                                <?php } else { ?>
-                                    -
-                                <?php } ?>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-
-                <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
-                    <tr>
-                        <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-                            <span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] . " (EN)" ?></span><br />
-                            <span class="formFontTileTxt"><?php echo $langMod["txt:attfileDe"] ?></span>
-                        </td>
-                    </tr>
-                    <tr <?php if (empty($valTypeFileEn) || $valTypeFileEn == 1) { ?> style="display: none;" <?php } ?>>
-                        <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkdownload"] ?>:<span class="fontContantAlert"></span></td>
-                        <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                            <div class="formDivView"><?php echo $valUrlFileEn ?></div>
-                        </td>
-                    </tr>
-                    <tr <?php if ($valTypeFileEn == 2) { ?> style="display: none;" <?php } ?>>
-                        <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:attfile"] ?>:<span class="fontContantAlert"></span></td>
-                        <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                            <div class="formDivView">
-                                <?php if ($Row['fileen'] != '') { ?>
-                                    <?php
-                                    // print_pre($Row['file']);
-                                    $linkRelativePath = $mod_path_file . "/" . $Row['fileen'];
-                                    $downloadFile = $Row['fileen'];
-                                    $downloadFilename = $Row['filenameen'];
-                                    $downloadID = $Row[0];
-                                    $imageType = strstr($downloadFile, '.');
-                                    ?>
-
-                                    <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadFilename . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> </div>
-                                    <!-- | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?> -->
-                                    <div></div>
-                                <?php } else { ?>
-                                    -
-                                <?php } ?>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-
-                <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
-                    <tr>
-                        <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-                            <span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] . " (MM)" ?></span><br />
-                            <span class="formFontTileTxt"><?php echo $langMod["txt:attfileDe"] ?></span>
-                        </td>
-                    </tr>
-                    <tr <?php if (empty($valTypeFileCn) || $valTypeFileCn == 1) { ?> style="display: none;" <?php } ?>>
-                        <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkdownload"] ?>:<span class="fontContantAlert"></span></td>
-                        <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                            <div class="formDivView"><?php echo $valUrlFileCn ?></div>
-                        </td>
-                    </tr>
-                    <tr <?php if ($valTypeFileCn == 2) { ?> style="display: none;" <?php } ?>>
-                        <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:attfile"] ?>:<span class="fontContantAlert"></span></td>
-                        <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                            <div class="formDivView">
-                                <?php if ($Row['filecn'] != '') { ?>
-                                    <?php
-                                    // print_pre($Row['file']);
-                                    $linkRelativePath = $mod_path_file . "/" . $Row['filecn'];
-                                    $downloadFile = $Row['filecn'];
-                                    $downloadFilename = $Row['filenamecn'];
-                                    $downloadID = $Row[0];
-                                    $imageType = strstr($downloadFile, '.');
-                                    ?>
-
-                                    <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadFilename . "" . $imageType ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> </div>
-                                    <!-- | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?> -->
-                                    <div></div>
-                                <?php } else { ?>
-                                    -
-                                <?php } ?>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-            <?php } ?>
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:eng"] ?>)<?php } ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="left" valign="top" class="formTileTxt">
+                        <div class="viewEditorTileTxt">
+                            <?php
+                            $fd = @fopen($valHtmlEN, "r");
+                            $contents = @fread($fd, filesize($valHtmlEN));
+                            @fclose($fd);
+                            echo txtReplaceHTML($contents);
+                            ?>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:chi"] ?>)<?php } ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="left" valign="top" class="formTileTxt">
+                        <div class="viewEditorTileTxt">
+                            <?php
+                            $fd = @fopen($valHtmlCN, "r");
+                            $contents = @fread($fd, filesize($valHtmlCN));
+                            @fclose($fd);
+                            echo txtReplaceHTML($contents);
+                            ?>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br />
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">

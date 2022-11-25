@@ -98,56 +98,15 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	<script language="JavaScript" type="text/javascript">
 		function executeSubmit() {
 			with(document.myForm) {
-
-
-				// if(isBlank(inputSubject)) {
-				// 	inputSubject.focus();
-				// 	jQuery("#inputSubject").addClass("formInputContantTbAlertY");
-				// 	return false;
-				// }else{
-				// 	jQuery("#inputSubject").removeClass("formInputContantTbAlertY");
-				// }
-
-				// if (inputUrlcheck.value == "Allowed") {
-				// 	if (isBlank(inputUrlFriendly)) {
-				// 		inputUrlFriendly.focus();
-				// 		jQuery("#inputUrlFriendly").addClass("formInputContantTbAlertY");
-				// 		return false;
-				// 	} else {
-				// 		jQuery("#inputUrlFriendly").removeClass("formInputContantTbAlertY");
-				// 	}
-				// }else{
-				// 	inputUrlFriendly.focus();
-				// 	return false;
-				// }
-
-				// if(isBlank(inputDescription)) {
-				// 	inputDescription.focus();
-				// 	jQuery("#inputDescription").addClass("formInputContantTbAlertY");
-				// 	return false;
-				// }else{
-				// 	jQuery("#inputDescription").removeClass("formInputContantTbAlertY");
-				// }
-
-				// var type = $('#inputTypeC:checked').val();
-				// if (type == 2) {
-				// 	if(isBlank(inputurlc)) {
-				// 	inputurlc.focus();
-				// 	jQuery("#inputurlc").addClass("formInputContantTbAlertY");
-				// 	return false;
-				// 	}else{
-				// 		jQuery("#inputurlc").removeClass("formInputContantTbAlertY");
-				// 	}
-
-
-				// 	if(inputurlc.value=="http://") {
-				// 		inputurlc.focus();
-				// 		jQuery("#inputurlc").addClass("formInputContantTbAlertY");
-				// 		return false;
-				// }else{
-				// 	jQuery("#inputurlc").removeClass("formInputContantTbAlertY");
-				// }
-				// }
+				var alleditDetail = CKEDITOR.instances.editDetail.getData();
+                if (alleditDetail == "") {
+                    jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
+                    window.location.hash = '#inputEditHTML';
+                    return false;
+                } else {
+                    jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
+                }
+                jQuery('#inputHtml').val(alleditDetail);
 
 			}
 
@@ -216,7 +175,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		<div class="divRightHead">
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" class="borderBottom" align="center">
 				<tr>
-					<td height="77" align="left"><span class="fontHeadRight"><?php echo $langMod["txt:titles"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo getSystemLangTxt($_REQUEST['inputLt'], $langTxt["lg:thai"], $langTxt["lg:eng"], $langTxt["lg:chi"]) ?>)<?php } ?></span></td>
+					<td height="77" align="left"><span class="fontHeadRight"><?php echo $langMod["txt:titleedits"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo getSystemLangTxt($_REQUEST['inputLt'], $langTxt["lg:thai"], $langTxt["lg:eng"], $langTxt["lg:chi"]) ?>)<?php } ?></span></td>
 					<td align="left">
 						<table border="0" cellspacing="0" cellpadding="0" align="right">
 							<tr>
@@ -233,33 +192,31 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			</table>
 		</div>
 		<div class="divRightMain">
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
-				<tr>
-					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-						<span class="formFontSubjectTxt"><?php echo $langMod["txt:subject"] ?></span><br />
-						<span class="formFontTileTxt"><?php echo $langMod["txt:subjectDe"] ?></span>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="7" align="right" valign="top" height="15"></td>
-				</tr>
-				<tr>
-					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subject:setting"] ?><span class="fontContantAlert"></span></td>
-					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputSubject" id="inputSubject" type="text" class="formInputContantTb" value="<?php echo $valSubject ?>" /></td>
-				</tr>
-				<tr>
-					<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:title:setting"] ?><span class="fontContantAlert"></span></td>
-					<td colspan="6" align="left" valign="top" class="formRightContantTb">
-						<textarea name="inputDescription" id="inputDescription" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valTitle ?></textarea>
-					</td>
-				</tr>
-
-			</table>
-			<br />
-
-			<br />
-
-
+		<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="center" valign="top" class="formRightContantTbEditor">
+                        <div id="inputEditHTML">
+                            <textarea name="editDetail" id="editDetail">
+                                      <?php
+                                        if (is_file($valhtml)) {
+                                            $fd = @fopen($valhtml, "r");
+                                            $contents = @fread($fd, @filesize($valhtml));
+                                            @fclose($fd);
+                                            echo txtReplaceHTML($contents);
+                                        }
+                                        ?>
+                                </textarea>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br class="ckabout" />
 
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
 
@@ -318,126 +275,6 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			return false;
 
 		}
-
-		// function ajaxFileUpload2(){
-		// 	var valuepicname = jQuery("input#picname2").val();
-
-		// 	 jQuery.blockUI({
-		// 			message: jQuery('#tallContent'),
-		// 			css: { border: 'none',padding: '35px',backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .9, color: '#fff'
-		// 			}
-		// 		});
-
-
-		// 	jQuery.ajaxFileUpload({
-		// 			url:'loadUpdatePic2.php?myID=<?php echo $_POST["valEditID"] ?>&masterkey=<?php echo $_REQUEST['masterkey'] ?>&langt=<?php echo $_REQUEST['inputLt'] ?>&delpicname='+valuepicname+'&menuid=<?php echo $_REQUEST['menukeyid'] ?>',
-		// 			secureuri:false,
-		// 			fileElementId:'fileToUpload2',
-		// 			dataType: 'json',
-		// 			success: function (data, status){
-		// 				if(typeof(data.error) != 'undefined')
-		// 				{
-
-		// 					if(data.error != '')
-		// 					{
-		// 						alert(data.error);
-
-		// 					}else
-		// 					{
-		// 						jQuery("#boxPicNew2").show();
-		// 						jQuery("#boxPicNew2").html(data.msg);
-		// 						setTimeout(jQuery.unblockUI, 200);
-		// 					}
-		// 				}
-		// 			},
-		// 			error: function (data, status, e)
-		// 			{
-		// 				alert(e);
-		// 			}
-		// 		}
-		// 	)
-		// 	return false;
-
-		// }
-		/*############################# Upload Album ##################################
-
-		function ajaxFileUploadAlbum(){
-			 jQuery.blockUI({
-					message: jQuery('#tallContent'),
-					css: { border: 'none',padding: '35px',backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .9, color: '#fff'
-					}
-				});
-
-
-			jQuery.ajaxFileUpload({
-					url:'loadUpdateAlbum.php?myID=<?php echo $_POST["valEditID"] ?>&masterkey=<?php echo $_REQUEST['masterkey'] ?>&langt=<?php echo $_REQUEST['inputLt'] ?>&menuid=<?php echo $_REQUEST['menukeyid'] ?>',
-					secureuri:true,
-					fileElementId:'inputAlbumUpload',
-					dataType: 'json',
-					success: function (data, status){
-						if(typeof(data.error) != 'undefined'){
-
-							if(data.error != ''){
-								alert(data.error);
-							}else{
-								jQuery("#boxAlbumNew").show();
-								jQuery("#boxAlbumNew").html(data.msg);
-								setTimeout(jQuery.unblockUI, 200);
-							}
-
-						}
-					},
-					error: function (data, status, e){
-						alert(e);
-					}
-				}
-			)
-
-			return false;
-
-		}*/
-
-		/*################################# Upload Video #######################*/
-		// function ajaxVideoUpload(){
-		// 	var valuevdoname = jQuery("input#vdoname").val();
-
-		// 	 jQuery.blockUI({
-		// 			message: jQuery('#tallContent'),
-		// 			css: { border: 'none',padding: '35px',backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .9, color: '#fff'
-		// 			}
-		// 		});
-
-
-		// 	jQuery.ajaxFileUpload({
-		// 			url:'loadUpdateVideo.php?myID=<?php echo $_POST["valEditID"] ?>&masterkey=<?php echo $_REQUEST['masterkey'] ?>&langt=<?php echo $_REQUEST['inputLt'] ?>&delvdoname='+valuevdoname+'&menuid=<?php echo $_REQUEST['menukeyid'] ?>',
-		// 			secureuri:false,
-		// 			fileElementId:'inputVideoUpload',
-		// 			dataType: 'json',
-		// 			success: function (data, status){
-		// 				if(typeof(data.error) != 'undefined')
-		// 				{
-
-		// 					if(data.error != '')
-		// 					{
-		// 						alert(data.error);
-
-		// 					}else
-		// 					{
-		// 						jQuery("#boxVideoNew").show();
-		// 						jQuery("#boxVideoNew").html(data.msg);
-		// 						setTimeout(jQuery.unblockUI, 200);
-		// 					}
-		// 				}
-		// 			},
-		// 			error: function (data, status, e)
-		// 			{
-		// 				alert(e);
-		// 			}
-		// 		}
-		// 	)
-		// 	return false;
-
-		// }
 
 		// /*############################# Upload File ####################################*/
 		function ajaxFileUploadDoc() {

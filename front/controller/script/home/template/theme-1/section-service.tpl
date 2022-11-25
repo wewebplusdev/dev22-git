@@ -18,7 +18,7 @@
             {foreach $arrServiceList as $keyarrServiceList => $valuearrServiceList}
               <ul class="item-list">
                 <li class="menu-service">
-                  <a class="link topic {if $keyarrServiceList eq 0}active{/if}" href="#Tab{$keyarrServiceList}" data-toggle="tab">
+                  <a class="link topic {if $keyarrServiceList eq 0}active{/if}" href="#Tab{$valuearrServiceList.group.id}" data-toggle="tab">
                     <div class="block-dots">
                       <div class="dots-topic {if $keyarrServiceList eq 0}active{/if}"></div>
                     </div>
@@ -43,42 +43,21 @@
             <img src="{$template}/assets/img/upload/service-image.png" alt="gallery thumbnail">
           </figure>
           <div class="tab-content clearfix">
-            <div class="tab-pane active" id="Tab1">
-              <div class="topic-content-block">
-                <div class="h-title m-0">บริการห้องปฏิบัติการ1</div>
-                <div class="sub-title">ตรวจสอบอัญมณี</div>
-                <div class="desc">
-                  ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
+            {$index_setting = 0}
+            {foreach $arrServiceList as $keyarrServiceList => $valuearrServiceList}
+              {foreach $valuearrServiceList.setting as $keySubSetting => $valueSubSetting}
+                <div class="tab-pane {if $index_setting eq 0}active{/if}" id="Tab{$valueSubSetting.menuid}">
+                {if $valueSubSetting.htmlfilename neq ""}
+                  <!-- CK Editor -->
+                  {strip}
+                    {$valueSubSetting.htmlfilename|fileinclude:"html":$valueSubSetting.masterkey|callHtml}
+                  {/strip}
+                  <!-- CK Editor -->
+                {/if}
                 </div>
-                <div class="load-more-hide text-left mt-4">
-                  <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane" id="Tab2">
-              <div class="topic-content-block">
-                <div class="h-title m-0">บริการห้องปฏิบัติการ2</div>
-                <div class="sub-title">ตรวจสอบอัญมณี</div>
-                <div class="desc">
-                  ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
-                </div>
-                <div class="load-more-hide text-left mt-4">
-                  <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane" id="Tab3">
-              <div class="topic-content-block tab-pane">
-                <div class="h-title m-0">บริการห้องปฏิบัติการ3</div>
-                <div class="sub-title">ตรวจสอบอัญมณี</div>
-                <div class="desc">
-                  ห้องปฏิบัติการตรวจสอบอัญมณีของสถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)….
-                </div>
-                <div class="load-more-hide text-left mt-4">
-                  <a href="javascript:void(0)" class="btn btn-border-primary" title="ดูทั้งหมด">อ่านต่อ</a>
-                </div>
-              </div>
-            </div>
+              {/foreach}
+            {$index_setting = $index_setting+1}
+            {/foreach}
           </div>
         </div>
       </div>
