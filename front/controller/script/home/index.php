@@ -135,8 +135,22 @@ switch ($themeWebsite['class']) {
             $arrGitMsList[$keycallGitMsSection] = $valuecallGitMsSection;
         }
         $smarty->assign("arrGitMsList", $arrGitMsList);
+        // call service
+        $getMenuDetailHome = $callSetWebsite->getMenuDetail(null, 'sv_', null, null, null);
+        $arrServiceList = array();
+        foreach ($getMenuDetailHome as $keygetMenuDetailHome => $valuegetMenuDetailHome) {
+            $arrServiceList[$keygetMenuDetailHome]['group']['id'] = $valuegetMenuDetailHome['id'];
+            $arrServiceList[$keygetMenuDetailHome]['group']['subject'] = $valuegetMenuDetailHome['subject'];
+            
+            $callService = $homePage->callcms_thmem_1($valuegetMenuDetailHome['masterkey'], 0, 5, 'Enable');
+            foreach ($callService as $keycallService => $valuecallService) {
+                $arrServiceList[$keygetMenuDetailHome]['list'][$keycallService] = $valuecallService;
+            }
+        }
+        $smarty->assign("arrServiceList", $arrServiceList);
+        // print_pre($arrServiceList);
         
-
+        $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['service']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['trw_semi']['masterkey']];
         $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banI_t2']['masterkey']];
