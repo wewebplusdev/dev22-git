@@ -298,8 +298,10 @@ $lang['career']['province'] = "Province";
 $lang['career']['district'] = "District";
 $lang['career']['subdistrict'] = "Subdistrict";
 $lang['career']['postcode'] = "Postcode";
+$lang['career']['numhome'] = "Have With number";
+$lang['career']['addbrosis'] = "Add Brother/Sister";
 
-$lang['career']['datework'] = "วันที่พร้อมเริ่มงานได้/Starting Date";
+$lang['career']['datework'] = "Starting Date";
 $lang["career"]["address"] = "Address to contact";
 $lang["career"]["Moo"] = "Moo";
 $lang["career"]["MooHome"] = "Village / building";

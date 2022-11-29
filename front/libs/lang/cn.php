@@ -245,7 +245,8 @@ $lang['career']['upfiletxt4'] = "結婚登記";
 $lang['career']['upfiletxt5'] = "私家車、摩托車牌照";
 $lang['career']['upfiletxt6'] = "其他";
 $lang['career']['uploadtxt'] = "上傳";
-
+$lang['career']['numhome'] = "有編號";
+$lang['career']['addbrosis'] = "添加兄弟/姐妹";
 
 $lang['career']['vertxt'] = "人力資源官的評論";
 $lang['career']['vertxt1'] = "（我作為數據主體同意向 Git 提供/提供此職位申請的文件和證據，並允許 Git 收集、使用或披露我的個人數據， 主要是為了根據法律和個人數據保護法 (B.E.2562) 管理公司的僱傭關係和人力資源管理 ";

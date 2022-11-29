@@ -296,7 +296,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="have-with-number">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="have-with-number" placeholder="Have With number" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="have-with-number" placeholder="{$lang['career']['numhome']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -398,7 +398,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-have-with-number">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="present-have-with-number" placeholder="Have With number" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="present-have-with-number" placeholder="{$lang['career']['numhome']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -1146,7 +1146,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                             <div class="button ">
                                 <a href="javascript:void(0);" class="btn btn-primary addbrethren" title="btn btn-primary">
                                     <span class="feather icon-plus text-white"></span>
-                                    Add Brother / Sister
+                                    {$lang['career']['addbrosis']}
                                 </a>
                             </div>
                         </div>
