@@ -12443,21 +12443,19 @@ fieldset {
   max-width: 1040px;
   margin: 0 auto;
 }
-.default-nav-slider .item {
+.default-nav-slider .item a {
   position: relative;
+  text-decoration: none;
+  color: #cccccc;
+  transition: all 200ms ease-out;
   padding: 30px 40px;
-  padding-bottom: 74px;
-  font-size: var(--typo-sm);
+  padding-bottom: 60px;
   text-align: center;
   line-height: 1em;
   height: 2em;
   -webkit-line-clamp: 2;
   z-index: 2;
-}
-.default-nav-slider .item a {
-  text-decoration: none;
-  color: #cccccc;
-  transition: all 200ms ease-out;
+  display: block;
 }
 .default-nav-slider .item a:hover {
   color: var(--color-primary);
@@ -12496,6 +12494,8 @@ fieldset {
 }
 .default-nav-slider .slick-prev::before,
 .default-nav-slider .slick-next::before {
+  position: relative;
+  top: 1.5px;
   font-family: "feather";
   font-size: 30px;
   line-height: 0.5;
