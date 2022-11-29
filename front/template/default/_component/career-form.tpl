@@ -1,4 +1,6 @@
-<section class="site-container sitekey" data-menuid="{$settingModulus['menuid']}" data-id="{$sitekey}">
+<section class="site-container sitekey" data-menuid="{$settingModulus['menuid']}" 
+data-id="{$sitekey}" data-size="{$lang['career']['swal']['maxsize']}" data-sizeis="{$lang['career']['swal']['maxsizeis']}"
+data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']['swal']['typeerror']}" data-tryagian="{$lang['career']['swal']['tryagian']}">
 <div class="default-header">
     <div class="top-graphic mb-4">
         <figure class="cover">
@@ -34,9 +36,9 @@
 
     <div class="container">
         <div class="h-title">
-            ใบสมัครงาน (APPLICATION FORM)
+        {$lang['career']['Application_form']}
             </br>
-            สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ(องค์การมหาชน)
+            {$lang['career']['title']}
         </div>
         <form data-toggle="validator" role="form" class="form-default" name="form-career" id="form-career" method="POST">
             <div class="upload-form mb-lg-5 mb-4">
@@ -69,7 +71,7 @@
                             <!-- <div class="typo-xs text-gray" style=" padding-left: 12.5px; padding-right: 12.5px; ">ตำแหน่งที่ต้องการสมัคร Position</div> -->
                             <div class="row gutters-custom">
                                 <div class="col">
-                                    <div class="control-label" for="mockSelect1">ตำแหน่งที่ต้องการสมัคร position</div>
+                                    <div class="control-label" for="mockSelect1">{$lang['career']['apply']}</div>
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="mockSelect1">Example select</label>
                                         <div class="select-wrapper">
@@ -88,7 +90,7 @@
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="salaly">Example input</label>
                                         <div class="block-control">
-                                            <input type="number" class="form-control" name="info[]" id="salaly" placeholder="เงินเดือนที่ต้องการ" data-error="" required="required">
+                                            <input type="number" class="form-control" name="info[]" id="salaly" placeholder="{$lang["career"]["salary"]}" data-error="" required="required">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -97,7 +99,7 @@
                                     <div class="form-group has-feedback">
                                         <label class="control-label visuallyhidden" for="sdate">Example input</label>
                                         <div class="block-control">
-                                            <input type="date" class="form-control" name="info[]" id="sdate" placeholder="วันที่พร้อมจะเริ่มงานได้/Starting Date" ata-error="" required="required">
+                                            <input type="date" class="form-control" name="info[]" id="sdate" placeholder="{$lang['career']['datework']}" ata-error="" required="required">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -108,12 +110,11 @@
                 </div>
             </div>
             <div class="title">
-                โปรดกรอกข้อความในใบสมัครโดยละเอียดและครบถ้วน
-                </br>
-                (Please complete the following form and state details)
+                {$lang['career']['fill-apply']}
+
             </div>
             <div class="form-default mt-xl-4">
-                <div class="title">ประวัติส่วนตัว PERSONAL DETEAILS <span>*</span> </div>
+                <div class="title">{$lang['career']['Personal_details']} <span>*</span> </div>
                 <div class="row gutters-custom">
                     <div class="col-sm-2 col-3">
                         <div class="form-group">
@@ -131,7 +132,7 @@
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="fname">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="general[]" id="fname" placeholder="ชื่อ First Name (Thai)" data-error="" required="required">
+                                <input type="text" class="form-control" name="general[]" id="fname" placeholder="{$lang['career']['fname']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -140,7 +141,7 @@
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="lname">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="general[]" id="lname" placeholder="นามสกุล Surname (Thai)" data-error="" required="required">
+                                <input type="text" class="form-control" name="general[]" id="lname" placeholder="{$lang['career']['lname']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -163,7 +164,7 @@
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="email">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="general[]" id="email" placeholder="ชื่อ First Name (Thai)" data-error="" required="required">
+                                <input type="text" class="form-control" name="general[]" id="email" placeholder="{$lang['career']['fnameen']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -172,7 +173,7 @@
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="email">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="general[]" id="email" placeholder="นามสกุล Surname (Thai)" data-error="" required="required">
+                                <input type="text" class="form-control" name="general[]" id="email" placeholder="{$lang['career']['lnameen']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -180,13 +181,13 @@
                 </div>
             </div>
             <div class="form-default">
-                <!-- <div class="text-primary typo-xs">วันเดือนปีเกิด/Date of birthday<span>*</span> </div> -->
+                <!-- <div class="text-primary typo-xs"><span>*</span> </div> -->
                 <div class="row gutters-custom align-items-end">
                     <div class="col-xl">
                         <div class="row gutters-custom align-items-end">
                             <div class="col-xl-3 col-lg-4 col-sm">
                                 <div class="form-group -nm I">
-                                    <label class="control-label label-custom" for="select-day">วันเดือนปีเกิด/Date of birthday<span>*</span></label>
+                                    <label class="control-label label-custom" for="select-day">{$lang['career']['date']}<span>*</span></label>
                                     <div class="select-wrapper">
                                         <select class="select-control" name="general[]" id="select-day" style="width: 100%;" required="required">
                                           <option value="">{$lang['career']['day']}</option>
@@ -244,7 +245,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="height">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="general[]" id="height" placeholder="ส่วนสูง/Height cm" data-error="" required="required">
+                                        <input type="text" class="form-control" name="general[]" id="height" placeholder="{$lang['career']['height']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -253,7 +254,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="inputPlaceOfBirth">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="general[]" id="inputPlaceOfBirth" placeholder="ภูมิสำเนา/Place of Birth" data-error="" required="required">
+                                        <input type="text" class="form-control" name="general[]" id="inputPlaceOfBirth" placeholder="{$lang['career']['Domicile']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -268,7 +269,7 @@
                             <div class="form-group form-check">
                                 <input class="form-check-input radio-check" type="radio" name="general[sex]" id="male" value="ชาย" required="required">
                                 <label class="control-label" for="male">
-                                    ชาย/Male
+                                    {$lang['career']['male']}
                                 </label>
                             </div>
                         </fieldset>
@@ -279,7 +280,7 @@
                             <div class="form-group form-check">
                                 <input class="form-check-input radio-check" type="radio" name="general[sex]" id="female" value="หญิง" required="required">
                                 <label class="control-label" for="female">
-                                    หญิง/Female
+                                    {$lang['career']['female']}
                                 </label>
                             </div>
                         </fieldset>
@@ -287,7 +288,7 @@
                 </div>
             </div>
             <div class="form-default mt-xl-4">
-                <div class="title">ที่อยู่ตามทะเบียนบ้าน/Home Address</div>
+                <div class="title">{$lang['career']['homeaddress']}</div>
                 <div class="row gutters-custom">
                     <div class="col-md-4">
                         <div class="row gutters-custom">
@@ -295,7 +296,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="have-with-number">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="have-with-number" placeholder="Have With number" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="have-with-number" placeholder="{$lang['career']['numhome']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -303,7 +304,7 @@
                             <div class="col-md-5 col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="moo">Example input</label>
-                                    <input type="text" class="form-control" name="address[]" id="moo" placeholder="Moo" data-error="" required="required">
+                                    <input type="text" class="form-control" name="address[]" id="moo" placeholder="{$lang["career"]["Moo"]}" data-error="" required="required">
                                     <div class="block-control">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
@@ -317,7 +318,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="village-building">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="village-building" placeholder="Village / building" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="village-building" placeholder="{$lang["career"]["MooHome"]}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -326,7 +327,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="alley">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="alley" placeholder="Alley" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="alley" placeholder="{$lang["career"]["alley"]}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -335,7 +336,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="road">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="road" placeholder="Road" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="road" placeholder="{$lang["career"]["road"]}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -381,7 +382,7 @@
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="postcode">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="address[]" id="postcode" placeholder="Postcode" data-error="" required="required">
+                                <input type="text" class="form-control" name="address[]" id="postcode" placeholder="{$lang['career']['postcode']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -389,7 +390,7 @@
                 </div>
             </div>
             <div class="form-default mt-xl-4">
-                <div class="title">ที่อยู่ปัจจุบัน/Present Address</div>
+                <div class="title">{$lang['career']['presentaddress']}</div>
                 <div class="row gutters-custom">
                     <div class="col-md-4">
                         <div class="row gutters-custom">
@@ -397,7 +398,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-have-with-number">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="present-have-with-number" placeholder="Have With number" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="present-have-with-number" placeholder="{$lang['career']['numhome']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -406,7 +407,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-moo">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="present-moo" placeholder="Moo" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="present-moo" placeholder="{$lang["career"]["Moo"]}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -419,7 +420,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-village-building">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="present-village-building" placeholder="Village / building" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="present-village-building" placeholder="{$lang["career"]["MooHome"]}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -428,7 +429,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-alley">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="present-alley" placeholder="Alley" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="present-alley" placeholder="{$lang["career"]["alley"]}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -437,7 +438,7 @@
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="present-road">Example input</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="address[]" id="present-road" placeholder="Road" data-error="" required="required">
+                                        <input type="text" class="form-control" name="address[]" id="present-road" placeholder="{$lang["career"]["road"]}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -483,7 +484,7 @@
                         <div class="form-group has-feedback">
                             <label class="control-label visuallyhidden" for="present-postcode">Example input</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="address[]" id="present-postcode" placeholder="Postcode" data-error="" required="required">
+                                <input type="text" class="form-control" name="address[]" id="present-postcode" placeholder="{$lang['career']['postcode']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -492,7 +493,7 @@
                 <div class="row gutters-custom">
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="telephone-home">โทรศัพท์ / Telephone Home</label>
+                            <label class="control-label" for="telephone-home">{$lang['career']['telhome']}</label>
                             <div class="block-control">
                                 <input type="text" class="form-control" name="address[]" id="telephone-home" placeholder="058-7784562" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
@@ -501,7 +502,7 @@
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="telephone-mobile">โทรศัพท์มือถือ / Mobile Phone</label>
+                            <label class="control-label" for="telephone-mobile">{$lang['career']['telmobile']}</label>
                             <div class="block-control">
                                 <input type="text" class="form-control" name="address[]" id="telephone-mobile" placeholder="060-XXX-XXXX" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
@@ -510,9 +511,9 @@
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="email">อีเมล์ / E-Mail</label>
+                            <label class="control-label" for="email">{$lang['contact']['email']}</label>
                             <div class="block-control">
-                                <input type="email" class="form-control" name="address[]" id="email" placeholder="อีเมล์ E-Mail" data-error="" required="required">
+                                <input type="email" class="form-control" name="address[]" id="email" placeholder="{$lang['contact']['email']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -523,7 +524,7 @@
                         <div class="row gutters-custom">
                             <div class="col-sm">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label" for="identification-1">บัตรประชาชนเลขที่ / Identification Card No.</label>
+                                    <label class="control-label" for="identification-1">{$lang['career']['idencardno']}</label>
                                     <div class="block-control">
                                         <input type="text" class="form-control" name="address[]" id="identification-1" placeholder="X-XXXX-XXXXX-XX-X" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
@@ -536,7 +537,7 @@
                         <div class="row gutters-custom">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="issued-at">สถานที่ออกบัตร / Issued at</label>
+                                    <label class="control-label" for="issued-at">{$lang['career']['issuedat']}</label>
                                     <div class="select-wrapper">
                                         <select class="select-control" name="address[]" id="issued-at" style="width: 100%;" required="required">
                                             <option value="">{$lang['career']['province']}</option>
@@ -549,7 +550,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label" for="expiry-date" style=" font-size: 14px; ">วันหมดอายุ / Expiry Date</label>
+                                    <label class="control-label" for="expiry-date" style=" font-size: 14px; ">{$lang['career']['expdate']}</label>
                                     <div class="block-control">
                                         <input type="text" class="form-control" name="address[]" id="expiry-date" placeholder="17 - 02 - 2565" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
@@ -561,7 +562,7 @@
                 </div>
             </div>
             <div class="form-default mt-xl-4" id="textarmy">
-                <div class="title">สถานภาพทางทหาร / Military Status</div>
+                <div class="title">{$lang['career']['army5']}</div>
                 <div class="row gutters-custom">
                     <div class="col-auto">
                         <fieldset>
@@ -569,7 +570,7 @@
                             <div class="form-group form-check">
                                 <input class="form-check-input radio-check military-checking" type="radio" name="military[status]" id="exempted" value="ได้รับการยกเว้น" checked>
                                 <label class="control-label" for="exempted">
-                                    ได้รับการยกเว้น / Exempted
+                               {$lang['career']['army1']}
                                 </label>
                             </div>
                         </fieldset>
@@ -580,7 +581,7 @@
                             <div class="form-group form-check">
                                 <input class="form-check-input radio-check military-checking" type="radio" name="military[status]" id="non-exempted" value="ยังไม่ผ่านการเกณฑ์ทหาร">
                                 <label class="control-label" for="non-exempted">
-                                    ยังไม่ผ่านการเกณฑ์ทหาร / Non-Exempted
+                                {$lang['career']['army2']}
                                 </label>
                             </div>
                         </fieldset>
@@ -591,7 +592,7 @@
                             <div class="form-group form-check">
                                 <input class="form-check-input radio-check military-checking" type="radio" name="military[status]" id="territorial-degree-student" value="เรียนรักษาดินแดน">
                                 <label class="control-label" for="territorial-degree-student">
-                                    เรียนรักษาดินแดน / Territorial Degree Student
+                                    {$lang['career']['army3']}
                                 </label>
                             </div>
                         </fieldset>
@@ -604,7 +605,7 @@
                             <div class="form-group form-check">
                                 <input class="form-check-input radio-check military-checking" type="radio" name="military[status]" id="date-entered-service" value="รับราชการทหารแล้ว">
                                 <label class="control-label" for="date-entered-service">
-                                    รับราชการทหารแล้ว / Date Entered Service
+                                    {$lang['career']['army4']}
                                 </label>
                             </div>
                         </fieldset>
@@ -615,14 +616,14 @@
                             <div class="form-group form-check">
                                 <input class="form-check-input radio-check military-checking" type="radio" name="military[status]" id="other" value="อื่นๆ">
                                 <label class="control-label" for="other">
-                                    อื่นๆ / Other
+                                    {$lang['career']['army']}
                                 </label>
                             </div>
                         </fieldset>
                     </div>
                     <div class="col-md-5 col-sm-6 military-other">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="identification-2">บัตรประชาชนเลขที่ / Identification Card No.</label>
+                            <label class="control-label visuallyhidden" for="identification-2">{$lang['career']['idencardno']}</label>
                             <div class="block-control">
                                 <input type="text" class="form-control mili-other" name="military[]" id="identification-2" placeholder="ระบุ / Annotate" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
@@ -632,13 +633,13 @@
                 </div>
             </div>
             <div class="form-default emergency-case">
-                <div class="title">บุคคลที่สามารถติดต่อได้กรณีเร่งด่วน / In case of emergency please contact</div>
+                <div class="title">{$lang['career']['emercontact']}</div>
                 <div class="row gutters-custom align-items-end">
                     <div class="col-md">
                         <div class="form-group has-feedback">
-                            <label class="control-label font-size-C" for="e-name">ชื่อ / Name</label>
+                            <label class="control-label font-size-C" for="e-name">{$lang['career']['fname']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="emergency[]" id="e-name" placeholder="ชื่อ / Name" data-error="" required="required">
+                                <input type="text" class="form-control" name="emergency[]" id="e-name" placeholder="{$lang['career']['fname']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -647,16 +648,16 @@
                         <div class="row gutters-custom">
                             <div class="col-md col-sm-6">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label font-size-C" for="e-surname">นามสกุล / Surname</label>
+                                    <label class="control-label font-size-C" for="e-surname">{$lang['career']['lname']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="emergency[]" id="e-surname" placeholder="นามสกุล / Surname" data-error="" required="required">
+                                        <input type="text" class="form-control" name="emergency[]" id="e-surname" placeholder="{$lang['career']['lname']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-4 col-sm-6">
                                 <div class="form-group">
-                                    <label class="control-label label-custom" for="e-select-day">วันเดือนปีเกิด/Date of birthday</label>
+                                    <label class="control-label label-custom" for="e-select-day">{$lang['career']['date']}</label>
                                     <div class="select-wrapper">
                                         <select class="select-control" name="emergency[]" id="e-select-day" style="width: 100%;" required="required">
                                             <option value="">{$lang['career']['day']}</option>
@@ -716,25 +717,25 @@
                 <div class="row gutters-custom">
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label font-size-C" for="relations">ความสัมพันธ์ / Relations</label>
+                            <label class="control-label font-size-C" for="relations">{$lang['career']['relation']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="emergency[]" id="relations" placeholder="ความสัมพันธ์ / Relations" data-error="" required="required">
+                                <input type="text" class="form-control" name="emergency[]" id="relations" placeholder="{$lang['career']['relation']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label font-size-C" for="address-workplace">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
+                            <label class="control-label font-size-C" for="address-workplace">{$lang['career']['addresswork']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="emergency[]" id="address-workplace" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="" required="required">
+                                <input type="text" class="form-control" name="emergency[]" id="address-workplace" placeholder="{$lang['career']['addresswork']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="e-tel">โทรศัพท์ / Tel.</label>
+                            <label class="control-label" for="e-tel">{$lang['career']['phone']}</label>
                             <div class="block-control">
                                 <input type="text" class="form-control" name="emergency[]" id="e-tel" placeholder="060-XXX-XXXX" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
@@ -745,13 +746,13 @@
             </div>
             <div class="form-default family-datails">
                 <div class="form-set">
-                    <div class="title">รายละเอียดครอบครัว / Family details <span>*</span></div>
+                    <div class="title">{$lang['career']['famiryde']} <span>*</span></div>
                     <div class="row gutters-custom align-items-end">
                         <div class="col-md">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-name-1">1. ชื่อ / Name</label>
+                                <label class="control-label font-size-C" for="f-name-1">1. {$lang['career']['fname']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="family[]" id="f-name-1" placeholder="ชื่อ / Name" data-error="" required="required">
+                                    <input type="text" class="form-control" name="family[]" id="f-name-1" placeholder="{$lang['career']['fname']}" data-error="" required="required">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -760,16 +761,16 @@
                             <div class="row gutters-custom">
                                 <div class="col-md col-sm-6">
                                     <div class="form-group has-feedback">
-                                        <label class="control-label font-size-C" for="f-surname-1">นามสกุล / Surname</label>
+                                        <label class="control-label font-size-C" for="f-surname-1">{$lang['career']['lname']}</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" name="family[]" id="f-surname-1" placeholder="นามสกุล / Surname" data-error="" required="required">
+                                            <input type="text" class="form-control" name="family[]" id="f-surname-1" placeholder="{$lang['career']['lname']}" data-error="" required="required">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-6">
                                     <div class="form-group">
-                                        <label class="control-label label-custom" for="f-select-day-1">วันเดือนปีเกิด/Date of birthday</label>
+                                        <label class="control-label label-custom" for="f-select-day-1">{$lang['career']['date']}</label>
                                         <div class="select-wrapper">
                                             <select class="select-control" name="family[]" id="f-select-day-1" style="width: 100%;" required="required">
                                                 <option value="">{$lang['career']['day']}</option>
@@ -829,25 +830,25 @@
                     <div class="row gutters-custom">
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-relations-1">ความสัมพันธ์ / Relations</label>
+                                <label class="control-label font-size-C" for="f-relations-1">{$lang['career']['relation']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="family[]" id="f-relations-1" placeholder="ความสัมพันธ์ / Relations" data-error="" required="required">
+                                    <input type="text" class="form-control" name="family[]" id="f-relations-1" placeholder="{$lang['career']['relation']}" data-error="" required="required">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-address-workplace-1">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
+                                <label class="control-label font-size-C" for="f-address-workplace-1">{$lang['career']['addresswork']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="family[]" id="f-address-workplace-1" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="" required="required">
+                                    <input type="text" class="form-control" name="family[]" id="f-address-workplace-1" placeholder="{$lang['career']['addresswork']}" data-error="" required="required">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="f-tel-1">โทรศัพท / Tel.</label>
+                                <label class="control-label" for="f-tel-1">{$lang['career']['phone']}</label>
                                 <div class="block-control">
                                     <input type="text" class="form-control" name="family[]" id="f-tel-1" placeholder="060-XXX-XXXX" data-error="" required="required">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
@@ -860,22 +861,22 @@
                             <div class="row gutters-custom">
                                 <div class="col-auto">
                                     <fieldset>
-                                        <legend class="visuallyhidden">Live</legend>
+                                        <legend class="visuallyhidden">{$lang['career']['status:live']}</legend>
                                         <div class="form-group form-check">
                                             <input class="form-check-input radio-check family-checking" type="radio" name="family[alive]" id="live" value="มีชีวิต" required="required">
                                             <label class="control-label" for="live">
-                                                Live
+                                                {$lang['career']['status:live']}
                                             </label>
                                         </div>
                                     </fieldset>
                                 </div>
                                 <div class="col-auto">
                                     <fieldset>
-                                        <legend class="visuallyhidden">Pass Away</legend>
+                                        <legend class="visuallyhidden">{$lang['career']['status:pass']}</legend>
                                         <div class="form-group form-check">
                                             <input class="form-check-input radio-check family-checking" type="radio" name="family[alive]" id="pass-away" value="เสียชีวิต" required="required">
                                             <label class="control-label" for="pass-away">
-                                                Pass Away
+                                                {$lang['career']['status:pass']}
                                             </label>
                                         </div>
                                     </fieldset>
@@ -935,9 +936,9 @@
                     <div class="row gutters-custom align-items-end">
                         <div class="col-md">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-name-2">2. ชื่อ / Name</label>
+                                <label class="control-label font-size-C" for="f-name-2">2. {$lang['career']['fname']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="family[]" id="f-name-2" placeholder="ชื่อ / Name" data-error="" required="required">
+                                    <input type="text" class="form-control" name="family[]" id="f-name-2" placeholder="{$lang['career']['fname']}" data-error="" required="required">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -946,16 +947,16 @@
                             <div class="row gutters-custom">
                                 <div class="col-md col-sm-6">
                                     <div class="form-group has-feedback">
-                                        <label class="control-label font-size-C" for="f-surname-2">นามสกุล / Surname</label>
+                                        <label class="control-label font-size-C" for="f-surname-2">{$lang['career']['lname']}</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" name="family[]" id="f-surname-2" placeholder="นามสกุล / Surname" data-error="" required="required">
+                                            <input type="text" class="form-control" name="family[]" id="f-surname-2" placeholder="{$lang['career']['lname']}" data-error="" required="required">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-6">
                                     <div class="form-group">
-                                        <label class="control-label label-custom" for="f-select-day-2">วันเดือนปีเกิด/Date of birthday</label>
+                                        <label class="control-label label-custom" for="f-select-day-2">{$lang['career']['date']}</label>
                                         <div class="select-wrapper">
                                             <select class="select-control" name="family[]" id="f-select-day-2" style="width: 100%;" required="required">
                                                 <option value="">{$lang['career']['day']}</option>
@@ -1015,25 +1016,25 @@
                     <div class="row gutters-custom">
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-relations-2">ความสัมพันธ์ / Relations</label>
+                                <label class="control-label font-size-C" for="f-relations-2">{$lang['career']['relation']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="family[]" id="f-relations-2" placeholder="ความสัมพันธ์ / Relations" data-error="" required="required">
+                                    <input type="text" class="form-control" name="family[]" id="f-relations-2" placeholder="{$lang['career']['relation']}" data-error="" required="required">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="f-address-workplace-2">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
+                                <label class="control-label font-size-C" for="f-address-workplace-2">{$lang['career']['addresswork']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="family[]" id="f-address-workplace-2" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="" required="required">
+                                    <input type="text" class="form-control" name="family[]" id="f-address-workplace-2" placeholder="{$lang['career']['addresswork']}" data-error="" required="required">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="f-tel-2">โทรศัพท / Tel.</label>
+                                <label class="control-label" for="f-tel-2">{$lang['career']['phone']}</label>
                                 <div class="block-control">
                                     <input type="text" class="form-control" name="family[]" id="f-tel-2" placeholder="060-XXX-XXXX" data-error="" required="required">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
@@ -1046,22 +1047,22 @@
                             <div class="row gutters-custom">
                                 <div class="col-auto">
                                     <fieldset>
-                                        <legend class="visuallyhidden">Live</legend>
+                                        <legend class="visuallyhidden">{$lang['career']['status:live']}</legend>
                                         <div class="form-group form-check">
                                             <input class="form-check-input radio-check family2-checking" type="radio" name="family[alive2]" id="live-2" value="มีชีวิต" required="required">
                                             <label class="control-label" for="live-2">
-                                                Live
+                                                {$lang['career']['status:live']}
                                             </label>
                                         </div>
                                     </fieldset>
                                 </div>
                                 <div class="col-auto">
                                     <fieldset>
-                                        <legend class="visuallyhidden">Pass Away</legend>
+                                        <legend class="visuallyhidden">{$lang['career']['status:pass']}</legend>
                                         <div class="form-group form-check">
                                             <input class="form-check-input radio-check family2-checking" type="radio" name="family[alive2]" id="pass-away-2" value="เสียชีวิต" required="required">
                                             <label class="control-label" for="pass-away-2">
-                                                Pass Away
+                                                {$lang['career']['status:pass']}
                                             </label>
                                         </div>
                                     </fieldset>
@@ -1132,9 +1133,9 @@
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group has-feedback">
-                                        <label class="control-label visuallyhidden" for="you-are-someone-who">You Are Someone Who?</label>
+                                        <label class="control-label visuallyhidden" for="you-are-someone-who">{$lang['career']['whoyou']}</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" name="brethren[0][]" id="you-are-someone-who" placeholder="You Are Someone Who?" data-error="" required="required">
+                                            <input type="text" class="form-control" name="brethren[0][]" id="you-are-someone-who" placeholder="{$lang['career']['whoyou']}" data-error="" required="required">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1145,7 +1146,7 @@
                             <div class="button ">
                                 <a href="javascript:void(0);" class="btn btn-primary addbrethren" title="btn btn-primary">
                                     <span class="feather icon-plus text-white"></span>
-                                    Add Brother / Sister
+                                    {$lang['career']['addbrosis']}
                                 </a>
                             </div>
                         </div>
@@ -1154,9 +1155,9 @@
                         <div class="row gutters-custom align-items-end">
                             <div class="col-md">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label font-size-C" for="f-name-3">ชื่อ / Name</label>
+                                    <label class="control-label font-size-C" for="f-name-3">{$lang['career']['fname']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="brethren[0][]" id="f-name-3" placeholder="ชื่อ / Name" data-error="" required="required">
+                                        <input type="text" class="form-control" name="brethren[0][]" id="f-name-3" placeholder="{$lang['career']['fname']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -1165,16 +1166,16 @@
                                 <div class="row gutters-custom">
                                     <div class="col-md col-sm-6">
                                         <div class="form-group has-feedback">
-                                            <label class="control-label font-size-C" for="f-surname-3">นามสกุล / Surname</label>
+                                            <label class="control-label font-size-C" for="f-surname-3">{$lang['career']['lname']}</label>
                                             <div class="block-control">
-                                                <input type="text" class="form-control" name="brethren[0][]" id="f-surname-3" placeholder="นามสกุล / Surname" data-error="" required="required">
+                                                <input type="text" class="form-control" name="brethren[0][]" id="f-surname-3" placeholder="{$lang['career']['lname']}" data-error="" required="required">
                                                 <span class="form-control-feedback" aria-hidden="true"></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-6">
                                         <div class="form-group">
-                                            <label class="control-label label-custom" for="f-select-day-3">วันเดือนปีเกิด/Date of birthday</label>
+                                            <label class="control-label label-custom" for="f-select-day-3">{$lang['career']['date']}</label>
                                             <div class="select-wrapper">
                                                 <select class="select-control" name="brethren[0][]" id="f-select-day-3" style="width: 100%;" required="required">
                                                     <option value="">{$lang['career']['day']}</option>
@@ -1234,25 +1235,25 @@
                         <div class="row gutters-custom">
                             <div class="col-sm">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label font-size-C" for="f-relations-3">ความสัมพันธ์ / Relations</label>
+                                    <label class="control-label font-size-C" for="f-relations-3">{$lang['career']['relation']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="brethren[0][]" id="f-relations-3" placeholder="ความสัมพันธ์ / Relations" data-error="" required="required">
+                                        <input type="text" class="form-control" name="brethren[0][]" id="f-relations-3" placeholder="{$lang['career']['relation']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label font-size-C" for="f-address-workplace-3">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
+                                    <label class="control-label font-size-C" for="f-address-workplace-3">{$lang['career']['addresswork']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="brethren[0][]" id="f-address-workplace-3" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="" required="required">
+                                        <input type="text" class="form-control" name="brethren[0][]" id="f-address-workplace-3" placeholder="{$lang['career']['addresswork']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label" for="f-tel-3">โทรศัพท / Tel.</label>
+                                    <label class="control-label" for="f-tel-3">{$lang['career']['phone']}</label>
                                     <div class="block-control">
                                         <input type="text" class="form-control" name="brethren[0][]" id="f-tel-3" placeholder="060-XXX-XXXX" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
@@ -1265,22 +1266,22 @@
                                 <div class="row gutters-custom">
                                     <div class="col-auto">
                                         <fieldset>
-                                            <legend class="visuallyhidden">Live</legend>
+                                            <legend class="visuallyhidden">{$lang['career']['status:live']}</legend>
                                             <div class="form-group form-check">
                                                 <input class="form-check-input radio-check brethren-checking-1" type="radio" name="brethren[0][alive]" id="live-3" value="มีชีวิต" required="required">
                                                 <label class="control-label" for="live-3">
-                                                    Live
+                                                    {$lang['career']['status:live']}
                                                 </label>
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div class="col-auto">
                                         <fieldset>
-                                            <legend class="visuallyhidden">Pass Away</legend>
+                                            <legend class="visuallyhidden">{$lang['career']['status:pass']}</legend>
                                             <div class="form-group form-check">
                                                 <input class="form-check-input radio-check brethren-checking-1" type="radio" name="brethren[0][alive]" id="pass-away-3" value="เสียชีวิต" required="required">
                                                 <label class="control-label" for="pass-away-3">
-                                                    Pass Away
+                                                    {$lang['career']['status:pass']}
                                                 </label>
                                             </div>
                                         </fieldset>
@@ -1342,13 +1343,13 @@
                     <div class="form-set V d-none">
                         <div class="row align-items-center">
                             <div class="col">
-                                <div class="title"> พี่น้อง / Brother Sister</div>
+                                <div class="title"> {$lang['career']['sis']}</div>
                             </div>
                             <div class="col-auto">
                                 <div class="button">
                                     <a href="javascript:void(0);" class="btn btn-primary clickdel" title="btn btn-primary">
                                         <!-- <span class="feather icon-minus text-white"></span> -->
-                                        ลบ
+                                        {$lang['career']['del']}
                                     </a>
                                 </div>
                             </div>
@@ -1356,9 +1357,9 @@
                         <div class="row gutters-custom align-items-end">
                             <div class="col-md">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label font-size-C" for="f-name-4">ชื่อ / Name</label>
+                                    <label class="control-label font-size-C" for="f-name-4">{$lang['career']['fname']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-name-4" placeholder="ชื่อ / Name" data-error="">
+                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-name-4" placeholder="{$lang['career']['fname']}" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -1367,16 +1368,16 @@
                                 <div class="row gutters-custom">
                                     <div class="col-md col-sm-6">
                                         <div class="form-group has-feedback">
-                                            <label class="control-label font-size-C" for="f-surname-4">นามสกุล / Surname</label>
+                                            <label class="control-label font-size-C" for="f-surname-4">{$lang['career']['lname']}</label>
                                             <div class="block-control">
-                                                <input type="text" class="form-control" name="brethren[temp][]" id="f-surname-4" placeholder="นามสกุล / Surname" data-error="">
+                                                <input type="text" class="form-control" name="brethren[temp][]" id="f-surname-4" placeholder="{$lang['career']['lname']}" data-error="">
                                                 <span class="form-control-feedback" aria-hidden="true"></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-6">
                                         <div class="form-group">
-                                            <label class="control-label label-custom" for="f-select-day-4-temp">วันเดือนปีเกิด/Date of birthday</label>
+                                            <label class="control-label label-custom" for="f-select-day-4-temp">{$lang['career']['date']}</label>
                                             <div class="select-wrapper">
                                                 <select class="select-control" name="brethren[temp][]" id="f-select-day-4-temp" style="width: 100%;">
                                                     <option value="">{$lang['career']['day']}</option>
@@ -1436,25 +1437,25 @@
                         <div class="row gutters-custom">
                             <div class="col-sm">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label font-size-C" for="f-relations-4">ความสัมพันธ์ / Relations</label>
+                                    <label class="control-label font-size-C" for="f-relations-4">{$lang['career']['relation']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-relations-4" placeholder="ความสัมพันธ์ / Relations" data-error="">
+                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-relations-4" placeholder="{$lang['career']['relation']}" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label font-size-C" for="f-address-workplace-4">ที่อยู่/ที่ทำงาน / Address/Workplace</label>
+                                    <label class="control-label font-size-C" for="f-address-workplace-4">{$lang['career']['addresswork']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-address-workplace-4" placeholder="ที่อยู่/ที่ทำงาน / Address/Workplace" data-error="">
+                                        <input type="text" class="form-control" name="brethren[temp][]" id="f-address-workplace-4" placeholder="{$lang['career']['addresswork']}" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label" for="f-tel-4">โทรศัพท / Tel.</label>
+                                    <label class="control-label" for="f-tel-4">{$lang['career']['phone']}</label>
                                     <div class="block-control">
                                         <input type="text" class="form-control" name="brethren[temp][]" id="f-tel-4" placeholder="060-XXX-XXXX" data-error="">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
@@ -1467,22 +1468,22 @@
                                 <div class="row gutters-custom">
                                     <div class="col-auto">
                                         <fieldset>
-                                            <legend class="visuallyhidden">Live</legend>
+                                            <legend class="visuallyhidden">{$lang['career']['status:live']}</legend>
                                             <div class="form-group form-check">
                                                 <input class="form-check-input radio-check" onclick="swap(this)" type="radio" name="brethren[temp][alive]" id="live-4" value="มีชีวิต">
                                                 <label class="control-label" for="live-4">
-                                                    Live
+                                                    {$lang['career']['status:live']}
                                                 </label>
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div class="col-auto">
                                         <fieldset>
-                                            <legend class="visuallyhidden">Pass Away</legend>
+                                            <legend class="visuallyhidden">{$lang['career']['status:pass']}</legend>
                                             <div class="form-group form-check">
                                                 <input class="form-check-input radio-check" onclick="swap(this)" type="radio" name="brethren[temp][alive]" id="pass-away-4" value="เสียชีวิต" checked>
                                                 <label class="control-label" for="pass-away-4">
-                                                    Pass Away
+                                                    {$lang['career']['status:pass']}
                                                 </label>
                                             </div>
                                         </fieldset>
@@ -1549,13 +1550,13 @@
             <div class="form-default form-history">
                 <div class="row gutters-custom align-items-center">
                     <div class="col-sm">
-                        <div class="title">ประวัติการศึกษา EDUCATION BACKGROUND <span>*</span></div>
+                        <div class="title">{$lang['career']['educat']} <span>*</span></div>
                     </div>
                     <div class="col-sm-auto text-right">
                         <div class="button">
                             <a href="javascript:void(0);" class="btn btn-primary clickdel_educational" data-action="adds" title="btn btn-primary">
                                 <span class="feather icon-plus text-white"></span>
-                                Add Education History
+                                {$lang["career"]["addedu"]}
                             </a>
                         </div>
                     </div>
@@ -1564,7 +1565,7 @@
                 <div class="row gutters-custom align-items-end">
                     <div class="col-sm">
                         <div class="form-group">
-                            <label class="control-label font-size-C label-custom" for="education-level">ระดับการศึกษา / Education history</label>
+                            <label class="control-label font-size-C label-custom" for="education-level">{$lang['career']['educat1']}</label>
                             <div class="select-wrapper">
                                 <select class="select-control" name="education[0][]" id="education-level" style="width: 100%;" required="required">
                                     <option value="">{$lang["career"]["edu"]}</option>
@@ -1581,18 +1582,18 @@
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="academy-name">ชื่อสถาบัน / Academy Name</label>
+                            <label class="control-label visuallyhidden" for="academy-name">{$lang['career']['educat2']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="education[0][]" id="academy-name" placeholder="ชื่อสถาบัน / Academy Name" data-error="" required="required">
+                                <input type="text" class="form-control" name="education[0][]" id="academy-name" placeholder="{$lang['career']['educat2']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="you-are-someone-who-2">คุณมาจากที่ไหน / You Are Someone Who?</label>
+                            <label class="control-label visuallyhidden" for="you-are-someone-who-2">{$lang['career']['whoyou2']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="education[0][]" id="you-are-someone-who-2" placeholder="คุณมาจากที่ไหน / You Are Someone Who?" data-error="" required="required">
+                                <input type="text" class="form-control" name="education[0][]" id="you-are-someone-who-2" placeholder="{$lang['career']['whoyou2']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1601,18 +1602,18 @@
                 <div class="row gutters-custom">
                     <div class="col-md-4 col-sm-6">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="majors">วิชาเอก / Majors</label>
+                            <label class="control-label visuallyhidden" for="majors">{$lang['career']['educat3']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="education[0][]" id="majors" placeholder="วิชาเอก / Majors" data-error="" required="required">
+                                <input type="text" class="form-control" name="education[0][]" id="majors" placeholder="{$lang['career']['educat3']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="educational-background">ประวัติการศึกษา / Educational Background</label>
+                            <label class="control-label visuallyhidden" for="educational-background">{$lang['career']['educat']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="education[0][]" id="educational-background" placeholder="ประวัติการศึกษา / Educational Background" data-error="" required="required">
+                                <input type="text" class="form-control" name="education[0][]" id="educational-background" placeholder="{$lang['career']['educat']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1623,7 +1624,7 @@
                         <div class="row gutters-custom">
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label class="control-label label-custom visuallyhidden" for="chengeemount">Since Year</label>
+                                    <label class="control-label label-custom visuallyhidden" for="chengeemount">{$lang['career']['educat6']}</label>
                                     <div class="select-wrapper">
                                     {$date = date('Y')}
                                     {$dateNow = date('Y') - 10}
@@ -1642,7 +1643,7 @@
                             </div>
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label class="control-label label-custom visuallyhidden" for="chengeeyear">To Year</label>
+                                    <label class="control-label label-custom visuallyhidden" for="chengeeyear">{$lang['career']['educat7']}</label>
                                     <div class="select-wrapper">
                                         <select class="select-control" name="education[0][]" id="chengeeyear" style="width: 100%;" required="required">
                                             {for $i=$date to $dateNow step=-1}
@@ -1662,9 +1663,9 @@
                         <div class="row gutters-custom">
                             <div class="col">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label visuallyhidden" for="average-score">คะแนนเฉลี่ย / Average Score</label>
+                                    <label class="control-label visuallyhidden" for="average-score">{$lang['career']['educat5']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="education[0][]" id="average-score" placeholder="คะแนนเฉลี่ย / Average Score" data-error="" required="required">
+                                        <input type="text" class="form-control" name="education[0][]" id="average-score" placeholder="{$lang['career']['educat5']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -1676,13 +1677,13 @@
                 <div class="d-none mt-3 ele_edu" id="clone_educational">
                     <div class="row align-items-center">
                         <!-- <div class="col">
-                            <div class="title"> พี่น้อง / Brother Sister</div>
+                            <div class="title"> </div>
                         </div> -->
                         <div class="col text-right">
                             <div class="button">
                                 <a href="javascript:void(0);" class="btn btn-primary clickdel_educational" data-action="del" title="btn btn-primary">
                                     <!-- <span class="feather icon-minus text-white"></span> -->
-                                    ลบ
+                                    {$lang['career']['del']}
                                 </a>
                             </div>
                         </div>
@@ -1690,7 +1691,7 @@
                     <div class="row gutters-custom align-items-end">
                         <div class="col-sm">
                             <div class="form-group">
-                                <label class="control-label font-size-C" for="education-level-2">ระดับการศึกษา / Education history</label>
+                                <label class="control-label font-size-C" for="education-level-2">{$lang['career']['educat1']}</label>
                                 <div class="select-wrapper">
                                     <select class="select-control" name="education[tmp][]" id="education-level-2" style="width: 100%;">
                                         <option value="">{$lang["career"]["edu"]}</option>
@@ -1707,18 +1708,18 @@
                         </div>
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="academy-name-2">ชื่อสถาบัน / Academy Name</label>
+                                <label class="control-label visuallyhidden" for="academy-name-2">{$lang['career']['educat2']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="education[tmp][]" id="academy-name-2" placeholder="ชื่อสถาบัน / Academy Name" data-error="">
+                                    <input type="text" class="form-control" name="education[tmp][]" id="academy-name-2" placeholder="{$lang['career']['educat2']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="you-are-someone-who-3">คุณมาจากที่ไหน / You Are Someone Who?</label>
+                                <label class="control-label visuallyhidden" for="you-are-someone-who-3">{$lang['career']['whoyou2']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="education[tmp][]" id="you-are-someone-who-3" placeholder="คุณมาจากที่ไหน / You Are Someone Who?" data-error="">
+                                    <input type="text" class="form-control" name="education[tmp][]" id="you-are-someone-who-3" placeholder="{$lang['career']['whoyou2']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1727,18 +1728,18 @@
                     <div class="row gutters-custom">
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="majors-2">วิชาเอก / Majors</label>
+                                <label class="control-label visuallyhidden" for="majors-2">{$lang['career']['educat3']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="education[tmp][]" id="majors-2" placeholder="วิชาเอก / Majors" data-error="">
+                                    <input type="text" class="form-control" name="education[tmp][]" id="majors-2" placeholder="{$lang['career']['educat3']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="educational-background-2">ประวัติการศึกษา / Educational Background</label>
+                                <label class="control-label visuallyhidden" for="educational-background-2">{$lang['career']['educat']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="education[tmp][]" id="educational-background-2" placeholder="ประวัติการศึกษา / Educational Background" data-error="">
+                                    <input type="text" class="form-control" name="education[tmp][]" id="educational-background-2" placeholder="{$lang['career']['educat']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1749,7 +1750,7 @@
                             <div class="row gutters-custom">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label class="control-label label-custom visuallyhidden" for="since-year-3">Since Year</label>
+                                        <label class="control-label label-custom visuallyhidden" for="since-year-3">{$lang['career']['educat6']}</label>
                                         <div class="select-wrapper">
                                         {$date = date('Y')}
                                         {$dateNow = date('Y') - 10}
@@ -1768,7 +1769,7 @@
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label class="control-label label-custom visuallyhidden" for="to-year-3">To Year</label>
+                                        <label class="control-label label-custom visuallyhidden" for="to-year-3">{$lang['career']['educat7']}</label>
                                         <div class="select-wrapper">
                                             <select class="select-control" name="education[tmp][]" id="to-year-3" style="width: 100%;">
                                                 {for $i=$date to $dateNow step=-1}
@@ -1788,9 +1789,9 @@
                             <div class="row gutters-custom">
                                 <div class="col">
                                     <div class="form-group has-feedback">
-                                        <label class="control-label visuallyhidden" for="average-score-2">คะแนนเฉลี่ย / Average Score</label>
+                                        <label class="control-label visuallyhidden" for="average-score-2">{$lang['career']['educat5']}</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" name="education[tmp][]" id="average-score-2" placeholder="คะแนนเฉลี่ย / Average Score" data-error="">
+                                            <input type="text" class="form-control" name="education[tmp][]" id="average-score-2" placeholder="{$lang['career']['educat5']}" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1811,13 +1812,13 @@
             <div class="form-default form-history">
                 <div class="row gutters-custom align-items-center">
                     <div class="col">
-                        <div class="title">ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน JOB TRAINING/INSPECTION/APPRENTICESHIP<span>*</span></div>
+                        <div class="title">{$lang['career']['tran']}<span>*</span></div>
                     </div>
                     <div class="col-sm-auto">
                         <div class="button ">
                             <a href="javascript:void(0);" class="btn btn-primary clickdel_training" data-action="adds" title="btn btn-primary">
                                 <span class="feather icon-plus text-white"></span>
-                                Add Education History
+                                {$lang["career"]["addedu"]}
                             </a>
                         </div>
                     </div>
@@ -1825,27 +1826,27 @@
                 <div class="row gutters-custom align-items-end">
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label font-size-C" for="course">ชื่อหลักสูตร/Course</label>
+                            <label class="control-label font-size-C" for="course">{$lang['career']['tran2']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="training[0][]" id="course" placeholder="ชื่อหลักสูตร/Course" data-error="" required="required">
+                                <input type="text" class="form-control" name="training[0][]" id="course" placeholder="{$lang['career']['tran2']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="institute">สถาบัน/Institute</label>
+                            <label class="control-label visuallyhidden" for="institute">{$lang['career']['tran1']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="training[0][]" id="institute" placeholder="สถาบัน/Institute" data-error="" required="required">
+                                <input type="text" class="form-control" name="training[0][]" id="institute" placeholder="{$lang['career']['tran1']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="degree-certificate">วุฒิที่ได้รับ / Degree/Certificate</label>
+                            <label class="control-label visuallyhidden" for="degree-certificate">{$lang['career']['tran3']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="training[0][]" id="degree-certificate" placeholder="วุฒิที่ได้รับ / Degree/Certificate" data-error="" required="required">
+                                <input type="text" class="form-control" name="training[0][]" id="degree-certificate" placeholder="{$lang['career']['tran3']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -1856,9 +1857,9 @@
                         <div class="row gutters-custom">
                             <div class="col">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label visuallyhidden" for="period">ระยะเวลา/Period</label>
+                                    <label class="control-label visuallyhidden" for="period">{$lang['career']['tran4']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="training[0][]" id="period" placeholder="ระยะเวลา/Period" data-error="" required="required">
+                                        <input type="text" class="form-control" name="training[0][]" id="period" placeholder="{$lang['career']['tran4']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -1869,7 +1870,7 @@
                         <div class="row gutters-custom">
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label class="control-label label-custom visuallyhidden" for="chengeemount-2">Since Year</label>
+                                    <label class="control-label label-custom visuallyhidden" for="chengeemount-2">{$lang['career']['educat6']}</label>
                                     <div class="select-wrapper">
                                     {$date = date('Y')}
                                     {$dateNow = date('Y') - 10}
@@ -1888,7 +1889,7 @@
                             </div>
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label class="control-label label-custom visuallyhidden" for="chengeeyear-2">To Year </label>
+                                    <label class="control-label label-custom visuallyhidden" for="chengeeyear-2">{$lang['career']['educat7']} </label>
                                     <div class="select-wrapper">
                                         <select class="select-control" name="training[0][]" id="chengeeyear-2" style="width: 100%;" required="required">
                                             {for $i=$date to $dateNow step=-1}
@@ -1909,13 +1910,13 @@
                 <div class="d-none mt-3" id="clone_training">
                     <div class="row align-items-center">
                         <!-- <div class="col">
-                            <div class="title"> พี่น้อง / Brother Sister</div>
+                            <div class="title"> </div>
                         </div> -->
                         <div class="col text-right">
                             <div class="button">
                                 <a href="javascript:void(0);" class="btn btn-primary clickdel_training" data-action="dels" title="btn btn-primary">
                                     <!-- <span class="feather icon-minus text-white"></span> -->
-                                    ลบ
+                                    {$lang['career']['del']}
                                 </a>
                             </div>
                         </div>
@@ -1923,27 +1924,27 @@
                     <div class="row gutters-custom align-items-end">
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="course-2">ชื่อหลักสูตร/Course</label>
+                                <label class="control-label font-size-C" for="course-2">{$lang['career']['tran2']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="training[tmp][]" id="course-2" placeholder="ชื่อหลักสูตร/Course" data-error="">
+                                    <input type="text" class="form-control" name="training[tmp][]" id="course-2" placeholder="{$lang['career']['tran2']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="institute-2">สถาบัน/Institute</label>
+                                <label class="control-label visuallyhidden" for="institute-2">{$lang['career']['tran1']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="training[tmp][]" id="institute-2" placeholder="สถาบัน/Institute" data-error="">
+                                    <input type="text" class="form-control" name="training[tmp][]" id="institute-2" placeholder="{$lang['career']['tran1']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="degree-certificate-2">วุฒิที่ได้รับ / Degree/Certificate</label>
+                                <label class="control-label visuallyhidden" for="degree-certificate-2">{$lang['career']['tran3']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="training[tmp][]" id="degree-certificate-2" placeholder="วุฒิที่ได้รับ / Degree/Certificate" data-error="">
+                                    <input type="text" class="form-control" name="training[tmp][]" id="degree-certificate-2" placeholder="{$lang['career']['tran3']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -1954,9 +1955,9 @@
                             <div class="row gutters-custom">
                                 <div class="col">
                                     <div class="form-group has-feedback">
-                                        <label class="control-label visuallyhidden" for="period-2">ระยะเวลา/Period</label>
+                                        <label class="control-label visuallyhidden" for="period-2">{$lang['career']['tran4']}</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" name="training[tmp][]" id="period-2" placeholder="ระยะเวลา/Period" data-error="">
+                                            <input type="text" class="form-control" name="training[tmp][]" id="period-2" placeholder="{$lang['career']['tran4']}" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -1967,7 +1968,7 @@
                             <div class="row gutters-custom">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label class="control-label label-custom visuallyhidden" for="since-year-4">Since Year</label>
+                                        <label class="control-label label-custom visuallyhidden" for="since-year-4">{$lang['career']['educat6']}</label>
                                         <div class="select-wrapper">
                                             <select class="select-control" name="training[tmp][]" id="since-year-4" style="width: 100%;">
                                                 <option value="">{$lang['career']['educat6']}</option>
@@ -1984,7 +1985,7 @@
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label class="control-label label-custom visuallyhidden" for="to-year-4">To Year </label>
+                                        <label class="control-label label-custom visuallyhidden" for="to-year-4">{$lang['career']['educat7']} </label>
                                         <div class="select-wrapper">
                                             <select class="select-control" name="training[tmp][]" id="to-year-4" style="width: 100%;">
                                                 {for $i=$date to $dateNow step=-1}
@@ -2014,16 +2015,14 @@
             <div class="form-default form-history">
                 <div class="row gutters-custom align-items-center">
                     <div class="col-sm">
-                        <div class="title">ประวัติการทำงาน (เรียงจากปัจจุบันไปหาอดีต)
-                            <!-- </br> -->
-                            EMPLOYMENT RECORD (Start with your present or most recent post)
+                        <div class="title">{$lang['career']['work']}
                         </div>
                     </div>
                     <div class="col-sm-auto">
                         <div class="button ">
                             <a href="javascript:void(0);" class="btn btn-primary clickdel_works" data-action="adds" title="btn btn-primary">
                                 <span class="feather icon-plus text-white"></span>
-                                Add Education History
+                                {$lang["career"]["addedu"]}
                             </a>
                         </div>
                     </div>
@@ -2031,36 +2030,36 @@
                 <div class="row gutters-custom align-items-end">
                     <div class="col-md col-sm-auto">
                         <div class="form-group has-feedback">
-                            <label class="control-label font-size-C" for="company-name">1. ชื่อบริษัท</label>
+                            <label class="control-label font-size-C" for="company-name">1. {$lang['career']['company_name']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="company-name" placeholder="ชื่อบริษัท / Company’s Name" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="company-name" placeholder="{$lang['career']['company_name']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md col-sm-auto">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="type-of-business">ประเภทธุรกิจ / Type Of Business</label>
+                            <label class="control-label visuallyhidden" for="type-of-business">{$lang['career']['typebussiness']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="type-of-business" placeholder="ประเภทธุรกิจ / Type Of Business" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="type-of-business" placeholder="{$lang['career']['typebussiness']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md col-sm-auto">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="c-address">ที่อยู่ / Address</label>
+                            <label class="control-label visuallyhidden" for="c-address">{$lang['system']['address']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="c-address" placeholder="ที่อยู่ / Address" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="c-address" placeholder="{$lang['system']['address']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md col-sm-auto">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="c-telephone">โทรศัพท์ / Telephone</label>
+                            <label class="control-label visuallyhidden" for="c-telephone">{$lang['career']['ref4']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="c-telephone" placeholder="โทรศัพท์ / Telephone" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="c-telephone" placeholder="{$lang['career']['ref4']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2069,36 +2068,36 @@
                 <div class="row gutters-custom">
                     <div class="col-md col-sm-auto">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="first-position">ตำแหน่งแรกเข้า / First Position</label>
+                            <label class="control-label visuallyhidden" for="first-position">{$lang['career']['fpos']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="first-position" placeholder="ตำแหน่งแรกเข้า / First Position" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="first-position" placeholder="{$lang['career']['fpos']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md col-sm-auto">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="last-position">ตำแหน่งสุดท้าย / Last Position</label>
+                            <label class="control-label visuallyhidden" for="last-position">{$lang['career']['lpos']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="last-position" placeholder="ตำแหน่งสุดท้าย / Last Position" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="last-position" placeholder="{$lang['career']['lpos']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md col-sm-auto">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="last-salary">เงินเดือนสุดท้าย / Last Salary</label>
+                            <label class="control-label visuallyhidden" for="last-salary">{$lang['career']['lsalary']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="last-salary" placeholder="เงินเดือนสุดท้าย / Last Salary" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="last-salary" placeholder="{$lang['career']['lsalary']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md col-sm-auto">
                         <div class="form-group has-feedback">
-                            <label class="control-label visuallyhidden" for="other-salary">รายได้อื่น ๆ / Other</label>
+                            <label class="control-label visuallyhidden" for="other-salary">{$lang['career']['osalary']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="other-salary" placeholder="รายได้อื่น ๆ / Other" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="other-salary" placeholder="{$lang['career']['osalary']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2107,9 +2106,9 @@
                 <div class="row gutters-custom mt-2">
                     <div class="col">
                         <div class="form-group has-feedback">
-                            <label class="control-label font-size-C" for="brief-responsibility">ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility</label>
+                            <label class="control-label font-size-C" for="brief-responsibility">{$lang['career']['briefres']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="workhistory[0][]" id="brief-responsibility" placeholder="ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility" data-error="" required="required">
+                                <input type="text" class="form-control" name="workhistory[0][]" id="brief-responsibility" placeholder="{$lang['career']['briefres']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2120,9 +2119,9 @@
                         <div class="row gutters-custom">
                             <div class="col">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label visuallyhidden" for="c-period">ระยะเวลา/Period</label>
+                                    <label class="control-label visuallyhidden" for="c-period">{$lang['career']['tran4']}</label>
                                     <div class="block-control">
-                                        <input type="text" class="form-control" name="workhistory[0][]" id="c-period" placeholder="ระยะเวลา/Period" data-error="" required="required">
+                                        <input type="text" class="form-control" name="workhistory[0][]" id="c-period" placeholder="{$lang['career']['tran4']}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -2133,7 +2132,7 @@
                         <div class="row gutters-custom align-items-center">
                             <div class="col">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label visuallyhidden" for="c-start-date">วันเริ่มงาน</label>
+                                    <label class="control-label visuallyhidden" for="c-start-date">{$lang['career']['scareer']}</label>
                                     <div class="block-control">
                                     <input type="date" class="form-control" name="workhistory[0][]" id="c-start-date" placeholder="วันเริ่มงาน"
                                         data-error="" required="required">
@@ -2143,12 +2142,12 @@
                             </div>
                             <div class="col-auto">
                                 <div class="txt">
-                                    ถึง
+                                    {$lang['career']['to']}
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group has-feedback">
-                                    <label class="control-label visuallyhidden" for="c-end-date">สิ้นสุดวันที่</label>
+                                    <label class="control-label visuallyhidden" for="c-end-date">{$lang['career']['ecareer']}</label>
                                     <div class="block-control">
                                     <input type="date" class="form-control" name="workhistory[0][]" id="c-end-date" placeholder="สิ้นสุดวันที่"
                                         data-error="" required="required">
@@ -2163,13 +2162,13 @@
                 <div class="d-none mt-3" id="clone_works">
                     <div class="row align-items-center">
                         <!-- <div class="col">
-                            <div class="title"> พี่น้อง / Brother Sister</div>
+                            <div class="title"> </div>
                         </div> -->
                         <div class="col text-right">
                             <div class="button delete-form-4">
                                 <a href="javascript:void(0);" class="btn btn-primary clickdel_works" data-action="adds" title="btn btn-primary">
                                     <!-- <span class="feather icon-minus text-white"></span> -->
-                                    ลบ
+                                    {$lang['career']['del']}
                                 </a>
                             </div>
                         </div>
@@ -2177,36 +2176,36 @@
                     <div class="row gutters-custom align-items-end">
                         <div class="col-md col-sm-auto">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C -title" for="company-name-2">2. ชื่อบริษัท / Company’s Nam</label>
+                                <label class="control-label font-size-C -title" for="company-name-2">2. {$lang['career']['company_name']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="company-name-2" placeholder="ชื่อบริษัท / Company’s Name" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="company-name-2" placeholder="{$lang['career']['company_name']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md col-sm-auto">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="type-of-business-2">ประเภทธุรกิจ / Type Of Business</label>
+                                <label class="control-label visuallyhidden" for="type-of-business-2">{$lang['career']['typebussiness']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="type-of-business-2" placeholder="ประเภทธุรกิจ / Type Of Business" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="type-of-business-2" placeholder="{$lang['career']['typebussiness']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md col-sm-auto">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="c-address-2">ที่อยู่ / Address</label>
+                                <label class="control-label visuallyhidden" for="c-address-2">{$lang['system']['address']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="c-address-2" placeholder="ที่อยู่ / Address" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="c-address-2" placeholder="{$lang['system']['address']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md col-sm-auto">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="c-telephone-2">โทรศัพท์ / Telephone</label>
+                                <label class="control-label visuallyhidden" for="c-telephone-2">{$lang['career']['ref4']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="c-telephone-2" placeholder="โทรศัพท์ / Telephone" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="c-telephone-2" placeholder="{$lang['career']['ref4']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2215,16 +2214,16 @@
                     <div class="row gutters-custom">
                         <div class="col-md col-sm-auto">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="first-position-2">ตำแหน่งแรกเข้า / First Position</label>
+                                <label class="control-label visuallyhidden" for="first-position-2">{$lang['career']['fpos']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="first-position-2" placeholder="ตำแหน่งแรกเข้า / First Position" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="first-position-2" placeholder="{$lang['career']['fpos']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md col-sm-auto">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="last-position-2">ตำแหน่งแรกเข้า / Last Position</label>
+                                <label class="control-label visuallyhidden" for="last-position-2">{$lang['career']['lpos']}</label>
                                 <div class="block-control">
                                     <input type="text" class="form-control" name="workhistory[tmp][]" id="last-position-2" placeholder="ตำแหน่งแรกเข้า / Last Position" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
@@ -2233,18 +2232,18 @@
                         </div>
                         <div class="col-md col-sm-auto">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="last-salary-2">เงินเดือนสุดท้าย / Last Salary</label>
+                                <label class="control-label visuallyhidden" for="last-salary-2">{$lang['career']['lsalary']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="last-salary-2" placeholder="เงินเดือนสุดท้าย / Last Salary" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="last-salary-2" placeholder="{$lang['career']['lsalary']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md col-sm-auto">
                             <div class="form-group has-feedback">
-                                <label class="control-label visuallyhidden" for="other-salary-2">รายได้อื่น ๆ / Other</label>
+                                <label class="control-label visuallyhidden" for="other-salary-2">{$lang['career']['osalary']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="other-salary-2" placeholder="รายได้อื่น ๆ / Other" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="other-salary-2" placeholder="{$lang['career']['osalary']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2253,9 +2252,9 @@
                     <div class="row gutters-custom mt-2">
                         <div class="col">
                             <div class="form-group has-feedback">
-                                <label class="control-label font-size-C" for="brief-responsibility-2">ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility</label>
+                                <label class="control-label font-size-C" for="brief-responsibility-2">{$lang['career']['briefres']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="brief-responsibility-2" placeholder="ลักษณะงานที่รับผิดชอบโดยย่อ / Brief Responsibility" data-error="">
+                                    <input type="text" class="form-control" name="workhistory[tmp][]" id="brief-responsibility-2" placeholder="{$lang['career']['briefres']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2266,9 +2265,9 @@
                             <div class="row gutters-custom">
                                 <div class="col">
                                     <div class="form-group has-feedback">
-                                        <label class="control-label visuallyhidden" for="c-period-2">ระยะเวลา/Period</label>
+                                        <label class="control-label visuallyhidden" for="c-period-2">{$lang['career']['tran4']}</label>
                                         <div class="block-control">
-                                            <input type="text" class="form-control" name="workhistory[tmp][]" id="c-period-2" placeholder="ระยะเวลา/Period" data-error="">
+                                            <input type="text" class="form-control" name="workhistory[tmp][]" id="c-period-2" placeholder="{$lang['career']['tran4']}" data-error="">
                                             <span class="form-control-feedback" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -2279,7 +2278,7 @@
                             <div class="row gutters-custom align-items-center">
                                 <div class="col">
                                     <div class="form-group has-feedback">
-                                        <label class="control-label visuallyhidden" for="c-start-date">วันเริ่มงาน</label>
+                                        <label class="control-label visuallyhidden" for="c-start-date">{$lang['career']['scareer']}</label>
                                         <div class="block-control">
                                         <input type="date" class="form-control" name="workhistory[tmp][]" id="c-start-date" placeholder="วันเริ่มงาน"
                                             data-error="">
@@ -2289,12 +2288,12 @@
                                 </div>
                                 <div class="col-auto">
                                     <div class="txt">
-                                        ถึง
+                                        {$lang['career']['to']}
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group has-feedback">
-                                        <label class="control-label visuallyhidden" for="c-end-date">สิ้นสุดวันที่</label>
+                                        <label class="control-label visuallyhidden" for="c-end-date">{$lang['career']['ecareer']}</label>
                                         <div class="block-control">
                                         <input type="date" class="form-control" name="workhistory[tmp][]" id="c-end-date" placeholder="สิ้นสุดวันที่"
                                             data-error="">
@@ -2315,16 +2314,16 @@
 
             {* Start Language *}
             <div class="form-default form-history">
-                <div class="title">ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน / JOB TRAINING/INSPECTION/APPRENTICESHIP <span>*</span></div>
+                <div class="title">{$lang['career']['tran']} <span>*</span></div>
                 <div class="row gutters-custom align-items-center py-sm-4">
                     <div class="col-sm">
-                        <div class="topic">ความสามารถทางภาษา / Language Abilities</div>
+                        <div class="topic">{$lang['career']['lang']}</div>
                     </div>
                     <div class="col-sm-auto">
                         <div class="button ">
                             <a href="javascript:void(0);" class="btn btn-primary clickdel_language" data-action="adds" title="btn btn-primary">
                                 <span class="feather icon-plus text-white"></span>
-                                Add Education History
+                                {$lang["career"]["addedu"]}
                             </a>
                         </div>
                     </div>
@@ -2332,7 +2331,7 @@
                 <div class="row gutters-custom">
                     <div class="col-sm">
                         <div class="form-group">
-                            <label class="control-label font-size-C" for="l-english">ภาษาอังกฤษ/English</label>
+                            <label class="control-label font-size-C" for="l-english">{$lang['career']['elang']}</label>
                             <div class="select-wrapper">
                                 <select class="select-control" name="language[0][]" id="l-english" style="width: 100%;">
                                     <option value="{$lang["career"]["langeng"]}" selected="">{$lang["career"]["langeng"]}</option>
@@ -2344,7 +2343,7 @@
                     </div>
                     <div class="col-sm">
                         <div class="form-group">
-                            <label class="control-label font-size-C" for="e-excellent-1">พูด / Speaking</label>
+                            <label class="control-label font-size-C" for="e-excellent-1">{$lang['career']['lang2']}</label>
                             <div class="select-wrapper">
                                 <select class="select-control" name="language[0][]" id="e-excellent-1" style="width: 100%;">
                                     <option value="{$lang['career']['best']}" selected="">{$lang['career']['best']}</option>
@@ -2357,7 +2356,7 @@
                     </div>
                     <div class="col-sm">
                         <div class="form-group">
-                            <label class="control-label font-size-C" for="e-excellent-2">ฟัง / listening</label>
+                            <label class="control-label font-size-C" for="e-excellent-2">{$lang['career']['lang4']}</label>
                             <div class="select-wrapper">
                                 <select class="select-control" name="language[0][]" id="e-excellent-2" style="width: 100%;">
                                     <option value="{$lang['career']['best']}" selected="">{$lang['career']['best']}</option>
@@ -2370,7 +2369,7 @@
                     </div>
                     <div class="col-sm">
                         <div class="form-group">
-                            <label class="control-label font-size-C" for="e-excellent-3">เขียน / Writing</label>
+                            <label class="control-label font-size-C" for="e-excellent-3">{$lang['career']['lang3']}</label>
                             <div class="select-wrapper">
                                 <select class="select-control" name="language[0][]" id="e-excellent-3" style="width: 100%;">
                                     <option value="{$lang['career']['best']}" selected="">{$lang['career']['best']}</option>
@@ -2386,13 +2385,13 @@
                 <div class="d-none mt-3" id="clone_language">
                     <div class="row align-items-center">
                         <!-- <div class="col">
-                            <div class="title"> พี่น้อง / Brother Sister</div>
+                            <div class="title"> </div>
                         </div> -->
                         <div class="col text-right">
                             <div class="button delete-form-5">
                                 <a href="javascript:void(0);" class="btn btn-primary clickdel_language" data-action="dels" title="btn btn-primary">
                                     <!-- <span class="feather icon-minus text-white"></span> -->
-                                    ลบ
+                                    {$lang['career']['del']}
                                 </a>
                             </div>
                         </div>
@@ -2400,7 +2399,7 @@
                     <div class="row gutters-custom">
                         <div class="col-sm">
                             <div class="form-group">
-                                <label class="control-label visuallyhidden" for="l-china">ภาษาจีน/Chinese</label>
+                                <label class="control-label visuallyhidden" for="l-china">{$lang['career']['clang']}</label>
                                 <div class="select-wrapper">
                                     <select class="select-control" name="language[tmp][]" id="l-china" style="width: 100%;">
                                         <option value="{$lang["career"]["langeng"]}" selected="">{$lang["career"]["langeng"]}</option>
@@ -2412,7 +2411,7 @@
                         </div>
                         <div class="col-sm">
                             <div class="form-group">
-                                <label class="control-label visuallyhidden" for="c-excellent-1">พูด / Speaking</label>
+                                <label class="control-label visuallyhidden" for="c-excellent-1">{$lang['career']['lang2']}</label>
                                 <div class="select-wrapper">
                                     <select class="select-control" name="language[tmp][]" id="c-excellent-1" style="width: 100%;">
                                         <option value="{$lang['career']['best']}" selected="">{$lang['career']['best']}</option>
@@ -2425,7 +2424,7 @@
                         </div>
                         <div class="col-sm">
                             <div class="form-group">
-                                <label class="control-label visuallyhidden" for="c-excellent-2">ฟัง / listening</label>
+                                <label class="control-label visuallyhidden" for="c-excellent-2">{$lang['career']['lang4']}</label>
                                 <div class="select-wrapper">
                                     <select class="select-control" name="language[tmp][]" id="c-excellent-2" style="width: 100%;">
                                         <option value="{$lang['career']['best']}" selected="">{$lang['career']['best']}</option>
@@ -2438,7 +2437,7 @@
                         </div>
                         <div class="col-sm">
                             <div class="form-group">
-                                <label class="control-label visuallyhidden" for="c-excellent-3">เขียน / Writing</label>
+                                <label class="control-label visuallyhidden" for="c-excellent-3">{$lang['career']['lang3']}</label>
                                 <div class="select-wrapper">
                                     <select class="select-control" name="language[tmp][]" id="c-excellent-3" style="width: 100%;">
                                         <option value="{$lang['career']['best']}" selected="">{$lang['career']['best']}</option>
@@ -2459,22 +2458,22 @@
             {* End Language *}
 
             <div class="form-default mt-xl-4">
-                <div class="title">ข้อมูลทั่วไป GENERAL DATA</div>
+                <div class="title">{$lang['career']['topic1']}</div>
                 <div class="row gutters-custom mt-3">
                     <div class="col">
-                        <div class="topic">1. การไปปฏิบัติงานต่างจังหวัด / Can you work up country?</div>
+                        <div class="topic">1. {$lang['career']['ctext1']}</div>
                     </div>
                 </div>
                 <div class="row gutters-custom">
                     <div class="col-sm mt-sm-3 mt-0">
                         <fieldset>
-                            <legend class="control-legend">เป็นการประจำ / Permanent </legend>
+                            <legend class="control-legend">{$lang['career']['Permanent']} </legend>
                             <div class="row gutters-custom">
                                 <div class="col-auto">
                                     <div class="form-group form-check -nm IC">
                                         <input class="form-check-input radio-check" type="radio" name="information[countryPermanent]" id="permanent-no" value="ขัดข้อง" required="required">
                                         <label class="control-label" for="permanent-no">
-                                            ขัดข้อง / No
+                                            {$lang['career']['crash'] }
                                         </label>
                                     </div>
                                 </div>
@@ -2482,7 +2481,7 @@
                                     <div class="form-group form-check -nm IC">
                                         <input class="form-check-input radio-check" type="radio" name="information[countryPermanent]" id="permanent-yes" value="ไม่ขัดข้อง" required="required">
                                         <label class="control-label" for="permanent-yes">
-                                            ไม่ขัดข้อง / Yes
+                                            {$lang['career']['nocrash']}
                                         </label>
                                     </div>
                                 </div>
@@ -2491,13 +2490,13 @@
                     </div>
                     <div class="col-sm mt-sm-3 mt-3">
                         <fieldset>
-                            <legend class="control-legend">เป็นครั้งคราว / Temporary</legend>
+                            <legend class="control-legend">{$lang['career']['Temporary']}</legend>
                             <div class="row gutters-custom">
                                 <div class="col-auto">
                                     <div class="form-group form-check -nm IC">
                                         <input class="form-check-input radio-check" type="radio" name="information[countryTemporary]" id="temporary-no" value="ขัดข้อง" required="required">
                                         <label class="control-label" for="temporary-no">
-                                            ขัดข้อง / No
+                                            {$lang['career']['crash'] }
                                         </label>
                                     </div>
                                 </div>
@@ -2505,7 +2504,7 @@
                                     <div class="form-group form-check -nm IC">
                                         <input class="form-check-input radio-check" type="radio" name="information[countryTemporary]" id="temporary-yes" value="ไม่ขัดข้อง" required="required">
                                         <label class="control-label" for="temporary-yes">
-                                            ไม่ขัดข้อง / Yes
+                                            {$lang['career']['nocrash']}
                                         </label>
                                     </div>
                                 </div>
@@ -2515,7 +2514,7 @@
                 </div>
                 <div class="row gutters-custom mt-lg-5 mt-4">
                     <div class="col">
-                        <div class="topic -np">2. การเจ็บป่วยขนาดหนัก หรือโรคติดต่อร้ายแรง / Have you ever been seriously ill or contacted with contagious disease?</div>
+                        <div class="topic -np">2. {$lang['career']['ctext2']}</div>
                     </div>
                 </div>
                 <div class="row gutters-custom align-items-center">
@@ -2527,7 +2526,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check contagious-checking" type="radio" name="information[contagious]" id="contagious-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="contagious-no">
-                                            ไม่เคย / No
+                                            {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2538,7 +2537,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check contagious-checking" type="radio" name="information[contagious]" id="contagious-yes" value="เคย" required="required">
                                         <label class="control-label" for="contagious-yes">
-                                            เคย (ระบุ) / Yes (Explain)
+                                           {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2561,7 +2560,7 @@
                 </div>
                 <div class="row gutters-custom mt-lg-5 mt-4">
                     <div class="col">
-                        <div class="topic -np">3. โรคประจำตัว / Any physical disability or handicap</div>
+                        <div class="topic -np">3. {$lang['career']['ctext3']}</div>
                     </div>
                 </div>
                 <div class="row gutters-custom align-items-center">
@@ -2573,7 +2572,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check handicap-checking" type="radio" name="information[handicap]" id="congenital-disease-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="congenital-disease-no">
-                                            ไม่เคย / No
+                                            {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2584,7 +2583,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check handicap-checking" type="radio" name="information[handicap]" id="congenital-disease-yes" value="มี" required="required">
                                         <label class="control-label" for="congenital-disease-yes">
-                                            มี / Yes
+                                            {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2607,7 +2606,7 @@
                 </div>
                 <div class="row gutters-custom mt-lg-5 mt-4">
                     <div class="col">
-                        <div class="topic -np">4. เคยถูกจำคุก หรือต้องโทษทางอาญาหรือไม่ / Have you ever been arrested, takes custody, help for investigation or questioning or charged by any law enforcement authority?</div>
+                        <div class="topic -np">4. {$lang['career']['ctext4']}</div>
                     </div>
                 </div>
                 <div class="row gutters-custom align-items-center">
@@ -2619,7 +2618,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check arrested-checking" type="radio" name="information[arrested]" id="imprisonment-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="imprisonment-no">
-                                            ไม่เคย / No
+                                            {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2630,7 +2629,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check arrested-checking" type="radio" name="information[arrested]" id="imprisonment-yes" value="เคย เพราะ" required="required">
                                         <label class="control-label" for="imprisonment-yes">
-                                            เคย เพราะ / Yes (Reason)
+                                            {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2653,7 +2652,7 @@
                 </div>
                 <div class="row gutters-custom mt-lg-5 mt-4">
                     <div class="col">
-                        <div class="topic -np">5. เคยถูกให้ออกจากงานหรือเลิกจ้างหรือไม่ / Have you ever been discharged from employment for any reason?</div>
+                        <div class="topic -np">5. {$lang['career']['ctext5']}</div>
                     </div>
                 </div>
                 <div class="row gutters-custom align-items-center">
@@ -2665,7 +2664,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check dischargedemployment-checking" type="radio" name="information[dischargedemployment]" id="dismissal-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="dismissal-no">
-                                            ไม่เคย / No
+                                            {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2676,7 +2675,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check dischargedemployment-checking" type="radio" name="information[dischargedemployment]" id="dismissal-yes" value="เคย เพราะ" required="required">
                                         <label class="control-label" for="dismissal-yes">
-                                            เคย เพราะ / Yes (Reason)
+                                            {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2699,7 +2698,7 @@
                 </div>
                 <div class="row gutters-custom mt-lg-5 mt-4">
                     <div class="col">
-                        <div class="topic -np">6. ท่านมีเพื่อนหรือญาติที่ทำงานที่บริษัทนี้หรือไม่ / Have you any friend or relative employed here?</div>
+                        <div class="topic -np">6. {$lang['career']['ctext6']}</div>
                     </div>
                 </div>
                 <div class="row gutters-custom align-items-center">
@@ -2711,7 +2710,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check relative-checking" type="radio" name="information[relative]" id="friend-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="friend-no">
-                                            ไม่เคย / No
+                                            {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2722,7 +2721,7 @@
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check relative-checking" type="radio" name="information[relative]" id="friend-yes" value="เคย เพราะ" required="required">
                                         <label class="control-label" for="friend-yes">
-                                            เคย เพราะ / Yes (Reason)
+                                            {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2745,7 +2744,7 @@
                 </div>
                 <div class="row gutters-custom mt-lg-5 mt-4">
                     <div class="col">
-                        <div class="topic -np">7. ท่านทราบข่าวการสมัครงานจาก / Where did you hear of our vacancy?</div>
+                        <div class="topic -np">7. {$lang['career']['ctext7']}</div>
                     </div>
                 </div>
                 <div class="row gutters-custom align-items-center">
@@ -2755,9 +2754,7 @@
                             <div class="form-group form-check -nm I">
                                 <input class="form-check-input radio-check -C hearing-checking" type="radio" name="information[hearing]" id="personal-recommendation" value="เจ้าหน้าที่สภาบัน" checked>
                                 <label class="control-label" for="personal-recommendation">
-                                    เจ้าหน้าที่สภาบัน ชื่อ
-
-                                    personal-recommendation
+                                    {$lang['career']['ctext']}
                                 </label>
                             </div>
                         </fieldset>
@@ -2766,7 +2763,7 @@
                         <div class="form-group has-feedback -nm I">
                             <label class="control-label visuallyhidden" for="a-name-1">Spicyfi</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="information[hearingPerson1]" id="a-name-1" placeholder="ชื่อ / Name" data-error="" required="required">
+                                <input type="text" class="form-control" name="information[hearingPerson1]" id="a-name-1" placeholder="{$lang['career']['ref1']}" data-error="" required="required">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2779,7 +2776,7 @@
                             <div class="form-group form-check -nm I">
                                 <input class="form-check-input radio-check hearing-checking" type="radio" name="information[hearing]" id="others" value="อื่นๆ">
                                 <label class="control-label" for="others">
-                                    อื่นๆ ระบุ others
+                                    {$lang['career']['spacial4']}
                                 </label>
                             </div>
                         </fieldset>
@@ -2788,7 +2785,7 @@
                         <div class="form-group has-feedback -nm I">
                             <label class="control-label visuallyhidden" for="a-name-2">Spicyfi</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="information[hearingPerson2]" id="a-name-2" placeholder="ชื่อ / Name" data-error="">
+                                <input type="text" class="form-control" name="information[hearingPerson2]" id="a-name-2" placeholder="{$lang['career']['fname']}" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2796,14 +2793,14 @@
                 </div>
                 <div class="row gutters-custom mt-lg-5 mt-4">
                     <div class="col">
-                        <div class="title">8. ข้อมูลเพิ่มเติม FURTHER INFORMATION</div>
+                        <div class="title">8. {$lang['career']['ctext8']}</div>
                     </div>
                 </div>
                 <div class="row gutters-custom">
                     <div class="col">
                         <div class="form-group has-feedback -nm">
-                            <div class="topic py-0 pb-2">ข้อมูลเพิ่มเติมซึ่งท่านคิดว่าจะเป็นประโยชน์ต่อการสมัครงาน/Further information which you considered to be beneficial to application.</div>
-                            <label class="control-label visuallyhidden" for="textarea-1">ข้อมูลเพิ่มเติมซึ่งท่านคิดว่าจะเป็นประโยชน์ต่อการสมัครงาน/Further information which you considered to be beneficial to application.</label>
+                            <div class="topic py-0 pb-2">{$lang['career']['dctext8']}</div>
+                            <label class="control-label visuallyhidden" for="textarea-1">{$lang['career']['dctext8']}</label>
                             <div class="block-control">
                                 <textarea class="form-control form-text-area" rows="4" cols="100" name="information[considered]" id="textarea-1" value="Spicyfi" data-error="" required="required"></textarea>
                                 <span class="form-control-feedback" aria-hidden="true"></span>
@@ -2814,19 +2811,19 @@
                 {* Start Reference *}
                 <div class="row gutters-custom mt-lg-5 mt-4">
                     <div class="col">
-                        <div class="title">9. ผู้ให้การรับรอง PERSONAL REFERENCE <span>*</span></div>
+                        <div class="title">9. {$lang['career']['ctext9']} <span>*</span></div>
                     </div>
                 </div>
                 <div class="row gutters-custom align-items-center pt-3">
                     <div class="col-sm-9">
-                        <div class="topic"> โปรดให้รายละเอียดของผู้ให้การรับรอง (ซึ่งไม่ใช่ญาติ) ที่รู้จักตัวท่านดี / Give information of references (other than relatives)who know you</div>
+                        <div class="topic"> {$lang['career']['dctext9']}</div>
                     </div>
 
                     <div class="col-sm text-right">
                         <div class="button  my-sm-0 my-3">
                             <a href="javascript:void(0);" class="btn btn-primary clickdel_reference" data-action="adds" title="btn btn-primary">
                                 <span class="feather icon-plus text-white"></span>
-                                Add Education History
+                                {$lang["career"]["addedu"]}
                             </a>
                         </div>
                     </div>
@@ -2838,7 +2835,7 @@
                             <div class="form-group form-check -nm">
                                 <input class="form-check-input radio-check reference-checking" type="radio" name="reference[0][reference]" id="reference-no" value="ไม่มี" checked>
                                 <label class="control-label" for="reference-no">
-                                    ไม่มี / No
+                                    {$lang['career']['unhave']}
                                 </label>
                             </div>
                         </fieldset>
@@ -2849,7 +2846,7 @@
                             <div class="form-group form-check -nm">
                                 <input class="form-check-input radio-check reference-checking" type="radio" name="reference[0][reference]" id="reference-yes" value="มี">
                                 <label class="control-label" for="reference-yes">
-                                    มี / Yes
+                                    {$lang['career']['have']}
                                 </label>
                             </div>
                         </fieldset>
@@ -2858,27 +2855,27 @@
                 <div class="row gutters-custom reference">
                     <div class="col-md col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="p-name-1">1. ชื่อ-นามสกุล / Name-Surname</label>
+                            <label class="control-label" for="p-name-1">1. {$lang['career']['ref1']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="reference[0][]" id="p-name-1" placeholder="ชื่อ-นามสกุล / Name-Surname" data-error="">
+                                <input type="text" class="form-control" name="reference[0][]" id="p-name-1" placeholder="{$lang['career']['ref1']}" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="p-address-1">ที่อยู่/สถานที่ทำงาน/Address/Office Address</label>
+                            <label class="control-label" for="p-address-1">{$lang['career']['addresswork']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="reference[0][]" id="p-address-1" placeholder="ที่อยู่/สถานที่ทำงาน/Address/Office Address" data-error="">
+                                <input type="text" class="form-control" name="reference[0][]" id="p-address-1" placeholder="{$lang['career']['addresswork']}" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md col-sm">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="p-position-1">ตำแหน่ง / Position</label>
+                            <label class="control-label" for="p-position-1">{$lang['career']['ref2']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="reference[0][]" id="p-position-1" placeholder="ตำแหน่ง / Position" data-error="">
+                                <input type="text" class="form-control" name="reference[0][]" id="p-position-1" placeholder="{$lang['career']['ref2']}" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2887,18 +2884,18 @@
                 <div class="row gutters-custom reference">
                     <div class="col-sm-4">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="p-telephone-1">โทรศัพท์ / Telephone</label>
+                            <label class="control-label" for="p-telephone-1">{$lang['career']['ref4']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="reference[0][]" id="p-telephone-1" placeholder="โทรศัพท์ / Telephone" data-error="">
+                                <input type="text" class="form-control" name="reference[0][]" id="p-telephone-1" placeholder="{$lang['career']['ref4']}" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group has-feedback">
-                            <label class="control-label" for="p-relations-1">ความสัมพันธ์ / Relations</label>
+                            <label class="control-label" for="p-relations-1">{$lang['career']['relation']}</label>
                             <div class="block-control">
-                                <input type="text" class="form-control" name="reference[0][]" id="p-relations-1" placeholder="ความสัมพันธ์ / Relations" data-error="">
+                                <input type="text" class="form-control" name="reference[0][]" id="p-relations-1" placeholder="{$lang['career']['relation']}" data-error="">
                                 <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div>
@@ -2908,13 +2905,13 @@
                 <div class="d-none mt-3" id="clone_reference">
                     <div class="row align-items-center">
                         <!-- <div class="col">
-                            <div class="title"> พี่น้อง / Brother Sister</div>
+                            <div class="title"> </div>
                         </div> -->
                         <div class="col text-right">
                             <div class="button delete-form-6">
                                 <a href="javascript:void(0);" class="btn btn-primary clickdel_reference" data-action="dels" title="btn btn-primary">
                                     <!-- <span class="feather icon-minus text-white"></span> -->
-                                    ลบ
+                                    {$lang['career']['del']}
                                 </a>
                             </div>
                         </div>
@@ -2922,27 +2919,27 @@
                     <div class="row gutters-custom">
                         <div class="col-md col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="p-name-2">2. ชื่อ-นามสกุล / Name-Surname</label>
+                                <label class="control-label" for="p-name-2">2. {$lang['career']['ref1']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-name-2" placeholder="ชื่อ-นามสกุล / Name-Surname" data-error="">
+                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-name-2" placeholder="{$lang['career']['ref1']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="p-address-2">ที่อยู่/สถานที่ทำงาน/Address/Office Address</label>
+                                <label class="control-label" for="p-address-2">{$lang['career']['addresswork']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-address-2" placeholder="ที่อยู่/สถานที่ทำงาน/Address/Office Address" data-error="">
+                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-address-2" placeholder="{$lang['career']['addresswork']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md col-sm">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="p-position-2">ตำแหน่ง / Position</label>
+                                <label class="control-label" for="p-position-2">{$lang['career']['ref2']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-position-2" placeholder="ตำแหน่ง / Position" data-error="">
+                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-position-2" placeholder="{$lang['career']['ref2']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2951,18 +2948,18 @@
                     <div class="row gutters-custom">
                         <div class="col-sm-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="p-telephone-2">โทรศัพท์ / Telephone</label>
+                                <label class="control-label" for="p-telephone-2">{$lang['career']['ref4']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-telephone-2" placeholder="โทรศัพท์ / Telephone" data-error="">
+                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-telephone-2" placeholder="{$lang['career']['ref4']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="p-relations-1">ความสัมพันธ์ / Relations</label>
+                                <label class="control-label" for="p-relations-1">{$lang['career']['relation']}</label>
                                 <div class="block-control">
-                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-relations-1" placeholder="ความสัมพันธ์ / Relations" data-error="">
+                                    <input type="text" class="form-control" name="reference[tmp][]" id="p-relations-1" placeholder="{$lang['career']['relation']}" data-error="">
                                     <span class="form-control-feedback" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -2977,14 +2974,14 @@
 
                 <div class="row gutters-custom mt-5">
                     <div class="col">
-                        <div class="title">สำหรับเจ้าหน้าที่ทรัพยากรบุคคล / FOR COMPANY USE ONLY</div>
+                        <div class="title">{$lang['career']['upfiletxt']}</div>
                     </div>
                 </div>
                 <div class="upload-documents">
                     <div class="row gutters-custom">
                         <div class="col-12">
                             <div class="form-group has-feedback">
-                                <div class="topic">เอกสารการศึกษา / Transcript <span>*</span> </div>
+                                <div class="topic">{$lang['career']['upfiletxt1']} <span>*</span> </div>
                                 <label tabindex="0" for="use-only-upload-1" class="btn btn-primary btn-file -upload-1">
                                     <input class="input-file" id="use-only-upload-1" type="file">
                                     <div class="row gutters-custom">
@@ -2992,7 +2989,7 @@
                                             <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg" alt="icon upload">
                                         </div>
                                         <div class="col">
-                                            <span class="typo-xs text-white">อัพโหลด / Upload</span>
+                                            <span class="typo-xs text-white">{$lang['career']['uploadtxt']}</span>
                                         </div>
                                     </div>
                                 </label>
@@ -3010,7 +3007,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group has-feedback">
-                                <div class="topic">สำเนาทะเบียนบ้าน / Household Registration เอกสารทางการทหาร / Military Document<span>*</span></div>
+                                <div class="topic">{$lang['career']['upfiletxt2']}<span>*</span></div>
                                 <label tabindex="0" for="use-only-upload-2" class="btn btn-primary btn-file -upload-2">
                                     <input class="input-file" id="use-only-upload-2" type="file">
                                     <div class="row gutters-custom">
@@ -3018,7 +3015,7 @@
                                             <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg" alt="icon upload">
                                         </div>
                                         <div class="col">
-                                            <span class="typo-xs text-white">อัพโหลด / Upload</span>
+                                            <span class="typo-xs text-white">{$lang['career']['uploadtxt']}</span>
                                         </div>
                                     </div>
                                 </label>
@@ -3036,7 +3033,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group has-feedback">
-                                <div class="topic">สำเนาบัตรประชาชน / Identification Card เอกสารผ่านงาน / Work Experience Reference<span>*</span></div>
+                                <div class="topic">{$lang['career']['upfiletxt3']}<span>*</span></div>
                                 <label tabindex="0" for="use-only-upload-3" class="btn btn-primary btn-file -upload-3">
                                     <input class="input-file" id="use-only-upload-3" type="file">
                                     <div class="row gutters-custom">
@@ -3044,7 +3041,7 @@
                                             <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg" alt="icon upload">
                                         </div>
                                         <div class="col">
-                                            <span class="typo-xs text-white">อัพโหลด / Upload</span>
+                                            <span class="typo-xs text-white">{$lang['career']['uploadtxt']}</span>
                                         </div>
                                     </div>
                                 </label>
@@ -3062,7 +3059,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group has-feedback">
-                                <div class="topic">สำเนาทะเบียนสมรส / Marriage Registration<span>*</span></div>
+                                <div class="topic">{$lang['career']['upfiletxt4']}<span>*</span></div>
                                 <label tabindex="0" for="use-only-upload-4" class="btn btn-primary btn-file -upload-4">
                                     <input class="input-file" id="use-only-upload-4" type="file">
                                     <div class="row gutters-custom">
@@ -3070,7 +3067,7 @@
                                             <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg" alt="icon upload">
                                         </div>
                                         <div class="col">
-                                            <span class="typo-xs text-white">อัพโหลด / Upload</span>
+                                            <span class="typo-xs text-white">{$lang['career']['uploadtxt']}</span>
                                         </div>
                                     </div>
                                 </label>
@@ -3088,7 +3085,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group has-feedback">
-                                <div class="topic">สำเนาใบอนุญาตขับขี่รถยนต์, จักรยานยนต์ / Private car, Motorcycle License<span>*</span></div>
+                                <div class="topic">{$lang['career']['upfiletxt5']}<span>*</span></div>
                                 <label tabindex="0" for="use-only-upload-5" class="btn btn-primary btn-file -upload-5">
                                     <input class="input-file" id="use-only-upload-5" type="file">
                                     <div class="row gutters-custom">
@@ -3096,7 +3093,7 @@
                                             <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg" alt="icon upload">
                                         </div>
                                         <div class="col">
-                                            <span class="typo-xs text-white">อัพโหลด / Upload</span>
+                                            <span class="typo-xs text-white">{$lang['career']['uploadtxt']}</span>
                                         </div>
                                     </div>
                                 </label>
@@ -3115,7 +3112,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group has-feedback">
-                                <div class="topic">เอกสารอื่น ๆ / Other<span>*</span></div>
+                                <div class="topic">{$lang['career']['upfiletxt6']}<span>*</span></div>
                                 <label tabindex="0" for="use-only-upload-6" class="btn btn-primary btn-file -upload-6">
                                     <input class="input-file" id="use-only-upload-6" type="file">
                                     <div class="row gutters-custom">
@@ -3123,7 +3120,7 @@
                                             <img class="icon" src="{$template}/assets/img/icon/icon-upload.svg" alt="icon upload">
                                         </div>
                                         <div class="col">
-                                            <span class="typo-xs text-white">อัพโหลด / Upload</span>
+                                            <span class="typo-xs text-white">{$lang['career']['uploadtxt']}</span>
                                         </div>
                                     </div>
                                 </label>
@@ -3149,7 +3146,7 @@
                 <div class="row gutters-custom mt-md-5 mt-4">
                     <div class="col">
                         <div class="form-group has-feedback -nm">
-                            <label class="control-label" for="textarea-2">ความเห็นของเจ้าหน้าที่ทรัพยากรบุคคล / Human Resource Officer’s Comments</label>
+                            <label class="control-label" for="textarea-2">{$lang['career']['vertxt']}</label>
                             <div class="block-control">
                                 <textarea class="form-control form-text-area" rows="4" cols="100" name="comment[]" id="textarea-2" value="Spicyfi" data-error="" required="required"></textarea>
                                 <span class="form-control-feedback" aria-hidden="true"></span>
@@ -3162,14 +3159,7 @@
                         <div class=" form-group form-check">
                             <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][0]" id="from-check-1" required="required">
                             <label class="control-label c-color" for="from-check-1">
-                                ข้าพเจ้าในฐานะเจ้าของข้อมูลส่วนบุคคล ยินยอมมอบเอกสารและหลักฐานประกอบการสมัครงานนี้ให้แก่สถาบันและอนุญาตให้สถาบันเก็บรวบรวม ใช้ หรือเปิดเผย ข้อมูลส่วนบุคคลของข้าพเจ้า
-                                เพื่อวัตถุประสงค์หลักในการบริหารจัดการเกี่ยวกับความสัมพันธ์ในการจ้างแรงงานและการบริหารงานบุคคลในองค์กร อันเป็นการจำเป็นโดยชอบด้วยกฏหมายและตามพระราชบัญญัติคุ้มครอง
-                                ข้อมูลส่วนบุคคล พ.ศ.2562 เท่านั้น
-                                </br>
-                                </br>
-                                (I, as the data subject consent to provide/give the documents and the evidences for this job application to the GIT andallow GIT to collect, use or disclose
-                                my personal data, primarily for the purposes of managing relations in employment and Human Resources management in the company, in accordance by law
-                                and under the Personal Data Protection Act (B.E.2562) only)
+                               {$lang['career']['vertxt1']}
                             </label>
                         </div>
                     </div>
@@ -3177,7 +3167,7 @@
                         <div class="form-group form-check">
                             <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][1]" id="from-check-2" required="required">
                             <label class="control-label c-color" for="from-check-2">
-                                ข้าพเจ้าขอรับรองว่าข้อความข้างต้นและหลักฐานต่าง ๆ ถูกต้องและเป็นความจริงทุกประการ ข้าพเจ้ายินดีให้สถาบันสอบประวัติเกี่ยวกับตัว I certify that my answers or evidences are true. I understand that any incorrect, incomplete, or false statement of information
+                               {$lang['career']['vertxt2']}
                             </label>
                         </div>
                     </div>
@@ -3185,9 +3175,7 @@
                         <div class="form-group form-check">
                             <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][2]" id="from-check-3" required="required">
                             <label class="control-label c-color" for="from-check-3">
-                                furnished by me will be considered as just cause for rejection of this application or dismissal from employment without advance
-                                </br>
-                                ข้าพเจ้าได้ และหากข้าพเจ้าได้รับการพิจารณาเข้าทำงาน และสถาบันตรวจสอบว่าข้อความที่ให้ไว้ไม่ตรงกับความจริง ข้าพเจ้ายินดีให้สถาบันยกเลิกสัญญา
+                                {$lang['career']['vertxt3']}
                             </label>
                         </div>
                     </div>
@@ -3195,9 +3183,7 @@
                         <div class="form-group form-check">
                             <input class="form-check-input" type="checkbox" value="1" name="comment[confirm][3]" id="from-check-4" required="required">
                             <label class="control-label c-color" for="from-check-4">
-                                จ้างของข้าพเจ้าทันที โดยไม่ต้องบอกกล่าวล่วงหน้า และไม่ต้องจ่ายเงินชดเชยหรือค่าเสียหายใด ๆ ทั้งสิ้น
-                                </br>
-                                notice or any compensation of severance pay whatsoever
+                               {$lang['career']['vertxt4']}
                             </label>
                         </div>
                     </div>
@@ -3206,7 +3192,7 @@
                     <div class="col">
                         {* <button type="submit" id="submitform" class="btn btn-xl btn-primary btn-form" title="SUBMIT AN APPLICATION">SUBMIT AN APPLICATION</button> *}
                         <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
-                        <input type="submit" class="btn btn-xl btn-primary btn-form" id="clicksubmitfromcar" value="SUBMIT AN APPLICATION">
+                        <input type="submit" class="btn btn-xl btn-primary btn-form" id="clicksubmitfromcar" value="{$lang['career']['submit']}">
                     </div>
                 </div>
             </div>
