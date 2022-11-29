@@ -1,7 +1,11 @@
 /*
 script upload file js @2022
 */
-
+let langDataSize = $('.site-container').data('size');
+let langDataSizeIs = $('.site-container').data('sizeis');
+let langError = $('.site-container').data('error');
+let langTypeError = $('.site-container').data('typeerror');
+let langTry = $('.site-container').data('tryagian');
 // ####### Setup #######
 const defalutsizeupload = 1; //set max file upload
 const config = new Array(1, 10, 50, 128); // SET MB
@@ -44,8 +48,8 @@ avatar.addEventListener("change", function() {
   if (file.size > imagesize) {
       Swal.fire({
           icon: "error",
-          title: "Max file size is " + config[0] + "MB !",
-          html: "ไฟล์ต้องไม่เกิน " + config[0] + "MB !", //message
+          title: langDataSizeIs + "" + config[0] + "MB !",
+          html: langDataSize + " " + config[0] + "MB !", //message
       });
       return false;
   } else {
@@ -84,8 +88,8 @@ dropAreaUploadfile_1.addEventListener("drop", (event) => {
   if (file.size > filesize) {
     Swal.fire({
         icon: "error",
-        title: "Max file size is " + config[3] + "MB !",
-        html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+        title: langDataSizeIs + "" + config[3] + "MB !",
+        html: langDataSize + " " + config[3] + "MB !", //message
     });
     return false;
   } else {
@@ -98,8 +102,8 @@ Uploadfile_1.addEventListener("change", function() {
   if (file.size > filesize) {
       Swal.fire({
           icon: "error",
-          title: "Max file size is " + config[3] + "MB !",
-          html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+          title: langDataSizeIs + "" + config[3] + "MB !",
+          html: langDataSize + " " + config[3] + "MB !", //message
       });
       return false;
   } else {
@@ -124,8 +128,8 @@ dropAreaUploadfile_2.addEventListener("drop", (event) => {
   if (file.size > filesize) {
     Swal.fire({
         icon: "error",
-        title: "Max file size is " + config[3] + "MB !",
-        html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+        title: langDataSizeIs + "" + config[3] + "MB !",
+        html: langDataSize + " " + config[3] + "MB !", //message
     });
     return false;
   } else {
@@ -138,8 +142,8 @@ Uploadfile_2.addEventListener("change", function() {
   if (file.size > filesize) {
       Swal.fire({
           icon: "error",
-          title: "Max file size is " + config[3] + "MB !",
-          html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+          title: langDataSizeIs + "" + config[3] + "MB !",
+          html: langDataSize + " " + config[3] + "MB !", //message
       });
       return false;
   } else {
@@ -164,8 +168,8 @@ dropAreaUploadfile_3.addEventListener("drop", (event) => {
   if (file.size > filesize) {
     Swal.fire({
         icon: "error",
-        title: "Max file size is " + config[3] + "MB !",
-        html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+        title: langDataSizeIs + "" + config[3] + "MB !",
+        html: langDataSize + " " + config[3] + "MB !", //message
     });
     return false;
   } else {
@@ -178,8 +182,8 @@ Uploadfile_3.addEventListener("change", function() {
   if (file.size > filesize) {
       Swal.fire({
           icon: "error",
-          title: "Max file size is " + config[3] + "MB !",
-          html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+          title: langDataSizeIs + "" + config[3] + "MB !",
+          html: langDataSize + " " + config[3] + "MB !", //message
       });
       return false;
   } else {
@@ -204,8 +208,8 @@ dropAreaUploadfile_4.addEventListener("drop", (event) => {
   if (file.size > filesize) {
     Swal.fire({
         icon: "error",
-        title: "Max file size is " + config[3] + "MB !",
-        html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+        title: langDataSizeIs + "" + config[3] + "MB !",
+        html: langDataSize + " " + config[3] + "MB !", //message
     });
     return false;
   } else {
@@ -218,8 +222,8 @@ Uploadfile_4.addEventListener("change", function() {
   if (file.size > filesize) {
       Swal.fire({
           icon: "error",
-          title: "Max file size is " + config[3] + "MB !",
-          html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+          title: langDataSizeIs + "" + config[3] + "MB !",
+          html: langDataSize + " " + config[3] + "MB !", //message
       });
       return false;
   } else {
@@ -244,8 +248,8 @@ dropAreaUploadfile_5.addEventListener("drop", (event) => {
   if (file.size > filesize) {
     Swal.fire({
         icon: "error",
-        title: "Max file size is " + config[3] + "MB !",
-        html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+        title: langDataSizeIs + "" + config[3] + "MB !",
+        html: langDataSize + " " + config[3] + "MB !", //message
     });
     return false;
   } else {
@@ -258,8 +262,8 @@ Uploadfile_5.addEventListener("change", function() {
   if (file.size > filesize) {
       Swal.fire({
           icon: "error",
-          title: "Max file size is " + config[3] + "MB !",
-          html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+          title: langDataSizeIs + "" + config[3] + "MB !",
+          html: langDataSize + " " + config[3] + "MB !", //message
       });
       return false;
   } else {
@@ -284,8 +288,8 @@ dropAreaUploadfile_6.addEventListener("drop", (event) => {
   if (file.size > filesize) {
     Swal.fire({
         icon: "error",
-        title: "Max file size is " + config[3] + "MB !",
-        html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+        title: langDataSizeIs + "" + config[3] + "MB !",
+        html: langDataSize + " " + config[3] + "MB !", //message
     });
     return false;
   } else {
@@ -298,8 +302,8 @@ Uploadfile_6.addEventListener("change", function() {
   if (file.size > filesize) {
       Swal.fire({
           icon: "error",
-          title: "Max file size is " + config[3] + "MB !",
-          html: "ไฟล์ต้องไม่เกิน " + config[3] + "MB !", //message
+          title: langDataSizeIs + "" + config[3] + "MB !",
+          html: langDataSize + " " + config[3] + "MB !", //message
       });
       return false;
   } else {
@@ -333,8 +337,8 @@ function ReaderFile(temp, action, inp, target) {
       }else{
         Swal.fire({
           icon: "error",
-          title: "เกิดข้อผิดพลาด !",
-          html: "ประเภทไฟล์ไม่ถูกต้อง !", //message
+          title: langError,
+          html: langTypeError, //message
         });
       }
       break;
@@ -359,8 +363,8 @@ function ReaderFile(temp, action, inp, target) {
       }else{
         Swal.fire({
           icon: "error",
-          title: "เกิดข้อผิดพลาด !",
-          html: "ประเภทไฟล์ไม่ถูกต้อง !", //message
+          title: langError,
+          html: langTypeError, //message
         });
       }
       break;
@@ -368,8 +372,8 @@ function ReaderFile(temp, action, inp, target) {
     default:
       Swal.fire({
         icon: "error",
-        title: "เกิดข้อผิดพลาด !",
-        html: "กรุณลองใหม่อีกครั้ง !", //message
+        title: langError,
+        html: langTry, //message
       });
       break;
   }

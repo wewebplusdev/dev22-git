@@ -38,6 +38,11 @@ $lang['career']['detail'] = 'Details';
 $lang['career']['source'] = 'Job Source';
 $lang['career']['maxsize'] = 'Your file size is too large.';
 $lang['career']['methodfalse'] = 'Failed to Upload. Please try again.';
+$lang['career']['swal']['maxsize'] = 'Files must not exceed';
+$lang['career']['swal']['maxsizeis'] = 'Max file size is';
+$lang['career']['swal']['error'] = 'Something wrong!';
+$lang['career']['swal']['typeerror'] = 'Invalid file type!';
+$lang['career']['swal']['tryagian'] = 'Please try again.';
 
 // contact
 $lang['contact']['form'] = "Contact us form";
@@ -70,6 +75,7 @@ $lang['contact']['error_msg'] = "Sorry, the transaction was not successful.";
 $lang['contact']['error_msg_desc'] = "Please try again later.";
 
 //career
+$lang['career']['fill-apply']="Please complete the following form and state details";
 $lang['career']['apply']="Position to apply";
 $lang['career']['topic1']="General information";
 $lang['career']['search']="Job search";
@@ -113,12 +119,26 @@ $lang['career']['natcardby'] = "Issued by";
 $lang['career']['natcardpovince'] = "Issued province";
 $lang['career']['Application_form'] = "Application form";
 $lang['career']['Personal_details'] = 'Personal details';
+$lang['career']['male']="Male";
+$lang['career']['female']="Female";
+$lang['career']['homeaddress']="Home Address";
+$lang['career']['presentaddress']="Present Address";
+$lang['career']['telhome']="Telephone Home";
+$lang['career']['telmobile']="Mobile Phone";
+$lang['career']['idencardno']="Identification Card No.";
+$lang['career']['issuedat']="Issued at";
+$lang['career']['expdate']="Expiry Date";
+$lang['career']['emercontact']="In case of emergency please contact";
+$lang['career']['relation']="Relations";
+$lang['career']['addresswork']="Address/Workplace";
+
 
 $lang['career']['army']="Other";
 $lang['career']['army1']="Exempted";
 $lang['career']['army2']="Non Exempted";
 $lang['career']['army4']="Passed";
 $lang['career']['army3']="Finished Military Service Training of Territorial Defence Course";
+$lang['career']['army5']="Military Status";
 
 $lang['career']['marry'] = "Marital status";
 $lang['career']['marry1'] = "Single";
@@ -139,6 +159,28 @@ $lang['career']['sis'] = "Brother/Sister";
 $lang['career']['bret'] = "Brother/Sister";
 $lang['career']['has'] = "Husband / Wife";
 $lang['career']['baby'] = "Son / daughter";
+$lang['career']['whoyou'] = "You Are Someone Who?";
+$lang['career']['whoyou2'] = "You Are Someone Who?";
+
+$lang['career']['Permanent'] = "Permanent";
+$lang['career']['Temporary'] = "Temporary";
+$lang['career']['crash'] = "No";
+$lang['career']['nocrash'] = "Yes";
+
+$lang['career']['typebussiness'] = "Type Of Business";
+$lang['career']['fpos'] = "First Position";
+$lang['career']['lpos'] = "Last Position";
+$lang['career']['lsalary'] = "Last Salary";
+$lang['career']['osalary'] = "Other Salary";
+$lang['career']['briefres'] = "Brief Responsibility";
+
+$lang['career']['scareer'] = "Start Date";
+$lang['career']['ecareer'] = "End Date";
+
+$lang['career']['elang'] = "English";
+$lang['career']['clang'] = "Chinese";
+$lang['career']['to'] = "to";
+$lang['career']['height'] = "Height cm";
 
 $lang['career']['educat'] = "Education history";
 $lang['career']['educat1'] = "Education level";
@@ -187,6 +229,36 @@ $lang['career']['dricard'] ="Driver's license";
 $lang['career']['dricard1'] ="Have";
 $lang['career']['dricard3'] ="Driver's license number";
 $lang['career']['dricard2'] ="Don't have Driver's license";
+
+$lang['career']['ctext'] ="PERSONAL-RECOMMENDATION";
+$lang['career']['ctext1'] ="Can you work up country?";
+$lang['career']['ctext2'] ="Have you ever been seriously ill or contacted with contagious";
+$lang['career']['ctext3'] ="Any physical disability or handicap";
+$lang['career']['ctext4'] ="Have you ever been arrested, takes custody, help for investigation or questioning or charged by any law enforcement authority?";
+$lang['career']['ctext5'] ="Have you ever been discharged from employment for any reason?";
+$lang['career']['ctext6'] ="Have you any friend or relative employed here?";
+$lang['career']['ctext7'] ="Where did you hear of our vacancy?";
+$lang['career']['ctext8'] ="FURTHER INFORMATION";
+$lang['career']['ctext9'] ="PERSONAL REFERENCE";
+$lang['career']['dctext8'] ="Further information which you considered to be beneficial to application.";
+$lang['career']['dctext9'] ="Give information of references (other than relatives)who know you";
+
+$lang['career']['upfiletxt'] = "FOR COMPANY USE ONLY";
+$lang['career']['upfiletxt1'] = "Transcript ";
+$lang['career']['upfiletxt2'] = "Household Registration / Military Document";
+$lang['career']['upfiletxt3'] = "Identification Card / Work Experience Reference";
+$lang['career']['upfiletxt4'] = "Marriage Registration";
+$lang['career']['upfiletxt5'] = "Private car, Motorcycle License";
+$lang['career']['upfiletxt6'] = "Other";
+$lang['career']['uploadtxt'] = "Upload";
+
+
+$lang['career']['vertxt'] = "HUMAN RESOURCE OFFICER’S COMMENTS";
+$lang['career']['vertxt1'] = "(I, AS THE DATA SUBJECT CONSENT TO PROVIDE/GIVE THE DOCUMENTS AND THE EVIDENCES FOR THIS JOB APPLICATION TO THE GIT ANDALLOW GIT TO COLLECT, USE OR DISCLOSE MY PERSONAL DATA, PRIMARILY FOR THE PURPOSES OF MANAGING RELATIONS IN EMPLOYMENT AND HUMAN RESOURCES MANAGEMENT IN THE COMPANY, IN ACCORDANCE BY LAW AND UNDER THE PERSONAL DATA PROTECTION ACT (B.E.2562) ONLY)";
+$lang['career']['vertxt2'] = "I CERTIFY THAT MY ANSWERS OR EVIDENCES ARE TRUE. I UNDERSTAND THAT ANY INCORRECT, INCOMPLETE, OR FALSE STATEMENT OF INFORMATION";
+$lang['career']['vertxt3'] = "FURNISHED BY ME WILL BE CONSIDERED AS JUST CAUSE FOR REJECTION OF THIS APPLICATION OR DISMISSAL FROM EMPLOYMENT WITHOUT ADVANCE";
+$lang['career']['vertxt4'] = "NOTICE OR ANY COMPENSATION OF SEVERANCE PAY WHATSOEVER";
+
 $lang['career']['ref']="Reference person";
 $lang['career']['ref1']="Name-Surname";
 $lang['career']['ref2']="position";
@@ -219,6 +291,7 @@ $lang['career']['applymail']= "Apply for this job via email";
 $lang['career']['applyform']= "Download form";
 $lang['career']['agee'] ="I certify that the above statement and all evidence correct and true in all respects";
 $lang['career']['submit'] ="Submit an application";
+$lang['career']['title'] ="Gem And Jewelry Institute Of Thailand";
 
 //new career TH
 $lang['career']['province'] = "Province";
