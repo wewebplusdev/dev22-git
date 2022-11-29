@@ -5,6 +5,9 @@ $mod_tb_root = "md_tgp";
 ## Mod Folder ###################################
 $mod_fd_root = "mod_topgraphic";
 
+## Mod Masterkey ###################################
+$arr_masterkey_ck = array('tgp');
+
 ## Setting Value ###################################
 $modTxtTarget = array("", "เปิดหน้าต่างเดิม", "เปิดหน้าต่างใหม่");
 
@@ -22,6 +25,9 @@ $sizeWidthOff = "50";
 $sizeHeightOff = "50";
 
 ## Mod Path ###################################
+
+$mod_path_html        = $core_pathname_upload."/".$masterkey."/html";
+$mod_path_html_fornt  = $core_pathname_upload_fornt."/".$masterkey."/html";
 
 $mod_path_office = $core_pathname_upload . "/" . $masterkey . "/office";
 $mod_path_office_fornt = $core_pathname_upload_fornt . "/" . $masterkey . "/office";

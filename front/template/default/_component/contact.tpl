@@ -131,14 +131,15 @@
                   <div class="col">
                     <div class="title">{$lang['contact']['graphic-map']}</div>
                   </div>
+                  {$addresspic = "addresspic{$langweb}"}
                   <div class="col-auto">
-                    <a href="{$ul}/{$menuActive}/graphic-map" target="_blank" class="link" title="{$lang['contact']['download-map']}">
+                    <a href="{$ul}/download/{$settingWeb[$addresspic]|fileinclude:'real':'set':'download'}&n={$settingWeb[$addresspic]}" class="link" title="{$lang['contact']['download-map']}">
                       <span class="feather icon-download"></span>{$lang['contact']['download-map']}
                     </a>
                   </div>
                 </div>
                 <figure class="cover">
-                  <img src="{$settingWeb['addresspic']|fileinclude:"real":'set':"link"}" alt="{$lang['contact']['graphic-map']}">
+                  <img src="{$settingWeb[$addresspic]|fileinclude:"real":'set':"link"}" alt="{$lang['contact']['graphic-map']}">
                 </figure>
               </div>
             </div>

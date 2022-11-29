@@ -26,7 +26,7 @@
         <div class="row align-items-center">
           <div class="col-md-auto">
             <div class="whead">
-              <div class="h-title">{$callCMS->fields.subject}</div>
+              <div class="h-title">{str_replace("<br>", "", $callCMS->fields.subject)}</div>
             </div>
           </div>
           <div class="col-md">

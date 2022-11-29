@@ -26,6 +26,7 @@ $lang['menu']['calendar'] = "日曆";
 $lang['menu']['photo-gallary'] = "照片庫";
 $lang['menu']['vdo-gallary'] = "視頻庫";
 $lang['menu']['training'] = "培訓工作";
+$lang['menu']['video-gallary'] = "視頻庫";
 
 //career
 $lang['career']['select'] = "位置 | 选择";

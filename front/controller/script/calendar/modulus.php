@@ -52,9 +52,13 @@ class calendarPage {
       global $config, $db, $url;
       $lang = $url->pagelang[3];
 
-      $sql = "SELECT *
+      $sql = "SELECT *,
+      " . $config['cag']['db']['main'] . "_color as color
     FROM
     " . $config['cas']['db']['main'] . "
+    LEFT JOIN
+    " . $config['cag']['db']['main'] . "
+    ON " . $config['cag']['db']['main'] . "_id = " . $config['cas']['db']['main'] . "_gid
     WHERE
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_masterkey = '" . $config['cl']['masterkey'] . "' AND
     " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_status != 'Disable' AND
@@ -79,6 +83,7 @@ class calendarPage {
       }
 
       $sql .= " ORDER  BY " . $config['cas']['db']['main'] . "." . $config['cas']['db']['main'] . "_sdate ASC ";
+      // print_pre($sql);
       $result = $db->execute($sql);
       return $result;
    }

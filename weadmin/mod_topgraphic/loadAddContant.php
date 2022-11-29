@@ -54,6 +54,18 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
           jQuery("#inputurl").removeClass("formInputContantTbAlertY");
         }
 
+        <?php if(in_array($_REQUEST['masterkey'], $arr_masterkey_ck)){ ?>
+        var alleditDetail = CKEDITOR.instances.editDetail.getData();
+          if (alleditDetail == "") {
+              jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
+              window.location.hash = '#inputEditHTML';
+              return false;
+          } else {
+              jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
+          }
+          jQuery('#inputHtml').val(alleditDetail);
+        <?php } ?>
+
       }
       insertContactNew('insertContant.php');
     }
@@ -62,16 +74,20 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
       jQuery('#myForm').keypress(function(e) {
         /* Start  Enter Check CKeditor */
-
+        var focusManager = new CKEDITOR.focusManager(editDetail);
+        var checkFocus = CKEDITOR.instances.editDetail.focusManager.hasFocus;
         var checkFocusTitle = jQuery("#inputurl").is(":focus");
         var checkFocusDesc = jQuery("#inputDesc").is(":focus");
 
         if (e.which == 13) {
           //e.preventDefault();
-          if (!checkFocusDesc) {
-            executeSubmit();
-            return false;
-
+          if (!checkFocus) {
+            if (!checkFocusDesc) {
+              if (!checkFocusTitle) {
+                executeSubmit();
+                return false;
+              }
+            }
           }
         }
         /* End  Enter Check CKeditor */
@@ -283,6 +299,33 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
       </table>
       <br />
+      <?php if(in_array($_REQUEST['masterkey'], $arr_masterkey_ck)){ ?>
+      <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+          <tr>
+              <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                  <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
+                  <span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
+              </td>
+          </tr>
+          <tr>
+              <td colspan="7" align="center" valign="top" class="formRightContantTbEditor">
+                  <div id="inputEditHTML">
+                      <textarea name="editDetail" id="editDetail">
+                              <?php
+                              if (is_file($valhtml)) {
+                                  $fd = @fopen($valhtml, "r");
+                                  $contents = @fread($fd, @filesize($valhtml));
+                                  @fclose($fd);
+                                  echo txtReplaceHTML($contents);
+                              }
+                              ?>
+                          </textarea>
+                  </div>
+              </td>
+          </tr>
+      </table>
+      <br class="ckabout" />
+      <?php } ?>
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
         <tr>
           <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -320,6 +363,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
     </div>
   </form>
   <script type="text/javascript" src="../js/ajaxfileupload.js"></script>
+  <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
   <script type="text/javascript" language="javascript">
     /*################################# Upload Pic #######################*/
     function ajaxFileUpload() {
@@ -451,6 +495,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
       return false;
 
     }
+
+    /*################### Load FCK Editor ######################*/
+    jQuery(function() {
+      onLoadFCK();
+    });
   </script>
   <?php if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") { ?>
     <script language="JavaScript" type="text/javascript" src="../js/datepickerThai.js"></script>

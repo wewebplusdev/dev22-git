@@ -74,7 +74,7 @@ switch ($PageAction) {
 
         /*## Start SEO #####*/
         $seo_desc = "";
-        $seo_title = $lang['menu']['video-gallary'];
+        $seo_title = $lang['menu']['search'];
         $seo_keyword = "";
         Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
         /*## End SEO #####*/

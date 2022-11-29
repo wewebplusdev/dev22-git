@@ -14,25 +14,51 @@ include "config.php";
 <body>
 <?php
 if ($execute == "update") {
-    //$randomNumber = randomNameUpdate(1);
+    $randomNumber = randomNameupdate(2);
+
+    if (!is_dir($core_pathname_upload . "/" . $masterkey)) {
+        mkdir($core_pathname_upload . "/" . $masterkey, 0777);
+    }
+    if (!is_dir($mod_path_html)) {
+        mkdir($mod_path_html, 0777);
+    }
+
+    if (@file_exists($mod_path_html . "/" . $htmlfiledelete)) {
+        @unlink($mod_path_html . "/" . $htmlfiledelete);
+    }
+
+    if ($_POST['inputHtml'] != "") {
+        $filename = "html-".$randomNumber . ".html";
+        $HTMLToolContent = str_replace("\\\"", "\"", $_POST['inputHtml']);
+        $fp = fopen($mod_path_html . "/" . $filename, "w");
+        chmod($mod_path_html . "/" . $filename, 0777);
+        fwrite($fp, $HTMLToolContent);
+        fclose($fp);
+    }else{
+        $filename = '';
+    }
+
     $update = array();
     if ($_REQUEST['inputLt'] == "Thai") {
         $update[] = $mod_tb_root . "_subject='" . changeQuot($_POST['inputSubject']) . "'";
         $update[] = $mod_tb_root . "_url='" . changeQuot($_REQUEST['inputurl']) . "'";
         $update[] = $mod_tb_root . "_title='" . changeQuot($_REQUEST['inputTitle']) . "'";
         $update[] = $mod_tb_root . "_desc='" . changeQuot($_REQUEST['inputDesc']) . "'";
+        $update[] = $mod_tb_root . "_htmlfilename  	='" . $filename . "'";
 
     } else if ($_REQUEST['inputLt'] == "Eng") {
         $update[] = $mod_tb_root . "_subjecten='" . changeQuot($_POST['inputSubject']) . "'";
         $update[] = $mod_tb_root . "_urlen='" . changeQuot($_REQUEST['inputurl']) . "'";
         $update[] = $mod_tb_root . "_titleen='" . changeQuot($_REQUEST['inputTitle']) . "'";
         $update[] = $mod_tb_root . "_descen='" . changeQuot($_REQUEST['inputDesc']) . "'";
+        $update[] = $mod_tb_root . "_htmlfilenameen  	='" . $filename . "'";
     
     }else{
         $update[] = $mod_tb_root . "_subjectcn='" . changeQuot($_POST['inputSubject']) . "'";
         $update[] = $mod_tb_root . "_urlcn='" . changeQuot($_REQUEST['inputurl']) . "'";
         $update[] = $mod_tb_root . "_titlecn='" . changeQuot($_REQUEST['inputTitle']) . "'";
         $update[] = $mod_tb_root . "_desccn='" . changeQuot($_REQUEST['inputDesc']) . "'";
+        $update[] = $mod_tb_root . "_htmlfilenamecn  	='" . $filename . "'";
     
     }
 

@@ -20,12 +20,12 @@ function getCalendarDetailAll() {
 function GetCalendar() {
    var formData = new FormData($("#myCalendarForm")[0]);
    var path = $("base").attr("href") + base_url_lang;
-   console.log(path);
+   // console.log(path);
    $.ajax({
       url: path + "/calendar/load-calendar",
       type: "POST",
       success: function (data) {
-         console.log(data);
+         // console.log(data);
          jQuery("#calendar").show();
          jQuery("#calendar").html(data);
          getCalendarDetailAll();

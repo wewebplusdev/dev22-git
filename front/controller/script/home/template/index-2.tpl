@@ -6,7 +6,7 @@
       <div class="default-slider-dots slider">
         {foreach $callTopGraphic as $keycallTopGraphic => $valuecallTopGraphic}
           <div class="tpg-item">
-            <a href="" class="link">
+            <a {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank" {/if}{else}href="javascript:void(0);"{/if} class="link">
               <figure class="cover">
                 <img src="{$valuecallTopGraphic['pic']|fileinclude:"real":{$valuecallTopGraphic['masterkey']}:"link"}"
                   alt="{$valuecallTopGraphic.pic}" alt="top graphic">

@@ -162,8 +162,8 @@
                 <li>
                   <a href="{$domain}/{$url_sch}" class="link list-wrapper" target="_blank">
                     <div class="list-inner">
-                      <div class="list-title">{$result.subject}</div>
-                      <div class="list-desc text-limit -x2">{$result.title}</div>
+                      <div class="list-title">{str_replace("<br>", "", $result.subject)}</div>
+                      <div class="list-desc text-limit -x2">{str_replace("<br>", "", $result.title)}</div>
                       <div class="list-link">{$domain}/{$url_sch}</div>
                       {if $call_hashtag_list->_numOfRows gte 1}
                         <div class="tag-list">

@@ -131,7 +131,7 @@ class aboutPage
 
     $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ".$order." ";
 
-    // print_pre($sql);
+    // print_pre($sql);die;
     $result = $db->pageexecute($sql, $limit, $page);
     return $result;
   }

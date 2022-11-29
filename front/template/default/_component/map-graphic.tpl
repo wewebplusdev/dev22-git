@@ -18,7 +18,8 @@
   <div class="maps-block">
     <div class="graphic-map">
       <figure class="contain">
-        <img src="{$settingWeb['addresspic']|fileinclude:"real":"set":"link"}" alt="{$settingWeb['addresspic']}">
+        {$addresspic = "addresspic{$langweb}"}
+        <img src="{$settingWeb[$addresspic]|fileinclude:"real":"set":"link"}" alt="{$settingWeb['addresspic']}">
       </figure>
     </div>
   </div>

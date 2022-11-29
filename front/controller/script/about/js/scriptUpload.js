@@ -6,7 +6,7 @@ script upload file js @2022
 const defalutsizeupload = 1; //set max file upload
 const config = new Array(1, 10, 50, 128); // SET MB
 const imagesize = config[0] * (1024 * 1024); // byte to mb
-const filesize = config[3] * (1024 * 1024); // byte to mb
+const filesize = config[3] * (1 * 1); // byte to mb
 
 // ####### Variable #######
 let file,validExtensions; //this is a global variable and we'll use it inside multiple functions

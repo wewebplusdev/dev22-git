@@ -21,7 +21,7 @@ if ($_GET['tmp'] == 1 ) {
 
 $core_theme_web = explode("-", $themeWebsite['class']);
 $callSection = $homePage->callSection($core_theme_web[1], $mod_array_conf[$themeWebsite['class']]['order'], $themeWebsite['class']);
-// print_pre($callSection);
+
 switch ($themeWebsite['class']) {
     case 'theme-3':
         // call top graphic

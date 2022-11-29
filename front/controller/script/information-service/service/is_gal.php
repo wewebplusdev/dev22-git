@@ -55,7 +55,7 @@ switch ($PageAction_pic) {
 
         $settingPage = array(
             "page" => $menuActive,
-            "template" => "cmsg_album_detail.tpl",
+            "template" => "photo-detail.tpl",
             "display" => "page",
             "control" => "component",
         );

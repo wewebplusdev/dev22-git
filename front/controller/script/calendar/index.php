@@ -85,6 +85,13 @@ switch ($url->segment[1]) {
         $callCalendarGroup = $calendarPage->callCalendarGroup($config['cl']['masterkey']);
         $smarty->assign("callCalendarGroup", $callCalendarGroup);
 
+        /*## Start SEO #####*/
+        $seo_desc = "";
+        $seo_title = $lang['menu']['calendar'];
+        $seo_keyword = "";
+        Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
+        /*## End SEO #####*/
+
         $settingPage = array(
             "page" => $menuActive,
             "template" => "index.tpl",

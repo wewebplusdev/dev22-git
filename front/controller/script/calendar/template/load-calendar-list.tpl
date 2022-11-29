@@ -18,6 +18,7 @@
                <div class="row no-gutters">
                   <div class="col-9">
                      <div class="list-inner">
+                        <span class="icon-list-inner" style="{if $valueCallActivityData.color neq ""}background-color: {$valueCallActivityData.color}{else}border:solid 1px black{/if};"></span>
                         <div class="list-title text-limit -x2">
                            <span class="icon"></span>
                            {if $langon == 'th'}

@@ -513,7 +513,8 @@ function resize($img, $w, $h, $newfilename) {
 }
 
 function fileinclude($filename, $fileType = 'html', $mod_tb_about_masterkey, $for = 'check', $crop = false, $cropthumb = false) {
-   global $path_upload, $path_upload_url, $path_template, $templateweb, $core_pathname_upload, $detectDivice;
+   global $path_upload, $path_upload_url, $path_template, $templateweb, $core_pathname_upload, $detectDivice, $linklang;
+   $status_fc = false;
 
    if ($for == 'linkthumb') {
       $fileType = "album";
@@ -548,6 +549,7 @@ function fileinclude($filename, $fileType = 'html', $mod_tb_about_masterkey, $fo
          }
       }
    } else {
+      $status_fc = true;
       $setFoldet = _URL . $path_template[$templateweb][0];
       if ($mod_tb_about_masterkey == 'cu') {
          $setimg = "/public/image/asset/default_boss.png";
@@ -559,7 +561,13 @@ function fileinclude($filename, $fileType = 'html', $mod_tb_about_masterkey, $fo
    switch ($for) {
       case 'linkthumb':
       case 'link':
-         $pathFile = $setFoldet . $setimg;
+         // $pathFile = $setFoldet . $setimg;
+         if ($status_fc || true) {
+            $pathFile = $setFoldet . $setimg;
+         }else{
+            $fileLoad = encodeStr($path_upload . "/" . $mod_tb_about_masterkey . "/" . $fileType . "/" . $filename);
+            $pathFile = $linklang . "/download/?file=" . $fileLoad;
+         }
          break;
 
       case 'download':

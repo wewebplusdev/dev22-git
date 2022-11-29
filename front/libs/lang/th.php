@@ -26,6 +26,7 @@ $lang['menu']['calendar'] = "ปฎิทินกิจกรรม";
 $lang['menu']['photo-gallary'] = "แสดงรูปภาพ";
 $lang['menu']['vdo-gallary'] = "แสดงวีดีโอ";
 $lang['menu']['training'] = "งานฝึกอบรม";
+$lang['menu']['video-gallary'] = "แกลเลอรี่วิดีโอ";
 
 //career
 $lang['career']['select'] = "ตำแหน่ง | เลือก";
