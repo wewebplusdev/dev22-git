@@ -191,7 +191,7 @@ class aboutPage
     " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_pic" . $lang . " as pic,
     " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_lastdate as lastdate,
     " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_url as url,
-    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_type as type,
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_type as type
     FROM
     " . $config['jos']['db']['main'] . "
     WHERE
@@ -668,7 +668,7 @@ class aboutPage
     return $result;
   }
 
-  function callProvince_main()
+  function callProvince_main($pid = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -682,13 +682,17 @@ class aboutPage
         " . $config['province']['db']['main'] . "
     ";
 
+    if (!empty($pid)) {
+      $sql .= " WHERE " . $config['province']['db']['main'] . "_id = '".$pid."'";
+    }
+
     $sql .= "
     ORDER BY " . $config['province']['db']['main'] . "_name ASC";
     $result = $db->execute($sql);
     return $result;
   }
 
-  function callDistrict_main($pid = 0)
+  function callDistrict_main($pid = 0,$did = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -709,6 +713,9 @@ class aboutPage
       $sql .= "
         WHERE " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_province_id = 0  AND  " . $config['amphur']['db']['main'] . "." . $config['amphur']['db']['main'] . "_nameen NOT LIKE '%*%'";
     }
+    if (!empty($did)) {
+      $sql .= " AND " . $config['amphur']['db']['main'] . "_id = '".$did."'";
+    }
     $sql .= "
     ORDER BY " . $config['amphur']['db']['main'] . "_nameen ASC";
     // print_pre();
@@ -716,7 +723,7 @@ class aboutPage
     return $result;
   }
 
-  function callSubDistrict_main($aid)
+  function callSubDistrict_main($aid,$sdid = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -735,6 +742,10 @@ class aboutPage
   " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_amphure_id = $aid AND  " . $config['district']['db']['main'] . "." . $config['district']['db']['main'] . "_nameen NOT LIKE '%*%'
   ";
 
+  if (!empty($sdid)) {
+    $sql .= " AND " . $config['district']['db']['main'] . "_id = '".$sdid."'";
+  }
+
     $sql .= "
   ORDER BY " . $config['district']['db']['main'] . "_nameen ASC";
     // print_pre($sql);
@@ -747,8 +758,8 @@ class aboutPage
   
     $sql = "SELECT
     " . $config['joe']['db']['main'] . "." . $config['joe']['db']['main'] . "_id,
-    " . $config['joe']['db']['main'] . "." . $config['joe']['db']['main'] . "_gid,
     " . $config['joe']['db']['main'] . "." . $config['joe']['db']['main'] . "_email
+
   FROM
     " . $config['joe']['db']['main'] . "
   WHERE
