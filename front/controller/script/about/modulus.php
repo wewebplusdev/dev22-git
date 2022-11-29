@@ -177,6 +177,40 @@ class aboutPage
     $result = $db->execute($sql);
     return $result;
   }
+  function callGroupCareer($masterkey, $id = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_id as id,
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey as masterkey,
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_pic" . $lang . " as pic,
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_lastdate as lastdate,
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_url as url,
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_type as type,
+    FROM
+    " . $config['jos']['db']['main'] . "
+    WHERE
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_status != 'Disable' AND
+    " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_subject" . $lang . " != ''
+    ";
+
+    if (!empty($id)) {
+      $sql .= " AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_id = '" . $id . "' ";
+    }
+
+    $sql .= " ORDER  BY " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_order DESC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
 
   function callYear($masterkey, $gid = null)
   {
@@ -703,6 +737,26 @@ class aboutPage
 
     $sql .= "
   ORDER BY " . $config['district']['db']['main'] . "_nameen ASC";
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callmailcareer($masterkey, $id = null){
+    global $config, $db, $url;
+  
+    $sql = "SELECT
+    " . $config['joe']['db']['main'] . "." . $config['joe']['db']['main'] . "_id,
+    " . $config['joe']['db']['main'] . "." . $config['joe']['db']['main'] . "_gid,
+    " . $config['joe']['db']['main'] . "." . $config['joe']['db']['main'] . "_email
+  FROM
+    " . $config['joe']['db']['main'] . "
+  WHERE
+     " . $config['joe']['db']['main'] . "." . $config['joe']['db']['main'] . "_masterkey = '".$masterkey."'
+    ";
+    if (!empty($id)) {
+      $sql .= " AND " . $config['joe']['db']['main'] . "_gid = '".$id."'";
+    }
     // print_pre($sql);
     $result = $db->execute($sql);
     return $result;

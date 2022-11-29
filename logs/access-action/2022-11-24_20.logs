@@ -43,3 +43,7 @@ Insert|:|69455f3f33d98cbaa03fa6c4264e2b12|:|3|:|http://localhost:8080/weadmin/mo
 Insert|:|69455f3f33d98cbaa03fa6c4264e2b12|:|3|:|http://localhost:8080/weadmin/mod_cmsg_vdo/insertContant.php|:|vdo|:|272|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-24 14:45:10
 Insert|:|69455f3f33d98cbaa03fa6c4264e2b12|:|3|:|http://localhost:8080/weadmin/mod_cmsg_vdo/insertContant.php|:|vdo|:|272|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-24 14:45:31
 View|:|69455f3f33d98cbaa03fa6c4264e2b12|:|3|:|http://localhost:8080/weadmin/mod_cmsg_vdo/viewContant.php|:|vdo|:|272|:||:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-24 14:45:34
+View|:|69455f3f33d98cbaa03fa6c4264e2b12|:|3|:|http://localhost:8080/weadmin/mod_cms_advance/viewContant.php|:|sv_tl|:|265|:||:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-24 15:13:19
+Insert|:|69455f3f33d98cbaa03fa6c4264e2b12|:|3|:|http://localhost:8080/weadmin/mod_cmsg_vdo/insertContant.php|:|vdo|:|272|:|insert|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-24 15:27:22
+Delete|:|69455f3f33d98cbaa03fa6c4264e2b12|:|3|:|http://localhost:8080/weadmin/mod_cmsg_vdo/deleteContant.php|:|vdo|:|272|:||:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-24 15:30:08
+Update|:|69455f3f33d98cbaa03fa6c4264e2b12|:|3|:|http://localhost:8080/weadmin/mod_cmsg_vdo/updateContant.php|:|vdo|:|272|:|update|:|20|:|GIT Admin|:|172.20.0.1|:|2022-11-24 16:08:57

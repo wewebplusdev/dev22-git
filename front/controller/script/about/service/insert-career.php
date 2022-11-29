@@ -4,8 +4,8 @@
 $secret = $secretkey;
 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
 $responseData = json_decode($verifyResponse);
-
-if (!empty($_POST) && $responseData->success) {
+// print_pre($responseData);
+if (!empty($_POST) /*&& $responseData->success*/) {
   $arrData = array();
 
   // info
@@ -177,7 +177,7 @@ if (!empty($_POST) && $responseData->success) {
     $index++;
   }
 
-  // print_pre($arrData);
+   print_pre($arrData);
 
   $data = array();
   // profile information
@@ -261,13 +261,15 @@ if (!empty($_POST) && $responseData->success) {
   $data[$config['career']['join']['main'] . "_credate"] = "NOW()";
   $data[$config['career']['join']['main'] . "_status"] = "'New'";
   $sql = "INSERT INTO " . $config['career']['join']['main'] . "(" . implode(',', array_keys($data)) . ")VALUES(" . implode(',', array_values($data)) . ")";
+  print_pre($sql);die;
   $result = $db->execute($sql);
   $ContentID = $db->insert_Id();
 
   /* Start Upload File career */
   require_once _DIR . '/front/controller/script/' . $menuActive . '/service/upload-career.php';
   /* End Upload File career */
-
+  formmail();
+  
   $status = array();
   $status['status'] = 'success';
   $status['msg'] = $lang['contact']['success_msg'];
@@ -282,4 +284,73 @@ if (!empty($_POST) && $responseData->success) {
   $status['msg_desc'] = $lang['contact']['error_msg_desc'];
   $status['btn'] = $lang['system']['ok'];
   echo json_encode($status);
+}
+
+####Start MAIL To User####'
+function formmail(){
+  global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $aboutPage, $lang, $config;
+  
+  $mailGroup = $aboutPage->callmailcareer($config['about']['ab_js']['masterkey']);
+  print_pre($mailGroup);die;
+  // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
+  $SubjectMail = $lang['menu']['career']." (" . $_POST['inputName'] . ")";
+  $Group = $aboutPage->callGroupCareer($config['about']['ab_js']['masterkey'], /* id */);
+  
+  
+  $message = "
+  <tr style='height: 309px;'>
+    <td style='height: 309px; width: 596px;'>
+      <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
+        <tbody>
+          <tr>
+            <td width='40'>&nbsp;</td>
+            <td>
+              <table style='height: 255px; width: 100%;' border='0' width='100%' cellspacing='0'
+                cellpadding='0' align='center'>
+                <tbody>
+                  <tr style='height: 50px;'>
+                    <td style='height: 16px;'>
+                      <div style='font-size: 16px; font-weight: bold; color: #037ee5; line-height: 1em;'>
+                      ติดต่อเรา - ".$settingWeb['subjectoffice']."</div>
+                    </td>
+                  </tr>
+                  <tr style='height: 209px;'>
+                    <td style='height: 209px;'>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['menu']['career']." ".$lang['career']['position']."".$Group->fields[2]."<br />".$lang['contact']['name']." ".changeQuot($_POST["inputName"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['subject']." : ".changeQuot($_POST["salary"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["date"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['name']." : ".changeQuot($_POST["inputName"])."</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td width='40'>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>";
+  
+  // $to = trim($_POST['inputEmail']);
+  // $templates_user = $callSetWebsite->template_mail($message);
+  // loadSendEmailTo($to, $SubjectMail, $templates_user);
+  // echo  "to==>".$to."<br/>Subject==>".$SubjectMail."<br/>".$templates_user."<br/>";
+  // /* ################ End Mail To User ########### */
+  
+  /* ################ Start Mail To Admin ########### */
+  $templates_admin = $callSetWebsite->template_mail($message);
+
+  $arrEmail = array();
+    //array_push($arrEmail,trim($_POST['inputEmail']));
+    foreach($mailGroup as $key => $to){
+      array_push($arrEmail,$to[2]);
+    }
+    // print_pre($arrEmail);
+    loadSendEmailTo($arrEmail, $SubjectMail, $templates_admin);
+
+  // foreach ($mailGroup as $key => $to) {
+  //     loadSendEmailTo($to[2], $SubjectMail, $templates_admin);
+  //     // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
+  // }
 }

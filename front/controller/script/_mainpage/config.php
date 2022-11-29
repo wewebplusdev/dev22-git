@@ -29,6 +29,7 @@ $config['cue']['db']['main'] = "md_cue";
 $config['joss']['db']['main'] = "md_joss";
 $config['jos']['db']['main'] = "md_jos";
 $config['jof']['db']['main'] = "md_jof";
+$config['joe']['db']['main'] = "md_joe";
 $config['province']['db']['main'] = "md_ads_provinces";
 $config['amphur']['db']['main'] = "md_ads_amphures";
 $config['district']['db']['main'] = "md_ads_districts";

@@ -78,7 +78,7 @@ class rssPage
 
     $sql .= " ORDER  BY " . $table . "." . $table . "_order DESC ";
 
-    // print_pre($sql);
+    print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }

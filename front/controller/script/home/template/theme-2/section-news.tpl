@@ -74,7 +74,7 @@
             {/foreach}
           </div>
           <div class="action">
-            <a href="{$ul}/about/{$valueSubNews.menuid}" class="btn btn-lg btn-border-light" title="ดูทั้งหมด">ดูทั้งหมด</a>
+            <a href="{$ul}/about/{$valueSubNews.menuid}" class="btn btn-lg btn-border-light" title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
           </div>
         </div>
       </div>

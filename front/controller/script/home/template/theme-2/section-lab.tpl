@@ -49,9 +49,9 @@
                                     {$valueSubGitLab.subject}
                                   </div>
                                   {if $Call_File->_numOfRows gte 1}
-                                  <div class="desc typo-s text-limit -x2">
-                                    {$fileinfo.tocss} File Size: {$Call_File->fields['filename']|fileinclude:'file':{$valueSubGitLab.masterkey}|get_IconSize}
-                                  </div>
+                                    <div class="desc typo-s text-limit -x2">
+                                    {"."|str_replace:"":$fileinfo.type|strtoupper} {$lang['system']['size']}: {$Call_File->fields['filename']|fileinclude:'file':{$valueSubGitLab.masterkey}|get_IconSize}
+                                    </div>
                                   {/if}
                                 </div>
                                 <div class="col-sm-auto">
@@ -73,7 +73,8 @@
         {/foreach}
       </div>
       <div class="action">
-        <a href="{$ul}/information-service" class="btn btn-border-light" title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
+        <a href="{$ul}/information-service" class="btn btn-border-light"
+          title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
       </div>
     </div>
   </div>
