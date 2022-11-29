@@ -46,6 +46,14 @@
             padding: inherit;
         }
     }
+    .news-block.-video {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid #cccccc;
+        .desc {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
     .form-group {
         margin: 0;
         .select-custom {
@@ -787,6 +795,9 @@
             }
         }
     }
+    .about .news-block.-video .btn {
+        margin-top: 15px;
+    }
 }
 
 @media (max-width: 575px) {
@@ -866,6 +877,9 @@
                 padding: 10px;
             }
         }
+    }
+    .about .news-block.-video .btn {
+        margin-bottom: 15px;
     }
 }
 
