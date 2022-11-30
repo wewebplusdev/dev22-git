@@ -33,7 +33,8 @@ if ($_REQUEST['inputLt'] == "Thai") {
         " . $mod_tb_root . "_desc as description,    
         " . $mod_tb_root . "_typevdo as typevdo , 
         " . $mod_tb_root . "_filevdo as filevdo , 
-        " . $mod_tb_root . "_urlvdo as urlvdo 
+        " . $mod_tb_root . "_urlvdo as urlvdo ,
+        " . $mod_tb_root . "_htmlfilename as htmlfilename
         ";
 } elseif ($_REQUEST['inputLt'] == "Eng") {
 
@@ -55,7 +56,8 @@ if ($_REQUEST['inputLt'] == "Thai") {
           " . $mod_tb_root . "_descen as description,   
           " . $mod_tb_root . "_typevdoen as typevdo, 
           " . $mod_tb_root . "_filevdoen as filevdo, 
-          " . $mod_tb_root . "_urlvdoen as urlvdo
+          " . $mod_tb_root . "_urlvdoen as urlvdo,
+          " . $mod_tb_root . "_htmlfilenameen as htmlfilename
           ";
 } else {
 
@@ -77,7 +79,8 @@ if ($_REQUEST['inputLt'] == "Thai") {
             " . $mod_tb_root . "_desccn as description,    
             " . $mod_tb_root . "_typevdocn as typevdo, 
             " . $mod_tb_root . "_filevdocn as filevdo, 
-            " . $mod_tb_root . "_urlvdocn as urlvdo
+            " . $mod_tb_root . "_urlvdocn as urlvdo,
+            " . $mod_tb_root . "_htmlfilenamecn as htmlfilename
             ";
 }
 
@@ -133,7 +136,7 @@ $valType = $Row['typevdo'];
 $valFilevdo = $Row['filevdo'];
 $valPathvdo = $mod_path_vdo . "/" . $Row['filevdo'];
 $valUrlVideo = rechangeQuot($Row['urlvdo']);
-
+$valHtml = $mod_path_html . "/" . $Row['htmlfilename'];
 $valLang[0] = $Row['langth'];
 $valLang[1] = $Row['langen'];
 $valLang[2] = $Row['langcn'];
@@ -352,6 +355,29 @@ logs_access('3', 'View');
 
       </table>
       <br />
+      <?php if(in_array($_REQUEST['masterkey'], $arr_masterkey_ck)){ ?>
+      <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+          <tr>
+              <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                  <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
+                  <span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
+              </td>
+          </tr>
+          <tr>
+              <td colspan="7" align="left" valign="top" class="formTileTxt">
+                  <div class="viewEditorTileTxt">
+                      <?php
+                      $fd = @fopen($valHtml, "r");
+                      $contents = @fread($fd, filesize($valHtml));
+                      @fclose($fd);
+                      echo txtReplaceHTML($contents);
+                      ?>
+                  </div>
+              </td>
+          </tr>
+      </table>
+      <br />
+      <?php } ?>
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
         <tr>
           <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">

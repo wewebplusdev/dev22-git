@@ -5,7 +5,7 @@ $secret = $secretkey;
 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
 $responseData = json_decode($verifyResponse);
 // print_pre($responseData);
-if (!empty($_POST) /*&& $responseData->success*/) {
+if (!empty($_POST) && $responseData->success) {
   $arrData = array();
 
   // info
@@ -261,21 +261,24 @@ if (!empty($_POST) /*&& $responseData->success*/) {
   $data[$config['career']['join']['main'] . "_credate"] = "NOW()";
   $data[$config['career']['join']['main'] . "_status"] = "'New'";
   $sql = "INSERT INTO " . $config['career']['join']['main'] . "(" . implode(',', array_keys($data)) . ")VALUES(" . implode(',', array_values($data)) . ")";
-  print_pre($sql);die;
+  
   $result = $db->execute($sql);
   $ContentID = $db->insert_Id();
 
   /* Start Upload File career */
   require_once _DIR . '/front/controller/script/' . $menuActive . '/service/upload-career.php';
   /* End Upload File career */
-  formmail();
+
+  /* Start Sent Email */
+  formmail($arrData);
+  /* End Sent Email */
   
   $status = array();
   $status['status'] = 'success';
   $status['msg'] = $lang['contact']['success_msg'];
   $status['msg_desc'] = $lang['contact']['success_msg_desc'];
   $status['btn'] = $lang['system']['ok'];
-  echo json_encode($status);
+  
 
 }else{
   $status = array();
@@ -283,20 +286,24 @@ if (!empty($_POST) /*&& $responseData->success*/) {
   $status['msg'] = $lang['contact']['error_msg'];
   $status['msg_desc'] = $lang['contact']['error_msg_desc'];
   $status['btn'] = $lang['system']['ok'];
-  echo json_encode($status);
+  
 }
 
+echo json_encode($status);
+exit(0);
+
 ####Start MAIL To User####'
-function formmail(){
+function formmail($arrData){
   global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $aboutPage, $lang, $config;
   
   $mailGroup = $aboutPage->callmailcareer($config['about']['ab_js']['masterkey']);
-  print_pre($mailGroup);die;
-  // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
-  $SubjectMail = $lang['menu']['career']." (" . $_POST['inputName'] . ")";
-  $Group = $aboutPage->callGroupCareer($config['about']['ab_js']['masterkey'], /* id */);
-  
-  
+  $SubjectMail = $lang['menu']['career']." (" . changeQuot($arrData["general"]['fname']." ".$arrData["general"]['lname']) . ")";
+  $Group = $aboutPage->callGroupCareer($config['about']['ab_js']['masterkey'],changeQuot($arrData["info"]['groupid']));
+
+  $Province = $aboutPage->callProvince_main($arrData['address']['provincenow']);
+  $Distric = $aboutPage->callDistrict_main($arrData['address']['provincenow'],$arrData['address']['districtnow']);
+  $Subdistric = $aboutPage->callSubDistrict_main($arrData['address']['districtnow'],$arrData['address']['subdictrictnow']);
+
   $message = "
   <tr style='height: 309px;'>
     <td style='height: 309px; width: 596px;'>
@@ -316,10 +323,12 @@ function formmail(){
                   </tr>
                   <tr style='height: 209px;'>
                     <td style='height: 209px;'>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['menu']['career']." ".$lang['career']['position']."".$Group->fields[2]."<br />".$lang['contact']['name']." ".changeQuot($_POST["inputName"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['subject']." : ".changeQuot($_POST["salary"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["date"])."</div>
-                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['name']." : ".changeQuot($_POST["inputName"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['menu']['career']." ".$lang['career']['position']." : ".$Group->fields[2]."<br />".$lang['contact']['name']." : ". changeQuot($arrData["general"]['fname']." ".$arrData["general"]['lname']) ."</div>
+                      
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['email']." : ". changeQuot($arrData["address"]['email']) ."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['address']." : ".changeQuot($arrData['address']['housenumbernow']." ".$arrData['address']['moonow']." ".$arrData['address']['villagenow']." ".$arrData['address']['alleynow'])
+                      ."<br />".$Province->fields[2]." ".$Distric->fields[2]." ".$Subdistric->fields[2]." ".changeQuot($arrData['address']['postcodenow'])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['tel']." : ".changeQuot($arrData['address']['tel'])."</div>
                     </td>
                   </tr>
                 </tbody>
@@ -344,7 +353,7 @@ function formmail(){
   $arrEmail = array();
     //array_push($arrEmail,trim($_POST['inputEmail']));
     foreach($mailGroup as $key => $to){
-      array_push($arrEmail,$to[2]);
+      array_push($arrEmail,$to[1]);
     }
     // print_pre($arrEmail);
     loadSendEmailTo($arrEmail, $SubjectMail, $templates_admin);

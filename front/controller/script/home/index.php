@@ -21,7 +21,7 @@ if ($_GET['tmp'] == 1 ) {
 
 $core_theme_web = explode("-", $themeWebsite['class']);
 $callSection = $homePage->callSection($core_theme_web[1], $mod_array_conf[$themeWebsite['class']]['order'], $themeWebsite['class']);
-// print_pre($callSection);
+
 switch ($themeWebsite['class']) {
     case 'theme-3':
         // call top graphic
@@ -116,13 +116,13 @@ switch ($themeWebsite['class']) {
         }
         $smarty->assign("arrNewsList", $arrNewsList);
         // call git lab update
-        $callGroupGitLab = $homePage->callcmsg($arr_conf['is_art']['masterkey']);
+        $callGroupGitLab = $homePage->callcmg_thmem_1($arr_conf['is_art']['masterkey'],"Home");
         $arrGitLabList = array();
         foreach ($callGroupGitLab as $keycallGroupGitLab => $valuecallGroupGitLab) {
             $arrGitLabList[$keycallGroupGitLab]['group']['id'] = $valuecallGroupGitLab['id'];
             $arrGitLabList[$keycallGroupGitLab]['group']['subject'] = $valuecallGroupGitLab['subject'];
 
-            $callGitLab = $homePage->callcmsBySid($arr_conf['is_art']['masterkey'], $valuecallGroupGitLab['id'],10);
+            $callGitLab = $homePage->callcms_thmem_1($arr_conf['is_art']['masterkey'], $valuecallGroupGitLab['id'], 9);
             foreach ($callGitLab as $keycallGitLab => $valuecallGitLab) {
                 $arrGitLabList[$keycallGroupGitLab]['list'][] = $valuecallGitLab;
             }
@@ -156,19 +156,7 @@ switch ($themeWebsite['class']) {
             $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
         }
         $smarty->assign("sectionMainpage", $sectionMainpage);
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['service']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['trw_semi']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banI_t2']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_ms']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banII_t2']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['is_art']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['banIII_t2']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['library_t2']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
-        // print_pre($sectionMainpage);
+
         
         $smarty->assign("headerBody", $incfile['header2']);
         $smarty->assign("footerBody", $incfile['footer2']);

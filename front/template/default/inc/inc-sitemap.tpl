@@ -29,7 +29,7 @@
                                                         <ul class="sub-list-group item-list">
                                                             {foreach $valuesubgroup['menu'] as $keyMenu => $valueMenu}
                                                                 <li>
-                                                                    <a {if $valuesubgroup.url neq "" && $valuesubgroup.url neq "#"}href="{$valuesubgroup.url}" {if $valuesubgroup.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if} class="link" title="{$valueMenu.subject}">{$valueMenu.subject}</a>
+                                                                    <a {if $valueMenu.url neq "" && $valueMenu.url neq "#"}href="{$valueMenu.url}" {if $valueMenu.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if} class="link" title="{$valueMenu.subject}">{$valueMenu.subject}</a>
                                                                 </li>
                                                             {/foreach}
                                                         </ul>

@@ -1,6 +1,6 @@
 $(document).ready(function () {
    var pagenow = $('.site-container').data('page');
-   console.log(pagenow);
+   // console.log(pagenow);
    switch (pagenow) {
       // initialize calendar
       case 'index':

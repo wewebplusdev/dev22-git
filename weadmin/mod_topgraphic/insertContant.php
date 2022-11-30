@@ -7,6 +7,30 @@ include "../lib/checkMember.php";
 include "config.php";
 
 if ($_REQUEST['execute'] == "insert") {
+    $randomNumber = randomNameupdate(2);
+
+    if (!is_dir($core_pathname_upload . "/" . $masterkey)) {
+        mkdir($core_pathname_upload . "/" . $masterkey, 0777);
+    }
+    if (!is_dir($mod_path_html)) {
+        mkdir($mod_path_html, 0777);
+    }
+
+    if (@file_exists($mod_path_html . "/" . $htmlfiledelete)) {
+        @unlink($mod_path_html . "/" . $htmlfiledelete);
+    }
+
+    if ($_POST['inputHtml'] != "") {
+        $filename = "html-".$randomNumber . ".html";
+        $HTMLToolContent = str_replace("\\\"", "\"", $_POST['inputHtml']);
+        $fp = fopen($mod_path_html . "/" . $filename, "w");
+        chmod($mod_path_html . "/" . $filename, 0777);
+        fwrite($fp, $HTMLToolContent);
+        fclose($fp);
+    }else{
+        $filename = '';
+    }
+
     $sql = "SELECT MAX(" . $mod_tb_root . "_order) FROM " . $mod_tb_root;
     $Query = wewebQueryDB($coreLanguageSQL, $sql);
     $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
@@ -28,6 +52,7 @@ if ($_REQUEST['execute'] == "insert") {
     $insert[$mod_tb_root . "_creby"] = "'" . $_SESSION[$valSiteManage . 'core_session_name'] . "'";
     $insert[$mod_tb_root . "_lastbyid"] = "'" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";
     $insert[$mod_tb_root . "_lastby"] = "'" . $_SESSION[$valSiteManage . 'core_session_name'] . "'";
+    $insert[$mod_tb_root . "_htmlfilename"] = "'" . $filename . "'";
 
     $setLangTH = (!empty($_REQUEST['inputSetLang'][0])) ? $_REQUEST['inputSetLang'][0] : 0 ;
     $setLangEN = (!empty($_REQUEST['inputSetLang'][1])) ? $_REQUEST['inputSetLang'][1] : 0 ;

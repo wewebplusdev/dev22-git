@@ -12,12 +12,16 @@ for ($i = 1; $i <= $_REQUEST['TotalCheckBoxID']; $i++) {
     if (strlen($myVar) >= 1) {
         $permissionID = $myVar;
 
-        $sql = "SELECT  " . $mod_tb_root . "_pic, " . $mod_tb_root . "_picen," . $mod_tb_root . "_piccn  FROM " . $mod_tb_root . " WHERE  " . $mod_tb_root . "_id='" . $permissionID . "' ";
+        $sql = "SELECT  " . $mod_tb_root . "_pic, " . $mod_tb_root . "_picen," . $mod_tb_root . "_piccn,".$mod_tb_root."_htmlfilename,".$mod_tb_root."_htmlfilenameen,".$mod_tb_root."_htmlfilenamecn  FROM " . $mod_tb_root . " WHERE  " . $mod_tb_root . "_id='" . $permissionID . "' ";
         $Query = wewebQueryDB($coreLanguageSQL, $sql);
         $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
         $deletepic = $Row[0];
         $deletepicen = $Row[1];
         $deletepiccn = $Row[2];
+        $deletepichtml=$Row[3];
+        $deletepichtmlen=$Row[4];
+        $deletepichtmlcn=$Row[5];
+
         //print_pre($sql);
 
         ######################### Delete  In Folder Pic ###############################
@@ -56,6 +60,19 @@ for ($i = 1; $i <= $_REQUEST['TotalCheckBoxID']; $i++) {
 
         if (file_exists($mod_path_real . "/" . $deletepiccn)) {
             @unlink($mod_path_real . "/" . $deletepiccn);
+        }
+
+        ######################### Delete  In Folder HTML ###############################
+        if(file_exists($mod_path_html."/".$deletepichtml)) {
+            @unlink($mod_path_html."/".$deletepichtml);
+        }
+        
+        if(file_exists($mod_path_html."/".$deletepichtmlen)) {
+            @unlink($mod_path_html."/".$deletepichtmlen);
+        }
+
+        if(file_exists($mod_path_html."/".$deletepichtmlcn)) {
+            @unlink($mod_path_html."/".$deletepichtmlcn);
         }
 
         ######################### Delete  Contant ###############################

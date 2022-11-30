@@ -29,19 +29,19 @@ switch ($PageActionCareer) {
         $smarty->assign("fileInclude", $settingPage);
         break;
 
-    case 'career-test':
-        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptUpload.js' . $lastModify . '"></script>';
-        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptCareer.js' . $lastModify . '"></script>';
-        $callListCareerSelect = $aboutPage->callListCareer($config['about']['ab_js']['masterkey'], $page['on'], $limit, $sorting, null, $ContentID);
-        $smarty->assign("callListCareerSelect", $callListCareerSelect);
-        $settingModulus['menuid'] = $url->segment[1];
-        $settingPage = array(
-            "page" => $menuActive,
-            "template" => "career-test.tpl",
-            "display" => "page",
-        );
-        $smarty->assign("fileInclude", $settingPage);
-        break;
+    // case 'career-test':
+    //     $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptUpload.js' . $lastModify . '"></script>';
+    //     $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptCareer.js' . $lastModify . '"></script>';
+    //     $callListCareerSelect = $aboutPage->callListCareer($config['about']['ab_js']['masterkey'], $page['on'], $limit, $sorting, null, $ContentID);
+    //     $smarty->assign("callListCareerSelect", $callListCareerSelect);
+    //     $settingModulus['menuid'] = $url->segment[1];
+    //     $settingPage = array(
+    //         "page" => $menuActive,
+    //         "template" => "career-test.tpl",
+    //         "display" => "page",
+    //     );
+    //     $smarty->assign("fileInclude", $settingPage);
+    //     break;
 
     case 'career-form':
         $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render='.$sitekey.'"></script>';

@@ -26,6 +26,7 @@ $lang['menu']['calendar'] = "日曆";
 $lang['menu']['photo-gallary'] = "照片庫";
 $lang['menu']['vdo-gallary'] = "視頻庫";
 $lang['menu']['training'] = "培訓工作";
+$lang['menu']['video-gallary'] = "視頻庫";
 
 //career
 $lang['career']['select'] = "位置 | 选择";
@@ -38,6 +39,11 @@ $lang['career']['detail'] = '细节';
 $lang['career']['source'] = '职位来源';
 $lang['career']['maxsize'] = '您的文件太大.';
 $lang['career']['methodfalse'] = '上传失败. 请再试一次.';
+$lang['career']['swal']['maxsize'] = '文件不得超過';
+$lang['career']['swal']['maxsizeis'] = '最大文件大小為';
+$lang['career']['swal']['error'] = '有問題';
+$lang['career']['swal']['typeerror'] = '無效的文件類型';
+$lang['career']['swal']['tryagian'] = '請再試一次。';
 
 // contact
 $lang['contact']['form'] = "联系我们表格";
@@ -65,6 +71,7 @@ $lang['contact']['error_msg'] = "对不起，交易不成功.";
 $lang['contact']['error_msg_desc'] = "请稍后再试.";
 
 //career
+$lang['career']['fill-apply']="請填寫以下表格並說明詳細信息";
 $lang['career']['apply']="应聘职位";
 $lang['career']['topic1']="一般信息";
 $lang['career']['search']="工作搜索";
@@ -108,12 +115,25 @@ $lang['career']['natcardby']="发行人";
 $lang['career']['natcardpovince']="省";
 $lang['career']['Application_form']="申请表";
 $lang['career']['Personal_details']="个人资料";
+$lang['career']['male']="男";
+$lang['career']['female']="女性";
+$lang['career']['homeaddress']="家庭住址";
+$lang['career']['presentaddress']="現地址";
+$lang['career']['telhome']="電話回家";
+$lang['career']['telmobile']="手機";
+$lang['career']['idencardno']="身份證號碼";
+$lang['career']['issuedat']="發佈於";
+$lang['career']['expdate']="到期日";
+$lang['career']['emercontact']="如有緊急情況請聯繫";
+$lang['career']['relation']="關係";
+$lang['career']['addresswork']="地址/工作地點";
 
 $lang['career']['army']="其他";
 $lang['career']['army1']="豁免";
 $lang['career']['army2']="还没有被征召入伍";
 $lang['career']['army4']="兵役";
 $lang['career']['army3']="完成领土防御课程的兵役训练";
+$lang['career']['army5']="軍籍";
 
 $lang['career']['marry']="婚姻状况";
 $lang['career']['marry1']="未婚";
@@ -134,6 +154,28 @@ $lang['career']['sis']="兄弟/姐姐";
 $lang['career']['bret']="兄弟/姐姐";
 $lang['career']['has']="老公 / 妻子";
 $lang['career']['baby']="儿子 / 女儿";
+$lang['career']['whoyou'] = "你是誰？";
+$lang['career']['whoyou2'] = "你是誰？";
+
+$lang['career']['Permanent'] = "永恆的";
+$lang['career']['Temporary'] = "暫時的";
+$lang['career']['crash'] = "崩潰";
+$lang['career']['nocrash'] = "沒有崩潰";
+
+$lang['career']['scareer'] = "開始日期";
+$lang['career']['ecareer'] = "結束日期";
+
+$lang['career']['elang'] = "英語";
+$lang['career']['clang'] = "中文";
+$lang['career']['to'] = "至";
+$lang['career']['height'] = "高度";
+
+$lang['career']['typebussiness'] = "業務類型";
+$lang['career']['fpos'] = "第一職位";
+$lang['career']['lpos'] = "最後職位";
+$lang['career']['lsalary'] = "最後的工資";
+$lang['career']['osalary'] = "其他工資";
+$lang['career']['briefres'] = "簡要職責";
 
 $lang['career']['educat']="学习经历";
 $lang['career']['educat1']="教育程度";
@@ -182,6 +224,37 @@ $lang['career']['dricard'] ="驾驶执照";
 $lang['career']['dricard1'] ="有";
 $lang['career']['dricard3'] ="驾驶执照号码";
 $lang['career']['dricard2'] ="没有";
+
+$lang['career']['ctext'] ="個人推薦";
+$lang['career']['ctext1'] ="你能在國內工作嗎？";
+$lang['career']['ctext2'] ="你有沒有得過重病或者接觸過傳染病";
+$lang['career']['ctext3'] ="任何身體殘疾或障礙";
+$lang['career']['ctext4'] ="你是否曾被任何執法機關逮捕、拘留、協助調查或訊問或起訴？";
+$lang['career']['ctext5'] ="你有沒有因為任何原因被解僱過？";
+$lang['career']['ctext6'] ="你有朋友或親戚在這里工作嗎？";
+$lang['career']['ctext7'] ="你是從哪裡聽說我們的職位空缺的？";
+$lang['career']['ctext8'] ="更多信息";
+$lang['career']['ctext9'] ="個人參考";
+$lang['career']['dctext8'] ="您認為對申請有益的更多信息。";
+$lang['career']['dctext9'] ="提供認識您的推薦人（親戚除外）的信息";
+
+$lang['career']['upfiletxt'] = "僅供公司使用";
+$lang['career']['upfiletxt1'] = "成績單";
+$lang['career']['upfiletxt2'] = "戶口本/軍籍";
+$lang['career']['upfiletxt3'] = "身份證/工作經歷參考";
+$lang['career']['upfiletxt4'] = "結婚登記";
+$lang['career']['upfiletxt5'] = "私家車、摩托車牌照";
+$lang['career']['upfiletxt6'] = "其他";
+$lang['career']['uploadtxt'] = "上傳";
+$lang['career']['numhome'] = "有編號";
+$lang['career']['addbrosis'] = "添加兄弟/姐妹";
+
+$lang['career']['vertxt'] = "人力資源官的評論";
+$lang['career']['vertxt1'] = "（我作為數據主體同意向 Git 提供/提供此職位申請的文件和證據，並允許 Git 收集、使用或披露我的個人數據， 主要是為了根據法律和個人數據保護法 (B.E.2562) 管理公司的僱傭關係和人力資源管理 ";
+$lang['career']['vertxt2'] = "我證明我的回答或證據是真實的。我理解任何不正確、不完整或虛假的信息陳述";
+$lang['career']['vertxt3'] = "由我提供將被視為拒絕此申請或未經提前解僱的正當理由";
+$lang['career']['vertxt4'] = "通知或任何遣散費補償";
+
 $lang['career']['ref']="参考人";
 $lang['career']['ref1']="名和姓";
 $lang['career']['ref2']="工作职位";
@@ -214,6 +287,7 @@ $lang['career']['applymail']= "通过电子邮件申请这份工作";
 $lang['career']['applyform']= "下载表格";
 $lang['career']['agee'] ="我证明上述和各种证据在所有方面都是正确和真实的";
 $lang['career']['submit'] ="提交一份申请";
+$lang['career']['title'] ="泰國寶石與珠寶學院";
 
 //new career TH
 $lang['career']['province'] = "省";

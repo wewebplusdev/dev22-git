@@ -76,7 +76,7 @@ $arrThemeFile = array(
     'gel_t1' => 'front/controller/script/home/template/theme-1/section-weblink-1.tpl', // true //
     'gca_t1' => 'front/controller/script/home/template/theme-1/section-html-2.tpl', // true //
     'gwj_t1' => 'front/controller/script/home/template/theme-1/section-html-3.tpl', // true //
-    'information-service' => 'front/controller/script/home/template/theme-1/section-feed.tpl', // true //
+    'feed' => 'front/controller/script/home/template/theme-1/section-feed.tpl', // true
     'gjt_t1' => 'front/controller/script/home/template/theme-1/section-html-4.tpl', // true //
     'osv' => 'front/controller/script/home/template/theme-1/section-online-service.tpl', // true //
     'service' => 'front/controller/script/home/template/theme-1/section-service.tpl', // true //
@@ -85,6 +85,7 @@ $arrThemeFile = array(
     'wb_book' => 'front/controller/script/home/template/theme-1/section-weblink-3.tpl', // true //
     'vdo' => 'front/controller/script/home/template/theme-1/section-video.tpl', // true //
     'trw_semi' => 'front/controller/script/home/template/theme-1/section-training-2.tpl', // true //
+    'information-service' => 'front/controller/script/home/template/theme-1/section-information-service.tpl', // true //
   ),
 );
 // information-service

@@ -13,6 +13,9 @@
 <!-- Custom -->
 <link rel="stylesheet" type="text/css" href="{$template}/assets/css/style.css{$lastModify}">
 
+<!-- Modify -->
+<link rel="stylesheet" type="text/css" href="{$template}/assets/css/modify.css{$lastModify}">
+
 {strip}
     {if {$assigncss|default:null}}
         {foreach $assigncss as $addAssetCss}

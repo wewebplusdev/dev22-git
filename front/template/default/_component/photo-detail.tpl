@@ -44,11 +44,13 @@
                     <img src="{$template}/assets/img/icon/icon-social-twitter.svg" alt="">
                   </a>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" class="embed-code" embed-url="{$embed_url}" embed-type="Photo gallery">
-                        <img src="{$template}/assets/img/icon/icon-embed.svg" alt="embed">
-                    </a>
-                </li>
+                {if $MenuID eq 'ptg'}
+                  <li>
+                      <a href="javascript:void(0);" class="embed-code" embed-url="{$embed_url}" embed-type="Photo gallery">
+                          <img src="{$template}/assets/img/icon/icon-embed.svg" alt="embed">
+                      </a>
+                  </li>
+                {/if}
                 <li>
                   <a href="mailto:?subject={$callCMS->fields.subject}&amp;body=Check out this site : {$fullurl}"
                   title="{$infoSetting->fields['subject']}" class="link">

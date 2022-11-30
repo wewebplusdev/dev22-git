@@ -196,17 +196,17 @@
                         font-size: var(--typo-sm);
                     }
                 }
-                .list-inner::before {
-                    content: "";
-                    width: 0.5em;
-                    height: 0.5em;
-                    position: absolute;
-                    top: 15px;
-                    left: -17px;
-                    transform: translate(-50%, -50%);
-                    border-radius: 50%;
-                    background-color: var(--color-primary);
-                }
+                // .list-inner::before {
+                //     content: "";
+                //     width: 0.5em;
+                //     height: 0.5em;
+                //     position: absolute;
+                //     top: 15px;
+                //     left: -17px;
+                //     transform: translate(-50%, -50%);
+                //     border-radius: 50%;
+                //     background-color: var(--color-primary);
+                // }
             }
             .list-date {
                 font-size: var(--typo-s);

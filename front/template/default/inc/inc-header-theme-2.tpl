@@ -89,11 +89,11 @@
 						<a href="javascript:void(0)" class="search-toggle" title="search">
 							<span class="feather icon-search"></span>
 						</a>
-						<form class="form">
+						<form class="form" action="{$ul}/search" method="get">
 							<div class="input-group">
 								<div class="form-outline">
-									<input type="text" id="keywords" class="form-control" placeholder="ค้นหา...">
-									<label class="visuallyhidden" for="keywords">Search</label>
+									<input type="search" id="keywords" name="srchtxt_main" value="{$srchtxt_main}" class="form-control" placeholder="{$lang['system']['search']}...">
+									<label class="visuallyhidden" for="keywords">{$lang['system']['search']}</label>
 								</div>
 								<button type="button" class="btn btn-search">
 									<span class="feather icon-search"></span>
