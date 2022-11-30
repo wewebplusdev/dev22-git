@@ -33,7 +33,7 @@
       <div class="row">
         <div class="col">
           <p class="desc">
-            เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542
+            {$lang['home']['government']}
           </p>
           <div class="default-tab-content tab-content" id="gitNewsTabContent">
             {foreach $arrNewsList as $keyarrNewsList => $valuearrNewsList}

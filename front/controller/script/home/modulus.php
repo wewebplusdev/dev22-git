@@ -15,6 +15,7 @@ class homePage
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_credate as credate,
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_url".$lang." as url,
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_title".$lang." as title,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_htmlfilename".$lang." as htmlfilename,
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_target as target
   
   

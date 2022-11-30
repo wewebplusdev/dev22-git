@@ -49,6 +49,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langMod["tit:title"] = "Title";
     
     $langMod["txt:logo"] = "Image Logo";
+    $langMod["txt:title-theme1"] = "Theme 1";
 
 } else {
     $langMod["txt:titleadd"] = "สร้างข้อมูล" . getNameMenu($_REQUEST["menukeyid"]);
@@ -94,4 +95,5 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langMod["tit:inpName"] = "ชื่อ" . getNameMenu($_REQUEST["menukeyid"]);
     $langMod["tit:desc"] = "หมายเหตุ";
     $langMod["tit:title"] = "รายละเอียด";
+    $langMod["txt:title-theme1"] = "Theme 1";
 }

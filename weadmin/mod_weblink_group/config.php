@@ -12,6 +12,9 @@ $mod_tb_root_albumTemp = "md_cmatp";
 $mod_tb_setting = "md_cuss";
 
 
+## Mod Masterkey ###################################
+$arr_masterkey_link = array('wb_book');
+
 ## Mod Folder ###################################
 $mod_fd_root = "mod_weblink_group";
 

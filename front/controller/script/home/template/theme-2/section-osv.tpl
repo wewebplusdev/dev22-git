@@ -3,7 +3,7 @@
         <div class="container">
             <div class="h-title text-uppercase">E - Service</div>
             <div class="desc typo-md">
-                เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542
+                {$lang['home']['eservie']}
             </div>
             <ul class="item-list">
             {foreach $callService as $keycallService => $valuecallService}

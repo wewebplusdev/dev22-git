@@ -11,6 +11,20 @@ $lang['home']['fontsize'] = "Font Size";
 $lang['home']['findusmap'] = "FIND US ON <br>map";
 $lang['home']['findusgmap'] = "FIND US ON <br>google map";
 
+$lang['home']['feedtitle'] = "Gem and Jewelry Information Center";
+$lang['home']['museumtitle'] = "Gem and Jewelry Museum, Gem Research and Development Institute <br>and national jewelry. (Public Organization)";
+$lang['home']['ourservicetitle'] = "Our Service";
+$lang['home']['vdotitle'] = "Breaking through the trend of sustainable development The salvation of<br>new age gem and jewelry industry";
+$lang['home']['libarytitle'] = "WEB OPAC 2.0 Search for books/journals, gem and jewelry libraries.";
+$lang['home']['searchtitle'] = "Search for books/Journals";
+$lang['home']['contacttitle'] = "Contact";
+$lang['home']['government'] = "It is a government organization in the form of a public organization according to the Public Organization Act B.E. 2542.";
+$lang['home']['eservie'] = "It is a government organization in the form of a public organization according to the Public Organization Act B.E. 2542.";
+$lang['home']['servicework'] = "Service Work";
+$lang['home']['serviceworkdes'] = "It is a government organization in the form of a public organization according to the Public Organization Act B.E. 2542.";
+$lang['home']['training'] = "It is a government organization in the form of a public organization according to the Public Organization Act B.E. 2542.";
+$lang['home']['km'] = "Source of Knowledge";
+
 $lang['menu']['home'] = "HOME";
 $lang['menu']['about'] = "ABOUT US";
 $lang['menu']['service'] = "SERVICE";
@@ -27,6 +41,9 @@ $lang['menu']['photo-gallary'] = "PHOTO GALLARY";
 $lang['menu']['vdo-gallary'] = "VDO GALLARY";
 $lang['menu']['training'] = "Training Work";
 $lang['menu']['video-gallary'] = "Video Gallery";
+
+// research
+$lang['research']['diamond-cal'] = "Diamond Weight Calculator";
 
 //career
 $lang['career']['select'] = "Position | Select";

@@ -2,7 +2,7 @@
   <div class="knowledge-block">
       <div class="default-header-block">
           <div class="h-title">
-              แหล่งความรู้
+              {$lang['home']['km']}
           </div>
           <a href="" class="link" title="{$lang['system']['viewsall']}">
               {$lang['system']['viewsall']}

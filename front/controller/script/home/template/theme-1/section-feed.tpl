@@ -1,7 +1,7 @@
 <div class="git-information-block">
   <div class="container -lg">
     <div class="h-title m-0">GIT Information Center</div>
-    <div class="sub-title">ศูนย์ข้อมูลอัญมณีและเครื่องประดับ</div>
+    <div class="sub-title">{$lang['home']['feedtitle']}</div>
     <div class="default-slider default-slider-dots slider">
       {for $index=1 to 7}
         <div class="item">

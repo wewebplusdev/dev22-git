@@ -11,6 +11,20 @@ $lang['home']['fontsize'] = "字体大小";
 $lang['home']['findusmap'] = "找到我们 <br>地图";
 $lang['home']['findusgmap'] = "找到我们 <br>google 地图";
 
+$lang['home']['feedtitle'] = "寶石和珠寶信息中心";
+$lang['home']['museumtitle'] = "寶石和珠寶博物館、寶石研究與開發研究所 <br>和民族珠寶。 （公共組織）";
+$lang['home']['ourservicetitle'] = "我們的服務";
+$lang['home']['vdotitle'] = "突破可持續發展趨勢 <br>新時代寶石和珠寶行業的救贖";
+$lang['home']['libarytitle'] = "WEB OPAC 2.0 搜索書籍/期刊、寶石和珠寶圖書館。";
+$lang['home']['searchtitle'] = "搜索書籍/期刊";
+$lang['home']['contacttitle'] = "接觸";
+$lang['home']['government'] = "根據公共組織法 B.E. 2542，它是一個公共組織形式的政府組織。";
+$lang['home']['eservie'] = "根據公共組織法 B.E. 2542，它是一個公共組織形式的政府組織。";
+$lang['home']['servicework'] = "服務工作";
+$lang['home']['serviceworkdes'] = "根據公共組織法 B.E. 2542，它是一個公共組織形式的政府組織。";
+$lang['home']['training'] = "根據公共組織法 B.E. 2542，它是一個公共組織形式的政府組織。";
+$lang['home']['km'] = "知識來源";
+
 $lang['menu']['home'] = "主页";
 $lang['menu']['about'] = "关于我们";
 $lang['menu']['service'] = "服务";
@@ -27,6 +41,9 @@ $lang['menu']['photo-gallary'] = "照片庫";
 $lang['menu']['vdo-gallary'] = "視頻庫";
 $lang['menu']['training'] = "培訓工作";
 $lang['menu']['video-gallary'] = "視頻庫";
+
+// research
+$lang['research']['diamond-cal'] = "計算鑽石";
 
 //career
 $lang['career']['select'] = "位置 | 选择";

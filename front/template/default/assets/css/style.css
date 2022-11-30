@@ -9466,8 +9466,11 @@ fieldset {
 }
 
 .theme-1 .top-graphic .info {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .theme-1 .top-graphic .info .wrapper {
   text-align: left;
   padding-right: 40rem;

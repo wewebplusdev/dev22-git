@@ -1,6 +1,6 @@
 <section class="site-container" data-menuid="{$settingModulus['menuid']}">
     <div class="default-header">
-        <div class="top-graphic">
+        <div class="top-graphic text-dark">
             <figure class="cover">
                 <img src="{$template}{$settingModulus.tgp}" alt="{$settingModulus.subject}">
             </figure>
@@ -18,7 +18,6 @@
             </div>
         </div>
     </div>
-
     <div class="default-page diamond-calc-page">
         <div class="container">
             <!-- <div class="editor-content"> -->
@@ -39,9 +38,15 @@
                     {$lang['contact']['establishment_address']}
                 </div>
                 <div class="desc">
-                    <strong>{$lang['system']['tel']}</strong> 0 2634 4999 {$lang['contact']['ext']} <strong>409</strong> <br>
-                    <strong>{$lang['system']['fax']}</strong> 0 2634 4970 <br>
-                    <strong>{$lang['system']['email']}</strong> jewelry@git.or.th
+                    {if $settingWeb.contact.tel neq ""}
+                        <strong>{$lang['system']['tel']}</strong> {$settingWeb.contact.tel}<br>
+                    {/if}
+                    {if $settingWeb.contact.fax neq ""}
+                        <strong>{$lang['system']['fax']}</strong> {$settingWeb.contact.fax} <br>
+                    {/if}
+                    {if $settingWeb.contact.email neq ""}
+                        <strong>{$lang['system']['email']}</strong> {$settingWeb.contact.email}
+                    {/if}
                 </div>
                 <div class="desc">
                     <strong>{$lang['contact']['working']}</strong> <br>

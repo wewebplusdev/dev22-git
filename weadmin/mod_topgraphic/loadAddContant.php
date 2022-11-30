@@ -55,14 +55,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
         }
 
         <?php if(in_array($_REQUEST['masterkey'], $arr_masterkey_ck)){ ?>
-        var alleditDetail = CKEDITOR.instances.editDetail.getData();
-          if (alleditDetail == "") {
-              jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
-              window.location.hash = '#inputEditHTML';
-              return false;
-          } else {
-              jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
-          }
+          var alleditDetail = CKEDITOR.instances.editDetail.getData();
           jQuery('#inputHtml').val(alleditDetail);
         <?php } ?>
 
@@ -303,7 +296,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
           <tr>
               <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-                  <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
+                  <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?> <?php echo $langMod["txt:title-theme1"] ?></span><br />
                   <span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
               </td>
           </tr>

@@ -26,7 +26,14 @@
                         {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}
                         <button {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="btn btn-primary" title="btn btn-primary">{$lang['system']['viewmore']}</button>
                         {/if}
-                        <div class="git-update-content">
+
+                        <!-- CK Editor -->
+                        {strip}
+                          {$valuecallTopGraphic.htmlfilename|fileinclude:"html":$valuecallTopGraphic.masterkey|callHtml}
+                        {/strip}
+                        <!-- CK Editor -->
+                        
+                        {* <div class="git-update-content">
                             <div class="row align-items-center">
                                 <div class="col-sm-auto">
                                     <button href="" class="btn btn-primary" title="btn btn-primary">GIT UPDATE</button>
@@ -37,7 +44,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> *}
                       </div>
                   </div>
               </div>
