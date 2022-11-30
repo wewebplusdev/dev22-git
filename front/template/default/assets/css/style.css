@@ -8466,6 +8466,9 @@ fieldset {
   bottom: 15px;
 }
 
+.theme-1 .top-graphic .info {
+  align-items: center;
+}
 .theme-1 .top-graphic .info .wrapper {
   text-align: left;
   padding-right: 40rem;
@@ -8484,7 +8487,7 @@ fieldset {
   margin-top: 1.5rem;
 }
 .theme-1 .top-graphic .info .git-update-content {
-  margin-top: 10rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 .theme-1 .top-graphic .info .git-update-content .btn-primary {
@@ -8498,7 +8501,7 @@ fieldset {
   margin-bottom: 0;
 }
 .theme-1 .top-graphic .default-slider-dots .slick-dots {
-  bottom: 7rem;
+  bottom: 2rem;
   left: -36rem;
 }
 .theme-1 .top-graphic .default-slider-dots .slick-dots li button {
@@ -9817,13 +9820,6 @@ fieldset {
     -webkit-line-clamp: 2;
     font-size: var(--typo-xl);
   }
-  .theme-1 .top-graphic .info .git-update-content {
-    margin-top: 9rem;
-    margin-bottom: 1rem;
-  }
-  .theme-1 .top-graphic .default-slider-dots .slick-dots {
-    bottom: 6rem;
-  }
   .theme-1 .banner-I-block .subtitle {
     font-size: var(--typo-md);
   }
@@ -9982,12 +9978,8 @@ fieldset {
   .theme-1 .top-graphic .info .wrapper {
     padding-right: 20rem;
   }
-  .theme-1 .top-graphic .info .git-update-content {
-    margin-top: 9rem;
-    margin-bottom: 2rem;
-  }
   .theme-1 .top-graphic .default-slider-dots .slick-dots {
-    bottom: 8rem;
+    bottom: 4rem;
     left: -30.5rem;
   }
   .theme-1 .banner-I-block {
@@ -10097,7 +10089,6 @@ fieldset {
     font-size: 36px;
   }
   .theme-1 .top-graphic .default-slider-dots .slick-dots {
-    bottom: 7.5rem;
     left: -24rem;
   }
   .theme-1 .main-page > div:nth-child(2) {
@@ -10246,6 +10237,7 @@ fieldset {
     padding-right: 0;
   }
   .theme-1 .top-graphic .default-slider-dots .slick-dots {
+    bottom: 5rem;
     left: -17rem;
   }
   .theme-1 .main-page > div:nth-child(2) {
@@ -10368,11 +10360,10 @@ fieldset {
     margin-bottom: 1.5rem;
   }
   .theme-1 .top-graphic .info .git-update-content {
-    margin-top: 9rem;
     margin-bottom: 0;
   }
   .theme-1 .top-graphic .default-slider-dots .slick-dots {
-    bottom: 9rem;
+    bottom: 4rem;
     left: -11rem;
   }
   .theme-1 .banner-I-block .action a {

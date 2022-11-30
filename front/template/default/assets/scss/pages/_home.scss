@@ -97,6 +97,7 @@
 .theme-1 {
     .top-graphic {
         .info {
+            align-items: center;
             .wrapper {
                 text-align: left;
                 padding-right: 40rem;
@@ -115,7 +116,7 @@
                 margin-top: 1.5rem;
             }
             .git-update-content {
-                margin-top: 10rem;
+                margin-top: 2rem;
                 margin-bottom: 2rem;
                 .btn-primary {
                     background-color: #2963FF;
@@ -129,7 +130,7 @@
         .default-slider-dots {
             margin-bottom: 0;
             .slick-dots {
-                bottom: 7rem;
+                bottom: 2rem;
                 left: -36rem;
                 li button {
                     border: 1px solid #2963FF;
@@ -1669,16 +1670,16 @@
                     -webkit-line-clamp: 2;
                     font-size: var(--typo-xl);
                 }
-                .git-update-content {
-                    margin-top: 9rem;
-                    margin-bottom: 1rem;
-                }
+                // .git-update-content {
+                //     margin-top: 9rem;
+                //     margin-bottom: 1rem;
+                // }
             }
-            .default-slider-dots {
-                .slick-dots {
-                    bottom: 6rem;
-                }
-            }
+            // .default-slider-dots {
+            //     .slick-dots {
+            //         bottom: 6rem;
+            //     }
+            // }
         }
         .banner-I-block {
             .subtitle {
@@ -1859,14 +1860,14 @@
                 .wrapper {
                     padding-right: 20rem;
                 }
-                .git-update-content {
-                    margin-top: 9rem;
-                    margin-bottom: 2rem;
-                }
+                // .git-update-content {
+                //     margin-top: 9rem;
+                //     margin-bottom: 2rem;
+                // }
             }
             .default-slider-dots {
                 .slick-dots {
-                    bottom: 8rem;
+                    bottom: 4rem;
                     left: -30.5rem;
                 }
             }
@@ -1987,7 +1988,7 @@
         .top-graphic {
             .default-slider-dots {
                 .slick-dots {
-                    bottom: 7.5rem;
+                    // bottom: 7.5rem;
                     left: -24rem;
                 }
             }
@@ -2152,6 +2153,7 @@
             }
             .default-slider-dots {
                 .slick-dots {
+                    bottom: 5rem;
                     left: -17rem;
                 }
             }
@@ -2286,13 +2288,13 @@
         .top-graphic {
             .info {
                 .git-update-content {
-                    margin-top: 9rem;
+                    // margin-top: 9rem;
                     margin-bottom: 0;
                 }
             }
             .default-slider-dots {
                 .slick-dots {
-                    bottom: 9rem;
+                    bottom: 4rem;
                     left: -11rem;
                 }
             }
