@@ -46,6 +46,7 @@ if (count($getMenuDetail) > 4) {
 }
 $smarty->assign("initialSlide", '{"initialSlide": ' . $initialSlide . '}');
 
+
 switch ($MenuID) {
     case 'rs_cod_s': //คำนวนณเพชร
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_cod_s.php';

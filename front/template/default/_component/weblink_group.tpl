@@ -30,9 +30,9 @@
           {/foreach}
         </div>
     </div>
+  <div class="border-nav-slider"></div>
   {/if}
 
-    <div class="border-nav-slider"></div>
 
     <div class="container mt-5">
         <h2 class="text-primary mb-4">{$settingModulus.title}</h2>

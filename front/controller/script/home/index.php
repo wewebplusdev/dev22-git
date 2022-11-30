@@ -298,23 +298,6 @@ switch ($themeWebsite['class']) {
             $$sectionMainpage[$keycallSection]['file'] = array_filter($sectionMainpage[$keycallSection]['file']);
         }
 
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gcon_t1']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['ab_nm']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gel_t1']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['trw_semi']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gca_t1']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gwj_t1']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['gjt_t1']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['osv']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['information-service']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['book']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['wb_t3']['main']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['infoservice']['is_ms']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$config['video']['vdo']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['feed']['masterkey']];
-        // $sectionMainpage[]['file'] = $arrThemeFile[$core_theme_web[1]][$arr_conf['service']['masterkey']];
-        // print_pre($sectionMainpage);
-
         $smarty->assign("headerBody", $incfile['header']);
         $smarty->assign("footerBody", $incfile['footer']);
 

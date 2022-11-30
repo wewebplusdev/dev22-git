@@ -443,6 +443,7 @@ $lang['system']['readmore2'] = "Read Details";
 $lang['system']['submit'] = "Submit";
 $lang['system']['cancel'] = "Cancel";
 $lang['system']['fill'] = "Fill";
+$lang['system']['enter_the_website'] = "Enter the website";
 
 $lang['pagination']['total'] = "Total";
 $lang['pagination']['per'] = "Page";

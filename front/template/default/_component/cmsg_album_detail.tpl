@@ -29,8 +29,8 @@
           {/foreach}
         </div>
       </div>
-    {/if}
     <div class="border-nav-slider"></div>
+    {/if}
       <div class="container mt-5">
         <div class="row aling-items-center gutters-10">
           <h2 class="text-primary mb-4">{$callCMS->fields.subject}</h2>

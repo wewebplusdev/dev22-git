@@ -29,8 +29,8 @@
           {/foreach}
         </div>
       </div>
-    {/if}
     <div class="border-nav-slider"></div>
+    {/if}
     {if count($arrMenu) > 0 && $showslick}
       <div class="container mt-5">
         <div class="row aling-items-center gutters-10">

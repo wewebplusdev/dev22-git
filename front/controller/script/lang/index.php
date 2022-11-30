@@ -2,7 +2,7 @@
 
 if (!empty($url->segment[1]) && !empty($url->pagelang[2])) {
     if ($url->pagelang[2] != $url->segment[1]) {
-
+        
         if (!empty($_SERVER['HTTP_REFERER'])) {
             $urlHistory = str_replace(str_replace('//', '/', _URL), '', str_replace('//', '/', $_SERVER['HTTP_REFERER']));
 

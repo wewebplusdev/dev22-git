@@ -30,9 +30,9 @@
           {/foreach}
         </div>
       </div>
+    <div class="border-nav-slider"></div>
     {/if}
 
-    <div class="border-nav-slider"></div>
 
     {if count($arrMenu) > 0}
       <div class="container mt-5">

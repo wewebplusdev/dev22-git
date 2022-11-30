@@ -31,8 +31,8 @@
                     {/foreach}
                 </div>
                 </div>
-            {/if}
             <div class="border-nav-slider"></div>
+            {/if}
         </div>
     </div>
     <div class="default-page research-page">

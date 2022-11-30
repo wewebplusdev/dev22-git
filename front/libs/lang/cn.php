@@ -435,6 +435,7 @@ $lang['system']['readmore2'] = "阅读详情";
 $lang['system']['submit'] = "提交";
 $lang['system']['cancel'] = "取消";
 $lang['system']['fill'] = "充满";
+$lang['system']['enter_the_website'] = "進入網站";
 
 $lang['pagination']['total'] = "总数";
 $lang['pagination']['per'] = "页";

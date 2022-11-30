@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-md-auto">
                     <div class="action">
-                        <a href="{$ul}/home" class="btn btn-border-light">เข้าสู่เว็บไซต์</a>
+                        <a href="{$ul}/home" class="btn btn-border-light">{$lang['system']['enter_the_website']}</a>
                     </div>
                 </div>
             </div>

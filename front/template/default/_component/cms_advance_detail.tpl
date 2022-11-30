@@ -37,8 +37,8 @@
           {/if}
         </div>
       </div>
-    {/if}
     <div class="border-nav-slider"></div>
+    {/if}
     {if count($arrMenu) > 0 && $showslick}
       <div class="container mt-5">
         <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
