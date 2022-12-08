@@ -4009,10 +4009,10 @@ th {
 }
 .parentMainpage{
     position: relative;
-    width: 172px;
-    height: 100px;
+    width: 120px;
+    height: 157px;
     float: left;
-    margin-right: 3px;
+    margin-right: 20px;
     margin-bottom: 3px;
 }
 .mainpageActive{

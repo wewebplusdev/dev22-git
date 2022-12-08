@@ -30,9 +30,9 @@ $mod_path_pictures        = $core_pathname_upload."/".$masterkey."/pictures";
 $mod_path_pictures_fornt  = $core_pathname_upload_fornt."/".$masterkey."/pictures";
 
 $core_main_mainpage = array(
-	"1" => array("color" => "../img/page/min1.jpg", "file" => "theme-1", "name" => "แบบที่ 1"),
-	"2" => array("color" => "../img/page/min2.jpg", "file" => "theme-2", "name" => "แบบที่ 2"),
-	"3" => array("color" => "../img/page/min2.jpg", "file" => "theme-3", "name" => "แบบที่ 3"),
+	"1" => array("color" => "../img/page/min1.png", "file" => "theme-1", "name" => "แบบที่ 1"),
+	"2" => array("color" => "../img/page/min2.png", "file" => "theme-2", "name" => "แบบที่ 2"),
+	"3" => array("color" => "../img/page/min3.png", "file" => "theme-3", "name" => "แบบที่ 3"),
 );
 
 ?>

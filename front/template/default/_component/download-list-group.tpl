@@ -73,7 +73,8 @@
             {$Call_File = $callSetWebsite::Call_File($valuecallCMS['id'])}
             {$fileinfo = $Call_File->fields['filename']|fileinclude:'file':{$valuecallCMS.masterkey}|get_Icon}
             {if $Call_File->fields.name neq ""}
-              {$subject = $Call_File->fields.name}
+              {$subject = $valuecallCMS.subject}
+              {* {$subject = $Call_File->fields.name} *}
             {else}
               {$subject = $valuecallCMS.subject}
             {/if}

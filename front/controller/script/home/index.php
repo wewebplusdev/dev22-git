@@ -117,17 +117,17 @@ switch ($themeWebsite['class']) {
         $smarty->assign("arrNewsList", $arrNewsList);
         // call git lab update
         $callGroupGitLab = $homePage->callcmg_thmem_1($arr_conf['is_art']['masterkey'],"Home");
-        $arrGitLabList = array();
+        $arrGitList = array();
         foreach ($callGroupGitLab as $keycallGroupGitLab => $valuecallGroupGitLab) {
-            $arrGitLabList[$keycallGroupGitLab]['group']['id'] = $valuecallGroupGitLab['id'];
-            $arrGitLabList[$keycallGroupGitLab]['group']['subject'] = $valuecallGroupGitLab['subject'];
+            $arrGitList[$keycallGroupGitLab]['group']['id'] = $valuecallGroupGitLab['id'];
+            $arrGitList[$keycallGroupGitLab]['group']['subject'] = $valuecallGroupGitLab['subject'];
 
             $callGitLab = $homePage->callcms_thmem_1($arr_conf['is_art']['masterkey'], $valuecallGroupGitLab['id'], 9);
             foreach ($callGitLab as $keycallGitLab => $valuecallGitLab) {
-                $arrGitLabList[$keycallGroupGitLab]['list'][] = $valuecallGitLab;
+                $arrGitList[$keycallGroupGitLab]['list'][] = $valuecallGitLab;
             }
         }
-        $smarty->assign("arrGitLabList", $arrGitLabList);
+        $smarty->assign("arrGitList", $arrGitList);
         // call git museum
         $callGitMsSection = $homePage->callcmsTheme2($arr_conf['is_ms']['masterkey'],'','Home',3);
         $arrGitMsList = array();

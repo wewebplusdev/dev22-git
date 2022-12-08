@@ -92,7 +92,8 @@
                                                 {$Call_File = $callSetWebsite::Call_File($valueList['id'])}
                                                 {$fileinfo = $Call_File->fields['filename']|fileinclude:'file':{$valueList.masterkey}|get_Icon}
                                                 {if $Call_File->fields.name neq ""}
-                                                {$subject = $Call_File->fields.name}
+                                                {$subject = $valueList.subject}
+                                                {* {$subject = $Call_File->fields.name} *}
                                                 {else}
                                                 {$subject = $valueList.subject}
                                                 {/if}
