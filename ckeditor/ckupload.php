@@ -1,7 +1,7 @@
 <?php
 
 	$url = 'upload/files/'.time()."_".$_FILES['upload']['name'];
-	$urlSite="/dev22-git/ckeditor/";
+	$urlSite="/ckeditor/";
 
 
 
