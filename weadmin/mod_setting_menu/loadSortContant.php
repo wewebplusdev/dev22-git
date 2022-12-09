@@ -25,11 +25,11 @@ if ($_REQUEST['masterkey'] == 'sort_t1') {
   $indexarr = 3;
 }
 
-$sql = "SELECT " . $mod_tb_root . "_id , " . $mod_tb_root . "_namethai, " . $mod_tb_root . "_nameeng    FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $core_arr_theme[$indexarr] . "\".*'";
+$sql = "SELECT " . $mod_tb_root . "_id , " . $mod_tb_root . "_namethai, " . $mod_tb_root . "_nameeng    FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $core_arr_theme[$indexarr] . "\".*' AND  ". $mod_tb_root . "_status = 'Enable'";
 
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $row = wewebFetchArrayDB($coreLanguageSQL, $query);
-//  print_pre($sql);
+//print_pre($sql);
 $valId = $row[0];
 if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
   $valName = rechangeQuot($row[$mod_tb_root . "_namethai"]);
@@ -121,7 +121,7 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
             // if (count($mod_array_conf[$_REQUEST['masterkey']]['component']) > 0) {
             //     $sql = $sql . "  OR " . $mod_tb_root . "_masterkey IN (" . implode(",", array_values($mod_array_conf[$_REQUEST['masterkey']]['component'])) . ") ";
             // }
-
+            $sql = $sql . "  AND  ". $mod_tb_root . "_status = 'Enable'";
             $sql .= " ORDER BY " . $mod_tb_root . "" . $order . " DESC";
             $query = wewebQueryDB($coreLanguageSQL, $sql);
             $recordCount = wewebNumRowsDB($coreLanguageSQL, $query);

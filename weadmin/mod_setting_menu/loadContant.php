@@ -123,9 +123,6 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
                 <tr>
-                    <td style="padding-right:10px;" width="50%">
-                        
-                    </td>
                     <td id="boxSelectTest" class="textSearch2">
                         <input name="inputSearch" type="text" id="inputSearch" value="<?php echo  trim($_REQUEST['inputSearch']) ?>" class="formInputSearchStyle" placeholder="<?php echo  $langTxt["sch:search"] ?>" />
                     </td>
@@ -203,6 +200,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
                 // $sql = $sql . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"2\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"3\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"4\".*')";
 
+                $sql = $sql . "  AND  ". $mod_tb_root . "_status = 'Enable'";
                 $sql = $sql . "  AND  ( ";
                 $sql = $sql . " " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $core_arr_theme[$indexarr] . "\".*'";
                 $sql = $sql . " ) ";
