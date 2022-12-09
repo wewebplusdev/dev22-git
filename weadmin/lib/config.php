@@ -123,9 +123,9 @@ $core_nopic_tr = "images/nopic/nopic_tr.jpg";
 
 ## Core Theme #############################################
 $core_arr_theme = array(
-    '1' => 'Theme 1',
-    '2' => 'Theme 2',
-    '3' => 'Theme 3',
+    '1' => '1',
+    '2' => '2',
+    '3' => '3',
 );
 
 

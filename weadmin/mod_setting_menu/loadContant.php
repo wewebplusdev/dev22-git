@@ -70,19 +70,20 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     } else {
         $inputSearch = $_REQUEST['inputSearch'];
     }
-    if ($_REQUEST['tagEditID'] != "") {
-        $tagEditID = trim($_REQUEST['tagEditID']);
-        if ($_REQUEST["tagEditID"] == '1') {
-            $module_orderby = $mod_tb_root . "_order_theme_1";
-        } else if ($_REQUEST["tagEditID"] == '2') {
-            $module_orderby = $mod_tb_root . "_order_theme_2";
-        } else if ($_REQUEST["tagEditID"] == '3') {
-            $module_orderby = $mod_tb_root . "_order_theme_3";
-        }
-    } else {
-        $tagEditID = $_REQUEST['tagEditID'];
-        $module_orderby = $mod_tb_root . "_order";
+
+    if ($_REQUEST['masterkey'] === 'sort_t1') {
+        $module_orderby = $mod_tb_root . "_order_theme_1";
+        $indexarr = 1;
+    } else if ($_REQUEST['masterkey'] === 'sort_t2') {
+        $module_orderby = $mod_tb_root . "_order_theme_2";
+        $indexarr = 2;
+    } else if ($_REQUEST['masterkey'] === 'sort_t3') {
+        $module_orderby = $mod_tb_root . "_order_theme_3";
+        $indexarr = 3;
     }
+
+    
+
 
     //REGEXP '.*;s:[0-9]+:\"".$value."\".*'
 
@@ -96,9 +97,6 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
         ) ";
     }
 
-    if ($tagEditID <> "") {
-        $sqlSearch = $sqlSearch . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $tagEditID . "\".*')";
-    }
 
     ?>
     <form action="?" method="post" name="myForm" id="myForm">
@@ -126,13 +124,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
                 <tr>
                     <td style="padding-right:10px;" width="50%">
-                        <select name="tagEditID" id="tagEditID" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
-                        <option value=""><?php echo  $langMod["tit:selectgtheme"] ?></option>
-                            <?php
-                            foreach ($core_arr_theme as $keycore_arr_theme => $valuecore_arr_theme) { ?>
-                                <option value="<?php echo  $keycore_arr_theme ?>" <? if ($tagEditID == $keycore_arr_theme) { ?> selected="selected" <?php  }?>><?php echo  $valuecore_arr_theme ?></option>
-                            <?php } ?>
-                        </select>
+                        
                     </td>
                     <td id="boxSelectTest" class="textSearch2">
                         <input name="inputSearch" type="text" id="inputSearch" value="<?php echo  trim($_REQUEST['inputSearch']) ?>" class="formInputSearchStyle" placeholder="<?php echo  $langTxt["sch:search"] ?>" />
@@ -163,7 +155,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                                         alert('<?php echo  $langTxt["mg:selpermis"] ?>');
                                                     }
                                                   "></div> -->
-                                        <div class="btnSort" id="btnSort" name="btnSort" title="<?php echo $langTxt["btn:sortting"] ?>" onclick="document.myFormHome.tagEditID.value =<?php echo  $tagEditID ?>;sortContactNew('sortContant.php');"></div>
+                                        <div class="btnSort" title="<?php echo $langTxt["btn:sortting"] ?>" onclick="sortContactNew('sortContant.php');"></div>
                                     <?php } ?>
                                 </td>
                             </tr>
@@ -212,16 +204,8 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                 // $sql = $sql . "  AND  (" . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"2\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"3\".*' OR sy_mnu_tid REGEXP '.*;s:[0-9]+:\"4\".*')";
 
                 $sql = $sql . "  AND  ( ";
-                $index_loop = 1;
-                foreach ($core_arr_theme as $keycore_arr_theme => $valuecore_arr_theme) {
-                    $sql = $sql . " " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"".$keycore_arr_theme."\".*'";
-                    if ($index_loop < count($core_arr_theme)) {
-                        $sql = $sql . " OR ";
-                    }
-                    $index_loop++;
-                }
+                $sql = $sql . " " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $core_arr_theme[$indexarr] . "\".*'";
                 $sql = $sql . " ) ";
-
 
                 $sql = $sql . $sqlSearch;
                 // print_pre($sql);
@@ -543,11 +527,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     <script>
         $(document).ready(function() {
 
-                if ($('#tagEditID').val() === "") {
-                    $('#btnSort').hide();
-                } else {
-                    $('#btnSort').show();
-                }
+            if ($('#tagEditID').val() === "") {
+                $('#btnSort').hide();
+            } else {
+                $('#btnSort').show();
+            }
         });
     </script>
 </body>

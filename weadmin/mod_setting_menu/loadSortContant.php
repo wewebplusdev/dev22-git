@@ -14,11 +14,22 @@ $valLinkNav1 = "../core/index.php";
 $valNav2 = $langTxt["nav:menuManage2"];
 
 $masterkey_arr = explode('sit', $_REQUEST['masterkey']);
-$sql = "SELECT " . $mod_tb_root . "_id , " . $mod_tb_root . "_namethai, " . $mod_tb_root . "_nameeng    FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $_REQUEST["tagEditID"] . "\".*'";
+if ($_REQUEST['masterkey'] == 'sort_t1') {
+  $order = "_order_theme_1";
+  $indexarr = 1;
+} else if ($_REQUEST['masterkey'] == 'sort_t2') {
+  $order = "_order_theme_2";
+  $indexarr = 2;
+} else if ($_REQUEST['masterkey'] == 'sort_t3') {
+  $order = "_order_theme_3";
+  $indexarr = 3;
+}
+
+$sql = "SELECT " . $mod_tb_root . "_id , " . $mod_tb_root . "_namethai, " . $mod_tb_root . "_nameeng    FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $core_arr_theme[$indexarr] . "\".*'";
 
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $row = wewebFetchArrayDB($coreLanguageSQL, $query);
-// print_pre($sql);
+//  print_pre($sql);
 $valId = $row[0];
 if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
   $valName = rechangeQuot($row[$mod_tb_root . "_namethai"]);
@@ -26,13 +37,7 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
   $valName = rechangeQuot($row[$mod_tb_root . "_nameeng"]);
 }
 
-if($_REQUEST["tagEditID"]=='1'){
-$order = "_order_theme_1";
-}else if($_REQUEST["tagEditID"]=='2'){
-  $order = "_order_theme_2";
-}else if($_REQUEST["tagEditID"]=='3'){
-  $order = "_order_theme_3";
-}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -75,7 +80,7 @@ $order = "_order_theme_1";
     <div class="divRightNav">
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
-          <td  class="divRightNavTb" align="left"  id="defTop" ><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1?>" target="_self"><?php echo $valNav1?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <a  href="javascript:void(0)"  onclick="btnBackPage('index.php')" target="_self"><?php echo getNameMenu($_REQUEST["menukeyid"])?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <?php echo $langMod["txt:sortpermis"]?></span></td>
+          <td class="divRightNavTb" align="left" id="defTop"><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1 ?>" target="_self"><?php echo $valNav1 ?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <a href="javascript:void(0)" onclick="btnBackPage('index.php')" target="_self"><?php echo getNameMenu($_REQUEST["menukeyid"]) ?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <?php echo $langMod["txt:sortpermis"] ?></span></td>
           <td class="divRightNavTb" align="right">
 
 
@@ -108,16 +113,16 @@ $order = "_order_theme_1";
             <?php
             $sql = "SELECT " . $mod_tb_root . "_id , " . $mod_tb_root . "_namethai, " . $mod_tb_root . "_nameeng , " . $mod_tb_root . "_credate   FROM 
             " . $mod_tb_root . " WHERE 1=1 ";
-            $sql .= "AND  " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $_REQUEST["tagEditID"] . "\".*'";
+            $sql .= "AND  " . $mod_tb_root . "_tid REGEXP '.*;s:[0-9]+:\"" . $core_arr_theme[$indexarr] . "\".*'";
             // $sql = $sql . "  AND " . $mod_tb_root . "_masterkey NOT LIKE '" . $_REQUEST['masterkey'] . "' ";
 
             // $sql = $sql . "  AND " . $mod_tb_root . "_masterkey LIKE '%" . $mod_array_conf[$_REQUEST['masterkey']]['key'] . "' ";
-            
+
             // if (count($mod_array_conf[$_REQUEST['masterkey']]['component']) > 0) {
             //     $sql = $sql . "  OR " . $mod_tb_root . "_masterkey IN (" . implode(",", array_values($mod_array_conf[$_REQUEST['masterkey']]['component'])) . ") ";
             // }
 
-            $sql .= " ORDER BY " . $mod_tb_root . "".$order." DESC";
+            $sql .= " ORDER BY " . $mod_tb_root . "" . $order . " DESC";
             $query = wewebQueryDB($coreLanguageSQL, $sql);
             $recordCount = wewebNumRowsDB($coreLanguageSQL, $query);
             if ($recordCount >= 1) {
