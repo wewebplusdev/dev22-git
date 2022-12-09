@@ -166,9 +166,9 @@ if ($_REQUEST['masterkey'] == 'news') {
 
                             $sql_group .= "  FROM 
                             " . $mod_tb_root_group . " 
-                            WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "' AND
-                             " . $mod_tb_root_group . "_types ='2' 
+                            WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'
                             ORDER BY " . $mod_tb_root_group . "_order DESC ";
+                            // print_pre($sql_group);
                             $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
                             while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
                                 $row_groupid = $row_group[0];

@@ -92,7 +92,8 @@
 						<form class="form" action="{$ul}/search" method="get">
 							<div class="input-group">
 								<div class="form-outline">
-									<input type="search" id="keywords" name="srchtxt_main" value="{$srchtxt_main}" class="form-control" placeholder="{$lang['system']['search']}...">
+									<input type="search" id="keywords" name="srchtxt_main" value="{$srchtxt_main}"
+										class="form-control" placeholder="{$lang['system']['search']}...">
 									<label class="visuallyhidden" for="keywords">{$lang['system']['search']}</label>
 								</div>
 								<button type="button" class="btn btn-search">
@@ -205,16 +206,11 @@
 										</a>
 									</li>
 								{else}
-									<li class="{if $segment eq $menuSegment[0]}active{/if}">
-										<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']}"
-												{if $valuearrSitemap['group']['target'] eq 2}target="_blank" {/if}
-											{else}href="javascript:void(0);" 
-											{/if} class="link link-submenu"
-											data-link="{$keyarrSitemap}-menu" title="{$valuearrSitemap['group']['subject']}"
-											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											{$valuearrSitemap['group']['subject']}
-										</a>
-									</li>
+								<li class="{if $segment eq $menuSegment[0]}active{/if}">
+								<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']}"{if $valuearrSitemap['group']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" data-link="{$keyarrSitemap}-menu" title="{$valuearrSitemap['group']['subject']}">
+									{$valuearrSitemap['group']['subject']}
+								</a>
+							</li>
 								{/if}
 							{/foreach}
 						</ul>
