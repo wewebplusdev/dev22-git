@@ -15,7 +15,7 @@ if ($_GET['tmp'] == 1 ) {
     $themeWebsite['class'] = 'theme-1';
 }else if($_GET['tmp'] == 2 ){
     $themeWebsite['class'] = 'theme-2';
-}else{
+}else if($_GET['tmp'] == 3 ){
     $themeWebsite['class'] = 'theme-3';
 }
 
