@@ -13,7 +13,8 @@
             <div class="row justify-content-between">
                <div class="col-xl-8 col-12">
                   <h2 class="title">
-                     {$settingWeb['subject']}
+                  {$subject = "subject{$langweb}"}
+                  {$settingWeb[$subject]}
                   </h2>
                   <p class="desc">
                      {$address = "address{$langweb}"}

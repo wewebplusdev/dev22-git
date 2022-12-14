@@ -11,7 +11,8 @@
                 </div>
                 <div class="col">
                     <h2 class="title">
-                        {$settingWeb['subject']}
+                    {$subject = "subject{$langweb}"}
+                        {$settingWeb[$subject]}
                     </h2>
                     <p class="desc">
                         {$address = "address{$langweb}"}

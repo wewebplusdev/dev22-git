@@ -9,3 +9,7 @@
   border-radius: 50%;
 }
 /*  end calendar  */
+
+.theme-1 .site-container {
+  background: none;
+}

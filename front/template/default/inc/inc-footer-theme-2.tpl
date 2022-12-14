@@ -13,7 +13,8 @@
                 <div class="col-md col-sm-9 col-12">
                     <div class="contact">
                         <h2 class="title">
-                            {$settingWeb['subject']}
+                            {$subject = "subject{$langweb}"}
+                            {$settingWeb[$subject]}
                         </h2>
                         <p class="desc">
                             {$address = "address{$langweb}"}
@@ -77,7 +78,8 @@
                                 <ul class="item-list">
                                     {if $settingWeb['social']['Facebook']['link'] neq "" && $settingWeb['social']['Facebook']['link'] neq "#"}
                                         <li>
-                                            <a href="{$settingWeb['social']['Facebook']['link']}" target="_blank" class="link" title="Facebook">
+                                            <a href="{$settingWeb['social']['Facebook']['link']}" target="_blank"
+                                                class="link" title="Facebook">
                                                 <div class="circle-border">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="39.324" height="39.324"
                                                         viewBox="0 0 39.324 39.324">
@@ -91,7 +93,8 @@
                                     {/if}
                                     {if $settingWeb['social']['Instagram']['link'] neq "" && $settingWeb['social']['Instagram']['link'] neq "#"}
                                         <li>
-                                            <a href="{$settingWeb['social']['Instagram']['link']}" target="_blank" class="link" title="Instagram">
+                                            <a href="{$settingWeb['social']['Instagram']['link']}" target="_blank"
+                                                class="link" title="Instagram">
                                                 <div class="circle-border">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="40.024" height="40.024"
                                                         viewBox="0 0 40.024 40.024">

@@ -60,7 +60,9 @@ $sql = "SELECT
 " . $mod_tb_set . "_subjectofficecn as subjectofficecn,
 " . $mod_tb_set . "_descriptioncn as descriptioncn,
 " . $mod_tb_set . "_keywordscn as keywordscn,
-" . $mod_tb_set . "_metatitlecn as metatitlecn
+" . $mod_tb_set . "_metatitlecn as metatitlecn,
+" . $mod_tb_set . "_addresspicen as addresspicen,
+" . $mod_tb_set . "_addresspiccn as addresspiccn
  FROM " . $mod_tb_set . " WHERE " . $mod_tb_set . "_masterkey='" . $_REQUEST["masterkey"] . "'  ";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
@@ -110,6 +112,11 @@ $valSubjectOfficecn = rechangeQuot($Row['subjectofficecn']);
 $valDescriptioncn = $Row['descriptioncn'];
 $valKeywordscn = $Row['keywordscn'];
 $valMetatitlecn = $Row['metatitlecn'];
+
+$valPicen = $mod_path_pictures . "/" . $Row['addresspicen'];
+$valPicNameen = $Row['addresspicen'];
+$valPiccn = $mod_path_pictures . "/" . $Row['addresspiccn'];
+$valPicNamecn = $Row['addresspiccn'];
 
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 logs_access('3', 'View');

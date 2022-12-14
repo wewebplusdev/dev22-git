@@ -136,13 +136,19 @@ function Seo($title = '', $desc = '', $keyword = '', $pic = '')
 $settingWeb = array();
 $settingWeb['masterkey'] = $infoSetting->fields['masterkey'];
 $settingWeb['subject'] = $infoSetting->fields['subject'];
+$settingWeb['subjecten'] = $infoSetting->fields['subjecten'];
+$settingWeb['subjectcn'] = $infoSetting->fields['subjectcn'];
 $settingWeb['subjectoffice'] = $infoSetting->fields['subjectoffice'];
+$settingWeb['subjectofficeen'] = $infoSetting->fields['subjectofficeen'];
+$settingWeb['subjectofficecn'] = $infoSetting->fields['subjectofficecn'];
 $settingWeb['description'] = $infoSetting->fields['description'];
 $settingWeb['keywords'] = $infoSetting->fields['keywords'];
 $settingWeb['metatitle'] = $infoSetting->fields['metatitle'];
 $settingWeb['contact'] = unserialize($infoSetting->fields['config']);
 $settingWeb['social'] = unserialize($infoSetting->fields['social']);
 $settingWeb['addresspic'] = $infoSetting->fields['addresspic'];
+$settingWeb['addresspicen'] = $infoSetting->fields['addresspicen'];
+$settingWeb['addresspiccn'] = $infoSetting->fields['addresspiccn'];
 $settingWeb['qr'] = $infoSetting->fields['qr'];
 $settingWeb['font'] = $fontsize;
 // print_pre($settingWeb);
@@ -159,13 +165,19 @@ class settingWebsite
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_id as id,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_masterkey as masterkey,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subject as subject,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subjecten as subjecten,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subjectcn as subjectcn,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subjectoffice as subjectoffice,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subjectofficeen as subjectofficeen,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subjectofficecn as subjectofficecn,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_description as description,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_keywords as keywords,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_metatitle as metatitle,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_social as social,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_config as config,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_addresspic  as addresspic,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_addresspicen  as addresspicen,
+        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_addresspiccn  as addresspiccn,
         " . $config['setting']['db'] . "." . $config['setting']['db'] . "_qr as qr
 
         
