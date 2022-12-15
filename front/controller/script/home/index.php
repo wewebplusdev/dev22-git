@@ -45,7 +45,7 @@ switch ($themeWebsite['class']) {
         $smarty->assign("about_newsmenuid", $about_newsmenuid);
         
         // call km
-        $callKmSection = $homePage->callTopGraphic($config['km_t3']['main']['masterkey']);
+        $callKmSection = $homePage->callTopGraphic2($config['km_t3']['main']['masterkey']);
         $smarty->assign("callKmSection", $callKmSection);
 
         $sectionMainpage = array();
@@ -245,7 +245,7 @@ switch ($themeWebsite['class']) {
             $arrGitbookList[$keycallGroupTraining]['group']['id'] = $valuecallGroupTraining['id'];
             $arrGitbookList[$keycallGroupTraining]['group']['subject'] = $valuecallGroupTraining['subject'];
 
-            $callGitbook = $homePage->callcms_thmem_1($arr_conf['book']['masterkey'], $valuecallGroupTraining['id'], 10, 'Enable');
+            $callGitbook = $homePage->callcms_thmem_1($arr_conf['book']['masterkey'], $valuecallGroupTraining['id'], 10, 'Enable','1');
             foreach ($callGitbook as $keycallGitbook => $valuecallGitbook) {
                 $arrGitbookList[$keycallGroupTraining]['list'][] = $valuecallGitbook;
             }
