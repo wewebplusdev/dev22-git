@@ -11,10 +11,10 @@ $settingPage = array(
 );
 
 $callintro = $introPage->callintro($config['intro']['main']['masterkey']);
-if($callintro->_numOfRows > 0 && empty($_SESSION['intro'])){
+if($callintro->_numOfRows > 0){
     $smarty->assign("callintro", $callintro);
     // $_SESSION['intro'] = "";
-    $_SESSION['intro'] = "intro";
+    // $_SESSION['intro'] = "intro";
 }else{
     header("Location:" . $linklang . "/home");
 }
