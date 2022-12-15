@@ -79,6 +79,9 @@ $langMod["tit:titlesetting"] = "Subtitle";
 $langMod["txt:attfile"] = "Attachment information";
 $langMod["txt:attfileDe"] = "Attachment information To use to display the attachment of this content. In the form of downloading documents stored on a computer on your website. ";
 $langMod["inp:sefile"] = "Select attachment";
+$langMod["tit:sSedate"] = "Start Date";
+$langMod["tit:eSedate"] = "End Date";
+$langMod["tit:Message"] = "Message";
 }else{
 		$langMod["meu:group"] = "กลุ่ม".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
@@ -131,5 +134,8 @@ $langMod["inp:sefile"] = "Select attachment";
 		$langMod["txt:attfile"] = "ข้อมูลเอกสารแนบ";
 		$langMod["txt:attfileDe"] = "ข้อมูลเอกสารแนบ เพื่อใช้ในการแสดงผลเอกสารแนบของเนื้อหานี้ ในรูปแบบของการดาวน์โหลดเอกสารเก็บไว้ในเครื่องคอมพิวเตอร์บนเว็บไซต์ของคุณ";
 		$langMod["inp:sefile"] ="เลือกเอกสารแนบ";
+
+		$langMod["tit:sSedate"] = "วันเริ่มต้น";
+		$langMod["tit:eSedate"] = "วันสิ้นสุด";
+		$langMod["tit:Message"] = "ข้อความ";
 }
-?>

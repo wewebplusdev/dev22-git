@@ -6,6 +6,14 @@ include("../lib/function.php");
 include("../lib/checkMember.php");
 include("../core/incLang.php");
 include("config.php");
+
+if($_REQUEST['sdateInputH']!=""){
+	$_REQUEST['sdateInputSe'] =$_REQUEST['sdateInputH'];
+}
+
+if($_REQUEST['edateInputH']!=""){
+	$_REQUEST['edateInputSe'] =$_REQUEST['edateInputH'];
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -39,6 +47,8 @@ include("config.php");
                 <input name="valEditID" type="hidden" id="valEditID" value="" />
                 <input name="inputLt" type="hidden" id="inputLt" value="" />
                 <input name="include" type="hidden" id="module_orderby" value="<?php echo  $_REQUEST['include'] ?>" />
+                <input name="sdateInputSe" type="hidden" id="sdateInputSe" value="<?php echo $_REQUEST['sdateInputSe']?>" />
+                <input name="edateInputSe" type="hidden" id="edateInputSe" value="<?php echo $_REQUEST['edateInputSe']?>" />
                 </form>
                 	<div class="" id="boxContantLoad">
                     			<?php include("../core/incWaitting.php")?>
@@ -68,6 +78,8 @@ include("config.php");
                 <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
                 <input name="valEditID" type="hidden" id="valEditID" value="" />
                 <input name="inputLt" type="hidden" id="inputLt" value="" />
+                <input name="sdateInputSe" type="hidden" id="sdateInputSe" value="<?php echo $_REQUEST['sdateInputSe']?>" />
+                <input name="edateInputSe" type="hidden" id="edateInputSe" value="<?php echo $_REQUEST['edateInputSe']?>" />
                 </form>
                 	<div class="mRightBackOffice" id="boxContantLoad">
                     			<?php include("../core/incWaitting.php")?>

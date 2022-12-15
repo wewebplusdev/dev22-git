@@ -33,9 +33,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
     <tr >
       <td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:no"]?></td>
       <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:selectgn"]?></td> -->
+      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["meu:group"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:subject"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:name"]?></td>
-      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo "Message"; ?></td>
+      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:Message"] ?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:email"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:tel"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:address"]?></td>
@@ -52,6 +53,8 @@ $sql=str_replace('\\','',$_POST['sql_export']);
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $count_record=wewebNumRowsDB($coreLanguageSQL,$query);
 $date_print=DateFormat(date("Y-m-d"));
+$valSdate = DateFormatExport($_REQUEST['sdateInputSe']);
+$valEdate = DateFormatExport($_REQUEST['edateInputSe']);
 
 			  if($count_record>=1){
 			  $index=1;
@@ -87,7 +90,7 @@ $date_print=DateFormat(date("Y-m-d"));
     
     <tr bgcolor="#ffffff">
       <td height="30" align="center"  valign="middle"><?php echo $index?></td>
-      <!-- <td align="left"  valign="middle"><?php echo $row_groupname?></td> -->
+      <td align="left"  valign="middle"><?php echo $row_groupname?></td>
       <td align="left"  valign="middle"><?php echo $valSubject?></td>
       <td align="left"  valign="middle"><?php echo $valCreby?></td>
       <td align="left"  valign="middle"><?php echo $valMessage?></td>
@@ -113,6 +116,8 @@ $date_print=DateFormat(date("Y-m-d"));
         <tr >
       <td width="175" align="right" valign="middle" class="bold">Print date : </td>
       <td  width="175" align="left" valign="middle"><?php echo $date_print?></td>
+      <td width="175" align="right" valign="middle" class="bold">date export: </td>
+      <td  width="175" align="left" valign="middle"><?php echo $valSdate?> - <?php echo $valEdate?></td>
     </tr>
   </tbody>
 </table>

@@ -363,6 +363,22 @@ function DateFormat($DateTime) {
     return $DateArr[2] . "/" . $DateArr[1] . "/" . $DateArr[0] . " " . $Time;
 }
 
+function DateFormatExport($DateTime) {
+    //#################################################
+        global $core_session_language;
+        $DateTime = date("Y-m-d H:i", strtotime($DateTime));
+    
+        $DateTimeArr = explode(" ", $DateTime);
+        $Date = $DateTimeArr[0];
+        $Time = $DateTimeArr[1];
+    
+        $DateArr = explode("-", $Date);
+    
+        
+    
+        return $DateArr[2] . "/" . $DateArr[1] . "/" . $DateArr[0] ;
+}
+
 //#################################################
 function DateFormatPdf($DateTime) {
 //#################################################

@@ -22,7 +22,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 	<link href="../css/theme.css" rel="stylesheet" />
 	<title><?php echo $core_name_title ?></title>
+	<link rel="stylesheet" href="../js/jquery-ui-1.9.0.css">
 	<script language="JavaScript" type="text/javascript" src="../js/jquery-1.9.0.js"></script>
+	<script language="JavaScript" type="text/javascript" src="../js/jquery-ui-1.9.0.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../js/jquery.blockUI.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
 	<script type="text/javascript" language="javascript">
@@ -76,6 +78,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	if ($_REQUEST['inputGh'] >= 1) {
 		$sql_export = $sql_export . "  AND " . $mod_tb_root . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
 	}
+	if ($_REQUEST['sdateInputSe'] <> "" && $_REQUEST['edateInputSe'] <> "") {
+		$valSdate = DateFormatInsertNoTime($_REQUEST['sdateInputSe']);
+		$valEdate = DateFormatInsertNoTime($_REQUEST['edateInputSe']);
+		$sql_export = $sql_export . "  AND  (" . $mod_tb_root . "_credate BETWEEN '" . $valSdate . " 00:00:00' AND '" . $valEdate . " 23:59:59')  ";
+	}
 
 	if ($inputSearch <> "") {
 		$sql_export = $sql_export . "  AND   ( " . $mod_tb_root . "_subject LIKE '%$inputSearch%'  OR  " . $mod_tb_root . "_message LIKE '%$inputSearch%'OR " . $mod_tb_root . "_email LIKE '%$inputSearch%' OR " . $mod_tb_root . "_fname LIKE '%$inputSearch%'   ) ";
@@ -91,6 +98,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		<input name="language_export" type="hidden" id="language_export" value="<?php echo $_SESSION[$valSiteManage . 'core_session_language'] ?>" />
 		<input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_REQUEST["masterkey"] ?>" />
 		<input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST["menukeyid"] ?>" />
+		<input name="sdateInputSe" type="hidden" id="sdateInputSe" value="<?php echo $_REQUEST['sdateInputSe']?>" />
+		<input name="edateInputSe" type="hidden" id="edateInputSe" value="<?php echo $_REQUEST['edateInputSe']?>" />
 	</form>
 
 	<form action="?" method="post" name="myForm" id="myForm">
@@ -130,10 +139,25 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		</div>
 		<div class="divRightHeadSearch">
 
-			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;padding-bottom:10px !important;" align="center">
 
 				<tr>
-					<!-- <td style="padding-right:10px;" width="50%">
+					<td id="boxSelectTest" width="99%">
+						<input name="inputSearch" type="text" id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo $langTxt["sch:search"] ?>" />
+					</td>
+					<td style="padding-right:10px;" align="right" width="1%"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 0 !important;padding-top:0 !important;" align="center">
+				<tr>
+				<td style="padding-right:10px;" width="30%">
+                        <input name="sdateInputH" type="text" id="sdateInputH" placeholder="<?php echo  $langMod["tit:sSedate"] ?>" value="<?php echo  trim($_REQUEST['sdateInputSe']) ?>" class="formInputSearchI sdateInputSe" style="width:98%;" />
+                    </td>
+                    <td width="30%" id="boxSelectTest">
+
+                        <input name="edateInputH" type="text" id="edateInputH" placeholder="<?php echo  $langMod["tit:eSedate"] ?>" value="<?php echo  trim($_REQUEST['edateInputSe']) ?>" class="formInputSearchI edateInputSe" />
+                    </td>
+					<td style="padding-right:10px;" width="50%">
 						<select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
 							<option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
 							<?php
@@ -153,14 +177,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 								<option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $valNameShow ?></option>
 							<?php } ?>
 						</select>
-					</td> -->
-					<td id="boxSelectTest" width="100%">
-						<input name="inputSearch" type="text" id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo $langTxt["sch:search"] ?>" />
 					</td>
-					<td style="padding-right:10px;" align="right" width="1%"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>
 				</tr>
 			</table>
-
 		</div>
 		<div class="divRightHead">
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" class="borderBottom" align="center">
@@ -203,6 +222,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 					<td align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?></span></td>
 					<!-- <td width="20%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php echo $langMod["tit:qty"] ?></span></td> -->
 
+					<td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langMod["meu:group"] ?></span></td>
 					<td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:status"] ?></span></td>
 					<td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["us:credate"] ?></span></td>
 					<td width="12%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:manage"] ?></span></td>
@@ -229,12 +249,17 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 				if ($_REQUEST['inputGh'] >= 1) {
 					$sql = $sql . "  AND " . $mod_tb_root . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
 				}
+				if ($_REQUEST['sdateInputSe'] <> "" && $_REQUEST['edateInputSe'] <> "") {
+                    $valSdate = DateFormatInsertNoTime($_REQUEST['sdateInputSe']);
+					$valEdate = DateFormatInsertNoTime($_REQUEST['edateInputSe']);
+                    $sql = $sql . "  AND  (" . $mod_tb_root . "_credate BETWEEN '" . $valSdate . " 00:00:00' AND '" . $valEdate . " 23:59:59')  ";
+                }
 
 				if ($inputSearch <> "") {
 					$sql = $sql . "  AND   ( " . $mod_tb_root . "_subject LIKE '%$inputSearch%'  OR  " . $mod_tb_root . "_message LIKE '%$inputSearch%'OR " . $mod_tb_root . "_email LIKE '%$inputSearch%' OR " . $mod_tb_root . "_fname LIKE '%$inputSearch%'   ) ";
 				}
 
-
+				// print_pre($sql);
 				$query = wewebQueryDB($coreLanguageSQL, $sql);
 				$count_totalrecord = wewebNumRowsDB($coreLanguageSQL, $query);
 
@@ -307,6 +332,27 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 							</td>
 
 							<!-- <td  class="divRightContantOverTb"  valign="top"  align="center"><span class="fontContantTbupdate"><?php echo $valQty ?></span></td> -->
+							<td class="divRightContantOverTb" valign="top" align="center">
+
+								<?php
+								$sql_group = "SELECT ";
+								if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
+									$sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject";
+								} else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
+									$sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjecten";
+								} else {
+									$sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjectcn ";
+								}
+
+								$sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_id='" . $valGidDb . "'";
+								// print_pre($sql_group);
+								$query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+								$row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group);
+								$row_groupid = $row_group[0];
+								echo $row_groupname = $row_group[1];
+								?>
+
+							</td>
 							<td class="divRightContantOverTb" valign="top" align="center">
 
 								<?php if ($valStatus == "Read") { ?>
@@ -441,6 +487,11 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 		</div>
 
 	</form>
+	<?php if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") { ?>
+        <script language="JavaScript" type="text/javascript" src="../js/datepickerThaiH.js"></script>
+    <?php } else { ?>
+        <script language="JavaScript" type="text/javascript" src="../js/datepickerEngH.js"></script>
+    <?php } ?>
 	<?php include("../lib/disconnect.php"); ?>
 
 </body>
