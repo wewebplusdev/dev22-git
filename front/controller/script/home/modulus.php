@@ -225,7 +225,7 @@ if($lang || $langOption){
     return $result;
   }
 
-  function callcmsTheme2($masterkey, $id = null, $status, $limit)
+  function callcmsTheme2($masterkey, $id = null, $status, $limit=15)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];

@@ -76,6 +76,7 @@ $config['ban_t3']['main']['masterkey'] = "ban_t3";
 $config['wb_t3']['main']['masterkey'] = "wb_t3";
 $config['ab_nm']['main']['masterkey'] = "ab_nm";
 $config['km_t3']['main']['masterkey'] = "km_t3";
+$config['feed']['main']['masterkey'] = "feed";
 $config['setting']['main']['masterkey'] = "setting";
 $config['lcf_s']['main']['masterkey'] = "lcf_s";
 $config['video']['vdo']['masterkey'] = "vdo";

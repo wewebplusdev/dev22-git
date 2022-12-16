@@ -260,6 +260,10 @@ switch ($themeWebsite['class']) {
         $callGitMuseum = $homePage->callcms_thmem_1($config['infoservice']['is_ms']['masterkey'], 0, 3);
         $smarty->assign("callGitMuseum", $callGitMuseum);
 
+        // call Feed
+        $callFeed = $homePage->callcmsTheme2($config['feed']['main']['masterkey'],'',"Enable");
+        $smarty->assign("callFeed", $callFeed);
+
         // call vdo
         $callGroupVdo = $homePage->callcmg_thmem_1($config['video']['vdo']['masterkey']);
         $arrVdoList = array();
