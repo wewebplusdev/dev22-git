@@ -1,6 +1,7 @@
 <?php
 $ContentID = $ContentID ? $ContentID : $arrMenu[0]['id'];
-$callCMS = $researchPage->callCMSS($MenuID, $ContentID);
+$callCMS = $servicePage->callCMSS($MenuID, $ContentID);
+
 
 if ($callCMS->_numOfRows < 1) {
     header('location:' . $linklang . '/404');

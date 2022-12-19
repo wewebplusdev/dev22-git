@@ -1,7 +1,7 @@
 <?php
 $listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script/'.$menuActive.'/js/scriptCal.js'.$lastModify.'"></script>';
 
-$callCMS = $researchPage->callCMS($config['cod_f']['main']['masterkey'], $ContentID);
+$callCMS = $servicePage->callCMS($config['cod_f']['main']['masterkey'], $ContentID);
 $smarty->assign("callCMS", $callCMS);
 $smarty->assign("callCMSFields", $callCMS->fields);
 

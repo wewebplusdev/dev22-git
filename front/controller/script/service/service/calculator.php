@@ -1,5 +1,5 @@
 <?php
-$callCMS = $researchPage->callCMS($config['cod_f']['main']['masterkey'], $_REQUEST['diaform']);
+$callCMS = $servicePage->callCMS($config['cod_f']['main']['masterkey'], $_REQUEST['diaform']);
 $arrData = array();
 
 if ($callCMS->fields['type'] == 3) {
@@ -11,7 +11,7 @@ if ($callCMS->fields['type'] == 3) {
     //Length to Width Ratio.
     $Ratio = $_REQUEST['diamcut'] / $_REQUEST['widecut'];
     // Factor
-    $callGroup = $researchPage->callGroupRatio($config['cod_f']['main']['masterkey'], null, $arrGid);
+    $callGroup = $servicePage->callGroupRatio($config['cod_f']['main']['masterkey'], null, $arrGid);
     $factor = 0;
     $factor_temp = $callGroup->fields['factor'];
     foreach ($callGroup as $keycallGroup => $valuecallGroup) {

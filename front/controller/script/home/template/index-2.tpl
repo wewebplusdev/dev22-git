@@ -53,7 +53,7 @@
                     <div class="home-notice">
                         <div class="title">
                             {* {$listNews.0.group.subject|rechangeQuot2} *}
-                            <img src="front/assets/img/new/icon/icon-home-notice.png" alt="announcer">
+                            <img src="front/template/default/assets/img/icon/icon-home-notice.png" alt="announcer">
                         </div>
                         <div class="notice-slide">
                             {* {foreach $listNews.0.listcontent as $showContent_0} *}
