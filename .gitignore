@@ -7,3 +7,4 @@ front/temp/
 front/template/default/assets/css/style.css
 .htaccess
 index.php
+*.zip

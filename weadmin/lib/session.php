@@ -78,8 +78,8 @@ if (!isset($_SESSION[$valSiteManage . 'core_session_storeid'])) {
 
 ## Core Cketitor #############################################
 ## Core Cketitor #############################################
- $_SESSION["myBackOfficeSession"] = "/ckeditor/upload/files/id" . $_SESSION[$valSiteManage . 'core_session_id'];
- $valFolderCkEditor = "/ckeditor/upload/files/id" . $_SESSION[$valSiteManage . 'core_session_id'];
+ $_SESSION["myBackOfficeSession"] = "/dev22-git/ckeditor/upload/files/id" . $_SESSION[$valSiteManage . 'core_session_id'];
+ $valFolderCkEditor = "/dev22-git/ckeditor/upload/files/id" . $_SESSION[$valSiteManage . 'core_session_id'];
  if (!empty($_SESSION[$valSiteManage . "core_session_id"])) {
      if ($_SESSION[$valSiteManage . "core_session_id"] >= 1) {
           if (!is_dir("../../" . $valFolderCkEditor)) {

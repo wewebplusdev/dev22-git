@@ -1899,7 +1899,7 @@ function delAlbumUploadOut(fileAc) {
 function onLoadFCK() {
     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
         CKEDITOR.env.isCompatible = true;
-    var roxyFileman = '/fileman/index.html';
+    var roxyFileman = '/dev22-git/fileman/index.html';
     // var roxyFileman = '/fileman/index.html';
     CKEDITOR.replace('editDetail', {
         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
@@ -1931,7 +1931,7 @@ function onLoadFCK() {
 function onLoadFCKMini1() {
     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
         CKEDITOR.env.isCompatible = true;
-    var roxyFileman = '/fileman/index.html';
+    var roxyFileman = '/dev22-git/fileman/index.html';
     // var roxyFileman = '/fileman/index.html';
     CKEDITOR.replace('editDetailMini1', {
         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
@@ -1956,7 +1956,7 @@ function onLoadFCKMini1() {
 function onLoadFCKMini2() {
     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
         CKEDITOR.env.isCompatible = true;
-    var roxyFileman = '/fileman/index.html';
+    var roxyFileman = '/dev22-git/fileman/index.html';
     // var roxyFileman = '/fileman/index.html';
     CKEDITOR.replace('editDetailMini2', {
         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
@@ -1981,7 +1981,7 @@ function onLoadFCKMini2() {
 function onLoadFCKMini3() {
     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
         CKEDITOR.env.isCompatible = true;
-    var roxyFileman = '/fileman/index.html';
+    var roxyFileman = '/dev22-git/fileman/index.html';
     // var roxyFileman = '/fileman/index.html';
     CKEDITOR.replace('editDetailMini3', {
         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
@@ -2007,7 +2007,7 @@ function onLoadFCKMini3() {
 function onLoadFCK2() {
     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
         CKEDITOR.env.isCompatible = true;
-    var roxyFileman = '/fileman/index.html';
+    var roxyFileman = '/dev22-git/fileman/index.html';
     // var roxyFileman = '/fileman/index.html';
     CKEDITOR.replace('editDetail2', {
         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
@@ -2044,7 +2044,7 @@ function onLoadFCK2() {
 function onLoadFCKMini(editDetail = 'editDetail') {
     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
         CKEDITOR.env.isCompatible = true;
-    var roxyFileman = '/fileman/index.html';
+    var roxyFileman = '/dev22-git/fileman/index.html';
     // var roxyFileman = '/fileman/index.html';
     CKEDITOR.replace('editDetailmini', {
         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",

@@ -1,5 +1,5 @@
 {
-    "FILES_ROOT": "/ckeditor/upload/files",
+    "FILES_ROOT": "/dev22-git/ckeditor/upload/files",
     "RETURN_URL_PREFIX": "",
     "SESSION_PATH_KEY": "myBackOfficeSession",
     "THUMBS_VIEW_WIDTH": "140",
