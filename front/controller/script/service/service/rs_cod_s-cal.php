@@ -8,7 +8,7 @@ $smarty->assign("callCMSFields", $callCMS->fields);
 $settingModulus['tgp'] = "/assets/img/background/top-graphic-research.jpg";
 $settingModulus['breadcrumb'] = $lang['research']['diamond-cal'];
 
-$MenuID = "rs_cod_s";
+$MenuID = "sv_cod_s";
 $settingPage = array(
     "page" => $menuActive,
     "template" => "diamond-weight-calculato.tpl",

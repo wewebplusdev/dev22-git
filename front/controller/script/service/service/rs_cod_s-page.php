@@ -39,7 +39,7 @@ $seo_pic = ($callCMS->fields['pic'] != '' ? $fullpath_pic : '');
 Seo($seo_title, $seo_desc, $seo_keyword);
 /*## End SEO #####*/
 
-$MenuID = "rs_cod_s";
+$MenuID = "sv_cod_s";
 $settingPage = array(
     "page" => $menuActive,
     "template" => "cms_advance_detail_research.tpl",
