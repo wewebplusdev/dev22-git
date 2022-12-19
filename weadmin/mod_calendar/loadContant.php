@@ -304,10 +304,10 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                             <td class="divRightContantOverTb" valign="top" align="left">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td width="39" align="left" valign="top">
+                                        <!-- <td width="39" align="left" valign="top">
 
                                             <div style="width:29px; height:29px;  background:url(<?php echo  $valPic ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
-                                        </td>
+                                        </td> -->
                                         <td align="left">
                                             <div class="widthDivM"><a href="javascript:void(0)" onclick="
                                                                     document.myFormHome.inputLt.value = 'Thai';
@@ -325,9 +325,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                             <td class="divRightContantOverTb" valign="top" align="left">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td width="39" align="left" valign="top">
+                                        <!-- <td width="39" align="left" valign="top">
                                             <div style="width:29px; height:29px;  background:url(<?php echo  $valPicEn ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
-                                        </td>
+                                        </td> -->
                                         <td align="left">
                                             <div class="widthDivM"><a href="javascript:void(0)" onclick="
                                                                         document.myFormHome.inputLt.value = 'Eng';
@@ -345,9 +345,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                             <td class="divRightContantOverTb" valign="top" align="left">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td width="39" align="left" valign="top">
+                                        <!-- <td width="39" align="left" valign="top">
                                             <div style="width:29px; height:29px;  background:url(<?php echo  $valPicCn ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
-                                        </td>
+                                        </td> -->
                                         <td align="left">
                                             <div class="widthDivM"><a href="javascript:void(0)" onclick="
                                                                         document.myFormHome.inputLt.value = 'Chi';

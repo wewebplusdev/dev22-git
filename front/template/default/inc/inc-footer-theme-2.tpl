@@ -145,21 +145,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg">
-                    <div class="policy">
-                        <ul class="item-list">
-                            <li>
-                                <a href="" class="link"
-                                    title="นโยบายการคุ้มครองข้อมูลส่วนบุคคล">นโยบายการคุ้มครองข้อมูลส่วนบุคคล</a>
-                            </li>
-                            <li>
-                                <a href="" class="link"
-                                    title="แนวทางปฏิบัติการเผยแพร่ข้อมูลต่อสาธารณะ">แนวทางปฏิบัติการเผยแพร่ข้อมูลต่อสาธารณะ</a>
-                            </li>
-                        </ul>
-                    </div>
+                    {if $calPolicy->_numOfRows gte 1}
+                        <div class="policy">
+                            <ul class="item-list">
+                                {foreach $calPolicy as $keycalPolicy => $valuecalPolicy}
+                                    <li>
+                                    <a href="{$ul}/policy/{$valuecalPolicy.id}" class="link" title="{$valuecalPolicy.subject}">{$valuecalPolicy.subject}</a>
+                                    </li>
+                                {/foreach}
+                            </ul>
+                        </div>
+                    {/if}
                     <div class="copyright">
-                        Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights
-                        reserved.
+                        {$lang['system']['copyright']}
                     </div>
                 </div>
                 <div class="col-lg-auto text-center">

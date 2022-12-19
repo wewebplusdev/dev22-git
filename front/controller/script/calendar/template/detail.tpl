@@ -45,7 +45,7 @@
             </div>
          {/if}
 
-         {if $callCalendarDetail->fields['dwswitch'] eq "On" && $Call_File->_numOfRows gte 1}
+         {if $Call_File->_numOfRows gte 1}
             <div class="row mt-5">
                <div class="col-12">
                   <h2 class="text-primary mb-4">{$lang['system']['attachment']}</h2>
@@ -54,7 +54,7 @@
                         {$fileinfo = $valueCall_File['filename']|fileinclude:'file':{$callCalendarDetail->fields.masterkey}|get_Icon}
                         <div class="item">
                            <div class="attachment-block">
-                              <a href="{$ul}/download/{$valueCall_File['filename']|fileinclude:'file':{$callCMS->fields.masterkey}:'download'}&n={$valueCall_File['name']}&t={'md_cmf'|encodeStr}"
+                              <a href="{$ul}/download/{$valueCall_File['filename']|fileinclude:'file':{$callCalendarDetail->fields.masterkey}:'download'}&n={$valueCall_File['name']}&t={'md_caf'|encodeStr}"
                                  class="link" title="{$lang['system']['attachment']}">
                                  <div class="row no-gutters">
                                     <div class="col-auto">
@@ -80,7 +80,7 @@
                                     <div class="col">
                                        <div class="title typo-sm">{$valueCall_File.name}</div>
                                        <div class="subtitle typo-x">{$lang['system']['size']} :
-                                          {$valueCall_File['filename']|fileinclude:'file':{$callCMS->fields.masterkey}|get_IconSize}
+                                          {$valueCall_File['filename']|fileinclude:'file':{$callCalendarDetail->fields.masterkey}|get_IconSize}
                                           | {$lang['system']['type']} : {$fileinfo.type}</div>
                                     </div>
 

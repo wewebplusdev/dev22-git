@@ -130,6 +130,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
     <script language="JavaScript" type="text/javascript">
         function executeSubmit() {
             with(document.myForm) {
+                var checkbokSetLang = $('input.checkbokSetLang:checkbox:checked').length;
+                if (checkbokSetLang == 0) {
+                    alert('<?php echo $langMod["set:lang:web:alert"]; ?>');
+                    return false;
+                }
 
                 if (inputGroupID.value == 0) {
                     inputGroupID.focus();
@@ -609,7 +614,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
             </table>
 
             <br />
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+            <!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo  $langMod["txt:pic"] ?></span><br />
@@ -639,7 +644,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     </td>
                 </tr>
             </table>
-            <br />
+            <br /> -->
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">

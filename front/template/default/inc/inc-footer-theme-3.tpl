@@ -147,22 +147,22 @@
    <div class="footer-bottom">
       <div class="container">
          <div class="row">
-            {if $calPolicy->_numOfRows gte 1}
                <div class="col-lg">
                   <div class="copyright">
                      {$lang['system']['copyright']}
                   </div>
-                  <div class="policy">
-                     <ul class="item-list">
-                        {foreach $calPolicy as $keycalPolicy => $valuecalPolicy}
-                           <li>
-                              <a href="{$ul}/policy/{$valuecalPolicy.id}" class="link" title="{$valuecalPolicy.subject}">{$valuecalPolicy.subject}</a>
-                           </li>
-                        {/foreach}
-                     </ul>
-                  </div>
+                  {if $calPolicy->_numOfRows gte 1}
+                     <div class="policy">
+                        <ul class="item-list">
+                           {foreach $calPolicy as $keycalPolicy => $valuecalPolicy}
+                              <li>
+                                 <a href="{$ul}/policy/{$valuecalPolicy.id}" class="link" title="{$valuecalPolicy.subject}">{$valuecalPolicy.subject}</a>
+                              </li>
+                           {/foreach}
+                        </ul>
+                     </div>
+                  {/if}
                </div>
-            {/if}
             <div class="col-lg-auto text-center">
                <div class="w3c">
                   <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance">

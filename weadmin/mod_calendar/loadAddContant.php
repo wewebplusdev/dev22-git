@@ -33,6 +33,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
     <script language="JavaScript" type="text/javascript">
         function executeSubmit() {
             with(document.myForm) {
+                var checkbokSetLang = $('input.checkbokSetLang:checkbox:checked').length;
+                if (checkbokSetLang == 0) {
+                    alert('<?php echo $langMod["set:lang:web:alert"]; ?>');
+                    return false;
+                }
 
                 if (inputGroupID.value == 0) {
                     inputGroupID.focus();
@@ -495,7 +500,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
             </table>
 
             <br />
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+            <!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo  $langMod["txt:pic"] ?></span><br />
@@ -521,7 +526,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     </td>
                 </tr>
             </table>
-            <br />
+            <br /> -->
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -664,7 +669,7 @@ if (is_file($valhtml)) {
                     </td>
                 </tr>
 
-                <tr>
+                <tr style="display: none;">
                     <td width="18%" align="right" valign="top" class="formLeftContantTb">แสดงเอกสารแนบ</td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <label>

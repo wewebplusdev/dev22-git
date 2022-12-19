@@ -238,7 +238,7 @@ logs_access('3', 'View');
             </table>
             <br />
 
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+            <!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
@@ -258,7 +258,7 @@ logs_access('3', 'View');
                     </td>
                 </tr>
             </table>
-            <br />
+            <br /> -->
 
 
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " style="display:none">

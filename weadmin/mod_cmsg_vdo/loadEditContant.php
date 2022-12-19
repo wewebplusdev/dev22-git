@@ -115,15 +115,15 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					jQuery("#inputDescription").removeClass("formInputContantTbAlertY");
 				}
 
-				var alleditDetail = CKEDITOR.instances.editDetail.getData();
-				if (alleditDetail == "") {
-					jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
-					window.location.hash = '#inputEditHTML';
-					return false;
-				} else {
-					jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
-				}
-				jQuery('#inputHtml').val(alleditDetail);
+				// var alleditDetail = CKEDITOR.instances.editDetail.getData();
+				// if (alleditDetail == "") {
+				// 	jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
+				// 	window.location.hash = '#inputEditHTML';
+				// 	return false;
+				// } else {
+				// 	jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
+				// }
+				// jQuery('#inputHtml').val(alleditDetail);
 			}
 
 			updateContactNew('updateContant.php');
@@ -134,19 +134,19 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 			jQuery('#myForm').keypress(function(e) {
 				/* Start  Enter Check CKeditor */
-				var focusManager = new CKEDITOR.focusManager(editDetail);
-				var checkFocus = CKEDITOR.instances.editDetail.focusManager.hasFocus;
+				// var focusManager = new CKEDITOR.focusManager(editDetail);
+				// var checkFocus = CKEDITOR.instances.editDetail.focusManager.hasFocus;
 				var checkFocusTitle = jQuery("#inputDescription").is(":focus");
 
 				if (e.which == 13) {
 					//e.preventDefault();
 					if (!checkFocusTitle) {
-						if (!checkFocus) {
+						// if (!checkFocus) {
 							// if(!checkFocus2){
 							executeSubmit();
 							return false;
 							// }
-						}
+						// }
 					}
 				}
 				/* End  Enter Check CKeditor */
@@ -304,7 +304,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			</table>
 			<br />
 
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+			<!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
@@ -328,7 +328,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					</td>
 				</tr>
 			</table>
-			<br class="ckabout" />
+			<br class="ckabout" /> -->
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout" style="display:none;">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -780,10 +780,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		}
 
 		/*################### Load FCK Editor ######################*/
-		jQuery(function() {
-			onLoadFCK();
-			// onLoadFCK2();
-		});
+		// jQuery(function() {
+		// 	onLoadFCK();
+		// });
 	</script>
 
 	<script type="text/javascript" src="js/jquery.uploadfile.js"></script>

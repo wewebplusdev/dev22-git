@@ -134,13 +134,13 @@ if ($inputSearch != "") {
 
 $sqlSearch = "";
 if ($_REQUEST['sdateInput'] != "") {
-  $valSdate = DateFormatInsertNoTimeAccpet($_REQUEST['sdateInput']);
+  $valSdate = DateFormatInsertNoTimeAccpet_mod($_REQUEST['sdateInput']);
 
   if ($_REQUEST['edateInput'] != "") {
-    $valEdate = DateFormatInsertNoTimeAccpet($_REQUEST['edateInput']);
+    $valEdate = DateFormatInsertNoTimeAccpet_mod($_REQUEST['edateInput']);
   } else {
     $year = date("Y") + 543;
-    $valEdate = DateFormatInsertNoTimeAccpet(date("d-m") . "-" . $year);
+    $valEdate = DateFormatInsertNoTimeAccpet_mod(date("d-m") . "-" . $year);
   }
 
   $sqlSearch = $sqlSearch . "  AND  (" . $mod_tb_root . "_credate BETWEEN '" . $valSdate . " 00:00:00' AND '" . $valEdate . " 23:59:59')  ";
@@ -558,4 +558,42 @@ if ($_REQUEST['inputSearch'] != "") {
 
 <?php include "../lib/disconnect.php"; ?>
 
-<?php include "modal.php"; ?>
+<?php include "modal.php"; 
+
+
+//#################################################
+function DateFormatInsertNoTimeAccpet_mod($DateTime) {
+    //#################################################
+    global $core_session_language;
+    if ($DateTime == "") {
+        $DateTime = "00-00-0000";
+    }
+
+    $Time = "00:00:00";
+    $DateArr = explode("-", $DateTime);
+    if ($core_session_language == "Thai") {
+        if ($DateArr[2] >= 1) {
+            $dataYear = $DateArr[2]-543;
+        } else {
+            $dataYear = "0000";
+        }
+    } else {
+        $dataYear = $DateArr[2];
+    }
+
+    if ($DateArr[1] >= 1) {
+        $dataM = $DateArr[1];
+    } else {
+        $dataM = "00";
+    }
+
+    if ($DateArr[0] >= 1) {
+        $dataD = $DateArr[0];
+    } else {
+        $dataD = "00";
+    }
+
+
+    return $dataYear . "-" . $dataM . "-" . $dataD;
+}
+?>

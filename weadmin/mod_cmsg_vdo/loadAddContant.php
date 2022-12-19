@@ -67,15 +67,15 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 }
 
 
-                var alleditDetail = CKEDITOR.instances.editDetail.getData();
-                if (alleditDetail == "") {
-                    jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
-                    window.location.hash = '#inputEditHTML';
-                    return false;
-                } else {
-                    jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
-                }
-                jQuery('#inputHtml').val(alleditDetail);
+                // var alleditDetail = CKEDITOR.instances.editDetail.getData();
+                // if (alleditDetail == "") {
+                //     jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
+                //     window.location.hash = '#inputEditHTML';
+                //     return false;
+                // } else {
+                //     jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
+                // }
+                // jQuery('#inputHtml').val(alleditDetail);
             }
 
 
@@ -88,19 +88,19 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
             jQuery('#myForm').keypress(function(e) {
                 /* Start  Enter Check CKeditor */
-                var focusManager = new CKEDITOR.focusManager(editDetail);
-                var checkFocus = CKEDITOR.instances.editDetail.focusManager.hasFocus;
+                // var focusManager = new CKEDITOR.focusManager(editDetail);
+                // var checkFocus = CKEDITOR.instances.editDetail.focusManager.hasFocus;
                 var checkFocusTitle = jQuery("#inputDescription").is(":focus");
 
                 if (e.which == 13) {
                     //e.preventDefault();
                     if (!checkFocusTitle) {
-                        if (!checkFocus) {
+                        // if (!checkFocus) {
                             // if (!checkFocus2) {
                             executeSubmit();
                             return false;
                             // }
-                        }
+                        // }
                     }
                 }
                 /* End  Enter Check CKeditor */
@@ -266,7 +266,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 </tr>
             </table>
             <br />
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+            <!-- <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
@@ -290,7 +290,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     </td>
                 </tr>
             </table>
-            <br class="ckabout" />
+            <br class="ckabout" /> -->
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder  ckabout">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -662,10 +662,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
         var masterkey = $('input[name="masterkey"]').val();
         // console.log(masterkey);
         if (masterkey != 'cus') {
-            jQuery(function() {
-                onLoadFCK();
-                // onLoadFCK2();
-            });
+            // jQuery(function() {
+            //     onLoadFCK();
+            // });
         }
     </script>
 
