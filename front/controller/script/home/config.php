@@ -16,6 +16,7 @@ $arr_conf['book']['masterkey'] = "wb_book";
 $arr_conf['osv']['masterkey'] = $config['about']['osv']['masterkey'];
 $arr_conf['feed']['masterkey'] = "feed";
 $arr_conf['service']['masterkey'] = "service";
+$arr_conf['ancr']['masterkey'] = "ancr";
 $arr_conf['information-service']['masterkey'] = "information-service";
 // $mod_array_conf = array(
 //   'theme-3' => array(

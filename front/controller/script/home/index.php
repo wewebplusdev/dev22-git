@@ -11,6 +11,10 @@ $smarty->assign("callBanner", $callBanner);
 $callTopGraphic = $homePage->callTopGraphic($config['tgp']['main']['masterkey']);
 $smarty->assign("callTopGraphic", $callTopGraphic);
 
+// call announcer
+$callAnnouncer = $homePage->callTopGraphic($arr_conf['ancr']['masterkey']);
+$smarty->assign("callAnnouncer", $callAnnouncer);
+
 if ($_GET['tmp'] == 1 ) {
     $themeWebsite['class'] = 'theme-1';
 }else if($_GET['tmp'] == 2 ){
@@ -204,6 +208,7 @@ switch ($themeWebsite['class']) {
         }
         $smarty->assign("arrTrainingList", $arrTrainingList);
 
+        
         // call weblink
         $callWeblinkSection = $homePage->callTopGraphic($arr_conf['gel_t1']['masterkey']);
         $smarty->assign("callWeblinkSection", $callWeblinkSection);

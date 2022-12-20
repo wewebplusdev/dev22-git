@@ -56,30 +56,11 @@
                             <img src="front/template/default/assets/img/icon/icon-home-notice.png" alt="announcer">
                         </div>
                         <div class="notice-slide">
-                            {* {foreach $listNews.0.listcontent as $showContent_0} *}
-                               <!-- Start Type Detail -->
-                               {* {assign var=typedetail value=$showContent_0.typedetail}
-                               {if $typedetail == 1} *}
-
-                               <!-- 1 -->
-                                {* {assign var=valDetailUrl value=$showContent_0.urldetail}
-                                {assign var=valDetailTragetType value=$showContent_0.typetraget}
-                                    {if $valDetailTragetType == 1}
-                                        {assign var=valDetailTraget value="_parent"}
-                                     {else}
-                                        {assign var=valDetailTraget value="_blank"}
-                                     {/if}
-                               {else} *}
-
-                                 <!-- 2-->
-                                {* {assign var=valDetailUrl value="{$langPage}/news/detail/{$showContent_0.id}"}
-                                {assign var=valDetailTraget value="_parent"}
-
-                               {/if} *}
-                               <!-- End Type Detail -->
-
-                                {* <div class="text"><a href="{$valDetailUrl}" title="{$showContent_0.subject|rechangeQuot2}"  target="{$valDetailTraget}">{$showContent_0.subject|rechangeQuot2}</a></div>
-                                {/foreach} *}
+                            {foreach $callAnnouncer as $keycallAnnouncer => $valuecallAnnouncer}
+                              {if $valuecallAnnouncer['url'] neq "" && $valuecallAnnouncer['url'] neq "#"}
+                                <div class="text"><a href="{$valuecallAnnouncer['url']}" style="text-decoration: none;">{$valuecallAnnouncer['title']}</a></div>
+                              {/if}
+                              {/foreach}
 
                         </div>
                     </div>
