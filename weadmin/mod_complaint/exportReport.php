@@ -1,16 +1,16 @@
 <?php
  @include("../lib/session.php");
- header("Content-Type: application/vnd.ms-excel");
- header('Content-Disposition: attachment; filename="report_contact_'.date('Y-m-d').'.xls"');#ชื่อไฟล์
 include("../lib/config.php");
 include("../lib/connect.php");
 include("../lib/function.php");
 include("../core/incLang.php");
 include("incModLang.php");
 include("config.php");
-
-logs_access('3','Export');
 $valnamereport = getNameMenu($_REQUEST["menukeyid"]);
+header("Content-Type: application/vnd.ms-excel");
+header('Content-Disposition: attachment; filename="report_'.$valnamereport.'_'.date('Y-m-d').'.xls"');#ชื่อไฟล์
+logs_access('3','Export');
+
 ?>
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
 

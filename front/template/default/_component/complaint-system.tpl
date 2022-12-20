@@ -86,6 +86,7 @@
                             <div class="form-group has-feedback">
                                 <label class="control-label"
                                     for="complaintSystemAdress">{$lang['contact']['address']}</label>
+                                    <span>*</span>
                                 <div class="block-control">
                                     <input type="text" class="form-control" name="inputAddress" id="inputAddress"
                                         placeholder="{$lang['system']['fill']}{$lang['contact']['address']}"
@@ -98,6 +99,7 @@
                             <div class="form-group has-feedback">
                                 <label class="control-label"
                                     for="complaintSystemTelephone">{$lang['contact']['tel']}</label>
+                                    <span>*</span>
                                 <div class="block-control">
                                     <input type="tel" class="form-control" name="inputTel" id="inputTel"
                                         placeholder="{$lang['system']['fill']}{$lang['contact']['tel']}" data-error=""

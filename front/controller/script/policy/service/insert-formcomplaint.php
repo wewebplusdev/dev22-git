@@ -21,7 +21,6 @@ if (!empty($_POST) && $responseData->success) {
   $data[$config['coms']['db']['main'] . "_tel"] = "'" . encodeStr($_POST["inputTel"]) . "'";
   $data[$config['coms']['db']['main'] . "_language"] = "'" . $url->pagelang[2] . "'";
   $data[$config['coms']['db']['main'] . "_ip"] = "'" . getip() . "'";
-  $data[$config['coms']['db']['main'] . "_ip"] = "'" . encodeStr(getip()) . "'";
   $data[$config['coms']['db']['main'] . "_status"] = "'Unread'";
   $data[$config['coms']['db']['main'] . "_credate"] = "NOW()";
 
