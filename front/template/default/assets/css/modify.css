@@ -13,3 +13,15 @@
 .theme-1 .site-container {
   background: none;
 }
+.view-pdf {
+  position: relative;
+  padding-bottom: 100%;
+  margin-bottom: 2em;
+}
+.view-pdf iframe, .view-pdf object{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
