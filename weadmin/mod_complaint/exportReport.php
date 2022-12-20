@@ -67,7 +67,7 @@ $date_print=DateFormat(date("Y-m-d"));
 			$valEmail=decodeStr(rechangeQuot($rowExport[6]));
 			$valTel=decodeStr(rechangeQuot($rowExport[7]));
       $valCreby=decodeStr(rechangeQuot($rowExport[10]));
-			$valIp=decodeStr(rechangeQuot($rowExport[8]));
+			$valIp=rechangeQuot($rowExport[8]);
 			$valGid=$rowExport[9];
 			$valSubject=decodeStr(rechangeQuot($rowExport[10]));
 			
