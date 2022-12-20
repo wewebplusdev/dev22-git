@@ -40,11 +40,11 @@
           </p>
           <div class="report-link">
             <a href="{$ul}/policy/complaint-system/corruption" class="btn btn-primary"
-              title="{$lang['contact']['misconduct-complaint']}" target="_blank">
+              title="{$lang['contact']['misconduct-complaint']}">
               {$lang['contact']['misconduct-complaint']}
             </a>
             <a href="{$ul}/policy/complaint-system" class="btn btn-primary"
-              title="{$lang['contact']['feedback-system']}" target="_blank">
+              title="{$lang['contact']['feedback-system']}">
               {$lang['contact']['feedback-system']}
             </a>
           </div>

@@ -2526,7 +2526,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check contagious-checking" type="radio" name="information[contagious]" id="contagious-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="contagious-no">
-                                            {$lang['career']['ever']}
+                                            {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2537,7 +2537,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check contagious-checking" type="radio" name="information[contagious]" id="contagious-yes" value="เคย" required="required">
                                         <label class="control-label" for="contagious-yes">
-                                           {$lang['career']['never']}
+                                           {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2572,7 +2572,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check handicap-checking" type="radio" name="information[handicap]" id="congenital-disease-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="congenital-disease-no">
-                                            {$lang['career']['ever']}
+                                            {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2583,7 +2583,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check handicap-checking" type="radio" name="information[handicap]" id="congenital-disease-yes" value="มี" required="required">
                                         <label class="control-label" for="congenital-disease-yes">
-                                            {$lang['career']['never']}
+                                            {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2618,7 +2618,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check arrested-checking" type="radio" name="information[arrested]" id="imprisonment-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="imprisonment-no">
-                                            {$lang['career']['ever']}
+                                            {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2629,7 +2629,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check arrested-checking" type="radio" name="information[arrested]" id="imprisonment-yes" value="เคย เพราะ" required="required">
                                         <label class="control-label" for="imprisonment-yes">
-                                            {$lang['career']['never']}
+                                            {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2664,7 +2664,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check dischargedemployment-checking" type="radio" name="information[dischargedemployment]" id="dismissal-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="dismissal-no">
-                                            {$lang['career']['ever']}
+                                            {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2675,7 +2675,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check dischargedemployment-checking" type="radio" name="information[dischargedemployment]" id="dismissal-yes" value="เคย เพราะ" required="required">
                                         <label class="control-label" for="dismissal-yes">
-                                            {$lang['career']['never']}
+                                            {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2710,7 +2710,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check relative-checking" type="radio" name="information[relative]" id="friend-no" value="ไม่เคย" required="required">
                                         <label class="control-label" for="friend-no">
-                                            {$lang['career']['ever']}
+                                            {$lang['career']['never']}
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2721,7 +2721,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                     <div class="form-group form-check -nm I">
                                         <input class="form-check-input radio-check relative-checking" type="radio" name="information[relative]" id="friend-yes" value="เคย เพราะ" required="required">
                                         <label class="control-label" for="friend-yes">
-                                            {$lang['career']['never']}
+                                            {$lang['career']['ever']}
                                         </label>
                                     </div>
                                 </fieldset>

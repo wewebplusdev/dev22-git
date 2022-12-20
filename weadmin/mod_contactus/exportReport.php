@@ -10,7 +10,7 @@ include("incModLang.php");
 include("config.php");
 
 logs_access('3','Export');
-
+$valnamereport = getNameMenu($_REQUEST["menukeyid"]);
 ?>
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
 
@@ -30,6 +30,9 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <BODY>
 <table border="1" cellspacing="1" cellpadding="2"  align="center">
   <tbody>
+  <tr >
+  <td colspan="2" width="175" align="center" valign="middle" class="bold"><?php echo $valnamereport?></td>
+    </tr>
     <tr >
       <td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:no"]?></td>
       <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:selectgn"]?></td> -->
@@ -116,8 +119,7 @@ $valEdate = DateFormatExport($_REQUEST['edateInputSe']);
         <tr >
       <td width="175" align="right" valign="middle" class="bold">Print date : </td>
       <td  width="175" align="left" valign="middle"><?php echo $date_print?></td>
-      <td width="175" align="right" valign="middle" class="bold">date export: </td>
-      <td  width="175" align="left" valign="middle"><?php echo $valSdate?> - <?php echo $valEdate?></td>
+      
     </tr>
   </tbody>
 </table>

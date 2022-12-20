@@ -385,7 +385,7 @@ class researchPage
 
     $sql .= " ORDER  BY " . $config['cmsss']['db']['main'] . "." . $config['cmsss']['db']['main'] . "_order DESC ";
 
-    // print_pre($sql);
+    //print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }

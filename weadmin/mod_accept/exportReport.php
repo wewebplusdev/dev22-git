@@ -15,7 +15,7 @@ $masterkey=$_REQUEST['masterkey'];
 $menukeyid=$_REQUEST['menukeyid'];
 
 		logs_access('3','Export');
-
+		$valnamereport = getNameMenu($_REQUEST["menukeyid"]);
 ?>
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
 
@@ -38,6 +38,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <BODY>
 <table border="1" cellspacing="1" cellpadding="2"  align="center">
   <tbody>
+  <td colspan="2" width="175" align="center" valign="middle" class="bold"><?php echo $valnamereport?></td>
     <tr >
       <td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle">ลำดับ</td>
       <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle">ชื่อเว็บไซต์</td>

@@ -8,7 +8,7 @@ $responseData = json_decode($verifyResponse);
 // print_pre($_REQUEST['g-recaptcha-response']);
 // die;
 
-if (!empty($_POST) /*&& $responseData->success*/) {
+if (!empty($_POST) && $responseData->success) {
   $data = array();
   $data[$config['coms']['db']['main'] . "_masterkey"] = "'" . changeQuot($_POST["masterkey"]) . "'";
   $data[$config['coms']['db']['main'] . "_gid"] = "'" . changeQuot($_POST["inputGroup"]) . "'";

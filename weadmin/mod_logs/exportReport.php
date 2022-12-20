@@ -8,7 +8,7 @@ include("../lib/function.php");
 include("../core/incLang.php");
 include("incModLang.php");
 include("config.php");
-
+$valnamereport = getNameMenu($_REQUEST["menukeyid"]);
 logs_access('3', 'Export');
 ?>
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -23,15 +23,16 @@ logs_access('3', 'Export');
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
         <style type="text/css">
-            <!--
+            
             .bold {font-weight:bold;
             }
-            -->
+            
         </style>
     </HEAD>
     <BODY>
         <table border="1" cellspacing="1" cellpadding="2"  align="left">
             <tbody>
+            <td colspan="2" width="175" align="center" valign="middle" class="bold"><?php echo $valnamereport?></td>
                 <tr >
                     <td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo  $langMod["tit:no"] ?></td>
                     <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langTxt["mg:subject"]?></td>

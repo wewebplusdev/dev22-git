@@ -129,7 +129,7 @@ logs_access('3', 'View');
                                 </tr>
                                 <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:fname"] ?>:<span class="fontContantAlert"></span></td>
-                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valFName ?>ปปป</div></td>
+                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valFName ?></div></td>
                                 </tr>
                                 <!-- <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:lname"] ?>:<span class="fontContantAlert"></span></td>

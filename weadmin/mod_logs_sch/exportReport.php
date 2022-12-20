@@ -10,9 +10,10 @@ include "incModLang.php";
 
 $masterkey = $_REQUEST['masterkey'];
 $menukeyid = $_REQUEST['menukeyid'];
-
+$valnamereport = getNameMenu($_REQUEST["menukeyid"]);
 logs_access('3', 'Export');
-
+$valSdate = DateFormatExport($_REQUEST['sdateInputSe']);
+$valEdate = DateFormatExport($_REQUEST['edateInputSe']);
 ?>
 <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
 
@@ -34,6 +35,9 @@ logs_access('3', 'Export');
 <BODY>
 	<table border="1" cellspacing="1" cellpadding="2" align="center">
 		<tbody>
+		<tr >
+  <td colspan="2" width="175" align="center" valign="middle" class="bold"><?php echo $valnamereport?></td>
+    </tr>
 			<tr>
 				<td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle">ลำดับ</td>
 				<td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:keywords"] ?></td>

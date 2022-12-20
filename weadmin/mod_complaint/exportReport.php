@@ -10,7 +10,7 @@ include("incModLang.php");
 include("config.php");
 
 logs_access('3','Export');
-
+$valnamereport = getNameMenu($_REQUEST["menukeyid"]);
 ?>
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
 
@@ -30,12 +30,15 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <BODY>
 <table border="1" cellspacing="1" cellpadding="2"  align="center">
   <tbody>
+  <tr >
+  <td colspan="2" width="175" align="center" valign="middle" class="bold"><?php echo $valnamereport?></td>
+    </tr>
     <tr >
       <td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:no"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:selectgn"]?></td>
       <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:subject"]?></td> -->
       <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle">name</td> -->
-      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo "ข้อความ"; ?></td>
+      <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:Message"] ?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:email"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:tel"]?></td>
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:address"]?></td>
@@ -48,7 +51,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
     
     <?php
 $sql=str_replace('\\','',$_POST['sql_export']);
-print_pre($sql);
+// print_pre($sql);
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $count_record=wewebNumRowsDB($coreLanguageSQL,$query);
 $date_print=DateFormat(date("Y-m-d"));
@@ -83,7 +86,8 @@ $date_print=DateFormat(date("Y-m-d"));
     $row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group);
 		$row_groupid=$row_group[0];
 	 	$row_groupname=$row_group[1];
-		
+     $valSdate = DateFormatExport($_REQUEST['sdateInputSe']);
+     $valEdate = DateFormatExport($_REQUEST['edateInputSe']);
 			?>
     
     <tr bgcolor="#ffffff">
@@ -114,7 +118,9 @@ $date_print=DateFormat(date("Y-m-d"));
         <tr >
       <td width="175" align="right" valign="middle" class="bold">Print date : </td>
       <td  width="175" align="left" valign="middle"><?php echo $date_print?></td>
+
     </tr>
+    
   </tbody>
 </table>
 </BODY>

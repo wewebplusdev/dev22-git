@@ -18,16 +18,16 @@ $(document).ready(function () {
   switch (page) {
     case 'formcomplain':
       // recaptcha v3
-      // grecaptcha.ready(function () {
-      //   // do request for recaptcha token
-      //   // response is promise with passed token
-      //   grecaptcha
-      //     .execute($(".sitekey").data("id"), { action: "validate_captcha" })
-      //     .then(function (token) {
-      //       // add token value to form
-      //       document.getElementById("g-recaptcha-response").value = token;
-      //   });
-      // });
+      grecaptcha.ready(function () {
+        // do request for recaptcha token
+        // response is promise with passed token
+        grecaptcha
+          .execute($(".sitekey").data("id"), { action: "validate_captcha" })
+          .then(function (token) {
+            // add token value to form
+            document.getElementById("g-recaptcha-response").value = token;
+        });
+      });
 
       // Request Form
       $("#complainForm").validator().on("submit", function (e) {
@@ -84,16 +84,16 @@ $(document).ready(function () {
 
       case 'req':
         // recaptcha v3
-        // grecaptcha.ready(function () {
-        //   // do request for recaptcha token
-        //   // response is promise with passed token
-        //   grecaptcha
-        //     .execute($(".sitekey").data("id"), { action: "validate_captcha" })
-        //     .then(function (token) {
-        //       // add token value to form
-        //       document.getElementById("g-recaptcha-response").value = token;
-        //     });
-        // });
+        grecaptcha.ready(function () {
+          // do request for recaptcha token
+          // response is promise with passed token
+          grecaptcha
+            .execute($(".sitekey").data("id"), { action: "validate_captcha" })
+            .then(function (token) {
+              // add token value to form
+              document.getElementById("g-recaptcha-response").value = token;
+            });
+        });
   
         // Request Form
         $("#reqForm").validator().on("submit", function (e) {

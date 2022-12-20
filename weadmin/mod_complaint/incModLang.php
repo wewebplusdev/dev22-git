@@ -131,5 +131,9 @@ $langMod["inp:sefile"] = "Select attachment";
 		$langMod["inp:sefile"] ="เลือกเอกสารแนบ";
 		$langMod["tit:fname"] = "ชื่อ-นามสกุล";
 
+		$langMod["tit:sSedate"] = "วันเริ่มต้น";
+		$langMod["tit:eSedate"] = "วันสิ้นสุด";
+		$langMod["tit:Message"] = "ข้อความ";
+
 }
 ?>
