@@ -177,7 +177,7 @@ if (!empty($_POST) && $responseData->success) {
     $index++;
   }
 
-   print_pre($arrData);
+  //  print_pre($arrData);
 
   $data = array();
   // profile information

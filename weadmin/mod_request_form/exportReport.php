@@ -30,7 +30,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <BODY>
 <table border="1" cellspacing="1" cellpadding="2"  align="center">
   <tbody>
-  <td colspan="2" width="175" align="center" valign="middle" class="bold"><?php echo $valnamereport?></td>
+  
     <tr >
       <td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:no"]?></td>
       <!-- <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:selectgn"]?></td> -->

@@ -20,17 +20,18 @@ logs_access('3', 'Export');
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
   <style type="text/css">
-    <!--
-    .bold {
+    
+    /* .bold {
       font-weight: bold;
-    }
-    -->
+    } */
+    
   </style>
 </HEAD>
 
 <BODY>
   <table border="1" cellspacing="1" cellpadding="2" align="center">
     <tbody>
+    
       <tr>
         <td width="80" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:no"] ?></td>
         <td width="150" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["ep:name"] ?></td>

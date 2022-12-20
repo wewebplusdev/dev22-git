@@ -35,9 +35,6 @@ $valEdate = DateFormatExport($_REQUEST['edateInputSe']);
 <BODY>
 	<table border="1" cellspacing="1" cellpadding="2" align="center">
 		<tbody>
-		<tr >
-  <td colspan="2" width="175" align="center" valign="middle" class="bold"><?php echo $valnamereport?></td>
-    </tr>
 			<tr>
 				<td width="56" height="30" align="center" bgcolor="#eeeeee" class="bold" valign="middle">ลำดับ</td>
 				<td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle"><?php echo $langMod["tit:keywords"] ?></td>
