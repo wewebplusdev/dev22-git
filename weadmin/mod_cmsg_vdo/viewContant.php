@@ -27,11 +27,11 @@ $sql .= "   " . $mod_tb_root . "_id ,
       " . $mod_tb_root . "_gid    ";
 
 if ($_REQUEST['inputLt'] == "Thai") {
-    $sql .= "," . $mod_tb_root . "_url," . $mod_tb_root . "_pic , " . $mod_tb_root . "_subject  ,    " . $mod_tb_root . "_title , " . $mod_tb_root . "_htmlfilename   ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords    ";
+    $sql .= "," . $mod_tb_root . "_url," . $mod_tb_root . "_pic , " . $mod_tb_root . "_subject  ,    " . $mod_tb_root . "_title , " . $mod_tb_root . "_htmlfilename   ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords  ,  " . $mod_tb_root . "_type ";
 } elseif ($_REQUEST['inputLt'] == "Eng") {
-    $sql .= "," . $mod_tb_root . "_urlen," . $mod_tb_root . "_picen , " . $mod_tb_root . "_subjecten  ,    " . $mod_tb_root . "_titleen , " . $mod_tb_root . "_htmlfilenameen   ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen    ";
+    $sql .= "," . $mod_tb_root . "_urlen," . $mod_tb_root . "_picen , " . $mod_tb_root . "_subjecten  ,    " . $mod_tb_root . "_titleen , " . $mod_tb_root . "_htmlfilenameen   ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen    ,  " . $mod_tb_root . "_typeen ";
 } else {
-    $sql .= "," . $mod_tb_root . "_urlcn," . $mod_tb_root . "_piccn , " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
+    $sql .= "," . $mod_tb_root . "_urlcn," . $mod_tb_root . "_piccn , " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ,  " . $mod_tb_root . "_typecn ";
 }
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin";
@@ -64,7 +64,7 @@ if ($Row[5] == "0000-00-00 00:00:00") {
 $valLastdate = DateFormat($Row[6]);
 $valLastby = $Row[7];
 
-$valType = $Row[8];
+$valType = $Row[20];
 $valFilevdo = $Row[9];
 $valPathvdo = $mod_path_vdo . "/" . $Row[9];
 $valView = number_format($Row[10]);
@@ -79,10 +79,10 @@ $valHtml = $mod_path_html . "/" . $Row[16];
 $valMetatitle = rechangeQuot($Row[17]);
 $valDescription = rechangeQuot($Row[18]);
 $valKeywords = rechangeQuot($Row[19]);
-$valUrlfriendly = rechangeQuot($Row[20]);
-$valLang[0] = $Row[21];
-$valLang[1] = $Row[22];
-$valLang[2] = $Row[23];
+$valUrlfriendly = rechangeQuot($Row[21]);
+$valLang[0] = $Row[22];
+$valLang[1] = $Row[23];
+$valLang[2] = $Row[24];
 
 $valPin = $Row['pin'];
 if ($valPin == "Pin") {
@@ -317,11 +317,10 @@ logs_access('3', 'View');
                     </td>
                 </tr>
                 <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:video"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:video"] ?>:<span class="fontContantAlert"><?=$valType?></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="formDivView">
                             <?php
-                            echo $valType;
                             if ($valType == "file") {
                                 if ($valFilevdo != "") {
                                     $filename = $valFilevdo;

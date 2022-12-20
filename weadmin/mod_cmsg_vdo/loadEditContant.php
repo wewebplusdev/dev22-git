@@ -394,7 +394,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					<td colspan="7" align="right" valign="top" height="15"></td>
 				</tr>
 
-				<tr >
+				<tr>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:typevdo"] ?></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
 						<label>
@@ -409,13 +409,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						</label>
 					</td>
 				</tr>
-				<tr id="boxInputlink" style="display:none;">
+				<tr id="boxInputlink" <?php if ($valType == "file") { ?> style="display:none;" <?php } ?>>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkvdo"] ?></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><textarea name="inputurl" id="inputurl" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valUrl ?></textarea><br />
 						<span class="formFontNoteTxt"><?php echo $langMod["tit:linkvdonote"] ?></span>
 					</td>
 				</tr>
-				<tr id="boxInputfile" style="display:none;">
+				<tr id="boxInputfile" <?php if ($valType == "url") { ?> style="display:none;" <?php } ?>>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:uploadvdo"] ?></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
 						<div class="file-input-wrapper">
