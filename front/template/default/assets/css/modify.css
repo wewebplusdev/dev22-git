@@ -25,3 +25,9 @@
     width: 100%;
     height: 100%;
 }
+
+@media (max-width: 1199px){
+.theme-3 .site-header {
+    height: auto;
+}
+}

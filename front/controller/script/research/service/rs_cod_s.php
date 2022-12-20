@@ -10,7 +10,6 @@ switch ($PageAction) {
         break;
     
     default: //คำนวนณเพชร
-    
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_cod_s-page.php';
         break;
 }

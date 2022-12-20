@@ -87,11 +87,15 @@
                      <div class="row align-items-center">
                         <div class="col-sm-auto">
                            <figure class="cover">
+                           <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}" style="text-decoration: none;">
                               <img src="{$valuecallCMS['pic']|fileinclude:"real":{$valuecallCMS['masterkey']}:"link"}" alt="{$valuecallCMS.subject}">
+                           </a>
                            </figure>
                         </div>
                         <div class="col-sm">
+                        <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}" style="text-decoration: none;">
                            <div class="title">{$valuecallCMS.subject}</div>
+                           </a>
                            <div class="row">
                               <div class="col-12">
                                  <div class="desc">{$valuecallCMS.title}</div>

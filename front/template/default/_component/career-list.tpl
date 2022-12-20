@@ -89,8 +89,11 @@
         </div>
       </form>
         {foreach $callCMS as $keycallCMS => $valuecallCMS}
+         
           <div class="job-source-block mb-3">
+          
             <div class="row">
+            <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}/{$menuDetail}/{$valuecallCMS.id}" style="text-decoration: none;">
                 <div class="col-12">
                     <div class="title typo-sm text-limit -x3">{$valuecallCMS.subject}</div>
                     <div class="desc">({$lang['career']['quantity']} : {$valuecallCMS.quantity} {$lang['career']['position']})</div>
@@ -98,16 +101,20 @@
                 <div class="col-12 py-3">
                     <div class="desc text-limit -x3">{$valuecallCMS.title}</div>
                 </div>
+            </a>
             </div>
             <div class="job-source-location">
                 <div class="row align-items-center">
                     <div class="col">
                         <div class="row align-items-center no-gutters">
+                        
                             <div class="col-auto">
                                 <img src="{$template}/assets/img/icon/icon-location.svg" alt="icon-location">
                             </div>
                             <div class="col">
+                            <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}/{$menuDetail}/{$valuecallCMS.id}" style="text-decoration: none;">
                                 <div class="desc">{$lang['career']['location']} : {$valuecallCMS.address}</div>
+                            </a>
                             </div>
                         </div>
                     </div>
@@ -127,7 +134,9 @@
                     </div>
                 </div>
             </div>
+            
         </div>
+          
         {/foreach}
         {if $callCMS->_numOfRows gte 1 && $pagination['totalpage'] gte 2}
           {include file="{$incfile.pagination}"}

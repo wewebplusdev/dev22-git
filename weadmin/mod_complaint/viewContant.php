@@ -35,6 +35,7 @@ $sql .= "
 " . $mod_tb_root . "_gid";
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
 
+// print_pre($sql);
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
 $valID = $Row[0];
@@ -172,10 +173,10 @@ logs_access('3', 'View');
                                     
                                     </div> </td>
                                 </tr>
-                                <!-- <tr >
+                                <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:subject"] ?>:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valSubject ?></div></td>
-                                </tr> -->
+                                </tr>
                                 <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:mgs"] ?>:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  nl2br($valMessage) ?></div></td>

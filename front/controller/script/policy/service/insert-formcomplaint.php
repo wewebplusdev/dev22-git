@@ -12,6 +12,7 @@ if (!empty($_POST) && $responseData->success) {
   $data = array();
   $data[$config['coms']['db']['main'] . "_masterkey"] = "'" . changeQuot($_POST["masterkey"]) . "'";
   $data[$config['coms']['db']['main'] . "_gid"] = "'" . changeQuot($_POST["inputGroup"]) . "'";
+  $data[$config['coms']['db']['main'] . "_subject"] = "'" . changeQuot($_POST["inputSubject"]) . "'";
   $data[$config['coms']['db']['main'] . "_message"] = "'" . encodeStr($_POST["inputMessage"]) . "'";
   $data[$config['coms']['db']['main'] . "_fname"] = "'" . encodeStr($_POST["inputName"]) . "'";
   $data[$config['coms']['db']['main'] . "_name"] = "'" . encodeStr($_POST["inputName"]) . "'";
@@ -82,6 +83,7 @@ function formmail(){
                   <tr style='height: 209px;'>
                     <td style='height: 209px;'>
                     <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['policy']['group']." ".$Group->fields[2]."<br />".$lang['contact']['name']." ".changeQuot($_POST["inputName"])."</div>
+                    <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["inputSubject"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["inputMessage"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["fname"]."-".$lang["policy"]["lname"]." : ".changeQuot($_POST["inputName"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["email"]." : ".changeQuot($_POST["inputEmail"])."</div>

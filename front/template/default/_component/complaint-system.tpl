@@ -36,7 +36,17 @@
                         </div>
                     </div>
                     <div class="form-group has-feedback -nm">
+                        <label class="control-label" for="complaintSystemTextArea">{$lang['contact']['subject']}</label>
+                        <span>*</span>
+                        <div class="block-control">
+                            <input class="form-control form-text-area h-100" rows="6" cols="100" name="inputSubject"
+                                id="inputMessage" data-error="" required></input>
+                            <span class="form-control-feedback" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback -nm">
                         <label class="control-label" for="complaintSystemTextArea">{$lang['contact']['text']}</label>
+                        <span>*</span>
                         <div class="block-control">
                             <textarea class="form-control form-text-area h-100" rows="6" cols="100" name="inputMessage"
                                 id="inputMessage" value="Spicyfi" data-error="" required></textarea>
