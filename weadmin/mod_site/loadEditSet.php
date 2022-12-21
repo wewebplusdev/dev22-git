@@ -991,7 +991,7 @@ $myRand = time() . rand(111, 999);
                         <div id="boxPicNewen" class="formFontTileTxt">
                             <?php if (is_file($valPicen)) { ?>
                                 <img src="<?php echo  $valPicen ?>" style="float:left;border:#c8c7cc solid 1px; width: calc(50% - 20px);" />
-                                <div style="width:22px; height:22px;float:left;z-index:1; margin-left:-22px;cursor:pointer;" onclick="delPicUpload('deletePicen.php')" title="Delete file"><img src="../img/btn/delete.png" width="22" height="22" border="0" /></div>
+                                <div style="width:22px; height:22px;float:left;z-index:1; margin-left:-22px;cursor:pointer;" onclick="delPicUpload_mul('deletePicInserten.php', '#boxPicNewen')" title="Delete file"><img src="../img/btn/delete.png" width="22" height="22" border="0" /></div>
                                 <input type="hidden" name="picnameen" id="picnameen" value="<?php echo  $valPicNameen ?>" />
                             <?php } ?>
                         </div>
@@ -1011,7 +1011,7 @@ $myRand = time() . rand(111, 999);
                         <div id="boxPicNewcn" class="formFontTileTxt">
                             <?php if (is_file($valPiccn)) { ?>
                                 <img src="<?php echo  $valPiccn ?>" style="float:left;border:#c8c7cc solid 1px; width: calc(50% - 20px);" />
-                                <div style="width:22px; height:22px;float:left;z-index:1; margin-left:-22px;cursor:pointer;" onclick="delPicUpload('deletePiccn.php')" title="Delete file"><img src="../img/btn/delete.png" width="22" height="22" border="0" /></div>
+                                <div style="width:22px; height:22px;float:left;z-index:1; margin-left:-22px;cursor:pointer;" onclick="delPicUpload_mul('deletePicInsertcn.php', '#boxPicNewcn')" title="Delete file"><img src="../img/btn/delete.png" width="22" height="22" border="0" /></div>
                                 <input type="hidden" name="picnamecn" id="picnamecn" value="<?php echo  $valPicNamecn ?>" />
                             <?php } ?>
                         </div>

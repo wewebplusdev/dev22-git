@@ -382,6 +382,7 @@ $lang['service']['menu1'] = "寶石檢查";
 $lang['service']['menu2'] = "貴金屬支票";
 $lang['service']['menu3'] = "輔導中心";
 $lang['service']['menu4'] = "工具";
+$lang['service']['calculator'] = "鑽石計算系統";
 
 //training work
 $lang['training']['detail'] = "課程詳情";

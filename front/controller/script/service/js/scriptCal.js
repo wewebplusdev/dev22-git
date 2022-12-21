@@ -25,7 +25,7 @@ $('#diaform').on('change', function(){
 $("#form-calculator").on("submit", function (e) {
   var formData = new FormData($("#form-calculator")[0]);
     var path = $("base").attr("href") + base_url_lang;
-    var baselang = $("base").attr("href") + base_url_lang + "/research/" + origin_menuid + "/calculator";
+    var baselang = $("base").attr("href") + base_url_lang + "/service/" + origin_menuid + "/calculator";
 
     $.ajax({
       url: baselang,

@@ -116,7 +116,28 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
       <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
 
         <tr>
+          <td style="padding-right:10px;" width="42%">
+            <select name="inputPh" id="inputPh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
+              <option value="0"><?php echo $langMod["tit:selectgsub"] ?> </option>
+              <?php
+              $sql_group = "SELECT " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subject," . $mod_tb_root_subgroup . "_subjecten  FROM " . $mod_tb_root_subgroup . " WHERE  " . $mod_tb_root_subgroup . "_masterkey ='" . $_REQUEST['masterkey'] . "'  ORDER BY " . $mod_tb_root_subgroup . "_order DESC ";
+              $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
 
+              while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                $row_groupid = $row_group[0];
+                $row_groupname = $row_group[1];
+                $row_groupnameeng = $row_group[2];
+                if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
+                  $valNameShow = $row_groupname;
+                } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
+                  // $valNameShow=$row_groupnameeng;
+                  $valNameShow = $row_groupname;
+                }
+              ?>
+                <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputPh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $valNameShow ?></option>
+              <?php } ?>
+            </select>
+          </td>
           <td id="boxSelectTest" style="width:100% !important;">
             <input name="inputSearch" type="text" id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo $langTxt["sch:search"] ?>" />
           </td>
@@ -188,6 +209,10 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 		" . $mod_tb_root_group . "_subjectcn LIKE '%$inputSearch%'   ) ";
         }
 
+        if ($_REQUEST['inputPh'] > 0) {
+          $sql .= " AND " . $mod_tb_root_group . "_gid = ". $_REQUEST['inputPh'] ." ";
+        }
+
 
         $query = wewebQueryDB($coreLanguageSQL, $sql);
         $count_totalrecord = wewebNumRowsDB($coreLanguageSQL, $query);
@@ -208,7 +233,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
         $recordstart = ($module_pageshow - 1) * $module_pagesize;
 
         $sql .= " ORDER BY $module_orderby $module_adesc LIMIT $recordstart , $module_pagesize ";
-
+        // print_pre($sql);
         $query = wewebQueryDB($coreLanguageSQL, $sql);
         $count_record = wewebNumRowsDB($coreLanguageSQL, $query);
         $index = 1;

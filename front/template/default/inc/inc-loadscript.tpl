@@ -33,6 +33,9 @@
 <!-- Embed Code -->
 <script src="{$template}/assets/js/embed.js{$lastModify}"></script>
 
+<!-- Dev -->
+<script src="{$template}/assets/js/dev.js{$lastModify}"></script>
+
 <script type="text/javascript">var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;</script>
 
 {strip}

@@ -10,8 +10,10 @@ $getMenuDetail = array();
 $ContentID = GetContentID($url->segment[2]);
 $PageAction = $url->segment[3];
 $MenuID = GetContentID($url->segment[1]);
+$settingModulus['menuid'] = $MenuID;
 $MenuID = $callSetWebsite->getMenuID($MenuID);
 $MasterkeyTemp = "sv_"; // master about like this
+$MasterkeyTemp2 = array("'cod_f'"); // master about like this
 $showslick = true; // slick shows
 
 if (empty($MenuID)) {
@@ -25,7 +27,7 @@ $req_params['order'] = $_REQUEST['order'];
 $smarty->assign("req_params", $req_params);
 
 ## default menu lv1
-$getMenuDetailFc = $callSetWebsite->getMenuDetail(0, $MasterkeyTemp);
+$getMenuDetailFc = $callSetWebsite->getMenuDetail(0, $MasterkeyTemp, null, null, null, $MasterkeyTemp2);
 foreach ($getMenuDetailFc as $keygetMenuDetailFc => $valuegetMenuDetailFc) {
     $getMenuDetail[] = $valuegetMenuDetailFc;
 }
@@ -43,11 +45,17 @@ if (count($getMenuDetail) > 4) {
     }
 }
 $smarty->assign("initialSlide", '{"initialSlide": ' . $initialSlide . '}');
+// print_pre($MenuID);
 
 switch ($MenuID) {
-    case 'sv_cod_s': //คำนวนณเพชร
-        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_cod_s.php';
+    // case 'cod_f': //คำนวนณเพชร
+    //     require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_cod_s.php';
+    //     break;
+
+    case 'cod_f':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_cod_s-cal.php';
         break;
+
     default: //งานบริการ
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/cms_detail.php';
         break;

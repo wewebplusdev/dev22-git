@@ -6,5 +6,4 @@ front/temp/
 /nbproject/private/
 front/template/default/assets/css/style.css
 .htaccess
-index.php
 *.zip

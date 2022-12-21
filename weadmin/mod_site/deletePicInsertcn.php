@@ -19,5 +19,11 @@ include("config.php");
 		@unlink($mod_path_real."/".$_REQUEST['picnamecn']);
 	}	
 			
+	
+	$update = array();
+	$update[]=$mod_tb_set."_addresspiccn  	=''";
+	$sql="UPDATE ".$mod_tb_set." SET ".implode(",",$update)." WHERE ".$mod_tb_set."_id='".$_REQUEST["valEditID"]."'  ";
+	$Query=wewebQueryDB($coreLanguageSQL,$sql);
+
 include("../lib/disconnect.php");
 ?>

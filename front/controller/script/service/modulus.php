@@ -22,6 +22,9 @@ class servicePage
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view as view,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_typec as typec,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_type as type,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_factor as factor,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_factor_arr as factor_arr,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate as credate,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_metatitle" . $lang . " as metatitle,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_description" . $lang . " as description,
@@ -121,4 +124,52 @@ class servicePage
     $result = $db->execute($sql);
     return $result;
   }
+
+  
+  function callGroupRatio($masterkey, $id = null, $arrID = array())
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id as id,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey as masterkey,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject" . $lang . " as subject,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_title" . $lang . " as title,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_pic" . $lang . " as pic,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_lastdate as lastdate,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_url as url,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_types as types,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_factor as factor,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_ratio as ratio,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
+    FROM
+    " . $config['cmg']['db']['main'] . "
+    INNER JOIN 
+    " . $config['sy_mnu']['db']['main'] . "
+    ON
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey
+    WHERE
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_status != 'Disable' AND
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_subject" . $lang . " != '' 
+    ";
+
+    if (!empty($id)) {
+      $sql .= " AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id = '" . $id . "' ";
+    }
+
+    if (!empty($arrID)) {
+      $sql .= " AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id IN (" . implode(" , ", $arrID) . ") ";
+    }
+
+    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_ratio ASC ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+  
 }

@@ -384,6 +384,7 @@ $lang['service']['menu1'] = "ตรวจสอบอัญมณี";
 $lang['service']['menu2'] = "ตรวจสอบโลหะมีค่า";
 $lang['service']['menu3'] = "ศูนย์ให้คำปรึกษา";
 $lang['service']['menu4'] = "เครื่องมือ";
+$lang['service']['calculator'] = "ระบบคำนวนเพชร";
 
 //training work
 $lang['training']['detail'] = "รายละเอียดหลักสูตร";

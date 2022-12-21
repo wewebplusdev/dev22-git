@@ -49,7 +49,8 @@
                 </div>
             {/if}
 
-            {foreach $arrMem as $keyarrMem => $valuearrMem}
+            {foreach $arrMem as $keyarrMemList => $valuearrMemList}
+                {foreach $valuearrMemList as $keyarrMem => $valuearrMem}
                 <div class="row {if $keyarrMem gte 1}mt-5{/if}">
                     <div class="col">
                         <!-- profile block -->
@@ -99,8 +100,14 @@
                                                                 {/if}
                                                             </div>
                                                         {/if}
-                                                        <a href="javascript:void(0);" class="btn modal-alert" title="{$lang['system']['readmore2']}" data-toggle="modal" 
+                                                        {* <a href="javascript:void(0);" class="btn modal-alert" title="{$lang['system']['readmore2']}" data-toggle="modal" 
                                                             data-target="#profileBlock" data-name="{$valueMember.fname} {$valueMember.lname}" data-depart="{$valueMember.depart}" 
+                                                            data-sdatetxt="{$valueMember.sdatetxt}" data-email="{$valueMember.email}" data-tel="{$valueMember.tel}" 
+                                                            data-pic="{$valueMember['pic']|fileinclude:"real":{$valueMember['masterkey']}:"link"}" data-txtemail="{$lang['system']['email']}" data-txttel="{$lang['system']['tel']}">
+                                                            <span class="feather icon-chevron-right"></span>
+                                                            {$lang['system']['readmore2']}
+                                                        </a> *}
+                                                        <a href="{$ul}/{$menuActive}/{$valueMember.menuid}/{$valueMember.position}/{$menuDetail}/{$valueMember.id}" class="btn modal-alert" title="{$lang['system']['readmore2']}" data-name="{$valueMember.fname} {$valueMember.lname}" data-depart="{$valueMember.depart}" 
                                                             data-sdatetxt="{$valueMember.sdatetxt}" data-email="{$valueMember.email}" data-tel="{$valueMember.tel}" 
                                                             data-pic="{$valueMember['pic']|fileinclude:"real":{$valueMember['masterkey']}:"link"}" data-txtemail="{$lang['system']['email']}" data-txttel="{$lang['system']['tel']}">
                                                             <span class="feather icon-chevron-right"></span>
@@ -118,6 +125,7 @@
                         <!-- end profile block -->
                     </div>
                 </div>
+                {/foreach}
             {/foreach}
 
             {if $arrMenuActive->fields.url neq "" && $arrMenuActive->fields.url neq "#"}

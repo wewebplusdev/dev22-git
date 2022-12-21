@@ -26,35 +26,14 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
   <script language="JavaScript" type="text/javascript" src="../js/jquery-1.9.0.js"></script>
   <script language="JavaScript" type="text/javascript" src="../js/jquery.blockUI.js"></script>
   <script language="JavaScript" type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
-  <script type="text/javascript" language="javascript">
-    // function changeRibbon(tablename, statusname, statusid, fileAc) {
-
-    //    jQuery.blockUI({
-    //         message: jQuery('#tallContent'),
-    //         css: {border: 'none', padding: '35px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .9, color: '#fff'
-    //         }
-    //     });
-
-    //     var pin = document.getElementById("inputRibbon"+statusid).value;
-    //     var TYPE = "POST";
-    //     var URL = fileAc;
-    //     var dataSet = {
-    //         Valuetablename: tablename,
-    //         Valuestatusname: pin,
-    //         Valuestatusid: statusid,
-    //         Valuefilestatus: fileAc
-    //     };
-
-
-    //     jQuery.ajax({type: TYPE, url: URL, data: dataSet,
-    //         success: function (html) {
-
-    //             // jQuery("#" + loadderstatus + "").show();
-    //             // jQuery("#" + loadderstatus + "").html(html)
-    //             setTimeout(jQuery.unblockUI, 200);
-    //         }
-    //     });
-    // }
+  <script language="JavaScript" type="text/javascript" src="./js/script.js"></script>
+  <script>
+    jQuery(document).ready(function() {
+      var GroupID = $('#inputGhSubSel :selected').val();
+      if (GroupID > 0) {
+        onChangeSelect('openSelectSubContent.php', '#subgroup');
+      }
+    });
   </script>
 </head>
 
@@ -144,30 +123,8 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
       <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
 
         <tr>
-          <td style="padding-right:10px;" width="42%">
-            <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
-              <option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
-              <?php
-              $sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
-              $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
-
-              while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
-                $row_groupid = $row_group[0];
-                $row_groupname = $row_group[1];
-                $row_groupnameeng = $row_group[2];
-                if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
-                  $valNameShow = $row_groupname;
-                } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
-                  // $valNameShow=$row_groupnameeng;
-                  $valNameShow = $row_groupname;
-                }
-              ?>
-                <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $valNameShow ?></option>
-              <?php } ?>
-            </select>
-          </td>
-          <td style="padding-right:10px;" width="42%">
-            <select name="inputPh" id="inputPh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
+          <td style="padding-right:10px;" width="24%">
+            <select name="inputPh" id="inputGhSubSel" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
               <option value="0"><?php echo $langMod["tit:selectgsub"] ?> </option>
               <?php
               $sql_group = "SELECT " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subject," . $mod_tb_root_subgroup . "_subjecten  FROM " . $mod_tb_root_subgroup . " WHERE  " . $mod_tb_root_subgroup . "_masterkey ='" . $_REQUEST['masterkey'] . "'  ORDER BY " . $mod_tb_root_subgroup . "_order DESC ";
@@ -186,6 +143,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
               ?>
                 <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputPh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $valNameShow ?></option>
               <?php } ?>
+            </select>
+          </td>
+          <td style="padding-right:10px;" width="24%" id="subgroup">
+            <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
+              <option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
             </select>
           </td>
           <td id="boxSelectTest" width="42%">
@@ -401,7 +363,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
     document.myFormHome.valEditID.value=<?php echo $valID ?>;
     viewContactNew('viewContant.php');"><?php echo $valName . " " . $vallastName; ?></a>
                         <span class="fontContantTbTime">
-                          <br /><?php echo $langMod["meu:selectgn"] ?>: <?php echo getNameGroupTable($valGidDb, $mod_tb_root_group) ?>
+                          <!-- <br /><?php echo $langMod["meu:selectgn"] ?>: <?php echo getNameGroupTable($valGidDb, $mod_tb_root_group) ?> -->
                         </span>
                       </div>
 
@@ -419,7 +381,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
         document.myFormHome.valEditID.value=<?php echo $valID ?>;
         viewContactNew('viewContant.php');"><?php echo $valNameEn . " " . $vallastNameEn; ?></a>
                         <span class="fontContantTbTime">
-                          <br /><?php echo $langMod["meu:selectgn"] ?>: <?php echo getNameGroupTable($valGidDb, $mod_tb_root_group, 'en') ?>
+                          <!-- <br /><?php echo $langMod["meu:selectgn"] ?>: <?php echo getNameGroupTable($valGidDb, $mod_tb_root_group, 'en') ?> -->
                         </span>
                       </td>
                     </tr>
@@ -435,7 +397,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
             document.myFormHome.valEditID.value=<?php echo $valID ?>;
             viewContactNew('viewContant.php');"><?php echo $valNameCn . " " . $vallastNameCn; ?></a>
                         <span class="fontContantTbTime">
-                          <br /><?php echo $langMod["meu:selectgn"] ?>: <?php echo getNameGroupTable($valGidDb, $mod_tb_root_group, 'cn') ?>
+                          <!-- <br /><?php echo $langMod["meu:selectgn"] ?>: <?php echo getNameGroupTable($valGidDb, $mod_tb_root_group, 'cn') ?> -->
                         </span>
                       </td>
                     </tr>
@@ -677,9 +639,9 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
         </tr>
       </table>
       <table width="96%" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 20px;">
-          <tr>
-              <td>Link : <a href="<?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']] . "/" . $_REQUEST['menukeyid']; ?>" target="_blank"><?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']] . "/" . $_REQUEST['menukeyid']; ?></a></td>
-          </tr>
+        <tr>
+          <td>Link : <a href="<?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']] . "/" . $_REQUEST['menukeyid']; ?>" target="_blank"><?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']] . "/" . $_REQUEST['menukeyid']; ?></a></td>
+        </tr>
       </table>
       <input name="TotalCheckBoxID" type="hidden" id="TotalCheckBoxID" value="<?php echo $index - 1 ?>" />
       <div class="divRightContantEnd"></div>

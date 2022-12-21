@@ -48,8 +48,7 @@
               <div class="item">
                 <div class="tab-block {if $menuidLv2 eq $valuearrMenu.id}active{/if}">
                   <a class="text-limit"
-                    href="{str_replace("//","/","{$ul}/{$menuActive}/{$valuearrMenu.menuid}/{$valuearrMenu.id}"
-                )}">{$valuearrMenu.subject}</a>
+                    href="{str_replace("//","/","{$ul}/{$menuActive}/{$valuearrMenu.menuid}/{$valuearrMenu.id}")}">{$valuearrMenu.subject}</a>
                 </div>
               </div>
             {/foreach}

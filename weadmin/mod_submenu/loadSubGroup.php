@@ -110,7 +110,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
         <tr>
           <td style="padding-right:10px;" width="50%">
-            <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchL">
+            <select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
               <option value="0"><?php echo  $langMod["tit:selectg"] ?> </option>
               <?php
               $sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ORDER BY " . $mod_tb_root_group . "_order DESC ";

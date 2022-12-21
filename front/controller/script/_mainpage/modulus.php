@@ -399,7 +399,7 @@ class settingWebsite
         return $result->fields['masterkey'];
     }
 
-    function getMenuDetail($id = null, $masterkey = null, $notlike = null, $notlikearr = array(), $inarray = array())
+    function getMenuDetail($id = null, $masterkey = null, $notlike = null, $notlikearr = array(), $inarray = array(), $orthoerkey = array())
     {
         global $config, $db, $url;
         $lang = $url->pagelang[3];
@@ -432,6 +432,10 @@ class settingWebsite
 
         if (!empty($inarray)) {
             $sql .= " AND " . $config['sy_mnu']['db']['main'] . "_masterkey IN (" . implode(",", array_values($inarray)) . ") ";
+        }
+
+        if (!empty($orthoerkey)) {
+            $sql .= " OR " . $config['sy_mnu']['db']['main'] . "_masterkey IN (" . implode(",", array_values($orthoerkey)) . ") ";
         }
 
         $sql .= " ORDER BY " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_order ASC ";
@@ -470,7 +474,7 @@ class settingWebsite
         return $result;
     }
 
-    function getSubGroupMenu($masterkey = null, $gid = null)
+    function getSubGroupMenu($masterkey = null, $gid = null, $id = null)
     {
         global $config, $db, $url;
         $lang = $url->pagelang[3];
@@ -495,13 +499,17 @@ class settingWebsite
             $sql .= " AND " . $config['mnsg']['db']['main'] . "_masterkey = '".$masterkey."' ";
         }
 
+        if (!empty($id)) {
+            $sql .= " AND " . $config['mnsg']['db']['main'] . "_id = '".$id."' ";
+        }
+
         $sql .= " ORDER BY " . $config['mnsg']['db']['main'] . "." . $config['mnsg']['db']['main'] . "_order DESC ";
         // print_pre($sql);
         $result = $db->execute($sql);
         return $result;
     }
 
-    function getMenu($masterkey = null, $gid = null)
+    function getMenu($masterkey = null, $gid = null, $id = null)
     {
         global $config, $db, $url;
         $lang = $url->pagelang[3];
@@ -524,6 +532,10 @@ class settingWebsite
 
         if (!empty($masterkey)) {
             $sql .= " AND " . $config['mn']['db']['main'] . "_masterkey = '".$masterkey."' ";
+        }
+
+        if (!empty($id)) {
+            $sql .= " AND " . $config['mn']['db']['main'] . "_id = '".$id."' ";
         }
 
         $sql .= " ORDER BY " . $config['mn']['db']['main'] . "." . $config['mn']['db']['main'] . "_order DESC ";

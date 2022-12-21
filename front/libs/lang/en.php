@@ -390,6 +390,7 @@ $lang['service']['menu1'] = "Gem Check";
 $lang['service']['menu2'] = "Precious Metal Check";
 $lang['service']['menu3'] = "Counseling Center";
 $lang['service']['menu4'] = "Tool";
+$lang['service']['calculator'] = "Diamond Calculation System";
 
 //training work
 $lang['training']['detail'] = "Course Details";

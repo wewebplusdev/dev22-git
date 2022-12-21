@@ -2426,3 +2426,22 @@ function changeQuot_code($Data) {
 
         return $valChangeQuot;
 }
+
+function claim($valaclaim){
+    global $valaclaim ,$mod_tb_root_subgroup,$coreLanguageSQL ;
+    $mysql = "SELECT ".$mod_tb_root_subgroup."_subject FROM ".$mod_tb_root_subgroup." WHERE ".$mod_tb_root_subgroup."_id IN (".implode(",",array_values($valaclaim)).") ";
+    $querymysql = wewebQueryDB($coreLanguageSQL,$mysql);
+    $countrow = wewebNumRowsDB($coreLanguageSQL,$querymysql);
+    if ($countrow >= 1){
+        
+        $i = 0;
+        $text_claim = array();
+        while($row = wewebFetchArrayDB($coreLanguageSQL,$querymysql)){
+            
+            $text_claim[] = $row[0];
+            $i ++ ;
+        }
+        $claim_return = $text_claim;
+        return $claim_return;
+    }
+}

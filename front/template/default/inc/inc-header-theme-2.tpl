@@ -207,7 +207,7 @@
 									</li>
 								{else}
 								<li class="{if $segment eq $menuSegment[0]}active{/if}">
-								<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']|path_url:{$switch_url}}"{if $valuearrSitemap['group']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" data-link="{$keyarrSitemap}-menu" title="{$valuearrSitemap['group']['subject']}">
+								<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('g')}/{$valuearrSitemap['group']['id']|base64_encode}"{if $valuearrSitemap['group']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" data-link="{$keyarrSitemap}-menu" title="{$valuearrSitemap['group']['subject']}">
 									{$valuearrSitemap['group']['subject']}
 								</a>
 							</li>
@@ -256,7 +256,7 @@
 							{$valuearrSitemap['group']['subject']}
 						</a>
 					{else}
-						<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$valuearrSitemap['group']['url']|path_url:{$switch_url}}"
+						<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('g')}/{$valuearrSitemap['group']['id']|base64_encode}"
 								{if $valuearrSitemap['group']['target'] eq 2}target="_blank" {/if}{else}href="javascript:void(0);"
 								{/if} class="link submenu {if $segment eq $menuSegment[0]}active{/if}"
 								title="{$valuearrSitemap['group']['subject']}">
@@ -274,7 +274,7 @@
 							{foreach $valuearrSitemap['list'] as $keySubmenu => $valueSubmenu}
 								{if count($valueSubmenu['menu']) > 0}
 									<li class="dropdown-item">
-										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$valueSubmenu['subgroup']['url']|path_url:{$switch_url}}"
+										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valueSubmenu['subgroup']['id']|base64_encode}"
 												{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank" {/if}
 											{else}href="javascript:void(0);" 
 											{/if} class="link text-light typo-sm"
@@ -282,7 +282,7 @@
 										<ul class="item-list fluid bullet">
 											{foreach $valueSubmenu['menu'] as $keyMenuLv3 => $valueMenuLv3}
 												<li>
-													<a {if $valueMenuLv3['url'] neq "" && $valueMenuLv3['url'] neq "#"}href="{$valueMenuLv3['url']|path_url:{$switch_url}}"
+													<a {if $valueMenuLv3['url'] neq "" && $valueMenuLv3['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('c')}/{$valueMenuLv3['id']|base64_encode}"
 															{if $valueMenuLv3['target'] eq 2}target="_blank" {/if}
 														{else}href="javascript:void(0);" 
 														{/if} class="link text-light typo-s"
@@ -293,7 +293,7 @@
 									</li>
 								{else}
 									<li class="dropdown-item">
-										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$valueSubmenu['subgroup']['url']|path_url:{$switch_url}}"
+										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valueSubmenu['subgroup']['id']|base64_encode}"
 												{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank" {/if}
 											{else}href="javascript:void(0);" 
 											{/if} class="link text-light typo-sm"

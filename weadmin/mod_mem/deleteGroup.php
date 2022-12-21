@@ -43,6 +43,6 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
     <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo $_REQUEST['module_pagesize']?>" />
     <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $_REQUEST['module_orderby']?>" />
     <input name="inputSearch" type="hidden" id="inputSearch" value="<?php echo $_REQUEST['inputSearch']?>" />
-    <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
+    <input name="inputPh" type="hidden" id="inputPh" value="<?php echo $_REQUEST['inputPh']?>" />
 </form>            
 <script language="JavaScript" type="text/javascript"> document.myFormAction.submit(); </script>

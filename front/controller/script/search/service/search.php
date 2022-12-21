@@ -50,8 +50,8 @@ switch ($PageAction) {
         }
 
         $callText = $searchPage->callText($keywords);
-        if (!isset($_COOKIE['SEARCH_UPDATE_' . $config['sch_logs']['masterkey'] . '_' . urldecode($keywords)]) && !empty($keywords)) {
-            setcookie("SEARCH_UPDATE_" . $config['sch_logs']['masterkey'] . '_' . urldecode($keywords), true, time() + 600);
+        if (!isset($_COOKIE['SEARCH_UPDATE_' . $config['sch_logs']['masterkey'] . '_' . base64_encode("txt_".$keywords)]) && !empty($keywords)) {
+            setcookie("SEARCH_UPDATE_" . $config['sch_logs']['masterkey'] . '_' . base64_encode("txt_".$keywords), true, time() + 600);
             $getip = getip();
             if ($callText->_numOfRows < 1) {
                 $insertText = $searchPage->insertText($keywords, $type);

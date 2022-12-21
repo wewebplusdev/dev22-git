@@ -353,7 +353,7 @@ class aboutPage
     return $result;
   }
 
-  function callSubGroupMem($masterkey, $id = null)
+  function callSubGroupMem($masterkey, $id = null, $arr_id = array())
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -375,6 +375,10 @@ class aboutPage
 
     if (!empty($id)) {
       $sql .= " AND " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_gid = '" . $id . "' ";
+    }
+
+    if (!empty($arr_id)) {
+      $sql .= " AND " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_id IN (" . $arr_id . ") ";
     }
 
     $sql .= " ORDER  BY " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order DESC ";
@@ -425,7 +429,7 @@ class aboutPage
     return $result;
   }
 
-  function callMem($masterkey, $gid = null, $pid = null)
+  function callMem($masterkey, $gid = null, $pid = null, $id = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -451,7 +455,8 @@ class aboutPage
     " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid as posi_gid,
     " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_subject".$lang." as namegroup,
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
-    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
+    " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname,
+    " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_pid as position
 
     FROM
     " . $config['mem']['db']['main'] . "
@@ -500,6 +505,10 @@ class aboutPage
 
     if (!empty($pid)) {
       $sql .= " AND " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_pid = '" . $pid . "' ";
+    }
+
+    if (!empty($id)) {
+      $sql .= " AND " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id = '" . $id . "' ";
     }
 
     $sql .= " GROUP BY " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id

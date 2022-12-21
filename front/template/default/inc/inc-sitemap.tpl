@@ -25,18 +25,18 @@
                                             {foreach $valuearrSitemap['list'] as $keysubgroup => $valuesubgroup}
                                                 {if count($valuesubgroup['menu']) > 0}
                                                     <li class="list-group-item">
-                                                        <a {if $valuesubgroup['subgroup']['url'] neq "" && $valuesubgroup['subgroup']['url'] neq "#"}href="{$valuesubgroup['subgroup']['url']|path_url:{$switch_url}}" {if $valuesubgroup['subgroup']['target'] eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if} class="link" title="{$valuesubgroup['subgroup']['subject']}">{$valuesubgroup['subgroup']['subject']}</a>
+                                                        <a {if $valuesubgroup['subgroup']['url'] neq "" && $valuesubgroup['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valuesubgroup['subgroup']['id']|base64_encode}" {if $valuesubgroup['subgroup']['target'] eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if} class="link" title="{$valuesubgroup['subgroup']['subject']}">{$valuesubgroup['subgroup']['subject']}</a>
                                                         <ul class="sub-list-group item-list">
                                                             {foreach $valuesubgroup['menu'] as $keyMenu => $valueMenu}
                                                                 <li>
-                                                                    <a {if $valueMenu.url neq "" && $valueMenu.url neq "#"}href="{$valueMenu.url|path_url:{$switch_url}}" {if $valueMenu.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if} class="link" title="{$valueMenu.subject}">{$valueMenu.subject}</a>
+                                                                    <a {if $valueMenu.url neq "" && $valueMenu.url neq "#"}href="{$ul}/pageredirect/url/{encodeStr('c')}/{$valueMenu['id']|base64_encode}" {if $valueMenu.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if} class="link" title="{$valueMenu.subject}">{$valueMenu.subject}</a>
                                                                 </li>
                                                             {/foreach}
                                                         </ul>
                                                     </li>
                                                 {else}
                                                     <li class="list-group-item">
-                                                        <a {if $valuesubgroup['subgroup']['url'] neq "" && $valuesubgroup['subgroup']['url'] neq "#"}href="{$valuesubgroup['subgroup']['url']|path_url:{$switch_url}}" {if $valuesubgroup['subgroup']['target'] eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if} class="link" title="{$valuesubgroup['subgroup']['subject']}">{$valuesubgroup['subgroup']['subject']}</a>
+                                                        <a {if $valuesubgroup['subgroup']['url'] neq "" && $valuesubgroup['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valuesubgroup['subgroup']['id']|base64_encode}" {if $valuesubgroup['subgroup']['target'] eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if} class="link" title="{$valuesubgroup['subgroup']['subject']}">{$valuesubgroup['subgroup']['subject']}</a>
                                                     </li>
                                                 {/if}
                                             {/foreach}
