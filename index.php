@@ -1,6 +1,7 @@
 <?php
 
 $path_root = "/dev22-git"; #ถ้า root อยู่ public
+$switch = true; # true = ใช้ทำการแปลง url menu ให้เป็นของ dev
 define("_http", "http");
 
 // if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
@@ -89,6 +90,8 @@ if (empty($menuActive)) {
    $menuActive = "404";
 }
 
+path_url('/th/about', $switch);
+
 $smarty->assign("navactive", $menuActive);
 $smarty->assign("lastModify", $lastModify);
 $smarty->assign("home", $url_show_default);
@@ -100,6 +103,7 @@ $smarty->assign("base", _URL);
 $smarty->assign("fullurl", _FullUrl);
 $smarty->assign("Domain", _Domain);
 $smarty->assign("urlPagination", _URLPagination);
+$smarty->assign("switch_url", $switch);
 
 $useronline = userOnline();
 $usercounter = counter_web();

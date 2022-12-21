@@ -1263,3 +1263,21 @@ function userOnline($page = FALSE) {
       // return 0;
    }
 }
+
+function path_url($param, $switch = false) {
+   global $path_root, $url;
+
+   if ($switch) {
+      $param = str_replace($path_root, '', $param);
+      $url_explde = array_filter(explode("/".$url->pagelang[2], $param));
+   
+      $param = "";
+      foreach ($url_explde as $keyurl_explde => $valueurl_explde) {
+         if ($keyurl_explde == 1) {
+            $param .= $path_root."/".$url->pagelang[2];
+         }
+         $param .= $valueurl_explde;
+      }
+   }
+   return $param;
+}
