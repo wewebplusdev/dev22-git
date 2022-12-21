@@ -116,6 +116,13 @@
             <!-- CK Editor -->
         {/if}
       </div>
+      
+      <div class="editor-content text-center">
+    {if $callCMS->fields.statusjoin === "Enable"}
+      <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}/career-form/{$callCMS->fields.id}" class="btn btn-primary" title="btn btn-primary">{$lang['career']['applyonline']}</a>
+    {/if}
+      </div>
+
       <div class="border-nav-slider pt-5"></div>
       {if $callCMS->fields.url neq '' && $callCMS->fields.url neq '#'}
         {$myUrlArray = "v="|explode:$callCMS->fields.url}

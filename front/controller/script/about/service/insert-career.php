@@ -1,7 +1,7 @@
 <?php
 // print_pre($_REQUEST);
 // print_pre($_FILES);
-$secret = $secretkey;
+$secret = $secretkey2;
 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
 $responseData = json_decode($verifyResponse);
 // print_pre($responseData);
@@ -263,12 +263,13 @@ if (!empty($_POST) && $responseData->success) {
   $sql = "INSERT INTO " . $config['career']['join']['main'] . "(" . implode(',', array_keys($data)) . ")VALUES(" . implode(',', array_values($data)) . ")";
   
   $result = $db->execute($sql);
+  
   $ContentID = $db->insert_Id();
-
+  
   /* Start Upload File career */
   require_once _DIR . '/front/controller/script/' . $menuActive . '/service/upload-career.php';
   /* End Upload File career */
-
+  
   /* Start Sent Email */
   formmail($arrData);
   /* End Sent Email */
@@ -286,7 +287,7 @@ if (!empty($_POST) && $responseData->success) {
   $status['msg'] = $lang['contact']['error_msg'];
   $status['msg_desc'] = $lang['contact']['error_msg_desc'];
   $status['btn'] = $lang['system']['ok'];
-  
+  print_pre('xxerror');
 }
 
 echo json_encode($status);

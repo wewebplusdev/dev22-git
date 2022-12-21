@@ -3,7 +3,7 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 
 
 		$langMod["meu:selectgn"] = "Group ". $langMod["meu:group"];
-
+		
 		$langMod["txt:titleadd"] = "" .getNameMenu($_REQUEST["menukeyid"])." New";
 		$langMod["txt:titleedit"] = "" .getNameMenu($_REQUEST["menukeyid"])." Edit";
 		$langMod["txt:titleview"] = "" .getNameMenu($_REQUEST["menukeyid"])." Display";
@@ -70,7 +70,7 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["tit:uploadvdo"] = "Upload a file";
 		$langMod["tit:linkvdonote"] = "Note: The only link is the youtube.com URL.";
 		$langMod["tit:uploadvdonote"] = "Note: Please upload only .flv, .wmv, .mp3, .wav, .wma, .avi, and .mpeg files.";
-		
+		$langMod["career:statusjoin"] = "สมัครงานออนไลน์";
 		$langMod["inp:salary"] ="เงินเดือน";
 		$langMod["inp:salaryno"] ="ไม่แสดงเงินเดือน";
 		$langMod["inp:salaryyes"] ="ระบุเงินเดือน";
@@ -288,7 +288,88 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["txt:reference"] = "ผู้ให้การรับรอง";
 		$langMod["txt:referenceDe"] = "ข้อมูล".$langMod["txt:reference"]." เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
 		$langMod["ep:bdate"] = "วันเกิด";
+		
 }else{
+	$langMod["ep:fileother"] = "เอกสารอื่น ๆ";
+	$langMod["txt:reference"] = "ผู้ให้การรับรอง";
+	$langMod["txt:referenceDe"] = "ข้อมูล".$langMod["txt:reference"]." เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
+
+
+	$langMod["ep:infoworkupcountry"] = "การไปปฏิบัติงานต่างจังหวัด";
+		$langMod["ep:infopermanent"] = "เป็นการประจำ";
+		$langMod["ep:infotemporary"] = "เป็นครั้งคราว";
+		$langMod["ep:infodisease"] = "การเจ็บป่วยขนาดหนัก หรือโรคติดต่อร้ายแรง";
+		$langMod["ep:infohandicap"] = "โรคประจำตัว";
+		$langMod["ep:infoquestioning"] = "เคยถูกจำคุก หรือต้องโทษทางอาญาหรือไม่";
+		$langMod["ep:infodischarged"] = "เคยถูกให้ออกจากงานหรือเลิกจ้างหรือไม่";
+		$langMod["ep:inforelative"] = "ท่านมีเพื่อนหรือญาติที่ทำงานที่บริษัทนี้หรือไม่";
+		$langMod["ep:infohearing"] = "ท่านทราบข่าวการสมัครงานจาก";
+		$langMod["ep:infoother"] = "ข้อมูลเพิ่มเติม";
+		$langMod["ep:inforeference"] = "ผู้ให้การรับรอง";
+		$langMod["ep:infoyes"] = "เคย เพราะ";
+		$langMod["ep:infono"] = "ไม่เคย";
+		$langMod["ep:infohave"] = "มี";
+		$langMod["ep:infonohave"] = "ไม่มี";
+		$langMod["txt:Fileinfo"] = "สำหรับเจ้าหน้าที่ทรัพยากรบุคคล";
+		$langMod["txt:FileinfoDe"] = "ข้อมูล".$langMod["txt:generalinfo"]." เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
+		$langMod["ep:filetranscript"] = "เอกสารการศึกษา";
+		$langMod["ep:filehouse"] = "สำเนาทะเบียนบ้าน / เอกสารทางการทหาร";
+		$langMod["ep:fileiden"] = "สำเนาบัตรประชาชน / เอกสารผ่านงาน";
+		$langMod["ep:filemarriage"] = "สำเนาทะเบียนสมรส";
+		$langMod["ep:filelicense"] = "สำเนาใบอนุญาตขับขี่รถยนต์ / จักรยานยนต์";
+	$langMod["txt:generalinfo"] = "ข้อมูลทั่วไป";
+		$langMod["txt:generalinfoDe"] = "ข้อมูล".$langMod["txt:generalinfo"]." เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
+
+	$langMod["ep:office"] = "บริษัท";
+		$langMod["ep:officetype"] = "ประเภทธุรกิจ";
+		$langMod["ep:firstposition"] = "ตำแหน่งแรกเข้า";
+		$langMod["ep:lastposition"] = "ตำแหน่งสุดท้าย";
+		$langMod["ep:lastsalary"] = "เงินเดือนสุดท้าย";
+		$langMod["ep:incomeother"] = "รายได้อื่น ๆ";
+		$langMod["ep:responsibility"] = "ลักษณะงานที่รับผิดชอบโดยย่อ";
+
+		$langMod["ep:langeng"] = "ภาษาอังกฤษ";
+		$langMod["ep:langspeaking"] = "พูด";
+		$langMod["ep:langlistening"] = "ฟัง";
+		$langMod["ep:langwriting"] = "เขียน";
+	$langMod["txt:regis8"] ="ประวัติการทำงาน";
+		$langMod["txt:regis8De"] = "ประวัติการทำงาน เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
+	$langMod["txt:training"] = "ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน";
+		$langMod["txt:trainingDe"] = "ข้อมูล".$langMod["txt:training"]." เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
+		$langMod["ep:trainingname"] = "ชื่อหลักสูตร";
+		$langMod["ep:traininginstitute"] = "สถาบัน";
+		$langMod["ep:trainingdegree"] = "วุฒิที่ได้รับ";
+		$langMod["ep:trainingperiod"] = "ระยะเวลา";
+		$langMod["ep:trainingyear"] = "ตั้งแต่";
+	$langMod["ep:background"] = "ประวัติการศึกษา";
+	$langMod["ca:from"] = "คุณมาจากที่ไหน";
+	$langMod["brother:name"] = "ชื่อ-นามสกุลพี่น้องคนที่ ";
+		$langMod["brother:age"] = "อายุพี่น้องคนที่ ";
+		$langMod["brother:job"] = "อาชีพพี่น้องคนที่ ";
+		$langMod["brother:office"] = "สถานที่อยู่สำนักงานพี่น้องคนที่ ";
+		$langMod["brother:tel"] = "เบอรโทรศัพท์พี่น้องคนที่ ";
+		$langMod["brother:bdate"] = "วันเกิดพี่น้องคนที่ ";
+		$langMod["brother:status"] = "สถานะพี่น้องคนที่ ";
+	$langMod["family:first"] = "บุคคลที่ 1";
+		$langMod["family:seconde"] = "บุคคลที่ 2";
+	$langMod["family:status"] = "สถานะ";
+	$langMod["ep:bdate"] = "วันเกิด";
+	$langMod["txt:regis6"] = "ข้อมูลครอบครัว";
+		$langMod["txt:regis6De"] = "ข้อมูลครอบครัว เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
+	$langMod["ca:age"] = "อายุ";
+		$langMod["ca:relations"] = "ความสัมพันธ์";
+		$langMod["ca:addwork"] = "ที่อยู่/ที่ทำงาน";
+		$langMod["ca:tel"] = "โทรศัพท์";
+	$langMod["emergency:bdate"] = "วันเกิดบุคคลที่สามารถติดต่อได้";
+	$langMod["ca:emergency"] = "บุคคลที่สามารถติดต่อได้กรณีเร่งด่วน";
+		$langMod["ca:emergencyDe"] = "ข้อมูล".$langMod["ca:emergency"]." เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
+	$langMod["ca:military"] = "สถานภาพทางทหาร";
+	$langMod["ca:exp"] = "วันหมดอายุ";
+	$langMod["ca:creat"] = "สถานที่ออกบัตร";
+	$langMod["ca:iden"] = "เลขที่บัตรประชาชน";
+	$langMod["ca:place"] = "ภูมิสำเนา";
+	$langMod["ep:addressnow"] ="ที่อยู่ปัจจุบัน";
+	$langMod["career:statusjoin"] = "สมัครงานออนไลน์";
 		$langMod["txt:regis9"]= "ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน";
 		$langMod["txt:regis9De"] = "ประวัติการฝึกอบรม/ดูงาน/ฝึกงาน เป็นข้อมูลส่วนของผู้สมัครที่ได้สมัครเข้ามาในเว็บไซต์ของคุณ";
 		$langMod["txt:titleadd"] = "สร้างข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
@@ -455,4 +536,3 @@ if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 		$langMod["meu:selectgn"] = $langMod["btn:position"];
 
 }
-?>

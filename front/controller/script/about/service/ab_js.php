@@ -44,7 +44,8 @@ switch ($PageActionCareer) {
     //     break;
 
     case 'career-form':
-        $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render='.$sitekey.'"></script>';
+        // $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render='.$sitekey.'"></script>';
+        $listjs[] = '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
         $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptUpload.js' . $lastModify . '"></script>';
         $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/scriptCareer.js' . $lastModify . '"></script>';
         $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script_brethren.js' . $lastModify . '"></script>';
@@ -57,7 +58,7 @@ switch ($PageActionCareer) {
         //select list
         $callListCareerSelect = $aboutPage->callListCareer($config['about']['ab_js']['masterkey'], $page['on'], $limit, $sorting, null, $ContentID);
         $smarty->assign("callListCareerSelect", $callListCareerSelect);
-
+        $smarty->assign("CareerSelect", $ContentID);
         ## breadcrumb
         $breadcrumb = explode("-", $callCMS->fields['menuname']);
         $settingModulus['breadcrumb'] = $breadcrumb[0];
