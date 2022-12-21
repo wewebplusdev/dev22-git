@@ -1,16 +1,17 @@
 var menuid = $('.site-container').data('menuid');
 
-// recaptcha v3
-grecaptcha.ready(function () {
-  // do request for recaptcha token
-  // response is promise with passed token
-  grecaptcha
-    .execute($(".sitekey").data("id"), { action: "validate_captcha" })
-    .then(function (token) {
-      // add token value to form
-      document.getElementById("g-recaptcha-response").value = token;
-  });
-});
+// // recaptcha v3
+// grecaptcha.ready(function () {
+//   // do request for recaptcha token
+//   // response is promise with passed token
+//   grecaptcha
+//     .execute($(".sitekey").data("id"), { action: "validate_captcha" })
+//     .then(function (token) {
+//       // add token value to form
+//       document.getElementById("g-recaptcha-response").value = token;
+//   });
+// });
+
 
 // ############## Start Submit ##############
 //submit

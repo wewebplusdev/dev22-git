@@ -630,6 +630,7 @@ class aboutPage
       " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_quantity as quantity,
       " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_address" . $lang . " as address,
       " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_view as view,
+      " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_statusjoin as statusjoin,
       " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_credate as credate,
       " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
       " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname

@@ -176,18 +176,19 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                     </td>
 
 
-                    <td align="left" width="22%" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span></td>
+                    <td align="left" width="20%" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span></td>
                     <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                        <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?>(<?php echo $langTxt["lg:eng"] ?>)</span></td>
+                        <td width="20%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?>(<?php echo $langTxt["lg:eng"] ?>)</span></td>
                     <?php } ?>
                     <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-                        <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?>(<?php echo $langTxt["lg:chi"] ?>)</span></td>
+                        <td width="20%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?>(<?php echo $langTxt["lg:chi"] ?>)</span></td>
                     <?php } ?>
+                    <td width="10%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langMod["career:statusjoin"] ?></span></td>
                     <td width="10%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langMod["inp:app"] ?></span></td>
-                    <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:status"] ?></span></td>
+                    <td width="10%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:status"] ?></span></td>
                     <!-- <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight">Pin</span></td> -->
-                    <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["us:lastdate"] ?></span></td>
-                    <td width="12%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:manage"] ?></span></td>
+                    <td width="10%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["us:lastdate"] ?></span></td>
+                    <td width="10%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:manage"] ?></span></td>
                 </tr>
                 <?php
                 // SQL SELECT #########################
@@ -200,7 +201,9 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                         " . $mod_tb_root . "_pin,
                                         " . $mod_tb_root . "_subjecten,
                                         " . $mod_tb_root . "_subjectcn,
-                                        " . $mod_tb_root . "_gid FROM " . $mod_tb_root;
+                                        " . $mod_tb_root . "_gid ,
+                                        " . $mod_tb_root . "_statusjoin
+                                        FROM " . $mod_tb_root;
                 $sql = $sql . "  WHERE " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
                 // print_pre($sql);
                 if ($_REQUEST['myRand'] >= 1) {
@@ -247,8 +250,9 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                         $valDateCredate = dateFormatReal($row[2]);
                         $valTimeCredate = timeFormatReal($row[2]);
                         $valStatus = $row[3];
-                        $valPic = $Row[4];
-                        $valGidDb = $Row[8];
+                        $valPic = $row[4];
+                        $valGidDb = $row[8];
+                        $valStatusJoin = $row[9];
                         $valNameEn = rechangeQuot($row[6]);
                         $valNameEn = chechNullVal($valNameEn);
 
@@ -267,6 +271,13 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                             $valStatusClass = "fontContantTbHomeSt";
                         } else {
                             $valStatusClass = "fontContantTbDisable";
+                        }
+                        if ($valStatusJoin == "Enable") {
+                            $valStatusJoinClass = "fontContantTbEnable";
+                        } else if($valStatusJoin == "Home") {
+                            $valStatusJoinClass = "fontContantTbHomeSt";
+                        } else {
+                            $valStatusJoinClass = "fontContantTbDisable";
                         }
 
                         if ($valDivTr == "divSubOverTb") {
@@ -330,6 +341,35 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                             <?php } ?>
 
                             <td class="divRightContantOverTb" valign="top" align="center">
+                                <?php if ($valPermissionContent == "RW") { ?>
+                                    <div id="load_status2<?php echo  $valID ?>">
+                                        <?php if ($valStatusJoin == "Enable") { ?>
+
+                                            <a href="javascript:void(0)" onclick="changeStatus('load_waiting2<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatusJoin ?>', '<?php echo  $valID ?>', 'load_status2<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMgonline.php')"><span class="<?php echo  $valStatusJoinClass ?>"><?php echo  $valStatusJoin ?></span></a>
+
+                                        <?php } else if ($valStatusJoin == "Home") { ?>
+
+                                            <a href="javascript:void(0)" onclick="changeStatus('load_waiting2<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatusJoin ?>', '<?php echo  $valID ?>', 'load_status2<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMgonline.php')"> <span class="<?php echo  $valStatusJoinClass ?>"><?php echo  $valStatusJoin ?></span> </a>
+
+                                        <?php } else { ?>
+
+                                        <a href="javascript:void(0)" onclick="changeStatus('load_waiting2<?php echo  $valID ?>', '<?php echo  $mod_tb_root ?>', '<?php echo  $valStatusJoin ?>', '<?php echo  $valID ?>', 'load_status2<?php echo  $valID ?>', '../<?php echo  $mod_fd_root ?>/statusMgonline.php')"> <span class="<?php echo  $valStatusJoinClass ?>"><?php echo  $valStatusJoin ?></span> </a>
+
+                                        <?php } ?>
+
+                                        <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting2<?php echo  $valID ?>" />
+                                    </div>
+                                <?php } else { ?>
+                                    <?php if ($valStatusJoin == "Enable") { ?>
+                                        <span class="<?php echo  $valStatusJoinClass ?>"><?php echo  $valStatusJoin ?></span>
+                                    <?php } else { ?>
+                                        <span class="<?php echo  $valStatusJoinClass ?>"><?php echo  $valStatusJoin ?></span>
+                                    <?php } ?>
+
+                                <?php } ?>
+                            </td>
+
+                            <td class="divRightContantOverTb" valign="top" align="center">
                                 <a href="mem.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&amp;menukeyid=<?php echo ($_REQUEST['menukeyid'] + 1) ?>&amp;inputGh=<?php echo $valID ?>">
                                     <span class="fontContantTbupdate"><?php echo number_format($count_recordJ) ?></span></a>
                             </td>
@@ -363,6 +403,8 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
                                 <?php } ?>
                             </td>
+
+                            
 
 
                             <!-- <td class="divRightContantOverTb" valign="top" align="center">

@@ -3,11 +3,18 @@ $callSetWebsite = new settingWebsite();
 $smarty->assign("callSetWebsite", $callSetWebsite);
 $infoSetting = $callSetWebsite->callSetting();
 
-/* Start Google Recaptcha */
+/* Start Google Recaptchav3 */
 $sitekey = '6LfP21siAAAAADlhcMQ0tNH_528_DWC67mmqSxRa';
 $smarty->assign("sitekey", $sitekey);
 $secretkey = '6LfP21siAAAAADZThwKgdO_EN9w6atBwzyiBcCAR';
 $smarty->assign("secretkey", $secretkey);
+/* End Google Recaptcha */
+
+/* Start Google Recaptchav2 */
+$sitekey2 = '6LeTd5YjAAAAAHtJXZFYCrOAlchZ5hcUqzM27yQ_';
+$smarty->assign("sitekey2", $sitekey2);
+$secretkey2 = '6LeTd5YjAAAAAK18aKnPA_rymxdErCvrDhI6hmS5';
+$smarty->assign("secretkey2", $secretkey2);
 /* End Google Recaptcha */
 
 /* Start Site map */

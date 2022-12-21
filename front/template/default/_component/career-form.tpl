@@ -78,7 +78,7 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                                             <select class="select-control select-year" name="info[]" id="mockSelect1" style="width: 100%;" required="required">
                                               <option value="">{$lang['career']['select']}</option>
                                               {foreach $callListCareerSelect as $keycallListCareerSelect => $valuecallListCareerSelect}
-                                              <option value="{$valuecallListCareerSelect.id}" {if $req_params['selectcareer'] eq $valuecallListCareerSelect.id}selected{/if}>{$valuecallListCareerSelect.subject}</option>
+                                              <option value="{$valuecallListCareerSelect.id}" {if $CareerSelect eq $valuecallListCareerSelect.id}selected{/if}>{$valuecallListCareerSelect.subject}</option>
                                               {/foreach}
                                             </select>
                                         </div>
@@ -3189,9 +3189,11 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                     </div>
                 </div>
                 <div class="row gutters-custom mt-5 text-center">
+                
                     <div class="col">
                         {* <button type="submit" id="submitform" class="btn btn-xl btn-primary btn-form" title="SUBMIT AN APPLICATION">SUBMIT AN APPLICATION</button> *}
-                        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                        <div class="g-recaptcha" data-sitekey="6LeTd5YjAAAAAHtJXZFYCrOAlchZ5hcUqzM27yQ_" style="margin-bottom: 3em;"></div>
+                        
                         <input type="submit" class="btn btn-xl btn-primary btn-form" id="clicksubmitfromcar" value="{$lang['career']['submit']}">
                     </div>
                 </div>

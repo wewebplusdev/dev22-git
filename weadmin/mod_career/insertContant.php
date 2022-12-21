@@ -74,6 +74,7 @@ if ($_REQUEST['execute'] == "insert") {
 	$insert[$mod_tb_root . "_credate"] = "NOW()";
 	$insert[$mod_tb_root . "_lastdate"] = "NOW()";
 	$insert[$mod_tb_root . "_status"] = "'Disable'";
+	$insert[$mod_tb_root . "_statusjoin"] = "'Disable'";
 	$insert[$mod_tb_root . "_pin"] = "'Unpin'";
 	$insert[$mod_tb_root . "_order"] = "'" . $maxOrder . "'";
 	$sql = "INSERT INTO " . $mod_tb_root . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
