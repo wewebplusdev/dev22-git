@@ -1029,6 +1029,7 @@
 
         <?php include('inc/footer.php'); ?>
 
+        <?php include('inc/modal.php'); ?>
         <?php include('inc/popup.php'); ?>
     </div>
 

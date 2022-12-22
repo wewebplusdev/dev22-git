@@ -51,3 +51,29 @@
         </div>
     </div>
 </div>
+
+<div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="feather icon-x"></span>
+            </button>
+            <div class="modal-body">
+                <form class="form-default">
+                    <div class="input-group">
+                        <div class="form-outline">
+                            <input type="search" id="keywords" class="form-control" placeholder="ค้นหา...">
+                            <label class="visuallyhidden" for="keywords">Search</label>
+                        </div>
+                        <button type="button" class="btn btn-search">
+                            <span class="feather icon-search"></span>
+                        </button>
+                        <!-- <button type="button" class="btn close">
+                            <span class="feather icon-x"></span>
+                        </button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

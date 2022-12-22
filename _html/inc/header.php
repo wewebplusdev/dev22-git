@@ -252,10 +252,10 @@
 						</div>
 						<div class="col-auto">
 							<div class="search">
-								<a href="javascript:void(0)" class="search-toggle" title="search">
+								<a href="javascript:void(0)" class="search-toggle-modal" title="search" data-toggle="modal" data-target="#searchModal">
 									<span class="feather icon-search"></span>
 								</a>
-								<form class="form">
+								<!-- <form class="form">
 									<div class="input-group">
 										<div class="form-outline">
 											<input type="search" id="keywords" class="form-control" placeholder="ค้นหา...">
@@ -268,7 +268,7 @@
 											<span class="feather icon-x"></span>
 										</button>
 									</div>
-								</form>
+								</form> -->
 							</div>
 						</div>
 						<div class="col-auto">
