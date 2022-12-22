@@ -48,6 +48,8 @@ $config['sys']['db']['counter'] = "sy_counter";
 $config['sea']['db']['main'] = "sy_sea";
 $config['seatxt']['db']['main'] = "sy_seatxt";
 $config['seatxts']['db']['main'] = "sy_sea_txts";
+$config['custp']['db']['main'] = "md_custp";
+$config['cusg']['db']['main'] = "md_cusg";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';

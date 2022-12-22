@@ -809,4 +809,56 @@ class settingWebsite
 
         return $strHTML;
     }
+
+    
+    function mail_template($mailbody){
+        global $url_website, $settingWeb;
+        //begin:: Confirm email
+        $strHTML = '
+        <div style="background-color: #fafafa;">
+            <table style="width: 600px; margin: 0 auto; color: #111; font-family: Arial, sans-serif;" bgcolor="#fff" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td height="40" style="border-top: 4px solid #013f94;"></td>
+                </tr>
+                <tr>
+                    <td bgcolor="#fff">
+                        <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="25"></td>
+                                <td>
+                                    <img src="'.$url_website.'/assets/img/static/brand.png" alt="" width="110" style="border: none; float: left;">
+                                </td>
+                                <td width="30"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>';
+        $strHTML .= $mailbody;
+        $strHTML .= '
+                <tr>
+                    <td>
+                        <table style="width: 100%;" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td height="30"></td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <p style="font-size: 14px; color: #999; line-height: 22px; font-weight: normal;">
+                                        '. $settingWeb["subject"] .'<br/>
+                                        URL : '._URL.'
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        ';
+        //end:: Confirm email
+        return $strHTML;
+    }
 }

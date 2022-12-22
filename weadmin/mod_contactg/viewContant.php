@@ -37,14 +37,10 @@ $sql .= "
 " . $mod_tb_root . "_company ,
 " . $mod_tb_root . "_model ,
 " . $mod_tb_root . "_qty,
-" . $mod_tb_root . "_sid,
-" . $mod_tb_root . "_city,  
-" . $mod_tb_root . "_ct,
-" . $mod_tb_root . "_iden,
-".$mod_tb_root_subgroup."_subject
+" . $mod_tb_root . "_sid
 ";
-$sql .= " FROM " . $mod_tb_root . " INNER JOIN ".$mod_tb_root_subgroup." ON ".$mod_tb_root."_gid = ".$mod_tb_root_subgroup."_id WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
-/* print_pre($sql); */
+$sql .= " FROM " . $mod_tb_root . "  WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
+// print_pre($sql);die;
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
 $valID = $Row[0];
@@ -68,7 +64,11 @@ $claim = claim($valaclaim);
 foreach ($valclaim as $value){
     $valanewclaim = $value;
 }
-$valSid = $Row[15];
+$valSid = unserialize($Row[15]);
+$arr_sid = array();
+foreach ($valSid as $keyvalSid => $valuevalSid) {
+    $arr_sid[] = "'".$valuevalSid."'";
+}
 $valCity = $Row[16];
 $valCt = $Row[17];
 $valIden = $Row[18];
@@ -156,10 +156,6 @@ logs_access('3', 'View');
                         <div class="formDivView"><?php echo  $valFName . " " . $valLName; ?></div>
                     </td>
                 </tr>
-                <!-- <tr >
-                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo  $langMod["tit:lname"] ?>:<span class="fontContantAlert"></span></td>
-                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo  $valLName ?></div></td>
-                                </tr> -->
                 <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:email"] ?>:<span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
@@ -172,143 +168,26 @@ logs_access('3', 'View');
                         <div class="formDivView"><?php echo  $valTel ?></div>
                     </td>
                 </tr>
-                <!-- <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:country"] ?>:<span class="fontContantAlert"></span></td>
-                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                        <div class="formDivView">
-                            <?php
-                            $sql_group = "SELECT ";
-                            if ($_REQUEST['inputLt'] == "Thai") {
-                                $sql_group .= "  " . $mod_tb_root_ct . "_id," . $mod_tb_root_ct . "_name";
-                            } else if ($_REQUEST['inputLt'] == "Eng") {
-                                $sql_group .= "  " . $mod_tb_root_ct . "_id," . $mod_tb_root_ct . "_nameen";
-                            } else {
-                                $sql_group .= " " . $mod_tb_root_ct . "_id," . $mod_tb_root_ct . "_nameen ";
-                            }
-
-                            $sql_group .= "  FROM " . $mod_tb_root_ct . " WHERE  " . $mod_tb_root_ct . "_id='" . $valCt . "'";
-                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
-                            $row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group);
-                            $row_groupid = $row_group[0];
-                            echo $row_groupname = $row_group[1];
-                            ?>
-
-
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:address"] ?>:<span class="fontContantAlert"></span></td>
-                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                        <div class="formDivView"><?php echo  $valAddress ?></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:city"] ?>:<span class="fontContantAlert"></span></td>
-                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                        <div class="formDivView"><?php echo  $valCity ?></div>
-                    </td>
-                </tr> -->
-
-                <tr>
-                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:subjectg"] ?>:<span class="fontContantAlert"></span></td>
-                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                        <div class="formDivView">
-                            <?php
-                            $sql_group = "SELECT ";
-                            if ($_REQUEST['inputLt'] == "Thai") {
-                                $sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject";
-                            } else if ($_REQUEST['inputLt'] == "Eng") {
-                                $sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjecten";
-                            } else {
-                                $sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjectcn ";
-                            }
-
-                            $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_id='" . $valGid . "'";
-                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
-                            $row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group);
-                            $row_groupid = $row_group[0];
-                            echo $row_groupname = $row_group[1];
-                            ?>
-
-
-                        </div>
-                    </td>
-                </tr>
+               
                 <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:subjectsg"] ?>:<span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="formDivView">
                             <?php
-                            $sql_group = "SELECT ";
-                            if ($_REQUEST['inputLt'] == "Thai") {
-                                $sql_group .= "	".$mod_tb_root."_id, 
-                                ".$mod_tb_root."_fname, 
-                                ".$mod_tb_root."_subject, 
-                                ".$mod_tb_root."_status,
-                                ".$mod_tb_root."_credate ,
-                                ".$mod_tb_root."_message  ,
-                                ".$mod_tb_root."_email  ,
-                                ".$mod_tb_root."_tel  ,
-                                ".$mod_tb_root."_gid ,
-                                ".$mod_tb_root."_lname ,
-                                ".$mod_tb_root."_company ,
-                                ".$mod_tb_root."_model ,
-                                ".$mod_tb_root."_qty ,
-                                ".$mod_tb_root."_sid,
-                                ".$mod_tb_root."_delete,
-                                ".$mod_tb_root_subgroup."_subject";
-                            } else if ($_REQUEST['inputLt'] == "Eng") {
-                                $sql_group .= "  ".$mod_tb_root."_id, 
-                                ".$mod_tb_root."_fname, 
-                                ".$mod_tb_root."_subject, 
-                                ".$mod_tb_root."_status,
-                                ".$mod_tb_root."_credate ,
-                                ".$mod_tb_root."_message  ,
-                                ".$mod_tb_root."_email  ,
-                                ".$mod_tb_root."_tel  ,
-                                ".$mod_tb_root."_gid ,
-                                ".$mod_tb_root."_lname ,
-                                ".$mod_tb_root."_company ,
-                                ".$mod_tb_root."_model ,
-                                ".$mod_tb_root."_qty ,
-                                ".$mod_tb_root."_sid,
-                                ".$mod_tb_root."_delete,
-                                ".$mod_tb_root_subgroup."_subjecten";
-                            } else {
-                                $sql_group .= " ".$mod_tb_root."_id, 
-                                ".$mod_tb_root."_fname, 
-                                ".$mod_tb_root."_subject, 
-                                ".$mod_tb_root."_status,
-                                ".$mod_tb_root."_credate ,
-                                ".$mod_tb_root."_message  ,
-                                ".$mod_tb_root."_email  ,
-                                ".$mod_tb_root."_tel  ,
-                                ".$mod_tb_root."_gid ,
-                                ".$mod_tb_root."_lname ,
-                                ".$mod_tb_root."_company ,
-                                ".$mod_tb_root."_model ,
-                                ".$mod_tb_root."_qty ,
-                                ".$mod_tb_root."_sid,
-                                ".$mod_tb_root."_delete,
-                                ".$mod_tb_root_subgroup."_subjectcn ";
+                            if (!empty($arr_sid)) {
+                                $sql_group = "SELECT ";
+                                $sql_group .= " ".$mod_tb_root_group."_id, 
+                                ".$mod_tb_root_group."_subject, 
+                                ".$mod_tb_root_group."_title";
+                                $sql_group .= "  FROM ".$mod_tb_root_group." WHERE  " . $mod_tb_root_group . "_id IN (".implode(",",array_values($arr_sid)).")";
+                                $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                                $count_record=wewebNumRowsDB($coreLanguageSQL,$query_group);
+                                while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                                    echo "- ".$row_group[1]."<br>";
+                                }
+                            }else{
+                                echo "-";
                             }
-
-                            $sql_group .= "  FROM ".$mod_tb_root." INNER JOIN ".$mod_tb_root_subgroup." ON ".$mod_tb_root."_gid = ".$mod_tb_root_subgroup."_id WHERE  " . $mod_tb_root . "_sid='" . $valSid . "'";
-                            $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
-/*                             print_r($sql_group);die; */
-                            $count_record=wewebNumRowsDB($coreLanguageSQL,$query_group);
-                            $row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group);
-                            $row_groupid = $row_group[0];
-                            $valaclaim = unserialize($row_group[13]);
-                            $valanewclaim = implode(",",array_values($valaclaim));
-                            $claim = claim($valaclaim);
-		                    foreach ($valclaim as $value){
-			                    $valanewclaim = $value;
-		            }
-                    foreach($claim as $value){
-                        echo "- $value<br>";
-                    }
                             ?>
 
                         </div>
