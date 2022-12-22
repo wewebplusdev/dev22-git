@@ -333,7 +333,7 @@ class policyPage
     return $result;
   }
 
-  function callmailcontact($masterkey, $id = null){
+  function callmailcontact($masterkey, $id = null, $arr_id = null){
     global $config, $db, $url;
   
     $sql = "SELECT
@@ -349,10 +349,200 @@ class policyPage
     if (!empty($id)) {
       $sql .=" AND " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_gid = '".$id."'";
     }
+
+    if (!empty($arr_id)) {
+      $sql .=" AND " . $config['cue']['db']['main'] . "." . $config['cue']['db']['main'] . "_gid IN (" . implode(',', array_values($arr_id)) . ")";
+    }
     
     // print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
 
+  function generateKey()
+  {
+    global $menuActive, $url;
+    // สร้างรหัสสุ่ม
+    $arr_a_z = range('a', 'z');
+    $arr_A_Z = range('A', 'Z');
+    $arr_0_9 = range(0, 9);
+    $arr_a_9 = array_merge($arr_a_z, $arr_A_Z, $arr_0_9);
+    $str_a_9 = implode($arr_a_9);
+    $str_a_9 = str_shuffle($str_a_9);
+    $member_verify_code = substr($str_a_9, 0, 15);
+    // get path 
+    // $urlVerify = _URL ."/". $url->pagelang[2] ."/". $menuActive." /step-2?token=".$member_verify_code."";
+
+    return $member_verify_code;
+  }
+
+  
+  function callcustp($key)
+  {
+    global $config, $db, $url;
+
+    $sql = "SELECT
+    " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_id as id,
+    " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_masterkey as masterkey,
+    " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_fname as fname,
+    " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_lname as lname,
+    " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_email as email,
+    " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_tel as tel,
+    " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_key as token,
+    " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_credate as credate
+  FROM
+    " . $config['custp']['db']['main'] . "
+  WHERE
+    " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_masterkey = '" . $config['policy']['req']['masterkey'] . "'
+    ";
+
+    if (!empty($key)) {
+      $sql .= "
+          AND " . $config['custp']['db']['main'] . "." . $config['custp']['db']['main'] . "_key = '" . $key . "'
+      ";
+    }
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+    //#################################################
+    function DateDiff($strDate1, $strDate2 = null)
+    {
+      //#################################################
+  
+      $Date = (strtotime($strDate2) - strtotime($strDate1)) / (60 * 60 * 24);  // 1 day = 60*60*24
+      return $Date;
+    }
+
+    function getSiteName($HTTP_SITEKEY, $HTTP_SECRETKEY)
+    {
+      global $config, $db, $url;
+  
+      $sql = " SELECT 
+      " . $config['cmg']['main']['db'] . "_id as id, 
+      " . $config['cmg']['main']['db'] . "_subject as subject, 
+      " . $config['cmg']['main']['db'] . "_controlkey as controlkey,
+      " . $config['cmg']['main']['db'] . "_secretkey as secretkey,
+      " . $config['cmg']['main']['db'] . "_url as url           
+      FROM 
+      " . $config['cmg']['main']['db'] . " 
+      WHERE 
+      " . $config['cmg']['main']['db'] . "_controlkey = '" . $HTTP_SITEKEY . "' AND 
+      " . $config['cmg']['main']['db'] . "_secretkey = '" . $HTTP_SECRETKEY . "' AND 
+      " . $config['cmg']['main']['db'] . "_status != 'Disable'
+      
+      ";
+      $result = $db->execute($sql);
+      return $result;
+    }
+    
+  function callCusGroup()
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_id as id,
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_masterkey as masterkey,
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_subject" . $lang . " as subject
+  
+  
+    FROM
+    " . $config['cug']['db']['main'] . "
+    WHERE
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_masterkey = '" . $config['policy']['req']['masterkey'] . "' AND
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_status = 'Enable'
+    ";
+
+
+    $sql .= " ORDER  BY " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_order DESC ";
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callCountry()
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['ct']['main']['db'] . "." . $config['ct']['main']['db'] . "_id as id,
+    " . $config['ct']['main']['db'] . "." . $config['ct']['main']['db'] . "_name" . $lang . " as subject
+  
+  
+    FROM
+    " . $config['ct']['main']['db'] . "
+    WHERE
+    1=1
+    ";
+
+
+    $sql .= " ORDER  BY " . $config['ct']['main']['db'] . "." . $config['ct']['main']['db'] . "_name" . $lang . " ASC ";
+
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callGroupContact($id)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['cug']['main']['db'] . "." . $config['cug']['main']['db'] . "_id,
+    " . $config['cug']['main']['db'] . "." . $config['cug']['main']['db'] . "_masterkey,
+    " . $config['cug']['main']['db'] . "." . $config['cug']['main']['db'] . "_subject".$lang."
+  FROM
+    " . $config['cug']['main']['db'] . "
+  WHERE
+    " . $config['cug']['main']['db'] . "." . $config['cug']['main']['db'] . "_masterkey = '" . $config['policy']['req']['masterkey'] . "' AND
+    " . $config['cug']['main']['db'] . "." . $config['cug']['main']['db'] . "_status = 'Enable'
+    ";
+
+    if (!empty($id)) {
+      $sql .= "
+          AND " . $config['cug']['main']['db'] . "." . $config['cug']['main']['db'] . "_id = $id
+      ";
+    }
+
+    $sql .= "
+        ORDER  BY " . $config['cug']['main']['db'] . "." . $config['cug']['main']['db'] . "_order DESC
+        ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+  
+  function callSubGroupContact($id)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+
+    $sql = "SELECT
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_id,
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_masterkey,
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_subject".$lang."
+  FROM
+    " . $config['cug']['db']['main'] . "
+  WHERE
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_masterkey = '" . $config['policy']['req']['masterkey'] . "' AND
+    " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_status = 'Enable'
+    ";
+
+    if (!empty($id)) {
+      $sql .= "
+          AND " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_id in (".implode(",",array_values($id)).")
+      ";
+    }
+
+    $sql .= "
+        ORDER  BY " . $config['cug']['db']['main'] . "." . $config['cug']['db']['main'] . "_order DESC
+        ";
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
 }

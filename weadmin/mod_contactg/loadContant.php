@@ -70,7 +70,21 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		$inputSearch = $_REQUEST['inputSearch'];
 	}
 
-	$sql_export = "SELECT  " . $mod_tb_root . "_id ," . $mod_tb_root . "_sid, " . $mod_tb_root . "_credate, " . $mod_tb_root . "_status 	, " . $mod_tb_root . "_subject, " . $mod_tb_root . "_message, " . $mod_tb_root . "_fname  ,  " . $mod_tb_root . "_address  ,  " . $mod_tb_root . "_email  ,  " . $mod_tb_root . "_tel   ,  " . $mod_tb_root . "_ip   ,  " . $mod_tb_root . "_gid  FROM " . $mod_tb_root . " INNER JOIN " . $mod_tb_root_subgroup . " ON " . $mod_tb_root . "_gid = " . $mod_tb_root_subgroup . "_id";
+	$sql_export = "SELECT  
+	" . $mod_tb_root . "_id ,
+	" . $mod_tb_root . "_sid,
+	" . $mod_tb_root . "_credate,
+	" . $mod_tb_root . "_status,
+	" . $mod_tb_root . "_subject,
+	" . $mod_tb_root . "_message,
+	" . $mod_tb_root . "_fname,
+	" . $mod_tb_root . "_address,
+	" . $mod_tb_root . "_email,
+	" . $mod_tb_root . "_tel,
+	" . $mod_tb_root . "_ip,
+	" . $mod_tb_root . "_gid,
+	" . $mod_tb_root . "_lname
+	FROM " . $mod_tb_root . " ";
 	$sql_export = $sql_export . "  WHERE  " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND " . $mod_tb_root . "_delete ='Enable' ";
 
 	if ($_REQUEST['inputGh'] >= 1) {
@@ -230,15 +244,14 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 		" . $mod_tb_root . "_model ,
 		" . $mod_tb_root . "_qty ,
 		" . $mod_tb_root . "_sid,
-		" . $mod_tb_root . "_delete,
-		" . $mod_tb_root_group . "_subject
+		" . $mod_tb_root . "_delete
 		
-	FROM " . $mod_tb_root . " INNER JOIN " . $mod_tb_root_group . " ON " . $mod_tb_root . "_gid = " . $mod_tb_root_group . "_id WHERE " . $mod_tb_root . "_delete ='Enable'";
+	FROM " . $mod_tb_root . "  WHERE " . $mod_tb_root . "_delete ='Enable'";
 
 				$sql = $sql . "  and " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "' ";
 				/* print_pre($sql); */
 				if ($_REQUEST['inputGh'] >= 1) {
-					$sql = $sql . "  AND " . $mod_tb_root . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
+					$sql = $sql . "  AND " . $mod_tb_root . "_sid REGEXP '.*;s:[0-9]+:\"" . $_REQUEST['inputGh'] . "\".*' ";
 				}
 				if ($_REQUEST['inputclaim'] >= 1) {
 					$sql = $sql . " AND " . $mod_tb_root . "_sid REGEXP '.*;s:[0-9]+:\"" . $_REQUEST['inputclaim'] . "\".*' ";
@@ -268,7 +281,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 				$recordstart = ($module_pageshow - 1) * $module_pagesize;
 
 				$sql .= " ORDER BY $module_orderby $module_adesc LIMIT $recordstart , $module_pagesize ";
-				// print_pre($sql);die;
+				// print_pre($sql);
 				$query = wewebQueryDB($coreLanguageSQL, $sql);
 				$count_record = wewebNumRowsDB($coreLanguageSQL, $query);
 				$index = 1;
@@ -278,7 +291,6 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 						$row = wewebFetchArrayDB($coreLanguageSQL, $query);
 						$valID = $row[0];
 						$valName = rechangeQuot($row[1]) . ' ' . rechangeQuot($row[9]);
-						print_pre($row[1]);
 						$valSubject = rechangeQuot($row[2]);
 						$valStatus = $row[3];
 						$valDateCredate = dateFormatReal($row[4]);
@@ -297,7 +309,6 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 						$datetime = new DateTime($row[4]);
 						$datealltime = $datetime->diff($now)->format('%d');
 						$claim = claim($valaclaim);
-						print_pre($claim);
 						foreach ($valclaim as $value) {
 							$valanewclaim = $value;
 						}

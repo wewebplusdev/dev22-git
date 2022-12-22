@@ -2428,8 +2428,8 @@ function changeQuot_code($Data) {
 }
 
 function claim($valaclaim){
-    global $valaclaim ,$mod_tb_root_subgroup,$coreLanguageSQL ;
-    $mysql = "SELECT ".$mod_tb_root_subgroup."_subject FROM ".$mod_tb_root_subgroup." WHERE ".$mod_tb_root_subgroup."_id IN (".implode(",",array_values($valaclaim)).") ";
+    global $valaclaim ,$mod_tb_root_group,$coreLanguageSQL ;
+    $mysql = "SELECT ".$mod_tb_root_group."_subject FROM ".$mod_tb_root_group." WHERE ".$mod_tb_root_group."_id IN (".implode(",",array_values($valaclaim)).") ";
     $querymysql = wewebQueryDB($coreLanguageSQL,$mysql);
     $countrow = wewebNumRowsDB($coreLanguageSQL,$querymysql);
     if ($countrow >= 1){

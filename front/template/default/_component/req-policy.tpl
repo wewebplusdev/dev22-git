@@ -127,6 +127,7 @@
                             </div> *}
                     <div class="row mt-sm-5 mt-4">
                         <div class="col text-center">
+                            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                             <input type="submit" class="btn btn-primary" id="submitForm" title="btn btn-primary"
                                 value="{$lang['policy']['btn-req']}"></input>
                         </div>

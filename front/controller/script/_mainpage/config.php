@@ -48,9 +48,12 @@ $config['sys']['db']['counter'] = "sy_counter";
 $config['sea']['db']['main'] = "sy_sea";
 $config['seatxt']['db']['main'] = "sy_seatxt";
 $config['seatxts']['db']['main'] = "sy_sea_txts";
+$config['custp']['db']['main'] = "md_custp";
+$config['cusg']['db']['main'] = "md_cusg";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
+$config['feed']['main']['masterkey'] = 'feed';
 $config['about']['ab_odc']['masterkey'] = 'ab_odc';
 $config['about']['ab_odw']['masterkey'] = 'ab_odw';
 $config['about']['ab_ib']['masterkey'] = 'ab_ib';

@@ -38,13 +38,13 @@
          <div class="container mt-5">
             <div class="row aling-items-center gutters-10">
                <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
-               {if $settingModulus['rssfeed']}
+               {* {if $settingModulus['rssfeed']}
                   <div class="col-auto">
                      <a href="{$ul}/rss/{$callCMS->fields.masterkey}GIT{$settingModulus['group']}.xml" target="_blank" class="rss">
                         <img src="{$template}/assets/img/icon/icon-rss.png" alt="icon rss">
                      </a>
                   </div>
-               {/if}
+               {/if} *}
             </div>
             <div class="default-tab-slider default-slick" data-slick='{$initialSlide2}'>
                {foreach $arrMenu as $keyarrMenu => $valuearrMenu}
@@ -61,7 +61,10 @@
       <div class="container">
          <div class="row align-items-center">
             <div class="col-auto">
-               <div class="h-title">{$callGroup->fields.subject}</div>
+               <div class="h-title">{$callGroup->fields.subject}
+               {if $settingModulus['rssfeed']}<a href="{$ul}/rss/{$callCMS->fields.masterkey}GIT{$settingModulus['group']}.xml" target="_blank" class="rss" style="display: inline;">
+                  <img src="{$template}/assets/img/icon/icon-rss.png" alt="icon rss">
+               </a>{/if}</div>
             </div>
             {if count($callYear) > 0 && $callGroup->fields.isstatic==0}
                <div class="col text-right">

@@ -57,6 +57,63 @@
       {/if}
 
       <div class="container">
+    <div class="default-bar">
+      <div class="row align-items-center">
+        <div class="col-md-auto">
+          <div class="whead">
+            <div class="h-title">{$callCMS->fields.subject}</div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="social-block">
+            <div class="title">{$lang['system']['share']} :</div>
+            <ul class="item-list">
+              <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={$fullurl}" target="_blank" class="link">
+                  <img src="{$template}/assets/img/icon/icon-social-facebook.svg" alt=""
+                    style=" width: auto; ">
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/intent/tweet?url={$fullurl}" target="_blank" class="link">
+                  <img src="{$template}/assets/img/icon/icon-social-twitter.svg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="mailto:?subject={$callCMS->fields.subject}&amp;body=Check out this site : {$fullurl}"
+                title="{$infoSetting->fields['subject']}" class="link">
+                  <img src="{$template}/assets/img/icon/icon-social-gmail.svg" alt="">
+                </a>
+              </li>
+              <li class="-bsc"></li>
+              <li>
+                <a href="javascript:window.print()" class="link">
+                  <img src="{$template}/assets/img/icon/icon-print.svg" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="whead-addon -bsc">
+            <div class="detail-info">
+              <ul class="item-list">
+                <li>{$callCMS->fields.credate|DateThai:'23':{$langon}:'shot3'}</li>
+                <li>
+                  <span class="feather icon-eye mr-2"></span>
+                  {$callCMS->fields.view} {$lang['system']['view']}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="container">
         {if $callCMS->fields.htmlfilename neq ""}
           <div class="editor-content">
             <!-- CK Editor -->

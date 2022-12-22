@@ -71,7 +71,7 @@ $langMod["txt:titles"] = "Setting " .getNameMenu($_REQUEST["menukeyid"]);
 $langMod["txt:titlesDe"] = "Please enter details. For use in display on your website. ";
 }else{
 		// $langMod["meu:group"] = "กลุ่ม".getNameMenu($_REQUEST["menukeyid"]);
-		$langMod["meu:group"] = "กลุ่มบริษัท";
+		$langMod["meu:group"] = "กลุ่มสิทธิ";
 		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
 		$langMod["txt:titleadd"] = "สร้างข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
@@ -95,7 +95,7 @@ $langMod["txt:titlesDe"] = "Please enter details. For use in display on your web
 		$langMod["tit:subject"] ="ชื่อ".getNameMenu($_REQUEST["menukeyid"]);
 
 		// $langMod["tit:subject"] ="Subject";
-		$langMod["tit:subjectg"] = 'ชื่อบริษัท' ; ///$langMod["meu:group"];
+		$langMod["tit:subjectg"] = 'ชื่อสิทธิ' ; ///$langMod["meu:group"];
 		$langMod["tit:tel"] ="เบอร์โทรศัพท์";
 		$langMod["tit:by"] ="ผู้ติดต่อ";
 		$langMod["tit:mgs"] ="ข้อความ";
