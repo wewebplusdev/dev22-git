@@ -51,6 +51,7 @@ $config['seatxts']['db']['main'] = "sy_sea_txts";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
+$config['feed']['main']['masterkey'] = 'feed';
 $config['about']['ab_odc']['masterkey'] = 'ab_odc';
 $config['about']['ab_odw']['masterkey'] = 'ab_odw';
 $config['about']['ab_ib']['masterkey'] = 'ab_ib';

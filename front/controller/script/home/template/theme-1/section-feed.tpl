@@ -6,7 +6,7 @@
       <div class="default-slider default-slider-dots slider">
       {foreach $callFeed as $keycallFeed => $valuecallFeed}
           <div class="item">
-            <a href="javascript:void(0);" class="link" title="">
+            <a href="{$ul}/information/detail/{$valuecallFeed.id}" class="link" title="">
               <div class="wrapper">
                 <div class="inner">
                   <div class="title text-limit -x2">
@@ -34,7 +34,7 @@
       {/foreach}
       </div>
       <div class="load-more-hide text-center">
-        <a href="https://infocenter.git.or.th/" target="_blank" class="btn btn-lg btn-border-light"
+        <a href="{$ul}/information" class="btn btn-lg btn-border-light"
           title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
       </div>
     </div>
