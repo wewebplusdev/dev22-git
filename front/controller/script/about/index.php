@@ -17,8 +17,6 @@ $showslick = true; // slick shows
 
 if (empty($MenuID)) {
     $MenuID = $config['about']['ab_odc']['masterkey'];
-}else {
-    $MenuID = $url->segment[1];
 }
 
 ## REQUEST_URI
