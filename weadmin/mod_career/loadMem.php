@@ -210,7 +210,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
       </table>
     </div>
-    <div style="clear:both;"></div>
+    <!-- <div style="clear:both;"></div> -->
     <div class="divRightHeadSearch">
 
       <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">

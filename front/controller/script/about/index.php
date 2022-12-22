@@ -2,7 +2,7 @@
 
 $menuActive = "about";
 $menuDetail = "detail";
-$listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script/'.$menuActive.'/js/script.js'.$lastModify.'"></script>';
+$listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script.js' . $lastModify . '"></script>';
 
 $aboutPage = new aboutPage;
 $arrMenu = array();
@@ -82,7 +82,7 @@ switch ($MenuID) {
     case 'ab_js': //แหล่งงาน
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_js.php';
         break;
-    
+
     default: //ทิศทางองค์กร
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_odc-ab_odw.php';
         break;
