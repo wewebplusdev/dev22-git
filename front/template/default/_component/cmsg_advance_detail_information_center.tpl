@@ -32,21 +32,63 @@
     <div class="border-nav-slider"></div>
     {/if}
     
-      <div class="container mt-5">
-        <div class="row aling-items-center gutters-10">
-          <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
-          
-            <div class="col-auto">
-              <a href="{$ul}/rss/{$callCMS->fields.masterkey}GIT{$settingModulus['group']}.xml" target="_blank" class="rss">
-                  <img src="{$template}/assets/img/icon/icon-rss.png" alt="icon rss">
-              </a>
-            </div>
-            
+    <div class="container">
+    <div class="default-bar">
+      <div class="row align-items-center">
+        <div class="col-md-auto">
+          <div class="whead">
+            <div class="h-title">{$callCMS->fields.subject}</div>
+          </div>
         </div>
-        <div class="row aling-items-center gutters-10">
-        <h4 class="text-primary mb-4">{$callCMS->fields.subject}</h4>
+        <div class="col-md">
+          <div class="social-block">
+            <div class="title">{$lang['system']['share']} :</div>
+            <ul class="item-list">
+              <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={$fullurl}" target="_blank" class="link">
+                  <img src="{$template}/assets/img/icon/icon-social-facebook.svg" alt=""
+                    style=" width: auto; ">
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/intent/tweet?url={$fullurl}" target="_blank" class="link">
+                  <img src="{$template}/assets/img/icon/icon-social-twitter.svg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="mailto:?subject={$callCMS->fields.subject}&amp;body=Check out this site : {$fullurl}"
+                title="{$infoSetting->fields['subject']}" class="link">
+                  <img src="{$template}/assets/img/icon/icon-social-gmail.svg" alt="">
+                </a>
+              </li>
+              <li class="-bsc"></li>
+              <li>
+                <a href="javascript:window.print()" class="link">
+                  <img src="{$template}/assets/img/icon/icon-print.svg" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="whead-addon -bsc">
+            <div class="detail-info">
+              <ul class="item-list">
+                <li>{$callCMS->fields.credate|DateThai:'23':{$langon}:'shot3'}</li>
+                <li>
+                  <span class="feather icon-eye mr-2"></span>
+                  {$callCMS->fields.view} {$lang['system']['view']}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
     
       
     <div class="container">
