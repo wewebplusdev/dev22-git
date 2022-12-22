@@ -68,9 +68,6 @@
                         <button type="button" class="btn btn-search">
                             <span class="feather icon-search"></span>
                         </button>
-                        <!-- <button type="button" class="btn close">
-                            <span class="feather icon-x"></span>
-                        </button> -->
                     </div>
                 </form>
             </div>

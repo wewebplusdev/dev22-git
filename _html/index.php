@@ -900,6 +900,16 @@
                                 <a class="item" href="#gitBook3" data-toggle="tab">GIT Bookstore</a>
                             </li>
                         </ul>
+                        <!-- <div class="default-nav-tab">
+                            <div class="slider">
+                                <div>
+                                    <a class="item active" href="#labUpdate1" data-toggle="tab">บันทึกจากห้องปฏิบัติการ</a>
+                                </div>
+                                <div>
+                                    <a class="item" href="#labUpdate2" data-toggle="tab">ความรู้เรื่องโลหะมีค่า</a>
+                                </div>
+                            </div>
+                        </div> -->
                         <div class="tab-content clearfix">
                             <div class="tab-pane" id="gitBook1">
                                 gitBook1
