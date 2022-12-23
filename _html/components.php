@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-12">
+                            <div class="col-lg-3 col-md-6 col-12">
                                 <div class="form-group has-feedback">
                                     <label class="control-label" for="contact">จัดเรียง</label>
                                     <div class="select-wrapper">
@@ -41,6 +41,18 @@
                                             <option value="SELECT2">ปรับปรุงล่าสุด</option>
                                             <option value="SELECT3">ดาวน์โหลดสูง - ต่ำ</option>
                                             <option value="SELECT4">เข้าชมสูง - ต่ำ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6 col-12">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label" for="yearSelect">ปี</label>
+                                    <div class="select-wrapper">
+                                        <select class="select-control select-year" name="ordernews" id="yearSelect" style="width: 100%;">
+                                            <option value="SELECT1">2565</option>
+                                            <option value="SELECT2">2564</option>
+                                            <option value="SELECT3">2563</option>
                                         </select>
                                     </div>
                                 </div>

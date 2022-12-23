@@ -76,10 +76,10 @@
     
             <div class="default-page pdpa-page">
                 <div class="container">
-                    <div class="h-title">
-                        นโยบายความเป็นส่วนตัวสำหรับลูกค้า
-                    </div>
                     <div class="editor-content">
+                        <div class="h-title">
+                            นโยบายความเป็นส่วนตัวสำหรับลูกค้า
+                        </div>
                         <div class="title">
                             นโยบายความเป็นส่วนตัวสำหรับลูกค้า
                         </div>

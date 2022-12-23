@@ -4749,11 +4749,11 @@ li.fancybox-thumbs-loading {
   font-size: var(--typo-sm);
   font-weight: var(--fw-medium);
   color: var(--color-dark);
-  border: 1px solid #D0DBFF;
+  border: 1px solid #d0dbff;
   padding: 20px 120px;
 }
 .default-page .editor-content .border-block .border-desc {
-  border: 1px solid #D0DBFF;
+  border: 1px solid #d0dbff;
   border-top: 1px solid transparent;
   padding: 30px 100px;
 }
@@ -4799,24 +4799,24 @@ li.fancybox-thumbs-loading {
   font-size: 15px;
 }
 .default-page .editor-content .organization-direction .list-wrapper .-bg-style-1 {
-  background-color: #1C45D6;
+  background-color: #1c45d6;
 }
 .default-page .editor-content .organization-direction .list-wrapper .-bg-style-2 {
-  background-color: #013F94;
+  background-color: #013f94;
 }
 .default-page .editor-content .organization-direction .list-wrapper .-bg-style-3 {
   background-color: #091741;
 }
 .default-page .editor-content .organization-direction .list-wrapper .-bg-style-4 {
-  background-color: #4E84D3;
+  background-color: #4e84d3;
 }
 .default-page .editor-content .organization-direction .list-wrapper .-bg-style-5 {
-  background-color: #F2F5FF;
+  background-color: #f2f5ff;
 }
 .default-page .editor-content .organization-direction .list-wrapper .-bg-style-5 p {
   font-size: var(--typo-lg);
   width: inherit;
-  color: #4E84D3;
+  color: #4e84d3;
 }
 .default-page .editor-content .button.-ck {
   margin-top: 50px;
@@ -4869,18 +4869,18 @@ li.fancybox-thumbs-loading {
   margin-bottom: 20px;
 }
 .default-page .editor-content .note-flow-chart ul .-color-1::before {
-  background-color: #7289D9;
+  background-color: #7289d9;
 }
 .default-page .editor-content .note-flow-chart ul .-color-2::before {
-  background-color: #EFEFEF;
+  background-color: #efefef;
 }
 .default-page .editor-content .note-flow-chart ul .-color-3::before {
-  background-color: #CBD6FF;
+  background-color: #cbd6ff;
 }
 .default-page .editor-content .btn-rounded.-ck {
   margin: 30px 0;
   border-radius: 40px;
-  background-color: #F2F5FF;
+  background-color: #f2f5ff;
   color: var(--color-primary);
 }
 .default-page .editor-content .consultant-search {
@@ -4977,8 +4977,8 @@ li.fancybox-thumbs-loading {
 }
 .default-page .editor-content .collapse-block .card-body.precious-metal table tbody td p:nth-child(even) {
   background-color: rgba(208, 219, 255, 0.5411764706);
-  border-top: 1px solid #D0DBFF;
-  border-bottom: 1px solid #D0DBFF;
+  border-top: 1px solid #d0dbff;
+  border-bottom: 1px solid #d0dbff;
 }
 .default-page .editor-content .collapse-block .card-body.precious-metal table {
   height: 579px;
@@ -4992,13 +4992,13 @@ li.fancybox-thumbs-loading {
   width: 200px;
 }
 .default-page .editor-content .border-table {
-  border: 1px solid #D0DBFF;
+  border: 1px solid #d0dbff;
   border-top: 1px solid transparent;
   padding: 10px 15px;
   margin: 0;
 }
 .default-page .editor-content .border-table p {
-  color: #2B63FF;
+  color: #2b63ff;
   margin-bottom: 30px;
 }
 .default-page .editor-content .download-block .title {
@@ -5045,6 +5045,28 @@ li.fancybox-thumbs-loading {
 .editor-content p:last-child,
 .default-page .editor-content p:last-child {
   margin-bottom: 0;
+}
+.editor-content div,
+.editor-content h2,
+.editor-content h3,
+.editor-content h4,
+.editor-content h5,
+.editor-content p,
+.editor-content span,
+.default-page .editor-content div,
+.default-page .editor-content h2,
+.default-page .editor-content h3,
+.default-page .editor-content h4,
+.default-page .editor-content h5,
+.default-page .editor-content p,
+.default-page .editor-content span {
+  font-family: "Prompt" !important;
+}
+.editor-content p,
+.editor-content span,
+.default-page .editor-content p,
+.default-page .editor-content span {
+  font-size: var(--typo-default) !important;
 }
 
 @media (max-width: 1440px) {
