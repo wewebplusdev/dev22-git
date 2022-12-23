@@ -13,6 +13,59 @@
 
         <section class="site-container">
 
+            <div class="default-filter">
+                <div class="container">
+                    <form data-toggle="validator" role="form" class="form-default" method="post">
+                        <div class="row gutters-lg-50 gutters-15">
+                            <div class="col-lg-5 mr-auto">
+                                <div class="form-group">
+                                    <div class="form-outline">
+                                        <label class="visuallyhidden" for="keywords">Search</label>
+                                        <input type="search" id="keywords" class="form-control" placeholder="ค้นหา...">
+                                    </div>
+                                    <button type="button" class="btn btn-search">
+                                        <span class="feather icon-search"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label" for="contact">จัดเรียง</label>
+                                    <div class="select-wrapper">
+                                        <select class="select-control" name="contact" id="contact" style="width: 100%;">
+                                            <option value="SELECT1">จัดเรียงตามระบบ</option>
+                                            <option value="SELECT2">ปรับปรุงล่าสุด</option>
+                                            <option value="SELECT3">ดาวน์โหลดสูง - ต่ำ</option>
+                                            <option value="SELECT4">เข้าชมสูง - ต่ำ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <ul class="layout-filter">
+                                    <li class="grid">
+                                        <a href="javascript:void(0)" title="layout group">
+                                            <div class="icon">
+                                                <span class="feather icon-grid"></span>
+                                                <!-- <img src="<?php echo $core_template; ?>/assets/img/icon/layout-group-icon.svg" alt=""> -->
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list active">
+                                        <a href="javascript:void(0)" title="layout list">
+                                            <div class="icon">
+                                                <span class="feather icon-list"></span>
+                                                <!-- <img src="<?php echo $core_template; ?>/assets/img/icon/layout-list-icon.svg" alt=""> -->
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <div class="container">
                 <div class="components">
                     <div class="row py-5">
