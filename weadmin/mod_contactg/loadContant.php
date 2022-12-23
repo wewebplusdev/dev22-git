@@ -69,6 +69,19 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	} else {
 		$inputSearch = $_REQUEST['inputSearch'];
 	}
+	$sqlSearch = "";
+	if ($_REQUEST['sdateInput'] != "") {
+	  $valSdate = DateFormatInsertNoTimeAccpet_mod($_REQUEST['sdateInput']);
+	
+	  if ($_REQUEST['edateInput'] != "") {
+		$valEdate = DateFormatInsertNoTimeAccpet_mod($_REQUEST['edateInput']);
+	  } else {
+		$year = date("Y") + 543;
+		$valEdate = DateFormatInsertNoTimeAccpet_mod(date("d-m") . "-" . $year);
+	  }
+	
+	  $sqlSearch = $sqlSearch . "  AND  (" . $mod_tb_root . "_credate BETWEEN '" . $valSdate . " 00:00:00' AND '" . $valEdate . " 23:59:59')  ";
+	}
 
 	$sql_export = "SELECT  
 	" . $mod_tb_root . "_id ,
@@ -143,11 +156,23 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			</table>
 		</div>
 		<div class="divRightHeadSearch">
-
-			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
-
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
 				<tr>
-					<td style="padding-right:10px;" width="30%">
+
+
+					<td style="padding-right:10px;" width="50%">
+						<input name="sdateInputSe" type="text" id="sdateInputH" autocomplete="off" placeholder="<?php echo $langMod["tit:sSedate"] ?>" value="<?php echo trim($_REQUEST['sdateInput']) ?>" class="formInputSearchI sdateInputSe" class="sdateInputSe" style="width:98%;" />
+					</td>
+					<td width="50%" id="boxSelectTest">
+						<input name="edateInputSe" type="text" id="edateInputH" autocomplete="off" placeholder="<?php echo $langMod["tit:eSedate"] ?>" value="<?php echo trim($_REQUEST['edateInput']) ?>" class="formInputSearchI edateInputSe" />
+					</td>
+
+				</tr>
+				<tr>
+					<td colspan="3" style="padding-right:10px;" height="10"></td>
+				</tr>
+				<tr>
+				<td style="padding-right:10px;" width="30%">
 						<select name="inputGh" id="inputGh" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
 							<option value="0"><?php echo $langMod["tit:subjectsg"] ?> </option>
 							<?php
@@ -168,11 +193,12 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 							<?php } ?>
 						</select>
 					</td>
-					<td id="boxSelectTest" width="50%">
-						<input name="inputSearch" type="text" id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo $langTxt["sch:search"] ?>" />
+					<td colspan="2">
+						<input name="inputSearch" type="text" id="inputSearch" value="<?php echo  trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo  $langTxt["sch:search"] ?>" />
 					</td>
-					<td style="padding-right:10px;" align="right" width="1%"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>
+					<td style="padding-right:10px;" align="right" width="5%"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>
 				</tr>
+
 			</table>
 
 		</div>
@@ -255,6 +281,9 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 				}
 				if ($_REQUEST['inputclaim'] >= 1) {
 					$sql = $sql . " AND " . $mod_tb_root . "_sid REGEXP '.*;s:[0-9]+:\"" . $_REQUEST['inputclaim'] . "\".*' ";
+				}
+				if ($_REQUEST['sdateInput'] <> "" && $_REQUEST['edateInput'] <> "") {
+					$sql .= $sqlSearch;
 				}
 
 				if ($inputSearch <> "") {
@@ -499,7 +528,51 @@ print_r($mysql); */
 		</div>
 
 	</form>
+	<?php if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") { ?>
+  <script language="JavaScript" type="text/javascript" src="../js/datepickerThaiH.js"></script>
+<?php } else { ?>
+  <script language="JavaScript" type="text/javascript" src="../js/datepickerEngH.js"></script>
+<?php } ?>
 	<?php include("../lib/disconnect.php"); ?>
+	<?php include "modal.php"; 
+
+
+//#################################################
+function DateFormatInsertNoTimeAccpet_mod($DateTime) {
+    //#################################################
+    global $core_session_language;
+    if ($DateTime == "") {
+        $DateTime = "00-00-0000";
+    }
+
+    $Time = "00:00:00";
+    $DateArr = explode("-", $DateTime);
+    if ($core_session_language == "Thai") {
+        if ($DateArr[2] >= 1) {
+            $dataYear = $DateArr[2]-543;
+        } else {
+            $dataYear = "0000";
+        }
+    } else {
+        $dataYear = $DateArr[2];
+    }
+
+    if ($DateArr[1] >= 1) {
+        $dataM = $DateArr[1];
+    } else {
+        $dataM = "00";
+    }
+
+    if ($DateArr[0] >= 1) {
+        $dataD = $DateArr[0];
+    } else {
+        $dataD = "00";
+    }
+
+
+    return $dataYear . "-" . $dataM . "-" . $dataD;
+}
+?>
 
 </body>
 

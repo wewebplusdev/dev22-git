@@ -14,7 +14,7 @@ class embedPage
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " as title,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_pic" . $lang . " as pic,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lastdate as lastdate,
-    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url as url,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url" . $lang . " as url,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid as gid,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view as view,

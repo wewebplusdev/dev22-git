@@ -325,7 +325,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         <span class="formFontNoteTxt"><?php echo $langMod["tit:linkvdonote"] ?></span>
                     </td>
                 </tr>
-                <tr id="boxInputfile" style="display: none;">
+                <tr id="boxInputfile">
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:uploadvdo"] ?></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="file-input-wrapper">

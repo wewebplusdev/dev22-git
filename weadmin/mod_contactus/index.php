@@ -7,12 +7,20 @@ include("../lib/checkMember.php");
 include("../core/incLang.php");
 include("config.php");
 
-if($_REQUEST['sdateInputH']!=""){
-	$_REQUEST['sdateInputSe'] =$_REQUEST['sdateInputH'];
+if($_REQUEST['sdateInput']=="" && $_REQUEST['sdateInputSe']==""){
+    $_REQUEST['sdateInput']=date('01')."-".date('m')."-".(date('Y')+543);
+}elseif ($_REQUEST['sdateInput']!="" && $_REQUEST['sdateInputSe']=="") {
+    # code... noting doing
+}else{
+    $_REQUEST['sdateInput'] = $_REQUEST['sdateInputSe'];
 }
 
-if($_REQUEST['edateInputH']!=""){
-	$_REQUEST['edateInputSe'] =$_REQUEST['edateInputH'];
+if($_REQUEST['edateInput']=="" && $_REQUEST['edateInputSe']==""){
+    $_REQUEST['edateInput']=date('d')."-".date('m')."-".(date('Y')+543);
+}elseif ($_REQUEST['edateInput']!="" && $_REQUEST['edateInputSe']=="") {
+    # code... noting doing
+}else{
+    $_REQUEST['edateInput'] = $_REQUEST['edateInputSe'];
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -47,9 +55,9 @@ if($_REQUEST['edateInputH']!=""){
                 <input name="valEditID" type="hidden" id="valEditID" value="" />
                 <input name="inputLt" type="hidden" id="inputLt" value="" />
                 <input name="include" type="hidden" id="module_orderby" value="<?php echo  $_REQUEST['include'] ?>" />
-                <input name="sdateInputSe" type="hidden" id="sdateInputSe" value="<?php echo $_REQUEST['sdateInputSe']?>" />
-                <input name="edateInputSe" type="hidden" id="edateInputSe" value="<?php echo $_REQUEST['edateInputSe']?>" />
-                </form>
+                <input name="sdateInput" type="hidden" id="sdateInput" value="<?php echo $_REQUEST['sdateInput']?>" />
+                <input name="edateInput" type="hidden" id="edateInput" value="<?php echo $_REQUEST['edateInput']?>" />
+        </form>
                 	<div class="" id="boxContantLoad">
                     			<?php include("../core/incWaitting.php")?>
                     </div>
@@ -78,8 +86,8 @@ if($_REQUEST['edateInputH']!=""){
                 <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
                 <input name="valEditID" type="hidden" id="valEditID" value="" />
                 <input name="inputLt" type="hidden" id="inputLt" value="" />
-                <input name="sdateInputSe" type="hidden" id="sdateInputSe" value="<?php echo $_REQUEST['sdateInputSe']?>" />
-                <input name="edateInputSe" type="hidden" id="edateInputSe" value="<?php echo $_REQUEST['edateInputSe']?>" />
+                <input name="sdateInput" type="hidden" id="sdateInput" value="<?php echo $_REQUEST['sdateInput']?>" />
+                <input name="edateInput" type="hidden" id="edateInput" value="<?php echo $_REQUEST['edateInput']?>" />
                 </form>
                 	<div class="mRightBackOffice" id="boxContantLoad">
                     			<?php include("../core/incWaitting.php")?>

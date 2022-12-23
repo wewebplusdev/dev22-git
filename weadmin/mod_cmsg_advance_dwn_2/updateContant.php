@@ -15,6 +15,15 @@ include("config.php");
 
 <body>
 	<?php
+
+if ($_REQUEST['inputLt'] == "Thai") {
+	$lang = "";
+} else if ($_REQUEST['inputLt'] == "Eng") {
+	$lang = "en";
+} else {
+	$lang = "cn";
+}
+
 	if ($execute == "update") {
 		$randomNumber = randomNameupdate(2);
 
@@ -81,7 +90,7 @@ include("config.php");
 		$update[] = $mod_tb_root . "_urlfriendly='" . changeQuot($_POST['inputUrlFriendly']) . "'";
 
 		$update[] = $mod_tb_root . "_type='" . $_POST["inputType"] . "'";
-		$update[] = $mod_tb_root . "_url='" . changeQuot($_REQUEST['inputurl']) . "'";
+		$update[] = $mod_tb_root . "_url".$lang."='" . changeQuot($_REQUEST['inputurl']) . "'";
 		$update[] = $mod_tb_root . "_lastbyid='" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";
 		$update[] = $mod_tb_root . "_lastby='" . $_SESSION[$valSiteManage . 'core_session_name'] . "'";
 
