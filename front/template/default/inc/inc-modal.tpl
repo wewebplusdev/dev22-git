@@ -51,3 +51,26 @@
         </div>
     </div>
 </div>
+
+<div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="feather icon-x"></span>
+            </button>
+            <div class="modal-body">
+                <form class="form-default"  action="{$ul}/search" method="get">
+                    <div class="input-group">
+                        <div class="form-outline">
+                        <input type="search" id="keywords" name="srchtxt_main" value="{$srchtxt_main}" class="form-control" placeholder="{$lang['system']['search']}...">
+                        <label class="visuallyhidden" for="keywords">{$lang['system']['search']}</label>
+                        </div>
+                        <button type="submit" class="btn btn-search">
+                            <span class="feather icon-search"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

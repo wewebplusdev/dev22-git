@@ -108,10 +108,10 @@
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
+    
     <div class="container">
       {if $callCMS->fields.htmlfilename neq ""}
         <div class="editor-content">

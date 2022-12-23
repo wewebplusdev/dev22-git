@@ -12,9 +12,16 @@ $valClassNav = 2;
 $valNav1 = $langTxt["nav:home2"];
 $valLinkNav1 = "../core/index.php";
 
+if ($_REQUEST['inputLt'] == "Thai") {
+	$lang = "";
+} else if ($_REQUEST['inputLt'] == "Eng") {
+	$lang = "en";
+} else {
+	$lang = "cn";
+}
 
 $sql = "SELECT   ";
-$sql .= "   " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo ,  " . $mod_tb_root . "_gid    ";
+$sql .= "   " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate , " . $mod_tb_root . "_type".$lang." , " . $mod_tb_root . "_filevdo".$lang." ,  " . $mod_tb_root . "_gid    ";
 
 if ($_REQUEST['inputLt'] == "Thai") {
 	$sql .= " , " . $mod_tb_root . "_url,    " . $mod_tb_root . "_pic, " . $mod_tb_root . "_subject  ,    " . $mod_tb_root . "_title , " . $mod_tb_root . "_htmlfilename   ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords    ";
@@ -403,13 +410,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						</label>
 
 						<label>
-							<div class="formDivRadioL"><input name="inputType" id="inputType" value="file" type="radio" class="formRadioContantTb" onclick="jQuery('#boxInputlink').hide();jQuery('#boxInputfile').show();" <?php if ($valType == "file") { ?> checked="checked" <?php } ?> /></div>
+							<div class="formDivRadioL"><input name="inputType" id="inputType" value="file" type="radio" class="formRadioContantTb" onclick="jQuery('#boxInputlink').hide();jQuery('#boxInputfile').show();" <?php if ($valType == "file" or $valType == "") { ?> checked="checked" <?php } ?> /></div>
 							<div class="formDivRadioR"><?php echo $langMod["tit:uploadvdo"] ?></div>
 						</label>
 						</label>
 					</td>
 				</tr>
-				<tr id="boxInputlink" <?php if ($valType == "file") { ?> style="display:none;" <?php } ?>>
+				<tr id="boxInputlink" <?php if ($valType == "file" or $valType=="") { ?> style="display:none;" <?php } ?>>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkvdo"] ?></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><textarea name="inputurl" id="inputurl" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valUrl ?></textarea><br />
 						<span class="formFontNoteTxt"><?php echo $langMod["tit:linkvdonote"] ?></span>

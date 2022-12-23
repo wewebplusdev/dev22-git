@@ -212,8 +212,6 @@ if ($_REQUEST['inputSearch'] != "") {
   <input name="language_export" type="hidden" id="language_export" value="<?php echo $_SESSION['core_session_language'] ?>" />
   <input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_POST["masterkey"] ?>" />
   <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_POST["menukeyid"] ?>" />
-  <input name="sdateInputSe" type="hidden" id="sdateInputSe" value="<?php echo $_REQUEST['sdateInputSe']?>" />
-		<input name="edateInputSe" type="hidden" id="edateInputSe" value="<?php echo $_REQUEST['edateInputSe']?>" />
 </form>
 
 <form action="?" method="post" name="myForm" id="myForm">

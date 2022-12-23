@@ -12,9 +12,16 @@ $valClassNav = 2;
 $valNav1 = $langTxt["nav:home2"];
 $valLinkNav1 = "../core/index.php";
 
+if ($_REQUEST['inputLt'] == "Thai") {
+	$lang = "";
+} else if ($_REQUEST['inputLt'] == "Eng") {
+	$lang = "en";
+} else {
+	$lang = "cn";
+}
 
 $sql = "SELECT   ";
-$sql .= "   " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo , " . $mod_tb_root . "_url  ,  " . $mod_tb_root . "_gid    ";
+$sql .= "   " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo , " . $mod_tb_root . "_url".$lang."  ,  " . $mod_tb_root . "_gid    ";
 
 if ($_REQUEST['inputLt'] == "Thai") {
 	$sql .= " ,    " . $mod_tb_root . "_pic, " . $mod_tb_root . "_subject  ,    " . $mod_tb_root . "_title , " . $mod_tb_root . "_htmlfilename   ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords    ";

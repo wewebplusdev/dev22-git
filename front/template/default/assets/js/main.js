@@ -886,7 +886,7 @@ $(document).ready(function() {
 
 $('.notice-slide').slick({
     dots: false,
-    infinite: false,
+    infinite: true,
     arrows: true,
     autoplay:true,
     autoplaySpeed: 4000,

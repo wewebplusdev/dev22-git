@@ -210,7 +210,7 @@ switch ($MenuID) {
               $MenuID = $config['trw_his']['main']['masterkey']; // fixed ไว้ เพื่อ active menu แรกเสมอ
               $settingPage = array(
                   "page" => $menuActive,
-                  "template" => "cms_advance_detail.tpl",
+                  "template" => "cms_advance_detail_file.tpl",
                   "display" => "page",
                   "control" => "component",
               );

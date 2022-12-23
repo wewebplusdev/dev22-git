@@ -177,10 +177,10 @@
 						</div>
 						<div class="col-auto">
 							<div class="search">
-								<a href="javascript:void(0)" class="search-toggle" title="{$lang['system']['search']}">
+								<a href="javascript:void(0)" class="search-toggle" data-toggle="modal" data-target="#searchModal" title="{$lang['system']['search']}">
 									<span class="feather icon-search"></span>
 								</a>
-								<form class="form" action="{$ul}/search" method="get">
+								{* <form class="form" action="{$ul}/search" method="get">
 									<div class="input-group">
 										<div class="form-outline">
 											<input type="search" id="keywords" name="srchtxt_main" value="{$srchtxt_main}" class="form-control" placeholder="{$lang['system']['search']}...">
@@ -193,7 +193,7 @@
 											<span class="feather icon-x"></span>
 										</button>
 									</div>
-								</form>
+								</form> *}
 							</div>
 						</div>
 						<div class="col-auto">
