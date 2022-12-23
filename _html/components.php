@@ -16,19 +16,23 @@
             <div class="default-filter">
                 <div class="container">
                     <form data-toggle="validator" role="form" class="form-default" method="post">
-                        <div class="row gutters-lg-50 gutters-15">
-                            <div class="col-lg-5 mr-auto">
+                        <div class="row gutters-15 align-items-end">
+                            <div class="col-lg-5 col-12 mr-auto">
                                 <div class="form-group">
-                                    <div class="form-outline">
-                                        <label class="visuallyhidden" for="keywords">Search</label>
-                                        <input type="search" id="keywords" class="form-control" placeholder="ค้นหา...">
+                                    <div class="row no-gutters">
+                                        <div class="col">
+                                            <label class="visuallyhidden" for="keywords">Search</label>
+                                            <input type="search" id="keywords" class="form-control" placeholder="ค้นหา...">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-primary btn-search">
+                                                <span class="feather icon-search"></span>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <button type="button" class="btn btn-search">
-                                        <span class="feather icon-search"></span>
-                                    </button>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-3 col-12">
                                 <div class="form-group has-feedback">
                                     <label class="control-label" for="contact">จัดเรียง</label>
                                     <div class="select-wrapper">
@@ -41,7 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-auto ml-lg-0 ml-auto">
                                 <ul class="layout-filter">
                                     <li class="grid">
                                         <a href="javascript:void(0)" title="layout group">
