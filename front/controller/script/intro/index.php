@@ -13,6 +13,12 @@ $settingPage = array(
 $callintro = $introPage->callintro($config['intro']['main']['masterkey']);
 if($callintro->_numOfRows > 0){
     $smarty->assign("callintro", $callintro);
+    if (isset($_SESSION['intro']) && (time() - $_SESSION['intro'] > 1800)) {
+        // last request was more than 30 minutes ago
+        unset($_SESSION['intro']);     // unset $_SESSION variable for the run-time 
+    }else{
+        $_SESSION['intro'] = time();
+    }
     // $_SESSION['intro'] = "";
     // $_SESSION['intro'] = "intro";
 }else{
