@@ -1,5 +1,5 @@
 <?php
-$menuActive = "information";
+$menuActive = "information-center";
 $menuDetail = "detail";
 $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script.js' . $lastModify . '"></script>';
 

@@ -100,8 +100,14 @@
                 </div>
             </div>
 
-
+            <div class="row pt-5 text-right">
+            <div class="col-12">
+              <a href="javascript:history.back();" class="btn btn-border-primary"
+                title="btn btn-primary">{$lang['system']['btn_back']}</a>
+            </div>
+          </div>
     </div>
+    
   </div>
 
 </section>

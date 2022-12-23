@@ -71,7 +71,7 @@ switch ($MenuID) {
         $MenuID = "ab_odc";
         $settingPage = array(
             "page" => $menuActive,
-            "template" => "cms_advance_detail.tpl",
+            "template" => "cms_advance_detail_file.tpl",
             "display" => "page",
             "control" => "component",
         );
@@ -124,7 +124,7 @@ switch ($MenuID) {
                 $MenuID = "ab_odc"; // fixed ไว้ เพื่อ active menu แรกเสมอ
                 $settingPage = array(
                     "page" => $menuActive,
-                    "template" => "cms_advance_detail.tpl",
+                    "template" => "cms_advance_detail_file.tpl",
                     "display" => "page",
                     "control" => "component",
                 );

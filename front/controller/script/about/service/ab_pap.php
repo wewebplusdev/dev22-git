@@ -48,7 +48,7 @@ switch ($PageAction) {
 
     $settingPage = array(
         "page" => $menuActive,
-        "template" => "cms_advance_detail.tpl",
+        "template" => "cms_advance_detail_file.tpl",
         "display" => "page",
         "control" => "component",
     );

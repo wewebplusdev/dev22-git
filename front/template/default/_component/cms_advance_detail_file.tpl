@@ -56,7 +56,7 @@
         </div>
       {/if}
 
-      {* <div class="container">
+      <div class="container">
     <div class="default-bar">
       <div class="row align-items-center">
         <div class="col-md-auto">
@@ -111,7 +111,7 @@
         </div>
       </div>
     </div>
-  </div> *}
+  </div>
 
       <div class="container">
         {if $callCMS->fields.htmlfilename neq ""}
