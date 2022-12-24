@@ -19,9 +19,9 @@ class url
         global $url_show_lang, $lang_set, $lang_default, $url_show_default, $url_error_default;
         $pathFirst = $this->onRoot();
 
-        $_SERVER['DOCUMENT_ROOT'] = str_replace("private_html","public_html",$_SERVER['DOCUMENT_ROOT']);
+        $_SERVER['DOCUMENT_ROOT'] = str_replace("private_html", "public_html", $_SERVER['DOCUMENT_ROOT']);
         $this->rootDir = str_replace("\\", '/', dirname(__FILE__)); # _DIR
-        $this->rootDocument = str_replace('//', '/', str_replace('//', '/', $_SERVER['DOCUMENT_ROOT'] ));
+        $this->rootDocument = str_replace('//', '/', str_replace('//', '/', $_SERVER['DOCUMENT_ROOT']));
         $this->url = end(explode($pathFirst, str_replace('//', '/', $_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI'])));
         define("_URL", _http . "://" . str_replace('//', '/', $_SERVER['HTTP_HOST'] . "/" . $this->onFolder) . "/");
 
@@ -36,7 +36,7 @@ class url
             } else {
                 $this->pagelang = $lang_set[$lang_default];
                 $urlNewDirect = str_replace('//', '/', "/" . $this->onFolder . "/" . $this->pagelang[2]);
-				$urlNewDirect .="/intro";
+                $urlNewDirect .= "/intro";
                 // header("Location:" . _URL . $urlNewDirect);
             }
         } else {
@@ -107,7 +107,6 @@ class url
             } else {
                 return $this->setpagedefault();
             }
-
         } else {
             return $this->setpagedefault();
         }
@@ -134,7 +133,7 @@ class url
             if (!empty($convertUrl)) {
                 $path = _DIR . '/front/controller/script/' . $convertUrl;
                 $loderpage['pagename'] = $convertUrl;
-            }else{
+            } else {
                 $path = _DIR . '/front/controller/script/404';
                 $loderpage['pagename'] = "404";
             }
@@ -142,14 +141,14 @@ class url
             foreach ($this->listfilemodulus as $value) {
                 $loderpage['load'][] = $path . "/" . $value;
             }
-		}else{
-			$path = _DIR . '/front/controller/script/' . $url_show_default;
-			$loderpage['pagename'] = $url_show_default;
-			$loderpage['load'][] = $path . "/lang/" . $this->pagelang[2] . ".php";
-			foreach ($this->listfilemodulus as $value) {
-				$loderpage['load'][] = $path . "/" . $value;
-			}
-		}
+        } else {
+            $path = _DIR . '/front/controller/script/' . $url_show_default;
+            $loderpage['pagename'] = $url_show_default;
+            $loderpage['load'][] = $path . "/lang/" . $this->pagelang[2] . ".php";
+            foreach ($this->listfilemodulus as $value) {
+                $loderpage['load'][] = $path . "/" . $value;
+            }
+        }
         return $loderpage;
     }
 
@@ -178,7 +177,8 @@ class url
     }
 
     ########## Start Add by bonz ##########
-    private function loadShortURL($uri){
+    private function loadShortURL($uri)
+    {
         global $db, $tbconf;
 
         $sql = "SELECT 
@@ -190,32 +190,34 @@ class url
         FROM
         " . $tbconf['short']['db'] . "
         WHERE
-        " . $tbconf['short']['db'] . "." . $tbconf['short']['db'] . "_short_url = '".$uri."'
+        " . $tbconf['short']['db'] . "." . $tbconf['short']['db'] . "_short_url = '" . $uri . "'
         ";
-        
+
         $result = $db->query($sql);
         return $result;
     }
 
-    private function callMenu($masterkey){
+    private function callMenu($masterkey)
+    {
         global $db, $tbconf;
-        
+
         $sql = "SELECT 
         " . $tbconf['mnu']['db'] . "." . $tbconf['mnu']['db'] . "_id as id,
         " . $tbconf['mnu']['db'] . "." . $tbconf['mnu']['db'] . "_masterkey as masterkey
         FROM
         " . $tbconf['mnu']['db'] . "
         WHERE
-        " . $tbconf['mnu']['db'] . "." . $tbconf['mnu']['db'] . "_masterkey = '".$masterkey."'
+        " . $tbconf['mnu']['db'] . "." . $tbconf['mnu']['db'] . "_masterkey = '" . $masterkey . "'
         ";
 
         $result = $db->query($sql);
         return $result;
     }
 
-    private function callGroupCms($masterkey, $id = null){
+    private function callGroupCms($masterkey, $id = null)
+    {
         global $db, $tbconf;
-        
+
         $sql = "SELECT 
         " . $tbconf['cmg']['db'] . "." . $tbconf['cmg']['db'] . "_id as id,
         " . $tbconf['cmg']['db'] . "." . $tbconf['cmg']['db'] . "_masterkey as masterkey,
@@ -223,20 +225,21 @@ class url
         FROM
         " . $tbconf['cmg']['db'] . "
         WHERE
-        " . $tbconf['cmg']['db'] . "." . $tbconf['cmg']['db'] . "_masterkey = '".$masterkey."'
+        " . $tbconf['cmg']['db'] . "." . $tbconf['cmg']['db'] . "_masterkey = '" . $masterkey . "'
         ";
 
         if (!empty($id)) {
-            $sql .= " AND ".$tbconf['cmg']['db'].".".$tbconf['cmg']['db']."_id = '".$id."' ";
+            $sql .= " AND " . $tbconf['cmg']['db'] . "." . $tbconf['cmg']['db'] . "_id = '" . $id . "' ";
         }
 
         $result = $db->query($sql);
         return $result;
     }
 
-    private function callCms($masterkey, $id = null){
+    private function callCms($masterkey, $id = null)
+    {
         global $db, $tbconf;
-        
+
         $sql = "SELECT 
         " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_id as id,
         " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_masterkey as masterkey,
@@ -245,20 +248,21 @@ class url
         FROM
         " . $tbconf['cms']['db'] . "
         WHERE
-        " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_masterkey = '".$masterkey."'
+        " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_masterkey = '" . $masterkey . "'
         ";
 
         if (!empty($id)) {
-            $sql .= " AND ".$tbconf['cms']['db'].".".$tbconf['cms']['db']."_id = '".$id."' ";
+            $sql .= " AND " . $tbconf['cms']['db'] . "." . $tbconf['cms']['db'] . "_id = '" . $id . "' ";
         }
 
         $result = $db->query($sql);
         return $result;
     }
 
-    private function convertUrl($conf = array()){
+    private function convertUrl($conf = array())
+    {
         global $pageconf, $linklang;
-        foreach($pageconf as $key => $value) {
+        foreach ($pageconf as $key => $value) {
             if (strpos($conf['masterkey'], $key) !== false) {
                 $pageloader = $value;
             }
@@ -272,13 +276,20 @@ class url
                 $this->segment[4] = $conf['contantid'];
                 return $pageloader;
                 break;
-            
+
             default:
                 if (empty($_SESSION['intro'])) {
                     return $pageloader = " intro";
-                }else {
-                    http_response_code(302);
-                    header('location:' . $linklang . "/404");
+                } else {
+                    if (isset($_SESSION['intro']) && (time() - $_SESSION['intro'] > 1800)) {
+                        // last request was more than 30 minutes ago
+                        unset($_SESSION['intro']);     // unset $_SESSION variable for the run-time 
+                        http_response_code(302);
+                        header('location:' . $linklang . "/404");
+                    } else {
+                        http_response_code(302);
+                        header('location:' . $linklang . "/404");
+                    }
                 }
                 break;
         }
