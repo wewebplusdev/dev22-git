@@ -784,6 +784,32 @@ fieldset {
     }
 }
 
+.year-list {
+    .nav-list {
+        margin: 0 -10px;
+        li {
+            width: calc(100% / 5);
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+    }
+    .link {
+        display: block;
+        background-color: var(--color-primary-light);
+        color: var(--color-light);
+        font-size: var(--typo-md);
+        line-height: 2.5em;
+        text-align: center;
+        padding: 0 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &.active {
+            background-color: var(--color-primary);
+        }
+    }
+}
+
 @media (max-width: 1600px) {
 }
 
@@ -865,6 +891,18 @@ fieldset {
         width: 44px;
         height: 44px;
     }
+    .year-list .nav-list li {
+        width: calc(100% / 4);
+    }
+    .year-list .nav-list {
+        margin: 0 -7.5px;
+    }
+    .year-list .nav-list li {
+        padding: 0 7.5px;
+    }
+    .year-list .link {
+        font-size: var(--typo-default);
+    }
 }
 
 @media (max-width: 767px) {
@@ -943,6 +981,9 @@ fieldset {
     .layout-filter > li a {
         width: 40px;
         height: 40px;
+    }
+    .year-list .nav-list li {
+        width: calc(100% / 3);
     }
 }
 
