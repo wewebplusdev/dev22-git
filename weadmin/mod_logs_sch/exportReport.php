@@ -46,7 +46,7 @@ $valEdate = DateFormatExport($_REQUEST['edateInputSe']);
 			$sql = str_replace('\\', '', $_POST['sql_export']);
 			$query = wewebQueryDB($coreLanguageSQL, $sql);
 			$count_record = wewebNumRowsDB($coreLanguageSQL, $query);
-			$date_print = date("Y-m-d H:i:s");
+			$date_print=DateFormat(date("Y-m-d h:i:s A"));
 
 			if ($count_record >= 1) {
 				$index = 1;

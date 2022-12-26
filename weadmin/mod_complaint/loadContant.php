@@ -71,7 +71,6 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	} else {
 		$inputSearch = $_REQUEST['inputSearch'];
 	}
-
 	$sqlSearch = "";
 	if ($_REQUEST['sdateInput'] != "") {
 	  $valSdate = DateFormatInsertNoTimeAccpet_mod($_REQUEST['sdateInput']);
@@ -87,7 +86,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	}
 
 	$sql_export = "SELECT  " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate, " . $mod_tb_root . "_status 	, " . $mod_tb_root . "_subject, " . $mod_tb_root . "_message, " . $mod_tb_root . "_address  ,  " . $mod_tb_root . "_email  ,  " . $mod_tb_root . "_tel   ,  " . $mod_tb_root . "_ip   ,  " . $mod_tb_root . "_gid ,  " . $mod_tb_root . "_name  FROM " . $mod_tb_root;
-	$sql_export .= $sql_export . "  WHERE  " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' ";
+	$sql_export = $sql_export . "  WHERE  " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' ";
 
 	if ($_REQUEST['inputGh'] >= 1) {
 		$sql_export = $sql_export . "  AND " . $mod_tb_root . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
@@ -99,7 +98,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 
 	$sql_export .= " ORDER BY $module_orderby  DESC ";
-
+	// print_pre($sql_export);
 
 	?>
 	<form action="?" method="post" name="myFormExport" id="myFormExport">
