@@ -63,7 +63,10 @@ include("config.php");
 
 		$inputFileToUpload = $_FILES['inputFileUpload']['tmp_name'];
 		$inputFileToName = $_FILES['inputFileUpload']['name'];
-		$fileType = explode(".", $inputFileToName);
+		// $fileType = explode(".", $inputFileToName);
+		$fileType = array();
+		$fileType[0] = $inputFileToName;
+		$fileType[1] = pathinfo($inputFileToName, PATHINFO_EXTENSION);
 		$countBtType = count($fileType) - 1;
 		$fileNameNew = $fileType[0];
 		$fileTypeName = $fileType[$countBtType];
@@ -74,6 +77,7 @@ include("config.php");
 		if (copy($inputFileToUpload, $mod_path_file . "/" . $filenamedoc)) {
 			@chmod($mod_path_file . "/" . $filenamedoc, 0777);
 		}
+		$fileNameNew = str_replace(".".$fileType[1].".".$fileType[1], ".".$fileType[1], $fileNameNew); // replace type file
 
 		if ($_REQUEST['nametodoc'] == "") {
 			$nameToinput = $fileNameNew;
@@ -115,7 +119,7 @@ include("config.php");
 				$countDownload = $row_file[3];
 				$imageType = strstr($downloadFile, '.');
 
-				$msg .= "<a href=\"javascript:void(0)\"  onclick=\" document.myForm.valDelFile.value=" . $downloadID . ";delFileUpload(\'deleteFile.php\')\" ><img src=\"../img/btn/delete.png\" align=\"absmiddle\" title=\"Delete file\"  hspace=\"10\"  vspace=\"10\"   border=\"0\" /></a>" . $downloadName . "" . $imageType . " | " . $langMod["file:type"] . ": " . $imageType . "  | " . $langMod["file:size"] . ": " . get_IconSize($linkRelativePath) . " <br/>";
+				$msg .= "<a href=\"javascript:void(0)\"  onclick=\" document.myForm.valDelFile.value=" . $downloadID . ";delFileUpload(\'deleteFile.php\')\" ><img src=\"../img/btn/delete.png\" align=\"absmiddle\" title=\"Delete file\"  hspace=\"10\"  vspace=\"10\"   border=\"0\" /></a>" . $downloadName . " | " . $langMod["file:type"] . ": " . $imageType . "  | " . $langMod["file:size"] . ": " . get_IconSize($linkRelativePath) . " <br/>";
 			}
 		}
 	}
