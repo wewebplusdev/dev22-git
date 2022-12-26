@@ -422,6 +422,7 @@ $lang['system']['type'] = "File type";
 $lang['system']['size'] = "File size";
 $lang['system']['view'] = "Visit";
 $lang['system']['search'] = "SEARCH";
+$lang['system']['sort'] = "SORT";
 $lang['system']['address'] = "Address";
 $lang['system']['phone'] = "Phone";
 $lang['system']['tel'] = "Tel";
@@ -591,3 +592,8 @@ $lang['form']['text'] = "Detail";
 $lang['form']['reply'] = "Please be informed that The company has received the request.";
 $lang['form']['dear'] = "Dear ";
 $lang['form']['dearAdmin'] = "Dear Admin";
+
+$lang['sort']['0'] = "Sort system";
+$lang['sort']['1'] = "Last updated";
+$lang['sort']['2'] = "Oldest updated";
+$lang['sort']['3'] = "High - Low views";

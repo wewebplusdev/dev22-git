@@ -22,7 +22,8 @@ if (empty($MenuID)) {
 
 ## REQUEST_URI
 $req_params = array();
-$req_params['year'] = $_REQUEST['year'];
+$req_params['year'] = $_REQUEST['year'] ? $_REQUEST['year'] : $url->segment['3'];
+$req_params['keywords'] = $_REQUEST['keywords'];
 $req_params['order'] = $_REQUEST['order'];
 $smarty->assign("req_params", $req_params);
 

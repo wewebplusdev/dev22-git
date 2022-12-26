@@ -238,9 +238,10 @@ switch ($MenuID) {
 
               ## list data
               if ($callGroup->fields['types'] == 1) { ## for group
-                  $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+                  $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
                   $masterkey_page = $callCMS->fields['masterkey'];
                   $smarty->assign("callCMS", $callCMS);
+                  $smarty->assign("orderArray", $OrderArray);
                   $MaxRecord = $callCMS->_maxRecordCount;
                   $MenuID = $config['trw_his']['main']['masterkey']; // fixed ไว้ เพื่อ active menu แรกเสมอ
                   $settingPage = array(
@@ -253,9 +254,10 @@ switch ($MenuID) {
                   $callSubGroup = $trainingPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
                   $masterkey_page = $callSubGroup->fields['masterkey'];
                   $MaxRecord = $callSubGroup->_maxRecordCount;
+                  $smarty->assign("orderArray", $OrderArray);
                   $arrListData = array();
                   foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
-                      $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']), $valuecallSubGroup['id']);
+                      $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords'], $valuecallSubGroup['id']);
                       $arrListData[$keycallSubGroup]['subgroup'] = $valuecallSubGroup;
                       foreach ($callCMS as $keycallCMS => $valuecallCMS) {
                           $arrListData[$keycallSubGroup]['list'][] = $valuecallCMS;
