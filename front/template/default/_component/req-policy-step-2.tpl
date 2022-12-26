@@ -191,12 +191,11 @@
 
               <div class="form-group">
                 <div class="block-control">
-                  <div class="checkbox-control">
-                    <input type="checkbox" name="cb" id="confirm-box" required="">
-                    <div class="icon"></div>
-                    <div class="title">
+                  <div class="form-check">
+                    <input class="form-check-input" name="cb" type="checkbox" id="confirm-box" required="" id="defaultCheck1">
+                    <label class="control-label" for="defaultCheck1">
                       I accept
-                    </div>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -233,12 +232,11 @@
 
               <div class="form-group">
                 <div class="block-control">
-                  <div class="checkbox-control">
-                    <input type="checkbox" name="cb" id="confirm-box" required="">
-                    <div class="icon"></div>
-                    <div class="title">
+                  <div class="form-check">
+                    <input class="form-check-input" name="cb" type="checkbox" id="confirm-box" required="" id="defaultCheck1">
+                    <label class="control-label" for="defaultCheck1">
                       ฉันยอมรับเงื่อนไข
-                    </div>
+                    </label>
                   </div>
                 </div>
               </div>

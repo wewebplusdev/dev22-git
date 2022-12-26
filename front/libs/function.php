@@ -839,6 +839,7 @@ function loadSendEmailTo($mailTo, $subjectMail = null, $messageMail = null) {
    /* ############################################### */
    // new sent email to user
    require_once _DIR . '/front/libs/sendEmailPHP7.php';
+   // $valSendMailStatus = 1;
 
    return $valSendMailStatus;
 }

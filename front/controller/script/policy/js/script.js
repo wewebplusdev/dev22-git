@@ -39,7 +39,7 @@ $(document).ready(function () {
           
           var formData = new FormData($("#complainForm")[0]);
           var path = $("base").attr("href") + base_url_lang;
-          var baselang = $("base").attr("href") + base_url_lang + "/policy";
+          var baselang = $("base").attr("href") + base_url_lang + "/policy/complaint-system";
 
           $.ajax({
             url: path + "/policy/insert-formcomplaint",
