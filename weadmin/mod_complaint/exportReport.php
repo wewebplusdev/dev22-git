@@ -49,10 +49,9 @@ xmlns="http://www.w3.org/TR/REC-html40">
     
     <?php
 $sql=str_replace('\\','',$_POST['sql_export']);
-// print_pre($sql);
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $count_record=wewebNumRowsDB($coreLanguageSQL,$query);
-$date_print=DateFormat(date("Y-m-d"));
+$date_print=DateFormat(date("Y-m-d h:i:s A"));
 
 			  if($count_record>=1){
 			  $index=1;
@@ -91,7 +90,7 @@ $date_print=DateFormat(date("Y-m-d"));
     <tr bgcolor="#ffffff">
       <td height="30" align="center"  valign="middle"><?php echo $index?></td>
       <td align="left"  valign="middle"><?php echo $row_groupname?></td>
-      <!-- <td align="left"  valign="middle"><?php echo $valSubject?></td> -->
+      <td align="left"  valign="middle"><?php echo $valSubject?></td>
       <!-- <td align="left"  valign="middle"><?php echo $valCreby?></td> -->
       <td align="left"  valign="middle"><?php echo $valMessage?></td>
       <td align="left" valign="middle"><?php echo $valEmail?></td>
