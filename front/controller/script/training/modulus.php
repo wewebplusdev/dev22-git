@@ -44,7 +44,7 @@ class trainingPage
   }
 
   
-  function callCMSList($masterkey, $id = null, $gid = null, $page = 1, $limit = 10, $order = "DESC", $year = null, $sid = null)
+  function callCMSList($masterkey, $id = null, $gid = null, $page = 1, $limit = 10, $order = "DESC", $year = null,$keywords=null, $sid = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -58,7 +58,7 @@ class trainingPage
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " as title,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_pic" . $lang . " as pic,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lastdate as lastdate,
-    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url as url,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url" . $lang . " as url,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_target as target,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid as gid,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
@@ -73,7 +73,7 @@ class trainingPage
 
     FROM
     " . $config['cms']['db']['main'] . "
-    INNER JOIN 
+    INNER JOIN
     " . $config['sy_mnu']['db']['main'] . "
     ON
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_masterkey
@@ -107,8 +107,29 @@ class trainingPage
     if (!empty($sid)) {
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sid = '" . $sid . "' ";
     }
-
-    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ".$order." ";
+    if (!empty($keywords)) {
+      $sql .= " AND
+      (
+      " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_subject" . $lang . " LIKE '%" . $keywords . "%' OR
+      " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " LIKE '%" . $keywords . "%'
+      )";
+    }
+    if (!empty($order)) {
+      if($order == 0){
+        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC ";
+      }
+      if($order == 1){
+        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate DESC ";
+      }
+      if($order == 2){
+        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate ASC ";
+      }
+      if($order == 3){
+        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view DESC ";
+      }
+    }else{
+      $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC ";
+    }
 
     // print_pre($sql);
     $result = $db->pageexecute($sql, $limit, $page);

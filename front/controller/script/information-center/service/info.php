@@ -95,7 +95,7 @@ switch ($url->segment[1]) {
 
       $smarty->assign("callGroup", $callGroup);
 
-      $callCMS = $informationPage->callCMSList($menuMasterkey, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+      $callCMS = $informationPage->callCMSList($menuMasterkey, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
       $smarty->assign("callCMS", $callCMS);
 
       ## menu lv 2 active
@@ -107,8 +107,10 @@ switch ($url->segment[1]) {
       $settingModulus['breadcrumb'] = $breadcrumb[0];
 
       ## group by year for filter
-      $callYear = $informationPage->callYear($MenuID, $callGroup->fields['id']);
+      $callYear = $informationPage->callYear($menuMasterkey, $callGroup->fields['id']);
       $smarty->assign("callYear", $callYear);
+
+      $smarty->assign("orderArray", $OrderArray);
 
       /* ## Start SEO ##### */
       $seo_desc = "";

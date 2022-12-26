@@ -278,26 +278,28 @@ $(document).ready(function() {
     });
 
     $(".theme-1 .top-graphic .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 4000,
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        // autoplay: true,
-        // autoplaySpeed: 4000
     });
 
     $(".theme-2 .top-graphic .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 4000,
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        // autoplay: true,
-        // autoplaySpeed: 4000
     });
 
     $(".services-block .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: false,
         slidesToShow: 2,
         slidesToScroll: 2,
@@ -314,6 +316,8 @@ $(document).ready(function() {
     });
 
     $('.theme-3 .git-news-block .slider').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -337,7 +341,8 @@ $(document).ready(function() {
     });
 
     $('.git-information-block .slider').slick({
-        infinite: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
         slidesToShow: 3,
         slidesToScroll: 3,
         arrows: false,
@@ -360,7 +365,7 @@ $(document).ready(function() {
     });
 
     $(".training-block .slider").slick({
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 3000,
         infinite: false,
         vertical: true,
@@ -372,7 +377,7 @@ $(document).ready(function() {
     });
 
     $(".lab-update-block .slider").slick({
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 3000,
         infinite: false,
         slidesToShow: 1,
@@ -392,7 +397,7 @@ $(document).ready(function() {
     });
 
     $(".git-training-movement-block .slider").slick({
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 3000,
         infinite: false,
         slidesToShow: 1,
@@ -412,7 +417,8 @@ $(document).ready(function() {
     });
 
     $(".theme-1 .git-news-block .slider").slick({
-        // autoplay: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
         centerMode: true,
         centerPadding: '455px',
         infinite: true,
@@ -454,9 +460,9 @@ $(document).ready(function() {
     });
 
     $(".theme-2 .git-news-block .slider").slick({
-        // autoplay: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
         // centerMode: true,
-
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -485,7 +491,8 @@ $(document).ready(function() {
     });
 
     $(".theme-1 .git-book-block .slider").slick({
-        // autoplay: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 5,
@@ -518,7 +525,8 @@ $(document).ready(function() {
     });
 
     $(".git-e-Learning-block .slider").slick({
-        // autoplay: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
         centerMode: true,
         // centerPadding: '60px',
         infinite: true,
@@ -540,7 +548,8 @@ $(document).ready(function() {
     });
 
     $(".theme-2 .git-book-block .slider").slick({
-        // autoplay: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -573,16 +582,18 @@ $(document).ready(function() {
     });
 
     $(".theme-3 .top-graphic .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 4000,
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
         dots: false,
-        // autoplay: true,
-        // autoplaySpeed: 3000
     });
 
     $(".banner-block .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -591,6 +602,8 @@ $(document).ready(function() {
     });
 
     $(".update-block .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -618,13 +631,13 @@ $(document).ready(function() {
     });
 
     $(".theme-1 .weblink-block .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
         responsive: [{
                 breakpoint: 1200,
                 settings: {
@@ -653,13 +666,13 @@ $(document).ready(function() {
     });
 
     $(".theme-2 .weblink-block .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: true,
         slidesToShow: 6,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
         responsive: [{
                 breakpoint: 992,
                 settings: {
@@ -682,13 +695,13 @@ $(document).ready(function() {
     });
 
     $(".theme-3 .weblink-block .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
         responsive: [{
                 breakpoint: 992,
                 settings: {
@@ -885,11 +898,11 @@ $(document).ready(function() {
 });
 
 $('.notice-slide').slick({
+    autoplay:true,
+    autoplaySpeed: 4000,
     dots: false,
     infinite: true,
     arrows: true,
-    autoplay:true,
-    autoplaySpeed: 4000,
     speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,

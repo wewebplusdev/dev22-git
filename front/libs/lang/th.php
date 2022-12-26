@@ -416,6 +416,7 @@ $lang['system']['type'] = "ชนิดไฟล์";
 $lang['system']['size'] = "ขนาดไฟล์";
 $lang['system']['view'] = "เข้าชม";
 $lang['system']['search'] = "ค้นหา";
+$lang['system']['sort'] = "จัดเรียง";
 $lang['system']['address'] = "ที่อยู่";
 $lang['system']['phone'] = "โทร";
 $lang['system']['phone2'] = "เบอร์โทร";
@@ -599,3 +600,8 @@ $lang['form']['text'] = "เนื้อความในจดหมาย";
 $lang['form']['reply'] = "ขอเรียนแจ้งให้ทราบว่า บริษัทได้รับคำร้องขอไว้เรียบร้อยแล้ว";
 $lang['form']['dear'] = "เรียน คุณ";
 $lang['form']['dearAdmin'] = "เรียนแอดมิน";
+
+$lang['sort']['0'] = "จัดเรียงตามระบบ";
+$lang['sort']['1'] = "ปรับปรุงล่าสุด";
+$lang['sort']['2'] = "ปรับปรุงเก่าสุด";
+$lang['sort']['3'] = "เข้าชมสูง - ต่ำ";

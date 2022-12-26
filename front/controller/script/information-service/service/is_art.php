@@ -79,8 +79,9 @@ switch ($PageAction) {
 
     ## list data
     if ($callGroup->fields['types'] == 1) { ## for group
-        $callCMS = $infoServicePage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+        $callCMS = $infoServicePage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
         $smarty->assign("callCMS", $callCMS);
+        $smarty->assign("orderArray", $OrderArray);
         $MaxRecord = $callCMS->_maxRecordCount;
         $settingPage = array(
             "page" => $menuActive,
@@ -91,9 +92,10 @@ switch ($PageAction) {
     }else{ ## for subgroup
         $callSubGroup = $infoServicePage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
         $MaxRecord = $callSubGroup->_maxRecordCount;
+        $smarty->assign("orderArray", $OrderArray);
         $arrListData = array();
         foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
-            $callCMS = $infoServicePage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']), $valuecallSubGroup['id']);
+            $callCMS = $infoServicePage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords'], $valuecallSubGroup['id']);
             $arrListData[$keycallSubGroup]['subgroup'] = $valuecallSubGroup;
             foreach ($callCMS as $keycallCMS => $valuecallCMS) {
                 $arrListData[$keycallSubGroup]['list'][] = $valuecallCMS;

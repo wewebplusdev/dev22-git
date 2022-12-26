@@ -414,6 +414,7 @@ $lang['system']['type'] = "文件类型";
 $lang['system']['size'] = "文件大小s";
 $lang['system']['view'] = "参观";
 $lang['system']['search'] = "搜索";
+$lang['system']['sort'] = "種類";
 $lang['system']['address'] = "地址";
 $lang['system']['phone'] = "手机号码";
 $lang['system']['tel'] = "电话号码";

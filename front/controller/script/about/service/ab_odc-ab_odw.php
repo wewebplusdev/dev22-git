@@ -153,9 +153,10 @@ switch ($MenuID) {
                 ## list data
                 if ($callGroup->fields['type'] == 1) {
                     if ($callGroup->fields['types'] == 1) { ## for group
-                        $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+                        $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
                         $masterkey_page = $callCMS->fields['masterkey'];
                         $smarty->assign("callCMS", $callCMS);
+                        $smarty->assign("orderArray", $OrderArray);
                         $MaxRecord = $callCMS->_maxRecordCount;
                         $MenuID = "ab_odc"; // fixed ไว้ เพื่อ active menu แรกเสมอ
                         $settingPage = array(
@@ -168,9 +169,10 @@ switch ($MenuID) {
                         $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
                         $masterkey_page = $callSubGroup->fields['masterkey'];
                         $MaxRecord = $callSubGroup->_maxRecordCount;
+                        $smarty->assign("orderArray", $OrderArray);
                         $arrListData = array();
                         foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
-                            $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']), $valuecallSubGroup['id']);
+                            $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords'], $valuecallSubGroup['id']);
                             $arrListData[$keycallSubGroup]['subgroup'] = $valuecallSubGroup;
                             foreach ($callCMS as $keycallCMS => $valuecallCMS) {
                                 $arrListData[$keycallSubGroup]['list'][] = $valuecallCMS;

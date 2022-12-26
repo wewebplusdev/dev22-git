@@ -84,4 +84,13 @@ $MonthArray = array(
   ),
 );
 #########year career##########
+
+######### array order  ##########
+$OrderArray = array(
+    "0" => $lang['sort']['0'],
+    "1" => $lang['sort']['1'],
+    "2" => $lang['sort']['2'],
+    "3" => $lang['sort']['3'],
+);
+######### array order  ##########
 ?>
