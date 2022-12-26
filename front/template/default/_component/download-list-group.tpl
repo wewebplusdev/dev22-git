@@ -65,7 +65,7 @@
                   <div class="row no-gutters">
                     <div class="col">
                       <label class="visuallyhidden" for="keywords">{$lang['system']['search']}</label>
-                      <input type="search" id="keywords" name="keywords" class="form-control" placeholder="{$lang['career']['search']}" value="{$req_params['keywords']}">
+                      <input type="search" id="keywords" name="keywords" class="form-control" placeholder="{$lang['system']['search']}" value="{$req_params['keywords']}">
                     </div>
                     <div class="col-auto">
                       <button type="button" class="btn btn-primary btn-search" onclick="this.form.submit()">

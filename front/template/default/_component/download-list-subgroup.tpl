@@ -67,7 +67,7 @@
                                             <label class="visuallyhidden"
                                                 for="keywords">{$lang['system']['search']}</label>
                                             <input type="search" id="keywords" name="keywords" class="form-control"
-                                                placeholder="{$lang['career']['search']}"
+                                                placeholder="{$lang['system']['search']}"
                                                 value="{$req_params['keywords']}">
                                         </div>
                                         <div class="col-auto">
