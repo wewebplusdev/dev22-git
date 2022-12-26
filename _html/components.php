@@ -45,38 +45,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-md-6 col-12">
-                                <div class="form-group has-feedback">
-                                    <label class="control-label" for="yearSelect">ปี</label>
-                                    <div class="select-wrapper">
-                                        <select class="select-control select-year" name="ordernews" id="yearSelect" style="width: 100%;">
-                                            <option value="SELECT1">2565</option>
-                                            <option value="SELECT2">2564</option>
-                                            <option value="SELECT3">2563</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-auto ml-lg-0 ml-auto">
-                                <ul class="layout-filter">
-                                    <li class="grid">
-                                        <a href="javascript:void(0)" title="layout group">
-                                            <div class="icon">
-                                                <span class="feather icon-grid"></span>
-                                                <!-- <img src="<?php echo $core_template; ?>/assets/img/icon/layout-group-icon.svg" alt=""> -->
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="list active">
-                                        <a href="javascript:void(0)" title="layout list">
-                                            <div class="icon">
-                                                <span class="feather icon-list"></span>
-                                                <!-- <img src="<?php echo $core_template; ?>/assets/img/icon/layout-list-icon.svg" alt=""> -->
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </form>
                 </div>

@@ -8844,8 +8844,14 @@ fieldset {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.year-list .link:hover {
+  background-color: var(--color-primary);
+}
 .year-list .link.active {
   background-color: var(--color-primary);
+}
+.year-list .link.active:hover {
+  background-color: #003175;
 }
 
 @media (max-width: 1440px) {

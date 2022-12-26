@@ -804,8 +804,15 @@ fieldset {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        &:hover {
+            background-color: var(--color-primary);
+        }
         &.active {
             background-color: var(--color-primary);
+            &:hover {
+                background-color: #003175;
+            }
         }
     }
 }
