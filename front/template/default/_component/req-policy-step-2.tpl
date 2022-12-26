@@ -1,9 +1,22 @@
 <section class="site-container sitekey" data-timer="{$timeout}" data-page="step-2" data-id="{$sitekey}">
-  <div class="default-page">
-    <div class="default-header">
-      <figure class="cover">
-        <img src="{$template}/assets/img/static/header-form.jpg" alt="" class="img-cover">
-      </figure>
+  <div class="default-page about">
+     <div class="default-header">
+        <div class="top-graphic mb-4">
+            <figure class="cover">
+                <img class="figure-img img-fluid" src="{$template}/assets/img/background/mock-top-grapphic-2.png"
+                    alt="">
+            </figure>
+            <div class="container">
+                <div class="wrapper">
+                    <div class="title typo-lg">{$settingModulus.title}</div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{$ul}/home">{$lang['menu']['home']}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a
+                                href="{$ul}/policy">{$lang["policy"]["title"]}</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="default-body">
       <div class="form-block">
@@ -79,22 +92,29 @@
             <div class="form-group has-feedback">
               <label class="control-label">{$lang['form']['type']} <span class="text-danger">*</span></label>
               <div class="mb-2">
-                <div class="checkbox-control">
-                  <input type="checkbox" name="checkall" class="checkall">
-                  <div class="icon"></div>
-                  <div class="title">
-                    {$lang['form']['select']}
+                <div class="block-control">
+                  <div class="form-check">
+                    <input class="form-check-input checkall" type="checkbox" value="{$valuecallCusGroup.id}" name="checkall" >
+                    <label class="control-label" for="inputtype{$valuecallCusGroup.id}">
+                      <div class="title">
+                        {$lang['form']['select']}
+                      </div>
+                    </label>
                   </div>
                 </div>
               </div>
               {foreach $callCusGroup as $keycallCusGroup => $valuecallCusGroup}
                 <div class="mb-2">
-                  <div class="checkbox-control">
-                    <input type="checkbox" value="{$valuecallCusGroup.id}" name="inputtype[]" class="required-chb"
-                      data-id="{$valuecallCusGroup.id}" required>
-                    <div class="icon"></div>
-                    <div class="title">
-                      {$valuecallCusGroup.subject}
+                  <div class="form-group">
+                    <div class="block-control">
+                      <div class="form-check">
+                        <input class="form-check-input required-chb" type="checkbox" value="{$valuecallCusGroup.id}" name="inputtype[]" id="inputtype{$valuecallCusGroup.id}">
+                        <label class="control-label" for="inputtype{$valuecallCusGroup.id}">
+                          <div class="title">
+                            {$valuecallCusGroup.subject}
+                          </div>
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -162,27 +182,27 @@
                         </div>
                     </div> *}
 
-            {if $langon neq 'th'}
+            {if $langon eq 'cn'}
               <div class="form-group">
                 <div class="block-control">
                   <div class="policy-form">
                     <div class="editor-content">
                       <p>
-                        I represent and warrant that the information stated herein is true and correct and I acknowledge
-                        that the Company may contact me for more information in order to proceed my request correctly and
-                        completely.
+                      我聲明並保證此處所述的信息是真實和正確的，我承認
+                      公司可能會與我聯繫以獲取更多信息，以便正確處理我的請求，並且
+                      完全地.
                       </p>
                       <p>
-                        In addition, I also acknowledge that the Company will consider my request and notify me the result
-                        of request within 30 days from the request date. The Company reserves its rights to consider my
-                        request and may refuse my request for the reason of compliance with relevant laws, for example;
+                      此外，本人亦知悉本公司會考慮本人的要求並通知本人結果
+                      自請求之日起 30 天內提出請求。 公司保留考慮我的權利
+                      請求並可能以遵守相關法律為由拒絕我的請求，例如；
                       </p>
                       <ul class="mb-0">
-                        <li>the requester is unable to prove that he/she is the owner of such data;</li>
-                        <li>the request has been made by requester is unreasonable or repetitive;</li>
-                        <li>the proceeding upon my request would affect negatively on others; or</li>
-                        <li>the Company has to process such data under applicable law; or</li>
-                        <li>the Company has already deleted such data due to lapse of the retention period.</li>
+                        <li>請求者無法證明他/她是此類數據的所有者；</li>
+                        <li>請求者提出的請求不合理或重複；</li>
+                        <li>根據我的要求進行的程序會對他人產生負面影響； 要么</li>
+                        <li>公司必鬚根據適用法律處理此類數據； 要么</li>
+                        <li>由於保留期已過，本公司已刪除此類數據。</li>
                       </ul>
                     </div>
                   </div>
@@ -194,7 +214,40 @@
                   <div class="form-check">
                     <input class="form-check-input" name="cb" type="checkbox" id="confirm-box" required="" id="defaultCheck1">
                     <label class="control-label" for="defaultCheck1">
-                      I accept
+                    我接受
+                    </label>
+                  </div>
+                </div>
+              </div>
+            {else if $langon eq 'cn'}
+              <div class="form-group">
+                <div class="block-control">
+                  <div class="policy-form">
+                    <div class="editor-content">
+                      <p>
+                        ข้าพเจ้าขอรับรองว่า ข้อมูลต่างๆ ที่ได้แจ้งให้แก่บริษัทนั้นเป็นความจริง ถูกต้อง
+                        และบริษัทอาจติดต่อข้าพเจ้าเพื่อขอข้อมูลเพิ่มเติมเพื่อให้สามารถดำเนินการตามคำขอของข้าพเจ้าได้อย่างถูกต้อง
+                        ครบถ้วน
+                      </p>
+                      <p class="mb-0">
+                        ทั้งนี้ ข้าพเจ้ารับทราบว่า บริษัทจะพิจารณาและแจ้งผลการพิจารณาตามคำร้องขอใช้สิทธิภายใน 30
+                        วันนับแต่วันที่ได้รับคำร้องขอดังกล่าว และบริษัทสงวนสิทธิในการพิจารณาคำร้องขอใช้สิทธิของข้าพเจ้า
+                        และอาจจำเป็นต้องปฏิเสธคำร้องของข้าพเจ้า เพื่อให้เป็นไปตามกฎหมายที่เกี่ยวข้อง เช่น
+                        กรณีไม่สามารถแสดงให้เห็นชัดเจนว่าเป็นเจ้าของข้อมูลหรือไม่มีอำนาจในการยื่นคำร้องร้องขอ
+                        กรณีเป็นคำขอที่ไม่สมเหตุสมผล เป็นคำขอฟุ่มเฟือย การดำเนินการตามคำขอจะทำให้กระทบในด้านลบต่อบุคคลอื่น
+                        บริษัทจำเป็นต้องใช้ข้อมูลนั้นในการประมวลผลตามหน้าที่กฎหมาย
+                        หรือบริษัททำลายข้อมูลนั้นแล้วเนื่องจากพ้นระยะเวลาการเก็บข้อมูลแล้ว
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="block-control">
+                  <div class="form-check">
+                    <input class="form-check-input" name="cb" type="checkbox" id="confirm-box" required="" id="defaultCheck1">
+                    <label class="control-label" for="defaultCheck1">
+                      ฉันยอมรับเงื่อนไข
                     </label>
                   </div>
                 </div>
@@ -218,18 +271,10 @@
                         บริษัทจำเป็นต้องใช้ข้อมูลนั้นในการประมวลผลตามหน้าที่กฎหมาย
                         หรือบริษัททำลายข้อมูลนั้นแล้วเนื่องจากพ้นระยะเวลาการเก็บข้อมูลแล้ว
                       </p>
-                      {* <ul class="mb-0">
-                                            <li>the requester is unable to prove that he/she is the owner of such data;</li>
-                                            <li>the request has been made by requester is unreasonable or repetitive;</li>
-                                            <li>the proceeding upon my request would affect negatively on others; or</li>
-                                            <li>the Company has to process such data under applicable law; or</li>
-                                            <li>the Company has already deleted such data due to lapse of the retention period.</li>
-                                        </ul> *}
                     </div>
                   </div>
                 </div>
               </div>
-
               <div class="form-group">
                 <div class="block-control">
                   <div class="form-check">

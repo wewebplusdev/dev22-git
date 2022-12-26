@@ -19,7 +19,7 @@
                 <div class="default-slider default-slider-dots slider">
                   {foreach $valuearrGitbookList.list as $keySubNews => $valueSubNews}
                     <div class="item">
-                      <a {if $valueSubNews['url'] neq "" && $valueSubNews['url'] neq "#"}href="{$valueSubNews['url']}"{if $valuecallWeblinkSection['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" title="">
+                      <a {if $valueSubNews['url'] neq "" && $valueSubNews['url'] neq "#"}href="{$valueSubNews['url']}"{if $valueSubNews['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" title="">
                         <figure class="cover">
                           <img src="{$valueSubNews['pic']|fileinclude:"real":{$valueSubNews['masterkey']}:"link"}" alt="{$valueSubNews.subject}">
                         </figure>

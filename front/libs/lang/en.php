@@ -535,7 +535,7 @@ $lang["counter"]["online"] = "Online now";
 
 // FORM EMAIL
 $lang['email']['dear'] = "Dear Customer,";
-$lang['email']['veri:policy'] = "To comply with Personal Data Protection Act B.E.2562, The Gem and Jewelry Institute of Thailand (Public Organization) have established Data Protection policy on personal data collection, use, disclosure, and storage in preventing the unauthorized accession, alteration, collection, or disclosure of Personal Data.";
+$lang['email']['veri:policy'] = "To comply with Personal Data Protection 2019, The Gem and Jewelry Institute of Thailand (Public Organization) have established Data Protection policy on personal data collection, use, disclosure, and storage in preventing the unauthorized accession, alteration, collection, or disclosure of Personal Data.";
 $lang['email']['veri:company'] = "Therefore, the Organization asks for your cooperation to verify your identification via email verification prior to any transactions or personal data requests shall be made with the Organization by click the below link for further process.";
 $lang['email']['veri:email'] = "e-mail verification";
 $lang['email']['veri:time'] = "This link is valid for 24 hours ";
