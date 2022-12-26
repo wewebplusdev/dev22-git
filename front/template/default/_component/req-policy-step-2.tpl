@@ -1,23 +1,23 @@
 <section class="site-container sitekey" data-timer="{$timeout}" data-page="step-2" data-id="{$sitekey}">
-  <div class="default-page about">
-     <div class="default-header">
-        <div class="top-graphic mb-4">
-            <figure class="cover">
-                <img class="figure-img img-fluid" src="{$template}/assets/img/background/mock-top-grapphic-2.png"
-                    alt="">
-            </figure>
-            <div class="container">
-                <div class="wrapper">
-                    <div class="title typo-lg">{$settingModulus.title}</div>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{$ul}/home">{$lang['menu']['home']}</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a
-                                href="{$ul}/policy">{$lang["policy"]["title"]}</a></li>
-                    </ol>
-                </div>
+  <div class="default-header">
+    <div class="top-graphic mb-4">
+        <figure class="cover">
+            <img class="figure-img img-fluid" src="{$template}/assets/img/background/mock-top-grapphic-2.png"
+                alt="">
+        </figure>
+        <div class="container">
+            <div class="wrapper">
+                <div class="title typo-lg">{$settingModulus.title}</div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{$ul}/home">{$lang['menu']['home']}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a
+                            href="{$ul}/policy">{$lang["policy"]["title"]}</a></li>
+                </ol>
             </div>
         </div>
     </div>
+  </div>
+  <div class="default-page about">
     <div class="default-body">
       <div class="form-block">
         <div class="container">

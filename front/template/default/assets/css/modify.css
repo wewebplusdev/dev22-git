@@ -192,3 +192,8 @@
     width: 79%;
   }
 }
+
+/* contact require */
+.contact-page .form-default .form-group .form-input-require {
+  color: red;
+}

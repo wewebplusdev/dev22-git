@@ -109,6 +109,7 @@
               </div>
               <div class="form-group has-feedback">
                 <label class="control-label" for="topic">{$lang['contact']['subject']}</label>
+                <span class="form-input-require">*</span>
                 <div class="block-control">
                   <input type="text" class="form-control" name="inputSubject" id="topic" placeholder="{$lang['contact']['subject']}" data-error=""
                     value="" required>
@@ -117,6 +118,7 @@
               </div>
               <div class="form-group has-feedback">
                 <label class="control-label" for="message">{$lang['contact']['text']}</label>
+                <span class="form-input-require">*</span>
                 <div class="block-control">
                   <textarea class="form-control form-text-area" name="inputMessage" rows="10" cols="100" id="{$lang['contact']['text']}" placeholder=""
                     data-error="" required></textarea>
@@ -148,6 +150,7 @@
             <div class="col-md-6">
               <div class="form-group has-feedback">
                 <label class="control-label" for="fullName">{$lang['contact']['name']}</label>
+                <span class="form-input-require">*</span>
                 <div class="block-control">
                   <input type="text" class="form-control" name="inputName" id="fullName" placeholder="{$lang['system']['fill']} {$lang['contact']['name']}" data-error=""
                     value="" required>
@@ -158,6 +161,7 @@
             <div class="col-md-6">
               <div class="form-group has-feedback">
                 <label class="control-label" for="email">{$lang['contact']['email']}</label>
+                <span class="form-input-require">*</span>
                 <div class="block-control">
                   <input type="email" class="form-control" name="inputEmail" id="email" placeholder="{$lang['system']['fill']}{$lang['contact']['email']}" data-error="" value="" required>
                   <span class="form-control-feedback" aria-hidden="true"></span>
@@ -167,6 +171,7 @@
             <div class="col-md-6">
               <div class="form-group has-feedback">
                 <label class="control-label" for="address">{$lang['contact']['address']}</label>
+                <span class="form-input-require">*</span>
                 <div class="block-control">
                   <input type="text" class="form-control" name="inputAddress" id="address" placeholder="{$lang['system']['fill']}{$lang['contact']['address']}" data-error="" value="" required>
                   <span class="form-control-feedback" aria-hidden="true"></span>
@@ -176,6 +181,7 @@
             <div class="col-md-6">
               <div class="form-group has-feedback">
                 <label class="control-label" for="phoneNumber">{$lang['contact']['tel']}</label>
+                <span class="form-input-require">*</span>
                 <div class="block-control">
                   <input type="tel" class="form-control" name="inputTel" id="phoneNumber" placeholder="{$lang['system']['fill']}{$lang['contact']['tel']}" data-error=""
                     value="" required onkeypress="return isNumberKey(event)">
