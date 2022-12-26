@@ -49,7 +49,7 @@
             <div class="default-tab-slider default-slick" data-slick='{$initialSlide2}'>
                {foreach $arrMenu as $keyarrMenu => $valuearrMenu}
                   <div class="item">
-                     <div class="tab-block {if $menuidLv2 eq $valuearrMenu.id}active{/if}">
+                     <div class="tab-block {if $menuidLv2 eq $valuearrMenu.id}{$menuDetailID = $valuearrMenu.menuid}active{/if}">
                         <a class="text-limit" href="{str_replace("//","/","{$ul}/{$menuActive}/{$valuearrMenu.menuid}/{$valuearrMenu.id}")}">{$valuearrMenu.subject}</a>
                      </div>
                   </div>
@@ -57,6 +57,63 @@
             </div>
          </div>
       {/if}
+      <div class="default-filter">
+                <div class="container">
+                    <form action="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$req_params['year']}"
+                        data-toggle="validator" role="form" class="form-default" method="post">
+                        <div class="row gutters-15 align-items-end">
+                            <div class="col-lg-5 col-12 mr-auto">
+                                <div class="form-group">
+                                    <div class="row no-gutters">
+                                        <div class="col">
+                                            <label class="visuallyhidden"
+                                                for="keywords">{$lang['system']['search']}</label>
+                                            <input type="search" id="keywords" name="keywords" class="form-control"
+                                                placeholder="{$lang['system']['search']}"
+                                                value="{$req_params['keywords']}">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-primary btn-search"
+                                                onclick="this.form.submit()">
+                                                <span class="feather icon-search"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label" for="contact">{$lang['system']['sort']}</label>
+                                    <div class="select-wrapper">
+                                        <select class="select-control" name="order" id="order" style="width: 100%;"
+                                            onchange="this.form.submit()">
+                                            {foreach $orderArray as $keyorderArray => $valueorderArray}
+                                                <option value="{$keyorderArray}"
+                                                    {if $req_params['order'] eq $keyorderArray}selected="selected" {/if}>
+                                                    {$valueorderArray}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {if count($callYear) > 0}
+                            <div class="group-list year-list">
+                                <ul class="nav-list">
+                                    {foreach $callYear as $keycallYear => $valuecallYear}
+                                        <li>
+                                            <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{date('Y', strtotime($valuecallYear.credate))}"
+                                                class="link {if $req_params['year'] eq date('Y', strtotime($valuecallYear.credate))}active{/if}">{$lang['system']['year']}
+                                                {date('Y', strtotime(DateFormat($valuecallYear.credate)))}</a>
+                                        </li>
+                                    {/foreach}
+                                </ul>
+                            </div>
+                        {/if}
+                    </form>
+                </div>
+            </div>
 
       <div class="container">
          <div class="row align-items-center">
@@ -66,22 +123,6 @@
                   <img src="{$template}/assets/img/icon/icon-rss.png" alt="icon rss">
                </a>{/if}</div>
             </div>
-            {if count($callYear) > 0 && $callGroup->fields.isstatic==0}
-               <div class="col text-right">
-                  <div class="form-group has-feedback">
-                     <label class="control-label visuallyhidden" for="yearSelect">{$lang['system']['year']} :</label>
-                     <div class="select-wrapper">
-                        <span>{$lang['system']['year']} :</span>
-                        <select class="select-control select-year" name="ordernews" id="yearSelect">
-                           <option value="All">{$lang['system']['all']}</option>
-                           {foreach $callYear as $keycallYear => $valuecallYear}
-                              <option value="{date('Y', strtotime($valuecallYear.credate))}" {if $req_params['year'] eq date('Y', strtotime($valuecallYear.credate))}selected="selected"{/if}>{date('Y', strtotime(DateFormat($valuecallYear.credate)))}</option>
-                           {/foreach}
-                        </select>
-                     </div>
-                  </div>
-               </div>
-            {/if}
          </div>
          {if $callGroup->fields.isstatic==0}
             {if $callCMS->_numOfRows gte 1}

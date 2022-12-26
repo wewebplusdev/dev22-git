@@ -94,7 +94,7 @@ switch ($PageAction) {
 
       $smarty->assign("callGroup", $callGroup);
 
-      $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+      $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
       $smarty->assign("callCMS", $callCMS);
 
       ## menu lv 2 active
@@ -108,6 +108,8 @@ switch ($PageAction) {
       ## group by year for filter
       $callYear = $aboutPage->callYear($MenuID, $callGroup->fields['id']);
       $smarty->assign("callYear", $callYear);
+
+      $smarty->assign("orderArray", $OrderArray);
 
       /* ## Start SEO ##### */
       $seo_desc = "";
