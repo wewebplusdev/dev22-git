@@ -525,7 +525,13 @@
     }
 }
 
-
+// 2022/12/26
+.form-check .control-label {
+    top: 0;
+}
+.form-check .control-label .title {
+    line-height: 1.2em;
+}
 
 @media (max-width: 1600px) {
 }
@@ -540,7 +546,8 @@
     .select2-container--option-gray .select2-selection--single {
         padding: 21px 5px;
     }
-    .select2-container--default .select2-selection--single, .select2-container--option-year .select2-selection--single {
+    .select2-container--default .select2-selection--single,
+    .select2-container--option-year .select2-selection--single {
         padding: 21px 5px;
     }
     .select2-results__option {
@@ -552,7 +559,8 @@
     .select2-container--option-gray .select2-selection--single {
         padding: 19px 5px;
     }
-    .select2-container--default .select2-selection--single, .select2-container--option-year .select2-selection--single {
+    .select2-container--default .select2-selection--single,
+    .select2-container--option-year .select2-selection--single {
         padding: 19px 5px;
     }
     .select2-results__option {
