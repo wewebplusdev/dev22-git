@@ -414,6 +414,7 @@ $lang['system']['type'] = "文件类型";
 $lang['system']['size'] = "文件大小s";
 $lang['system']['view'] = "参观";
 $lang['system']['search'] = "搜索";
+$lang['system']['sort'] = "種類";
 $lang['system']['address'] = "地址";
 $lang['system']['phone'] = "手机号码";
 $lang['system']['tel'] = "电话号码";
@@ -587,3 +588,8 @@ $lang['form']['text'] = "Detail";
 $lang['form']['reply'] = "Please be informed that The company has received the request.";
 $lang['form']['dear'] = "Dear ";
 $lang['form']['dearAdmin'] = "Dear Admin";
+
+$lang['sort']['0'] = "排序系統";
+$lang['sort']['1'] = "最後更新";
+$lang['sort']['2'] = "最早更新";
+$lang['sort']['3'] = "高 - 低瀏覽量";

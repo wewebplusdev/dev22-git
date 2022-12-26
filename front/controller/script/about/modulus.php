@@ -65,7 +65,7 @@ class aboutPage
     return $result;
   }
 
-  function callCMSList($masterkey, $id = null, $gid = null, $page = 1, $limit = 10, $order = "DESC", $year = null, $sid = null)
+  function callCMSList($masterkey, $id = null, $gid = null, $page = 1, $limit = 10, $order = "DESC", $year = null,$keywords=null, $sid = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -128,10 +128,31 @@ class aboutPage
     if (!empty($sid)) {
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sid = '" . $sid . "' ";
     }
+    if (!empty($keywords)) {
+      $sql .= " AND
+      (
+      " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_subject" . $lang . " LIKE '%" . $keywords . "%' OR
+      " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " LIKE '%" . $keywords . "%'
+      )";
+    }
+    if (!empty($order)) {
+      if($order == 0){
+        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC ";
+      }
+      if($order == 1){
+        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate DESC ";
+      }
+      if($order == 2){
+        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate ASC ";
+      }
+      if($order == 3){
+        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view DESC ";
+      }
+    }else{
+      $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC ";
+    }
 
-    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ".$order." ";
-
-    // print_pre($sql);die;
+    // print_pre($sql);
     $result = $db->pageexecute($sql, $limit, $page);
     return $result;
   }
