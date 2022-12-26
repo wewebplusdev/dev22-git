@@ -21,9 +21,12 @@
     <div class="default-body">
       <div class="form-block">
         <div class="container">
-          <div class="whead">
-            <h2 class="title">{$lang['form']['title-befor'] }<span
-                class="text-secondary">{$lang['form']['title-after'] }</span></h2>
+          <div class="complaint-system-form">
+            <div class="whead">
+              <h2 class="title">{$lang['form']['title-befor'] }
+                <span class="text-secondary">{$lang['form']['title-after'] }</span>
+              </h2>
+            </div>
           </div>
           <form data-toggle="validator" role="form" id="requestForm_step2" class="form-default" method="post">
             <div class="row">
