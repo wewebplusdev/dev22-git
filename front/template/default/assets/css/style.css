@@ -12574,6 +12574,14 @@ fieldset {
     margin-top: 1.5rem;
   }
 }
+.theme-2 .site-container {
+  margin-top: 200px;
+}
+
+.theme-2 .default-header .top-graphic {
+  margin-top: 0;
+}
+
 .theme-3 .site-container {
   overflow: hidden;
   margin-top: 158px;
