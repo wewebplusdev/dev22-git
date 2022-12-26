@@ -49,10 +49,9 @@ xmlns="http://www.w3.org/TR/REC-html40">
     
     <?php
 $sql=str_replace('\\','',$_POST['sql_export']);
-// print_pre($sql);
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $count_record=wewebNumRowsDB($coreLanguageSQL,$query);
-$date_print=DateFormat(date("Y-m-d h:i:s"));
+$date_print=DateFormat(date("Y-m-d h:i:s A"));
 
 			  if($count_record>=1){
 			  $index=1;

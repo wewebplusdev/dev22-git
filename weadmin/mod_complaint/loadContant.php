@@ -71,7 +71,6 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	} else {
 		$inputSearch = $_REQUEST['inputSearch'];
 	}
-
 	$sqlSearch = "";
 	if ($_REQUEST['sdateInput'] != "") {
 	  $valSdate = DateFormatInsertNoTimeAccpet_mod($_REQUEST['sdateInput']);
@@ -100,7 +99,6 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 	$sql_export .= " ORDER BY $module_orderby  DESC ";
 	// print_pre($sql_export);
-
 
 	?>
 	<form action="?" method="post" name="myFormExport" id="myFormExport">
