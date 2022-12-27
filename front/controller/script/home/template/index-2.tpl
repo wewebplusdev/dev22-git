@@ -14,7 +14,7 @@
               <div class="info">
                 <div class="container">
                   <div class="wrapper">
-                    {if $valuecallTopGraphic['subject'] neq ""}
+                    {* {if $valuecallTopGraphic['subject'] neq ""}
                       <div class="title text-limit -x2">
                         {$valuecallTopGraphic['subject']}
                       </div>
@@ -35,7 +35,7 @@
                             {/if} class="btn btn-border-light"
                             title="btn btn-primary">{$lang['system']['viewmore']}</button>
                         </div>
-                      {/if}
+                      {/if} *}
                     </div>
                   </div>
                 </div>
