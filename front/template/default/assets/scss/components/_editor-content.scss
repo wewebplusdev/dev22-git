@@ -358,6 +358,9 @@
     // h2 {
     //     font-size: var(--typo-lg) !important;
     // }
+    .link {
+        color: var(--color-primary);
+    }
 }
 
 @media (max-width: 1440px) {

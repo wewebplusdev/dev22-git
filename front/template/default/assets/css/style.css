@@ -5063,6 +5063,10 @@ li.fancybox-thumbs-loading {
   font-size: var(--typo-default) !important;
   line-height: 1.4em !important;
 }
+.editor-content .link,
+.default-page .editor-content .link {
+  color: var(--color-primary);
+}
 
 @media (max-width: 1440px) {
   .default-page .editor-content img {
