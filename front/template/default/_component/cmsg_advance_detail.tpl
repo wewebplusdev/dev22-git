@@ -1,6 +1,6 @@
 <section class="site-container">
   <div class="default-header">
-    <div class="top-graphic mb-4">
+    <div class="top-graphic">
       <figure class="cover">
         <img class="figure-img img-fluid" src="{$template}{$settingModulus.tgp}" alt="{$settingModulus.subject}">
       </figure>

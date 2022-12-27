@@ -12218,9 +12218,6 @@ fieldset {
   .theme-2 .top-graphic .cover {
     padding-bottom: 50vh;
   }
-  .theme-2 .top-graphic .cover::before {
-    height: 200px;
-  }
   .theme-2 .main-page .h-title {
     font-size: 35px;
   }
@@ -12365,9 +12362,6 @@ fieldset {
   }
 }
 @media (max-width: 767px) {
-  .theme-2 .top-graphic .cover::before {
-    height: 300px;
-  }
   .theme-2 .top-graphic .info .desc {
     margin-bottom: 10px;
   }
@@ -12608,14 +12602,6 @@ fieldset {
     margin-top: 1.5rem;
   }
 }
-.theme-2 .site-container {
-  margin-top: 200px;
-}
-
-.theme-2 .default-header .top-graphic {
-  margin-top: 0;
-}
-
 .theme-3 .site-container {
   overflow: hidden;
   margin-top: 158px;
@@ -13202,6 +13188,7 @@ fieldset {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
+  z-index: 1;
 }
 .default-header .top-graphic .wrapper .title {
   color: var(--color-white);
@@ -13383,7 +13370,7 @@ fieldset {
 }
 
 .default-tab-slider {
-  margin-bottom: 100px !important;
+  margin-bottom: 60px !important;
 }
 .default-tab-slider::before {
   content: "";
@@ -13585,9 +13572,25 @@ fieldset {
   font-weight: var(--fw-medium);
 }
 
+.theme-2 .default-header .top-graphic .cover {
+  padding-bottom: 480px;
+}
+
+.theme-2 .default-header .top-graphic .wrapper {
+  top: 68%;
+}
+
+@media (max-width: 1440px) {
+  .theme-2 .default-header .top-graphic .cover {
+    padding-bottom: 420px;
+  }
+}
 @media (max-width: 1199px) {
   .border-nav-slider {
     bottom: 13px;
+  }
+  .theme-2 .default-header .top-graphic .cover {
+    padding-bottom: 360px;
   }
 }
 @media (max-width: 991px) {
@@ -13608,6 +13611,9 @@ fieldset {
   }
   .default-header .top-graphic .cover {
     padding-bottom: 290px;
+  }
+  .theme-2 .default-header .top-graphic .cover {
+    padding-bottom: 320px;
   }
 }
 @media (max-width: 767px) {
@@ -13639,6 +13645,9 @@ fieldset {
   }
   .default-header .top-graphic .wrapper .title {
     margin: 0;
+  }
+  .theme-2 .default-header .top-graphic .cover {
+    padding-bottom: 280px;
   }
 }
 @media (max-width: 575px) {
@@ -13681,6 +13690,9 @@ fieldset {
   }
   .desc::before {
     display: none;
+  }
+  .theme-2 .default-header .top-graphic .cover {
+    padding-bottom: 250px;
   }
 }
 @media (max-width: 414px) {

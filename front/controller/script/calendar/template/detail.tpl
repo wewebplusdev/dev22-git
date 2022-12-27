@@ -2,7 +2,7 @@
 
    <div class="default-page">
       <div class="default-header">
-         <div class="top-graphic mb-4 text-primary">
+         <div class="top-graphic text-primary">
             <figure class="cover">
                <img class="figure-img img-fluid" src="{$template}{$settingModulus.tgp}" alt="{$settingModulus.subject}">
             </figure>

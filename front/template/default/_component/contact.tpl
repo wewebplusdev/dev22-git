@@ -1,7 +1,7 @@
 <section class="site-container sitekey" data-page="index" data-id="{$sitekey}">
 
   <div class="default-header">
-    <div class="top-graphic mb-4 text-primary">
+    <div class="top-graphic text-primary">
       <figure class="cover">
         <img class="figure-img img-fluid" src="{$template}{$settingModulus.tgp}" alt="{$settingModulus.subject}">
       </figure>

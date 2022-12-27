@@ -10,7 +10,7 @@
     <div class="global-container">
         <?php include('inc/header.php'); ?>
         <section class="site-container">
-            <div class="top-graphic mb-4">
+            <div class="top-graphic">
                 <figure class="cover">
                     <img class="figure-img img-fluid" src="<?php echo $core_template; ?>/assets/img/background/mock-top-grapphic.png" alt="">
                 </figure>
