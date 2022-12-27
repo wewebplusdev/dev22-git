@@ -225,7 +225,7 @@
 }
 
 .default-tab-slider {
-    margin-bottom: 60px !important;
+    // margin-bottom: 60px !important;
     &::before {
         content: "";
         position: absolute;
@@ -522,6 +522,9 @@
     }
     .theme-2 .default-header .top-graphic .cover {
         padding-bottom: 280px;
+    }
+    .default-tab-slider .slick-list .item .tab-block {
+        padding: 10px 25px;
     }
 }
 

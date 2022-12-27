@@ -59,7 +59,7 @@
 
                 <div class="border-nav-slider"></div>
 
-                <div class="container mt-5">
+                <div class="container mt-md-5 mt-4">
                     <h2 class="text-primary mb-4">อัญมณีศาสตร์</h2>
                     <div class="default-tab-slider default-slick">
                         <div class="item">
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container mt-5">
+                <div class="container mt-md-5 mt-4">
                     <div class="row py-3">
                         <div class="col">
                             <div class="h-title">หลักสูตรด้านอัญมณีศาสตร์</div>

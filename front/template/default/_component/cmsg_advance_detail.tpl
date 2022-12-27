@@ -32,7 +32,7 @@
     <div class="border-nav-slider"></div>
     {/if}
     {if count($arrMenu) > 0 && $showslick}
-      <div class="container mt-5">
+      <div class="container mt-md-5 mt-4">
         <div class="row aling-items-center gutters-10">
           <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
           {if $settingModulus['rssfeed']}

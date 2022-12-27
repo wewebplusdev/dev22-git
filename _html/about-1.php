@@ -59,7 +59,7 @@
 
                 <div class="border-nav-slider"></div>
 
-                <div class="container mt-5">
+                <div class="container mt-md-5 mt-4">
                     <h2 class="text-primary mb-4">ทิศทางองค์กร</h2>
                     <div class="default-tab-slider default-slick" data-slick='{"initialSlide": 1}'>
                         <div class="item">

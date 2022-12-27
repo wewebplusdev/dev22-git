@@ -95,6 +95,10 @@
     }
 }
 
+.slick-dotted.slick-slider {
+    margin-bottom: 80px;
+}
+
 @media (max-width: 1600px) {
     .default-slider-arrows .prev-arrow {
         left: -60px;
@@ -146,8 +150,16 @@
         width: 16px;
         height: 16px;
     }
+    .slick-dotted.slick-slider {
+        margin-bottom: 70px;
+    }
 }
 
+@media (max-width: 991px) {
+    .slick-dotted.slick-slider {
+        margin-bottom: 60px;
+    }
+}
 @media (max-width: 767px) {
     .default-slider-dots .slick-dots li.slick-active,
     .default-slider-dots .slick-dots li.slick-active button {
