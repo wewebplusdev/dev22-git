@@ -60,3 +60,7 @@ Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadm
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_policy/viewContant.php|:|plc|:|8|:||:|20|:|GIT Admin|:|::1|:|2022-12-27 16:32:21
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_policy/viewContant.php|:|plc|:|8|:||:|20|:|GIT Admin|:|::1|:|2022-12-27 16:32:25
 Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_policy/updateContant.php|:|plc|:|8|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-27 16:32:38
+Insert|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_weblink_main/insertContant.php|:|wb_t3|:|321|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-27 16:39:01
+Sort|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_weblink_main/sortingContant.php|:|wb_t3|:|321|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-27 16:39:11
+Insert|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_weblink_main/insertContant.php|:|wb_t3|:|321|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-27 16:40:52
+Sort|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_weblink_main/sortingContant.php|:|wb_t3|:|321|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-27 16:41:01
