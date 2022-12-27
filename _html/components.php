@@ -608,7 +608,7 @@
                 <h2 class="text-black mb-4">Top Graphic & Breadcrumb</h2>
             </div>
             <div class="default-header">
-                <div class="top-graphic mb-4">
+                <div class="top-graphic">
                     <figure class="cover">
                         <img class="figure-img img-fluid" src="<?php echo $core_template; ?>/assets/img/background/mock-top-grapphic.png" alt="">
                     </figure>

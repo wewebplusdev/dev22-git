@@ -11,7 +11,7 @@
         <?php include('inc/header.php'); ?>
         <section class="site-container">
             <div class="default-header">
-                <div class="top-graphic mb-4 text-dark">
+                <div class="top-graphic text-dark">
                     <figure class="cover">
                         <img src="<?php echo $core_template; ?>/assets/img/background/top-graphic-research.jpg" alt="">
                     </figure>

@@ -52,7 +52,7 @@ logs_access('3', 'Export');
       // print_pre($sql);
       $query = wewebQueryDB($coreLanguageSQL, $sql);
       $count_record = wewebNumRowsDB($coreLanguageSQL, $query);
-      $date_print = DateFormat(date("Y-m-d h:i:s"));
+      $date_print=DateFormat(date("Y-m-d h:i:s A"));
 
       if ($count_record >= 1) {
         $index = 1;

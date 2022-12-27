@@ -43,7 +43,7 @@
                 </div>
             </div>
             <!-- <div class="default-header">
-                <div class="top-graphic mb-4">
+                <div class="top-graphic">
                     <figure class="cover">
                         <img src="<?php echo $core_template; ?>/assets/img/background/mock-top-grapphic-1.png" alt="">
                     </figure>

@@ -49,10 +49,9 @@ xmlns="http://www.w3.org/TR/REC-html40">
     
     <?php
 $sql=str_replace('\\','',$_POST['sql_export']);
-// print_pre($sql);
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $count_record=wewebNumRowsDB($coreLanguageSQL,$query);
-$date_print=DateFormat(date("Y-m-d"));
+$date_print=DateFormat(date("Y-m-d h:i:s A"));
 
 			  if($count_record>=1){
 			  $index=1;
@@ -61,7 +60,7 @@ $date_print=DateFormat(date("Y-m-d"));
 			$valID=$rowExport[0];
 			$valCredate=DateFormat($rowExport[1]);
 			$valStatus=$rowExport[2];
-			$valSubject=decodeStr(rechangeQuot($rowExport[3]));
+			$valSubject=rechangeQuot($rowExport[3]);
 			$valMessage=decodeStr(rechangeQuot($rowExport[4]));
 			$valAddress=decodeStr(rechangeQuot($rowExport[5]));
 			$valEmail=decodeStr(rechangeQuot($rowExport[6]));
@@ -69,7 +68,8 @@ $date_print=DateFormat(date("Y-m-d"));
       $valCreby=decodeStr(rechangeQuot($rowExport[10]));
 			$valIp=rechangeQuot($rowExport[8]);
 			$valGid=$rowExport[9];
-			$valSubject=decodeStr(rechangeQuot($rowExport[10]));
+			$valName=decodeStr(rechangeQuot($rowExport[10]));
+			$valDetail=decodeStr(rechangeQuot($rowExport[11]));
 			
 			$sql_group = "SELECT ";
 			if($_SESSION[$valSiteManage.'core_session_language']=="Thai"){
@@ -90,17 +90,17 @@ $date_print=DateFormat(date("Y-m-d"));
     
     <tr bgcolor="#ffffff">
       <td height="30" align="center"  valign="middle"><?php echo $index?></td>
-      <td align="left"  valign="middle"><?php echo $row_groupname?></td>
-      <!-- <td align="left"  valign="middle"><?php echo $valSubject?></td> -->
-      <!-- <td align="left"  valign="middle"><?php echo $valCreby?></td> -->
-      <td align="left"  valign="middle"><?php echo $valMessage?></td>
-      <td align="left" valign="middle"><?php echo $valEmail?></td>
-      <td align="left" valign="middle">'<?php echo $valTel?></td>
-      <td align="left" valign="middle"><?php echo $valAddress?></td>
-      <td align="left" valign="middle">'<?php echo $valCredate?></td>
-      <td align="left" valign="middle"><?php echo $valCreby?></td>
-      <td align="left" valign="middle"><?php echo $valIp?></td>
-      <td align="left" valign="middle"><?php echo $valStatus?></td>
+      <td align="left"  valign="middle">&nbsp;<?php echo $row_groupname?></td>
+      <td align="left"  valign="middle">&nbsp;<?php echo $valSubject?></td>
+      <!-- <td align="left"  valign="middle">&nbsp;<?php echo $valCreby?></td> -->
+      <td align="left"  valign="middle">&nbsp;<?php echo $valMessage?></td>
+      <td align="left" valign="middle">&nbsp;<?php echo $valEmail?></td>
+      <td align="left" valign="middle">&nbsp;<?php echo $valTel?></td>
+      <td align="left" valign="middle">&nbsp;<?php echo $valAddress?></td>
+      <td align="left" valign="middle">&nbsp;<?php echo $valCredate?></td>
+      <td align="left" valign="middle">&nbsp;<?php echo $valCreby?></td>
+      <td align="left" valign="middle">&nbsp;<?php echo $valIp?></td>
+      <td align="left" valign="middle">&nbsp;<?php echo $valStatus?></td>
     </tr>
     <?php 
 								$index++;

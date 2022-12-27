@@ -344,11 +344,8 @@
             margin-bottom: 0;
         }
     }
+    *,
     div,
-    h2,
-    h3,
-    h4,
-    h5,
     p,
     span {
         font-family: "Prompt" !important;
@@ -356,11 +353,17 @@
     p,
     span {
         font-size: var(--typo-default) !important;
-        line-height: 1.4em;
+        line-height: 1.4em !important; 
     }
     // h2 {
     //     font-size: var(--typo-lg) !important;
     // }
+    .link {
+        color: var(--color-primary);
+    }
+    span.feather {
+        font-family: "feather" !important;
+    }
 }
 
 @media (max-width: 1440px) {

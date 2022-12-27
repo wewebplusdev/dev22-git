@@ -53,7 +53,7 @@ $sql=str_replace('\\','',$_POST['sql_export']);
 // print_pre($sql);
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $count_record=wewebNumRowsDB($coreLanguageSQL,$query);
-$date_print=DateFormat(date("Y-m-d"));
+$date_print=DateFormat(date("Y-m-d h:i:s A"));
 $valSdate = DateFormatExport($_REQUEST['sdateInputSe']);
 $valEdate = DateFormatExport($_REQUEST['edateInputSe']);
 
