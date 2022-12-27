@@ -10124,11 +10124,13 @@ fieldset {
   font-weight: var(--fw-medium);
   color: var(--color-primary);
   margin-bottom: 1rem;
+  min-height: 2.8em;
 }
 .theme-1 .git-information-block .item .link .wrapper .desc {
   font-size: var(--typo-xs);
   color: var(--color-primary);
   margin-bottom: 4rem;
+  min-height: 2.8em;
 }
 .theme-1 .git-information-block .item .link .wrapper .divider {
   border-style: dashed;
