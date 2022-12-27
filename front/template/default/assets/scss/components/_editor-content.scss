@@ -361,6 +361,9 @@
     .link {
         color: var(--color-primary);
     }
+    span.feather {
+        font-family: "feather" !important;
+    }
 }
 
 @media (max-width: 1440px) {
