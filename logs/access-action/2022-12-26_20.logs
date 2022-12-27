@@ -31,3 +31,6 @@ Delete|:|s7kkac2ug0redqkofd61j5f6jf|:|3|:|http://localhost/dev22-git/weadmin/mod
 Insert|:|s7kkac2ug0redqkofd61j5f6jf|:|3|:|http://localhost/dev22-git/weadmin/mod_cmsg_advance_dwn/insertContant.php|:|ab_odw|:|19|:|insert|:|20|:|GIT Admin|:|127.0.0.1|:|2022-12-26 17:05:17
 Update|:|s7kkac2ug0redqkofd61j5f6jf|:|3|:|http://localhost/dev22-git/weadmin/mod_cmsg_advance_dwn/updateContant.php|:|ab_odw|:|19|:|update|:|20|:|GIT Admin|:|127.0.0.1|:|2022-12-26 17:05:48
 View|:|s7kkac2ug0redqkofd61j5f6jf|:|3|:|http://localhost/dev22-git/weadmin/mod_cmsg_advance_dwn/viewContant.php|:|ab_odw|:|19|:||:|20|:|GIT Admin|:|127.0.0.1|:|2022-12-26 17:05:50
+Insert|:|hnh7mbrr8j77hd61fa7mamq2ue|:|3|:|http://localhost/dev22-git/weadmin/mod_weblink_group/insertContant.php|:|wb_book|:|323|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-26 17:20:07
+Delete|:|hnh7mbrr8j77hd61fa7mamq2ue|:|3|:|http://localhost/dev22-git/weadmin/mod_weblink_group/deleteContant.php|:|wb_book|:|323|:||:|20|:|GIT Admin|:|::1|:|2022-12-26 17:21:38
+Delete|:|hnh7mbrr8j77hd61fa7mamq2ue|:|3|:|http://localhost/dev22-git/weadmin/mod_weblink_group/deleteContant.php|:|wb_book|:|323|:||:|20|:|GIT Admin|:|::1|:|2022-12-26 17:21:49
