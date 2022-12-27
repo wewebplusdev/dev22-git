@@ -5046,18 +5046,12 @@ li.fancybox-thumbs-loading {
 .default-page .editor-content p:last-child {
   margin-bottom: 0;
 }
+.editor-content *,
 .editor-content div,
-.editor-content h2,
-.editor-content h3,
-.editor-content h4,
-.editor-content h5,
 .editor-content p,
 .editor-content span,
+.default-page .editor-content *,
 .default-page .editor-content div,
-.default-page .editor-content h2,
-.default-page .editor-content h3,
-.default-page .editor-content h4,
-.default-page .editor-content h5,
 .default-page .editor-content p,
 .default-page .editor-content span {
   font-family: "Prompt" !important;
@@ -5067,7 +5061,7 @@ li.fancybox-thumbs-loading {
 .default-page .editor-content p,
 .default-page .editor-content span {
   font-size: var(--typo-default) !important;
-  line-height: 1.4em;
+  line-height: 1.4em !important;
 }
 
 @media (max-width: 1440px) {
