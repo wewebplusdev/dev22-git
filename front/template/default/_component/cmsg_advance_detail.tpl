@@ -113,6 +113,34 @@
     </div>
     
     <div class="container">
+    
+      {if $Call_Album->_numOfRows gte 1}
+        <div class="col-12">
+            <div class="gallery-block">
+              <div class="gallery-slider-for">
+                {foreach $Call_Album as $keyCall_Album => $valueCall_Album}
+                  <div class="item">
+                      <a href="{$valueCall_Album.filename|fileinclude:"album":{$callCMS->fields.masterkey}:"link"}{$setVersionTemp}" class="link" data-fancybox="gallery">
+                          <figure class="cover">
+                              <img src="{$valueCall_Album.filename|fileinclude:"album":{$callCMS->fields.masterkey}:"link"}{$setVersionTemp}" alt="gallery thumbnail {$keyCall_Album}">
+                          </figure>
+                      </a>
+                  </div>
+                  {/foreach}
+                </div>
+                <div class="gallery-slider-nav">
+                  {foreach $Call_AlbumList as $keyCall_AlbumList => $valueCall_AlbumList}
+                    <div class="item">
+                        <figure class="cover">
+                            <img src="{$valueCall_AlbumList.filename|fileinclude:"album":{$callCMS->fields.masterkey}:"link"}" alt="gallery thumbnail {$keyCall_AlbumList}">
+                        </figure>
+                    </div>
+                  {/foreach}
+                </div>
+            </div>
+        </div>
+      {/if}
+
       {if $callCMS->fields.htmlfilename neq ""}
         <div class="editor-content">
           <!-- CK Editor -->
