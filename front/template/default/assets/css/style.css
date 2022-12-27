@@ -6243,6 +6243,7 @@ div.swal2-html-container {
   margin-bottom: 0;
   padding: 10px 180px;
   background-color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0 !important;
 }
 .gallery-block .gallery-slider-nav .item {
   padding: 10px;
