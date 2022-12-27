@@ -27,6 +27,10 @@ switch ($PageAction) {
       $Call_File = $callSetWebsite->Call_File($callCMS->fields['id']);
       $smarty->assign("Call_File", $Call_File);
 
+      $Call_Album = $callSetWebsite->Call_Album($callCMS->fields['id'], $config['cma']['db']['main']);
+      $smarty->assign("Call_Album", $Call_Album);
+      $smarty->assign("Call_AlbumList", $Call_Album);
+
       ## breadcrumb
       $breadcrumb = explode("-", $callCMS->fields['menuname']);
       $settingModulus['breadcrumb'] = $breadcrumb[0];
