@@ -137,13 +137,13 @@
                 {/if} *}
             </div>
 
-            {if count($arrListData) > 0}
-                {foreach $arrListData as $keyarrListData => $valuearrListData}
-                    {if count($valuearrListData.list) >0}
+            <div id="accordionInner">
+                <div class="collapse-block">
+                {if count($arrListData) > 0}
+                    {foreach $arrListData as $keyarrListData => $valuearrListData}
+                        {if count($valuearrListData.list) >0}
                         <div class="row py-3">
                             <div class="col">
-                                <div class="collapse-block">
-                                    <div id="accordionInner">
                                         <div class="card">
                                             <div class="card-header">
                                                 <h3 class="mb-0">
@@ -160,7 +160,7 @@
                                             </div>
                                             <div id="about-{$valuearrListData.subgroup.id}"
                                                 class="collapse {if $keyarrListData eq 0}show{/if}"
-                                                aria-labelledby="headingCollapse" data-parent="#accordion">
+                                                aria-labelledby="headingCollapse" data-parent="#accordionInner">
                                                 {foreach $valuearrListData.list as $keyList => $valueList}
                                                     {$Call_File = $callSetWebsite::Call_File($valueList['id'])}
                                                     {$fileinfo = $Call_File->fields['filename']|fileinclude:'file':{$valueList.masterkey}|get_Icon}
@@ -267,11 +267,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            {/if}
+                        {/foreach}
                     {/if}
-                {/foreach}
-            {/if}
+                </div>
+            </div>
 
             <div class="editor-content">
             </div>
