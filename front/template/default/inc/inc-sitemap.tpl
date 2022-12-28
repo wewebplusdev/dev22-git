@@ -18,7 +18,9 @@
                             {foreach $arrSitemap as $keyarrSitemap => $valuearrSitemap}
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                     <h4 class="title">
-                                        {$valuearrSitemap['group']['subject']}
+                                        <a href="{$ul}" class="link">
+                                            {$valuearrSitemap['group']['subject']}
+                                        </a>
                                     </h4>
                                     {if count($valuearrSitemap) > 0}
                                         <ul class="list-group">
