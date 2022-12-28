@@ -45,6 +45,8 @@
         {/foreach}
       </div>
     </div>
+    
+  {if $callAnnouncer->_numOfRows gte 1}
     <!-- Home Notice and Search -->
     <div class="notice-search">
         <div class="container">
@@ -68,6 +70,7 @@
             </div>
         </div>
     </div>
+  {/if}
     
     {foreach $sectionMainpage as $keysectionMainpage => $valuesectionMainpage}
       {include file={$valuesectionMainpage.file}}
