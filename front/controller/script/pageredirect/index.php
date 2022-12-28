@@ -25,7 +25,6 @@ switch ($segment) {
     case 'url':
         $action = decodeStr($url->segment[2]);
         $ContantID = base64_decode($url->segment[3]);
-
         switch ($action) {
             case 'sg':
                 $getSubGroupMenu = $callSetWebsite->getSubGroupMenu($config['setting']['mnu']['masterkey'], 0, $ContantID);
