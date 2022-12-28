@@ -123,8 +123,7 @@
                 <div class="col-md-4">
                   <div class="profile-thumbnail">
                     <figure class="cover">
-                      <img src="upload/{$callCMS->fields.masterkey}/real/{$callCMS->fields.pic}"
-                        alt="profile thumbnail">
+                        <img src="{$callCMS->fields.pic|fileinclude:"real":{$callCMS->fields.masterkey}:"link"}"> 
                     </figure>
                   </div>
                 </div>
