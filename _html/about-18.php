@@ -59,7 +59,7 @@
 
                 <div class="border-nav-slider"></div>
 
-                <div class="container mt-5">
+                <div class="container mt-md-5 mt-4">
                     <div class="row aling-items-center gutters-10">
                         <div class="col-auto">
                             <h2 class="text-primary mb-4">นโยบายและแผน</h2>

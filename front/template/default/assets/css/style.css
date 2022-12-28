@@ -6243,6 +6243,7 @@ div.swal2-html-container {
   margin-bottom: 0;
   padding: 10px 180px;
   background-color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0 !important;
 }
 .gallery-block .gallery-slider-nav .item {
   padding: 10px;
@@ -6407,6 +6408,10 @@ div.swal2-html-container {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36.312' height='66.055' viewBox='0 0 36.312 66.055'%3E%3Cpath id='Path_1487' data-name='Path 1487' d='M1774.367,2931l32.031,29.783-32.031,32.031' transform='translate(-1772.246 -2928.88)' fill='none' stroke='%23013f94' stroke-linecap='round' stroke-width='3'/%3E%3C/svg%3E%0A");
 }
 
+.slick-dotted.slick-slider {
+  margin-bottom: 80px;
+}
+
 @media (max-width: 1600px) {
   .default-slider-arrows .prev-arrow {
     left: -60px;
@@ -6455,6 +6460,14 @@ div.swal2-html-container {
 .default-slider-dots .slick-dots li button:before {
     width: 16px;
     height: 16px;
+  }
+  .slick-dotted.slick-slider {
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 991px) {
+  .slick-dotted.slick-slider {
+    margin-bottom: 60px;
   }
 }
 @media (max-width: 767px) {
@@ -6589,7 +6602,7 @@ div.swal2-html-container {
   height: calc(100vh - 98px);
 }
 .menu-full.show {
-  z-index: 98;
+  z-index: 1052;
   background: var(--color-primary);
 }
 .menu-full.show .main-menu {
@@ -10111,11 +10124,13 @@ fieldset {
   font-weight: var(--fw-medium);
   color: var(--color-primary);
   margin-bottom: 1rem;
+  min-height: 2.8em;
 }
 .theme-1 .git-information-block .item .link .wrapper .desc {
   font-size: var(--typo-xs);
   color: var(--color-primary);
   margin-bottom: 4rem;
+  min-height: 2.8em;
 }
 .theme-1 .git-information-block .item .link .wrapper .divider {
   border-style: dashed;
@@ -13369,9 +13384,6 @@ fieldset {
   bottom: 14px;
 }
 
-.default-tab-slider {
-  margin-bottom: 60px !important;
-}
 .default-tab-slider::before {
   content: "";
   position: absolute;
@@ -13648,6 +13660,9 @@ fieldset {
   }
   .theme-2 .default-header .top-graphic .cover {
     padding-bottom: 280px;
+  }
+  .default-tab-slider .slick-list .item .tab-block {
+    padding: 10px 25px;
   }
 }
 @media (max-width: 575px) {

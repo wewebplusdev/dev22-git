@@ -41,7 +41,7 @@
 
     <div class="container">
       {if count($arrMenu) > 0}
-        <div class="container mt-5">
+        <div class="container mt-md-5 mt-4">
           <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
           <div class="default-tab-slider default-slick" data-slick='{$initialSlide2}'>
             {foreach $arrMenu as $keyarrMenu => $valuearrMenu}

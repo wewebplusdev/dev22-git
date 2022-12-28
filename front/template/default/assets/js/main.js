@@ -193,8 +193,8 @@ $(document).ready(function() {
     // var count_slick = $('.default-tab-slider div div').length ? count_slick : true;
     $(".default-tab-slider").slick({
         infinite: false,
-        slidesToShow: 4,
-        slidesToScroll: 1,
+        // slidesToShow: 4,
+        // slidesToScroll: 1,
         arrows: true,
         dots: true,
         variableWidth: true,
@@ -202,22 +202,23 @@ $(document).ready(function() {
                 breakpoint: 778,
                 settings: {
                     arrows: false,
-                    slidesToShow: 3,
+                    // slidesToShow: 3,
                 },
             },
             {
                 breakpoint: 576,
                 settings: {
-                    slidesToShow: 2,
+                    // slidesToShow: 2,
                     dots: true,
+                    arrows: false,
                 },
             },
-            {
-                breakpoint: 376,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
+            // {
+            //     breakpoint: 376,
+            //     settings: {
+            //         // slidesToShow: 1,
+            //     },
+            // },
         ],
     });
 

@@ -1086,11 +1086,13 @@
                         font-weight: var(--fw-medium);
                         color: var(--color-primary);
                         margin-bottom: 1rem;
+                        min-height: calc(1.4em * 2);
                     }
                     .desc {
                         font-size: var(--typo-xs);
                         color: var(--color-primary);
                         margin-bottom: 4rem;
+                        min-height: calc(1.4em * 2);
                     }
                     .divider {
                         border-style: dashed;

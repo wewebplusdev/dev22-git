@@ -9,7 +9,7 @@
                 <div class="info">
                     <div class="container">
                         <div class="wrapper">
-                            {if $valuecallTopGraphic['subject'] neq ""}
+                            {* {if $valuecallTopGraphic['subject'] neq ""}
                                 <div class="title text-limit -x3">
                                     {$valuecallTopGraphic['subject']}
                                 </div>
@@ -21,7 +21,7 @@
                             {/if}
                             {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}
                             <a {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="btn btn-border-light" title="btn btn-primary">{$lang['system']['viewmore']}</a>
-                            {/if}
+                            {/if} *}
                         </div>
                     </div>
                 </div>

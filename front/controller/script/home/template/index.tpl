@@ -12,7 +12,7 @@
               <div class="info">
                   <div class="container -lg">
                       <div class="wrapper">
-                        {if $valuecallTopGraphic['subject'] neq ""}
+                        {* {if $valuecallTopGraphic['subject'] neq ""}
                         <div class="title text-limit -x3">
                           {$valuecallTopGraphic['subject']}
                         </div>
@@ -22,10 +22,10 @@
                         <div class="desc text-limit -x3">
                           {$valuecallTopGraphic['title']}
                         </div>
-                        {/if}
-                        {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}
+                        {/if} *}
+                        {* {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}
                         <button {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="btn btn-primary" title="btn btn-primary">{$lang['system']['viewmore']}</button>
-                        {/if}
+                        {/if} *}
 
                         <!-- CK Editor -->
                         {* {strip}
