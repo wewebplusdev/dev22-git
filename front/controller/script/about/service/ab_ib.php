@@ -47,7 +47,7 @@ switch ($url->segment[3]) {
 
         $settingPage = array(
             "page" => $menuActive,
-            "template" => "cms_advance_detail.tpl",
+            "template" => "cms_advance_detail_board.tpl",
             "display" => "page",
             "control" => "component",
         );

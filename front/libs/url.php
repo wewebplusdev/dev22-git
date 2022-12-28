@@ -285,10 +285,10 @@ class url
                         // last request was more than 30 minutes ago
                         unset($_SESSION['intro']);     // unset $_SESSION variable for the run-time 
                         http_response_code(302);
-                        header('location:' . $linklang . "/404");
+                        return $pageloader = " intro";
                     } else {
                         http_response_code(302);
-                        header('location:' . $linklang . "/404");
+                        header('location:' . $linklang . "/home");
                     }
                 }
                 break;
