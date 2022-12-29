@@ -8903,6 +8903,10 @@ fieldset {
   background-color: #003175;
 }
 
+.default-tab-slider.slick-dotted.slick-slider {
+  margin-bottom: 80px !important;
+}
+
 @media (max-width: 1440px) {
   .detail-link-block .item-list > li + li {
     margin-top: 5rem;
@@ -9065,6 +9069,12 @@ fieldset {
   }
   .year-list .nav-list li {
     width: 33.3333333333%;
+  }
+  .default-slick .slick-dots {
+    margin-top: 15px;
+  }
+  .default-tab-slider.slick-dotted.slick-slider {
+    margin-bottom: 58px !important;
   }
 }
 @media (max-width: 414px) {
