@@ -201,3 +201,10 @@
 .contact-page .form-default .form-group .form-input-require {
   color: red;
 }
+
+/* 2022/12/29 */
+
+.theme-3 .top-graphic .cover::before {
+  opacity: 0;
+  visibility: hidden;
+}

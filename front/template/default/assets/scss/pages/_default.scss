@@ -817,6 +817,12 @@ fieldset {
     }
 }
 
+.default-tab-slider {
+    &.slick-dotted.slick-slider {
+        margin-bottom: 80px !important;
+    }
+}
+
 @media (max-width: 1600px) {
 }
 
@@ -991,6 +997,12 @@ fieldset {
     }
     .year-list .nav-list li {
         width: calc(100% / 3);
+    }
+    .default-slick .slick-dots {
+        margin-top: 15px;
+    }
+    .default-tab-slider.slick-dotted.slick-slider {
+        margin-bottom: 58px !important;
     }
 }
 
