@@ -12,7 +12,9 @@ switch ($url->segment[2]) {
         $smarty->assign("callCMS", $callCMS);
         $smarty->assign("callCMSFields", $callCMS->fields);
 
-        $settingModulus['tgp'] = "/assets/img/background/top-graphic-research.jpg";
+        // $settingModulus['tgp'] = "/assets/img/background/top-graphic-research.jpg";
+        $settingModulus['tgp'] = "/assets/img/background/mock-top-grapphic-2.png";
+        
         $settingModulus['breadcrumb'] = $lang['research']['diamond-cal'];
 
         /*## Start SEO #####*/
