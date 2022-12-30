@@ -43,3 +43,26 @@ Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadm
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:44:35
 Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:44:48
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:45:23
+Insert Group|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/insertGroup.php|:|ab_ib|:|16|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:48:41
+Update Group|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateGroup.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:48:58
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:49:14
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:49:23
+Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:49:34
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:49:53
+Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:50:01
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:50:06
+Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:50:16
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:50:24
+Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:50:36
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:50:49
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:51:32
+Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:51:44
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:51:57
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:52:08
+Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:52:26
+Sort|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/topUpdateGroup.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:54:56
+Sort|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/topUpdateGroup.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 13:55:13
+Sort Group|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/sortingGroup.php|:|ab_ib|:|16|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:56:42
+Insert Group|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/insertGroup.php|:|ab_ib|:|16|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:57:17
+Insert Group|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/insertGroup.php|:|ab_ib|:|16|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:58:01
+Sort Group|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/sortingGroup.php|:|ab_ib|:|16|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-30 13:58:49
