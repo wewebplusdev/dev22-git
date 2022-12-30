@@ -424,10 +424,10 @@
     }
 }
 
-
 .theme-2 .default-header .top-graphic .cover {
     padding-bottom: 480px;
 }
+
 .theme-2 .default-header .top-graphic .wrapper {
     top: 68%;
 }
@@ -438,7 +438,6 @@
     .theme-2 .default-header .top-graphic .cover {
         padding-bottom: 420px;
     }
-    
 }
 
 @media (max-width: 1199px) {
@@ -593,6 +592,10 @@
     }
     .theme-3 .default-header .top-graphic .wrapper .title {
         text-align: center;
+    }
+    .default-nav-slider .item .active::before,
+    .default-nav-slider .item a:hover::before {
+        bottom: -1.7px;
     }
 }
 

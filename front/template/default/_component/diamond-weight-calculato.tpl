@@ -25,8 +25,7 @@
             <div class="image-block">
                 <div class="image-thumbnail">
                     <figure class="cover">
-                        <img src="{$template}/assets/img/static/image-thumbnail-research.jpg"
-                            alt="image thumbnail">
+                        <img src="{$template}/assets/img/static/image-thumbnail-research.jpg" alt="image thumbnail">
                     </figure>
                 </div>
             </div>
