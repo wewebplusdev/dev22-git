@@ -1,6 +1,5 @@
 <section class="site-container" style="background-color: #{$themeWebsite.color|default:'#FFFFF'};">
   <div class="main-page">
-wwwwwwwwwwwww
     <div class="top-graphic">
       <div class="default-slider-dots slider">
       {foreach $callTopGraphic as $keycallTopGraphic => $valuecallTopGraphic}
