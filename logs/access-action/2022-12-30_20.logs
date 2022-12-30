@@ -156,3 +156,14 @@ Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadm
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 16:38:52
 Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:40:35
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 16:41:18
+Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:42:45
+View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 16:46:01
+Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:47:30
+Insert SubGroup|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/insertSubGroup.php|:|ab_ib|:|16|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:54:42
+View SubGroup|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewSubGroup.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 16:56:03
+Update SubGroup|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateSubGroup.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:56:14
+Insert Group|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/insertGroup.php|:|ab_ib|:|16|:|insert|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:56:51
+View SubGroup|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewSubGroup.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 16:58:12
+Update SubGroup|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateSubGroup.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:58:57
+View SubGroup|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewSubGroup.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 17:02:09
+Update SubGroup|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateSubGroup.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 17:02:41
