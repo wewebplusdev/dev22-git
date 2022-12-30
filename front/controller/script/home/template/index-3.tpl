@@ -4,7 +4,9 @@
         {foreach $callTopGraphic as $keycallTopGraphic => $valuecallTopGraphic}
             <div class="tpg-item">
                 <figure class="cover">
+                <a {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link">
                     <img src="{$valuecallTopGraphic['pic']|fileinclude:"real":{$valuecallTopGraphic['masterkey']}:"link"}" alt="{$valuecallTopGraphic.pic}">
+                </a>
                 </figure>
                 <div class="info">
                     <div class="container">
