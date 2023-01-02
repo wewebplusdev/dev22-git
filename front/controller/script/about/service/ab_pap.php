@@ -56,7 +56,8 @@ switch ($PageAction) {
 
   default:
     $callGroup = $aboutPage->callGroup($MenuID, $ContentID);
-
+    $SubGroupID = $url->segment[3];
+//print_pre($SubGroupID."=".$callGroup->fields['types']);
     if ($callGroup->_numOfRows < 1) {
         header('location:'.$linklang.'/404');
         exit(0);
@@ -73,6 +74,7 @@ switch ($PageAction) {
         $order = 1;
     }
     $smarty->assign("order", $order);
+    $smarty->assign("callGroupType", $callGroup->fields['types']);
 
     ## list data
     if ($callGroup->fields['type'] == 1) {
@@ -88,17 +90,23 @@ switch ($PageAction) {
                 "control" => "component",
             );
         }else{ ## for subgroup
-            $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+            $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, null);
             $MaxRecord = $callSubGroup->_maxRecordCount;
+            if(empty($SubGroupID) && $MaxRecord > 0){
+                $SubGroupID = $callSubGroup->fields['id'];
+             }
             $smarty->assign("orderArray", $OrderArray);
+            $smarty->assign("subGroup",  $SubGroupID);
+            $smarty->assign("callSubGroup", $callSubGroup);
+            $smarty->assign("callSubGroupRows", $MaxRecord);
             $arrListData = array();
-            foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
-                $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords'], $valuecallSubGroup['id']);
-                $arrListData[$keycallSubGroup]['subgroup'] = $valuecallSubGroup;
+            //foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
+                $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], null,$req_params['keywords'], $SubGroupID);
+                $arrListData[0]['subgroup'] = $SubGroupID;
                 foreach ($callCMS as $keycallCMS => $valuecallCMS) {
-                    $arrListData[$keycallSubGroup]['list'][] = $valuecallCMS;
+                    $arrListData[0]['list'][] = $valuecallCMS;
                 }
-            }
+            //}
             $smarty->assign("arrListData", $arrListData);
             $settingPage = array(
                 "page" => $menuActive,

@@ -218,7 +218,7 @@ switch ($MenuID) {
 
           default:
               $callGroup = $trainingPage->callGroup($MenuID, $ContentID);
-
+              $SubGroupID = $url->segment[3];
               if ($callGroup->_numOfRows < 1) {
                   header('location:' . $linklang . '/404');
                   exit(0);
@@ -235,7 +235,7 @@ switch ($MenuID) {
                   $order = 1;
               }
               $smarty->assign("order", $order);
-
+              $smarty->assign("callGroupType", $callGroup->fields['types']);
               ## list data
               if ($callGroup->fields['types'] == 1) { ## for group
                   $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
@@ -251,18 +251,24 @@ switch ($MenuID) {
                       "control" => "component",
                   );
               } else { ## for subgroup
-                  $callSubGroup = $trainingPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
+                  $callSubGroup = $trainingPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, null);
                   $masterkey_page = $callSubGroup->fields['masterkey'];
                   $MaxRecord = $callSubGroup->_maxRecordCount;
-                  $smarty->assign("orderArray", $OrderArray);
-                  $arrListData = array();
-                  foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
-                      $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords'], $valuecallSubGroup['id']);
-                      $arrListData[$keycallSubGroup]['subgroup'] = $valuecallSubGroup;
+                  if(empty($SubGroupID) && $MaxRecord > 0){
+                    $SubGroupID = $callSubGroup->fields['id'];
+                 }
+                $smarty->assign("orderArray", $OrderArray);
+                $smarty->assign("subGroup",  $SubGroupID);
+                $smarty->assign("callSubGroup", $callSubGroup);
+                $smarty->assign("callSubGroupRows", $MaxRecord);
+                $arrListData = array();
+                  //foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
+                      $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], null,$req_params['keywords'], $SubGroupID);
+                      $arrListData[0]['subgroup'] = $SubGroupID;
                       foreach ($callCMS as $keycallCMS => $valuecallCMS) {
-                          $arrListData[$keycallSubGroup]['list'][] = $valuecallCMS;
+                          $arrListData[0]['list'][] = $valuecallCMS;
                       }
-                  }
+                  //}
                   $smarty->assign("arrListData", $arrListData);
                   $MenuID = $config['trw_his']['main']['masterkey']; // fixed ไว้ เพื่อ active menu แรกเสมอ
                   $settingPage = array(

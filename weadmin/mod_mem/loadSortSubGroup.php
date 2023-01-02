@@ -95,7 +95,7 @@ $valPermission= getUserPermissionOnMenu($_SESSION[$valSiteManage."core_session_g
     <td  colspan="7" align="left"  valign="middle" class="formTileTxt">
     <?php
 		$sql = "SELECT   ".$mod_tb_root_subgroup."_id,".$mod_tb_root_subgroup."_subject,".$mod_tb_root_subgroup."_lastdate,".$mod_tb_root_subgroup."_status,".$mod_tb_root_subgroup."_subjecten  FROM ".$mod_tb_root_subgroup." WHERE ".$mod_tb_root_subgroup."_masterkey ='".$_REQUEST['masterkey']."'    ";
-		$sql .= " ORDER BY ".$mod_tb_root_subgroup."_order DESC";
+		$sql .= " ORDER BY ".$mod_tb_root_subgroup."_order ASC";
 	$query=wewebQueryDB($coreLanguageSQL,$sql) ;
 	$recordCount=wewebNumRowsDB($coreLanguageSQL,$query);
 	if($recordCount>=1){

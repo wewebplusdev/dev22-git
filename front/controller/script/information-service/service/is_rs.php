@@ -15,7 +15,7 @@ $callGroup = $infoServicePage->callGroup($MenuID, $ContentID);
 $smarty->assign("callGroup", $callGroup);
 
 ## setting list
-$limit = 10;
+$limit = 12;
 $order = $req_params['order'];
 if ($order == 2) {
     $sorting = "ASC";

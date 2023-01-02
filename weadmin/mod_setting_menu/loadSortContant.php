@@ -122,7 +122,7 @@ if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
             //     $sql = $sql . "  OR " . $mod_tb_root . "_masterkey IN (" . implode(",", array_values($mod_array_conf[$_REQUEST['masterkey']]['component'])) . ") ";
             // }
             $sql = $sql . "  AND  ". $mod_tb_root . "_status = 'Enable'";
-            $sql .= " ORDER BY " . $mod_tb_root . "" . $order . " DESC";
+            $sql .= " ORDER BY " . $mod_tb_root . "" . $order . " ASC";
             $query = wewebQueryDB($coreLanguageSQL, $sql);
             $recordCount = wewebNumRowsDB($coreLanguageSQL, $query);
             if ($recordCount >= 1) {

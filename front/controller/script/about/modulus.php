@@ -22,6 +22,7 @@ class aboutPage
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view as view,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_typec as typec,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate as credate,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_refdate as refdate,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_metatitle" . $lang . " as metatitle,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_description" . $lang . " as description,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_keywords" . $lang . " as keywords,
@@ -58,14 +59,14 @@ class aboutPage
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
 
-  function callCMSList($masterkey, $id = null, $gid = null, $page = 1, $limit = 10, $order = "DESC", $year = null,$keywords=null, $sid = null)
+  function callCMSList($masterkey, $id = null, $gid = null, $page = 1, $limit = 10, $order = "ASC", $year = null,$keywords=null, $sid = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -86,6 +87,7 @@ class aboutPage
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view as view,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_typec as typec,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate as credate,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_refdate as refdate,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_metatitle" . $lang . " as metatitle,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_description" . $lang . " as description,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_keywords" . $lang . " as keywords,
@@ -137,7 +139,7 @@ class aboutPage
     }
     if (!empty($order)) {
       if($order == 0){
-        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC ";
+        $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ASC ";
       }
       if($order == 1){
         $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate DESC ";
@@ -149,7 +151,7 @@ class aboutPage
         $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view DESC ";
       }
     }else{
-      $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC ";
+      $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ASC ";
     }
 
     // print_pre($sql);
@@ -192,7 +194,7 @@ class aboutPage
       $sql .= " AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -225,7 +227,7 @@ class aboutPage
       $sql .= " AND " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -281,7 +283,7 @@ class aboutPage
     return $result;
   }
 
-  function callSubGroup($masterkey, $gid = null, $page = 1, $limit = 10, $order = "DESC", $year = null)
+  function callSubGroup($masterkey, $gid = null, $page = 1, $limit = 10, $order = "ASC", $year = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -367,7 +369,7 @@ class aboutPage
       $sql .= " AND " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['memsg']['db']['main'] . "." . $config['memsg']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -402,7 +404,7 @@ class aboutPage
       $sql .= " AND " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_id IN (" . $arr_id . ") ";
     }
 
-    $sql .= " ORDER  BY " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -443,7 +445,7 @@ class aboutPage
     }
 
     $sql .= " GROUP BY " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid
-    ORDER  BY " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order DESC ";
+    ORDER  BY " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -534,7 +536,7 @@ class aboutPage
 
     $sql .= " GROUP BY " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id
     ," . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id
-    ORDER  BY " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_order ," . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order DESC ";
+    ORDER  BY " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_order ," . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -564,7 +566,7 @@ class aboutPage
       AND " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_status != 'Disable'
       ";
 
-    $sql .= " ORDER  BY " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['joss']['db']['main'] . "." . $config['joss']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -572,7 +574,7 @@ class aboutPage
   }
 
 
-  function callListCareer($masterkey = null, $page = 1, $limit = 10, $order = "DESC", $keywords = null, $id = null)
+  function callListCareer($masterkey = null, $page = 1, $limit = 10, $order = "ASC", $keywords = null, $id = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -692,7 +694,7 @@ class aboutPage
     }
 
 
-    $sql .= " ORDER  BY " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['jos']['db']['main'] . "." . $config['jos']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
