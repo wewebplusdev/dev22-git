@@ -12,7 +12,7 @@ $order = $_REQUEST['orderTheme'];
  
 	for($i=0;$i<$valSortCount;$i++){
 		$valSort =$valSortArray[$i];
-		$valOrder = $valSortCount-$i;
+		$valOrder = $valSortCount+$i;
 		if($valSort>=1){
 			 $sql = "UPDATE ".$mod_tb_root." SET ".$mod_tb_root."".$_REQUEST['orderTheme']." = $valOrder WHERE ".$mod_tb_root."_id = $valSort";
 			$query=wewebQueryDB($coreLanguageSQL,$sql);

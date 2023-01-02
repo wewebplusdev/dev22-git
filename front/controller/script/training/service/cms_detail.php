@@ -71,7 +71,6 @@ switch ($PageAction) {
         $smarty->assign("order", $order);
 
         $ContentID = GetContentID($url->segment[2]);
-
         $callGroup = $trainingPage->callGroup($MenuID, $ContentID);
         $smarty->assign("callGroup", $callGroup);
         if ($callGroup->_numOfRows < 1) {
@@ -79,7 +78,6 @@ switch ($PageAction) {
             exit(0);
         }
 
-        $smarty->assign("callGroup", $callGroup);
 
         $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
         $smarty->assign("callCMS", $callCMS);
@@ -91,6 +89,7 @@ switch ($PageAction) {
         ## breadcrumb
         $breadcrumb = explode("-", $callGroup->fields['menuname']);
         $settingModulus['breadcrumb'] = $breadcrumb[0];
+        $smarty->assign("TitleName",  $breadcrumb[0]."".$callGroup->fields['subject']);  
 
         /*## Start SEO #####*/
         $seo_desc = "";
