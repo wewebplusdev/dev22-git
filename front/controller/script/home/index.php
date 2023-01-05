@@ -12,7 +12,7 @@ $callTopGraphic = $homePage->callTopGraphic($config['tgp']['main']['masterkey'])
 $smarty->assign("callTopGraphic", $callTopGraphic);
 
 // call announcer
-$callAnnouncer = $homePage->callTopGraphic($arr_conf['ancr']['masterkey']);
+$callAnnouncer = $homePage->callAncr($arr_conf['ancr']['masterkey']);
 $smarty->assign("callAnnouncer", $callAnnouncer);
 
 if ($_GET['tmp'] == 1 ) {
