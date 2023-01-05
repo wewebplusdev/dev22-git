@@ -89,7 +89,7 @@
               </div>
 
             </div>
-            {if count($callYear) > 0}
+            {* {if count($callYear) > 0}
             <div class="group-list year-list">
               <ul class="nav-list">
                 {foreach $callYear as $keycallYear => $valuecallYear}
@@ -101,7 +101,7 @@
                 {/foreach}
               </ul>
             </div>
-            {/if}
+            {/if} *}
           </form>
         </div>
       </div>

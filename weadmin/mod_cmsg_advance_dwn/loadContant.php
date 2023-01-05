@@ -129,7 +129,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
             <select name="inputGh" id="inputGhSubSel" onchange="document.myForm.submit();" class="formSelectSearchStyle">
               <option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
               <?php
-              $sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
+              $sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "' AND ". $mod_tb_root_group ."_status !='Disable'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
               $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
 
               while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
