@@ -96,7 +96,7 @@
                             </div>
 
                         </div>
-                        {if count($callYear) > 0}
+                        {*{if count($callYear) > 0}
                             <div class="group-list year-list">
                                 <ul class="nav-list">
                                     {foreach $callYear as $keycallYear => $valuecallYear}
@@ -104,6 +104,19 @@
                                             <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{date('Y', strtotime($valuecallYear.credate))}"
                                                 class="link {if $req_params['year'] eq date('Y', strtotime($valuecallYear.credate))}active{/if}">{$lang['system']['year']}
                                                 {date('Y', strtotime(DateFormat($valuecallYear.credate)))}</a>
+                                        </li>
+                                    {/foreach}
+                                </ul>
+                            </div>
+                        {/if}*}
+                        {if $callGroupType eq 2}
+                            <div class="group-list year-list">
+                                <ul class="nav-list">
+                                    {foreach $callSubGroup as $key => $value}
+                                        <li>
+                                            <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$value['id']}"
+                                                class="link {if $subGroup eq $value['id']}active{/if}">{$value['subject']}
+                                            </a>
                                         </li>
                                     {/foreach}
                                 </ul>
@@ -145,7 +158,7 @@
                         <div class="row py-3">
                             <div class="col">
                                         <div class="card">
-                                            <div class="card-header">
+                                            <!--<div class="card-header">
                                                 <h3 class="mb-0">
                                                     <button class="btn btn-lg fluid {if $keyarrListData gte 1}collapsed{/if}"
                                                         data-toggle="collapse" data-target="#about-{$valuearrListData.subgroup.id}"
@@ -157,7 +170,7 @@
                                                         <span class="feather icon-plus-circle"></span>
                                                     </button>
                                                 </h3>
-                                            </div>
+                                            </div>-->
                                             <div id="about-{$valuearrListData.subgroup.id}"
                                                 class="collapse {if $keyarrListData eq 0}show{/if}"
                                                 aria-labelledby="headingCollapse" data-parent="#accordionInner">

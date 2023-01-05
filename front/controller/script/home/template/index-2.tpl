@@ -42,6 +42,7 @@
               </div>
             </a>
           </div>
+           </a>
         {/foreach}
       </div>
     </div>
@@ -60,7 +61,7 @@
                         <div class="notice-slide">
                             {foreach $callAnnouncer as $keycallAnnouncer => $valuecallAnnouncer}
                               {if $valuecallAnnouncer['url'] neq "" && $valuecallAnnouncer['url'] neq "#"}
-                                <div class="text"><a href="{$valuecallAnnouncer['url']}" style="text-decoration: none;">{$valuecallAnnouncer['title']}</a></div>
+                                <div class="text"><a href="{$valuecallAnnouncer['url']}"  {if $valuecallAnnouncer['target'] eq 2}target="_blank"{/if} style="text-decoration: none;">{$valuecallAnnouncer['title']}</a></div>
                               {/if}
                               {/foreach}
 

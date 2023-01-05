@@ -127,6 +127,7 @@
          {if $callGroup->fields.isstatic==0}
             {if $callCMS->_numOfRows gte 1}
                {foreach $callCMS as $keycallCMS => $valuecallCMS}
+              
                   <div class="news-block">
                      <div class="row align-items-center">
                         <div class="col-sm-auto">
@@ -146,7 +147,13 @@
                               </div>
                               <div class="col-12">
                                  <span class="feather icon-calendar"></span>
+                                 {if $valuecallCMS.refdate eq '0000-00-00 00:00:00'}
                                  <span class="typo-xs text-black">{$valuecallCMS.credate|DateThai:'1':{$langon}:'full'}</span>
+                                 {/if}
+                                 {if $valuecallCMS.refdate neq '0000-00-00 00:00:00'}
+                                 <span class="typo-xs text-black">{$valuecallCMS.refdate|DateThai:'1':{$langon}:'full'}</span>
+                                 {/if}
+
                               </div>
                               <div class="col-12">
                                  <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}" class="btn" title="btn">{$lang['system']['viewmore']}</a>

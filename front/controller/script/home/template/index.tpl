@@ -1,13 +1,13 @@
 <section class="site-container" style="background-color: #{$themeWebsite.color|default:'#FFFFF'};">
   <div class="main-page">
-
     <div class="top-graphic">
       <div class="default-slider-dots slider">
       {foreach $callTopGraphic as $keycallTopGraphic => $valuecallTopGraphic}
         <div class="tpg-item">
-          <a {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link">
               <figure class="cover">
+              <a {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link">
                   <img src="{$valuecallTopGraphic['pic']|fileinclude:"real":{$valuecallTopGraphic['masterkey']}:"link"}" alt="{$valuecallTopGraphic.pic}">
+              </a>
               </figure>
               <div class="info">
                   <div class="container -lg">
@@ -48,7 +48,6 @@
                       </div>
                   </div>
               </div>
-          </a>
       </div>
       {/foreach}
       </div>
@@ -68,7 +67,7 @@
                           <div class="notice-slide">
                               {foreach $callAnnouncer as $keycallAnnouncer => $valuecallAnnouncer}
                                 {if $valuecallAnnouncer['url'] neq "" && $valuecallAnnouncer['url'] neq "#"}
-                                  <div class="text"><a href="{$valuecallAnnouncer['url']}" style="text-decoration: none;">{$valuecallAnnouncer['title']}</a></div>
+                                  <div class="text"><a href="{$valuecallAnnouncer['url']}"  {if $valuecallAnnouncer['target'] eq 2}target="_blank"{/if} style="text-decoration: none;">{$valuecallAnnouncer['title']}</a></div>
                                 {/if}
                                 {/foreach}
   

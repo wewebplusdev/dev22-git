@@ -45,7 +45,55 @@ if($lang){
   
     ";
 
-    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order ASC ";
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+  function callAncr($masterkey = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langOption = $url->pagelang[2];
+
+    $sql = "SELECT
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_id as id,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_masterkey as masterkey,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject".$lang." as subject,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_pic".$lang." as pic,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_credate as credate,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_url".$lang." as url,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_title".$lang." as title,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_htmlfilename".$lang." as htmlfilename,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_target as target
+  
+  
+    FROM
+    " . $config['tgp']['db']['main'] . "
+    WHERE ";
+    
+   
+if($lang){
+  $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject".$lang." != '' AND ";
+}else{
+  $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject != '' AND ";
+}
+
+   $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_masterkey = '$masterkey' AND
+   " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_lang".$langOption." = '1' AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_status = 'Enable' AND
+    ((" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
+    (" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate)>=TO_DAYS(NOW()) ) OR
+    (TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate='0000-00-00 00:00:00' )  OR
+    (TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
+  
+    ";
+
+    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order ASC ";
     // print_pre($sql);
     $result = $db->execute($sql);
     return $result;
@@ -94,7 +142,7 @@ if($lang || $langOption){
   
     ";
 
-    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order ASC ";
 
     $result = $db->execute($sql);
     return $result;
@@ -138,7 +186,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_type = '" . $type . "'";
     }
 
-    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -218,7 +266,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid = '" . $gid . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order DESC," . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order LIMIT ".$limit." ";
+    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order ASC," . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order LIMIT ".$limit." ";
 
     //  print_pre($sql);
     $result = $db->execute($sql);
@@ -280,7 +328,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid = '" . $gid . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC LIMIT ".$limit." ";
+    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ASC LIMIT ".$limit." ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -315,7 +363,7 @@ if($lang || $langOption){
     TO_DAYS(" . $config['popup']['db'] . "." . $config['popup']['db'] . "_edate)>=TO_DAYS(NOW())  ))
   
     ";
-    $sql .= " ORDER  BY " . $config['popup']['db'] . "." . $config['popup']['db'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['popup']['db'] . "." . $config['popup']['db'] . "_order ASC ";
 
   // print_pre($sql);
     $result = $db->execute($sql);
@@ -348,9 +396,9 @@ if($lang || $langOption){
 
 
     if (!empty($order)) {
-      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "".$order." DESC ";
+      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "".$order." ASC ";
     }else{
-      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_order DESC ";
+      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_order ASC ";
     }
 
     // print_pre($sql);
@@ -408,7 +456,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['cmsss']['db']['main'] . "." . $config['cmsss']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cmsss']['db']['main'] . "." . $config['cmsss']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['cmsss']['db']['main'] . "." . $config['cmsss']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -438,7 +486,7 @@ if($lang || $langOption){
 
     // $sql .= " AND " . $config['cmsg']['db']['main'] . "." . $config['cmsg']['db']['main'] . "_isstatic != '1' ";
 
-    $sql .= " ORDER  BY " . $config['cmsg']['db']['main'] . "." . $config['cmsg']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['cmsg']['db']['main'] . "." . $config['cmsg']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -472,7 +520,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_status = '" . $status . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -538,7 +586,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid = '" . $gid . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC LIMIT ".$limit." ";
+    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ASC LIMIT ".$limit." ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -599,7 +647,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sid = '" . $sid . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC LIMIT ".$limit." ";
+    $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ASC LIMIT ".$limit." ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -652,7 +700,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);
@@ -708,7 +756,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['cmsss']['db']['main'] . "." . $config['cmsss']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cmsss']['db']['main'] . "." . $config['cmsss']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['cmsss']['db']['main'] . "." . $config['cmsss']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);

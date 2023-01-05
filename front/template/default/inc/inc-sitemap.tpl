@@ -18,7 +18,9 @@
                             {foreach $arrSitemap as $keyarrSitemap => $valuearrSitemap}
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                     <h4 class="title">
-                                        {$valuearrSitemap['group']['subject']}
+                                        <a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('g')}/{$valuearrSitemap['group']['id']|base64_encode}"{if $valuearrSitemap['group']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link">
+                                            {$valuearrSitemap['group']['subject']}
+                                        </a>
                                     </h4>
                                     {if count($valuearrSitemap) > 0}
                                         <ul class="list-group">

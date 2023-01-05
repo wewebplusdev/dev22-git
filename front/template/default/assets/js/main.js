@@ -50,7 +50,7 @@ $(document).ready(function() {
         protect: true,
         fullScreen: false,
         zoom: false,
-        
+
         onComplete: function() {
             $(".fancybox-container").wrap(
                 "<div class='fancybox--gallery-popup'></div>"
@@ -175,18 +175,24 @@ $(document).ready(function() {
                     slidesToShow: 3,
                 },
             },
+            // {
+            //     breakpoint: 576,
+            //     settings: {
+            //         slidesToShow: 2,
+            //     },
+            // },
             {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 376,
+                breakpoint: 415,
                 settings: {
                     slidesToShow: 1,
                 },
             },
+            // {
+            //     breakpoint: 376,
+            //     settings: {
+            //         slidesToShow: 1,
+            //     },
+            // },
         ],
     });
 
@@ -899,7 +905,7 @@ $(document).ready(function() {
 });
 
 $('.notice-slide').slick({
-    autoplay:true,
+    autoplay: true,
     autoplaySpeed: 4000,
     dots: false,
     infinite: true,
@@ -907,33 +913,32 @@ $('.notice-slide').slick({
     speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+    responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
         }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
     ]
-  });
+});
 
 // DEV
 function numberWithCommas(number, str = null) {

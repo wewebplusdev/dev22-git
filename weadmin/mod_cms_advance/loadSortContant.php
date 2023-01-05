@@ -99,7 +99,7 @@ $valPermission= getUserPermissionOnMenu($_SESSION[$valSiteManage."core_session_g
 	//	$sql .= "  AND ".$mod_tb_root."_gid ='".$_REQUEST['inputGh']."'  ";
 		//$sql .= "  AND ".$mod_tb_root."_tid ='".$_REQUEST['inputTh']."'  ";
 		
-		$sql .= " ORDER BY ".$mod_tb_root."_order DESC";
+		$sql .= " ORDER BY ".$mod_tb_root."_order ASC";
 	$query=wewebQueryDB($coreLanguageSQL,$sql) ;
 	$recordCount=wewebNumRowsDB($coreLanguageSQL,$query);
 	if($recordCount>=1){
