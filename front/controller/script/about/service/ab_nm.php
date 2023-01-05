@@ -80,9 +80,11 @@ switch ($PageAction) {
       }
       $smarty->assign("order", $order);
 
-      $ContentID = GetContentID($url->segment[2]);
-
+      //$ContentID = GetContentID($url->segment[2]);
       $callGroup = $aboutPage->callGroup($MenuID, $ContentID);
+      $SubGroupID = $url->segment[3];
+      //print_pre($SubGroupID."=".$callGroup->fields['type']);
+      //print_pre($SubGroupID."=".$callGroup);
       if ($callGroup->_numOfRows < 1) {
          header('location:' . $linklang . '/404');
          exit(0);
@@ -100,9 +102,57 @@ switch ($PageAction) {
 
 
       $smarty->assign("callGroup", $callGroup);
+      $smarty->assign("callGroupType", $callGroup->fields['types']);
 
-      // $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
-      // $smarty->assign("callCMS", $callCMS);
+       ## group by year for filter
+       $callYear = $aboutPage->callYear($MenuID, $callGroup->fields['id']);
+       $smarty->assign("callYear", $callYear);
+      ## list data
+    if ($callGroup->fields['type'] == 1) {
+      if ($callGroup->fields['types'] == 1) { ## for group
+          $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
+          $smarty->assign("callCMS", $callCMS);
+          $MaxRecord = $callCMS->_maxRecordCount;
+          $smarty->assign("orderArray", $OrderArray);
+          $settingPage = array(
+              "page" => $menuActive,
+              "template" => "download-list-group.tpl",
+              "display" => "page",
+              "control" => "component",
+          );
+      }else{ ## for subgroup
+          $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], null, null, null);
+          //print_pre($callSubGroup->fields);
+          $MaxRecord = $callSubGroup->_maxRecordCount;
+          if(empty($SubGroupID) && $MaxRecord > 0){
+              $SubGroupID = $callSubGroup->fields['id'];
+           }
+          $smarty->assign("orderArray", $OrderArray);
+          $smarty->assign("subGroup",  $SubGroupID);
+          $smarty->assign("callSubGroup", $callSubGroup);
+          $smarty->assign("callSubGroupRows", $MaxRecord);
+          $arrListData = array();
+          $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], null,$req_params['keywords'], $SubGroupID);    
+          $smarty->assign("callCMS", $callCMS);
+          $settingPage = array(
+              "page" => $menuActive,
+              "template" => "cms_advance_list.tpl",
+              "display" => "page",
+              "control" => "component",
+          );
+      }
+  }else{
+      $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']),$req_params['keywords']);
+      $smarty->assign("callCMS", $callCMS);
+      $MaxRecord = $callCMS->_maxRecordCount;
+      $settingPage = array(
+          "page" => $menuActive,
+          "template" => "cms_advance_list.tpl",
+          "display" => "page",
+          "control" => "component",
+      );
+  }
+
 
       
       ## menu lv 2 active
@@ -113,11 +163,8 @@ switch ($PageAction) {
       $breadcrumb = explode("-", $callGroup->fields['menuname']);
       $settingModulus['breadcrumb'] = $breadcrumb[0];
 
-      ## group by year for filter
-      $callYear = $aboutPage->callYear($MenuID, $callGroup->fields['id']);
-      $smarty->assign("callYear", $callYear);
 
-      $smarty->assign("orderArray", $OrderArray);
+      //$smarty->assign("orderArray", $OrderArray);
 
       ## for subgroup ##
       $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, null);
@@ -157,12 +204,12 @@ switch ($PageAction) {
       $smarty->assign("pagination", $pagination);
       /* ## Set up pagination ##### */
 
-      $settingPage = array(
+      /*$settingPage = array(
           "page" => $menuActive,
           "template" => "cms_advance_list.tpl",
           "display" => "page",
           "control" => "component",
-      );
+      );*/
       break;
 }
 

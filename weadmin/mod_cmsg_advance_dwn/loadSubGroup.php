@@ -40,7 +40,7 @@ $masterkeyArr = array('news');
   $module_default_maxpage = $core_default_maxpage;
   $module_default_reduce = $core_default_reduce;
   $module_default_pageshow = 1;
-  $module_sort_number = $core_sort_number;
+  $module_sort_number = "ASC";
 
   if ($_REQUEST['module_pagesize'] == "") {
     $module_pagesize = $module_default_pagesize;
@@ -200,15 +200,17 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
             <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?>(<?php echo $langTxt["lg:chi"] ?>)</span>
             </td>
           <?php } ?>
-
+          <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo "Group" ?></span></td>
           <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:status"] ?></span></td>
           <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["us:lastdate"] ?></span></td>
           <td width="12%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:manage"] ?></span></td>
         </tr>
         <?php
         // SQL SELECT #########################
-        $sql = "SELECT " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subject," . $mod_tb_root_subgroup . "_lastdate," . $mod_tb_root_subgroup . "_status," . $mod_tb_root_subgroup . "_subjecten," . $mod_tb_root_subgroup . "_subjectcn," . $mod_tb_root_subgroup . "_pic  FROM " . $mod_tb_root_subgroup;
+        $sql = "SELECT " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subject," . $mod_tb_root_subgroup . "_lastdate," . $mod_tb_root_subgroup . "_status," . $mod_tb_root_subgroup . "_subjecten," . $mod_tb_root_subgroup . "_subjectcn," . $mod_tb_root_subgroup . "_pic ,".$mod_tb_root_group ."_subject as groupname FROM " . $mod_tb_root_subgroup;
+        $sql = $sql . "  INNER JOIN " . $mod_tb_root_group . " ON ". $mod_tb_root_group."_id = ".$mod_tb_root_subgroup."_gid";
         $sql = $sql . "  WHERE " . $mod_tb_root_subgroup . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
+        $sql = $sql . " GROUP BY ".$mod_tb_root_subgroup."_id";
         // print_pre($sql);
         if ($_REQUEST['inputGh'] >= 1) {
           $sql = $sql . "  AND " . $mod_tb_root_subgroup . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
@@ -277,6 +279,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
             } else {
               $valPic = "../img/btn/nopic.jpg";
             }
+            $groupName = rechangeQuot($row[7]);
         ?>
             <tr class="<?php echo $valDivTr ?>">
               <td class="divRightContantOverTbL" valign="top" align="center"><input id="CheckBoxID<?php echo $index ?>" name="CheckBoxID<?php echo $index ?>" type="checkbox" class="formCheckboxList" onClick="Paging_CheckAllHandle(document.myForm.CheckBoxAll,'CheckBoxID',document.myForm.TotalCheckBoxID.value)" value="<?php echo $valID ?>" /> </td>
@@ -319,6 +322,9 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                   </table>
                 </td>
               <?php } ?>
+              <td class="divRightContantOverTb" valign="top" align="center">
+              <?php echo $groupName ?>
+              </td>
               <td class="divRightContantOverTb" valign="top" align="center">
                 <?php if (in_array($_REQUEST['masterkey'], $masterkeyArr)) { ?>
                   <?php if ($valPermissionContent == "RW") { ?>
