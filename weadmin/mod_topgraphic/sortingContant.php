@@ -11,17 +11,16 @@ $valSortCount = count($valSortArray);
 
 for ($i = 0; $i < $valSortCount; $i++) {
     $valSort = $valSortArray[$i];
-    $valOrder = $valSortCount + $i;
+    $valOrder = $valSortCount - $i;
     if ($valSort >= 1) {
         $sql = "UPDATE " . $mod_tb_root . " SET " . $mod_tb_root . "_order = $valOrder WHERE " . $mod_tb_root . "_id = $valSort";
         $query = wewebQueryDB($coreLanguageSQL, $sql);
     }
-
 }
 
 logs_access('3', 'Sort');
 ?>
- <?php include "../lib/disconnect.php";?>
+<?php include "../lib/disconnect.php"; ?>
 
 <form action="index.php" method="post" name="myFormAction" id="myFormAction">
     <input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_REQUEST['masterkey'] ?>" />
@@ -33,4 +32,6 @@ logs_access('3', 'Sort');
     <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh'] ?>" />
     <input name="inputTh" type="hidden" id="inputTh" value="<?php echo $_REQUEST['inputTh'] ?>" />
 </form>
-<script language="JavaScript" type="text/javascript"> document.myFormAction.submit(); </script>
+<script language="JavaScript" type="text/javascript">
+    document.myFormAction.submit();
+</script>

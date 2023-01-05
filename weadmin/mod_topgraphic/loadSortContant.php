@@ -103,7 +103,7 @@ $sql = "SELECT
      FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "'
      AND  " . $mod_tb_root . "_language ='" . $_SESSION[$valSiteManage . 'core_session_language'] . "'  ";
 //$sql .= "  AND ".$mod_tb_root."_gid ='".$_REQUEST['inputGh']."'  ";
-$sql .= " ORDER BY " . $mod_tb_root . "_order ASC";
+$sql .= " ORDER BY " . $mod_tb_root . "_order DESC";
 $query = wewebQueryDB($coreLanguageSQL, $sql);
 $recordCount = wewebNumRowsDB($coreLanguageSQL, $query);
 if ($recordCount >= 1) {

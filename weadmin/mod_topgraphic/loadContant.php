@@ -38,7 +38,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     $module_default_maxpage = $core_default_maxpage;
     $module_default_reduce = $core_default_reduce;
     $module_default_pageshow = 1;
-    $module_sort_number = "ASC";
+    $module_sort_number = "DESC";
 
     if ($_REQUEST['module_pagesize'] == "") {
         $module_pagesize = $module_default_pagesize;
