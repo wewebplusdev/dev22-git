@@ -90,7 +90,7 @@ switch ($PageAction) {
                 "control" => "component",
             );
         }else{ ## for subgroup
-            $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, null);
+            $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], null, null, null);
             $MaxRecord = $callSubGroup->_maxRecordCount;
             if(empty($SubGroupID) && $MaxRecord > 0){
                 $SubGroupID = $callSubGroup->fields['id'];
