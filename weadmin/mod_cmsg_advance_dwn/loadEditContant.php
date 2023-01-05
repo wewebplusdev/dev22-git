@@ -339,7 +339,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 			</table>
 			<br />
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic" <?php if($valGtype != 2){ echo "style='display:none;'"; } ?>>
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic" >
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
@@ -370,7 +370,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					</td>
 				</tr>
 			</table>
-			<br class="boxPic" <?php if($valGtype != 2){ echo "style='display:none;'"; } ?>/>
+			<br class="boxPic" />
 
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxDetail" <?php if ($valTypeC != 1) {
 																																echo 'style="display:none;"';

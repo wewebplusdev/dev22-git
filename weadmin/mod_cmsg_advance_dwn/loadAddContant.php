@@ -220,13 +220,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                             }
                             $sql_group .= " ," . $mod_tb_root_group . "_type ";
 
-                            $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
+                            $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "' AND ". $mod_tb_root_group ."_status !='Disable'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
                             $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
                             while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
                                 $row_groupid = $row_group[0];
                                 $row_groupname = $row_group[1];
                             ?>
-                                <option value="<?php echo $row_groupid ?>" data-type="<?php echo $row_group[2] ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php } ?>><?php echo $row_groupname ?></option>
+                                <option value="<?php echo $row_groupid ?>" data-type="<?php echo $row_group[2] ?>"><?php echo $row_groupname ?></option>
                             <?php } ?>
                         </select>
                     </td>
@@ -260,7 +260,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 </tr>
             </table>
             <br />
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic" style="display: none;">
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic" >
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />

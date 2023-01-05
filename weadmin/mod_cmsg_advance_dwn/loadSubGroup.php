@@ -120,7 +120,28 @@ $masterkeyArr = array('news');
       <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
 
         <tr>
+        <td style="padding-right:10px;" width="30%">
+            <select name="inputGh" id="inputGhSubSel" onchange="document.myForm.submit();" class="formSelectSearchStyle">
+              <option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
+              <?php
+              $sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "' AND ". $mod_tb_root_group ."_status !='Disable'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
+              $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
 
+              while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+                $row_groupid = $row_group[0];
+                $row_groupname = $row_group[1];
+                $row_groupnameeng = $row_group[2];
+                if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
+                  $valNameShow = $row_groupname;
+                } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
+                  // $valNameShow=$row_groupnameeng;
+                  $valNameShow = $row_groupname;
+                }
+              ?>
+                <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $valNameShow ?></option>
+              <?php } ?>
+            </select>
+          </td>
           <td id="boxSelectTest" style="width:100% !important;">
             <input name="inputSearch" type="text" id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo $langTxt["sch:search"] ?>" />
           </td>
@@ -191,6 +212,9 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
         $sql = $sql . "  WHERE " . $mod_tb_root_subgroup . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
         $sql = $sql . " GROUP BY ".$mod_tb_root_subgroup."_id";
         // print_pre($sql);
+        if ($_REQUEST['inputGh'] >= 1) {
+          $sql = $sql . "  AND " . $mod_tb_root_subgroup . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
+        }
         if ($inputSearch <> "") {
           $sql = $sql . "  AND  (
 		" . $mod_tb_root_subgroup . "_subject LIKE '%$inputSearch%'  OR

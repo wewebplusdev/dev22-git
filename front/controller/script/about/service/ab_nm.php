@@ -98,6 +98,9 @@ switch ($PageAction) {
          $smarty->assign("rss", $rss->channel->item);
       }
 
+      $smarty->assign("callGroupType", $callGroup->fields['types']);
+
+
       $smarty->assign("callGroup", $callGroup);
       $smarty->assign("callGroupType", $callGroup->fields['types']);
 
@@ -150,9 +153,8 @@ switch ($PageAction) {
       );
   }
 
-      //$callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
-      //$smarty->assign("callCMS", $callCMS);
 
+      
       ## menu lv 2 active
       $menuidLv2 = $callGroup->fields['id'];
       $smarty->assign("menuidLv2", $menuidLv2);
@@ -163,6 +165,28 @@ switch ($PageAction) {
 
 
       //$smarty->assign("orderArray", $OrderArray);
+
+      ## for subgroup ##
+      $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, null);
+      $MaxRecord = $callSubGroup->_maxRecordCount;
+      if(empty($SubGroupID) && $MaxRecord > 0){
+          $SubGroupID = $callSubGroup->fields['id'];
+       }
+       $SubGroupID = $url->segment[3];
+      $smarty->assign("orderArray", $OrderArray);
+      $smarty->assign("subGroup",  $SubGroupID);
+      $smarty->assign("callSubGroup", $callSubGroup);
+      $smarty->assign("callSubGroupRows", $MaxRecord);
+      $arrListData = array();
+      //foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
+          $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], null,$req_params['keywords'], $SubGroupID);
+          $smarty->assign("callCMS", $callCMS);
+          $arrListData[0]['subgroup'] = $SubGroupID;
+          foreach ($callCMS as $keycallCMS => $valuecallCMS) {
+              $arrListData[0]['list'][] = $valuecallCMS;
+          }
+      //}
+      $smarty->assign("arrListData", $arrListData);
 
       /* ## Start SEO ##### */
       $seo_desc = "";

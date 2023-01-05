@@ -48,6 +48,7 @@ include("config.php");
                 <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $_REQUEST['module_orderby']?>" />
                 <input name="valEditID" type="hidden" id="valEditID" value="" />
                 <input name="inputLt" type="hidden" id="inputLt" value="" />
+                <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
                 </form>
                 	<div class="mRightBackOffice" id="boxContantLoad">
                     			<?php include("../core/incWaitting.php")?>

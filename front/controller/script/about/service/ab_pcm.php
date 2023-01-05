@@ -103,7 +103,7 @@ switch ($PageAction) {
             $arrListData = array();
             //foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
                 $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], null,$req_params['keywords'], $SubGroupID);
-                $arrListData[0]['subgroup'] = $$SubGroupID;
+                $arrListData[0]['subgroup'] = $SubGroupID;
                 foreach ($callCMS as $keycallCMS => $valuecallCMS) {
                     $arrListData[0]['list'][] = $valuecallCMS;
                 }
