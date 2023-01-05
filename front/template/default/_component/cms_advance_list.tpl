@@ -98,19 +98,19 @@
                             </div>
 
                         </div>
-                        {if count($callYear) > 0}
-                            <div class="group-list year-list">
-                                <ul class="nav-list">
-                                    {foreach $callYear as $keycallYear => $valuecallYear}
-                                        <li>
-                                            <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{date('Y', strtotime($valuecallYear.credate))}"
-                                                class="link {if $req_params['year'] eq date('Y', strtotime($valuecallYear.credate))}active{/if}">{$lang['system']['year']}
-                                                {date('Y', strtotime(DateFormat($valuecallYear.credate)))}</a>
-                                        </li>
-                                    {/foreach}
-                                </ul>
-                            </div>
-                        {/if}
+                        {if $callGroupType eq 2}
+                           <div class="group-list year-list">
+                               <ul class="nav-list">
+                                   {foreach $callSubGroup as $key => $value}
+                                       <li>
+                                           <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$value['id']}"
+                                               class="link {if $subGroup eq $value['id']}active{/if}">{$value['subject']}
+                                           </a>
+                                       </li>
+                                   {/foreach}
+                               </ul>
+                           </div>
+                       {/if}
                     </form>
                 </div>
             </div>
