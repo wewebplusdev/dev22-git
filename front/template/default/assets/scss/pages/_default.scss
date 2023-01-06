@@ -823,6 +823,7 @@ fieldset {
 }
 
 .oit-list {
+    padding-top: 1rem;
     .item-list > li {
         & + li {
             margin-top: 1rem;
@@ -912,6 +913,10 @@ fieldset {
     }
     .collapse-block .btn {
         padding-left: 15px;
+        padding-right: 15px;
+    }
+    .collapse-block .btn span.feather {
+        font-size: 20px;
     }
     .layout-filter {
         height: 44px;
@@ -1023,6 +1028,19 @@ fieldset {
     }
     .default-bar .whead-addon {
         padding-top: 15px;
+    }
+    .oit-list .collapse-block .btn {
+        text-align: left;
+        font-size: var(--typo-xs);
+    }
+    .oit-list .card-body {
+        overflow-x: auto;
+        margin: 0 -15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .oit-list .table {
+        width: 767px;
     }
 }
 

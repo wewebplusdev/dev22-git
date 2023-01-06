@@ -35,7 +35,7 @@
                     <div class="h-title">ITA ประจำปีงบประมาณ พ.ศ. 2565</div>
                     <p class="desc mb-3">แบบวัดการเปิดเผยข้อมูลสาธารณะ (Open Data Integrity and Transparency Assessment: OIT) สำหรับการประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ (ITA) ประจำปีงบประมาณ พ.ศ. 2565</p>
 
-                    <div class="group-list year-list">
+                    <!-- <div class="group-list year-list">
                         <ul class="nav-list">
                             <li>
                                 <a href="" class="link active">ปี 2566</a>
@@ -44,7 +44,7 @@
                                 <a href="" class="link ">ปี 2565</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
 
                     <div class="oit-list">
                         <div class="collapse-block">
@@ -56,7 +56,7 @@
                                             <div class="card-header">
                                                 <h3 class="mb-0">
                                                     <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#oit-01" aria-expanded="false" aria-controls="collapse">
-                                                        <span>
+                                                        <span class="text-limit">
                                                             ตัวชี้วัดย่อยที่ 9.1 ข้อมูลพื้นฐาน
                                                         </span>
                                                         <span class="feather icon-plus-circle"></span>
@@ -78,11 +78,11 @@
                                                                     <strong>รายละเอียด</strong>
                                                                 </td>
                                                             </tr>
-                                                            <!-- <tr>
+                                                            <tr>
                                                                 <td colspan="3">
                                                                     <strong>ตัวชี้วัดย่อยที่ 9.1 ข้อมูลพื้นฐาน</strong>
                                                                 </td>
-                                                            </tr> -->
+                                                            </tr>
                                                             <tr>
                                                                 <td colspan="3">
                                                                     <strong>ข้อมูลพื้นฐาน</strong>
@@ -236,7 +236,7 @@
                                             <div class="card-header">
                                                 <h3 class="mb-0">
                                                     <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#oit-02" aria-expanded="false" aria-controls="collapse">
-                                                        <span>
+                                                        <span class="text-limit">
                                                             ตัวชี้วัดย่อยที่ 9.2 การบริหารงาน
                                                         </span>
                                                         <span class="feather icon-plus-circle"></span>
@@ -256,6 +256,11 @@
                                                                 </td>
                                                                 <td>
                                                                     <strong>รายละเอียด</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>ตัวชี้วัดย่อยที่ 9.2 การบริหารงาน</strong>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -392,7 +397,7 @@
                                             <div class="card-header">
                                                 <h3 class="mb-0">
                                                     <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#oit-03" aria-expanded="false" aria-controls="collapse">
-                                                        <span>
+                                                        <span class="text-limit">
                                                             ตัวชี้วัดย่อยที่ 9.3 การบริหารเงินงบประมาณ
                                                         </span>
                                                         <span class="feather icon-plus-circle"></span>
@@ -412,6 +417,11 @@
                                                                 </td>
                                                                 <td>
                                                                     <strong>รายละเอียด</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>ตัวชี้วัดย่อยที่ 9.3 การบริหารเงินงบประมาณ</strong>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -530,7 +540,7 @@
                                             <div class="card-header">
                                                 <h3 class="mb-0">
                                                     <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#oit-04" aria-expanded="false" aria-controls="collapse">
-                                                        <span>
+                                                        <span class="text-limit">
                                                             ตัวชี้วัดย่อยที่ 9.4 การบริหารและพัฒนาทรัพยากรบุคคล
                                                         </span>
                                                         <span class="feather icon-plus-circle"></span>
@@ -550,6 +560,11 @@
                                                                 </td>
                                                                 <td>
                                                                     <strong>รายละเอียด</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>ตัวชี้วัดย่อยที่ 9.4 การบริหารและพัฒนาทรัพยากรบุคคล</strong>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -652,7 +667,7 @@
                                             <div class="card-header">
                                                 <h3 class="mb-0">
                                                     <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#oit-05" aria-expanded="false" aria-controls="collapse">
-                                                        <span>
+                                                        <span class="text-limit">
                                                             ตัวชี้วัดย่อยที่ 9.5 การส่งเสริมความโปร่งใส
                                                         </span>
                                                         <span class="feather icon-plus-circle"></span>
@@ -672,6 +687,11 @@
                                                                 </td>
                                                                 <td>
                                                                     <strong>รายละเอียด</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>ตัวชี้วัดย่อยที่ 9.5 การส่งเสริมความโปร่งใส</strong>
                                                                 </td>
                                                             </tr>
                                                             <tr>
