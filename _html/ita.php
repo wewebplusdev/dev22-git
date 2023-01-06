@@ -170,12 +170,9 @@
                                                                 <td>
                                                                     <ul class="pro_list1" style="margin-top:20px;">
                                                                         <li><a href="about_mission.html"><b>กฎหมาย กฎ ระเบียบ ข้อบังคับ ประกาศ</b></a></li>
-
-
                                                                     </ul>
                                                                 </td>
                                                             </tr>
-
                                                             <tr>
                                                                 <td colspan="3">
                                                                     <strong>การประชาสัมพันธ์</strong>
@@ -768,6 +765,258 @@
                                                                         <li><a href="event_20220118.html"><b>GIT จัดประชุมรับฟังความคิดเห็นสถานการณ์และแนวโน้มการส่งออกของอุตสาหกรรมอัญมณีและเครื่องประดับเงิน</b></a></li>
                                                                         <li><a href="event_20211223.html"><b>GIT จัดการประชุมเตรียมพร้อมจัดงานเทศกาลนานาชาติพลอยและเครื่องประดับจันทบุรี 2021</b></a></li>
                                                                         <li><a href="event_20211215.html"><b>GIT ลงนาม MOU ความร่วมมือกับมหาวิทยาลัยบูรพา เพื่อยกระดับมาตรฐานห้องปฏิบัติการตรวจสอบอัญมณี เครื่องประดับ และโลหะมีค่า พร้อมร่วมกันพัฒนาบุคลากรและผู้ประกอบการ</b></a></li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="title pt-3">ตัวชี้วัดที่ 10 การป้องกันการทุจริต ประกอบด้วย 2 ตัวชี้วัดย่อย ดังนี้</div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="mb-0">
+                                                    <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#oit-10-1" aria-expanded="false" aria-controls="collapse">
+                                                        <span class="text-limit">
+                                                            ตัวชี้วัดย่อยที่ 10.1 การดำเนินการเพื่อป้องกันการทุจริต
+                                                        </span>
+                                                        <span class="feather icon-plus-circle"></span>
+                                                    </button>
+                                                </h3>
+                                            </div>
+                                            <div id="oit-10-1" class="collapse" data-parent="#accordion-oit">
+                                                <div class="card-body">
+                                                    <table class="table" cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="width:15%;">
+                                                                    <strong>ตัวชี้วัดย่อย/ข้อ</strong>
+                                                                </td>
+                                                                <td style="width:35%;">
+                                                                    <strong>ข้อมูล</strong>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>รายละเอียด</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>ตัวชี้วัดย่อยที่ 10.1 การดำเนินการเพื่อป้องกันการทุจริต</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>เจตจำนงสุจริตของผู้บริหาร</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 34
+                                                                </td>
+                                                                <td>
+                                                                    นโยบายไม่รับของขวัญ (No Gift Policy)
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li><a href="thai/about_us/git_nogift_2021.pdf"><b>นโยบาย "No Gift Policy งดรับ-งดให้"</b></a></li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 35
+                                                                </td>
+                                                                <td>
+                                                                    การมีส่วนร่วมของผู้บริหาร
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li><a href="thai/news/pr_news/2022/01/event_20220120.pdf"><b>GIT เดินหน้าขับเคลื่อนด้านคุณธรรมและความโปร่งใส</b></a></li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>การประเมินความเสี่ยงเพื่อป้องกันการทุจริต</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 36
+                                                                </td>
+                                                                <td>
+                                                                    การประเมินความเสี่ยงการทุจริตและประพฤติมิชอบประจำปี
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li><a href="thai/about_us/strategic/2022/03/GIT_corruption_plan2022.pdf"><b>แผนบริหารความเสี่ยงการทุจริต ประจำปีงบประมาณ พ.ศ. 2565</b></a></li>
+                                                                        <li><a href="thai/about_us/strategic/2022/01/GIT_risk_plan2022.pdf"><b>แผนบริหารความเสี่ยง ประจำปีงบประมาณ พ.ศ. 2565</b></a></li>
+                                                                        <li><a href="thai/about_us/strategic/2022/01/GIT_internal_audit_plan2022.pdf"><b>แผนควบคุมภายใน ประจำปีงบประมาณ พ.ศ.2565</b></a></li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 37
+                                                                </td>
+                                                                <td>
+                                                                    การดำเนินการเพื่อจัดการความเสี่ยงการทุจริตและประพฤติมิชอบ
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li><a href="thai/about_us/annual_achievement/2022/04/git_corrupt_report_6M_2022.pdf"><b>รายงานผลการบริหารความเสี่ยงการทุจริต ประจำปีงบประมาณ พ.ศ. 2565 รอบ 6 เดือน (ต.ค.64 - มี.ค.65)</b></a></li>
+                                                                        <li><a href="thai/about_us/annual_achievement/2022/04/git_risk_internal_audit_6M_2022.pdf"><b>รายงานผลการบริหารความเสี่ยงและการควบคุมภายใน ประจำปีงบประมาณ พ.ศ.2565 รอบ 6 เดือน (ต.ค.64 - มี.ค.65)</b></a></li>
+
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>การเสริมสร้างวัฒนธรรมองค์กร</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 38
+                                                                </td>
+                                                                <td>
+                                                                    การเสริมสร้างวัฒนธรรมองค์กร ตามมาตรฐานทางจริยธรรม
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li><a href="thai/news/pr_news/2022/04/event_20220404.pdf"><b>GIT รณรงค์เพื่อเสริมสร้างค่านิยมการต่อต้าน ป้องกันและปราบปรามการทุจริต</b></a></li>
+                                                                        <li><a href="thai/news/pr_news/2021/10/event_20211030.pdf"><b>GIT จัดกิจกรรมส่งเสริมค่านิยมและทัศนคติในการปฏิบัติงานโดยมีจิตสำนึกที่ดี และรับผิดชอบต่อหน้าที่ ตามมาตรฐานทางจริยธรรม</b></a></li>
+                                                                        <li><a href="thai/news/pr_news/2022/02/event_20220210.pdf"><b>GIT เสริมสร้างวัฒนธรรมองค์กรเพื่อร่วมกันขับเคลื่อนและยกระดับการพัฒนาด้านคุณธรรมและความโปร่งใสในการดำเนินงาน</b></a></li>
+
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>แผนป้องกันการทุจริต</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 39
+                                                                </td>
+                                                                <td>
+                                                                    แผนปฏิบัติการป้องกันการทุจริต
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li><a href="thai/about_us/strategic/2021/11/GIT_corruption_plan2021.pdf"><b>แผนปฏิบัติการป้องกันและปราบปรามการทุจริต ปีงบประมาณ 2565</b></a></li>
+
+
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 40
+                                                                </td>
+                                                                <td>
+                                                                    รายงานการกำกับติดตามการดำเนินการป้องกันการทุจริตประจำปี รอบ 6 เดือน
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li><a href="thai/about_us/annual_achievement/2022/04/git_corrupt_protection_report_6M_2022.pdf"><b>รายงานสรุปผลการดำเนินงานด้านการป้องกันและปราบปรามการทุจริต ประจำปีงบประมาณ พ.ศ. 2565 รอบ 6 เดือน (ต.ค.64 - มี.ค.65)</b></a></li>
+
+
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 41
+                                                                </td>
+                                                                <td>
+                                                                    รายงานผลการดำเนินการป้องกันการทุจริตประจำปี
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li><a href="thai/about_us/annual_achievement/2021/11/git_corrupt_2021.pdf"><b>รายงานสรุปผลการดำเนินงานด้านการป้องกันและปราบปรามการทุจริตฯ ประจำปีงบประมาณ พ.ศ. 2564</b></a></li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="mb-0">
+                                                    <button class="btn btn-lg fluid collapsed" data-toggle="collapse" data-target="#oit-10-2" aria-expanded="false" aria-controls="collapse">
+                                                        <span class="text-limit">
+                                                            ตัวชี้วัดย่อยที่ 10.2 มาตรการภายในเพื่อป้องกันการทุจริต
+                                                        </span>
+                                                        <span class="feather icon-plus-circle"></span>
+                                                    </button>
+                                                </h3>
+                                            </div>
+                                            <div id="oit-10-2" class="collapse" data-parent="#accordion-oit">
+                                                <div class="card-body">
+                                                    <table class="table" cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="width:15%;">
+                                                                    <strong>ตัวชี้วัดย่อย/ข้อ</strong>
+                                                                </td>
+                                                                <td style="width:35%;">
+                                                                    <strong>ข้อมูล</strong>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>รายละเอียด</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>ตัวชี้วัดย่อยที่ 10.2 มาตรการภายในเพื่อป้องกันการทุจริต</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <strong>มาตรการส่งเสริมความโปร่งใสและป้องกันการทุจริตภายในหน่วยงาน</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 42
+                                                                </td>
+                                                                <td>
+                                                                    มาตรการส่งเสริมคุณธรรมและความโปร่งใสภายในหน่วยงาน
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="thai/about_us/annual_achievement/2022/04/git_ita_report_2021.pdf" target="_blank">
+                                                                                <b>
+                                                                                    รายงานการวิเคราะห์ผลการประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ (Integrity and Transparency Assessment: ITA) ประจำปีงบประมาณ พ.ศ. 2564
+                                                                                    และมาตรการขับเคลื่อนการส่งเสริมคุณธรรมและความโปร่งใสในการดำเนินงานของ สวอ. ประจำปีงบประมาณ พ.ศ. 2565</b></a>
+                                                                        </li>
+                                                                        <li><a href="thai/about_us/strategic/2021/11/GIT_moral_plan2021.pdf"><b>แผนปฏิบัติการส่งเสริมคุณธรรมของสถาบัน ประจำปีงบประมาณ พ.ศ. 2565</b></a></li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    OIT 43
+                                                                </td>
+                                                                <td>
+                                                                    การดำเนินการตามมาตรการส่งเสริมคุณธรรมและความโปร่งใสภายในหน่วยงาน
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="pro_list1" style="margin-top:20px;">
+                                                                        <li><a href="thai/about_us/annual_achievement/2022/04/git_tranparency_6m_2022.pdf"><b>รายงานผลการดำเนินการตามมาตรการขับเคลื่อนการส่งเสริมคุณธรรมและความโปร่งใสในการดำเนินงานของ สวอ. ประจำปีงบประมาณ พ.ศ. 2565</b></a></li>
+                                                                        <li><a href="thai/about_us/annual_achievement/2022/04/git_morality_6m_2022.pdf"><b>รายงานผลการดำเนินงานตามแผนปฏิบัติการส่งเสริมคุณธรรมของสถาบัน ประจำปีงบประมาณ พ.ศ. 2565 รอบ 6 เดือน (ต.ค.64 - มี.ค.65)</b></a></li>
                                                                     </ul>
                                                                 </td>
                                                             </tr>

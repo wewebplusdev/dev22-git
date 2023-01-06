@@ -8921,6 +8921,9 @@ fieldset {
 .oit-list .item-list > li.item a {
   color: var(--color-primary);
 }
+.oit-list .table tbody tr:nth-child(odd) td {
+  background-color: #f5f5f5;
+}
 
 @media (max-width: 1440px) {
   .detail-link-block .item-list > li + li {
