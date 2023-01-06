@@ -45,7 +45,7 @@ if($lang){
   
     ";
 
-    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order ASC ";
+    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order DESC ";
     // print_pre($sql);
     $result = $db->execute($sql);
     return $result;
@@ -142,7 +142,7 @@ if($lang || $langOption){
   
     ";
 
-    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order ASC ";
+    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order DESC ";
 
     $result = $db->execute($sql);
     return $result;
