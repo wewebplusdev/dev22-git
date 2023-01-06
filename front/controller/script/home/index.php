@@ -54,7 +54,9 @@ switch ($themeWebsite['class']) {
 
         $sectionMainpage = array();
         foreach ($callSection as $keycallSection => $valuecallSection) {
-            $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
+            if (!empty($arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']])) {
+                $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
+            }
         }
         $smarty->assign("sectionMainpage", $sectionMainpage);
 
@@ -157,7 +159,9 @@ switch ($themeWebsite['class']) {
 
         $sectionMainpage = array();
         foreach ($callSection as $keycallSection => $valuecallSection) {
-            $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
+            if (!empty($arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']])) {
+                $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
+            }
         }
         $smarty->assign("sectionMainpage", $sectionMainpage);
 
@@ -304,7 +308,7 @@ switch ($themeWebsite['class']) {
         foreach ($callSection as $keycallSection => $valuecallSection) {
             $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
             $sectionMainpage[$keycallSection]['masterkey'] = $valuecallSection['masterkey'];
-            $$sectionMainpage[$keycallSection]['file'] = array_filter($sectionMainpage[$keycallSection]['file']);
+            $sectionMainpage[$keycallSection]['file'] = array_filter($sectionMainpage[$keycallSection]['file']);
         }
 
         $smarty->assign("headerBody", $incfile['header']);
