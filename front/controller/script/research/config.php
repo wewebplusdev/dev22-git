@@ -3,7 +3,7 @@
 $settingModulus = array(
   'subject' => $lang['menu']['research'],
   'title' => $lang['menu']['research'],
-  'tgp' => '/assets/img/background/mock-top-grapphic-2.png',
+  'tgp' => '/assets/img/background/banner-research.png',
 );
 
 ######### array order  ##########

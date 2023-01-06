@@ -9,7 +9,7 @@ if ($callCMS->_numOfRows < 1) {
 }
 $smarty->assign("callCMS", $callCMS);
 
-$settingModulus['tgp'] = "/assets/img/background/top-graphic-research.jpg";
+$settingModulus['tgp'] = "/assets/img/background/banner-research.png";
 
 ## breadcrumb
 $breadcrumb = explode("-", $callCMS->fields['menuname']);
