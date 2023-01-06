@@ -283,7 +283,7 @@ class aboutPage
     return $result;
   }
 
-  function callSubGroup($masterkey, $gid = null, $page = 1, $limit = 10, $order = "ASC", $year = null)
+  function callSubGroup($masterkey, $gid = null, $page = 1, $limit = 10, $order = "DESC", $year = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];

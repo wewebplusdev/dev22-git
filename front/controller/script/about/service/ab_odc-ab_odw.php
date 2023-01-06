@@ -166,7 +166,7 @@ switch ($MenuID) {
                             "control" => "component",
                         );
                     } else { ## for subgroup
-                        $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], null, null,null);
+                        $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], null);
                         $masterkey_page = $callSubGroup->fields['masterkey'];
                         $MaxRecord = $callSubGroup->_maxRecordCount;
                         if(empty($SubGroupID) && $MaxRecord > 0){
