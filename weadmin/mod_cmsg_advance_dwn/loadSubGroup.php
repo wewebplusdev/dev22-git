@@ -40,7 +40,7 @@ $masterkeyArr = array('news');
   $module_default_maxpage = $core_default_maxpage;
   $module_default_reduce = $core_default_reduce;
   $module_default_pageshow = 1;
-  $module_sort_number = "ASC";
+  $module_sort_number = $core_sort_number;
 
   if ($_REQUEST['module_pagesize'] == "") {
     $module_pagesize = $module_default_pagesize;
@@ -210,7 +210,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
         $sql = "SELECT " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subject," . $mod_tb_root_subgroup . "_lastdate," . $mod_tb_root_subgroup . "_status," . $mod_tb_root_subgroup . "_subjecten," . $mod_tb_root_subgroup . "_subjectcn," . $mod_tb_root_subgroup . "_pic ,".$mod_tb_root_group ."_subject as groupname FROM " . $mod_tb_root_subgroup;
         $sql = $sql . "  INNER JOIN " . $mod_tb_root_group . " ON ". $mod_tb_root_group."_id = ".$mod_tb_root_subgroup."_gid";
         $sql = $sql . "  WHERE " . $mod_tb_root_subgroup . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
-        $sql = $sql . " GROUP BY ".$mod_tb_root_subgroup."_id";
+        // $sql = $sql . " GROUP BY ".$mod_tb_root_subgroup."_id";
         // print_pre($sql);
         if ($_REQUEST['inputGh'] >= 1) {
           $sql = $sql . "  AND " . $mod_tb_root_subgroup . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
@@ -242,7 +242,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
         $recordstart = ($module_pageshow - 1) * $module_pagesize;
 
         $sql .= " ORDER BY $module_orderby $module_adesc LIMIT $recordstart , $module_pagesize ";
-
+        // print_pre($sql);
         $query = wewebQueryDB($coreLanguageSQL, $sql);
         $count_record = wewebNumRowsDB($coreLanguageSQL, $query);
         $index = 1;

@@ -66,7 +66,7 @@ class aboutPage
     return $result;
   }
 
-  function callCMSList($masterkey, $id = null, $gid = null, $page = 1, $limit = 10, $order = "ASC", $year = null,$keywords=null, $sid = null)
+  function callCMSList($masterkey, $id = null, $gid = null, $page = 1, $limit = 10, $order = "DESC", $year = null,$keywords=null, $sid = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -151,7 +151,7 @@ class aboutPage
         $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_view DESC ";
       }
     }else{
-      $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order ASC ";
+      $sql .= " ORDER  BY " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC ";
     }
 
     // print_pre($sql);

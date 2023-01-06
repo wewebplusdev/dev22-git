@@ -93,7 +93,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
           <td colspan="7" align="left" valign="middle" class="formTileTxt">
             <?php
             $sql = "SELECT   " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subject," . $mod_tb_root_subgroup . "_lastdate," . $mod_tb_root_subgroup . "_status," . $mod_tb_root_subgroup . "_subjecten  FROM " . $mod_tb_root_subgroup . " WHERE " . $mod_tb_root_subgroup . "_masterkey ='" . $_REQUEST['masterkey'] . "'    ";
-            $sql .= " ORDER BY " . $mod_tb_root_subgroup . "_order ASC";
+            if ($_REQUEST['inputGh'] >= 1) {
+              $sql = $sql . "  AND " . $mod_tb_root_subgroup . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
+            }
+            $sql .= " ORDER BY " . $mod_tb_root_subgroup . "_order ".$core_sort_number."";
+            // print_pre($sql);
             $query = wewebQueryDB($coreLanguageSQL, $sql);
             $recordCount = wewebNumRowsDB($coreLanguageSQL, $query);
             if ($recordCount >= 1) {

@@ -11,7 +11,7 @@ $valSortCount= count($valSortArray);
  
 	for($i=0;$i<$valSortCount;$i++){
 		$valSort =$valSortArray[$i];
-		$valOrder = $valSortCount+$i;
+		$valOrder = $valSortCount-$i;
 		if($valSort>=1){
 			 $sql = "UPDATE ".$mod_tb_root." SET ".$mod_tb_root."_order = $valOrder WHERE ".$mod_tb_root."_id = $valSort";
 			$query=wewebQueryDB($coreLanguageSQL,$sql);
