@@ -1,4 +1,3 @@
-PHOO
 <section class="site-container" style="background-color: #{$themeWebsite.color|default:'#FFFFF'};">
 <div class="top-graphic">
     <div class="slider">
