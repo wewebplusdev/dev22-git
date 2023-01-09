@@ -123,6 +123,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 /* End  Enter Check CKeditor */
             });
         });
+
+        var GroupID = $('#inputGroupID :selected').val();
+			if (GroupID > 0) {
+				onChangeSelect('openSelectSub.php','#subgroup');
+			}
     </script>
 </head>
 
@@ -136,6 +141,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
         <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo $_REQUEST['module_pagesize'] ?>" />
         <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $_REQUEST['module_orderby'] ?>" />
         <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh'] ?>" />
+        <input name="inputGh2" type="hidden" id="inputGh2" value="<?php echo $_REQUEST['inputGh2'] ?>" />
         <input name="valEditID" type="hidden" id="valEditID" value="<?php echo $myRand ?>" />
         <input name="valDelFile" type="hidden" id="valDelFile" value="" />
         <input name="valDelAlbum" type="hidden" id="valDelAlbum" value="" />
