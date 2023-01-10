@@ -100,7 +100,6 @@ switch ($PageAction) {
 
       $smarty->assign("callGroupType", $callGroup->fields['types']);
 
-
       $smarty->assign("callGroup", $callGroup);
       $smarty->assign("callGroupType", $callGroup->fields['types']);
 

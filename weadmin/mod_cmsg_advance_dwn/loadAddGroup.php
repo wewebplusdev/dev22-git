@@ -19,7 +19,8 @@ $display = "style='display:none;'";
 if ($_REQUEST['masterkey'] == 'news') {
     $display = "";
 }
-
+$checkMasterKey = $_REQUEST['masterkey'];
+// print_pre($checkMasterKey);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -160,11 +161,12 @@ if ($_REQUEST['masterkey'] == 'news') {
                             <div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="1" type="radio" checked="checked" class="formRadioContantTb" onclick="jQuery('.boxDetail').show();"/></div>
                             <div class="formDivRadioR"><?php echo  $modTypeTheme[1] ?></div>
                         </label>
-
-                        <label>
+                    
+                        <label  style=" <?php if (!in_array($checkMasterKey,$array_masterkey)) { ?>display:none; <?php } ?>">
                             <div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="2" type="radio" class="formRadioContantTb" onclick="jQuery('.boxDetail').hide();"/></div>
                             <div class="formDivRadioR"><?php echo  $modTypeTheme[2] ?></div>
                         </label>
+                        
                     </td>
                 </tr>
                 <tr class="boxDetail">

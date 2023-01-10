@@ -12,7 +12,7 @@ $mod_tb_root_albumTemp = "md_cmatp";
 
 $mod_tb_setting = "md_cuss";
 
-
+$array_masterkey = array('ab_hrm','ab_odc','ab_odw','ab_pap','ab_pcm');
 ## Mod Folder ###################################
 $mod_fd_root = "mod_cmsg_advance_dwn";
 

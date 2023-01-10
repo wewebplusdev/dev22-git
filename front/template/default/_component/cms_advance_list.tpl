@@ -110,7 +110,7 @@
                                     {/foreach}
                                 </ul>
                             </div>
-                        {else}
+                        {* {else}
                            {if count($callYear) > 0}
                               <div class="group-list year-list">
                                  <ul class="nav-list">
@@ -123,7 +123,7 @@
                                        {/foreach}
                                  </ul>
                               </div>
-                           {/if}
+                           {/if} *}
                         {/if}
 
                     </form>

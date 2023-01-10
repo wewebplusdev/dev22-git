@@ -46,7 +46,7 @@ $valUrl = $Row[8];
 $valTarget = $Row[9];
 $valTypes = $Row[10];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
-
+$checkMasterKey = $_REQUEST['masterkey'];
 
 // setiing page
 $display = "style='display:none;'";
@@ -187,7 +187,7 @@ if ($_REQUEST['masterkey'] == 'news') {
 							<div class="formDivRadioR"><?php echo  $modTypeTheme[1] ?></div>
 						</label>
 
-						<label>
+						<label style=" <?php if (!in_array($checkMasterKey,$array_masterkey)) { ?>display:none; <?php } ?>">
 							<div class="formDivRadioL"><input name="inputTypeTheme" id="inputTypeTheme" value="2" type="radio" class="formRadioContantTb" onclick="jQuery('.boxDetail').hide();" <?php if ($valType != 1) {
 																																																																																										echo 'checked="checked"';
 																																																																																									} ?> /></div>
