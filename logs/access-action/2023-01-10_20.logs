@@ -2,3 +2,6 @@ Insert|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod
 Insert Group|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_submenu/insertSubGroup.php|:|mnu|:|12|:|insert|:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 10:52:18
 Delete Group|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_submenu/deleteSubGroup.php|:|mnu|:|12|:||:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 10:52:32
 Delete|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_submenu/deleteContant.php|:|mnu|:|12|:||:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 10:52:36
+View|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_cms_advance/viewContant.php|:|ab_odc|:|20|:||:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 11:25:04
+Insert|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_cmsg_vdo/insertContant.php|:|vdo|:|272|:|insert|:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 11:32:52
+Delete|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_cmsg_vdo/deleteContant.php|:|vdo|:|272|:||:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 11:33:14

@@ -3,19 +3,19 @@
   <div class="default-header">
     <div class="top-graphic">
       <figure class="cover">
-          <img class="figure-img img-fluid" src="{$template}{$settingModulus.tgp}" alt="{$settingModulus.subject}">
+        <img class="figure-img img-fluid" src="{$template}{$settingModulus.tgp}" alt="{$settingModulus.subject}">
       </figure>
       <div class="container">
-          <div class="wrapper">
+        <div class="wrapper">
           <div class="title typo-lg">{$settingModulus.title}</div>
           <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{$ul}/home">{$lang['menu']['home']}</a></li>
-              {if $settingModulus.subject neq ""}
-                <li class="breadcrumb-item"><a href="{$ul}/{$menuActive}">{$settingModulus.subject}</a></li>
-              {/if}
-              <li class="breadcrumb-item active" aria-current="page">{$settingModulus.breadcrumb}</li>
+            <li class="breadcrumb-item"><a href="{$ul}/home">{$lang['menu']['home']}</a></li>
+            {if $settingModulus.subject neq ""}
+              <li class="breadcrumb-item"><a href="{$ul}/{$menuActive}">{$settingModulus.subject}</a></li>
+            {/if}
+            <li class="breadcrumb-item active" aria-current="page">{$settingModulus.breadcrumb}</li>
           </ol>
-          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -35,8 +35,7 @@
               <ul class="item-list">
                 <li>
                   <a href="https://www.facebook.com/sharer/sharer.php?u={$fullurl}" target="_blank" class="link">
-                    <img src="{$template}/assets/img/icon/icon-social-facebook.svg" alt=""
-                      style=" width: auto; ">
+                    <img src="{$template}/assets/img/icon/icon-social-facebook.svg" alt="" style=" width: auto; ">
                   </a>
                 </li>
                 <li>
@@ -46,12 +45,12 @@
                 </li>
                 <li>
                   <a href="javascript:void(0);" class="embed-code" embed-url="{$embed_url}" embed-type="VDO">
-                        <img src="{$template}/assets/img/icon/icon-embed.svg" alt="embed">
-                    </a>
+                    <img src="{$template}/assets/img/icon/icon-embed.svg" alt="embed">
+                  </a>
                 </li>
                 <li>
                   <a href="mailto:?subject={$callCMS->fields.subject}&amp;body=Check out this site : {$fullurl}"
-                  title="{$infoSetting->fields['subject']}" class="link">
+                    title="{$infoSetting->fields['subject']}" class="link">
                     <img src="{$template}/assets/img/icon/icon-social-gmail.svg" alt="">
                   </a>
                 </li>
@@ -78,16 +77,30 @@
         </div>
 
       </div>
-      <div class="youtube-block">
-               <video width="100%"  controls>
-                    <source src="{$fullpath_vdo}">
-                    Your browser does not support the video tag.
-                </video>    
-        </div>
 
-            
-
-
+      {if $callCMS->fields.type eq 'url'}
+        {if $callCMS->fields.url neq '' && $callCMS->fields.url neq '#'}
+          {$myUrlArray = "v="|explode:$callCMS->fields.url}
+          {$myUrlCut = $myUrlArray[1]}
+          {$myUrlCutArray = "&"|explode:$myUrlCut}
+          {$myUrlCutAnd= $myUrlCutArray.0}
+          <div class="youtube-block">
+            <div class="iframe-container">
+              <iframe class="responsive-iframe" src="https://www.youtube.com/embed/{$myUrlCutAnd}"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        {/if}
+      {else}
+        <div class="youtube-block">
+        <video width="100%" controls>
+          <source src="{$fullpath_vdo}">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {/if}
     </div>
   </div>
 
