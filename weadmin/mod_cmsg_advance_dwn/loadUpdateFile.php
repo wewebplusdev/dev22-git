@@ -85,7 +85,7 @@ include("config.php");
 			$nameToinput = $_REQUEST['nametodoc'];
 		}
 
-		$sql_fileNew="SELECT ".$mod_tb_file."_filename  FROM ".$mod_tb_file." WHERE ".$mod_tb_file."_contantid 	='".$_REQUEST['myID']."' ";
+		$sql_fileNew="SELECT ".$mod_tb_file."_filename  FROM ".$mod_tb_file." WHERE ".$mod_tb_file."_contantid 	='".$_REQUEST['myID']."' AND ".$mod_tb_file."_language = '" . $_REQUEST['langt'] . "' ";
 		$query_fileNew=wewebQueryDB($coreLanguageSQL,$sql_fileNew);
 		$row_fileNew=wewebFetchArrayDB($coreLanguageSQL,$query_fileNew);
 		$downloadFile=$row_fileNew[0];
@@ -93,7 +93,7 @@ include("config.php");
 			@unlink($mod_path_file."/".$downloadFile);
 		}	
 			
-		$sql="DELETE FROM ".$mod_tb_file." WHERE   ".$mod_tb_file."_contantid='".$_REQUEST['myID']."' ";
+		$sql="DELETE FROM ".$mod_tb_file." WHERE   ".$mod_tb_file."_contantid='".$_REQUEST['myID']."' AND ".$mod_tb_file."_language = '" . $_REQUEST['langt'] . "'";
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
 		$insert = array();
