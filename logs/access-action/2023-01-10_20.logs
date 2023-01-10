@@ -21,3 +21,5 @@ Insert|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod
 Update|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_cms_advance/updateContant.php|:|ab_odc|:|20|:|update|:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 15:49:55
 View|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_cms_advance/viewContant.php|:|ab_odc|:|20|:||:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 15:49:57
 Delete|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_cms_advance/deleteContant.php|:|ab_odc|:|20|:||:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 15:50:33
+Update|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 17:08:08
+Update Group|:|ja8p9vjhls25lm2gju5msct0g3|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateGroup.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|127.0.0.1|:|2023-01-10 17:09:07

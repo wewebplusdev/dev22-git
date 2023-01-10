@@ -462,7 +462,7 @@ class aboutPage
     $sql = "SELECT
     " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_id as id,
     " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_masterkey as masterkey,
-    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_pic" . $lang . " as pic,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_pic as pic,
     " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_sdatetxt" . $lang . " as sdatetxt,
     " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_email" . $lang . " as email,
     " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_tel" . $lang . " as tel,
