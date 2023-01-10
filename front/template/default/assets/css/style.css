@@ -12749,6 +12749,9 @@ fieldset {
 .theme-3 .top-graphic .slick-dotted.slick-slider {
   margin-bottom: 0;
 }
+.theme-3 .top-graphic .slider .slick-dots {
+  bottom: 25px;
+}
 .theme-3 .default-nav {
   position: relative;
   margin-bottom: 3rem;
