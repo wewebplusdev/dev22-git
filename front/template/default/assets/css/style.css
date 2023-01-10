@@ -12762,6 +12762,7 @@ fieldset {
   position: relative;
   margin-bottom: 3rem;
   border-bottom: 1px solid var(--color-border);
+  background: var(--color-primary-dark);
 }
 .theme-3 .default-nav .topic {
   width: 100%;
@@ -12777,12 +12778,17 @@ fieldset {
 .theme-3 .default-nav .topic .title {
   font-size: var(--typo-sm);
   font-weight: var(--fw-medium);
+  color: var(--color-light);
 }
 .theme-3 .default-nav .slider {
   padding: 0 15px;
 }
 .theme-3 .default-nav .slider .slick-track {
   margin-left: 0;
+}
+.theme-3 .default-nav .slider .slick-prev:before,
+.theme-3 .default-nav .slider .slick-next:before {
+  color: var(--color-light);
 }
 .theme-3 .default-nav .item- {
   padding: 0;
@@ -12793,11 +12799,11 @@ fieldset {
   padding: 0 3rem;
   height: 128px;
   font-weight: var(--fw-medium);
-  color: var(--color-gray);
+  color: var(--color-light);
   line-height: 1.4em;
 }
 .theme-3 .default-nav .item- a svg path {
-  fill: var(--color-gray);
+  fill: var(--color-light);
 }
 .theme-3 .default-nav .item-.slick-current a,
 .theme-3 .default-nav .item- a:hover,
