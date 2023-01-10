@@ -157,6 +157,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 		<input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $_REQUEST['module_orderby'] ?>" />
 		<input name="inputSearch" type="hidden" id="inputSearch" value="<?php echo $_REQUEST['inputSearch'] ?>" />
 		<input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh'] ?>" />
+		<input name="inputGh2" type="hidden" id="inputGh2" value="<?php echo $_REQUEST['inputGh2'] ?>" />
 		<input name="inputTh" type="hidden" id="inputTh" value="<?php echo $_REQUEST['inputTh'] ?>" />
 	</form>
 	<script language="JavaScript" type="text/javascript">
