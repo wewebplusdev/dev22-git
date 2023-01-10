@@ -133,9 +133,16 @@ $(document).ready(function() {
         // $('.menu-full .main-menu').css('transform', 'translateX(-100%)');
         $(".menu-full .main-menu").addClass("hide");
     });
-    $(".menu-full .dropdown-menu.level-II").click(function() {
+    $(".menu-full .dropdown-menu.level-II").click(function(e) {
         // $('.menu-full .main-menu').css('transform', 'translateX(0)');
         $(".menu-full .main-menu").removeClass("hide");
+
+        // check the event click outer a and a eq javascript:void(0); not do something
+        if (e.target.nodeName.toLowerCase() != 'a') {
+            return false;
+        }else if(e.target.nodeName.toLowerCase() == 'a' && (e.target.href == 'javascript:void(0);' || e.target.href == undefined)){
+            return false;
+        }
     });
 
     $(".intro-slider").slick({
