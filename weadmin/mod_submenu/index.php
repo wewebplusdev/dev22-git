@@ -49,6 +49,7 @@ include("config.php");
                 <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo $_REQUEST['module_pagesize']?>" />
                 <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $_REQUEST['module_orderby']?>" />
                 <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
+                <input name="inputGh1" type="hidden" id="inputGh1" value="<?php echo $_REQUEST['inputGh1']?>" />
                 <input name="valEditID" type="hidden" id="valEditID" value="" />
                 <input name="inputLt" type="hidden" id="inputLt" value="" />
                 <input name="inputTh" type="hidden" id="inputTh" value="<?php echo $_REQUEST['inputTh']?>" />
