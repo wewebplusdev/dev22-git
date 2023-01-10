@@ -69,7 +69,7 @@
         <div class="col-xl-8 col-md-9 col-sm-8 col-7">
             <div class="slider">
                 <div class="item-">
-                    <a href="{$ul}/service/262" class="link active" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/262" class="link active" title="{$lang['service']['menu1']}">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="52.507" height="52.507" viewBox="0 0 52.507 52.507">
@@ -91,7 +91,7 @@
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="{$ul}/service/263" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/263" class="link" title="{$lang['service']['menu2']}">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="57.257" height="58.067" viewBox="0 0 57.257 58.067">
@@ -119,7 +119,7 @@
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="{$ul}/service/264" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/264" class="link" title="{$lang['service']['menu3']}">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="50.291" height="50.291" viewBox="0 0 50.291 50.291">
@@ -147,7 +147,7 @@
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="{$ul}/service/265" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/265" class="link" title="{$lang['service']['menu4']}">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="48.72" height="56.59" viewBox="0 0 48.72 56.59">
