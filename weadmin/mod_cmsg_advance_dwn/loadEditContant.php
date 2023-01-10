@@ -21,7 +21,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 }
 
 $sql = "SELECT   ";
-$sql .= "   " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo , " . $mod_tb_root . "_url".$lang."  ,  " . $mod_tb_root . "_gid    ";
+$sql .= "   " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate , " . $mod_tb_root . "_crebyid, " . $mod_tb_root . "_status,    " . $mod_tb_root . "_sdate  	 	 ,    " . $mod_tb_root . "_edate , " . $mod_tb_root . "_type , " . $mod_tb_root . "_filevdo , " . $mod_tb_root . "_url" . $lang . "  ,  " . $mod_tb_root . "_gid    ";
 
 if ($_REQUEST['inputLt'] == "Thai") {
 	$sql .= " ,    " . $mod_tb_root . "_pic, " . $mod_tb_root . "_subject  ,    " . $mod_tb_root . "_title , " . $mod_tb_root . "_htmlfilename   ,    " . $mod_tb_root . "_metatitle  	 	 ,    " . $mod_tb_root . "_description  	 	 ,    " . $mod_tb_root . "_keywords    ";
@@ -339,7 +339,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 			</table>
 			<br />
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic" >
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
@@ -401,6 +401,60 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			<br class="boxDetail" <?php if ($valTypeC != 1) {
 										echo 'style="display:none;"';
 									} ?> />
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+				<tr>
+					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+						<span class="formFontSubjectTxt"><?php echo $langMod["txt:album"] ?></span><br />
+						<span class="formFontTileTxt"><?php echo $langMod["txt:albumDe"] ?></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7" align="right" valign="top" height="15"></td>
+				</tr>
+
+				<tr>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["inp:album"] ?></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+						<div id="mulitplefileuploader"><?php echo $langTxt["us:inputpicselect"] ?></div>
+
+						<span class="formFontNoteTxt"><?php echo $langMod["inp:notealbum"] ?></span>
+						<div class="clearAll"></div>
+						<div id="status" class="formFontTileTxt"></div>
+						<div id="boxAlbumNew" class="formFontTileTxt">
+							<?php
+							$sql_filetemp = "SELECT  
+							" . $mod_tb_root_album . "_id,
+							" . $mod_tb_root_album . "_filename,
+							" . $mod_tb_root_album . "_name,
+							" . $mod_tb_root_album . "_download 
+								FROM " . $mod_tb_root_album . " WHERE 
+								" . $mod_tb_root_album . "_contantid 	='" . $_REQUEST['valEditID'] . "' 
+								AND " . $mod_tb_root_album . "_language 	='" . $_REQUEST['inputLt'] . "'
+								ORDER BY " . $mod_tb_root_album . "_order ASC";
+							$query_filetemp = wewebQueryDB($coreLanguageSQL, $sql_filetemp);
+							$number_filetemp = wewebNumRowsDB($coreLanguageSQL, $query_filetemp);
+							if ($number_filetemp >= 1) {
+								$valAlbum = "";
+								while ($row_filetemp = wewebFetchArrayDB($coreLanguageSQL, $query_filetemp)) {
+									$linkRelativePath = $mod_path_album . "/" . $row_filetemp[1];
+									$downloadFile = $row_filetemp[1];
+									$downloadID = $row_filetemp[0];
+									$downloadName = $row_filetemp[2];
+									$countDownload = $row_filetemp[3];
+									$imageType = strstr($downloadFile, '.');
+
+									$valAlbum .= "<img src=\"" . $mod_path_album . "/reO_" . $downloadFile . "\"  width=\"50\" height=\"50\"   style=\"float:left;border:#c8c7cc solid 1px;margin-top:15px;\"  />";
+									$valAlbum .= "<div style=\"width:15px; height:15px;float:left;z-index:1; margin-left:-15px;cursor:pointer;margin-right:15px;margin-top:15px;\" onclick=\"document.myForm.valDelAlbum.value=" . $downloadID . ";delAlbumUpload('deleteAlbum.php');\"  title=\"Delete file\" ><img src=\"../img/btn/delete.png\" width=\"15\" height=\"15\"  border=\"0\"/></div>";
+								}
+							}
+							echo $valAlbum;
+
+							?>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br class="ckabout" />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxDetail" <?php if ($valTypeC != 1) {
 																																echo 'style="display:none;"';
 																															} ?>>

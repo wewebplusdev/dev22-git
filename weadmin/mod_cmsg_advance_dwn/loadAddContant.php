@@ -267,6 +267,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 </tr>
             </table>
             <br />
+            
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxPic" >
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
@@ -331,6 +332,30 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                                     ?>
                                 </textarea>
                         </div>
+                    </td>
+                </tr>
+            </table>
+            <br class="boxDetail" />
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder  ckabout">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:album"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:albumDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" align="right" valign="top" height="15"></td>
+                </tr>
+
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["inp:album"] ?></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div id="mulitplefileuploader"><?php echo $langTxt["us:inputpicselect"] ?></div>
+
+                        <span class="formFontNoteTxt"><?php echo $langMod["inp:notealbum"] ?></span>
+                        <div class="clearAll"></div>
+                        <div id="status" class="formFontTileTxt"></div>
+                        <div id="boxAlbumNew" class="formFontTileTxt"></div>
                     </td>
                 </tr>
             </table>
