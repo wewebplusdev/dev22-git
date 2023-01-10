@@ -12752,6 +12752,12 @@ fieldset {
 .theme-3 .top-graphic .slider .slick-dots {
   bottom: 25px;
 }
+.theme-3 .top-graphic .slider .slick-dots li button {
+  border: 1px solid var(--color-primary);
+}
+.theme-3 .top-graphic .slider .slick-dots li.slick-active button {
+  border-color: #c8dbff;
+}
 .theme-3 .default-nav {
   position: relative;
   margin-bottom: 3rem;

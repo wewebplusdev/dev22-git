@@ -55,6 +55,12 @@
         }
         .slider .slick-dots {
             bottom: 25px;
+            li button {
+                border: 1px solid var(--color-primary);
+            }
+            li.slick-active button {
+                border-color: #c8dbff;
+            }
         }
     }
     .default-nav {
