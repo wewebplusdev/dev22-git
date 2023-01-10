@@ -143,6 +143,8 @@ $(document).ready(function() {
         }else if(e.target.nodeName.toLowerCase() == 'a' && (e.target.href == 'javascript:void(0);' || e.target.href == undefined)){
             return false;
         }
+        $(".site-header .menu-toggle").click();
+
     });
 
     $(".intro-slider").slick({
@@ -602,7 +604,7 @@ $(document).ready(function() {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
-        dots: false,
+        dots: true,
     });
 
     $(".banner-block .slider").slick({
