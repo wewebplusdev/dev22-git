@@ -7818,7 +7818,7 @@ div.swal2-html-container {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  border: 2px solid #d1d1d1;
+  border: 2px solid var(--color-gray);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -7829,7 +7829,7 @@ div.swal2-html-container {
   bottom: initial;
 }
 .theme-3 .site-footer .social .item-list > li .inner svg path {
-  fill: #d1d1d1;
+  fill: var(--color-gray);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
