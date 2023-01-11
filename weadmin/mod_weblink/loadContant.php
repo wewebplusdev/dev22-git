@@ -257,6 +257,8 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
 
                         if ($valStatus == "Enable") {
                             $valStatusClass = "fontContantTbEnable";
+                        } else if ($valStatus == "Home"){
+                            $valStatusClass = "fontContantTbHomeSt";
                         } else {
                             $valStatusClass = "fontContantTbDisable";
                         }

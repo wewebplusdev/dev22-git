@@ -57,69 +57,37 @@
     </div>
 {/if}
 
-<div class="default-nav">
-    <div class="row no-gutters">
-        <div class="col-xl-2 col-md-3 col-sm-4 col-5">
-            <div class="topic">
-                <div class="title">
-                    {$lang['menu']['service']}
+{if $callservice_top->_numOfRows gte 1}
+    <div class="default-nav">
+        <div class="row no-gutters">
+            <div class="col-xl-2 col-md-3 col-sm-4 col-5">
+                <div class="topic">
+                    <div class="title">
+                        {$lang['menu']['service']}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-8 col-md-9 col-sm-8 col-7">
-            <div class="slider">
-                <div class="item-">
-                    <a href="{$ul}/service/262" class="link active" title="{$lang['service']['menu1']}">
-                        <div class="wrapper">
-                            <div class="icon">
-                                <img src="front/template/default/assets/img/icon/ตรวจสอบอัญมณี.png" alt="ตรวจสอบอัญมณี">
-                            </div>
-                            <div class="txt">
-                                {$lang['service']['menu1']}
-                            </div>
+            <div class="col-xl-8 col-md-9 col-sm-8 col-7">
+                <div class="slider">
+                    {foreach $callservice_top as $keycallservice_top => $valuecallservice_top}
+                        <div class="item-">
+                            <a {if $valuecallservice_top['url'] neq "" && $valuecallservice_top['url'] neq "#"}href="{$valuecallservice_top['url']}"{if $valuecallservice_top['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link {if $keycallservice_top eq 0}active{/if}" title="{$valuecallservice_top['subject']}">
+                                <div class="wrapper">
+                                    <div class="icon">
+                                        <img src="{$valuecallservice_top['pic']|fileinclude:"real":{$valuecallservice_top['masterkey']}:"link"}" alt="{$valuecallservice_top['subject']}">
+                                    </div>
+                                    <div class="txt">
+                                        {$valuecallservice_top['subject']}
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="item-">
-                    <a href="{$ul}/service/263" class="link" title="{$lang['service']['menu2']}">
-                        <div class="wrapper">
-                            <div class="icon">
-                                <img src="front/template/default/assets/img/icon/ตรวจสอบโลหะมีค่า.png" alt="ตรวจสอบโลหะมีค่า">
-                            </div>
-                            <div class="txt">
-                                {$lang['service']['menu2']}
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item-">
-                    <a href="{$ul}/service/264" class="link" title="{$lang['service']['menu3']}">
-                        <div class="wrapper">
-                            <div class="icon">
-                                <img src="front/template/default/assets/img/icon/ศูนย์ให้คำปรึกษา.png" alt="ศูนย์ให้คำปรึกษา">
-                            </div>
-                            <div class="txt">
-                                {$lang['service']['menu3']}
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item-">
-                    <a href="{$ul}/service/265" class="link" title="{$lang['service']['menu4']}">
-                        <div class="wrapper">
-                            <div class="icon">
-                                <img src="front/template/default/assets/img/icon/เครื่องมือ.png" alt="เครื่องมือ">
-                            </div>
-                            <div class="txt">
-                                {$lang['service']['menu4']}
-                            </div>
-                        </div>
-                    </a>
+                    {/foreach}
                 </div>
             </div>
         </div>
     </div>
-</div>
+{/if}
 
 <div class="container">
     {foreach $sectionMainpage as $keysectionMainpage => $valuesectionMainpage}

@@ -683,7 +683,7 @@ if($lang || $langOption){
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_masterkey = " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_masterkey
     WHERE
     " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
-    " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_status != 'Disable' AND
+    " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_status = 'Home' AND
     " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_lang".$langOption." = '1' AND
     " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_subject" . $lang . " != '' AND
     ((" . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
@@ -700,7 +700,7 @@ if($lang || $langOption){
       $sql .= " AND " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_order ASC ";
+    $sql .= " ORDER  BY " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_order ASC LIMIT 4";
 
     // print_pre($sql);
     $result = $db->execute($sql);

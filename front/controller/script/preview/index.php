@@ -32,6 +32,10 @@ switch ($themeWebsite['class']) {
         $callBannerSection = $previewPage->callTopGraphic($config['ban_t3']['main']['masterkey']);
         $smarty->assign("callBannerSection", $callBannerSection);
 
+        // service
+        $callservice_top = $previewPage->callTopGraphic($config['sev_t3']['main']['masterkey']);
+        $smarty->assign("callservice_top", $callservice_top);
+
         // call weblink
         $callWeblinkSection = $previewPage->callTopGraphic($config['wb_t3']['main']['masterkey']);
         $smarty->assign("callWeblinkSection", $callWeblinkSection);
@@ -306,6 +310,9 @@ switch ($themeWebsite['class']) {
 
         $sectionMainpage = array();
         foreach ($callSection as $keycallSection => $valuecallSection) {
+            // $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
+            // $sectionMainpage[$keycallSection]['masterkey'] = $valuecallSection['masterkey'];
+            // $sectionMainpage[$keycallSection]['file'] = array_filter($sectionMainpage[$keycallSection]['file']);
             if (!empty($arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']])) {
                 $sectionMainpage[$keycallSection]['file'] = $arrThemeFile[$core_theme_web[1]][$valuecallSection['masterkey']];
                 $sectionMainpage[$keycallSection]['masterkey'] = $valuecallSection['masterkey'];

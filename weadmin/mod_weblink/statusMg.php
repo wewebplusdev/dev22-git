@@ -13,6 +13,8 @@ $loadderstatus = $_POST['Valueloadderstatus'];
 $filestatus = $_POST['Valuefilestatus'];
 
 if ($statusname == "Enable") {
+    $inputstatusname = "Home";
+} else if ($statusname == "Home") {
     $inputstatusname = "Disable";
 } else if ($statusname == "Disable") {
     $inputstatusname = "Enable";
@@ -25,6 +27,9 @@ $Query = wewebQueryDB($coreLanguageSQL, $sql);
 ?>
 	<?php if ($inputstatusname == "Enable") { ?>
     <a href="javascript:void(0)"  onclick="changeStatus('<?php echo $loaddder ?>','<?php echo $tablename ?>','<?php echo $inputstatusname ?>','<?php echo $statusid ?>','<?php echo $loadderstatus ?>','<?php echo $filestatus ?>')" ><span class="fontContantTbEnable"><?php echo $inputstatusname ?></span></a>
+
+    <?php } else if($inputstatusname == "Home") { ?>
+    <a href="javascript:void(0)"  onclick="changeStatus('<?php echo $loaddder ?>','<?php echo $tablename ?>','<?php echo $inputstatusname ?>','<?php echo $statusid ?>','<?php echo $loadderstatus ?>','<?php echo $filestatus ?>')" ><span class="fontContantTbHomeSt"><?php echo $inputstatusname ?></span></a>
 
 
 

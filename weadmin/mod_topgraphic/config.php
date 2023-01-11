@@ -12,8 +12,16 @@ $arr_masterkey_ck = array('tgp');
 $modTxtTarget = array("", "เปิดหน้าต่างเดิม", "เปิดหน้าต่างใหม่");
 
 ## Size Pic ###################################
-$sizeWidthReal = "1920";
-$sizeHeightReal = "720";
+if ($_REQUEST['masterkey'] == 'sev_t3') {
+  $sizeWidthReal = "55";
+  $sizeHeightReal = "55";
+}elseif($_REQUEST['masterkey'] == 'ban'){
+  $sizeWidthReal = "512";
+  $sizeHeightReal = "512";
+}else{
+  $sizeWidthReal = "1920";
+  $sizeHeightReal = "720";
+}
 
 $sizeWidthPic = "800";
 $sizeHeightPic = "800";

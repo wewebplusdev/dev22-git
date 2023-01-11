@@ -99,6 +99,8 @@ $valCreby = $Row[2];
 $valStatus = $Row[3];
 if ($valStatus == "Enable") {
   $valStatusClass =  "fontContantTbEnable";
+} else if ($valStatus == "Home"){
+  $valStatusClass =  "fontContantTbHomeSt";
 } else {
   $valStatusClass =  "fontContantTbDisable";
 }

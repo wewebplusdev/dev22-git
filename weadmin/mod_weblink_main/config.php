@@ -9,8 +9,13 @@ $mod_fd_root = "mod_weblink_main";
 $modTxtTarget = array("", "เปิดหน้าต่างเดิม", "เปิดหน้าต่างใหม่");
 
 ## Size Pic ###################################
-$sizeWidthReal = "1920";
-$sizeHeightReal = "720";
+if ($_REQUEST['masterkey'] == 'ban_t3') {
+  $sizeWidthReal = "700";
+  $sizeHeightReal = "400";
+}else{
+  $sizeWidthReal = "1920";
+  $sizeHeightReal = "720";
+}
 
 $sizeWidthPic = "800";
 $sizeHeightPic = "800";

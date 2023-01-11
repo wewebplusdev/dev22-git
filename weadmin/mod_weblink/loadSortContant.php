@@ -119,8 +119,10 @@ while ($row = wewebFetchArrayDB($coreLanguageSQL, $query)) {
 
         if ($valStatus == "Enable") {
             $valStatusClass = "fontContantTbEnable";
+        } else if ($valStatus == "Home"){
+            $valStatusClass = "fontContantTbHomeSt";
         } else {
-            $valStatusClass = "fontContantTbDisable";
+          $valStatusClass = "fontContantTbDisable";
         }
 
         $valImgCycle = "boxprofile_l.png";
