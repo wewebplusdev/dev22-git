@@ -166,7 +166,7 @@ switch ($PageAction) {
       //$smarty->assign("orderArray", $OrderArray);
 
       ## for subgroup ##
-      $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, null);
+      $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], 20, $sorting, null);
       $MaxRecord = $callSubGroup->_maxRecordCount;
       if(empty($SubGroupID) && $MaxRecord > 0){
           $SubGroupID = $callSubGroup->fields['id'];
