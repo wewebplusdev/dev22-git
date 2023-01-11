@@ -28,7 +28,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 } elseif ($_REQUEST['inputLt'] == "Eng") {
 	$sql .= " ,    " . $mod_tb_root . "_picen, " . $mod_tb_root . "_subjecten  ,    " . $mod_tb_root . "_titleen , " . $mod_tb_root . "_htmlfilenameen   ,    " . $mod_tb_root . "_metatitleen  	 	 ,    " . $mod_tb_root . "_descriptionen  	 	 ,    " . $mod_tb_root . "_keywordsen    ";
 } else {
-	$sql .= " ,    " . $mod_tb_root . "_picen, " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
+	$sql .= " ,    " . $mod_tb_root . "_piccn, " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
 }
 
 $sql .= " , " . $mod_tb_root . "_picshow, " . $mod_tb_root . "_typec , " . $mod_tb_root . "_urlc, " . $mod_tb_root . "_target ";
