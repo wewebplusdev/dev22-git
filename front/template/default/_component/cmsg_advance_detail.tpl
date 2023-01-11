@@ -148,6 +148,21 @@
             {$callCMS->fields.htmlfilename|fileinclude:"html":$callCMS->fields.masterkey|callHtml}
           {/strip}
           <!-- CK Editor -->
+          {* pdf *}
+          {if $Call_File->_numOfRows gte 1}
+            {foreach $Call_File as $keyCall_File => $valueCall_File}
+              {$fileinfo = $valueCall_File['filename']|fileinclude:'file':{$callCMS->fields.masterkey}|get_Icon}
+              {if $fileinfo.type === '.pdf'}
+              <div class="view-pdf">
+                <object
+                  data="upload/{$callCMS->fields.masterkey}/file/{$valueCall_File['filename']}"
+                  type="application/pdf" width="100%" height="100%">
+                  </object>
+              </div>
+              {/if}
+            {/foreach}
+          {/if}
+          {* pdf *}
         </div>
       {/if}
       <div class="border-nav-slider pt-5"></div>
