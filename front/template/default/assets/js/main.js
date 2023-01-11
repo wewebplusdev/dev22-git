@@ -173,9 +173,9 @@ $(document).ready(function() {
     });
 
     $(".default-nav-slider").slick({
-        infinite: false,
+        infinite: true,
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         arrows: true,
         dots: false,
         responsive: [{

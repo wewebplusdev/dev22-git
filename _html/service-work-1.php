@@ -29,9 +29,9 @@
             </div>
             <div class="default-page service-work">
                 <div class="container">
-                    <div class="default-nav-slider">
+                    <div class="default-nav-slider" data-slick="{'initialSlide': 5}">
                         <div class="item">
-                            <a href="javascript:void(0)" class="active">ตรวจสอบอัญมณี</a>
+                            <a href="javascript:void(0)">ตรวจสอบอัญมณี</a>
                         </div>
                         <div class="item">
                             <a href="javascript:void(0)">ตรวจสอบโลหะมีค่า</a>
@@ -43,7 +43,7 @@
                             <a href="javascript:void(0)">เครื่องมือ</a>
                         </div>
                         <div class="item">
-                            <a href="javascript:void(0)">สัมมนา/workshop</a>
+                            <a href="javascript:void(0)" class="active">สัมมนา/workshop</a>
                         </div>
                         <div class="item">
                             <a href="javascript:void(0)">ราคา</a>
@@ -61,7 +61,7 @@
 
                 <div class="container mt-md-5 mt-4">
                     <h2 class="text-primary mb-4">ตรวจสอบอัญมณี</h2>
-                    <div class="default-tab-slider default-slick">
+                    <div class="default-tab-slider default-slick" >
                         <div class="item">
                             <div class="tab-block active">
                                 <a class="text-limit" href="javascript:void(0)">แนะนำบริการ</a>
