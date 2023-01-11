@@ -16,6 +16,11 @@ switch ($url->segment[1]) {
         require_once _DIR . '/front/controller/script/'.$menuActive.'/service/update-chat-facebook.php';
         break;
 
+    case 'migrate':
+        // header('Content-Type: application/json; charset=utf-8');
+        require_once _DIR . '/front/controller/script/'.$menuActive.'/service/migrate.php';
+        break;
+
     default:
         header('Content-Type: application/json; charset=utf-8');
         http_response_code(403);

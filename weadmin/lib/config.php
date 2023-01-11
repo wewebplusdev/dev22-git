@@ -10,7 +10,7 @@ ini_set('display_startup_errors', 1);
 ini_set('display_errors', 1);
 error_reporting(1);
 ## Core Folder Local  ######################################################
-$core_pathname_folderlocal = "";
+$core_pathname_folderlocal = "/dev22-git";
 
 ## Core Upload  ######################################################
 $core_pathname_upload = "../../upload";
@@ -27,7 +27,7 @@ $core_variable_charset = "UTF-8";
 $core_relativepath_rss = "../../rss";
 
 ## Core Path Name  ##################################################
-$core_full_path = "http://" . $_SERVER["HTTP_HOST"] . "/th/" . $core_pathname_folderlocal;
+$core_full_path = "http://" . $_SERVER["HTTP_HOST"] ."". $core_pathname_folderlocal . "/th/";
 
 ## Core Path SQL Language ##################################################
 $coreLanguageSQL = "mysqli";
