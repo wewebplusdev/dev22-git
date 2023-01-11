@@ -265,11 +265,13 @@ $(document).ready(function() {
     });
 
     $(".knowledge-block .slider").slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
         infinite: false,
         slidesToShow: 4,
         slidesToScroll: 1,
         arrows: true,
-        dots: false,
+        dots: true,
         prevArrow: '<button class="slick-prev prev-arrow"></button>',
         nextArrow: '<button class="slick-next next-arrow"></button>',
         responsive: [{
