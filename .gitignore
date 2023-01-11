@@ -7,3 +7,9 @@ front/temp/
 front/template/default/assets/css/style.css
 .htaccess
 *.zip
+
+images/*
+eng/*
+thai/*
+logs/*
+eng/conference_en/2021/e_poster_2021.pdf
