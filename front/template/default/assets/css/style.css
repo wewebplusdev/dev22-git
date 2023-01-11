@@ -71,7 +71,7 @@
   --typo-md: 24px;
   --typo-lg: 30px;
   --typo-xl: 40px;
-  --typo-default: 18px;
+  --typo-default: 20px;
   --border-radius: 5px;
   --circle: 50%;
   --color-primary-3: #063F94;
@@ -18389,6 +18389,7 @@ fieldset {
     --typo-md: 20px;
     --typo-lg: 24px;
     --typo-xl: 34px;
+    --typo-default: 18px;
   }
   .container {
     max-width: inherit;
