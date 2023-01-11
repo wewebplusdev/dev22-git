@@ -44,7 +44,7 @@ $sql .= "
 			WHERE " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root . "_id 	='" . $_POST["valEditID"] . "'";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
-print_pre($sql);
+// print_pre($sql);
 $valid = $Row[0];
 $valcredate = DateFormatInsertRe($Row[1]);
 $valcreby = $Row[2];
