@@ -2,9 +2,9 @@
   <div class="knowledge-block">
       <div class="default-header-block">
           <div class="h-title">
-              แหล่งความรู้
+              {$lang['home']['km']}
           </div>
-          <a href="" class="link" title="{$lang['system']['viewsall']}">
+          <a href="" class="link" title="{$lang['system']['viewsall']}" style="display: none;">
               {$lang['system']['viewsall']}
           </a>
       </div>
@@ -16,7 +16,7 @@
                           <div class="col">
                               <div class="thumbnail">
                                   <figure class="cover">
-                                      <img src="{$valuecallKmSection['pic']|fileinclude:"real":{$valuecallKmSection['masterkey']}:"link"}" alt="{$valuecallKmSection.subject}">
+                                      <img src="{$valuecallKmSection['pic']|fileinclude:"real":{$valuecallKmSection['masterkey']}:"link"}" alt="{$valuecallKmSection['subject']}">
                                   </figure>
                               </div>
                           </div>

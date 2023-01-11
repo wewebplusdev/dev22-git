@@ -6,8 +6,7 @@
           GIT MUSEUM
         </div>
         <div class="desc">
-          พิพิธภัณฑ์อัญมณีและเครื่องประดับสถาบันวิจัยและพัฒนาอัญมณี <br>
-          และเครื่องประดับแห่งชาติ (องค์การมหาชน)
+          {$lang['home']['museumtitle']}
         </div>
         <a href="{$ul}/information-service" class="btn btn-border-light" title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
       </div>

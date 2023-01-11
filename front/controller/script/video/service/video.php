@@ -79,11 +79,11 @@ switch ($PageAction) {
     $smarty->assign("callCMS", $callCMS);
     $smarty->assign("albumCMSImageURL", $albumCMSImageURL);
     ## breadcrumb
-    $breadcrumb = explode("-", $callCMS->fields['menuname']);
-    $settingModulus['breadcrumb'] = $breadcrumb[0];
+    $breadcrumb = $callCMS->fields['menuname'];
+    $settingModulus['breadcrumb'] = $breadcrumb;
 
     ## title
-    $settingModulus['title'] = $breadcrumb[0];
+    $settingModulus['title'] = $breadcrumb;
 
     // slick slide
     $initialSlide2 = 0;

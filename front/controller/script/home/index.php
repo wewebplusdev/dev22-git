@@ -32,6 +32,10 @@ switch ($themeWebsite['class']) {
         $callBannerSection = $homePage->callTopGraphic($config['ban_t3']['main']['masterkey']);
         $smarty->assign("callBannerSection", $callBannerSection);
 
+        // service
+        $callservice_top = $homePage->callTopGraphic($config['sev_t3']['main']['masterkey']);
+        $smarty->assign("callservice_top", $callservice_top);
+
         // call weblink
         $callWeblinkSection = $homePage->callTopGraphic($config['wb_t3']['main']['masterkey']);
         $smarty->assign("callWeblinkSection", $callWeblinkSection);

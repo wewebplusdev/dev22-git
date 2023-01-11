@@ -2,6 +2,7 @@
 <div class="top-graphic">
     <div class="slider">
         {foreach $callTopGraphic as $keycallTopGraphic => $valuecallTopGraphic}
+         <a {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link">
             <div class="tpg-item">
                 <figure class="cover">
                     <img src="{$valuecallTopGraphic['pic']|fileinclude:"real":{$valuecallTopGraphic['masterkey']}:"link"}" alt="{$valuecallTopGraphic.pic}">
@@ -9,7 +10,7 @@
                 <div class="info">
                     <div class="container">
                         <div class="wrapper">
-                            {if $valuecallTopGraphic['subject'] neq ""}
+                            {* {if $valuecallTopGraphic['subject'] neq ""}
                                 <div class="title text-limit -x3">
                                     {$valuecallTopGraphic['subject']}
                                 </div>
@@ -21,14 +22,40 @@
                             {/if}
                             {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}
                             <a {if $valuecallTopGraphic['url'] neq "" && $valuecallTopGraphic['url'] neq "#"}href="{$valuecallTopGraphic['url']}"{if $valuecallTopGraphic['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="btn btn-border-light" title="btn btn-primary">{$lang['system']['viewmore']}</a>
-                            {/if}
+                            {/if} *}
                         </div>
                     </div>
                 </div>
             </div>
+             </a>
         {/foreach}
     </div>
 </div>
+{if $callAnnouncer->_numOfRows gte 1}
+    <!-- Home Notice and Search -->
+    <div class="notice-search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="home-notice">
+                    <div class="title">
+                        {* {$listNews.0.group.subject|rechangeQuot2} *}
+                        <img src="front/template/default/assets/img/icon/icon-home-notice.png" alt="announcer">
+                    </div>
+                    <div class="notice-slide">
+                        {foreach $callAnnouncer as $keycallAnnouncer => $valuecallAnnouncer}
+                          {if $valuecallAnnouncer['url'] neq "" && $valuecallAnnouncer['url'] neq "#"}
+                            <div class="text"><a href="{$valuecallAnnouncer['url']}" {if $valuecallAnnouncer['target'] eq 2}target="_blank"{/if} style="text-decoration: none;">{$valuecallAnnouncer['title']}</a></div>
+                          {/if}
+                          {/foreach}
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{/if}
 <div class="default-nav">
 
     <div class="row no-gutters">
@@ -42,7 +69,7 @@
         <div class="col-xl-8 col-md-9 col-sm-8 col-7">
             <div class="slider">
                 <div class="item-">
-                    <a href="{$ul}/service/262" class="link active" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/262" class="link active" title="{$lang['service']['menu1']}">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="52.507" height="52.507" viewBox="0 0 52.507 52.507">
@@ -64,7 +91,7 @@
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="{$ul}/service/263" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/263" class="link" title="{$lang['service']['menu2']}">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="57.257" height="58.067" viewBox="0 0 57.257 58.067">
@@ -92,7 +119,7 @@
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="{$ul}/service/264" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/264" class="link" title="{$lang['service']['menu3']}">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="50.291" height="50.291" viewBox="0 0 50.291 50.291">
@@ -120,7 +147,7 @@
                     </a>
                 </div>
                 <div class="item-">
-                    <a href="{$ul}/service/265" class="link" title="ตรวจสอบอัญมณี">
+                    <a href="{$ul}/service/265" class="link" title="{$lang['service']['menu4']}">
                         <div class="wrapper">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="48.72" height="56.59" viewBox="0 0 48.72 56.59">

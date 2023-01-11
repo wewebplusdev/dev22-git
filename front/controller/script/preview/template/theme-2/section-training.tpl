@@ -8,7 +8,7 @@
               Movement
             </div>
             <div class="desc typo-md">
-              เป็นองค์กรของรัฐในรูปแบบองค์การมหาชนตามพระราชบัญญัติองค์การมหาชน พ.ศ. 2542
+              {$lang['home']['training']}
             </div>
             <div class="action">
               <a href="{$ul}/training" class="btn btn-lg btn-border-light" title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>

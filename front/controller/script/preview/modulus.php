@@ -15,6 +15,7 @@ class previewPage
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_credate as credate,
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_url".$lang." as url,
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_title".$lang." as title,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_htmlfilename".$lang." as htmlfilename,
     " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_target as target
   
   
@@ -26,6 +27,103 @@ class previewPage
 if($lang){
   $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject".$lang." != '' AND ";
   $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_pic".$lang." != '' AND ";
+}else{
+  $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject != '' AND ";
+}
+
+   $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_masterkey = '$masterkey' AND
+   " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_lang".$langOption." = '1' AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_status = 'Enable' AND
+    ((" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
+    (" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate)>=TO_DAYS(NOW()) ) OR
+    (TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate='0000-00-00 00:00:00' )  OR
+    (TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
+  
+    ";
+
+    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order DESC ";
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+  function callAncr($masterkey = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langOption = $url->pagelang[2];
+
+    $sql = "SELECT
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_id as id,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_masterkey as masterkey,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject".$lang." as subject,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_pic".$lang." as pic,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_credate as credate,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_url".$lang." as url,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_title".$lang." as title,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_htmlfilename".$lang." as htmlfilename,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_target as target
+  
+  
+    FROM
+    " . $config['tgp']['db']['main'] . "
+    WHERE ";
+    
+   
+if($lang){
+  $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject".$lang." != '' AND ";
+}else{
+  $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject != '' AND ";
+}
+
+   $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_masterkey = '$masterkey' AND
+   " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_lang".$langOption." = '1' AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_status = 'Enable' AND
+    ((" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
+    (" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate)>=TO_DAYS(NOW()) ) OR
+    (TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate='0000-00-00 00:00:00' )  OR
+    (TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    TO_DAYS(" . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
+  
+    ";
+
+    $sql .= " ORDER  BY " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_order DESC ";
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
+  function callTopGraphic2($masterkey = null)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langOption = $url->pagelang[2];
+
+    $sql = "SELECT
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_id as id,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_masterkey as masterkey,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject".$lang." as subject,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_pic".$lang." as pic,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_credate as credate,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_url".$lang." as url,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_title".$lang." as title,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_htmlfilename".$lang." as htmlfilename,
+    " . $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_target as target
+  
+  
+    FROM
+    " . $config['tgp']['db']['main'] . "
+    WHERE ";
+    
+   
+if($lang || $langOption){
+  $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject".$lang." != '' AND ";
 }else{
   $sql .= $config['tgp']['db']['main'] . "." . $config['tgp']['db']['main'] . "_subject != '' AND ";
 }
@@ -109,7 +207,7 @@ if($lang){
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " as title,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_pic" . $lang . " as pic,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lastdate as lastdate,
-    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url as url,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url" . $lang . " as url,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_target as target,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid as gid,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
@@ -168,14 +266,14 @@ if($lang){
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid = '" . $gid . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order DESC," . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order LIMIT ".$limit." ";
+    $sql .= " ORDER  BY " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_order DESC," . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_order DESC LIMIT ".$limit." ";
 
     //  print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
 
-  function callcmsTheme2($masterkey, $id = null, $status, $limit)
+  function callcmsTheme2($masterkey, $id = null, $status, $limit=15)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -190,7 +288,7 @@ if($lang){
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " as title,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_pic" . $lang . " as pic,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lastdate as lastdate,
-    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url as url,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url" . $lang . " as url,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_target as target,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid as gid,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
@@ -298,9 +396,9 @@ if($lang){
 
 
     if (!empty($order)) {
-      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "".$order." DESC ";
+      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "".$order." ASC ";
     }else{
-      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_order DESC ";
+      $sql .= " ORDER  BY " . $config['mnu']['db'] . "." . $config['mnu']['db'] . "_order ASC ";
     }
 
     // print_pre($sql);
@@ -428,7 +526,7 @@ if($lang){
     $result = $db->execute($sql);
     return $result;
   }
-  function callcms_thmem_1($masterkey, $gid = null, $limit = 10, $status = 'Home')
+  function callcms_thmem_1($masterkey, $gid = null, $limit = 10, $status = 'Home',$core_theme_web = null)
   {
     global $config, $db, $url;
     $lang = $url->pagelang[3];
@@ -442,7 +540,7 @@ if($lang){
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " as title,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_pic" . $lang . " as pic,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lastdate as lastdate,
-    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url as url,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url" . $lang . " as url,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_target as target,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid as gid,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
@@ -454,7 +552,7 @@ if($lang){
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_keywords" . $lang . " as keywords,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_tid as tid,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_head" . $lang . " as head,
-    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_filevdo as filevdo,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_filevdo" . $lang . " as filevdo,
 
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
@@ -479,6 +577,10 @@ if($lang){
     (TO_DAYS(" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
     TO_DAYS(" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
     ";
+
+    if (!empty($core_theme_web)){
+      $sql .= " AND " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_tid REGEXP '.*;s:[0-9]+:\"" . $core_theme_web . "\".*'";
+    }
 
     if (!empty($gid)) {
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid = '" . $gid . "' ";
@@ -505,7 +607,7 @@ if($lang){
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_title" . $lang . " as title,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_pic" . $lang . " as pic,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_lastdate as lastdate,
-    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url as url,
+    " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_url" . $lang . " as url,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_target as target,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_gid as gid,
     " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
@@ -598,7 +700,7 @@ if($lang){
       $sql .= " AND " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    $sql .= " ORDER  BY " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_order DESC ";
+    $sql .= " ORDER  BY " . $config['wel']['db']['main'] . "." . $config['wel']['db']['main'] . "_order ASC ";
 
     // print_pre($sql);
     $result = $db->execute($sql);

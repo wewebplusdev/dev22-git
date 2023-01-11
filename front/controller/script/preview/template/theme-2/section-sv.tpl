@@ -5,12 +5,10 @@
                 <div class="col-lg-4">
                     <div class="left-side">
                         <div class="h-title">
-                            งานบริการ
+                            {$lang['home']['servicework']}
                         </div>
                         <p class="desc">
-                            เป็นองค์กรของรัฐในรูปแบบองค์การ
-                            มหาชนตามพระราชบัญญัติองค์การ
-                            มหาชน พ.ศ. 2542
+                           {$lang['home']['serviceworkdes']}
                         </p>
                         <a href="{$ul}/service" class="btn btn-lg btn-border-light"
                             title="{$lang['system']['viewmore']}">{$lang['system']['viewmore']}</a>

@@ -56,8 +56,8 @@
     </div>
     </div>
 {/if}
-<div class="default-nav">
 
+<div class="default-nav">
     <div class="row no-gutters">
         <div class="col-xl-2 col-md-3 col-sm-4 col-5">
             <div class="topic">

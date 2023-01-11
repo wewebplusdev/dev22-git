@@ -13,20 +13,19 @@
               </div>
               <div class="col">
                 <div class="desc">
-                  WEB OPAC 2.0 สืบค้นหนังสือ/วารสาร
-                  ห้องสมุดอัญมณีและเครื่องประดับ
+                  {$lang['home']['libarytitle']}
                 </div>
               </div>
             </div>
             <form data-toggle="validator" role="form" class="form-default" method="post" action="https://opac.git.or.th/BibList.aspx" target="_blank">
               <div class="form-group">
-                <label class="control-label visuallyhidden" for="bookSearch">สืบค้นหนังสือ/วารสาร</label>
+                <label class="control-label visuallyhidden" for="bookSearch">{$lang['home']['searchtitle']}</label>
                 <div class="block-control">
                   <input type="text" name="word" class="form-control" id="bookSearch" placeholder="">
                 </div>
               </div>
               <div class="form-group has-feedback">
-                <label class="control-label visuallyhidden" for="category">ติดต่อ</label>
+                <label class="control-label visuallyhidden" for="category">{$lang['home']['contacttitle']}</label>
                 <div class="select-wrapper">
                   <select class="select-control" name="type" id="category" style="width: 100%;">
                     {foreach $arrGitLibary as $keyarrGitLibary => $valuearrGitLibary}

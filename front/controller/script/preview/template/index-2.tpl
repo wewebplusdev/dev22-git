@@ -14,7 +14,7 @@
               <div class="info">
                 <div class="container">
                   <div class="wrapper">
-                    {if $valuecallTopGraphic['subject'] neq ""}
+                    {* {if $valuecallTopGraphic['subject'] neq ""}
                       <div class="title text-limit -x2">
                         {$valuecallTopGraphic['subject']}
                       </div>
@@ -35,16 +35,43 @@
                             {/if} class="btn btn-border-light"
                             title="btn btn-primary">{$lang['system']['viewmore']}</button>
                         </div>
-                      {/if}
+                      {/if} *}
                     </div>
                   </div>
                 </div>
               </div>
             </a>
           </div>
+           </a>
         {/foreach}
       </div>
     </div>
+    
+  {if $callAnnouncer->_numOfRows gte 1}
+    <!-- Home Notice and Search -->
+    <div class="notice-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="home-notice">
+                        <div class="title">
+                            {* {$listNews.0.group.subject|rechangeQuot2} *}
+                            <img src="front/template/default/assets/img/icon/icon-home-notice.png" alt="announcer">
+                        </div>
+                        <div class="notice-slide">
+                            {foreach $callAnnouncer as $keycallAnnouncer => $valuecallAnnouncer}
+                              {if $valuecallAnnouncer['url'] neq "" && $valuecallAnnouncer['url'] neq "#"}
+                                <div class="text"><a href="{$valuecallAnnouncer['url']}"  {if $valuecallAnnouncer['target'] eq 2}target="_blank"{/if} style="text-decoration: none;">{$valuecallAnnouncer['title']}</a></div>
+                              {/if}
+                              {/foreach}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  {/if}
     
     {foreach $sectionMainpage as $keysectionMainpage => $valuesectionMainpage}
       {include file={$valuesectionMainpage.file}}

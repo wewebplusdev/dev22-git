@@ -1,31 +1,24 @@
-{if count($arrGitLabList) > 0}
+{if count($arrGitList) > 0}
   <div class="lab-update-block">
     <div class="container">
-      <div class="h-title">GIT LAB UPDATE</div>
+      <div class="h-title">
+      GIT LAB UPDATE
+      </div>
       <ul class="default-nav-tab nav nav-pills">
-        {foreach $arrGitLabList as $keyarrGitLabList => $valuearrGitLabList}
+        {foreach $arrGitList as $keyarrGitList => $valuearrGitList}
           <li>
-            <a class="item {if $keyarrGitLabList eq 0}active{/if}" href="#labUpdate{$keyarrGitLabList}"
-              data-toggle="tab">{$valuearrGitLabList['group']['subject']}</a>
+            <a class="item {if $keyarrGitList eq 0}active{/if}" href="#labUpdate{$keyarrGitList}"data-toggle="tab">{$valuearrGitList['group']['subject']}</a>
           </li>
         {/foreach}
-        {* <li>
-          <a class="item active" href="#labUpdate1" data-toggle="tab">บันทึกจากห้องปฏิบัติการ</a>
-        </li>
-        <li>
-          <a class="item" href="#labUpdate2" data-toggle="tab">ความรู้เรื่องโลหะมีค่า</a>
-        </li> *}
       </ul>
       <div class="tab-content clearfix">
-        {foreach $arrGitLabList as $keyarrGitLabList => $valuearrGitLabList}
-          <div class="tab-pane {if $keyarrNewsList eq 0}active{/if}" id="labUpdate{$keyarrGitLabList}">
-            <div class="default-list">
-              {if count($valuearrGitLabList.list) > 0}
+        {foreach $arrGitList as $keyarrGitList => $valuearrGitList}
+          <div class="tab-pane {if $keyarrGitList eq 0}active{/if}" id="labUpdate{$keyarrGitList}">
+            {if count($valuearrGitList.list) > 0}
+              <div class="default-list">
                 <div class="default-slider default-slider-arrows default-slider-dots slider">
-                  {foreach $valuearrGitLabList.list as $keySubGitLab => $valueSubGitLab}
-                    <!-- call file -->
+                  {foreach $valuearrGitList.list as $keySubGitLab => $valueSubGitLab}
                     {$Call_File = $callSetWebsite::Call_File($valueSubGitLab['id'])}
-                    {$fileinfo = $Call_File->fields['filename']|fileinclude:'file':{$valueSubGitLab.masterkey}|get_Icon}
                     {if $valueSubGitLab.typec eq 1}
                       {$path_gitlab = "{$ul}/information-service/{$valueSubGitLab.menuid}/{$valueSubGitLab.gid}/detail/{$valueSubGitLab.id}"}
                     {else}
@@ -49,8 +42,9 @@
                                     {$valueSubGitLab.subject}
                                   </div>
                                   {if $Call_File->_numOfRows gte 1}
+                                    {$fileinfo = $Call_File->fields['filename']|fileinclude:'file':{$valueSubGitLab.masterkey}|get_Icon}
                                     <div class="desc typo-s text-limit -x2">
-                                    {"."|str_replace:"":$fileinfo.type|strtoupper} {$lang['system']['size']}: {$Call_File->fields['filename']|fileinclude:'file':{$valueSubGitLab.masterkey}|get_IconSize}
+                                      {"."|str_replace:"":$fileinfo.type|strtoupper} {$lang['system']['size']}:{$Call_File->fields['filename']|fileinclude:'file':{$valueSubGitLab.masterkey}|get_IconSize}
                                     </div>
                                   {/if}
                                 </div>
@@ -67,14 +61,13 @@
                     </div>
                   {/foreach}
                 </div>
-              {/if}
-            </div>
+              </div>
+            {/if}
           </div>
         {/foreach}
       </div>
       <div class="action">
-        <a href="{$ul}/information-service" class="btn btn-border-light"
-          title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
+        <a href="{$ul}/information-service" class="btn btn-border-light" title="{$lang['system']['viewsall']}">{$lang['system']['viewsall']}</a>
       </div>
     </div>
   </div>

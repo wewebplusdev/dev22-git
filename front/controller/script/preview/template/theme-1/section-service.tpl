@@ -6,7 +6,7 @@
           <div class="row align-items-center">
             <div class="col-md-12 col">
               <div class="h-title m-0">GIT SEVICES</div>
-              <div class="sub-title">บริการของเรา</div>
+              <div class="sub-title">{$lang['home']['ourservicetitle']}</div>
             </div>
             <div class="col-md-12 col-auto">
               <div class="load-more-hide text-left mb-4">

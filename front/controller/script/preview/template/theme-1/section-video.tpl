@@ -21,7 +21,7 @@
                   <a class="link" href="https://www.youtube.com/channel/UCaAgFkuBiRcX1NO1HOaQ9Iw" target="_blank">
                     <div class="title text-uppercase"> Let's talk about GIT Museum</div>
                     <div class="desc">
-                      เจาะกระแสการพัฒนาอย่างยั่งยืน ทางรอดของ<br>อุตสาหกรรมอัญมณีและเครื่องประดับยุคใหม่
+                      {$lang['home']['vdotitle']}
                     </div>
                     <span class="feather icon-play-circle"></span>
                   </a>
