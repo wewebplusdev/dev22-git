@@ -588,3 +588,8 @@ $lang['form']['text'] = "細節";
 $lang['form']['reply'] = "敬請知悉，本公司已收到申請。";
 $lang['form']['dear'] = "親愛的 ";
 $lang['form']['dearAdmin'] = "親愛的管理員";
+
+$lang['sort']['0'] = "按系統排序";
+$lang['sort']['1'] = "最新更新";
+$lang['sort']['2'] = "最早的更新";
+$lang['sort']['3'] = "打高 - 低";
