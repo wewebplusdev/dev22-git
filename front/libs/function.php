@@ -554,7 +554,7 @@ function fileinclude($filename, $fileType = 'html', $mod_tb_about_masterkey, $fo
       if ($mod_tb_about_masterkey == 'cu') {
          $setimg = "/public/image/asset/default_boss.png";
       } else {
-         $setimg = "/assets/img/static/no-img.jpg";
+         $setimg = "/assets/img/static/no-img.png";
       }
    }
 
