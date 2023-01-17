@@ -48,9 +48,9 @@ $smarty->assign("initialSlide", '{"initialSlide": ' . $initialSlide . '}');
 // print_pre($MenuID);
 
 switch ($MenuID) {
-    // case 'cod_f': //คำนวนณเพชร
-    //     require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_cod_s.php';
-    //     break;
+    case 'sv_cod_s': //คำนวนณเพชร
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_cod_s.php';
+        break;
 
     case 'cod_f':
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/rs_cod_s-cal.php';
