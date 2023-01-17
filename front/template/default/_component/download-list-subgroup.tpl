@@ -284,20 +284,20 @@
                                                                             <div class="col-auto">
                                                                                 <a href="{$ul}/{$menuActive}/{$valueList.menuid}/{$valueList.gid}/{$menuDetail}/{$valueList.id}"
                                                                                     class="btn"
-                                                                                    title="{$lang['system']['viewmore']}">อ่านบทคัดย่อ</a>
+                                                                                    title="{$lang['system']['readabstract']}">{$lang['system']['readabstract']}</a>
                                                                             </div>
                                                                         {if $valueList.typec eq 1}
                                                                             <div class="col-auto">
                                                                                 <a href="{$ul}/{$menuActive}/{$valueList.menuid}/{$valueList.gid}/{$menuDetail}/{$valueList.id}"
                                                                                     class="btn"
-                                                                                    title="{$lang['system']['viewmore']}">ดาวน์โหลดเอกสาร</a>
+                                                                                    title="{$lang['system']['downloaddoc']}">{$lang['system']['downloaddoc']}</a>
                                                                             </div>
                                                                         {/if}
                                                                         {if $Call_File->_numOfRows gte 1}
                                                                             <div class="col-auto">
                                                                                 <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valueList.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
                                                                                     class="btn"
-                                                                                    title="{$lang['system']['download']}">รายงานฉบับสมบูรณ์</a>
+                                                                                    title="{$lang['system']['completereport']}">{$lang['system']['completereport']}</a>
                                                                             </div>
                                                                         {/if}
                                                                     </div>
