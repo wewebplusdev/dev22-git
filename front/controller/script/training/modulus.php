@@ -100,9 +100,6 @@ class trainingPage
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_id = '" . $id . "' ";
     }
 
-    if (!empty($year)) {
-      $sql .= " AND YEAR(" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate) = '" . $year . "' ";
-    }
 
     if (!empty($sid)) {
       $sql .= " AND " . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_sid = '" . $sid . "' ";
@@ -292,9 +289,6 @@ class trainingPage
       $sql .= " AND " . $config['cmsg']['db']['main'] . "." . $config['cmsg']['db']['main'] . "_gid = '" . $gid . "' ";
     }
 
-    if (!empty($year)) {
-      $sql .= " AND YEAR(" . $config['cms']['db']['main'] . "." . $config['cms']['db']['main'] . "_credate) = '" . $year . "' ";
-    }
 
     $sql .= " GROUP BY " . $config['cmsg']['db']['main'] . "." . $config['cmsg']['db']['main'] . "_id ORDER  BY " . $config['cmsg']['db']['main'] . "." . $config['cmsg']['db']['main'] . "_order ".$order." ";
 

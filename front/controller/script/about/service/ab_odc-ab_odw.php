@@ -148,12 +148,13 @@ switch ($MenuID) {
                     $sorting = "DESC";
                     $order = 1;
                 }
+                $smarty->assign("SubGroupID", $SubGroupID);
                 $smarty->assign("order", $order);
                 $smarty->assign("callGroupType", $callGroup->fields['types']);
                 ## list data
                 if ($callGroup->fields['type'] == 1) {
                     if ($callGroup->fields['types'] == 1) { ## for group
-                        $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']),$req_params['keywords']);
+                        $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']), $req_params['keywords']);
                         $masterkey_page = $callCMS->fields['masterkey'];
                         $smarty->assign("callCMS", $callCMS);
                         $smarty->assign("orderArray", $OrderArray);
@@ -167,23 +168,12 @@ switch ($MenuID) {
                         );
                     } else { ## for subgroup
                         $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], null);
-                        $masterkey_page = $callSubGroup->fields['masterkey'];
-                        $MaxRecord = $callSubGroup->_maxRecordCount;
-                        if(empty($SubGroupID) && $MaxRecord > 0){
-                            $SubGroupID = $callSubGroup->fields['id'];
-                         }
-                        $smarty->assign("orderArray", $OrderArray);
-                        $smarty->assign("subGroup",  $SubGroupID);
                         $smarty->assign("callSubGroup", $callSubGroup);
-                        $smarty->assign("callSubGroupRows", $MaxRecord);
-                        $arrListData = array();
-                       // foreach ($callSubGroup as $keycallSubGroup => $valuecallSubGroup) {
-                            $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], null,$req_params['keywords'], $SubGroupID);
-                            $arrListData[0]['subgroup'] = $SubGroupID;
-                            foreach ($callCMS as $keycallCMS => $valuecallCMS) {
-                                $arrListData[0]['list'][] = $valuecallCMS;
-                            }
-                       // }
+                        $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']), $req_params['keywords'], $SubGroupID);
+                        $smarty->assign("callCMS", $callCMS);
+                        $smarty->assign("orderArray", $OrderArray);
+                        $MaxRecord = $callCMS->_maxRecordCount;
+                        $smarty->assign("arrListData", $arrListData);
                         $smarty->assign("arrListData", $arrListData);
                         $MenuID = "ab_odc"; // fixed ไว้ เพื่อ active menu แรกเสมอ
                         $settingPage = array(
@@ -193,7 +183,7 @@ switch ($MenuID) {
                             "control" => "component",
                         );
                     }
-                }else{
+                } else {
                     $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
                     $masterkey_page = $callCMS->fields['masterkey'];
                     $smarty->assign("callCMS", $callCMS);
