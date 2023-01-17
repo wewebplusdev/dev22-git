@@ -148,7 +148,7 @@
                     alt="attachment icon">
                 </div>
                 <div class="col">
-                  <div class="title typo-sm">{$subject}</div>
+                  <div class="title typo-sm text-limit -x2">{$subject}</div>
                   <div class="row">
                     {if $Call_File->_numOfRows gte 1}
                       <div class="col-sm-auto">
@@ -202,7 +202,7 @@
             </div>
             <div class="col-md-auto">
               <div class="row">
-                <div class="download-block-btn">
+                <div class="download-block-btn -add">
                   {if $valuecallCMS.typec eq 1}
                     <div class="col-auto">
                       <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}"

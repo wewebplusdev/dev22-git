@@ -226,3 +226,17 @@
 .download-block .download-block-btn.-add .btn {
     padding: 0;
 }
+
+@media (max-width: 767px) {
+    .download-block .download-block-btn {
+        padding-left: 60px;
+    }
+}
+
+@media (max-width: 575px) {
+    .download-block .download-block-btn {
+        display: table;
+        line-height: 2.2em;
+        padding-left: 50px;
+    }
+}

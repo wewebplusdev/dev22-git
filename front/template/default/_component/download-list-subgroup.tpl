@@ -193,10 +193,10 @@
                                                                             alt="attachment icon">
                                                                     </div>
                                                                     <div class="col">
-                                                                        <div class="title typo-sm">{$subject}</div>
+                                                                        <div class="title typo-sm text-limit -x2">{$subject}</div>
                                                                         <div class="row">
                                                                             {if $Call_File->_numOfRows gte 1}
-                                                                                <div class="col-sm-auto">
+                                                                                <div class="col-sm-auto pt-2">
                                                                                     <div class="row">
                                                                                         <div class="col-sm-auto">
                                                                                             <div class="download-block-type">
@@ -223,7 +223,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                             {/if}
-                                                                            <div class="col-sm-auto">
+                                                                            <div class="col-sm-auto pt-2">
                                                                                 <div class="row">
                                                                                     <div class="col-sm-auto">
                                                                                         <div class="download-block-type">
@@ -281,11 +281,6 @@
                                                                 </div> *}
                                                                 <div class="row">
                                                                     <div class="download-block-btn -add">
-                                                                            <div class="col-auto">
-                                                                                <a href="{$ul}/{$menuActive}/{$valueList.menuid}/{$valueList.gid}/{$menuDetail}/{$valueList.id}"
-                                                                                    class="btn"
-                                                                                    title="{$lang['system']['readabstract']}">{$lang['system']['readabstract']}</a>
-                                                                            </div>
                                                                         {if $valueList.typec eq 1}
                                                                             <div class="col-auto">
                                                                                 <a href="{$ul}/{$menuActive}/{$valueList.menuid}/{$valueList.gid}/{$menuDetail}/{$valueList.id}"
