@@ -47,7 +47,7 @@
               title="{$lang['contact']['feedback-system']}">
               {$lang['contact']['feedback-system']}
             </a>
-            <a href="{$template}/assets/img/pdf/corruption_stat2023.pdf.pdf" class="btn btn-primary mt-lg-4"
+            <a href="{$template}/assets/img/pdf/corruption_stat2023.pdf" class="btn btn-primary mt-lg-4"
               title="{$lang['contact']['feedback-system']}">
               {$lang['contact']['corruption-statistics']}
             </a>
