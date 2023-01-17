@@ -119,6 +119,7 @@ switch ($PageAction_default) {
                 "control" => "component",
             );
         }
+        $smarty->assign("masterkey_rs_ri", 'rs_ri');
 
         ## breadcrumb
         $breadcrumb = explode("-", $callGroup->fields['menuname']);

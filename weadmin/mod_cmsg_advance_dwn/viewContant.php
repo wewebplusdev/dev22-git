@@ -40,6 +40,7 @@ $sql .= "  , " . $mod_tb_root . "_picshow, " . $mod_tb_root . "_typec, " . $mod_
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin";
 $sql .= " , " . $mod_tb_root . "_sid as sid";
 $sql .= " , " . $mod_tb_root_group . "_type as gtype  ";
+$sql .= " , " . $mod_tb_root . "_url2 as url2  ";
 $sql .= " FROM " . $mod_tb_root . " 
 LEFT JOIN
 " . $mod_tb_root_group . "
@@ -98,6 +99,7 @@ $valUrlfriendly = rechangeQuot($Row[24]);
 $valLang[0] = $Row[25];
 $valLang[1] = $Row[26];
 $valLang[2] = $Row[27];
+$valUrl2 = $Row['url2'];
 
 $valPin = $Row['pin'];
 if ($valPin == "Pin") {
@@ -262,6 +264,18 @@ logs_access('3', 'View');
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:typeshow"] ?>:<span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
                         <div class="formDivView"><?php echo $modType[$valTypec] ?></div>
+                    </td>
+                </tr>
+                <tr <?php if(!in_array($_REQUEST['masterkey'], $array_masterkey_fix_module)){ echo "style='display:none;'"; } ?>>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkurl"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView"><?php echo $valUrl2 ?></div>
+                    </td>
+                </tr>
+                <tr <?php if(!in_array($_REQUEST['masterkey'], $array_masterkey_fix_module)){ echo "style='display:none;'"; } ?>>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:typetheme"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView"><?php echo $modTxtTarget[$valTarget] ?></div>
                     </td>
                 </tr>
             </table>

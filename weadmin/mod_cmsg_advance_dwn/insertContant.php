@@ -74,7 +74,10 @@ if ($_REQUEST['execute'] == "insert") {
     $insert[$mod_tb_root . "_edate"] = "'" . DateFormatInsert($_REQUEST['edateInput']) . "'";
     $insert[$mod_tb_root . "_typec"] = "'" . $_REQUEST["inputTypeShow"] . "'";
     $insert[$mod_tb_root . "_urlc"] = "'" . $_REQUEST["inputurlc"] . "'";
-    $insert[$mod_tb_root . "_target"] = "'" . $_REQUEST["inputTarget"] . "'";
+    // $insert[$mod_tb_root . "_target"] = "'" . $_REQUEST["inputTarget"] . "'";
+
+    $insert[$mod_tb_root . "_url2"] = "'" . $_REQUEST["inputurl2"] . "'";
+    $insert[$mod_tb_root . "_target"] = "'" . $_REQUEST["inputmenutarget2"] . "'";
     
     $setLangTH = (!empty($_REQUEST['inputSetLang'][0])) ? $_REQUEST['inputSetLang'][0] : 0 ;
     $setLangEN = (!empty($_REQUEST['inputSetLang'][1])) ? $_REQUEST['inputSetLang'][1] : 0 ;

@@ -397,6 +397,9 @@ $lang["search"]["sdate"] = "開始日期";
 $lang["search"]["edate"] = "結束日期";
 $lang["search"]["advance:search"] = "高級搜索";
 
+$lang['system']['readabstract'] = "閱讀摘要";
+$lang['system']['downloaddoc'] = "下載文件";
+$lang['system']['completereport'] = "完整報告";
 $lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
 $lang['system']['close'] = "关";
 $lang['system']['ducdownload'] = "文件下载";
