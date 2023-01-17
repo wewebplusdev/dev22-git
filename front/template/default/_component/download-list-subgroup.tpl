@@ -42,7 +42,8 @@
                 <div class="default-tab-slider default-slick" data-slick='{$initialSlide2}'>
                     {foreach $arrMenu as $keyarrMenu => $valuearrMenu}
                         <div class="item">
-                            <div class="tab-block {if $callGroup->fields.id eq $valuearrMenu.id}{$menuDetailID = $valuearrMenu.menuid}active{/if}">
+                            <div
+                                class="tab-block {if $callGroup->fields.id eq $valuearrMenu.id}{$menuDetailID = $valuearrMenu.menuid}active{/if}">
                                 <a class="text-limit"
                                     href="{str_replace("//","/","{$ul}/{$menuActive}/{$valuearrMenu.menuid}/{$valuearrMenu.id}"
                             )}">{$valuearrMenu.subject}</a>
@@ -57,7 +58,7 @@
 
             <div class="default-filter">
                 <div class="container">
-                    <form action="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$req_params['year']}"
+                    <form action="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$SubGroupID}"
                         data-toggle="validator" role="form" class="form-default" method="post">
                         <div class="row gutters-15 align-items-end">
                             <div class="col-lg-5 col-12 mr-auto">
@@ -115,7 +116,7 @@
                                     {foreach $callSubGroup as $key => $value}
                                         <li>
                                             <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$value['id']}"
-                                                class="link {if $subGroup eq $value['id']}active{/if}">{$value['subject']}
+                                                class="link {if $SubGroupID eq $value['id']}active{/if}">{$value['subject']}
                                             </a>
                                         </li>
                                     {/foreach}
@@ -152,13 +153,11 @@
 
             <div id="accordionInner">
                 <div class="collapse-block">
-                {if count($arrListData) > 0}
-                    {foreach $arrListData as $keyarrListData => $valuearrListData}
-                        {if count($valuearrListData.list) >0}
+                    {if count($callCMS) > 0}
                         <div class="row py-3">
                             <div class="col">
-                                        <div class="card">
-                                            <!--<div class="card-header">
+                                <div class="card">
+                                    <!--<div class="card-header">
                                                 <h3 class="mb-0">
                                                     <button class="btn btn-lg fluid {if $keyarrListData gte 1}collapsed{/if}"
                                                         data-toggle="collapse" data-target="#about-{$valuearrListData.subgroup.id}"
@@ -171,80 +170,80 @@
                                                     </button>
                                                 </h3>
                                             </div>-->
-                                            <div id="about-{$valuearrListData.subgroup.id}"
-                                                class="collapse {if $keyarrListData eq 0}show{/if}"
-                                                aria-labelledby="headingCollapse" data-parent="#accordionInner">
-                                                {foreach $valuearrListData.list as $keyList => $valueList}
-                                                    {$Call_File = $callSetWebsite::Call_File($valueList['id'])}
-                                                    {$fileinfo = $Call_File->fields['filename']|fileinclude:'file':{$valueList.masterkey}|get_Icon}
-                                                    {if $Call_File->fields.name neq ""}
-                                                        {$subject = $valueList.subject}
-                                                        {* {$subject = $Call_File->fields.name} *}
-                                                    {else}
-                                                        {$subject = $valueList.subject}
-                                                    {/if}
-                                                    <div class="download-block">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-md">
-                                                                <div class="row no-gutters">
-                                                                    <div class="col-auto">
-                                                                        <img class="icon -icon-download"
-                                                                            src="{$template}/assets/img/icon/icon-attachment.svg"
-                                                                            alt="attachment icon">
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="title typo-sm text-limit -x2">{$subject}</div>
-                                                                        <div class="row">
-                                                                            {if $Call_File->_numOfRows gte 1}
-                                                                                <div class="col-sm-auto pt-2">
-                                                                                    <div class="row">
-                                                                                        <div class="col-sm-auto">
-                                                                                            <div class="download-block-type">
-                                                                                                <img class="icon"
-                                                                                                    src="{$template}/assets/img/icon/icon-file.svg"
-                                                                                                    alt="icon file">
-                                                                                                <div class="desc typo-s">
-                                                                                                    {$lang['system']['size']} :
-                                                                                                    <span>{$Call_File->fields['filename']|fileinclude:'file':{$valueList.masterkey}|get_IconSize}</span>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="col-sm-auto">
-                                                                                            <div class="download-block-type">
-                                                                                                <img class="icon"
-                                                                                                    src="{$template}/assets/img/icon/icon-pdf.svg"
-                                                                                                    alt="icon file">
-                                                                                                <div class="desc typo-s">
-                                                                                                    {$lang['system']['type']} :
-                                                                                                    <span>{$fileinfo.type}</span>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            {/if}
+                                    <div id="about-"
+                                        class="collapse show"
+                                        aria-labelledby="headingCollapse" data-parent="#accordionInner">
+                                           
+                                            {foreach $callCMS as $keyarrListData => $valuearrListData}
+                                                {$Call_File = $callSetWebsite::Call_File($valuearrListData['id'])}
+                                                {$fileinfo = $Call_File->fields['filename']|fileinclude:'file':{$valuearrListData.masterkey}|get_Icon}
+                                                {if $Call_File->fields.name neq ""}
+                                                    {$subject = $valuearrListData.subject}
+                                                    {* {$subject = $Call_File->fields.name} *}
+                                                {else}
+                                                    {$subject = $valuearrListData.subject}
+                                                {/if}
+                                                <div class="download-block">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md">
+                                                            <div class="row no-gutters">
+                                                                <div class="col-auto">
+                                                                    <img class="icon -icon-download"
+                                                                        src="{$template}/assets/img/icon/icon-attachment.svg"
+                                                                        alt="attachment icon">
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="title typo-sm text-limit -x2">{$subject}</div>
+                                                                    <div class="row">
+                                                                        {if $Call_File->_numOfRows gte 1}
                                                                             <div class="col-sm-auto pt-2">
                                                                                 <div class="row">
                                                                                     <div class="col-sm-auto">
                                                                                         <div class="download-block-type">
                                                                                             <img class="icon"
-                                                                                                src="{$template}/assets/img/icon/icon-view-.svg"
+                                                                                                src="{$template}/assets/img/icon/icon-file.svg"
                                                                                                 alt="icon file">
-                                                                                            <div class="desc view typo-s">
-                                                                                                {$lang['system']['view']}
-                                                                                                <span>{$valueList.view|number_format}</span>
+                                                                                            <div class="desc typo-s">
+                                                                                                {$lang['system']['size']} :
+                                                                                                <span>{$Call_File->fields['filename']|fileinclude:'file':{$valuearrListData.masterkey}|get_IconSize}</span>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="col-sm-auto">
                                                                                         <div class="download-block-type">
                                                                                             <img class="icon"
-                                                                                                src="{$template}/assets/img/icon/icon-time.svg"
+                                                                                                src="{$template}/assets/img/icon/icon-pdf.svg"
                                                                                                 alt="icon file">
-                                                                                            <div class="desc time typo-s">
-                                                                                                {$lang['system']['lastdate']}
-                                                                                                <span>{$valueList.credate|DateThai:'23':{$langon}:'shot3'}</span>
+                                                                                            <div class="desc typo-s">
+                                                                                                {$lang['system']['type']} :
+                                                                                                <span>{$fileinfo.type}</span>
                                                                                             </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        {/if}
+                                                                        <div class="col-sm-auto pt-2">
+                                                                            <div class="row">
+                                                                                <div class="col-sm-auto">
+                                                                                    <div class="download-block-type">
+                                                                                        <img class="icon"
+                                                                                            src="{$template}/assets/img/icon/icon-view-.svg"
+                                                                                            alt="icon file">
+                                                                                        <div class="desc view typo-s">
+                                                                                            {$lang['system']['view']}
+                                                                                            <span>{$valuearrListData.view|number_format}</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-auto">
+                                                                                    <div class="download-block-type">
+                                                                                        <img class="icon"
+                                                                                            src="{$template}/assets/img/icon/icon-time.svg"
+                                                                                            alt="icon file">
+                                                                                        <div class="desc time typo-s">
+                                                                                            {$lang['system']['lastdate']}
+                                                                                            <span>{$valuearrListData.credate|DateThai:'23':{$langon}:'shot3'}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -253,76 +252,77 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-auto">
-                                                                {* <div class="row">
+                                                        </div>
+                                                        <div class="col-md-auto">
+                                                            {* <div class="row">
                                                                     <div class="download-block-btn">
-                                                                        {if $valueList.typec eq 1}
+                                                                        {if $valuearrListData.typec eq 1}
                                                                             <div class="col-auto">
-                                                                                <a href="{$ul}/{$menuActive}/{$valueList.menuid}/{$valueList.gid}/{$menuDetail}/{$valueList.id}"
+                                                                                <a href="{$ul}/{$menuActive}/{$valuearrListData.menuid}/{$valuearrListData.gid}/{$menuDetail}/{$valuearrListData.id}"
                                                                                     class="btn"
                                                                                     title="{$lang['system']['viewmore']}">{$lang['system']['readabstract']}</a>
                                                                             </div>
                                                                         {/if}
                                                                         {if $Call_File->_numOfRows gte 1}
                                                                             <div class="col-auto">
-                                                                                <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valueList.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
+                                                                                <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valuearrListData.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
                                                                                     class="btn"
                                                                                     title="{$lang['system']['download']}">{$lang['system']['downloaddoc']}</a>
                                                                             </div>
                                                                         {/if}
-                                                                        {if $valueList.url2 neq "#" && $valueList.url2 neq "" && $valueList.masterkey eq $masterkey_rs_ri}
+                                                                        {if $valuearrListData.url2 neq "#" && $valuearrListData.url2 neq "" && $valuearrListData.masterkey eq $masterkey_rs_ri}
                                                                         <div class="col-auto">
-                                                                            <a {if $valueList.url2 neq "#" && $valueList.url2 neq ""}href="{$valueList.url2}" {if $valueList.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if}
+                                                                            <a {if $valuearrListData.url2 neq "#" && $valuearrListData.url2 neq ""}href="{$valuearrListData.url2}" {if $valuearrListData.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if}
                                                                                 class="btn"
                                                                                 title="{$lang['system']['download']}">{$lang['system']['completereport']}</a>
                                                                         </div>
                                                                         {/if}
                                                                     </div>
                                                                 </div> *}
-                                                                <div class="row">
-                                                                    <div class="download-block-btn -add">
-                                                                        {if $valueList.typec eq 1}
-                                                                            <div class="col-auto">
-                                                                                <a href="{$ul}/{$menuActive}/{$valueList.menuid}/{$valueList.gid}/{$menuDetail}/{$valueList.id}"
-                                                                                    class="btn"
-                                                                                    title="{$lang['system']['readabstract']}">{$lang['system']['readabstract']}</a>
-                                                                            </div>
-                                                                        {/if}
-                                                                        {if $Call_File->_numOfRows gte 1}
-                                                                            <div class="col-auto">
-                                                                                <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valueList.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
-                                                                                    class="btn"
-                                                                                    title="{$lang['system']['downloaddoc']}">{$lang['system']['downloaddoc']}</a>
-                                                                            </div>
-                                                                        {/if}
-                                                                        {if $valueList.url2 neq "#" && $valueList.url2 neq "" && $valueList.masterkey eq $masterkey_rs_ri}
-                                                                            <div class="col-auto">
-                                                                                <a {if $valueList.url2 neq "#" && $valueList.url2 neq ""}href="{$valueList.url2}" {if $valueList.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if}
-                                                                                    class="btn"
-                                                                                    title="{$lang['system']['completereport']}">{$lang['system']['completereport']}</a>
-                                                                            </div>
-                                                                        {/if}
-                                                                    </div>
+                                                            <div class="row">
+                                                                <div class="download-block-btn -add">
+                                                                    {if $valuearrListData.typec eq 1}
+                                                                        <div class="col-auto">
+                                                                            <a href="{$ul}/{$menuActive}/{$valuearrListData.menuid}/{$valuearrListData.gid}/{$menuDetail}/{$valuearrListData.id}"
+                                                                                class="btn"
+                                                                                title="{$lang['system']['readabstract']}">{$lang['system']['readabstract']}</a>
+                                                                        </div>
+                                                                    {/if}
+                                                                    {if $Call_File->_numOfRows gte 1}
+                                                                        <div class="col-auto">
+                                                                            <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valuearrListData.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
+                                                                                class="btn"
+                                                                                title="{$lang['system']['downloaddoc']}">{$lang['system']['downloaddoc']}</a>
+                                                                        </div>
+                                                                    {/if}
+                                                                    {if $valuearrListData.url2 neq "#" && $valuearrListData.url2 neq "" && $valuearrListData.masterkey eq $masterkey_rs_ri}
+                                                                        <div class="col-auto">
+                                                                            <a {if $valuearrListData.url2 neq "#" && $valuearrListData.url2 neq ""}href="{$valuearrListData.url2}"
+                                                                                    {if $valuearrListData.target eq 2}target="_blank" {/if}
+                                                                                {else}href="javascript:void(0);" 
+                                                                                {/if} class="btn"
+                                                                                title="{$lang['system']['completereport']}">{$lang['system']['completereport']}</a>
+                                                                        </div>
+                                                                    {/if}
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                {/foreach}
-                                            </div>
+                                                </div>
+                                            {/foreach}
                                         </div>
                                     </div>
                                 </div>
-                            {/if}
-                        {/foreach}
-                    {/if}
+                            </div>
+                        {/if}
+                    </div>
                 </div>
-            </div>
 
-            <div class="editor-content">
+                <div class="editor-content">
+                </div>
+                {if $callCMS->_numOfRows gte 1 && $pagination['totalpage'] gte 2}
+                    {include file="{$incfile.pagination}"}
+                {/if}
             </div>
-            {if $callCMS->_numOfRows gte 1 && $pagination['totalpage'] gte 2}
-                {include file="{$incfile.pagination}"}
-            {/if}
         </div>
-    </div>
-</section>
+    </section>
