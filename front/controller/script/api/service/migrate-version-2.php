@@ -26,8 +26,10 @@ foreach ($scandir as $keyscandir => $valuescandir) {
       mkdir($_conf['pathupload'] . "/" . $valuescandir . "/html_new", 0777);
     }
     $scandir_html = scandir($path_dir, SCANDIR_SORT_DESCENDING);
+
     array_pop($scandir_html); // pop outer file
     array_pop($scandir_html); // pop outer file
+
     foreach ($scandir_html as $keyscandir_html => $valuescandir_html) {
       $valHtml = $_conf['pathupload'] . "/" . $valuescandir ."/html/" . $valuescandir_html;
 
@@ -45,7 +47,7 @@ foreach ($scandir as $keyscandir => $valuescandir) {
       // print_pre($valHtml);
 
       if ($contents != "") {
-        $filename = $valuescandir;
+        $filename = $valuescandir_html;
         $HTMLToolContent = str_replace("\\\"", "\"", $contents);
         $fp = fopen($_conf['pathupload'] . "/" . $valuescandir . "/html_new" . "/" . $filename, "w");
         chmod($_conf['pathupload'] . "/" . $valuescandir . "/html_new" . "/" . $filename, 0777);

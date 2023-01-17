@@ -2,12 +2,12 @@
 
 $_config['replace'] = array(
   '/dev22-git' => "",
-  'https://www.git.or.th/images' => _http."://".$_SERVER['HTTP_HOST'] ."/images",
-  'http://www.git.or.th/images' => _http."://".$_SERVER['HTTP_HOST'] ."/images",
-  'https://www.git.or.th/thai' => _http."://".$_SERVER['HTTP_HOST'] ."/thai",
-  'http://www.git.or.th/thai' => _http."://".$_SERVER['HTTP_HOST'] ."/thai",
-  'https://www.git.or.th/eng' => _http."://".$_SERVER['HTTP_HOST'] ."/eng",
-  'http://www.git.or.th/eng' => _http."://".$_SERVER['HTTP_HOST'] ."/eng",
+  'https://www.git.or.th/images' => "/images",
+  'http://www.git.or.th/images' => "/images",
+  'https://www.git.or.th/thai' => "/thai",
+  'http://www.git.or.th/thai' => "/thai",
+  'https://www.git.or.th/eng' => "/eng",
+  'http://www.git.or.th/eng' => "/eng",
 );
 
 switch ($url->segment[2]) {
