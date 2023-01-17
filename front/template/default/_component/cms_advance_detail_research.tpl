@@ -26,7 +26,7 @@
                     {foreach $getMenuDetail as $keygetMenuDetail => $valuegetMenuDetail}
                     {$arrName = explode("-", $valuegetMenuDetail.subject)}
                     <div class="item">
-                        <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" {if $MenuID eq $valuegetMenuDetail.masterkey}class="active"{/if}>{$arrName[0]}</a>
+                        <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" {if $MenuID eq $valuegetMenuDetail.masterkey}class="active"{/if}>{$valuegetMenuDetail.subject}</a>
                     </div>
                     {/foreach}
                 </div>
