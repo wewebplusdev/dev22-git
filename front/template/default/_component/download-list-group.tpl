@@ -206,13 +206,20 @@
                   {if $valuecallCMS.typec eq 1}
                     <div class="col-auto">
                       <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}"
-                        class="btn" title="{$lang['system']['viewmore']}">{$lang['system']['viewmore']}</a>
+                        class="btn" title="{$lang['system']['viewmore']}">{$lang['system']['readabstract']}</a>
                     </div>
                   {/if}
                   {if $Call_File->_numOfRows gte 1}
                     <div class="col-auto">
                       <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valuecallCMS.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
-                        class="btn" title="{$lang['system']['download']}">{$lang['system']['download']}</a>
+                        class="btn" title="{$lang['system']['download']}">{$lang['system']['downloaddoc']}</a>
+                    </div>
+                  {/if}
+                  {if $valueList.url2 neq "#" && $valueList.url2 neq "" && $valueList.masterkey eq $masterkey_rs_ri}
+                    <div class="col-auto">
+                        <a {if $valueList.url2 neq "#" && $valueList.url2 neq ""}href="{$valueList.url2}" {if $valueList.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if}
+                            class="btn"
+                            title="{$lang['system']['download']}">{$lang['system']['completereport']}</a>
                     </div>
                   {/if}
                 </div>

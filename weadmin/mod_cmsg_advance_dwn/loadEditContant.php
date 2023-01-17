@@ -35,6 +35,7 @@ $sql .= " , " . $mod_tb_root . "_picshow, " . $mod_tb_root . "_typec , " . $mod_
 
 $sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn ";
 $sql .= " , " . $mod_tb_root . "_sid, " . $mod_tb_root_group . "_type  ";
+$sql .= " , " . $mod_tb_root . "_url2 as url2 ";
 $sql .= " 
 			FROM " . $mod_tb_root . "
 			LEFT JOIN
@@ -82,6 +83,7 @@ $valLang[1] = $Row[23];
 $valLang[2] = $Row[24];
 $valSid = $Row[25];
 $valGtype = $Row[26];
+$valUrl2 = $Row['url2'];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 
 ?>
@@ -335,6 +337,29 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 							<div class="formDivRadioR"><?php echo  $modType[2] ?></div>
 						</label>
 					</td>
+				</tr>
+
+				<tr class="boxUrl" <?php if(!in_array($_REQUEST['masterkey'], $array_masterkey_fix_module)){ echo "style='display:none;'"; } ?>>
+						<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkurl"] ?><span class="fontContantAlert"></span></td>
+						<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><textarea name="inputurl2" id="inputurl2" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valUrl2; ?></textarea><br />
+								<span class="formFontNoteTxt"><?php echo $langMod["edit:linknote"] ?></span>
+						</td>
+				</tr>
+
+				<tr class="boxUrl" <?php if(!in_array($_REQUEST['masterkey'], $array_masterkey_fix_module)){ echo "style='display:none;'"; } ?>>
+						<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:typetheme"] ?><span class="fontContantAlert"></span></td>
+						<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+								<label>
+								<div class="formDivRadioL"><input name="inputmenutarget2" id="inputmenutarget2" type="radio" class="formRadioContantTb" value="1" <?php if ($valTarget != 2) { ?> checked="checked" <?php } ?> /></div>
+								<div class="formDivRadioR"><?php echo $modTxtTarget[1] ?></div>
+								</label>
+
+								<label>
+								<div class="formDivRadioL"><input name="inputmenutarget2" id="inputmenutarget2" type="radio" class="formRadioContantTb" value="2" <?php if ($valTarget == 2) { ?> checked="checked" <?php } ?> /></div>
+								<div class="formDivRadioR"><?php echo $modTxtTarget[2] ?></div>
+								</label>
+								</label>
+						</td>
 				</tr>
 
 			</table>

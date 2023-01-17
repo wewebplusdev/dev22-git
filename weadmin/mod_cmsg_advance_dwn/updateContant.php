@@ -100,7 +100,11 @@ include("config.php");
 		$update[] = $mod_tb_root . "_sdate  	='" . DateFormatInsert($sdateInput) . "'";
 		$update[] = $mod_tb_root . "_edate  	='" . DateFormatInsert($edateInput) . "'";
 		$update[] = $mod_tb_root . "_urlc = '" . $_REQUEST["inputurlc"] . "'";
-		$update[] = $mod_tb_root . "_target  	='" . $_POST['inputTarget'] . "'";
+		// $update[] = $mod_tb_root . "_target  	='" . $_POST['inputTarget'] . "'";
+
+		$update[] = $mod_tb_root . "_target  	='" . $_POST['inputmenutarget2'] . "'";
+		$update[] = $mod_tb_root . "_url2='" . changeQuot($_REQUEST['inputurl2']) . "'";
+
 
 		$sql = "UPDATE " . $mod_tb_root . " SET " . implode(",", $update) . " WHERE " . $mod_tb_root . "_id='" . $_POST["valEditID"] . "' ";
 		$Query = wewebQueryDB($coreLanguageSQL, $sql);

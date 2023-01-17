@@ -13,6 +13,7 @@ $mod_tb_root_albumTemp = "md_cmatp";
 $mod_tb_setting = "md_cuss";
 
 $array_masterkey = array('ab_hrm','ab_odc','ab_odw','ab_pap','ab_pcm');
+$array_masterkey_fix_module = array('rs_ri');
 ## Mod Folder ###################################
 $mod_fd_root = "mod_cmsg_advance_dwn";
 
@@ -24,6 +25,7 @@ $modGroupType =array("","รายละเอียดภายในเว็�
 $modType =array("","แสดงหน้ารายละเอียด" ,"ไม่แสดงหน้ารายละเอียด");
 $modTypeTheme =array("","Group Theme 1" ,"Group Theme 2");
 $modTypeSub =array("","ไม่แสดงกลุ่มย่อย" ,"แสดงกลุ่มย่อย");
+$modTypeUrl =array("","ไม่แสดงผล" ,"แสดงผล");
 // print_pre();
 if ($_SESSION[$valSiteManage."core_session_language"] == 'Eng') {
     $modTxtTarget=array("","Open the original window","Open a new window");

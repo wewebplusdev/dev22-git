@@ -265,6 +265,29 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         </label>
                     </td>
                 </tr>
+                <tr class="boxUrl" <?php if(!in_array($_REQUEST['masterkey'], $array_masterkey_fix_module)){ echo "style='display:none;'"; } ?>>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:linkurl"] ?><span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><textarea name="inputurl2" id="inputurl2" cols="45" rows="5" class="formTextareaContantTb"></textarea><br />
+                        <span class="formFontNoteTxt"><?php echo $langMod["edit:linknote"] ?></span>
+                    </td>
+                </tr>
+
+                <tr class="boxUrl" <?php if(!in_array($_REQUEST['masterkey'], $array_masterkey_fix_module)){ echo "style='display:none;'"; } ?>>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:typetheme"] ?><span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <label>
+                        <div class="formDivRadioL"><input name="inputmenutarget2" id="inputmenutarget2" type="radio" class="formRadioContantTb" value="1" checked="checked" /></div>
+                        <div class="formDivRadioR"><?php echo $modTxtTarget[1] ?></div>
+                        </label>
+
+                        <label>
+                        <div class="formDivRadioL"><input name="inputmenutarget2" id="inputmenutarget2" type="radio" class="formRadioContantTb" value="2" /></div>
+                        <div class="formDivRadioR"><?php echo $modTxtTarget[2] ?></div>
+                        </label>
+                        </label>
+                    </td>
+                </tr>
+
             </table>
             <br />
             
