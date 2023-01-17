@@ -207,3 +207,18 @@
     opacity: 0;
     visibility: hidden;
 }
+
+
+/* 2022/1/16 ohm2*/
+
+.theme-3 .default-nav .item- a {
+    padding: 0;
+}
+
+.theme-3 .default-nav .item- a {
+    height: auto;
+}
+
+.theme-3 .default-nav .item- a .cover {
+    padding-bottom: 160px;
+}
