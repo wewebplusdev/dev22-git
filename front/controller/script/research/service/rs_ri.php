@@ -80,7 +80,7 @@ switch ($PageAction_default) {
         $smarty->assign("SubGroupID", $SubGroupID);
         $smarty->assign("order", $order);
         $smarty->assign("callGroupType", $callGroup->fields['types']);
-        //print_pre($callGroup->fields['types']);
+        // print_pre($callGroup->fields['types']);die;
         ## list data
         if ($callGroup->fields['types'] == 1) { ## for group
             $callCMS = $researchPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']), $req_params['keywords']);
@@ -96,7 +96,7 @@ switch ($PageAction_default) {
         } else { ## for subgroup
             $callSubGroup = $researchPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, null);
             $smarty->assign("callSubGroup", $callSubGroup);
-            $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']), $req_params['keywords'], $SubGroupID);
+            $callCMS = $researchPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']), $req_params['keywords'], $SubGroupID);
             $smarty->assign("callCMS", $callCMS);
             $smarty->assign("orderArray", $OrderArray);
             $MaxRecord = $callCMS->_maxRecordCount;
