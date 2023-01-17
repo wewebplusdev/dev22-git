@@ -80,9 +80,16 @@ class infoServicePage
     if (!empty($id)) {
       $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_contantid= '" . $id . "' ";
     }
+    if ($langOption == 'en') {
+      $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_language= 'Eng' ";
+    } else if($langOption == 'cn'){
+      $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_language= 'Chi' ";
+    } else {
+      $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_language= 'Thai' ";
+    }
 
     $sql .= " ORDER  BY " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_id ASC ";
-    //print_pre($sql);
+    // print_pre($sql);
     $result = $db->execute($sql);
     return $result;
   }
