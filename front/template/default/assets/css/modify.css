@@ -222,3 +222,7 @@
 .theme-3 .default-nav .item- a .cover {
     padding-bottom: 160px;
 }
+
+.download-block .download-block-btn.-add .btn {
+    padding: 0;
+}
