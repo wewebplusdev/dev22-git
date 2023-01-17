@@ -290,12 +290,19 @@
                                                                             <div class="col-auto">
                                                                                 <a href="{$ul}/{$menuActive}/{$valueList.menuid}/{$valueList.gid}/{$menuDetail}/{$valueList.id}"
                                                                                     class="btn"
-                                                                                    title="{$lang['system']['downloaddoc']}">{$lang['system']['downloaddoc']}</a>
+                                                                                    title="{$lang['system']['readabstract']}">{$lang['system']['readabstract']}</a>
                                                                             </div>
                                                                         {/if}
                                                                         {if $Call_File->_numOfRows gte 1}
                                                                             <div class="col-auto">
                                                                                 <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valueList.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
+                                                                                    class="btn"
+                                                                                    title="{$lang['system']['downloaddoc']}">{$lang['system']['downloaddoc']}</a>
+                                                                            </div>
+                                                                        {/if}
+                                                                        {if $valueList.url2 neq "#" && $valueList.url2 neq "" && $valueList.masterkey eq $masterkey_rs_ri}
+                                                                            <div class="col-auto">
+                                                                                <a {if $valueList.url2 neq "#" && $valueList.url2 neq ""}href="{$valueList.url2}" {if $valueList.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if}
                                                                                     class="btn"
                                                                                     title="{$lang['system']['completereport']}">{$lang['system']['completereport']}</a>
                                                                             </div>
