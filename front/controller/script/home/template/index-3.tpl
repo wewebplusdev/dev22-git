@@ -71,7 +71,7 @@
                 <div class="slider">
                     {foreach $callservice_top as $keycallservice_top => $valuecallservice_top}
                         <div class="item-">
-                            <a {if $valuecallservice_top['url'] neq "" && $valuecallservice_top['url'] neq "#"}href="{$valuecallservice_top['url']}"{if $valuecallservice_top['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link {if $keycallservice_top eq 0}active{/if}" title="{$valuecallservice_top['subject']}">
+                            {* <a {if $valuecallservice_top['url'] neq "" && $valuecallservice_top['url'] neq "#"}href="{$valuecallservice_top['url']}"{if $valuecallservice_top['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link {if $keycallservice_top eq 0}active{/if}" title="{$valuecallservice_top['subject']}">
                                 <div class="wrapper">
                                     <div class="icon">
                                         <img src="{$valuecallservice_top['pic']|fileinclude:"real":{$valuecallservice_top['masterkey']}:"link"}" alt="{$valuecallservice_top['subject']}">
@@ -80,6 +80,11 @@
                                         {$valuecallservice_top['subject']}
                                     </div>
                                 </div>
+                            </a> *}
+                            <a href="{$ul}/service/264" class="link" title="ตรวจสอบอัญมณี">
+                                <figure class="cover">
+                                    <img src="https://localhost/dev22-git/front/template/default/assets/img/static/no-img.jpg" alt="pic-20222912-1672287266-226.png">
+                                </figure>
                             </a>
                         </div>
                     {/foreach}
