@@ -119,6 +119,7 @@ View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin
 Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 15:31:06
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 15:31:51
 Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 15:32:55
+<<<<<<< Updated upstream
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 15:36:17
 Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 15:36:59
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 15:37:58
@@ -251,3 +252,15 @@ View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin
 Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 18:58:12
 View|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/viewContant.php|:|ab_ib|:|16|:||:|20|:|GIT Admin|:|::1|:|2022-12-30 18:58:45
 Update|:|4592eb476ac3672238ab3ca4bcbf3e93|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 18:58:58
+=======
+Update Group|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_cms_advance_group/updateGroup.php|:|trw_cou|:|291|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:22:50
+Update|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_cms_advance_group/updateContant.php|:|trw_cou|:|291|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:25:10
+Update SubGroup|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateSubGroup.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:56:36
+Update|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 16:57:25
+Update|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 17:16:20
+Update|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 17:17:59
+Update|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 17:18:49
+Update|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 17:19:56
+Update|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 17:20:55
+Update|:|n68391aparrft4omvb1ug9g1gp|:|3|:|http://localhost/dev22-git/weadmin/mod_mem/updateContant.php|:|ab_ib|:|16|:|update|:|20|:|GIT Admin|:|::1|:|2022-12-30 17:21:50
+>>>>>>> Stashed changes
