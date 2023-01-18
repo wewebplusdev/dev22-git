@@ -171,13 +171,14 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 
      <td width="22%" align="left"   valign="middle"  class="divRightTitleTb" ><span class="fontTitlTbRight"><?=$langMod["tit:selectsgn"]?><? if($_SESSION[$valSiteManage.'core_session_languageT']==2){?>(<?=$langTxt["lg:thai"]?>)<? }?></span></td>
      <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?>(<?php echo $langTxt["lg:eng"] ?>)</span>
+            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:selectsgn"] ?>(<?php echo $langTxt["lg:eng"] ?>)</span>
             </td>
           <?php } ?>
           <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?>(<?php echo $langTxt["lg:chi"] ?>)</span>
+            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:selectsgn"] ?>(<?php echo $langTxt["lg:chi"] ?>)</span>
             </td>
           <?php } ?>
+    <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?></span></td>
     <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?=$langTxt["mg:status"]?></span></td>
     <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?=$langTxt["us:lastdate"]?></span></td>
     <td width="12%"  class="divRightTitleTbR"  valign="middle"  align="center"><span class="fontTitlTbRight"><?=$langTxt["mg:manage"]?></span></td>
@@ -190,8 +191,10 @@ $sql = "SELECT ".$mod_tb_root_sub_group."_id,"
 .$mod_tb_root_sub_group."_status,"
 .$mod_tb_root_sub_group."_subjecten,"
 .$mod_tb_root_sub_group."_subjectcn," 
-.$mod_tb_root_sub_group."_parentid" 
+.$mod_tb_root_sub_group."_parentid," 
+.$mod_tb_root_group ."_subject as groupname"
 ." FROM ".$mod_tb_root_sub_group;
+$sql = $sql . "  INNER JOIN " . $mod_tb_root_group . " ON ". $mod_tb_root_group."_id = ".$mod_tb_root_sub_group."_gid";
 $sql = $sql."  WHERE ".$mod_tb_root_sub_group."_masterkey ='".$_REQUEST['masterkey']."'   ";
 $sql = $sql."  AND ".$mod_tb_root_sub_group."_parentid =0  ";
 
@@ -243,6 +246,7 @@ if($count_record>0) {
     $valNameCn=rechangeQuot($row[5]);
 		$valNameCn=chechNullVal($valNameCn);
     $valParentID=$row[6];
+    $groupName = rechangeQuot($row[7]);
 		if($valStatus=="Enable"){
 			$valStatusClass=	"fontContantTbEnable";
 		}else{
@@ -300,6 +304,7 @@ if($count_record>0) {
   </tr>
 </table>    </td>
 <? }?>
+<td  class="divRightContantOverTb"  valign="top"  align="center"><?php echo $groupName?></td>
     <td  class="divRightContantOverTb"  valign="top"  align="center">
        <? if($valPermission=="RW" ){?>
      <div   id="load_status<?=$valID?>">
@@ -478,6 +483,7 @@ if($count_record>0) {
   </tr>
 </table>    </td>
 <? }?>
+    <td  class="divRightContantOverTb"  valign="top"  align="center"><?php echo $groupName?></td>
     <td  class="divRightContantOverTb"  valign="top"  align="center">
        <? if($valPermission=="RW" ){?>
      <div   id="load_status<?=$valIDSub?>">

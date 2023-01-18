@@ -146,7 +146,7 @@ if($_REQUEST['inputSearch']!="") {
     <td width="50%" <?=$display?>><select name="inputSGh"  id="inputSGh" onchange="document.myForm.submit(); " class="formSelectSearchStyle" >
        <option value="0"><?=$langMod["tit:selectsg"]?> </option>
         <? if($_REQUEST['inputGh'] >=1 ){
-  $sql_group = "SELECT ".$mod_tb_root_sub_group."_id,".$mod_tb_root_sub_group."_subject FROM ".$mod_tb_root_sub_group." WHERE  ".$mod_tb_root_sub_group."_status !='Disable' AND ".$mod_tb_root_sub_group."_masterkey ='".$_REQUEST['masterkey']."' AND ".$mod_tb_root_sub_group."_gid ='".$_REQUEST['inputGh']."'   ORDER BY ".$mod_tb_root_sub_group."_order DESC ";
+    $sql_group = "SELECT ".$mod_tb_root_sub_group."_id,".$mod_tb_root_sub_group."_subject FROM ".$mod_tb_root_sub_group." WHERE  ".$mod_tb_root_sub_group."_status !='Disable' AND ".$mod_tb_root_sub_group."_masterkey ='".$_REQUEST['masterkey']."' AND ".$mod_tb_root_sub_group."_gid ='".$_REQUEST['inputGh']."'   ORDER BY ".$mod_tb_root_sub_group."_order DESC ";
     $query_group=wewebQueryDB($coreLanguageSQL, $sql_group);
     while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
     $row_groupid=$row_group[0];
@@ -207,14 +207,15 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
    <tr ><td width="3%"  class="divRightTitleTbL"  valign="middle" align="center" >
         <input name="CheckBoxAll" type="checkbox"  id="CheckBoxAll"  value="Yes" onClick="Paging_CheckAll(this,'CheckBoxID',document.myForm.TotalCheckBoxID.value)"   class="formCheckboxHead" />    </td>
 
-     <td align="left"   valign="middle"  class="divRightTitleTb" ><span class="fontTitlTbRight"><?=$langMod["tit:inpName"]?><? if($_SESSION[$valSiteManage.'core_session_languageT']==2){?>(<?=$langTxt["lg:thai"]?>)<? }?></span></td>
-
-
-            <? if($_SESSION[$valSiteManage.'core_session_languageT']==2){?>
-     <td width="22%" align="left"   valign="middle"  class="divRightTitleTb" ><span class="fontTitlTbRight"><?=$langMod["tit:inpName"]?><? if($_SESSION[$valSiteManage.'core_session_languageT']==2){?>(<?=$langTxt["lg:eng"]?>)<? }?></span></td>
-     <? }?>
+     <td align="left" width="22%" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:inpName"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span></td>
+          <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:inpName"] ?>(<?php echo $langTxt["lg:eng"] ?>)</span></td>
+          <?php } ?>
+          <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:inpName"] ?>(<?php echo $langTxt["lg:chi"] ?>)</span></td>
+          <?php } ?>
           <!-- <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?=$langMod["tit:view"]?></span></td> -->
-
+    <td width="20%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?></span></td>
     <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?=$langTxt["mg:status"]?></span></td>
     <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?=$langTxt["us:lastdate"]?></span></td>
     <td width="12%"  class="divRightTitleTbR"  valign="middle"  align="center"><span class="fontTitlTbRight"><?=$langTxt["mg:manage"]?></span></td>
@@ -229,7 +230,12 @@ $sql = "SELECT
 ".$mod_tb_root."_pic,
 ".$mod_tb_root."_view,
 ".$mod_tb_root."_statuspin,
-".$mod_tb_root."_subjecten   FROM ".$mod_tb_root;
+".$mod_tb_root."_subjecten,
+".$mod_tb_root_group ."_subject as groupname , 
+".$mod_tb_root."_sgid,
+".$mod_tb_root."_ssgid
+FROM ".$mod_tb_root;
+$sql = $sql . "  INNER JOIN " . $mod_tb_root_group . " ON ". $mod_tb_root_group."_id = ".$mod_tb_root."_gid";
 $sql = $sql."  WHERE ".$mod_tb_root."_masterkey ='".$_REQUEST['masterkey']."'   ";
 
 if($_REQUEST['inputGh']>=1) {
@@ -247,6 +253,7 @@ if($_REQUEST['inputSGh']>=1) {
 if($inputSearch<>"") {
 		$sql = $sql."  AND  (
 		".$mod_tb_root."_subject LIKE '%$inputSearch%'  OR
+    ".$mod_tb_root."_subjectcn LIKE '%$inputSearch%'  OR
 		".$mod_tb_root."_subjecten LIKE '%$inputSearch%'   ) ";
 }
 
@@ -309,6 +316,10 @@ if($count_record>0) {
     
     $valPin=$row[6];
     $valNameEn=rechangeQuot($row[7]);
+    $groupName=rechangeQuot($row[8]);
+    $valSgid=rechangeQuot($row[9]);
+    $valSSgid=rechangeQuot($row[10]);
+
 
 
     if($valPin=="Pin"){
@@ -316,36 +327,73 @@ if($count_record>0) {
     }else{
       $valPinClass=  "fontContantTbDisable";
     }
+    $sql_group = "SELECT ".$mod_tb_root_sub_group."_id,".$mod_tb_root_sub_group."_subject FROM ".$mod_tb_root_sub_group." WHERE  ".$mod_tb_root_sub_group."_id ='".$valSgid."'";
+    $query_group=wewebQueryDB($coreLanguageSQL, $sql_group);
+    $row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group);
+    $subGroupName=rechangeQuot($row_group[1]);
+    $sql_group = "SELECT ".$mod_tb_root_sub_group."_id,".$mod_tb_root_sub_group."_subject FROM ".$mod_tb_root_sub_group." WHERE  ".$mod_tb_root_sub_group."_id ='".$valSSgid."'";
+    $query_group=wewebQueryDB($coreLanguageSQL, $sql_group);
+    $row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group);
+    $subSGroupName=rechangeQuot($row_group[1]);
+
   ?>
   <tr class="<?=$valDivTr?>" >
      <td  class="divRightContantOverTbL"  valign="top" align="center" ><input  id="CheckBoxID<?=$index?>" name="CheckBoxID<?=$index?>" type="checkbox" class="formCheckboxList" onClick="Paging_CheckAllHandle(document.myForm.CheckBoxAll,'CheckBoxID',document.myForm.TotalCheckBoxID.value)" value="<?=$valID?>" />    </td>
-     <td  class="divRightContantOverTb"   valign="top" align="left" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-        <!-- <td width="39" align="left" valign="top">
+     <td class="divRightContantOverTb" valign="top" align="left">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                      <!-- <td class="displayTdImg" width="39" align="left" valign="top">
 
-    <div style="width:29px; height:29px;  background:url(<?=$valPic?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>   
- </td> -->
-    <td align="left" style="padding-left:10px; "><a  href="javascript:void(0)"  onclick="
+                        <div class="displayClickImg" style="background:url(<?php echo $valPic ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
+                      </td> -->
+                    <td align="left">
+                      <!--style="padding-left:10px; "-->
+                      <div class="widthDiv">
+                        <a href="javascript:void(0)" onclick="
     document.myFormHome.inputLt.value='Thai';
-   document.myFormHome.valEditID.value=<?=$valID?>;
-    viewContactNew('viewContant.php');" ><?=$valName?></a>
-  </td>
-  </tr>
-</table></td>
+    document.myFormHome.valEditID.value=<?php echo $valID ?>;
+    viewContactNew('viewContant.php');"><?php echo $valName ?></a>
 
-          <? if($_SESSION[$valSiteManage.'core_session_languageT']==2){?>
-     <td  class="divRightContantOverTb"   valign="top" align="left" >
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="left" ><a  href="javascript:void(0)"  onclick="
+                        </span>
+                      </div>
+
+                    </td>
+                  </tr>
+                </table>
+              </td>
+
+              <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+                <td class="divRightContantOverTb" valign="top" align="left">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <!-- <td class="displayTdImg" width="39" align="left" valign="top">
+
+                          <div class="displayClickImg" style="background:url(<?php echo $valPicen ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
+                        </td> -->
+                      <td align="left"><a href="javascript:void(0)" onclick="
     document.myFormHome.inputLt.value='Eng';
-   document.myFormHome.valEditID.value=<?=$valID?>;
-    viewContactNew('viewContant.php');" ><? if($valNameEn !=""){echo $valNameEn;}else{echo "-";}?></a></td>
-  </tr>
-</table>    </td>
-<? }?>
+   document.myFormHome.valEditID.value=<?php echo $valID ?>;
+    viewContactNew('viewContant.php');"><?php echo $valNameEn ?></a></td>
+                    </tr>
+                  </table>
+                </td>
+              <?php } ?>
+              <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
+                <td class="divRightContantOverTb" valign="top" align="left">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left"><a href="javascript:void(0)" onclick="
+    document.myFormHome.inputLt.value='Chi';
+   document.myFormHome.valEditID.value=<?php echo $valID ?>;
+    viewContactNew('viewContant.php');"><?php echo $valNameCn ?></a></td>
+                    </tr>
+                  </table>
+                </td>
+              <?php } ?>
           <!-- <td  class="divRightContantOverTb"  valign="top"  align="center"><span class="fontContantTbupdate"><?=$valView?></span></td> -->
-
+    <td  class="divRightContantOverTb"  valign="top"  align="left">
+      <b><?php echo $groupName?></b><br>- <?php echo $subGroupName?><br>  - <?php echo $subSGroupName?>
+    </td>
     <td  class="divRightContantOverTb"  valign="top"  align="center">
        <? if($valPermission=="RW" ){?>
      <div   id="load_status<?=$valID?>">
