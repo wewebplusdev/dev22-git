@@ -148,7 +148,7 @@ switch ($MenuID) {
                     $sorting = "DESC";
                     $order = 1;
                 }
-                
+
                 $smarty->assign("order", $order);
                 $smarty->assign("callGroupType", $callGroup->fields['types']);
                 ## list data
@@ -169,14 +169,15 @@ switch ($MenuID) {
                     } else { ## for subgroup
                         $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], null);
                         $smarty->assign("callSubGroup", $callSubGroup);
+                        $MaxRecordsubgroup = $callSubGroup->_maxRecordCount;
+                        if (empty($SubGroupID) && $MaxRecordsubgroup > 0) {
+                            $SubGroupID = $callSubGroup->fields['id'];
+                        }
+                        $smarty->assign("SubGroupID", $SubGroupID);
                         $callCMS = $aboutPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']), $req_params['keywords'], $SubGroupID);
                         $smarty->assign("callCMS", $callCMS);
                         $smarty->assign("orderArray", $OrderArray);
                         $MaxRecord = $callCMS->_maxRecordCount;
-                        if(empty($SubGroupID) && $MaxRecord > 0){
-                            $SubGroupID = $callSubGroup->fields['id'];
-                         }
-                         $smarty->assign("SubGroupID", $SubGroupID);
                         $MenuID = "ab_odc"; // fixed ไว้ เพื่อ active menu แรกเสมอ
                         $settingPage = array(
                             "page" => $menuActive,

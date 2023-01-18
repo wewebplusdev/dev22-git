@@ -253,14 +253,15 @@ switch ($MenuID) {
                 } else { ## for subgroup
                     $callSubGroup = $trainingPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], $limit, $sorting, null);
                     $smarty->assign("callSubGroup", $callSubGroup);
+                    $MaxRecordsubgroup = $callSubGroup->_maxRecordCount;
+                    if (empty($SubGroupID) && $MaxRecordsubgroup > 0) {
+                        $SubGroupID = $callSubGroup->fields['id'];
+                    }
+                    $smarty->assign("SubGroupID", $SubGroupID);
                     $callCMS = $trainingPage->callCMSList($MenuID, 0, $callGroup->fields['id'], $page['on'], $limit, $req_params['order'], intval($req_params['year']), $req_params['keywords'], $SubGroupID);
                     $smarty->assign("callCMS", $callCMS);
                     $smarty->assign("orderArray", $OrderArray);
-                    $MaxRecord = $callCMS->_maxRecordCount;
-                    if(empty($SubGroupID) && $MaxRecord > 0){
-                        $SubGroupID = $callSubGroup->fields['id'];
-                     }
-                     $smarty->assign("SubGroupID", $SubGroupID);
+                    $MaxRecord = $callSubGroup->_maxRecordCount;
                     $MenuID = $config['trw_his']['main']['masterkey']; // fixed ไว้ เพื่อ active menu แรกเสมอ
                     $settingPage = array(
                         "page" => $menuActive,
