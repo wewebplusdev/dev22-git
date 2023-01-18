@@ -49,7 +49,7 @@ switch ($PageAction) {
 
     /*## Start SEO #####*/
     $seo_desc = "";
-    $seo_title = $lang['menu']['photo-gallary'];
+    $seo_title = ($callGroupInfo->fields['metatitle']!='' ? $callGroupInfo->fields['metatitle'] : $callGroupInfo->fields['subject']);;
     $seo_keyword = "";
     Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
     /*## End SEO #####*/
