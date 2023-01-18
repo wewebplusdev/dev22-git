@@ -26,7 +26,7 @@
           {foreach $getMenuDetail as $keygetMenuDetail => $valuegetMenuDetail}
             {$arrName = explode("-", $valuegetMenuDetail.subject)}
             <div class="item">
-              <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" {if $MenuID eq $valuegetMenuDetail.masterkey}class="active"{/if}>{$arrName[0]}</a>
+              <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" {if $MenuID eq $valuegetMenuDetail.masterkey}{$menuNumID = $valuegetMenuDetail.id}class="active"{/if}>{$arrName[0]}</a>
             </div>
           {/foreach}
         </div>
@@ -118,8 +118,8 @@
       </div>
       
       <div class="editor-content text-center">
-    {if $callCMS->fields.statusjoin === "Enable"}
-      <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}/career-form/{$callCMS->fields.id}" class="btn btn-primary" title="btn btn-primary">{$lang['career']['applyonline']}</a>
+    {if $callCMS->fields.statusjoin === "Enable" && $callCMS->fields.quantity != "0"}
+      <a href="{$ul}/{$menuActive}/{$menuNumID}/career-form/{$callCMS->fields.id}" class="btn btn-primary" title="btn btn-primary">{$lang['career']['applyonline']}</a>
     {/if}
       </div>
 
