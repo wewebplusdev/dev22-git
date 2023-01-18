@@ -51,6 +51,12 @@ $config['seatxts']['db']['main'] = "sy_sea_txts";
 $config['custp']['db']['main'] = "md_custp";
 $config['cusg']['db']['main'] = "md_cusg";
 
+$config['dwn']['db']['main'] = "md_dwn";
+$config['dwg']['db']['main'] = "md_dwg";
+$config['dws']['db']['main'] = "md_dws";
+$config['dwsg']['db']['main'] = "md_dwsg";
+$config['dwf']['db']['main'] = "md_dwf";
+
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';
 $config['feed']['main']['masterkey'] = 'feed';
@@ -66,6 +72,7 @@ $config['about']['rs_ri']['masterkey'] = 'rs_ri';
 $config['about']['osv']['masterkey'] = 'osv';
 $config['about']['mr']['masterkey'] = 'mr';
 $config['about']['plc']['masterkey'] = 'plc';
+$config['about']['ita']['masterkey'] = 'ab_ita';
 $config['contact']['cu']['masterkey'] = 'cu';
 $config['about']['ab_js']['masterkey'] = "ab_js";
 $config['infoservice']['is_art']['masterkey'] = "is_art";
