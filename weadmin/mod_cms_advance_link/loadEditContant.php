@@ -556,13 +556,13 @@ $valSSgid = $Row[24];
                 </tr>
                 <tr id="row_file_title" >
                     <td width="20%" align="right" valign="top" class="formLeftContantTb">ชื่อหัวข้อ</td>
-                    <td width="70%">
+                    <td width="70%" style="padding-bottom: 8px;">
                     <input width="10%" name="inputName" id="inputName" type="text" class="formInputContantTb"/>
                     </td>
                 </tr>
                 <tr id="row_file_title" >
                     <td width="20%" align="right" valign="top" class="formLeftContantTb">รายละเอียด</td>
-                    <td width="70%">
+                    <td width="70%" style="padding-bottom: 8px;">
                     <input width="10%" name="inputTitle" id="inputTitle" type="text" class="formInputContantTb"/>
                     </td>
                 </tr>
@@ -570,7 +570,7 @@ $valSSgid = $Row[24];
                 <tr id="row_file_sub" <?php if ($valType != "file"){ ?> style="display: none;" <?php } ?>>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?=$langMod["inp:uploadfile"]?>
                     </td>
-                    <td width="82%">
+                    <td width="82%" style="padding-bottom: 8px;">
                         <div class="file-input-wrapper">
                             <button class="btn-file-input" id="showFileName"><?=$langTxt["us:inputpicselect"]?></button>
                             <input type="file" name="inputFileUploadTitle" id="inputFileUploadTitle"

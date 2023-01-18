@@ -11,7 +11,7 @@ include("config.php");
 		$Row=wewebFetchArrayDB($coreLanguageSQL, $Query);
 		$maxOrder = $Row[0]+1;
 
-		$update="";
+		$update=array();
 		$update[]=$mod_tb_root."_order='".$maxOrder."'";
 		$update[]=$mod_tb_root."_lastbyid='".$_SESSION[$valSiteManage.'core_session_id']."'";
 		$update[]=$mod_tb_root."_lastby='".$_SESSION[$valSiteManage.'core_session_name']."'";
