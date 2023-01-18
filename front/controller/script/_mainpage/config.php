@@ -91,6 +91,7 @@ $config['policy']['corruption']['masterkey'] = 'corrupt';
 $config['cl']['masterkey'] = "cl";
 $config['sch_logs']['masterkey'] = "sch_logs";
 $config['sev_t3']['main']['masterkey'] = "sev_t3";
+$config['sev_t3']['main']['masterkey'] = "sev_t3";
 
 $config['req']['main']['masterkey'] = "req";
 $config['trw_his']['main']['masterkey'] = "trw_his";
