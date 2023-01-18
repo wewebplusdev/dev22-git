@@ -535,12 +535,12 @@ $valSSgid = $Row[24];
                             <div class="formDivRadioR"><?=$arrayType[1]?></div>
                         </label> -->
                         <label>
-                            <div class="formDivRadioL"><input type="radio" name="inputType_sub" id="inputType_sub" <? if($valType == 'file'){ echo "checked";}?>   value="file" onClick="document.getElementById('row_link_comment').style.display='none';document.getElementById('row_link_sub').style.display='';document.getElementById('row_comment_sub').style.display='';document.getElementById('row_file_sub').style.display='';"/></div>
+                            <div class="formDivRadioL"><input type="radio" name="inputType_sub" id="inputType_sub" <? if($valType == 'file'){ echo "checked";}?>   value="file" onClick="document.getElementById('row_link_comment').style.display='none';document.getElementById('row_link_sub').style.display='none';document.getElementById('row_comment_sub').style.display='';document.getElementById('row_file_sub').style.display='';"/></div>
                             <div class="formDivRadioR"><?=$arrayType[0]?></div>
                         </label>
 
                         <label>
-                            <div class="formDivRadioL"><input type="radio" name="inputType_sub" id="inputType_sub" <? if($valType == 'url'){ echo "checked";}?>  value="url"  onClick="document.getElementById('row_link_comment').style.display='';document.getElementById('row_link_sub').style.display='';document.getElementById('row_comment_sub').style.display='none';document.getElementById('row_file_sub').style.display='';"/></div>
+                            <div class="formDivRadioL"><input type="radio" name="inputType_sub" id="inputType_sub" <? if($valType == 'url'){ echo "checked";}?>  value="url"  onClick="document.getElementById('row_link_comment').style.display='';document.getElementById('row_link_sub').style.display='';document.getElementById('row_comment_sub').style.display='none';document.getElementById('row_file_sub').style.display='none';"/></div>
                             <div class="formDivRadioR"><?=$arrayType[1]?></div>
                         </label>
                     </td>
@@ -626,7 +626,7 @@ $valSSgid = $Row[24];
                     </td>
                 </tr>
 
-                <tr id="row_link_sub" <?php if ($valType != "url"){ ?> style="display: block;" <?php } ?>>
+                <tr id="row_link_sub" <?php if ($valType != "url"){ ?> style="display: none;" <?php } ?>>
                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?=$langMod["inp:link"]?>  </td>
                     <td width="82%"> <textarea name="inputurl1" id="inputurl1" class="formTextareaContantTb">http://</textarea><br/>
                         <span class="formFontNoteTxt"><?=$txt_mod["edit:linknote"]?></span>
