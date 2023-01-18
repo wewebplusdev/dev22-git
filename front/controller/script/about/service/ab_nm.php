@@ -83,8 +83,6 @@ switch ($PageAction) {
       //$ContentID = GetContentID($url->segment[2]);
       $callGroup = $aboutPage->callGroup($MenuID, $ContentID);
       $SubGroupID = $url->segment[3];
-      //print_pre($SubGroupID."=".$callGroup->fields['type']);
-      //print_pre($SubGroupID."=".$callGroup);
       if ($callGroup->_numOfRows < 1) {
          header('location:' . $linklang . '/404');
          exit(0);
@@ -123,6 +121,7 @@ switch ($PageAction) {
           $callSubGroup = $aboutPage->callSubGroup($MenuID, $callGroup->fields['id'], $page['on'], null);
           //print_pre($callSubGroup->fields);
           $MaxRecord = $callSubGroup->_maxRecordCount;
+          
           if(empty($SubGroupID) && $MaxRecord > 0){
               $SubGroupID = $callSubGroup->fields['id'];
            }
@@ -171,7 +170,6 @@ switch ($PageAction) {
       if(empty($SubGroupID) && $MaxRecord > 0){
           $SubGroupID = $callSubGroup->fields['id'];
        }
-       $SubGroupID = $url->segment[3];
       $smarty->assign("orderArray", $OrderArray);
       $smarty->assign("subGroup",  $SubGroupID);
       $smarty->assign("callSubGroup", $callSubGroup);
@@ -183,7 +181,7 @@ switch ($PageAction) {
           $arrListData[0]['subgroup'] = $SubGroupID;
           foreach ($callCMS as $keycallCMS => $valuecallCMS) {
               $arrListData[0]['list'][] = $valuecallCMS;
-          }
+          };
       //}
       $smarty->assign("arrListData", $arrListData);
 

@@ -101,6 +101,7 @@
                         {if $callGroupType eq 2}
                             <div class="group-list year-list">
                                 <ul class="nav-list">
+                               
                                     {foreach $callSubGroup as $key => $value}
                                         <li>
                                             <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$value['id']}"

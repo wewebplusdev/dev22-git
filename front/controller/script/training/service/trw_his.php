@@ -234,7 +234,6 @@ switch ($MenuID) {
                     $sorting = "DESC";
                     $order = 1;
                 }
-                $smarty->assign("SubGroupID", $SubGroupID);
                 $smarty->assign("order", $order);
                 $smarty->assign("callGroupType", $callGroup->fields['types']);
                 ## list data
@@ -258,6 +257,10 @@ switch ($MenuID) {
                     $smarty->assign("callCMS", $callCMS);
                     $smarty->assign("orderArray", $OrderArray);
                     $MaxRecord = $callCMS->_maxRecordCount;
+                    if(empty($SubGroupID) && $MaxRecord > 0){
+                        $SubGroupID = $callSubGroup->fields['id'];
+                     }
+                     $smarty->assign("SubGroupID", $SubGroupID);
                     $MenuID = $config['trw_his']['main']['masterkey']; // fixed ไว้ เพื่อ active menu แรกเสมอ
                     $settingPage = array(
                         "page" => $menuActive,

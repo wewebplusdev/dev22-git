@@ -73,7 +73,6 @@ switch ($PageAction) {
             $order = 1;
         }
         $smarty->assign("order", $order);
-        $smarty->assign("SubGroupID", $SubGroupID);
         $smarty->assign("order", $order);
         $smarty->assign("callGroupType", $callGroup->fields['types']);
 
@@ -96,6 +95,10 @@ switch ($PageAction) {
             $smarty->assign("callCMS", $callCMS);
             $smarty->assign("orderArray", $OrderArray);
             $MaxRecord = $callCMS->_maxRecordCount;
+            if(empty($SubGroupID) && $MaxRecord > 0){
+                $SubGroupID = $callSubGroup->fields['id'];
+             }
+             $smarty->assign("SubGroupID", $SubGroupID);
             $settingPage = array(
                 "page" => $menuActive,
                 "template" => "download-list-subgroup.tpl",
