@@ -25,7 +25,7 @@
           {foreach $getMenuDetail as $keygetMenuDetail => $valuegetMenuDetail}
             {$arrName = explode("-", $valuegetMenuDetail.subject)}
             <div class="item">
-              <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" {if $MenuID eq $valuegetMenuDetail.masterkey}class="active"{/if}>{$arrName[0]}</a>
+              <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" {if $MenuID eq $valuegetMenuDetail.masterkey}{$menuNumID = $valuegetMenuDetail.id}class="active"{/if}>{$arrName[0]}</a>
             </div>
           {/foreach}
         </div>
@@ -59,7 +59,7 @@
             <!-- CK Editor -->
         {/if}
       </div>
-      <form action="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}" data-toggle="validator" role="form" class="form-default" method="get">
+      <form action="{$ul}/{$menuActive}/{$menuNumID}" data-toggle="validator" role="form" class="form-default" method="get">
         <div class="row align-items-center">
           <div class="col-md-8">
             <div class="control-label" for="jobSearch">{$lang['career']['search-title']}</div>
@@ -93,7 +93,7 @@
           <div class="job-source-block mb-3">
           
             <div class="row">
-            <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}/{$menuDetail}/{$valuecallCMS.id}" style="text-decoration: none;">
+            <a href="{$ul}/{$menuActive}/{$menuNumID}/{$menuDetail}/{$valuecallCMS.id}" style="text-decoration: none;">
                 <div class="col-12">
                     <div class="title typo-sm text-limit -x3">{$valuecallCMS.subject}</div>
                     <div class="desc">({$lang['career']['quantity']} : {$valuecallCMS.quantity} {$lang['career']['position']})</div>
@@ -112,14 +112,14 @@
                                 <img src="{$template}/assets/img/icon/icon-location.svg" alt="icon-location">
                             </div>
                             <div class="col">
-                            <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}/{$menuDetail}/{$valuecallCMS.id}" style="text-decoration: none;">
+                            <a href="{$ul}/{$menuActive}/{$menuNumID}/{$menuDetail}/{$valuecallCMS.id}" style="text-decoration: none;">
                                 <div class="desc">{$lang['career']['location']} : {$valuecallCMS.address}</div>
                             </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-auto">
-                        <a href="{$ul}/{$menuActive}/{$valuegetMenuDetail.id}/{$menuDetail}/{$valuecallCMS.id}" class="link" title="{$lang['career']['detail']}">
+                        <a href="{$ul}/{$menuActive}/{$menuNumID}/{$menuDetail}/{$valuecallCMS.id}" class="link" title="{$lang['career']['detail']}">
                             <div class="row align-items-center no-gutters">
                                 <div class="col">
                                     <div class="desc">
