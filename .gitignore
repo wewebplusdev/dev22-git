@@ -8,6 +8,7 @@ front/template/default/assets/css/style.css
 .htaccess
 *.zip
 
+upload/*
 images/*
 eng/*
 thai/*
