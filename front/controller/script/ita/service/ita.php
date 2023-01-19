@@ -12,6 +12,7 @@ switch ($PageAction) {
     if(empty($GroupID)){
         $GroupID = $callGroup->fields['id'];
     }
+    
     $callGroupInfo = $itaPage->callGroup($MenuID, $$GroupID);
     $smarty->assign("callGroupInfo", $callGroupInfo->fields);
     
@@ -41,7 +42,7 @@ switch ($PageAction) {
         }
 
      }
-    //print_pre($arrListData);
+    // print_pre($arrListData);
     $smarty->assign("arrListData", $arrListData);
 
     ## title

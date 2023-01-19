@@ -83,6 +83,10 @@ switch ($MenuID) {
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_js.php';
         break;
 
+    case 'ab_ita': // ITA
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ita.php';
+        break;
+
     default: //ทิศทางองค์กร
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_odc-ab_odw.php';
         break;
