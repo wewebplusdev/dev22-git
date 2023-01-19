@@ -117,6 +117,7 @@
                                                                         <strong>{$valuelist.subject}</strong>
                                                                     </td>
                                                                 </tr>
+                                                                {* {$valuelist['linklist']|print_pre} *}
                                                                 {foreach $valuelist['linklist'] as $keylinklist => $valuelinklist}
                                                                     <tr>
                                                                         <td style="text-align: center;">
@@ -128,7 +129,7 @@
                                                                         <td>
                                                                             <ul class="pro_list1" style="margin-top:20px;">
                                                                                 <li><a
-                                                                                        href="{if $valuelinklist.file eq 'url'}{$valuelinklist.url}{/if}"><b>{$valuelinklist.title}</b></a>
+                                                                                        href="{if $valuelinklist.file eq 'url'}{$valuelinklist.url}{else}{$ul}/download/{$valuelinklist.filename|fileinclude:'file':'ab_ita':'download'}&n={$valuelinklist.name}&t={'md_cmf'|encodeStr }{/if}"><b>{$valuelinklist.title}</b></a>
                                                                                 </li>
                                                                             </ul>
                                                                         </td>
