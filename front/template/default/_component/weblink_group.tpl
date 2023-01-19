@@ -35,7 +35,7 @@
 
 
     <div class="container mt-md-5 mt-4">
-        <h2 class="text-primary mb-4">{$settingModulus.title}</h2>
+        <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
         {if count($arrMenu) > 0}
         <div class="default-tab-slider default-slick">
           {foreach $arrMenu as $keyarrMenu => $valuearrMenu}

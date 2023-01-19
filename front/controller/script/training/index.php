@@ -2,7 +2,7 @@
 
 $menuActive = "training";
 $menuDetail = "detail";
-$listjs[] = '<script type="text/javascript" src="'._URL.'front/controller/script/'.$menuActive.'/js/script.js'.$lastModify.'"></script>';
+$listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script.js' . $lastModify . '"></script>';
 
 $trainingPage = new trainingPage;
 $arrMenu = array();
@@ -58,6 +58,18 @@ switch ($MenuID) {
         break;
 
     case 'trw_cou': //หลักสูตร
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/cms_detail.php';
+        break;
+
+    case 'trw_couol': //หลักสูตรออนไลน์
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/cms_detail.php';
+        break;
+
+    case 'trw_inh': //หลักสูตรออนไลน์
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/cms_detail.php';
+        break;
+
+    case 'trw_redp': //หลักสูตรออนไลน์
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/cms_detail.php';
         break;
 
