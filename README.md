@@ -16,3 +16,4 @@ ____
 - service apache restart (restart service)
 
 ## skip auto
+## continue auto deploy
