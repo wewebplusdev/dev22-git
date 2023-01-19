@@ -54,7 +54,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     // $langTxt["mg:inpnthai"] = "Thailand Name Menu";
     $langTxt["mg:inpnthai"] = "Name Menu";
     $langTxt["mg:inpneng"] = "English Name Menu";
-    $langTxt["mg:inpnchi"] = "China Name Menu";
+    $langTxt["mg:inpnchi"] = "Chinese Name Menu";
 
 
 

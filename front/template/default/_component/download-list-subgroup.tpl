@@ -285,7 +285,7 @@
                                                                         <div class="col-auto">
                                                                             <a href="{$ul}/{$menuActive}/{$valuearrListData.menuid}/{$valuearrListData.gid}/{$menuDetail}/{$valuearrListData.id}"
                                                                                 class="btn"
-                                                                                title="{$lang['system']['readabstract']}">{$lang['system']['readabstract']}</a>
+                                                                                title="{if $menuActive == 'research'}{$lang['system']['readabstract']}{else}{$lang['system']['viewmore']}{/if}">{if $menuActive == 'research'}{$lang['system']['readabstract']}{else}{$lang['system']['viewmore']}{/if}</a>
                                                                         </div>
                                                                     {/if}
                                                                     {if $Call_File->_numOfRows gte 1}

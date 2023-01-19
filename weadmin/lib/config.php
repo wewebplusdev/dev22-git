@@ -135,6 +135,6 @@ $core_default_typemail = 1;
 $mod_db_menu = "md_menu";
 $mod_db_menu_group = "md_menug";
 
-$modTxtSetLang = array ("Thai", "English", "China");
+$modTxtSetLang = array ("Thai", "English", "Chinese");
 
 ?>

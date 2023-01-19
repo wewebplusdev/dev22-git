@@ -399,7 +399,6 @@ $lang["search"]["select"] = "เลือก".$lang["search"]["group"];
 $lang["search"]["sdate"] = "วันที่เริ่มต้น";
 $lang["search"]["edate"] = "วันที่สิ้นสุด";
 $lang["search"]["advance:search"] = "ค้นหาขั้นสูง";
-
 $lang['system']['readabstract'] = "อ่านบทคัดย่อ";
 $lang['system']['downloaddoc'] = "ดาวน์โหลดเอกสาร";
 $lang['system']['completereport'] = "รายงานฉบับสมบูรณ์";

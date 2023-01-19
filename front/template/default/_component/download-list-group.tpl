@@ -206,7 +206,7 @@
                   {if $valuecallCMS.typec eq 1}
                     <div class="col-auto">
                       <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}"
-                        class="btn" title="{$lang['system']['viewmore']}">{$lang['system']['readabstract']}</a>
+                  class="btn" title="{$lang['system']['viewmore']}">{if $menuActive == 'research'}{$lang['system']['readabstract']}{else}{$lang['system']['viewmore']}{/if}</a>
                     </div>
                   {/if}
                   {if $Call_File->_numOfRows gte 1}
