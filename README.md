@@ -14,3 +14,5 @@ ____
 - service apache restart (restart service)
 - sudo a2dismod rewrite (Disable)
 - service apache restart (restart service)
+
+## skip auto
