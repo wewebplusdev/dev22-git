@@ -76,6 +76,7 @@ $lang['contact']['google-map'] = "google 地图";
 $lang['contact']['download-map'] = "下载地图";
 $lang['contact']['misconduct-complaint'] = "欺诈和不当行为投诉系统";
 $lang['contact']['feedback-system'] = "网上投诉/反馈系统 (一般的)";
+$lang['contact']['corruption-statistics'] = "欺詐和不當行為投訴的統計數據 投訴/建議統計 （一般事項）";
 $lang['contact']['success_msg_desc'] = "我们已收到您的信息. <br>感谢您使用该服务";
 $lang['contact']['error_msg'] = "对不起，交易不成功.";
 $lang['contact']['error_msg_desc'] = "请稍后再试.";
