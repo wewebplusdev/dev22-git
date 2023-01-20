@@ -153,8 +153,7 @@
                            <figure class="cover">
                               <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}"
                                  style="text-decoration: none;">
-                                 <img src="{$valuecallCMS['pic']|fileinclude:"real":{$valuecallCMS['masterkey']}:" link"}"
-                                    alt="{$valuecallCMS.subject}">
+                                 <img src="{$valuecallCMS['pic']|fileinclude:"real":{$valuecallCMS['masterkey']}:"link"}" alt="{$valuecallCMS.subject}">
                               </a>
                            </figure>
                         </div>
