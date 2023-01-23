@@ -1461,6 +1461,40 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="about-logo-pattern">
+                            <div class="row py-3">
+                                <div class="col-sm text-center">
+                                    <p>
+                                        Standard Logo 1 (รูปแบบหลัก)
+                                        <br>
+                                        ใช้สำหรับวาง รูปแบบทั่วไป
+                                    </p>
+                                    <a href="/dev22-git/ckeditor/upload/files/id20/Standard_logo1.png" target="_blank">
+                                        <img alt="" src="/dev22-git/ckeditor/upload/files/id20/Standard_logo1.png" style="width: 300px; height: 300px; border: 1px solid #0782C1; margin: 0 0 2rem 0;">
+                                    </a>
+                                </div>
+                                <div class="col-sm text-center">
+                                    <p>
+                                        Standard Logo 2
+                                        <br>
+                                        ใช้สำหรับวางรูปแบบแนวนอน หรือพื้นที่แคบ
+                                    </p>
+                                    <a href="/dev22-git/ckeditor/upload/files/id20/Standard_logo2.png" target="_blank">
+                                        <img alt="" src="/dev22-git/ckeditor/upload/files/id20/Standard_logo2.png" style="width: 300px; height: 300px; border: 1px solid #0782C1; margin: 0 0 2rem 0;">
+                                    </a>
+                                </div>
+                                <div class="col-md text-center">
+                                    <p>
+                                        Standard Logo 3
+                                        <br>
+                                        ใช้สำหรับวางในรูปแบบแนวยาวหรือแนวตั้ง
+                                    </p>
+                                    <a href="/dev22-git/ckeditor/upload/files/id20/Standard_logo3.jpg" target="_blank">
+                                        <img alt="" src="/dev22-git/ckeditor/upload/files/id20/Standard_logo3.jpg" style="width: 300px; height: 300px; border: 1px solid #0782C1; margin: 0 0 2rem 0;">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
         </section>
