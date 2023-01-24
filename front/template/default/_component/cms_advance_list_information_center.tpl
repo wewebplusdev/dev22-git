@@ -105,7 +105,7 @@
                                    {foreach $callSubGroup as $key => $value}
                                        <li>
                                            <a href="{$ul}/{$menuActive}/{$value['id']}"
-                                               class="link {if $subGroup eq $value['id']}active{/if}">{$value['subject']}
+                                               class="link {if $subGroup eq $value['id']}active{/if}" data-toggle="tooltip" data-placement="top" title="{$value['subject']}">{$value['subject']}
                                            </a>
                                        </li>
                                    {/foreach}
@@ -163,7 +163,7 @@
                               </div>
                               <div class="col-12">
                                  <span class="feather icon-calendar"></span>
-                                 <span class="typo-xs text-black">{$valuecallCMS.credate|DateThai:'1':{$langon}:'full'}</span>
+                                 <span class="typo-xs text-black">{$valuecallCMS.credate|DateThai:'24':{$langon}:'full'}</span>
                               </div>
                               <div class="col-12">
                                  <a href="{$ul}/{$menuActive}/{$menuDetail}/{$valuecallCMS.id}" class="btn" title="btn">{$lang['system']['viewmore']}</a>

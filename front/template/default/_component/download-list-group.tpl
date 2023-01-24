@@ -190,7 +190,7 @@
                             <img class="icon" src="{$template}/assets/img/icon/icon-time.svg" alt="icon file">
                             <div class="desc time typo-s">
                               {$lang['system']['lastdate']}
-                              <span>{$valuecallCMS.credate|DateThai:'23':{$langon}:'shot3'}</span>
+                              <span>{$valuecallCMS.credate|DateThai:'24':{$langon}:'shot3'}</span>
                             </div>
                           </div>
                         </div>
