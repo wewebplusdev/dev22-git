@@ -280,7 +280,7 @@
     .profile-desc {
         font-size: var(--typo-sm);
         line-height: 1.4em;
-        height: 375px;
+        height: 350px;
         .profile-name {
             font-size: var(--typo-lg);
             font-weight: var(--fw-medium);
@@ -324,15 +324,14 @@
     }
     .item-list {
         margin: 0 -15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         & > li {
+            flex: 0 0 33.333333%;
             width: 33.33%;
             padding: 0 15px;
             margin-bottom: 3rem;
-        }
-        & > li:only-child {
-            margin-left: auto;
-            margin-right: auto;
-            float: unset;
         }
     }
 }
