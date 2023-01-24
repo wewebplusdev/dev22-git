@@ -355,6 +355,9 @@ function DateThai($strDate, $function = null, $lang = "th", $type = "shot") {
          case '23':
             $day = "$strDay.$strMonth.$strYear_current";
             break;
+            case '24':
+               $day = "วันที่ $strDay เดือน $strMonth_full ปี $strYear";
+               break;
          default:
             break;
       }

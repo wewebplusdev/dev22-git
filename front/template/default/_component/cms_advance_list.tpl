@@ -106,7 +106,7 @@
                         {foreach $callSubGroup as $key => $value}
                            <li>
                               <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$value['id']}"
-                                 class="link {if $subGroup eq $value['id']}active{/if}">{$value['subject']}
+                                 class="link {if $subGroup eq $value['id']}active{/if}" data-toggle="tooltip" data-placement="top" title="{$value['subject']}">{$value['subject']}
                               </a>
                            </li>
                         {/foreach}
@@ -153,8 +153,7 @@
                            <figure class="cover">
                               <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}"
                                  style="text-decoration: none;">
-                                 <img src="{$valuecallCMS['pic']|fileinclude:"real":{$valuecallCMS['masterkey']}:" link"}"
-                                    alt="{$valuecallCMS.subject}">
+                                 <img src="{$valuecallCMS['pic']|fileinclude:"real":{$valuecallCMS['masterkey']}:"link"}" alt="{$valuecallCMS.subject}">
                               </a>
                            </figure>
                         </div>
@@ -170,10 +169,10 @@
                               <div class="col-12">
                                  <span class="feather icon-calendar"></span>
                                  {if $valuecallCMS.refdate eq '0000-00-00 00:00:00'}
-                                    <span class="typo-xs text-black">{$valuecallCMS.credate|DateThai:'1':{$langon}:'full'}</span>
+                                    <span class="typo-xs text-black">{$valuecallCMS.credate|DateThai:'24':{$langon}:'full'}</span>
                                  {/if}
                                  {if $valuecallCMS.refdate neq '0000-00-00 00:00:00'}
-                                    <span class="typo-xs text-black">{$valuecallCMS.refdate|DateThai:'1':{$langon}:'full'}</span>
+                                    <span class="typo-xs text-black">{$valuecallCMS.refdate|DateThai:'24':{$langon}:'full'}</span>
                                  {/if}
 
                               </div>

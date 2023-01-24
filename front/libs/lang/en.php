@@ -77,6 +77,7 @@ $lang['contact']['download-map'] = "Map Download";
 $lang['contact']['misconduct-complaint'] = "Fraud and Misconduct Complaint System";
 $lang['contact']['complaint-system'] = "Complaint system";
 $lang['contact']['feedback-system'] = "Online Complaint/Feedback System (general)";
+$lang['contact']['corruption-statistics'] = "Statistics of fraud and misconduct complaints and statistics of complaints/suggestions (general matter)";
 $lang['contact']['success_msg_desc'] = "We have received your information. <br>Thank you for using the service";
 $lang['contact']['error_msg'] = "Sorry, the transaction was not successful.";
 $lang['contact']['error_msg_desc'] = "Please try again later.";

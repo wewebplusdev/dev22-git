@@ -116,7 +116,7 @@
                                     {foreach $callSubGroup as $key => $value}
                                         <li>
                                             <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$value['id']}"
-                                                class="link {if $SubGroupID eq $value['id']}active{/if}">{$value['subject']}
+                                                class="link {if $SubGroupID eq $value['id']}{$subgroupTitle = $value['subject']}active{/if}" data-toggle="tooltip" data-placement="top" title="{$value['subject']}">{$value['subject']}
                                             </a>
                                         </li>
                                     {/foreach}
@@ -129,7 +129,7 @@
 
             <div class="row align-items-center">
                 <div class="col-auto">
-                    <div class="h-title">{$callGroup->fields.subject}</div>
+                    <div class="h-title">{$subgroupTitle}</div>
                 </div>
                 {* {if count($callYear) > 0}
                     <div class="col text-right">
@@ -243,7 +243,7 @@
                                                                                             alt="icon file">
                                                                                         <div class="desc time typo-s">
                                                                                             {$lang['system']['lastdate']}
-                                                                                            <span>{$valuearrListData.credate|DateThai:'23':{$langon}:'shot3'}</span>
+                                                                                            <span>{$valuearrListData.credate|DateThai:'24':{$langon}:'shot3'}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>

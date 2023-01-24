@@ -240,3 +240,53 @@
         padding-left: 50px;
     }
 }
+
+
+/****/
+
+
+/* 2022/1/23 ohm2*/
+
+@media (max-width: 1600px) {
+    .theme-3 .default-nav .item- a .cover {
+        padding-bottom: 120px;
+    }
+    .theme-3 .default-nav .topic {
+        height: 120px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .theme-3 .default-nav .item- a .cover {
+        padding-bottom: 100px;
+    }
+    .theme-3 .default-nav .topic {
+        height: 100px;
+    }
+    .theme-3 .default-nav .item- a::before {
+        border-bottom: 4px solid var(--color-light);
+    }
+}
+
+@media (max-width: 575px) {
+    .theme-3 .default-nav .item- a .cover {
+        width: 85%;
+        margin: auto;
+    }
+    /* .theme-3 .default-nav .item- a .cover img {
+        width: 70%;
+    } */
+    .theme-3 .top-graphic .cover {
+        padding-bottom: 50% !important;
+    }
+}
+
+
+/* Ck */
+
+.about-logo-pattern a img {
+    border: 1px solid #0782C1;
+}
+
+
+/****/
