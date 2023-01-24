@@ -58,7 +58,7 @@
                     {foreach $callGroup as $key => $value}
                         <li>
                             <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$value.id}"
-                                class="link  {if $GroupID eq $value.id}active {/if}" title="{$value.subject}">{$value.subject}</a>
+                                class="link  {if $GroupID eq $value.id}active {/if}" title="{$value.subject}" data-toggle="tooltip" data-placement="top" title="{$value.subject}">{$value.subject}</a>
                         </li>
                     {/foreach}
                 </ul>
@@ -117,14 +117,13 @@
                                                                         <strong>{$valuelist.subject}</strong>
                                                                     </td>
                                                                 </tr>
-                                                                {* {$valuelist['linklist']|print_pre} *}
                                                                 {foreach $valuelist['linklist'] as $keylinklist => $valuelinklist}
                                                                     <tr>
                                                                         <td style="text-align: center;">
                                                                             {$valuelinklist.code}
                                                                         </td>
                                                                         <td>
-                                                                            {$valuelinklist.subject}
+                                                                            {$valuelinklist.name}
                                                                         </td>
                                                                         <td>
                                                                             <ul class="pro_list1" style="margin-top:20px;">
