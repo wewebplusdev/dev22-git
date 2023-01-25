@@ -59,7 +59,7 @@
             <div class="default-filter">
                 <div class="container">
                     <form action="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$SubGroupID}"
-                        data-toggle="validator" role="form" class="form-default" method="post">
+                        data-toggle="validator" role="form" class="form-default" method="get">
                         <div class="row gutters-15 align-items-end">
                             <div class="col-lg-5 col-12 mr-auto">
                                 <div class="form-group">
