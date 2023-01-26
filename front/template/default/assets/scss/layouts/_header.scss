@@ -591,6 +591,7 @@
     .menu-full {
         top: 158px;
         .dropright .dropdown-menu {
+            overflow-y: scroll;
             height: calc(100vh - 158px);
         }
         &.tiny {
@@ -603,6 +604,7 @@
 }
 
 .menu-full .dropdown-menu .link {
+    line-height: 1.4em;
     white-space: normal;
 }
 
