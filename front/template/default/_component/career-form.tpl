@@ -304,8 +304,8 @@ data-error="{$lang['career']['swal']['error']}" data-typeerror="{$lang['career']
                             <div class="col-md-5 col-sm">
                                 <div class="form-group has-feedback">
                                     <label class="control-label visuallyhidden" for="moo">Example input</label>
-                                    <input type="text" class="form-control" name="address[]" id="moo" placeholder="{$lang["career"]["Moo"]}" data-error="" required="required">
                                     <div class="block-control">
+                                    <input type="text" class="form-control" name="address[]" id="moo" placeholder="{$lang["career"]["Moo"]}" data-error="" required="required">
                                         <span class="form-control-feedback" aria-hidden="true"></span>
                                     </div>
                                 </div>

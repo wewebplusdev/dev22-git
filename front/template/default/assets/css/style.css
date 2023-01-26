@@ -5750,6 +5750,10 @@ li.fancybox-thumbs-loading {
   line-height: 1.2em;
 }
 
+.form-default .form-check-input {
+  margin-top: 0;
+}
+
 @media (max-width: 991px) {
   .select2-container--option-gray .select2-selection--single {
     padding: 21px 5px;
@@ -14350,9 +14354,6 @@ fieldset {
 .about.form-about .form-default .-nm {
   margin-top: 10px !important;
 }
-.about.form-about .form-default .-nm.I {
-  margin: 0 !important;
-}
 .about.form-about .form-default fieldset .control-legend {
   color: var(--color-primary);
   font-size: var(--typo-xs);
@@ -14370,10 +14371,6 @@ fieldset {
 }
 .about.form-about .form-default fieldset .form-group.-nm .control-label {
   color: #0F2852;
-}
-.about.form-about .form-default fieldset .form-group.-nm .-C {
-  position: absolute;
-  top: -20px;
 }
 .about.form-about .form-default .btn-form {
   width: 450px;
