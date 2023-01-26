@@ -224,7 +224,7 @@
 	<div class="main-menu">
 		<ul class="nav-list level-I">
 			<li>
-				<a href="{$ul}/home" class="link" {if strtolower($segment) eq "home"}class="active"{/if} title="{$lang['menu']['home']}">
+				<a href="{$ul}/home" class="link {if strtolower($segment) eq "home"}active{/if}" title="{$lang['menu']['home']}">
 					{$lang['menu']['home']}
 				</a>
 			</li>
@@ -240,7 +240,7 @@
 						{$valuearrSitemap['group']['subject']}
 					</a>
 					{/if}
-					<div class="row dropdown-menu level-II">
+					<div class="dropdown-menu level-II">
 						<div class="row">
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12 active mb-3 d-sm-none d-block">
 								<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="{$valuearrSitemap['group']['subject']}">

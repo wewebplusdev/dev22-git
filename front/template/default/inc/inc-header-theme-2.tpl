@@ -12,12 +12,10 @@
 								<a href="javascript:void(0)" class="theme theme-style-1" title="default theme">C</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="theme theme-style-2"
-									title="black and white theme">C</a>
+								<a href="javascript:void(0)" class="theme theme-style-2" title="black and white theme">C</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="theme theme-style-3"
-									title="black and yellow theme">C</a>
+								<a href="javascript:void(0)" class="theme theme-style-3" title="black and yellow theme">C</a>
 							</li>
 						</ul>
 					</div>
@@ -29,16 +27,13 @@
 						</div>
 						<ul class="item-list">
 							<li class="active">
-								<a href="javascript:void(0)" class="size size-small typo-s"
-									title="size small">{$settingWeb['font'][$langon]}</a>
+								<a href="javascript:void(0)" class="size size-small typo-s" title="size small">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-medium typo-md"
-									title="size medium">{$settingWeb['font'][$langon]}</a>
+								<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-large typo-lg"
-									title="size large">{$settingWeb['font'][$langon]}</a>
+								<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">{$settingWeb['font'][$langon]}</a>
 							</li>
 						</ul>
 					</div>
@@ -116,12 +111,10 @@
 								<a href="javascript:void(0)" class="theme theme-style-1" title="default theme">C</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="theme theme-style-2"
-									title="black and white theme">C</a>
+								<a href="javascript:void(0)" class="theme theme-style-2" title="black and white theme">C</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="theme theme-style-3"
-									title="black and yellow theme">C</a>
+								<a href="javascript:void(0)" class="theme theme-style-3" title="black and yellow theme">C</a>
 							</li>
 						</ul>
 					</div>
@@ -133,16 +126,13 @@
 						</div>
 						<ul class="item-list">
 							<li class="active">
-								<a href="javascript:void(0)" class="size size-small typo-s"
-									title="size small">{$settingWeb['font'][$langon]}</a>
+								<a href="javascript:void(0)" class="size size-small typo-s" title="size small">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-medium typo-md"
-									title="size medium">{$settingWeb['font'][$langon]}</a>
+								<a href="javascript:void(0)" class="size size-medium typo-md" title="size medium">{$settingWeb['font'][$langon]}</a>
 							</li>
 							<li>
-								<a href="javascript:void(0)" class="size size-large typo-lg"
-									title="size large">{$settingWeb['font'][$langon]}</a>
+								<a href="javascript:void(0)" class="size size-large typo-lg" title="size large">{$settingWeb['font'][$langon]}</a>
 							</li>
 						</ul>
 					</div>
@@ -241,8 +231,7 @@
 	<div class="main-menu">
 		<ul class="nav-list level-I">
 			<li>
-				<a href="{$ul}/home" class="link {if strtolower($segment) eq "home"}active{/if}"
-					title="{$lang['menu']['home']}">
+				<a href="{$ul}/home" class="link {if strtolower($segment) eq "home"}active{/if}" title="{$lang['menu']['home']}">
 					{$lang['menu']['home']}
 				</a>
 			</li>
@@ -250,58 +239,42 @@
 				{$menuSegment = url_segment_menu($valuearrSitemap['group']['url'])}
 				<li class="{$keyarrSitemap}-menu dropright">
 					{if count($valuearrSitemap['list']) > 0}
-						<a href="javascript:void(0)" class="link submenu {if $segment eq $menuSegment[0]}active{/if}"
-							title="{$valuearrSitemap['group']['subject']}" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
+						<a href="javascript:void(0)" class="link submenu {if $segment eq $menuSegment[0]}active{/if}" title="{$valuearrSitemap['group']['subject']}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							{$valuearrSitemap['group']['subject']}
 						</a>
 					{else}
-						<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('g')}/{$valuearrSitemap['group']['id']|base64_encode}"
-								{if $valuearrSitemap['group']['target'] eq 2}target="_blank" {/if}{else}href="javascript:void(0);"
-								{/if} class="link submenu {if $segment eq $menuSegment[0]}active{/if}"
-								title="{$valuearrSitemap['group']['subject']}">
+						<a {if $valuearrSitemap['group']['url'] neq "" && $valuearrSitemap['group']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('g')}/{$valuearrSitemap['group']['id']|base64_encode}"{if $valuearrSitemap['group']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link submenu {if $segment eq $menuSegment[0]}active{/if}" title="{$valuearrSitemap['group']['subject']}">
 								{$valuearrSitemap['group']['subject']}
 							</a>
 						{/if}
-						<ul class="dropdown-menu level-II">
-							<li class="active mb-3 d-sm-none d-block">
-								<a href="javascript:void(0)" class="link text-light typo-lg fw-medium"
-									title="{$valuearrSitemap['group']['subject']}">
-									<span class="feather icon-chevron-left"></span>
-									{$valuearrSitemap['group']['subject']}
-								</a>
-							</li>
-							{foreach $valuearrSitemap['list'] as $keySubmenu => $valueSubmenu}
-								{if count($valueSubmenu['menu']) > 0}
-									<li class="dropdown-item">
-										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valueSubmenu['subgroup']['id']|base64_encode}"
-												{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank" {/if}
-											{else}href="javascript:void(0);" 
-											{/if} class="link text-light typo-sm"
-											title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
-										<ul class="item-list fluid bullet">
-											{foreach $valueSubmenu['menu'] as $keyMenuLv3 => $valueMenuLv3}
-												<li>
-													<a {if $valueMenuLv3['url'] neq "" && $valueMenuLv3['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('c')}/{$valueMenuLv3['id']|base64_encode}"
-															{if $valueMenuLv3['target'] eq 2}target="_blank" {/if}
-														{else}href="javascript:void(0);" 
-														{/if} class="link text-light typo-s"
-														title="{$valueMenuLv3['subject']}">{$valueMenuLv3['subject']}</a>
-												</li>
-											{/foreach}
-										</ul>
-									</li>
-								{else}
-									<li class="dropdown-item">
-										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valueSubmenu['subgroup']['id']|base64_encode}"
-												{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank" {/if}
-											{else}href="javascript:void(0);" 
-											{/if} class="link text-light typo-sm"
-											title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
-									</li>
-								{/if}
-							{/foreach}
-						</ul>
+						<div class="dropdown-menu level-II">
+							<div class="row">
+								<div class="col-xl-3 col-lg-4 col-md-6 col-12 active mb-3 d-sm-none d-block">
+									<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="{$valuearrSitemap['group']['subject']}">
+										<span class="feather icon-chevron-left"></span>
+										{$valuearrSitemap['group']['subject']}
+									</a>
+								</div>
+								{foreach $valuearrSitemap['list'] as $keySubmenu => $valueSubmenu}
+									{if count($valueSubmenu['menu']) > 0}
+										<div class="col-xl-3 col-lg-4 col-md-6 col-12 dropdown-item">
+											<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valueSubmenu['subgroup']['id']|base64_encode}"{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link text-light typo-sm" title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
+											<ul class="item-list fluid bullet">
+												{foreach $valueSubmenu['menu'] as $keyMenuLv3 => $valueMenuLv3}
+													<li>
+														<a {if $valueMenuLv3['url'] neq "" && $valueMenuLv3['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('c')}/{$valueMenuLv3['id']|base64_encode}"{if $valueMenuLv3['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link text-light typo-s" title="{$valueMenuLv3['subject']}">{$valueMenuLv3['subject']}</a>
+													</li>
+												{/foreach}
+											</ul>
+										</div>
+									{else}
+										<div class="col-xl-3 col-lg-4 col-md-6 col-12 dropdown-item">
+											<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valueSubmenu['subgroup']['id']|base64_encode}"{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link text-light typo-sm" title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
+										</div>
+									{/if}
+								{/foreach}
+							</div>
+						</div>
 					</li>
 				{/foreach}
 			</ul>

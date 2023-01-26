@@ -6681,6 +6681,9 @@ div.swal2-html-container {
   margin-top: 1rem;
 }
 .menu-full .item-list.bullet > li::before {
+  width: 0.31em;
+  height: 0.31em;
+  top: 0.6em;
   background: var(--color-light);
 }
 
@@ -7385,6 +7388,11 @@ div.swal2-html-container {
   }
   .theme-3 .menu-full .dropright .dropdown-menu {
     height: calc(100vh - 114px);
+  }
+  .menu-full .item-list.bullet > li::before {
+    width: 0.3em;
+    height: 0.3em;
+    top: 0.6em;
   }
 }
 @media (max-width: 767px) {

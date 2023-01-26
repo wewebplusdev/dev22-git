@@ -206,6 +206,9 @@
             margin-top: 1rem;
         }
         & > li::before {
+            width: 0.31em;
+            height: 0.31em;
+            top: 0.6em;
             background: var(--color-light);
         }
     }
@@ -600,7 +603,7 @@
                 height: calc(100vh - 100px);
             }
         }
-        .dropdown-item:hover{
+        .dropdown-item:hover {
             background: transparent;
         }
     }
@@ -942,7 +945,11 @@
             height: calc(100vh - 114px);
         }
     }
-
+    .menu-full .item-list.bullet > li::before {
+        width: 0.3em;
+        height: 0.3em;
+        top: 0.6em;
+    }
 }
 
 @media (max-width: 767px) {
