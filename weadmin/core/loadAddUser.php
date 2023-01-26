@@ -63,6 +63,7 @@ $valNav2 = $langTxt["nav:userManage2"];
           inputPassword.focus();
           jQuery("#inputPassword").addClass("formInputContantTbAlertY");
           jQuery('#passwordDisable').show();
+          return false;
         }
         if (isBlank(inputPassword1)) {
           inputPassword1.focus();
