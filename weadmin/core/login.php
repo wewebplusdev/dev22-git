@@ -13,7 +13,7 @@ $inputPassMaster= encodeStr($inputPass);
 $total_fail = total_logs_fail();
 if($total_fail >= $core_login_fail_time){
 	$msg = "ความพยายามในการเข้าสู่ระบบที่ล้มเหลวมากเกินไป";
-	$msg = "กรุณาเข้าสู่ระบบหลังจาก ".$core_login_fail_unlock." นาที";
+	$msg2 = "กรุณาเข้าสู่ระบบหลังจาก ".$core_login_fail_unlock." นาที";
 ?>
 <script language="JavaScript"  type="text/javascript">
 	jQuery("#loadAlertLogin").hide();
