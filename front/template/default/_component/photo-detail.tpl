@@ -44,7 +44,7 @@
                     <img src="{$template}/assets/img/icon/icon-social-twitter.svg" alt="">
                   </a>
                 </li>
-                {if $MenuID eq 'ptg'}
+                {if $MenuID eq 'ptg' or $MenuID eq 'is_gal'}
                   <li>
                       <a href="javascript:void(0);" class="embed-code" embed-url="{$embed_url}" embed-type="Photo gallery">
                           <img src="{$template}/assets/img/icon/icon-embed.svg" alt="embed">

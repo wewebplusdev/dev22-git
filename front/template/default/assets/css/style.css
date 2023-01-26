@@ -7073,6 +7073,7 @@ div.swal2-html-container {
   top: 158px;
 }
 .theme-3 .menu-full .dropright .dropdown-menu {
+  overflow-y: scroll;
   height: calc(100vh - 158px);
 }
 .theme-3 .menu-full.tiny {
@@ -7083,6 +7084,7 @@ div.swal2-html-container {
 }
 
 .menu-full .dropdown-menu .link {
+  line-height: 1.4em;
   white-space: normal;
 }
 

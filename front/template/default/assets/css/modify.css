@@ -290,3 +290,150 @@
 
 
 /****/
+
+
+/* upload-control block | edited by ohm2 */
+
+.form-group.-file-upload {
+    margin-top: 2rem !important;
+}
+
+.-file-upload .control-label {
+    font-size: var(--typo-xs);
+}
+
+.upload-control {
+    width: 40%;
+    padding: 25px;
+    background-color: #f3f3f3;
+    border: 1px dashed #707070
+}
+
+.upload-control .info .icon {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px
+}
+
+.upload-control .info .icon span {
+    color: var(--color-light) Im !important;
+}
+
+.upload-control .info .inner {
+    margin-left: 12px
+}
+
+.upload-control .info .title {
+    margin: 0;
+    font-weight: 500;
+    font-size: var(--typo-xs);
+    color: var(--color-dark);
+    line-height: 1em;
+    text-align: left;
+    padding-bottom: 0.5rem;
+}
+
+.upload-control .info .title .filename {
+    color: var(--color-dark) !important;
+}
+
+.upload-control .info .title::before {
+    display: none;
+}
+
+.upload-control .info .title span {
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px
+}
+
+.upload-control .info .desc {
+    margin: 0;
+    font-weight: normal;
+    font-size: var(--typo-s);
+    color: #919191;
+    line-height: 1em
+}
+
+.upload-control .success {
+    width: 120px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    color: #2CBF4E
+}
+
+.upload-control .success span {
+    position: relative;
+    top: 2px;
+    margin-left: 5px
+}
+
+.upload-control .btn {
+    background-color: #fff;
+    min-width: 120px;
+    color: #555;
+    height: 40px;
+    font-size: var(--typo-xs);
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+}
+
+.upload-control .btn:hover {
+    color: #fff;
+    background-color: var(--color-primary)
+}
+
+.upload-control .btn-try {
+    background-color: transparent
+}
+
+.upload-control .btn-try span {
+    margin-left: 10px
+}
+
+.upload-control .btn-try:hover {
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.6)
+}
+
+@media (max-width: 767px) {
+    .upload-control {
+        width: 50%;
+    }
+}
+
+@media (max-width: 575px) {
+    .upload-control {
+        width: 80%;
+    }
+    .form-group.-file-upload {
+        margin-top: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .upload-control {
+        width: 100%;
+    }
+}
+
+
+/****/

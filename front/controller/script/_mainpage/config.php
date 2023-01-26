@@ -104,6 +104,8 @@ $config['req']['main']['masterkey'] = "req";
 $config['trw_his']['main']['masterkey'] = "trw_his";
 $config['trw_con']['main']['masterkey'] = "trw_con";
 $config['trw_web']['main']['masterkey'] = "trw_web";
+
+$config['social']['main']['masterkey'] = "social";
 //PDPA
 $config['pdpa']['db'] = 'md_pdpa';
 $config['policy']['db'] = 'md_ab';

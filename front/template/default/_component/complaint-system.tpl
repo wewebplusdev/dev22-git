@@ -129,6 +129,41 @@
                                     </div>
                                 </div>
                             </div> *}
+                    <div class="form-group -file-upload">
+                        <label class="control-label">โปรดแนบสำเนาบัตรประชาชนหรือหนังสือเดินทาง</label>
+                        <div class="block-control">
+                            <div class="upload-control">
+                                <div class="row gutters-20 align-items-center">
+                                    <div class="col">
+                                        <div class="info">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="icon">
+                                                        <span class="feather icon-paperclip"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="inner -in-text">
+                                                        <h4 class="title"><span class="filename">ไฟล์แนบ</span><span class="typefile"></span></h4>
+                                                        <p class="desc">Jpeg. Png. PDF</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="file" name="uploadFile" id="uploadFile" style="display:none;" required="">
+                                        <input name="fileTemp" value="uploadFile" type="hidden">
+                                        <input name="Uploadpicname" value="" type="hidden">
+                                        <input name="delpicname" value="" type="hidden">
+                                        <input name="masterkey" value="cu" type="hidden">
+                                        <input name="langon" value="th" type="hidden">
+                                        <button type="button" id="clickuploadFile" class="btn">อัพโหลด</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row mt-sm-5 mt-4">
                         <div class="col text-right">
                         <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">

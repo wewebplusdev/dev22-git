@@ -49,9 +49,22 @@
                         {/if}
                      </ul>
                   </div>
+
+                  {if $social->_numOfRows gte 1}
                   <div class="social">
+                  
+                  
                      <ul class="item-list">
-                        {if $settingWeb['social']['Facebook']['link'] neq "" && $settingWeb['social']['Facebook']['link'] neq "#"}
+                     {foreach $social as $Keysocial => $Valuesocial}
+                        <li>
+                     <a {if $Valuesocial['url'] neq "" && $Valuesocial['url'] neq "#"}href="{$Valuesocial['url']}"{if $Valuesocial['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link" title="{$Valuesocial.subject}">
+                                 <div class="inner">
+                                 <img width="30" height="30" src="{$Valuesocial['pic']|fileinclude:"real":{$Valuesocial['masterkey']}:"link"}" alt="{$Valuesocial.pic}">
+                                 </div>
+                              </a>
+                           </li>
+                     {/foreach}
+                        {* {if $settingWeb['social']['Facebook']['link'] neq "" && $settingWeb['social']['Facebook']['link'] neq "#"}
                            <li>
                               <a href="{$settingWeb['social']['Facebook']['link']}" class="link" title="Facebook" target="_blank">
                                  <div class="inner">
@@ -102,9 +115,10 @@
                                  </div>
                               </a>
                            </li>
-                        {/if}
+                        {/if} *}
                      </ul>
                   </div>
+                  {/if}
                </div>
                <div class="col-xl-auto col-12">
                   <div class="maps">
