@@ -118,7 +118,7 @@ $valLang[1] = $Row['langen'];
 $valLang[2] = $Row['langcn'];
 // print_pre($valType);
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
-print_pre($_REQUEST['masterkey']);
+// print_pre($_REQUEST['masterkey']);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
