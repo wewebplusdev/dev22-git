@@ -97,7 +97,11 @@ $valPassword = decodeStr($Row[15]);
         } else {
           jQuery("#inputPassword").removeClass("formInputContantTbAlertY");
         }
-
+        if(!checkPasswordFormat()){
+          inputPassword.focus();
+          jQuery("#inputPassword").addClass("formInputContantTbAlertY");
+          jQuery('#passwordDisable').show();
+        }
         if (isBlank(inputPassword1)) {
           inputPassword1.focus();
           jQuery("#inputPassword1").addClass("formInputContantTbAlertY");
@@ -185,7 +189,23 @@ $valPassword = decodeStr($Row[15]);
       }
     }
 
+    function checkPasswordFormat() {
+      var inputPassword = jQuery('#inputPassword').val();
+      console.log(inputPassword);
+      if (inputPassword != '') {
+           var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;
+            if(inputPassword.match(paswd)) 
+            { 
+              return true;
+            }
+            else
+            { 
+              return false;
+            }
 
+      }
+
+    }
     jQuery(document).ready(function() {
 
       jQuery('#myForm').keypress(function(e) {
@@ -194,6 +214,15 @@ $valPassword = decodeStr($Row[15]);
           executeSubmit();
           return false;
         }
+      });
+      jQuery('#inputPassword').keyup(function(e) {
+          if(checkPasswordFormat()){
+            jQuery('#passwordEnable').show();
+            jQuery('#passwordDisable').hide();
+          }else{
+            jQuery('#passwordEnable').hide();
+            jQuery('#passwordDisable').show();
+          }
       });
     });
   </script>
@@ -285,7 +314,13 @@ $valPassword = decodeStr($Row[15]);
         </tr>
         <tr>
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langTxt["us:pass"] ?><span class="fontContantAlert">*</span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputPassword" id="inputPassword" type="password" class="formInputContantTbShot" value="<?php echo $valPassword ?>" /></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <input name="inputPassword" id="inputPassword" type="password" class="formInputContantTbShot" value="<?php echo $valPassword ?>" />
+             <span class="fontContantTbEnable" id="passwordEnable" style="font-size: 25px;display:none"><i class="fa fa-check-circle-o" aria-hidden="true"></i></span>
+             <span class="fontContantTbDisable" id="passwordDisable" style="font-size: 25px;display:none"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+            <br>
+              <span class="formFontTileTxt"><?php echo $langTxt["us:titlepasswordformat"] ?></span>
+          </td>
         </tr>
         <tr>
           <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langTxt["us:repass"] ?><span class="fontContantAlert">*</span></td>

@@ -107,6 +107,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["us:sortpermis"] = "Sort users the new system.";
     $langTxt["us:permission"] = "Permission System";
     $langTxt["us:selectpermission"] = "Select Permission System";
+    $langTxt["us:titlepasswordformat"] = "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร<br>ประกอบต้องประกอบด้วย ตัวอักษรพิมพ์เล็ก [a-z] ตัวอักษรพิมพ์ใหญ่ [A-Z] ตัวเลข [0-9] และอักขระพิเศษ";
 
     $langTxt["us:nameuser"] = "Username";
     $langTxt["us:pass"] = "Password";
@@ -337,6 +338,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["us:sortpermis"] = "จัดเรียงผู้ใช้งานระบบใหม่";
     $langTxt["us:permission"] = "สิทธิ์การใช้งานระบบ";
     $langTxt["us:selectpermission"] = "เลือกสิทธิ์การใช้งานระบบ";
+    $langTxt["us:titlepasswordformat"] = "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร<br>ประกอบต้องประกอบด้วย ตัวอักษรพิมพ์เล็ก [a-z] ตัวอักษรพิมพ์ใหญ่ [A-Z] ตัวเลข [0-9] และอักขระพิเศษ";
 
     $langTxt["us:nameuser"] = "ชื่อผู้ใช้งาน";
     $langTxt["us:pass"] = "รหัสผ่าน";
