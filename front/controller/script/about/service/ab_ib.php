@@ -63,10 +63,10 @@ switch ($url->segment[3]) {
         }
         // print_pre($arrSubGroup);
 
-        if ($callPositionMem->_numOfRows < 1) {
-            header('location:'.$linklang.'/404');
-            exit(0);
-        }
+        // if ($callPositionMem->_numOfRows < 1) {
+        //     header('location:'.$linklang.'/404');
+        //     exit(0);
+        // }
 
         ## create array of member
         $sid = implode(",", $arrSubGroup);
