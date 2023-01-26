@@ -266,7 +266,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
               <input type="file" name="fileToUpload" id="fileToUpload" onchange="ajaxFileUpload();" />
             </div>
 
-            <span class="formFontNoteTxt"><?php echo $langMod["inp:notepic"] ?></span>
+            <span class="formFontNoteTxt"><?php if($_REQUEST['masterkey'] = "social"){ echo $langMod["inp:notepicsocial"]; } else{ echo $langMod["inp:notepic"]; }?></span>
             <div class="clearAll"></div>
             <div id="boxPicNew" class="formFontTileTxt">
               <input type="hidden" name="picname" id="picname" />

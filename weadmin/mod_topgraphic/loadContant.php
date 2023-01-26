@@ -166,6 +166,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                     <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
                         <td align="left" width="25%" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo  $langMod["tit:subject"] ?> (<?php echo  $langTxt["lg:chi"] ?>)</span></td>
                     <?php } ?>
+                    <?php if ($_REQUEST['masterkey'] == "ban") { ?> <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langMod["tit:view"] ?></span></td> <?php } ?>
                     <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:status"] ?></span></td>
                     <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["us:lastdate"] ?></span></td>
                     <td width="12%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:manage"] ?></span></td>
@@ -181,7 +182,8 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
             " . $mod_tb_root . "_subjecten,
             " . $mod_tb_root . "_subjectcn,
             " . $mod_tb_root . "_picen,
-            " . $mod_tb_root . "_piccn as piccn
+            " . $mod_tb_root . "_piccn as piccn,
+            " . $mod_tb_root . "_view
             ";
 
                 $sql = "SELECT " . $sqlSelect . "    FROM " . $mod_tb_root;
@@ -228,6 +230,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                         $valDateCredate = dateFormatReal($row[2]);
                         $valTimeCredate = timeFormatReal($row[2]);
                         $valStatus = $row[3];
+                        $valView = number_format($row[9]);
 
                         $valPic = $mod_path_office . "/" . $row[4];
                         if (is_file($valPic)) {
@@ -317,6 +320,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
                                         </tr>
                                     </table>
                                 </td>
+                            <?php } ?>
+                            <?php if ($_REQUEST['masterkey'] == "ban") { ?>
+                            <td class="divRightContantOverTb" valign="top" align="center">
+                                <span class="fontContantTbupdate"><?php echo  $valView ?></span>
+                            </td>
                             <?php } ?>
 
                             <td class="divRightContantOverTb" valign="top" align="center">

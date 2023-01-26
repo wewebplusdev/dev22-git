@@ -80,7 +80,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langMod["home:detail"] = "อ่านรายละเอียด";
     $langMod["tit:typevdo"] = "การแสดงผล";
     $langMod["inp:notepic"] = "หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg ,.gif และ .png เท่านั้น ขนาดของรูปภาพที่ใช้ในการอัพโหลด " . $sizeWidthReal . " x " . $sizeHeightReal . " พิกเซล";
-
+    $langMod["inp:notepicsocial"] = "หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg ,.gif และ .png เท่านั้น ขนาดของรูปภาพที่ใช้ในการอัพโหลด 48 x 48 พิกเซล";
     $langMod["txt:video"] = "ข้อมูลวิดีโอ ";
     $langMod["tit:uploadvdo"] = "อัพโหลดไฟล์";
     $langMod["tit:linkvdonote"] = "หมายเหตุ : เฉพาะชื่อ URL youtube.com เท่านั้น";
@@ -96,4 +96,5 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langMod["tit:desc"] = "หมายเหตุ";
     $langMod["tit:title"] = "รายละเอียด";
     $langMod["txt:title-theme1"] = "Theme 1";
+    $langMod["tit:view"] ="เข้าชม";
 }

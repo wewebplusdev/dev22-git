@@ -74,9 +74,19 @@
                                     </li>
                                 </ul>
                             </div>
+                            {if $social->_numOfRows gte 1}
                             <div class="social">
                                 <ul class="item-list">
-                                    {if $settingWeb['social']['Facebook']['link'] neq "" && $settingWeb['social']['Facebook']['link'] neq "#"}
+                                    {foreach $social as $Keysocial => $Valuesocial}
+                                        <li>
+                                            <a {if $Valuesocial['url'] neq "" && $Valuesocial['url'] neq "#"}href="{$Valuesocial['url']}"{if $Valuesocial['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link">
+                                                <div class="circle-border">
+                                                <img style="border-radius: 50%;" src="{$Valuesocial['pic']|fileinclude:"real":{$Valuesocial['masterkey']}:"link"}" alt="{$Valuesocial.pic}">
+                                                </div>
+                                            </a>
+                                        </li>
+                                    {/foreach}
+                                    {* {if $settingWeb['social']['Facebook']['link'] neq "" && $settingWeb['social']['Facebook']['link'] neq "#"}
                                         <li>
                                             <a href="{$settingWeb['social']['Facebook']['link']}" target="_blank"
                                                 class="link" title="Facebook">
@@ -129,9 +139,10 @@
                                                 </svg>
                                             </div>
                                         </a>
-                                    </li>
+                                    </li> *}
                                 </ul>
                             </div>
+                        {/if}
                         </div>
                     </div>
                 </div>
@@ -150,7 +161,8 @@
                             <ul class="item-list">
                                 {foreach $calPolicy as $keycalPolicy => $valuecalPolicy}
                                     <li>
-                                    <a href="{$ul}/policy/{$valuecalPolicy.id}" class="link" title="{$valuecalPolicy.subject}">{$valuecalPolicy.subject}</a>
+                                        <a href="{$ul}/policy/{$valuecalPolicy.id}" class="link"
+                                            title="{$valuecalPolicy.subject}">{$valuecalPolicy.subject}</a>
                                     </li>
                                 {/foreach}
                             </ul>
