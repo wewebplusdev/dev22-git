@@ -5,7 +5,7 @@ $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteve
 $responseData = json_decode($verifyResponse);
 
 
-// print_pre($_REQUEST['g-recaptcha-response']);
+// print_pre($_REQUEST['Uploadpicname']);
 // die;
 
 if (!empty($_POST) && $responseData->success) {
@@ -26,6 +26,20 @@ if (!empty($_POST) && $responseData->success) {
 
   $sql = "INSERT INTO " . $config['coms']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
   $insertDb = $db->execute($sql);
+  $ContentID = $db->insert_Id();
+
+  // insert file
+  if (!empty($_POST["Uploadpicname"])) {
+    $nameToinput = explode('.', $_POST["Uploadpicname"]);
+    $insert = array();
+    $insert[$config['cmsf']['db']['main'] . "_contantid"] = "'" . $ContentID . "'";
+    $insert[$config['cmsf']['db']['main'] . "_filename"] = "'" . $_POST["Uploadpicname"] . "'";
+    $insert[$config['cmsf']['db']['main'] . "_name"] = "'" . $nameToinput[0] . "'";
+    $insert[$config['cmsf']['db']['main'] . "_masterkey"] = "'" . $_POST["masterkey"] . "'";
+
+    $sql_file = "INSERT INTO " . $config['cmsf']['db']['main'] . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
+    $Query_file = $db->execute($sql_file);
+  }
 
   formmail();
   $data = array(
@@ -56,13 +70,13 @@ exit(0);
 function formmail(){
   global $url_website, $callSetWebsite, $core_send_email, $core_default_typemail, $settingWeb, $policyPage, $lang, $config;
   
-  $mailGorup = $policyPage->callmailcontact($config['policy']['coms']['masterkey'], $_POST["inputGroup"]);
+  $mailGorup = $policyPage->callmailcontact($_POST["masterkey"], $_POST["inputGroup"]);
   // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
   $SubjectMail = $lang["policy"]["complaint"]." (" . $_POST['inputName'] . ")";
-  $Group = $policyPage->callComsGroup($config['policy']['coms']['masterkey'], $_POST["inputGroup"]);
+  $SubjectMail_admin = $lang["policy"]["complaint"];
+  $Group = $policyPage->callComsGroup($_POST["masterkey"], $_POST["inputGroup"]);
   
-  
-  $message = "
+  $messageUser = "
   <tr style='height: 309px;'>
     <td style='height: 309px; width: 596px;'>
       <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
@@ -76,13 +90,47 @@ function formmail(){
                   <tr style='height: 50px;'>
                     <td style='height: 16px;'>
                       <div style='font-size: 16px; font-weight: bold; color: #037ee5; line-height: 1em;'>
-                      รับเรื่องร้องเรียน - ".$settingWeb['subjectoffice']."</div>
+                      ".$lang["policy"]["complaint"]." - ".$settingWeb['subjectoffice']."</div>
                     </td>
                   </tr>
                   <tr style='height: 209px;'>
                     <td style='height: 209px;'>
-                    <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['policy']['group']." ".$Group->fields[2]."<br />".$lang['contact']['name']." ".changeQuot($_POST["inputName"])."</div>
-                    <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["inputSubject"])."</div>
+                      <div style='font-size: 16px; color: #666; line-height: 1.4em;'>".$lang['form']['dear']." ".changeQuot($_POST['inputName'])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>&nbsp;</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$lang['email']['veri:title2']."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['email']['step2:dear']."</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td width='40'>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>";
+  $messageAdmin = "
+  <tr style='height: 309px;'>
+    <td style='height: 309px; width: 596px;'>
+      <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
+        <tbody>
+          <tr>
+            <td width='40'>&nbsp;</td>
+            <td>
+              <table style='height: 255px; width: 100%;' border='0' width='100%' cellspacing='0'
+                cellpadding='0' align='center'>
+                <tbody>
+                  <tr style='height: 50px;'>
+                    <td style='height: 16px;'>
+                      <div style='font-size: 16px; font-weight: bold; color: #037ee5; line-height: 1em;'>
+                      ".$lang["policy"]["complaint"]." - ".$settingWeb['subjectoffice']."</div>
+                    </td>
+                  </tr>
+                  <tr style='height: 209px;'>
+                    <td style='height: 209px;'>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['policy']['group']." ".$Group->fields[2]."<br />".$lang['contact']['name']." ".changeQuot($_POST["inputName"])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["inputSubject"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['contact']['text']." : ".changeQuot($_POST["inputMessage"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["fname"]."-".$lang["policy"]["lname"]." : ".changeQuot($_POST["inputName"])."</div>
                       <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang["policy"]["email"]." : ".changeQuot($_POST["inputEmail"])."</div>
@@ -100,21 +148,27 @@ function formmail(){
     </td>
   </tr>";
   
-  // $to = trim($_POST['inputEmail']);
-  // $templates_user = $callSetWebsite->template_mail($message);
-  // loadSendEmailTo($to, $SubjectMail, $templates_user);
+  $arrEmailer = array();
+  /* ################ Start Mail To User ########### */
+  $to = trim($_POST['inputEmail']);
+  $templates_user = $callSetWebsite->template_mail($messageUser);
+  $arrEmailer['user']['subject'] = $SubjectMail;
+  $arrEmailer['user']['body'] = $templates_user;
+  $arrEmailer['user']['to'][] = $to;
   // echo  "to==>".$to."<br/>Subject==>".$SubjectMail."<br/>".$templates_user."<br/>";
-  // /* ################ End Mail To User ########### */
+  /* ################ End Mail To User ########### */
   
   /* ################ Start Mail To Admin ########### */
-  $arrEmailer = array();
-  array_push($arrEmailer, trim($_POST['inputEmail']));
-  $templates_admin = $callSetWebsite->template_mail($message);
+  $templates_admin = $callSetWebsite->template_mail($messageAdmin);
   foreach ($mailGorup as $key => $to) {
-      // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
-      array_push($arrEmailer, $to[2]);
+    $arrEmailer['admin']['subject'] = $SubjectMail_admin;
+    $arrEmailer['admin']['body'] = $templates_admin;
+    // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
+    $arrEmailer['admin']['to'][] = $to[2];
   }
-  loadSendEmailTo($arrEmailer, $SubjectMail, $templates_admin);
+  /* ################ End Mail To Admin ########### */
+
+  loadSendEmailTo($arrEmailer, null, null, 2);
 }
 
 

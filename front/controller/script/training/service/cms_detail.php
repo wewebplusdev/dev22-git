@@ -89,7 +89,7 @@ switch ($PageAction) {
         ## breadcrumb
         $breadcrumb = explode("-", $callGroup->fields['menuname']);
         $settingModulus['breadcrumb'] = $breadcrumb[0];
-        $smarty->assign("TitleName",  $breadcrumb[0]."".$callGroup->fields['subject']);  
+        $smarty->assign("TitleName", $callGroup->fields['subject']);  
 
         /*## Start SEO #####*/
         $seo_desc = "";

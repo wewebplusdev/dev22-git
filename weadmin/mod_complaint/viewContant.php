@@ -185,6 +185,48 @@ logs_access('3', 'View');
                                 
                             </table>
                             <br />
+                            <?php if(in_array($_REQUEST['masterkey'], $arr_file_dwn)){ ?>
+                            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                                <tr>
+                                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:attfile"] ?></span><br />
+                                        <span class="formFontTileTxt"><?php echo $langMod["txt:attfileDe"] ?></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["txt:attfile"] ?>:<span class="fontContantAlert"></span></td>
+                                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                                        <div class="formDivView">
+                                            <?php
+                                            $sql = "SELECT " . $mod_tb_file . "_id," . $mod_tb_file . "_filename," . $mod_tb_file . "_name," . $mod_tb_file . "_download FROM " . $mod_tb_file . " WHERE " . $mod_tb_file . "_contantid 	='" . $valID . "' ORDER BY " . $mod_tb_file . "_id ASC";
+                                            $query_file = wewebQueryDB($coreLanguageSQL, $sql);
+                                            $number_row = wewebNumRowsDB($coreLanguageSQL, $query_file);
+                                            if ($number_row >= 1) {
+                                                $txtFile = "";
+                                                while ($row_file = wewebFetchArrayDB($coreLanguageSQL, $query_file)) {
+                                                    $linkRelativePath = $mod_path_file . "/" . $row_file[1];
+                                                    $downloadFile = $row_file[1];
+                                                    $downloadID = $row_file[0];
+                                                    $downloadName = $row_file[2];
+                                                    $countDownload = $row_file[3];
+                                                    $imageType = strstr($downloadFile, '.');
+                                            ?>
+
+                                                    <div style="float:left; width:100%; height:30px; margin-bottom:15px;"><img src="<?php echo get_Icon($downloadFile) ?>" align="absmiddle" width="30" /><a href="../<?php echo $mod_fd_root ?>/download.php?linkPath=<?php echo $linkRelativePath ?>&amp;downloadFile=<?php echo $downloadFile ?>"><?php echo $downloadName ?></a> | <?php echo $langMod["file:type"] ?>: <?php echo $imageType ?> | <?php echo $langMod["file:size"] ?>: <?php echo get_IconSize($linkRelativePath) ?> | <?php echo $langMod["file:download"] ?>: <?php echo number_format($countDownload) ?></div>
+                                                    <div></div>
+
+                                            <?php
+                                                }
+                                            } else {
+                                                echo "-";
+                                            }
+                                            ?>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <?php } ?>
                             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder "> 
                                 <tr >
                                     <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">

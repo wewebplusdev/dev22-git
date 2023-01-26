@@ -46,6 +46,7 @@ $core_tb_usercar = "md_srd";
 $core_tb_service = "md_srs";
 $core_tb_user = "sy_usr";
 $core_tb_tag = "md_tag";
+$core_tb_login_log = "sy_login_logs";
 
 ## Other Table  ######################################################
 $other_tb_geography = "ot_geo";
@@ -79,6 +80,8 @@ $core_default_reduce = 10;
 $core_sort_number = "DESC";
 $core_height_leftmenu = 40;
 
+$core_login_fail_time = 3;
+$core_login_fail_unlock = 10;
 ## Core Language #############################################
 $coreLanguageThai = "Thai";
 $coreLanguageEng = "Eng";

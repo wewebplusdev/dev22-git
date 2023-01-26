@@ -560,6 +560,7 @@ $lang['email']['veri:title'] = "We are pleased to advise you that we have receiv
 $lang['email']['step2:dear'] = "Please be informed accordingly.";
 $lang['email']['step2:fromadmin'] = "Data Protection Officer";
 $lang['email']['prefix'] = "";
+$lang['email']['veri:title2'] = "We are pleased to advise your information has been received by the research institute.";
 
 // FORM
 $lang['form']['title-befor'] = "Data Subject Request Form";

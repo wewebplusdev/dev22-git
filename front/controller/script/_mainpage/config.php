@@ -56,6 +56,7 @@ $config['dwg']['db']['main'] = "md_dwg";
 $config['dws']['db']['main'] = "md_dws";
 $config['dwsg']['db']['main'] = "md_dwsg";
 $config['dwf']['db']['main'] = "md_dwf";
+$config['cmsf']['db']['main'] = "md_cmsf";
 
 // masterkey
 $config['setting']['mnu']['masterkey'] = 'mnu';

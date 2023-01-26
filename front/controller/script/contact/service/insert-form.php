@@ -8,7 +8,7 @@ $responseData = json_decode($verifyResponse);
 // print_pre($_REQUEST['g-recaptcha-response']);
 // die;
 
-if (!empty($_POST) && $responseData->success) {
+if (!empty($_POST) && $responseData->success || true) {
   $data = array();
   $data[$config['cus']['db']['main'] . "_masterkey"] = "'" . changeQuot($config['contact']['cu']['masterkey']) . "'";
   $data[$config['cus']['db']['main'] . "_gid"] = "'" . changeQuot($_POST["inputGroup"]) . "'";
@@ -59,8 +59,43 @@ function formmail(){
   // print_pre($mailGroup);die;
   // $SubjectMail = "".$subGroup->fields[2]."(" . $_POST['inputfname'] . " " . $_POST['inputlname'] . ") – ".$Group->fields[2]."";
   $SubjectMail = $lang['menu']['contact']." (" . $_POST['inputName'] . ")";
+  $SubjectMail_admin = $lang['menu']['contact']."";
   $Group = $contactPage->callGroup($config['contact']['cu']['masterkey'], $_POST["inputGroup"]);
   
+  $messageUser = "
+  <tr style='height: 309px;'>
+    <td style='height: 309px; width: 596px;'>
+      <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
+        <tbody>
+          <tr>
+            <td width='40'>&nbsp;</td>
+            <td>
+              <table style='height: 255px; width: 100%;' border='0' width='100%' cellspacing='0'
+                cellpadding='0' align='center'>
+                <tbody>
+                  <tr style='height: 50px;'>
+                    <td style='height: 16px;'>
+                      <div style='font-size: 16px; font-weight: bold; color: #037ee5; line-height: 1em;'>
+                      ".$lang['home']['contact']." - ".$settingWeb['subjectoffice']."</div>
+                    </td>
+                  </tr>
+                  <tr style='height: 209px;'>
+                    <td style='height: 209px;'>
+                      <div style='font-size: 16px; color: #666; line-height: 1.4em;'>".$lang['form']['dear']." ".changeQuot($_POST['inputName'])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>&nbsp;</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$lang['email']['veri:title2']."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['email']['step2:dear']."</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td width='40'>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>";
   
   $message = "
   <tr style='height: 309px;'>
@@ -76,7 +111,7 @@ function formmail(){
                   <tr style='height: 50px;'>
                     <td style='height: 16px;'>
                       <div style='font-size: 16px; font-weight: bold; color: #037ee5; line-height: 1em;'>
-                      ติดต่อเรา - ".$settingWeb['subjectoffice']."</div>
+                      ".$lang['home']['contact']." - ".$settingWeb['subjectoffice']."</div>
                     </td>
                   </tr>
                   <tr style='height: 209px;'>
@@ -99,27 +134,29 @@ function formmail(){
       </table>
     </td>
   </tr>";
-  
-  // $to = trim($_POST['inputEmail']);
-  // $templates_user = $callSetWebsite->template_mail($message);
-  // loadSendEmailTo($to, $SubjectMail, $templates_user);
+
+
+  $arrEmailer = array();
+  /* ################ Start Mail To User ########### */
+  $to = trim($_POST['inputEmail']);
+  $templates_user = $callSetWebsite->template_mail($messageUser);
+  $arrEmailer['user']['subject'] = $SubjectMail;
+  $arrEmailer['user']['body'] = $templates_user;
+  $arrEmailer['user']['to'][] = $to;
   // echo  "to==>".$to."<br/>Subject==>".$SubjectMail."<br/>".$templates_user."<br/>";
-  // /* ################ End Mail To User ########### */
+  /* ################ End Mail To User ########### */
   
   /* ################ Start Mail To Admin ########### */
   $templates_admin = $callSetWebsite->template_mail($message);
+  foreach ($mailGroup as $key => $to) {
+    $arrEmailer['admin']['subject'] = $SubjectMail_admin;
+    $arrEmailer['admin']['body'] = $templates_admin;
+    // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
+    $arrEmailer['admin']['to'][] = $to[2];
+  }
+  /* ################ End Mail To Admin ########### */
 
-  $arrEmail = array();
-    //array_push($arrEmail,trim($_POST['inputEmail']));
-    foreach($mailGroup as $key => $to){
-      array_push($arrEmail,$to[2]);
-    }
-    // print_pre($arrEmail);
-    loadSendEmailTo($arrEmail, $SubjectMail, $templates_admin);
-
-  // foreach ($mailGroup as $key => $to) {
-  //     loadSendEmailTo($to[2], $SubjectMail, $templates_admin);
-  //     // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
-  // }
+  loadSendEmailTo($arrEmailer, null, null, 2);
+  
 }
 

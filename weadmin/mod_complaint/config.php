@@ -9,6 +9,8 @@ $mod_tb_file = "md_cmsf";
 ## Mod Folder ###################################
 $mod_fd_root = "mod_complaint";
 
+## Fix Array Masterkey ###################################
+$arr_file_dwn = array('coms', 'corrupt');
 
 $mod_path_html        = $core_pathname_upload."/".$masterkey."/html";
 $mod_path_html_fornt  = $core_pathname_upload_fornt."/".$masterkey."/html";

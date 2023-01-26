@@ -124,8 +124,14 @@ include("core/incLang.php");
                                     </div>
                                 </form>
 
-                                <div style="display:none;" id="loadAlertLogin">
+                                <div style="display:none;text-align:left;padding:5px;"" id="loadAlertLogin">
                                     <img src="img/btn/error.png" align="absmiddle" hspace="10" /><?php echo  $langTxt["login:alert"] ?>
+                                </div>
+                                <div style="display:none;text-align:left;padding:5px;" id="loadAlertLoginRemaining" >
+                                  <img src="img/btn/error.png" align="absmiddle" hspace="10" /><span id="alertMsg"></span>
+                                </div>
+                                <div style="display:none;text-align:left;padding:5px;" id="loadAlertLoginRemaining2" >
+                                  <img src="img/btn/error.png" align="absmiddle" hspace="10" /><span id="alertMsg2"></span>
                                 </div>
 
                                 <!-- <div class="login-copy">
