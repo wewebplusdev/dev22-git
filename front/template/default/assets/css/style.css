@@ -6594,6 +6594,7 @@ div.swal2-html-container {
   top: 130px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  overflow-y: scroll;
 }
 .menu-full.tiny {
   top: 98px;
@@ -7072,7 +7073,6 @@ div.swal2-html-container {
   top: 158px;
 }
 .theme-3 .menu-full .dropright .dropdown-menu {
-  overflow-y: scroll;
   height: calc(100vh - 158px);
 }
 .theme-3 .menu-full.tiny {
