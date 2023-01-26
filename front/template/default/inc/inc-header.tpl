@@ -240,16 +240,16 @@
 						{$valuearrSitemap['group']['subject']}
 					</a>
 				{/if}
-					<ul class="dropdown-menu level-II">
-						<li class="active mb-3 d-sm-none d-block">
+					<div class="row dropdown-menu level-II">
+						<div class="col active mb-3 d-sm-none d-block">
 							<a href="javascript:void(0)" class="link text-light typo-lg fw-medium" title="{$valuearrSitemap['group']['subject']}">
 								<span class="feather icon-chevron-left"></span>
 								{$valuearrSitemap['group']['subject']}
 							</a>
-						</li>
+						</div>
 						{foreach $valuearrSitemap['list'] as $keySubmenu => $valueSubmenu}
 							{if count($valueSubmenu['menu']) > 0}
-								<li class="dropdown-item">
+								<div class="col dropdown-item">
 										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valueSubmenu['subgroup']['id']|base64_encode}"{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link text-light typo-sm" title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
 										<ul class="item-list fluid bullet">
 											{foreach $valueSubmenu['menu'] as $keyMenuLv3 => $valueMenuLv3}
@@ -258,14 +258,14 @@
 												</li>
 											{/foreach}
 										</ul>
-									</li>
+									</div>
 								{else}
-									<li class="dropdown-item">
+									<div class="col dropdown-item">
 										<a {if $valueSubmenu['subgroup']['url'] neq "" && $valueSubmenu['subgroup']['url'] neq "#"}href="{$ul}/pageredirect/url/{encodeStr('sg')}/{$valueSubmenu['subgroup']['id']|base64_encode}"{if $valueSubmenu['subgroup']['target'] eq 2}target="_blank"{/if}{else}href="javascript:void(0);"{/if} class="link text-light typo-sm" title="{$valueSubmenu['subgroup']['subject']}">{$valueSubmenu['subgroup']['subject']}</a>
-									</li>
+									</div>
 							{/if}
 						{/foreach}
-					</ul>
+					</div>
 				</li>
 			{/foreach}
 		</ul>
