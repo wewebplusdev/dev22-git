@@ -26,10 +26,11 @@ if($total_fail >= $core_login_fail_time){
 </script>
 <?php
 }else{
-		$ip =  get_real_ip();
-		$sqlLogfail = "DELETE FROM ".$core_tb_login_log." WHERE ".$core_tb_login_log."_ip='".$ip."'";
-		$query=wewebQueryDB($coreLanguageSQL,$sqlLogfail);
-
+		if($total_fail == 0){
+			$ip =  get_real_ip();
+			$sqlLogfail = "DELETE FROM ".$core_tb_login_log." WHERE ".$core_tb_login_log."_ip='".$ip."'";
+			$query=wewebQueryDB($coreLanguageSQL,$sqlLogfail);
+		}
 		$sqlMaster = "SELECT ".$core_tb_staff."_id FROM ".$core_tb_staff." WHERE ".$core_tb_staff."_username='".encodeStr($inputUserMaster)."' AND ".$core_tb_staff."_password='".$inputPassMaster."'  AND ".$core_tb_staff."_status='Superadmin'    ";
 		$queryMaster=wewebQueryDB($coreLanguageSQL,$sqlMaster);
 		$recordMaster=wewebNumRowsDB($coreLanguageSQL,$queryMaster);
