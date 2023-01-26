@@ -64,7 +64,7 @@
       <div class="default-filter">
          <div class="container">
             <form action="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$req_params['year']}"
-               data-toggle="validator" role="form" class="form-default" method="post">
+               data-toggle="validator" role="form" class="form-default" method="get">
                <div class="row gutters-15 align-items-end">
                   <div class="col-lg-5 col-12 mr-auto">
                      <div class="form-group">
@@ -106,7 +106,7 @@
                         {foreach $callSubGroup as $key => $value}
                            <li>
                               <a href="{$ul}/{$menuActive}/{$menuDetailID}/{$callGroup->fields.id}/{$value['id']}"
-                                 class="link {if $subGroup eq $value['id']}active{/if}">{$value['subject']}
+                                 class="link {if $subGroup eq $value['id']}active{/if}" data-toggle="tooltip" data-placement="top" title="{$value['subject']}">{$value['subject']}
                               </a>
                            </li>
                         {/foreach}
@@ -169,10 +169,10 @@
                               <div class="col-12">
                                  <span class="feather icon-calendar"></span>
                                  {if $valuecallCMS.refdate eq '0000-00-00 00:00:00'}
-                                    <span class="typo-xs text-black">{$valuecallCMS.credate|DateThai:'1':{$langon}:'full'}</span>
+                                    <span class="typo-xs text-black">{$valuecallCMS.credate|DateThai:'24':{$langon}:'full'}</span>
                                  {/if}
                                  {if $valuecallCMS.refdate neq '0000-00-00 00:00:00'}
-                                    <span class="typo-xs text-black">{$valuecallCMS.refdate|DateThai:'1':{$langon}:'full'}</span>
+                                    <span class="typo-xs text-black">{$valuecallCMS.refdate|DateThai:'24':{$langon}:'full'}</span>
                                  {/if}
 
                               </div>

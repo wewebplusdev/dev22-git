@@ -41,13 +41,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
   $module_sort_number = $core_sort_number;
 
   if ($_REQUEST['module_pagesize'] == "") {
-    $module_pagesize = $module_default_pagesize;
+    $module_pagesize = 1;
   } else {
     $module_pagesize = $_REQUEST['module_pagesize'];
   }
 
   if ($_REQUEST['module_pageshow'] == "") {
-    $module_pageshow = $module_default_pageshow;
+    $module_pageshow = 1;
   } else {
     $module_pageshow = $_REQUEST['module_pageshow'];
   }

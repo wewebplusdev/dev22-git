@@ -100,7 +100,7 @@
           <div class="whead-addon -bsc">
             <div class="detail-info">
               <ul class="item-list">
-                <li>{$callCMS->fields.credate|DateThai:'23':{$langon}:'shot3'}</li>
+                {* <li>{$callCMS->fields.credate|DateThai:'23':{$langon}:'shot3'}</li> *}
                 <li>
                   <span class="feather icon-eye mr-2"></span>
                   {$callCMS->fields.view} {$lang['system']['view']}

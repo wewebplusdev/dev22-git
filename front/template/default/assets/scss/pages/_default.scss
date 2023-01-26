@@ -280,7 +280,7 @@
     .profile-desc {
         font-size: var(--typo-sm);
         line-height: 1.4em;
-        height: 375px;
+        height: 350px;
         .profile-name {
             font-size: var(--typo-lg);
             font-weight: var(--fw-medium);
@@ -324,7 +324,11 @@
     }
     .item-list {
         margin: 0 -15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         & > li {
+            flex: 0 0 33.333333%;
             width: 33.33%;
             padding: 0 15px;
             margin-bottom: 3rem;
@@ -640,7 +644,11 @@ fieldset {
                 li {
                     margin: 0 15px;
                     margin-left: 0;
+                    line-height: 1.4em;
                     color: var(--color-primary);
+                    &:first-child {
+                        white-space: nowrap;
+                    }
                 }
                 .-bsc {
                     border-right: 2px solid #013f94;
@@ -1051,6 +1059,17 @@ fieldset {
     .oit-list .table {
         width: 767px;
     }
+    .default-bar .whead-addon .detail-info .item-list {
+        display: block;
+    }
+    .default-bar .whead-addon .detail-info .item-list li {
+        width: 100%;
+    }
+    .default-bar .whead-addon .detail-info .item-list .-bsc {
+        border-right: none;
+        margin: 10px 0;
+        border-top: 2px solid var(--color-primary);
+    }
 }
 
 @media (max-width: 414px) {
@@ -1061,15 +1080,6 @@ fieldset {
             padding-top: 15px;
             .detail-info {
                 display: block;
-                .item-list {
-                    display: block;
-                    li {
-                        padding-top: 5px;
-                    }
-                    .-bsc {
-                        display: none;
-                    }
-                }
             }
         }
     }
