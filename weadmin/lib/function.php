@@ -3,7 +3,27 @@
 global $valSiteManage;
 $core_session_language = $_SESSION[$valSiteManage . 'core_session_language'];
 ########################################################################################
-
+function login_logs_fail() {
+    global $core_pathname_logs, $masterkey, $menukeyid, $execute, $core_tb_login_log, $valSiteManage, $coreLanguageSQL;
+    $try_time=time();
+    $insert[$core_tb_login_log . "_ip"] = "'" . get_real_ip() . "'";
+    $insert[$core_tb_login_log . "_trytime"] = "" . $try_time . "";
+    $sqlLogin = "INSERT INTO " . $core_tb_login_log . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
+    $queryLog = wewebQueryDB($coreLanguageSQL, $sqlLogin);
+}
+function total_logs_fail() {
+    global $core_pathname_logs, $masterkey, $menukeyid, $execute, $core_tb_login_log,$core_login_fail_unlock,$core_login_fail_time, $valSiteManage, $coreLanguageSQL;
+    $time=time() - ($core_login_fail_unlock*60);
+    $ip =  get_real_ip();
+    $sql = "SELECT 
+        ".$core_tb_login_log."_id,
+        ".$core_tb_login_log."_ip,
+        ".$core_tb_login_log."_trytime 
+        FROM ".$core_tb_login_log." WHERE ".$core_tb_login_log."_trytime > '".$time."'  AND ".$core_tb_login_log."_ip ='".$ip."' ";
+    $Query=wewebQueryDB($coreLanguageSQL,$sql);
+    $RecordCount=wewebNumRowsDB($coreLanguageSQL,$Query);
+    return $RecordCount;
+}
 function logs_access($action, $actionType) {
 ########################################################################################
     global $core_pathname_logs, $masterkey, $menukeyid, $execute, $core_tb_log, $valSiteManage, $coreLanguageSQL;
