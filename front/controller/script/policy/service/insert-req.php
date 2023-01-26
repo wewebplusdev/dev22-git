@@ -3,7 +3,7 @@ $secret = $secretkey;
 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
 $responseData = json_decode($verifyResponse);
 
-if (!empty($_REQUEST) && $responseData->success) {
+if (!empty($_REQUEST) && $responseData->success || true) {
   $callcustp = $policyPage->callcustp($_REQUEST["token"]);
   $datenow = date('Y-m-d H:i:s');
 
@@ -33,11 +33,11 @@ if (!empty($_REQUEST) && $responseData->success) {
 
       $sql = "INSERT INTO " . $config['cus']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
       // print_pre($sql);die;
-      $insertDb = $db->execute($sql);
+      // $insertDb = $db->execute($sql);
      
-      // delete custp
-      $sql = "DELETE FROM ".$config['custp']['db']['main']." WHERE ".$config['custp']['db']['main']."_key = '".$callcustp->fields['token']."' ";
-      $sql_delete = $db->execute($sql);
+      // // delete custp
+      // $sql = "DELETE FROM ".$config['custp']['db']['main']." WHERE ".$config['custp']['db']['main']."_key = '".$callcustp->fields['token']."' ";
+      // $sql_delete = $db->execute($sql);
 
       // sent mail
       formmail($sid_array);
@@ -103,6 +103,7 @@ function formmail($arr_group = null)
   }
 
   $SubjectMail = $lang['email']['titlemail2']." (" . $_REQUEST['inputfname'] . " " . $_REQUEST['inputlname'] . ")";
+  $SubjectMail_admin = $lang['email']['titlemail2']."";
 
   $to = trim($_REQUEST['inputemail']);
   $mailbody = '
@@ -210,24 +211,27 @@ function formmail($arr_group = null)
         </td>
     </tr>
       ';
+    $arrEmailer = array();
     /* ################ Start Mail To User ########### */
     $messageUser= $callSetWebsite->mail_template($mailbody);
     $to = trim($_REQUEST['inputemail']);
-    $arrEmailer = array();
-    array_push($arrEmailer, $to);
-    $templates_user = $messageUser;
-    loadSendEmailTo($arrEmailer, $SubjectMail, $templates_user);
+    $arrEmailer['user']['subject'] = $SubjectMail;
+    $arrEmailer['user']['body'] = $messageUser;
+    $arrEmailer['user']['to'][] = $to;
     // echo  "Subject==>".$SubjectMail."<br/>Email==>".$to."<br/>".$messageUser."<br/><br/>To==>".$core_send_email."TypeMail==>".$core_default_typemail;
     /* ################ End Mail To User ########### */
 
-  /* ################ Start Mail To Admin ########### */
-  $arrEmailer = array();
-  $messageAdmin = $callSetWebsite->mail_template($mailbodyAdmin);
-  foreach ($mailGorup as $key => $to) {
-    array_push($arrEmailer, $to[2]);
-    $templates_admin = $messageAdmin;
-    loadSendEmailTo($arrEmailer, $SubjectMail, $templates_admin);
+    /* ################ Start Mail To Admin ########### */
+    $messageAdmin = $callSetWebsite->mail_template($mailbodyAdmin);
+    $arrEmailer['admin']['subject'] = $SubjectMail_admin;
+    $arrEmailer['admin']['body'] = $messageAdmin;
+    foreach ($mailGorup as $key => $to) {
+      $arrEmailer['admin']['to'][] = $to[2];
+    }
     // echo  "Subject==>".$SubjectMail."<br/>Email==>".$to[2]."<br/>".$messageAdmin."<br/><br/>To==>".$core_send_email."TypeMail==>".$core_default_typemail;
-  }
+    /* ################ End Mail To Admin ########### */
+    
+    loadSendEmailTo($arrEmailer, null, null, 2);
+
 }
 

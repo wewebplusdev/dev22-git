@@ -88,7 +88,7 @@ class infoServicePage
       $sql .= " AND " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_language= 'Thai' ";
     }
 
-    $sql .= " ORDER  BY " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_id ASC ";
+    $sql .= " ORDER  BY " . $config['cma']['db']['main'] . "." . $config['cma']['db']['main'] . "_order ASC ";
     // print_pre($sql);
     $result = $db->execute($sql);
     return $result;

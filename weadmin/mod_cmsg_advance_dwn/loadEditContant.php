@@ -84,6 +84,9 @@ $valLang[2] = $Row[24];
 $valSid = $Row[25];
 $valGtype = $Row[26];
 $valUrl2 = $Row['url2'];
+
+$callCheckUrl = callCheckUrl($valid, $mod_tb_root_short);
+
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 
 ?>
@@ -630,6 +633,36 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			<br class="boxDetail" <?php if ($valTypeC != 1) {
 										echo 'style="display:none;"';
 									} ?> />
+
+			<?php if(in_array($_REQUEST['masterkey'], $array_masterkey_shorturl) && $valTypeC == 1){ ?>
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder boxDetail">
+				<tr>
+					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+						<span class="formFontSubjectTxt"><?php echo $langMod["txt:short"] ?></span><br />
+						<span class="formFontTileTxt"><?php echo $langMod["txt:shortDe"] ?></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7" align="right" valign="top" height="15"></td>
+				</tr>
+				<tr>
+					<input type="hidden" id="inputUrlEmpty" name="inputUrlEmpty" value="<?php if (!empty($callCheckUrl->fields['short_url'])) {
+																																								echo "true";
+																																							} else {
+																																								echo "false";
+																																							} ?>">
+					<input type="hidden" id="inputUrlcheck" name="inputUrlcheck" value="Allowed">
+					<td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjecturl"] ?><span class="fontContantAlert"></span></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputShortUrl" id="inputShortUrl" type="text" class="formInputContantTbShot" onblur="checkUrl($(this))" value="<?php echo $callCheckUrl->fields['short_url']; ?>" />
+						<span onclick="executeUrl($('#inputShortUrl'))" style="color:#fff; text-align:center; cursor:pointer; background-color:#279e48; border:#1f833b solid 1px; width:150px; height:16px; padding:10px;">Generate Short URL</span>
+						<br />
+						<span class="formFontNoteTxt">URL : <span id="urlstatus"> - </span></span>
+					</td>
+				</tr>
+			</table>
+			<br class="boxDetail"/>
+			<?php } ?>
+			
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">

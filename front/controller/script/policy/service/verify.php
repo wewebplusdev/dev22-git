@@ -5,6 +5,7 @@ $responseData = json_decode($verifyResponse);
 
 if (!empty($_POST) && $responseData->success) {
     $generateKey = $policyPage->generateKey();
+
     $data = array();
     $data[$config['custp']['db']['main'] . "_masterkey"] = "'" . $config['req']['main']['masterkey'] . "'";
     $data[$config['custp']['db']['main'] . "_language"] = "'" . $url->pagelang[2] . "'";

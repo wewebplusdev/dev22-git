@@ -114,6 +114,8 @@ $row_g_type = wewebFetchArrayDB($coreLanguageSQL, $query_g_type);
 $valSid = $Row['sid'];
 $valGtype = $Row['gtype'];
 
+$callCheckUrl = callCheckUrl($valID, $mod_tb_root_short);
+
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 
 logs_access('3', 'View');
@@ -478,6 +480,24 @@ logs_access('3', 'View');
                     </td>
                 </tr>
             </table>
+            <br />
+			<?php if(in_array($_REQUEST['masterkey'], $array_masterkey_shorturl) && $valTypec == 1){ ?>
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
+                <tr>
+                    <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:short"] ?></span><br />
+                        <span class="formFontTileTxt"><?php echo $langMod["txt:shortDe"] ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjecturl"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView"><a href="http://<?php echo $siteurl.$callCheckUrl->fields['short_url']; ?>" target="_blank"><?php echo $callCheckUrl->fields['short_url']; ?></a></div>
+                    </td>
+                </tr>
+            </table>
+			<?php } ?>
+
             <br <?php if($valTypec != 1){ echo 'style="display:none;"'; } ?>/>
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>

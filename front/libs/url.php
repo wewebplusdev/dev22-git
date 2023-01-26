@@ -114,10 +114,10 @@ class url
 
     public function setpagedefault()
     {
-        global $url_show_default, $url_error_default;
+        global $url_show_default, $url_error_default, $path_root;
 
         // call check short url
-        $arrUrl = $this->loadShortURL(mb_substr($_SERVER['REDIRECT_URL'], 1));
+        $arrUrl = $this->loadShortURL(mb_substr(str_replace("/cn", "", str_replace("/en", "", str_replace('/th', "", str_replace($path_root, "", $_SERVER['REDIRECT_URL'])))), 1));
         $callMenu = $this->callMenu($arrUrl->fields['masterkey']);
         $callCms = $this->callCms($arrUrl->fields['masterkey'], $arrUrl->fields['contantid']);
 
@@ -192,7 +192,7 @@ class url
         WHERE
         " . $tbconf['short']['db'] . "." . $tbconf['short']['db'] . "_short_url = '" . $uri . "'
         ";
-
+        // print_pre($sql);die;
         $result = $db->query($sql);
         return $result;
     }

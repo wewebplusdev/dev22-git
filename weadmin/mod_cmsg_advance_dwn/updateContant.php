@@ -147,7 +147,19 @@ include("config.php");
 		$sqlSch = "UPDATE " . $core_tb_search . " SET " . implode(",", $updateSch) . " WHERE " . $core_tb_search . "_contantid='" . $_POST["valEditID"] . "'  AND " . $core_tb_search . "_masterkey='" . $_POST["masterkey"] . "' ";
 		$querySch = wewebQueryDB($coreLanguageSQL, $sqlSch);
 
-		//include("../lib/incRss.php");
+		## Short URL Table ###################################
+		$sqlSch="DELETE FROM ".$mod_tb_root_short." WHERE   ".$mod_tb_root_short."_contantid='".$_POST["valEditID"]."'  AND ".$mod_tb_root_short."_masterkey='".$_POST["masterkey"]."'  ";
+		$querySch=wewebQueryDB($coreLanguageSQL,$sqlSch);
+		if (!empty($_REQUEST['inputShortUrl'])) {
+			$insert = array();
+			$insert[$mod_tb_root_short . "_contantid"] = "'" . $_POST["valEditID"] . "'";
+			$insert[$mod_tb_root_short . "_masterkey"] = "'" . $_REQUEST['masterkey'] . "'";
+			$insert[$mod_tb_root_short . "_long_url"] = "'" . $valUrlSearchTH . "'";
+			$insert[$mod_tb_root_short . "_short_url"] = "'" . $_REQUEST['inputShortUrl'] . "'";
+	
+			$sql = "INSERT INTO " . $mod_tb_root_short . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
+			$Query = wewebQueryDB($coreLanguageSQL,$sql);
+		}
 	?>
 	<?php } ?>
 	<?php include("../lib/disconnect.php"); ?>

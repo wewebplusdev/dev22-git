@@ -188,7 +188,17 @@ if ($_REQUEST['execute'] == "insert") {
     $sqlSch = "INSERT " . $core_tb_search . " (" . implode(",", array_keys($insertSch)) . ") VALUES (" . implode(",", array_values($insertSch)) . ")";
     $querySch = wewebQueryDB($coreLanguageSQL,$sqlSch);
 
-    // print_pre($sqlSch);
+    if (!empty($_REQUEST['inputShortUrl'])) {
+        ## Short URL Table
+        $insert = array();
+        $insert[$mod_tb_root_short . "_contantid"] = "'" . $contantID . "'";
+        $insert[$mod_tb_root_short . "_masterkey"] = "'" . $_REQUEST['masterkey'] . "'";
+        $insert[$mod_tb_root_short . "_long_url"] = "'" . $valUrlSearchTH . "'";
+        $insert[$mod_tb_root_short . "_short_url"] = "'" . $_REQUEST['inputShortUrl'] . "'";
+    
+        $sql = "INSERT INTO " . $mod_tb_root_short . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
+        $Query = wewebQueryDB($coreLanguageSQL,$sql);
+    }
 }
 ?>
 <?php include("../lib/disconnect.php"); ?>

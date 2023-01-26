@@ -269,7 +269,7 @@ if(in_array($_REQUEST['masterkey'], $arrFix)){
             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                 <tr>
                     <td align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:album"] ?></span><br />
+                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:album"] ?></span>
                         <span class="formFontTileTxt"><?php echo $langMod["txt:albumDe"] ?></span>
                     </td>
                     <td style="padding-right:20px;" align="right" class="tbBoxViewBorderBottom">

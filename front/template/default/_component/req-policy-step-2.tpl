@@ -111,7 +111,7 @@
                   <div class="form-group">
                     <div class="block-control">
                       <div class="form-check">
-                        <input class="form-check-input required-chb" type="checkbox" value="{$valuecallCusGroup.id}" name="inputtype[]" id="inputtype{$valuecallCusGroup.id}">
+                        <input class="form-check-input required-chb" type="checkbox" value="{$valuecallCusGroup.id}" name="inputtype[]" id="inputtype{$valuecallCusGroup.id}" required="">
                         <label class="control-label" for="inputtype{$valuecallCusGroup.id}">
                           <div class="title">
                             {$valuecallCusGroup.subject}

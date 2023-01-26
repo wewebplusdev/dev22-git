@@ -122,7 +122,10 @@ $langMod["tit:typesub"] = "กลุ่มย่อย";
 $langMod["txt:subjectsg"] = "". $langMod["meu:subgroup"]." Info";
 $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. " to be used for display on your site.";
 $langMod["tit:linkurl"] = "Link";
-
+$langMod["txt:short"] = "Short URL information";
+$langMod["txt:shortDe"] = "Please fill in the section used to define the details of the news display. For use in displaying the website pages";
+$langMod["tit:subjecturl"] = "Short URL";
+$langMod["tit:urlnote"] = "Note : This short URL already exists.";
 
 }else{
 
@@ -243,5 +246,10 @@ $langMod["tit:typesub"] = "กลุ่มย่อย";
 $langMod["txt:subjectsg"] = "". $langMod["meu:subgroup"]." Info";
 $langMod["txt:subjectsgDe"] = "Please enter a name ". $langMod["meu:subgroup"]. " to be used for display on your site.";
 $langMod["tit:linkurl"] = "ลิงค์";
+
+$langMod["txt:short"] = "ข้อมูล Short URL";
+$langMod["txt:shortDe"] = "ข้อมูลนี้คือส่วนที่ใช้ในการกำหนด".$langMod["txt:short"]."ในการแสดงผลส่วนนี้ เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
+$langMod["tit:subjecturl"] = "Short URL";
+$langMod["tit:urlnote"] = "หมายเหตุ : This short URL already exists.";
 }
 ?>

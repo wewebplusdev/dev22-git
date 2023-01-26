@@ -4,6 +4,7 @@ $array_home = array('ab_nm');
 $mod_tb_root = "md_cms";
 $mod_tb_root_group = "md_cmg";
 $mod_tb_root_subgroup = "md_cmsg";
+$mod_tb_root_short = "md_short_urls";
 
 $mod_tb_file = "md_cmf";
 $mod_tb_fileTemp = "md_cmtp";
@@ -14,6 +15,7 @@ $mod_tb_setting = "md_cuss";
 
 $array_masterkey = array('ab_hrm','ab_odc','ab_odw','ab_pap','ab_pcm');
 $array_masterkey_fix_module = array('rs_ri');
+$array_masterkey_shorturl = array('ab_nm');
 ## Mod Folder ###################################
 $mod_fd_root = "mod_cmsg_advance_dwn";
 

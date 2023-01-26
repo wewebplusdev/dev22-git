@@ -259,10 +259,21 @@ if(timer === 'timeout'){
 
 // check input checkbox
 $('.required-chb').on('change', function(){
-  var status= jQuery('input:checkbox[class=required-chb]').is(':checked');
-  if (status) {
-    $('.required-chb').prop('required',false);
-  }else{
+  var status;
+  var isempty = 0;
+  var lelment = 0;
+  $('.required-chb').each(function(index) {
+    status = $(this).is(':checked');
+    if (status) {
+      $(this).prop('required',true);
+    }else{
+      $(this).prop('required',false);
+      isempty++;
+    }
+    lelment++;
+  });
+
+  if (lelment == isempty) {
     $('.required-chb').prop('required',true);
   }
   $("#requestForm_step2").validator('validate');  
