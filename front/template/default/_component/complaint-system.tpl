@@ -129,17 +129,6 @@
                                     </div>
                                 </div>
                             </div> *}
-                    <div class="row mt-sm-5 mt-4">
-                        <div class="col text-right">
-                        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
-                            <input type="submit" class="btn btn-primary" id="submitForm" title="btn btn-primary"
-                                value="{$lang['system']['submit']}"></input>
-                        </div>
-                        <div class="col text-left">
-                            <button class="btn btn-primary -cancel" id="cancelForm"
-                                title="{$lang['system']['cancel']}">{$lang['system']['cancel']}</button>
-                        </div>
-                    </div>
                     <div class="form-group -file-upload">
                         <label class="control-label">โปรดแนบสำเนาบัตรประชาชนหรือหนังสือเดินทาง</label>
                         <div class="block-control">
@@ -173,6 +162,17 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row mt-sm-5 mt-4">
+                        <div class="col text-right">
+                        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                            <input type="submit" class="btn btn-primary" id="submitForm" title="btn btn-primary"
+                                value="{$lang['system']['submit']}"></input>
+                        </div>
+                        <div class="col text-left">
+                            <button class="btn btn-primary -cancel" id="cancelForm"
+                                title="{$lang['system']['cancel']}">{$lang['system']['cancel']}</button>
                         </div>
                     </div>
                 </form>

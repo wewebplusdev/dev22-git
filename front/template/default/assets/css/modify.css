@@ -295,7 +295,7 @@
 /* upload-control block | edited by ohm2 */
 
 .form-group.-file-upload {
-    margin-top: 4rem !important;
+    margin-top: 2rem !important;
 }
 
 .-file-upload .control-label {
@@ -424,7 +424,8 @@
         width: 80%;
     }
     .form-group.-file-upload {
-        margin-top: 3rem !important;
+        margin-top: 1rem !important;
+        margin-bottom: 2rem !important;
     }
 }
 
