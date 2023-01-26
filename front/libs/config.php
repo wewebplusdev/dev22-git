@@ -151,6 +151,7 @@ $sizeHeightAlbumOff = "50";
 
 ## file ##
 $validextensions = array("jpeg", "jpg", "png");
+$validextensions_req = array("jpeg", "jpg", "png", "xlsx", "docx");
 $validsizefile = 1024; // kb
 ## date month ##
 $strMonthCut['shot']['th'] = array("", "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.");

@@ -9,10 +9,10 @@ use League\OAuth2\Client\Provider\Google;
 
 $core_smtp_host = "smtp.office365.com";
 $core_smtp_port = "587";
-$core_smtp_username = "wewebplus.dev@hotmail.com"; // Email ที่ใช้ส่ง
-$core_smtp_password = "mailer1234";
-// $core_smtp_username = "webmaster@git.or.th"; // Email ที่ใช้ส่ง
-// $core_smtp_password = "GIT@2015";
+// $core_smtp_username = "wewebplus.dev@hotmail.com"; // Email ที่ใช้ส่ง
+// $core_smtp_password = "mailer1234";
+$core_smtp_username = "webmaster@git.or.th"; // Email ที่ใช้ส่ง
+$core_smtp_password = "GIT@2015";
 $core_smtp_title = "สถาบันวิจัยและพัฒนาอัญมณีและเครื่องประดับแห่งชาติ (องค์การมหาชน)";
 
 $mail = new PHPMailer();

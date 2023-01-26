@@ -130,7 +130,7 @@
                                 </div>
                             </div> *}
                     <div class="form-group -file-upload">
-                        <label class="control-label">โปรดแนบสำเนาบัตรประชาชนหรือหนังสือเดินทาง</label>
+                        <label class="control-label">{$lang['system']['attachment']}</label>
                         <div class="block-control">
                             <div class="upload-control">
                                 <div class="row gutters-20 align-items-center">
@@ -144,21 +144,20 @@
                                                 </div>
                                                 <div class="col">
                                                     <div class="inner -in-text">
-                                                        <h4 class="title"><span class="filename">ไฟล์แนบ</span><span class="typefile"></span></h4>
-                                                        <p class="desc">Jpeg. Png. PDF</p>
+                                                        <h4 class="title"><span class="filename">{$lang['form']['file']}</span><span class="typefile"></span></h4>
+                                                        <p class="desc">.Docx .PDF .Xlsx Jpeg. Png. .Jpg</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <input type="file" name="uploadFile" id="uploadFile" style="display:none;" required="">
+                                        <input type="file" name="uploadFile" id="uploadFile" style="display:none;">
                                         <input name="fileTemp" value="uploadFile" type="hidden">
                                         <input name="Uploadpicname" value="" type="hidden">
                                         <input name="delpicname" value="" type="hidden">
-                                        <input name="masterkey" value="cu" type="hidden">
                                         <input name="langon" value="th" type="hidden">
-                                        <button type="button" id="clickuploadFile" class="btn">อัพโหลด</button>
+                                        <button type="button" id="clickuploadFile" class="btn">{$lang['form']['upload']}</button>
                                     </div>
                                 </div>
                             </div>

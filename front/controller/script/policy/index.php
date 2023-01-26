@@ -28,8 +28,13 @@ $smarty->assign("req_params", $req_params);
 
 
 switch ($url->segment[1]) {
+    case 'upload-file':
+        require_once _DIR . '/front/controller/script/'.$menuActive.'/service/upload-file-complaint-system.php';
+        break;
+
     case 'complaint-system':
         $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render=' . $sitekey . '"></script>';
+        $listjs[] = '<script type="text/javascript" src="' . _URL . 'front/controller/script/' . $menuActive . '/js/script-upload-file.js' . $lastModify . '"></script>';
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/complaint-system.php';
         break;
 

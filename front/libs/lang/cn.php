@@ -556,6 +556,7 @@ $lang['email']['veri:title'] = "我們很高興地通知您，我們已收到您
 $lang['email']['step2:dear'] = "請相應告知.";
 $lang['email']['step2:fromadmin'] = "數據保護官";
 $lang['email']['prefix'] = "";
+$lang['email']['veri:title2'] = "我們很高興地通知您，您的信息已被研究所收到.";
 
 // FORM
 $lang['form']['title-befor'] = "資料當事人申請表";

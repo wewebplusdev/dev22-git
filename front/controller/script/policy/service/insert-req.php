@@ -3,7 +3,7 @@ $secret = $secretkey;
 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
 $responseData = json_decode($verifyResponse);
 
-if (!empty($_REQUEST) && $responseData->success || true) {
+if (!empty($_REQUEST) && $responseData->success) {
   $callcustp = $policyPage->callcustp($_REQUEST["token"]);
   $datenow = date('Y-m-d H:i:s');
 
@@ -33,11 +33,11 @@ if (!empty($_REQUEST) && $responseData->success || true) {
 
       $sql = "INSERT INTO " . $config['cus']['db']['main'] . "(" . implode(',', array_keys($data)) . ") VALUES(" . implode(',', array_values($data)) . ")";
       // print_pre($sql);die;
-      // $insertDb = $db->execute($sql);
+      $insertDb = $db->execute($sql);
      
-      // // delete custp
-      // $sql = "DELETE FROM ".$config['custp']['db']['main']." WHERE ".$config['custp']['db']['main']."_key = '".$callcustp->fields['token']."' ";
-      // $sql_delete = $db->execute($sql);
+      // delete custp
+      $sql = "DELETE FROM ".$config['custp']['db']['main']." WHERE ".$config['custp']['db']['main']."_key = '".$callcustp->fields['token']."' ";
+      $sql_delete = $db->execute($sql);
 
       // sent mail
       formmail($sid_array);
@@ -223,9 +223,9 @@ function formmail($arr_group = null)
 
     /* ################ Start Mail To Admin ########### */
     $messageAdmin = $callSetWebsite->mail_template($mailbodyAdmin);
-    $arrEmailer['admin']['subject'] = $SubjectMail_admin;
-    $arrEmailer['admin']['body'] = $messageAdmin;
     foreach ($mailGorup as $key => $to) {
+      $arrEmailer['admin']['subject'] = $SubjectMail_admin;
+      $arrEmailer['admin']['body'] = $messageAdmin;
       $arrEmailer['admin']['to'][] = $to[2];
     }
     // echo  "Subject==>".$SubjectMail."<br/>Email==>".$to[2]."<br/>".$messageAdmin."<br/><br/>To==>".$core_send_email."TypeMail==>".$core_default_typemail;

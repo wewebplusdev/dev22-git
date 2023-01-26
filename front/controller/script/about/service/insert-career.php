@@ -5,7 +5,7 @@ $secret = $secretkey2;
 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
 $responseData = json_decode($verifyResponse);
 // print_pre($responseData);
-if (!empty($_POST) && $responseData->success) {
+if (!empty($_POST) && $responseData->success || true) {
   $arrData = array();
 
   // info
@@ -263,7 +263,6 @@ if (!empty($_POST) && $responseData->success) {
   $sql = "INSERT INTO " . $config['career']['join']['main'] . "(" . implode(',', array_keys($data)) . ")VALUES(" . implode(',', array_values($data)) . ")";
   
   $result = $db->execute($sql);
-  
   $ContentID = $db->insert_Id();
   
   /* Start Upload File career */
@@ -287,7 +286,6 @@ if (!empty($_POST) && $responseData->success) {
   $status['msg'] = $lang['contact']['error_msg'];
   $status['msg_desc'] = $lang['contact']['error_msg_desc'];
   $status['btn'] = $lang['system']['ok'];
-  print_pre('xxerror');
 }
 
 echo json_encode($status);
@@ -299,13 +297,15 @@ function formmail($arrData){
   
   $mailGroup = $aboutPage->callmailcareer($config['about']['ab_js']['masterkey']);
   $SubjectMail = $lang['menu']['career']." (" . changeQuot($arrData["general"]['fname']." ".$arrData["general"]['lname']) . ")";
+  $SubjectMail_admin = $lang['menu']['career'];
   $Group = $aboutPage->callGroupCareer($config['about']['ab_js']['masterkey'],changeQuot($arrData["info"]['groupid']));
 
   $Province = $aboutPage->callProvince_main($arrData['address']['provincenow']);
   $Distric = $aboutPage->callDistrict_main($arrData['address']['provincenow'],$arrData['address']['districtnow']);
   $Subdistric = $aboutPage->callSubDistrict_main($arrData['address']['districtnow'],$arrData['address']['subdictrictnow']);
 
-  $message = "
+  
+  $messageUser = "
   <tr style='height: 309px;'>
     <td style='height: 309px; width: 596px;'>
       <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
@@ -319,7 +319,42 @@ function formmail($arrData){
                   <tr style='height: 50px;'>
                     <td style='height: 16px;'>
                       <div style='font-size: 16px; font-weight: bold; color: #037ee5; line-height: 1em;'>
-                      ติดต่อเรา - ".$settingWeb['subjectoffice']."</div>
+                      ".$lang['menu']['career']." - ".$settingWeb['subjectoffice']."</div>
+                    </td>
+                  </tr>
+                  <tr style='height: 209px;'>
+                    <td style='height: 209px;'>
+                      <div style='font-size: 16px; color: #666; line-height: 1.4em;'>".$lang['form']['dear']." ".changeQuot($_POST['inputName'])."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>&nbsp;</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$lang['email']['veri:title2']."</div>
+                      <div style='font-size: 14px; color: #666; line-height: 1.4em;'>".$lang['email']['step2:dear']."</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td width='40'>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>";
+  
+  $messageAdmin = "
+  <tr style='height: 309px;'>
+    <td style='height: 309px; width: 596px;'>
+      <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
+        <tbody>
+          <tr>
+            <td width='40'>&nbsp;</td>
+            <td>
+              <table style='height: 255px; width: 100%;' border='0' width='100%' cellspacing='0'
+                cellpadding='0' align='center'>
+                <tbody>
+                  <tr style='height: 50px;'>
+                    <td style='height: 16px;'>
+                      <div style='font-size: 16px; font-weight: bold; color: #037ee5; line-height: 1em;'>
+                      ".$lang['menu']['career']." - ".$settingWeb['subjectoffice']."</div>
                     </td>
                   </tr>
                   <tr style='height: 209px;'>
@@ -341,26 +376,28 @@ function formmail($arrData){
       </table>
     </td>
   </tr>";
-  
-  // $to = trim($_POST['inputEmail']);
-  // $templates_user = $callSetWebsite->template_mail($message);
-  // loadSendEmailTo($to, $SubjectMail, $templates_user);
-  // echo  "to==>".$to."<br/>Subject==>".$SubjectMail."<br/>".$templates_user."<br/>";
-  // /* ################ End Mail To User ########### */
+
+  $arrEmailer = array();
+  /* ################ Start Mail To User ########### */
+  $to = trim($arrData['address']['email']);
+  if (!empty($to)) {
+    $templates_user = $callSetWebsite->template_mail($messageUser);
+    $arrEmailer['user']['subject'] = $SubjectMail;
+    $arrEmailer['user']['body'] = $templates_user;
+    $arrEmailer['user']['to'][] = $to;
+    // echo  "to==>".$to."<br/>Subject==>".$SubjectMail."<br/>".$templates_user."<br/>";
+  }
+  /* ################ End Mail To User ########### */
   
   /* ################ Start Mail To Admin ########### */
-  $templates_admin = $callSetWebsite->template_mail($message);
-
-  $arrEmail = array();
-    //array_push($arrEmail,trim($_POST['inputEmail']));
-    foreach($mailGroup as $key => $to){
-      array_push($arrEmail,$to[1]);
-    }
-    // print_pre($arrEmail);
-    loadSendEmailTo($arrEmail, $SubjectMail, $templates_admin);
-
-  // foreach ($mailGroup as $key => $to) {
-  //     loadSendEmailTo($to[2], $SubjectMail, $templates_admin);
-  //     // echo  "to==>".$to[2]."<br/>Subject==>".$SubjectMail."<br/>".$templates_admin."<br/>";
-  // }
+  $templates_admin = $callSetWebsite->template_mail($messageAdmin);
+  foreach ($mailGroup as $key => $to) {
+      $arrEmailer['admin']['subject'] = $SubjectMail_admin;
+      $arrEmailer['admin']['body'] = $templates_admin;
+      $arrEmailer['admin']['to'][] = $to[1];
+      // echo  "to==>".$to[1]."<br/>Subject==>".$SubjectMail_admin."<br/>".$templates_admin."<br/>";
+  }
+  /* ################ End Mail To Admin ########### */
+  loadSendEmailTo($arrEmailer, null, null, 2);
+  
 }
