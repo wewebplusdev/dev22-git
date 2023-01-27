@@ -65,7 +65,9 @@ function onChangeSelect2(fileAc, elemID) {
 
 $('select[name="inputGroupID"]').on('change', function(){
     let type = $('option:selected', $(this)).data('type');
-    if (type == 2) {
+    let masterkey = $('#masterkey').val();
+    
+    if (type == 2 || masterkey == 'ab_nm') {
         $('.boxPic').show();
     }else{
         $('.boxPic').hide();
