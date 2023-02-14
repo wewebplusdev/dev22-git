@@ -173,7 +173,6 @@
                                     <div id="about-"
                                         class="collapse show"
                                         aria-labelledby="headingCollapse" data-parent="#accordionInner">
-                                           
                                             {foreach $callCMS as $keyarrListData => $valuearrListData}
                                                 {$Call_File = $callSetWebsite::Call_File($valuearrListData['id'])}
                                                 {$fileinfo = $Call_File->fields['filename']|fileinclude:'file':{$valuearrListData.masterkey}|get_Icon}
@@ -283,18 +282,14 @@
                                                                 <div class="download-block-btn -add">
                                                                     {if $valuearrListData.typec eq 1}
                                                                         <div class="col-auto">
-                                                                            <a href="{$ul}/{$menuActive}/{$valuearrListData.menuid}/{$valuearrListData.gid}/{$menuDetail}/{$valuearrListData.id}"
+                                                                    <a href="{if $menuActive == 'research' && $Call_File->_numOfRows gte 1}{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valuearrListData.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}{else}{$ul}/{$menuActive}/{$valuearrListData.menuid}/{$valuearrListData.gid}/{$menuDetail}/{$valuearrListData.id}{/if}"
                                                                                 class="btn"
-                                                                                title="{if $menuActive == 'research'}{$lang['system']['readabstract']}{else}{$lang['system']['viewmore']}{/if}">{if $menuActive == 'research'}{$lang['system']['readabstract']}{else}{$lang['system']['viewmore']}{/if}</a>
+                                                                                title="{if $menuActive == 'research'}{$lang['system']['readabstract']}{else}{$lang['system']['viewmore']}{/if}"
+                                                                                {if $menuActive == 'research' && $Call_File->_numOfRows < 1}style="display:none;"{/if}>{if $menuActive == 'research'}{$lang['system']['readabstract']}{else}{$lang['system']['viewmore']}{/if}</a>
                                                                         </div>
                                                                     {/if}
-                                                                    {if $Call_File->_numOfRows gte 1}
-                                                                        <div class="col-auto">
-                                                                            <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valuearrListData.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
-                                                                                class="btn"
-                                                                                title="{$lang['system']['downloaddoc']}">{$lang['system']['downloaddoc']}</a>
-                                                                        </div>
-                                                                    {/if}
+
+                                                                {if $menuActive == 'research'}
                                                                     {if $valuearrListData.url2 neq "#" && $valuearrListData.url2 neq "" && $valuearrListData.masterkey eq $masterkey_rs_ri}
                                                                         <div class="col-auto">
                                                                             <a {if $valuearrListData.url2 neq "#" && $valuearrListData.url2 neq ""}href="{$valuearrListData.url2}"
@@ -304,6 +299,16 @@
                                                                                 title="{$lang['system']['completereport']}">{$lang['system']['completereport']}</a>
                                                                         </div>
                                                                     {/if}
+                                                                {else}
+                                                                    {if $Call_File->_numOfRows gte 1}
+                                                                        <div class="col-auto">
+                                                                            <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valuearrListData.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
+                                                                                class="btn"
+                                                                                title="{$lang['system']['downloaddoc']}">{$lang['system']['downloaddoc']}</a>
+                                                                        </div>
+                                                                    {/if}
+                                                                {/if}
+                                                                    
                                                                 </div>
                                                             </div>
                                                         </div>

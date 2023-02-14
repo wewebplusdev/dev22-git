@@ -205,23 +205,29 @@
                 <div class="download-block-btn -add">
                   {if $valuecallCMS.typec eq 1}
                     <div class="col-auto">
-                      <a href="{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}"
-                  class="btn" title="{$lang['system']['viewmore']}">{if $menuActive == 'research'}{$lang['system']['readabstract']}{else}{$lang['system']['viewmore']}{/if}</a>
+                  <a href="{if $menuActive == 'research' && $Call_File->_numOfRows gte 1}{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valuecallCMS.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}{else}{$ul}/{$menuActive}/{$valuecallCMS.menuid}/{$valuecallCMS.gid}/{$menuDetail}/{$valuecallCMS.id}{/if}"
+                  class="btn" title="{$lang['system']['viewmore']}" {if $menuActive == 'research' && $Call_File->_numOfRows < 1}style="display:none;"{/if}>{if $menuActive == 'research'}{$lang['system']['readabstract']}{else}{$lang['system']['viewmore']}{/if}</a>
                     </div>
                   {/if}
-                  {if $Call_File->_numOfRows gte 1}
-                    <div class="col-auto">
-                      <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valuecallCMS.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
-                        class="btn" title="{$lang['system']['download']}">{$lang['system']['downloaddoc']}</a>
-                    </div>
+
+                  {if $menuActive == 'research'}
+                    {if $valueList.url2 neq "#" && $valueList.url2 neq "" && $valueList.masterkey eq $masterkey_rs_ri}
+                      <div class="col-auto">
+                          <a {if $valueList.url2 neq "#" && $valueList.url2 neq ""}href="{$valueList.url2}" {if $valueList.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if}
+                              class="btn"
+                              title="{$lang['system']['download']}">{$lang['system']['completereport']}</a>
+                      </div>
+                    {/if}
+                  {else}
+                    {if $Call_File->_numOfRows gte 1}
+                      <div class="col-auto">
+                        <a href="{$ul}/download/{$Call_File->fields['filename']|fileinclude:'file':{$valuecallCMS.masterkey}:'download'}&n={$Call_File->fields['name']}&t={'md_cmf'|encodeStr}"
+                          class="btn" title="{$lang['system']['download']}">{$lang['system']['downloaddoc']}</a>
+                      </div>
+                    {/if}
                   {/if}
-                  {if $valueList.url2 neq "#" && $valueList.url2 neq "" && $valueList.masterkey eq $masterkey_rs_ri}
-                    <div class="col-auto">
-                        <a {if $valueList.url2 neq "#" && $valueList.url2 neq ""}href="{$valueList.url2}" {if $valueList.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if}
-                            class="btn"
-                            title="{$lang['system']['download']}">{$lang['system']['completereport']}</a>
-                    </div>
-                  {/if}
+                  
+                  
                 </div>
               </div>
             </div>

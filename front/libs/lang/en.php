@@ -406,7 +406,7 @@ $lang["search"]["sdate"] = "Start Date";
 $lang["search"]["edate"] = "End Date";
 $lang["search"]["advance:search"] = "Advanced Search";
 
-$lang['system']['readabstract'] = "Read Abstract";
+$lang['system']['readabstract'] = "Abstract";
 $lang['system']['downloaddoc'] = "Download Document";
 $lang['system']['completereport'] = "Complete Report";
 $lang['system']['copyright'] = "Copyright © 2022 The Gem and Jewelry Institute of Thailand (Public Organization). All rights reserved. ";
