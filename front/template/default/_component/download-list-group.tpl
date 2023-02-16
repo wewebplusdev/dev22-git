@@ -211,11 +211,11 @@
                   {/if}
 
                   {if $menuActive == 'research'}
-                    {if $valueList.url2 neq "#" && $valueList.url2 neq "" && $valueList.masterkey eq $masterkey_rs_ri}
+                    {if $valuecallCMS.url2 neq "#" && $valuecallCMS.url2 neq "" && $valuecallCMS.masterkey eq $masterkey_rs_ri}
                       <div class="col-auto">
-                          <a {if $valueList.url2 neq "#" && $valueList.url2 neq ""}href="{$valueList.url2}" {if $valueList.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if}
+                          <a {if $valuecallCMS.url2 neq "#" && $valuecallCMS.url2 neq ""}href="{$valuecallCMS.url2}" {if $valuecallCMS.target eq 2}target="_blank"{/if} {else}href="javascript:void(0);"{/if}
                               class="btn"
-                              title="{$lang['system']['download']}">{$lang['system']['completereport']}</a>
+                              title="{$lang['system']['completereport']}">{$lang['system']['completereport']}</a>
                       </div>
                     {/if}
                   {else}
