@@ -49,8 +49,9 @@
     </div>
     {/if}
 
-    {if $callCMS->_numOfRows gte 1}
+    
       <div class="container mt-md-5 mt-4">
+      {if $callCMS->_numOfRows gte 1}
         <div class="row py-3">
           <div class="col">
             <div class="h-title">{$TitleName}</div>
@@ -95,6 +96,7 @@
             <!-- end detail link block -->
           </div>
         </div>
+      {/if}
         <div class="border-nav-slider pt-5"></div>
         <!-- <div class="container"> -->
         <div class="editor-content">
@@ -106,6 +108,6 @@
         </div>
         <!-- </div> -->
       </div>
-    {/if}
+    
   </div>
 </section>
