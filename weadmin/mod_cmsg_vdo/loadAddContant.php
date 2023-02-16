@@ -207,7 +207,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:selectgn"] ?><span class="fontContantAlert">*</span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-                        <select name="inputGroupID" id="inputGroupID" class="formSelectContantTb">
+                        <select name="inputGroupID" id="inputGroupID" class="formSelectContantTb" onchange="onChangeSelect('openSelectSub.php','#subgroup');">
                             <option value="0"><?php echo $langMod["tit:selectg"] ?></option>
                             <?php
                             $sql_group = "SELECT ";
