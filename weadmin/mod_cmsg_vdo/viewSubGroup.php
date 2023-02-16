@@ -15,23 +15,25 @@ $valLinkNav1 = "../core/index.php";
 
 
 $sql = "SELECT   ";
-$sql .= "   " . $mod_tb_root_group . "_id,
-            " . $mod_tb_root_group . "_credate ,
-            " . $mod_tb_root_group . "_crebyid,
-            " . $mod_tb_root_group . "_status	,
-            " . $mod_tb_root_group . "_lastdate ,
-            " . $mod_tb_root_group . "_lastbyid   ";
+$sql .= "   " . $mod_tb_root_subgroup . "_id,
+            " . $mod_tb_root_subgroup . "_credate ,
+            " . $mod_tb_root_subgroup . "_crebyid,
+            " . $mod_tb_root_subgroup . "_status	,
+            " . $mod_tb_root_subgroup . "_lastdate ,
+            " . $mod_tb_root_subgroup . "_lastbyid   ";
 
 if ($_REQUEST['inputLt'] == "Thai") {
-  $sql .= "   , " . $mod_tb_root_group . "_subject  ,    " . $mod_tb_root_group . "_title,    " . $mod_tb_root_group . "_htmlfilename   ";
+  $sql .= "   , " . $mod_tb_root_subgroup . "_subject  ,    " . $mod_tb_root_subgroup . "_title   ";
 } else if ($_REQUEST['inputLt'] == "Eng") {
-  $sql .= "  ," . $mod_tb_root_group . "_subjecten  ,    " . $mod_tb_root_group . "_titleen,    " . $mod_tb_root_group . "_htmlfilenameen 	  ";
+  $sql .= "  ," . $mod_tb_root_subgroup . "_subjecten  ,    " . $mod_tb_root_subgroup . "_titleen 	  ";
 } else {
-  $sql .= "  ," . $mod_tb_root_group . "_subjectcn  ,    " . $mod_tb_root_group . "_titlecn ,    " . $mod_tb_root_group . "_htmlfilenamecn	  ";
+  $sql .= "  ," . $mod_tb_root_subgroup . "_subjectcn  ,    " . $mod_tb_root_subgroup . "_titlecn 	  ";
 }
 
-$sql .= " ," . $mod_tb_root_group . "_pic ," . $mod_tb_root_group . "_type, " . $mod_tb_root_group . "_url, " . $mod_tb_root_group . "_target ";
-$sql .= " FROM " . $mod_tb_root_group . " WHERE " . $mod_tb_root_group . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root_group . "_id='" . $_REQUEST['valEditID'] . "' ";
+//  $sql .= " ,".$mod_tb_root_subgroup."_pic ";
+$sql .= " ," . $mod_tb_root_subgroup . "_pic ," . $mod_tb_root_subgroup . "_type, " . $mod_tb_root_subgroup . "_url, " . $mod_tb_root_subgroup . "_target ";
+$sql .= " ," . $mod_tb_root_subgroup . "_gid ";
+$sql .= " FROM " . $mod_tb_root_subgroup . " WHERE " . $mod_tb_root_subgroup . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root_subgroup . "_id='" . $_REQUEST['valEditID'] . "' ";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
 $valID = $Row[0];
@@ -50,16 +52,21 @@ $valLastdate = DateFormat($Row[4]);
 $valLastby = $Row[5];
 $valSubject = rechangeQuot($Row[6]);
 $valTitle = rechangeQuot($Row[7]);
-$valHtml = $mod_path_html . "/" . $Row[8];
-$valPicName = $Row[9];
-$valPic = $mod_path_pictures . "/" . $Row[10];
-$valType = $Row[11];
-$valUrl = rechangeQuot($Row[11]);
-$valTarget = $Row[12];
+$valPicName = $Row[8];
+$valPic = $mod_path_pictures . "/" . $Row[8];
+$valType = $Row[9];
+$valUrl = rechangeQuot($Row[10]);
+$valTarget = $Row[11];
+$valGid = $Row[12];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 
 logs_access('3', 'View Group');
 
+// setiing page
+$display = "style='display:none;'";
+if ($_REQUEST['masterkey'] == 'news') {
+  $display = "";
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -90,7 +97,7 @@ logs_access('3', 'View Group');
       <div class="divRightNav">
         <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
           <tr>
-            <td class="divRightNavTb" align="left" id="defTop"><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1 ?>" target="_self"><?php echo $valNav1 ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <a href="javascript:void(0)" onclick="btnBackPage('group.php')" target="_self"><?php echo $langMod["meu:group"] ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <?php echo $langMod["txt:titleviewg"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo getSystemLangTxt($_REQUEST['inputLt'], $langTxt["lg:thai"], $langTxt["lg:eng"], $langTxt["lg:chi"]) ?>)<?php } ?></span></td>
+            <td class="divRightNavTb" align="left" id="defTop"><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1 ?>" target="_self"><?php echo $valNav1 ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <a href="javascript:void(0)" onclick="btnBackPage('subgroup.php')" target="_self"><?php echo $langMod["meu:subgroup"] ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <?php echo $langMod["txt:titleviewsg"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo getSystemLangTxt($_REQUEST['inputLt'], $langTxt["lg:thai"], $langTxt["lg:eng"]) ?>)<?php } ?></span></td>
             <td class="divRightNavTb" align="right">
 
 
@@ -103,7 +110,7 @@ logs_access('3', 'View Group');
     <div class="divRightHead">
       <table width="96%" border="0" cellspacing="0" cellpadding="0" class="borderBottom" align="center">
         <tr>
-          <td height="77" align="left"><span class="fontHeadRight"><?php echo $langMod["txt:titleviewg"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo getSystemLangTxt($_REQUEST['inputLt'], $langTxt["lg:thai"], $langTxt["lg:eng"], $langTxt["lg:chi"]) ?>)<?php } ?></span></td>
+          <td height="77" align="left"><span class="fontHeadRight"><?php echo $langMod["txt:titleviewsg"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo getSystemLangTxt($_REQUEST['inputLt'], $langTxt["lg:thai"], $langTxt["lg:eng"]) ?>)<?php } ?></span></td>
           <td align="left">
             <table border="0" cellspacing="0" cellpadding="0" align="right">
               <tr>
@@ -112,9 +119,9 @@ logs_access('3', 'View Group');
                     <?php if ($valPermission == "RW") { ?>
                       <div class="btnEditView" title="<?php echo $langTxt["btn:edit"] ?>" onclick="
                                                         document.myFormHome.valEditID.value=<?php echo $valID ?>;
-                                                        editContactNew('../<?php echo $mod_fd_root ?>/editGroup.php')"></div>
+                                                        editContactNew('../<?php echo $mod_fd_root ?>/editSubGroup.php')"></div>
                     <?php } ?>
-                    <div class="btnBack" title="<?php echo $langTxt["btn:back"] ?>" onclick="btnBackPage('group.php')"></div>
+                    <div class="btnBack" title="<?php echo $langTxt["btn:back"] ?>" onclick="btnBackPage('subgroup.php')"></div>
                   <?php } ?>
                 </td>
               </tr>
@@ -132,9 +139,27 @@ logs_access('3', 'View Group');
             <span class="formFontTileTxt"><?php echo $langMod["txt:subjectgDe"] ?></span>
           </td>
         </tr>
-
         <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjectg"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjectg"] ?>:<span class="fontContantAlert"></span></td>
+            <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                <?php
+                $sql_group = "SELECT ";
+                if ($_REQUEST['inputLt'] == "Thai") {
+                    $sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject";
+                } else {
+                    $sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjecten ";
+                }
+
+                $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "' 
+                AND  " . $mod_tb_root_group . "_id ='" . $valGid . "' ORDER BY " . $mod_tb_root_group . "_order DESC ";
+                $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                $row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group);
+                ?>
+                <div class="formDivView"><?php echo $row_group[1]; ?></div>
+            </td>
+        </tr>
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjectsg"] ?>:<span class="fontContantAlert"></span></td>
           <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
             <div class="formDivView"><?php echo $valSubject ?></div>
           </td>
@@ -145,40 +170,6 @@ logs_access('3', 'View Group');
             <div class="formDivView"><?php echo $valTitle ?></div>
           </td>
         </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:link"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $valUrl ?></div>
-          </td>
-        </tr>
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:type"] ?>:<span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <div class="formDivView"><?php echo $modTxtTarget[$valTarget] ?></div>
-          </td>
-        </tr>
-
-      </table>
-      <br />
-      <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
-          <tr>
-              <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-                  <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
-                  <span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
-              </td>
-          </tr>
-          <tr>
-              <td colspan="7" align="left" valign="top" class="formTileTxt">
-                  <div class="viewEditorTileTxt">
-                      <?php
-                      $fd = @fopen($valHtml, "r");
-                      $contents = @fread($fd, filesize($valHtml));
-                      @fclose($fd);
-                      echo txtReplaceHTML($contents);
-                      ?>
-                  </div>
-              </td>
-          </tr>
       </table>
       <br />
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
@@ -204,8 +195,6 @@ logs_access('3', 'View Group');
               } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
                 echo getUserEng($valCreby);
               }
-
-
               ?>
             </div>
           </td>

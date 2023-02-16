@@ -22,7 +22,7 @@ $mod_fd_frontdetailUrl = "career/detail";
 $modTxtShowPic=array("แสดงรูปภาพในหน้ารายละเอียด","ไม่แสดง","แสดง");
 $modGroupType =array("","รายละเอียดภายในเว็บไซต์" ,"เชื่อมโยงภายนอก");
 $modTxtTarget=array("","เปิดหน้าต่างเดิม","เปิดหน้าต่างใหม่");
-
+$modType =array("","แสดงหน้ารายละเอียด" ,"ไม่แสดงหน้ารายละเอียด");
 ## URL Search ###################################
 $mod_url_search_th = "th/news_detail";
 $mod_url_search_en = "en/news_detail";

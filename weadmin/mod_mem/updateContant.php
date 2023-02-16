@@ -63,6 +63,7 @@ include("config.php");
 			$update[] = $mod_tb_root . "_sdatetxt='" . changeQuot($_POST['inputJobstartdate']) . "'";
 			$update[] = $mod_tb_root . "_email='" . changeQuot($_POST['inputEmail']) . "'";
 			$update[] = $mod_tb_root . "_tel='" . changeQuot($_POST['inputTel']) . "'";
+			$update[] = $mod_tb_root . "_typec='" . $_POST['inputTypeShow'] . "'";
 
 
 			$update[] = $mod_tb_root . "_htmlfilename  	='" . $filename . "'";
@@ -81,6 +82,7 @@ include("config.php");
 			$update[] = $mod_tb_root . "_sdatetxten='" . changeQuot($_POST['inputJobstartdate']) . "'";
 			$update[] = $mod_tb_root . "_emailen='" . changeQuot($_POST['inputEmail']) . "'";
 			$update[] = $mod_tb_root . "_telen='" . changeQuot($_POST['inputTel']) . "'";
+			$update[] = $mod_tb_root . "_typec='" . $_POST['inputTypeShow'] . "'";
 
 			$update[] = $mod_tb_root . "_htmlfilenameen  	='" . $filename . "'";
 			$update[] = $mod_tb_root . "_descriptionen='" . changeQuot($_POST['inputTagDescription']) . "'";
@@ -98,6 +100,7 @@ include("config.php");
 			$update[] = $mod_tb_root . "_sdatetxtcn='" . changeQuot($_POST['inputJobstartdate']) . "'";
 			$update[] = $mod_tb_root . "_emailcn='" . changeQuot($_POST['inputEmail']) . "'";
 			$update[] = $mod_tb_root . "_telcn='" . changeQuot($_POST['inputTel']) . "'";
+			$update[] = $mod_tb_root . "_typec='" . $_POST['inputTypeShow'] . "'";
 
 			$update[] = $mod_tb_root . "_titlecn='" . changeQuot($_POST['inputDescription']) . "'";
 			$update[] = $mod_tb_root . "_htmlfilenamecn  	='" . $filename . "'";

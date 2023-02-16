@@ -14,18 +14,24 @@ $valLinkNav1 = "../core/index.php";
 
 
 $sql = "SELECT  ";
-$sql .= "   " . $mod_tb_root_group . "_id, " . $mod_tb_root_group . "_credate ,
-      " . $mod_tb_root_group . "_crebyid, " . $mod_tb_root_group . "_status  ";
+$sql .= "   " . $mod_tb_root_subgroup . "_id, " . $mod_tb_root_subgroup . "_credate ,
+      " . $mod_tb_root_subgroup . "_crebyid, " . $mod_tb_root_subgroup . "_status  ";
 
 if ($_REQUEST['inputLt'] == "Thai") {
-	$sql .= "  ,    " . $mod_tb_root_group . "_subject, " . $mod_tb_root_group . "_title, " . $mod_tb_root_group . "_htmlfilename";
+	$sql .= "  ,    " . $mod_tb_root_subgroup . "_subject  ,    " . $mod_tb_root_subgroup . "_title  ";
 } else if ($_REQUEST['inputLt'] == "Eng") {
-	$sql .= "  ," . $mod_tb_root_group . "_subjecten, " . $mod_tb_root_group . "_titleen, " . $mod_tb_root_group . "_htmlfilenameen";
+	$sql .= "  ," . $mod_tb_root_subgroup . "_subjecten  ,    " . $mod_tb_root_subgroup . "_titleen 	  ";
 } else {
-	$sql .= "  ," . $mod_tb_root_group . "_subjectcn, " . $mod_tb_root_group . "_titlecn, " . $mod_tb_root_group . "_htmlfilenamecn";
+	$sql .= "  ," . $mod_tb_root_subgroup . "_subjectcn  ,    " . $mod_tb_root_subgroup . "_titlecn 	  ";
 }
-$sql .= " , " . $mod_tb_root_group . "_pic	," . $mod_tb_root_group . "_type ,    " . $mod_tb_root_group . "_url,    " . $mod_tb_root_group . "_target ";
-$sql .= "FROM " . $mod_tb_root_group . " WHERE " . $mod_tb_root_group . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root_group . "_id 	='" . $_POST["valEditID"] . "'";
+// $sql .= " ,".$mod_tb_root_subgroup."_pic ";
+$sql .= " 
+, " . $mod_tb_root_subgroup . "_pic,
+" . $mod_tb_root_subgroup . "_type, 
+" . $mod_tb_root_subgroup . "_url, 
+" . $mod_tb_root_subgroup . "_target,
+" . $mod_tb_root_subgroup . "_gid
+FROM " . $mod_tb_root_subgroup . " WHERE " . $mod_tb_root_subgroup . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root_subgroup . "_id 	='" . $_POST["valEditID"] . "'";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
 $valid = $Row[0];
@@ -34,15 +40,21 @@ $valcreby = $Row[2];
 $valstatus = $Row[3];
 $valSubject = rechangeQuot($Row[4]);
 $valTitle = rechangeQuot($Row[5]);
-$valhtml = $mod_path_html . "/" . $Row[6];
-$valhtmlname = $Row[6];
-$valPicName = $Row[7];
-$valPic = $mod_path_pictures . "/" . $Row[7];
-$valType = $Row[8];
-$valUrl = $Row[9];
-$valTarget = $Row[10];
-
+$valPicName = $Row[6];
+$valPic = $mod_path_pictures . "/" . $Row[6];
+$valType = $Row[7];
+$valUrl = $Row[8];
+$valTarget = $Row[9];
+$valTypes = $Row[10];
+$valGid = $Row[10];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
+
+
+// setiing page
+$display = "style='display:none;'";
+if ($_REQUEST['masterkey'] == 'news') {
+	$display = "";
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -59,6 +71,14 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		function executeSubmit() {
 			with(document.myForm) {
 
+				if (inputGroupID.value == 0) {
+					inputGroupID.focus();
+					jQuery("#inputGroupID").addClass("formInputContantTbAlertY");
+					return false;
+				} else {
+					jQuery("#inputGroupID").removeClass("formInputContantTbAlertY");
+				}
+
 				if (isBlank(inputSubject)) {
 					inputSubject.focus();
 					jQuery("#inputSubject").addClass("formInputContantTbAlertY");
@@ -66,18 +86,12 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				} else {
 					jQuery("#inputSubject").removeClass("formInputContantTbAlertY");
 				}
-				var alleditDetail = CKEDITOR.instances.editDetail.getData();
-				// if (alleditDetail == "") {
-				// 	jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
-				// 	window.location.hash = '#inputEditHTML';
-				// 	return false;
-				// } else {
-				// 	jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
-				// }
-				jQuery('#inputHtml').val(alleditDetail);
+
+
+
 			}
 
-			updateContactNew('updateGroup.php');
+			updateContactNew('updateSubGroup.php');
 
 		}
 
@@ -97,20 +111,10 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 			jQuery('#myForm').keypress(function(e) {
 				/* Start  Enter Check CKeditor */
-				var focusManager = new CKEDITOR.focusManager(editDetail);
-				var checkFocus = CKEDITOR.instances.editDetail.focusManager.hasFocus;
-				var checkFocusTitle = jQuery("#inputComment").is(":focus");
 
 				if (e.which == 13) {
-					//e.preventDefault();
-					if (!checkFocusTitle) {
-						if (!checkFocus) {
-							// if(!checkFocus2){
-							executeSubmit();
-							return false;
-							// }
-						}
-					}
+					executeSubmit();
+					return false;
 				}
 				/* End  Enter Check CKeditor */
 			});
@@ -130,12 +134,10 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		<input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh'] ?>" />
 		<input name="valEditID" type="hidden" id="valEditID" value="<?php echo $_REQUEST['valEditID'] ?>" />
 		<input name="inputLt" type="hidden" id="inputLt" value="<?php echo $_REQUEST['inputLt'] ?>" />
-		<input name="inputHtml" type="hidden" id="inputHtml" value="" />
-		<input name="inputHtmlDel" type="hidden" id="inputHtmlDel" value="<?php echo $valhtmlname ?>" />
 		<div class="divRightNav">
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
 				<tr>
-					<td class="divRightNavTb" align="left" id="defTop"><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1 ?>" target="_self"><?php echo $valNav1 ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <a href="javascript:void(0)" onclick="btnBackPage('group.php')" target="_self"><?php echo $langMod["meu:group"] ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <?php echo $langMod["txt:titleeditg"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo getSystemLangTxt($_REQUEST['inputLt'], $langTxt["lg:thai"], $langTxt["lg:eng"]) ?>)<?php } ?></span></td>
+					<td class="divRightNavTb" align="left" id="defTop"><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1 ?>" target="_self"><?php echo $valNav1 ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <a href="javascript:void(0)" onclick="btnBackPage('subgroup.php')" target="_self"><?php echo $langMod["meu:subgroup"] ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <?php echo $langMod["txt:titleeditsg"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo getSystemLangTxt($_REQUEST['inputLt'], $langTxt["lg:thai"], $langTxt["lg:eng"]) ?>)<?php } ?></span></td>
 					<td class="divRightNavTb" align="right">
 
 
@@ -155,7 +157,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 									<?php if ($valPermission == "RW") { ?>
 										<div class="btnSave" title="<?php echo $langTxt["btn:save"] ?>" onclick="executeSubmit();"></div>
 									<?php } ?>
-									<div class="btnBack" title="<?php echo $langTxt["btn:back"] ?>" onclick="btnBackPage('group.php')"></div>
+									<div class="btnBack" title="<?php echo $langTxt["btn:back"] ?>" onclick="btnBackPage('subgroup.php')"></div>
 								</td>
 							</tr>
 						</table>
@@ -168,15 +170,44 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-						<span class="formFontSubjectTxt"><?php echo $langMod["txt:subjectg"] ?></span><br />
-						<span class="formFontTileTxt"><?php echo $langMod["txt:subjectgDe"] ?></span>
+						<span class="formFontSubjectTxt"><?php echo $langMod["txt:subjectsg"] ?></span><br />
+						<span class="formFontTileTxt"><?php echo $langMod["txt:subjectsgDe"] ?></span>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="7" align="right" valign="top" height="15"></td>
 				</tr>
 				<tr>
-					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjectg"] ?><span class="fontContantAlert">*</span></td>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:selectgn"] ?><span class="fontContantAlert">*</span></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+						<select name="inputGroupID" id="inputGroupID" class="formSelectContantTb">
+							<option value="0"><?php echo $langMod["tit:selectg"] ?></option>
+							<?php
+							$sql_group = "SELECT ";
+							if ($_REQUEST['inputLt'] == "Thai") {
+								$sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject";
+							} else if ($_REQUEST['inputLt'] == "Eng") {
+								$sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjecten ";
+							} else {
+								$sql_group .= " " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subjectcn ";
+							}
+
+							$sql_group .= "  FROM 
+										" . $mod_tb_root_group . " 
+										WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'
+										ORDER BY " . $mod_tb_root_group . "_order DESC ";
+							$query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+							while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
+								$row_groupid = $row_group[0];
+								$row_groupname = $row_group[1];
+							?>
+								<option value="<?php echo $row_groupid ?>" <?php if ($valGid == $row_groupid) { ?> selected="selected" <?php } ?>><?php echo $row_groupname ?></option>
+							<?php } ?>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjectsg"] ?><span class="fontContantAlert">*</span></td>
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputSubject" id="inputSubject" type="text" class="formInputContantTb" value="<?php echo $valSubject ?>" /></td>
 				</tr>
 				<tr>
@@ -185,55 +216,44 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						<textarea name="inputComment" id="inputComment" cols="20" rows="5" class="formTextareaContantTb"><?php echo $valTitle ?></textarea>
 					</td>
 				</tr>
-				<tr id="">
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:link"] ?><span class="fontContantAlert">*</span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><textarea name="inputurl" id="inputurl" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valUrl ?></textarea><br />
-            <span class="formFontNoteTxt"><?php echo $langMod["edit:linknote"] ?></span>
-          </td>
-        </tr>
-
-        <tr>
-          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:type"] ?><span class="fontContantAlert"></span></td>
-          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
-            <label>
-              <div class="formDivRadioL"><input name="inputTarget" id="inputTarget" type="radio" class="formRadioContantTb" value="1" <?php if ($valTarget == 1) { ?> checked="checked" <?php } ?> /></div>
-              <div class="formDivRadioR"><?php echo $modTxtTarget[1] ?></div>
-            </label>
-
-            <label>
-              <div class="formDivRadioL"><input name="inputTarget" id="inputTarget" type="radio" class="formRadioContantTb" value="2" <?php if ($valTarget == 2) { ?> checked="checked" <?php } ?> /></div>
-              <div class="formDivRadioR"><?php echo $modTxtTarget[2] ?></div>
-            </label>
-            </label>
-          </td>
-        </tr>
 			</table>
 			<br />
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+
+			<table <?php echo $display; ?> width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-						<span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />
-						<span class="formFontTileTxt"><?php echo $langMod["txt:titleDe"] ?></span>
+						<span class="formFontSubjectTxt"><?php echo $langMod["txt:pic"] ?></span><br />
+						<span class="formFontTileTxt"><?php echo $langMod["txt:picDe"] ?></span>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="7" align="center" valign="top" class="formRightContantTbEditor">
-						<div id="inputEditHTML">
-							<textarea name="editDetail" id="editDetail">
-      <?php
-			if (is_file($valhtml)) {
-				$fd = @fopen($valhtml, "r");
-				$contents = @fread($fd, @filesize($valhtml));
-				@fclose($fd);
-				echo txtReplaceHTML($contents);
-			}
-			?>
-      </textarea>
+					<td colspan="7" align="right" valign="top" height="15"></td>
+				</tr>
+
+				<tr>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["inp:album"] ?></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+						<div class="file-input-wrapper">
+							<button class="btn-file-input"><?php echo  $langTxt["us:inputpicselect"] ?></button>
+							<input type="file" name="fileToUpload" id="fileToUpload" onchange="ajaxFileUpload();" />
+						</div>
+
+						<span class="formFontNoteTxt"><?php echo $langMod["inp:noteG"] ?></span>
+						<div class="clearAll"></div>
+						<div id="boxPicNew" class="formFontTileTxt">
+							<?php if (is_file($valPic)) { ?>
+								<img src="<?php echo $valPic ?>" style="float:left;border:#c8c7cc solid 1px;max-width:600px;" />
+								<div style="width:22px; height:22px;float:left;z-index:1; margin-left:-22px;cursor:pointer;" onclick="delPicUpload('deletePic.php')" title="Delete file"><img src="../img/btn/delete.png" width="22" height="22" border="0" /></div>
+								<input type="hidden" name="picname" id="picname" value="<?php echo $valPicName ?>" />
+							<?php } ?>
 						</div>
 					</td>
 				</tr>
+
+
+
 			</table>
-			<br class="ckabout" />
+			<!-- <br /> -->
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
 				<tr>
 					<td colspan="7" align="right" valign="top" height="20"></td>
@@ -245,7 +265,6 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		</div>
 	</form>
 	<script type="text/javascript" src="../js/ajaxfileupload.js"></script>
-	<script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
 	<script type="text/javascript">
 		/*################################# Upload Pic #######################*/
 		function ajaxFileUpload() {
@@ -332,11 +351,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				}
 			})
 			return false;
+
 		}
-		/*################### Load FCK Editor ######################*/
-		jQuery(function() {
-			onLoadFCK();
-		});
 	</script>
 
 	<?php include("../lib/disconnect.php"); ?>

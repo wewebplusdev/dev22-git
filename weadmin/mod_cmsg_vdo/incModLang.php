@@ -3,6 +3,7 @@
 if($_SESSION[$valSiteManage."core_session_language"]=="Eng"){
 	// Group
 	$langMod["meu:group"] = "Group " .getNameMenu($_REQUEST["menukeyid"]);
+	$langMod["meu:subgroup"] = "SubGroup " .getNameMenu($_REQUEST["menukeyid"]);
 $langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 
 $langMod["txt:titleadd"] = "" .getNameMenu($_REQUEST["menukeyid"])." New";
@@ -81,7 +82,7 @@ $langMod["tit:selectgn"] = "Name Group ". $langMod["meu:group"];
 $langMod["meu:selectgn"] = "Group ". $langMod["meu:group"];
 $langMod["txt:subjectg"] = "". $langMod["meu:group"]." Info";
 $langMod["txt:subjectgDe"] = "Please enter a name ". $langMod["meu:group"]. " to be used for display on your site.";
-
+$langMod["tit:subjectsg"] = "Sub Group ". $langMod["meu:group"];
 $langMod["file: type"] = "Type";
 $langMod["file: size"] = "Size";
 $langMod["file: download"] = "Download";
@@ -107,6 +108,7 @@ $langTxt["mg:statuspin"] = "Pin/Unpin";
 
     	$langMod["viw:subjectgDe"] = "ข้อมูลชื่อ" . $langMod["meu:group"] . " เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
 		$langMod["meu:group"] = "กลุ่ม " .getNameMenu($_REQUEST["menukeyid"]);
+		$langMod["meu:subgroup"] = "กลุ่มย่อย " .getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["meu:contant"] = getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["meu:setPermis"] = "ตั้งค่า";
 		$langMod["txt:titleadd"] = "สร้างข้อมูล".getNameMenu($_REQUEST["menukeyid"]);
@@ -162,7 +164,7 @@ $langTxt["mg:statuspin"] = "Pin/Unpin";
 		$langMod["inp:notepic"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg, .png และ .gif เท่านั้น, ขนาดของรูปภาพไม่เกิน 2 Mb และรูปภาพที่ให้ในการอัพโหลดควรมีสัดส่วนที่ ".$sizeWidthPic."x".$sizeHeightPic." พิกเซล";
 		$langMod["inp:noteicon"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg, .png และ .gif เท่านั้น, ขนาดของรูปภาพไม่เกิน 2 Mb และรูปภาพที่ให้ในการอัพโหลดควรมีสัดส่วนที่ ".$sizeWidthIcon."x".$sizeHeightIcon." พิกเซล";
 		$langMod["inp:notealbum"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg, .png และ .gif เท่านั้น, ขนาดของรูปภาพไม่เกิน 2 Mb และรูปภาพที่ให้ในการอัพโหลดควรมีสัดส่วนที่ ".$sizeWidthAlbum."x".$sizeHeightAlbum." พิกเซล";
-
+		$langMod["tit:subjectsg"] = "กลุ่มย่อย " .getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["tit:subject"] ="ชื่อ".getNameMenu($_REQUEST["menukeyid"]);
 		$langMod["tit:subjectg"] ="ชื่อ".$langMod["meu:group"];
 		$langMod["tit:sdate"] ="วันเริ่มต้น";
@@ -175,9 +177,11 @@ $langTxt["mg:statuspin"] = "Pin/Unpin";
 		$langMod["tit:uploadvdonote"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .flv, .wmv, .mp3, .wav, .wma, .avi และ .mpeg เท่านั้น";
 		$langMod["tit:noteg"] ="หมายเหตุ";
 		$langMod["tit:selectg"] ="เลือก".$langMod["meu:group"];
+		$langMod["tit:selectsg"] ="เลือก".$langMod["tit:subjectsg"];
 		$langMod["tit:selectgn"] =$langMod["meu:group"];
 		$langMod["txt:subjectg"] = "ข้อมูล".$langMod["meu:group"];
 		$langMod["txt:subjectgDe"] = "โปรดป้อนชื่อ".$langMod["meu:group"]." เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
+		$langMod["tit:selectsgn"] = $langMod["tit:subjectsg"];
 
 		$langMod["file:type"] ="ประเภท";
 		$langMod["file:size"] ="ขนาด";

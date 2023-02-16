@@ -100,6 +100,11 @@ $masterkeyArr = array('news');
                                 <?php echo $langMod["meu:group"] ?>
                             </a>
                         </div>
+                        <div class="menuSubMod">
+                                <a href="subgroup.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
+                                    <?php echo $langMod["meu:subgroup"] ?>
+                                </a>
+                            </div>
                         <div class="menuSubMod ">
                             <a href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                                 <?php echo $langMod["meu:contant"] ?>

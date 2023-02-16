@@ -468,6 +468,7 @@ class aboutPage
     " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_gid as gid,
     " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_htmlfilename" . $lang . " as htmlfilename,
     " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_view as view,
+    " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_typec as typec,
     " . $config['mem']['db']['main'] . "." . $config['mem']['db']['main'] . "_credate as credate,
     " . $config['memp']['db']['main'] . "." . $config['memp']['db']['main'] . "_gid as posi_gid,
     " . $config['memg']['db']['main'] . "." . $config['memg']['db']['main'] . "_subject".$lang." as namegroup,

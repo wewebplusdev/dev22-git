@@ -17,6 +17,7 @@ class trainingPage
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_lastdate as lastdate,
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_url as url,
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_types as types,
+    " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_target as target,
     " . $config['cmg']['db']['main'] . "." . $config['cmg']['db']['main'] . "_htmlfilename as htmlfilename,
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_id as menuid,
     " . $config['sy_mnu']['db']['main'] . "." . $config['sy_mnu']['db']['main'] . "_name".$langFull." as menuname
