@@ -38,9 +38,11 @@ $("#form-calculator").on("submit", function (e) {
         if (data.status) {
           $('.calc-detail .-percentage span').text(data.dataset.deptpercentage);
           $('.calc-detail .-ratio span').text(data.dataset.ratio);
-          $('.calc-detail .-weighs span').text(data.dataset.calculator.toFixed(4));
+          $('.calc-detail .-weighs span').text(data.dataset.calculator);
         }else{
-          $('.calc-detail .-weighs span').text('Error: Not enough data');
+          $('.calc-detail .-percentage span').text('-');
+          $('.calc-detail .-ratio span').text('-');
+          $('.calc-detail .-weighs span').text(data.msg);
         }
       },
       data: formData,
@@ -60,4 +62,36 @@ $('#cancelForm').on('click', function(){
   $('#girth').prop('selectedIndex',0);
   $('#girth').val(0).change();
   $('#pavbul').val(0);
+});
+
+$(document).ready(function(){
+  var formData = new FormData($("#form-calculator")[0]);
+  var path = $("base").attr("href") + base_url_lang;
+  var baselang = $("base").attr("href") + base_url_lang + "/service/" + origin_menuid + "/calculator";
+
+  $.ajax({
+    url: baselang,
+    type: "POST",
+    xhr: function () {
+      var myXhr = $.ajaxSettings.xhr();
+      return myXhr;
+    },
+    success: function (data) {
+      if (data.status) {
+        $('.calc-detail .-percentage span').text(data.dataset.deptpercentage);
+        $('.calc-detail .-ratio span').text(data.dataset.ratio);
+        $('.calc-detail .-weighs span').text(data.dataset.calculator);
+      }else{
+        $('.calc-detail .-percentage span').text('-');
+        $('.calc-detail .-ratio span').text('-');
+        $('.calc-detail .-weighs span').text(data.msg);
+      }
+    },
+    data: formData,
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+  });
+  return false;
 });
