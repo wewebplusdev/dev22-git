@@ -37,7 +37,7 @@ if ($callCMS->fields['type'] == 3) {
     $Ratio = $_REQUEST['diamcut'] / $_REQUEST['widecut'];
     
     $arrData = array(
-        'calculator' => $calculator . " " . $lang['calculator']['carats'],
+        'calculator' => number_format($calculator, 4) . " " . $lang['calculator']['carats'],
         'deptpercentage' => $dept,
         'ratio' => $Ratio,
     );
@@ -70,7 +70,7 @@ if ($callCMS->fields['type'] == 3) {
     $Ratio = "1.00 to 1";
 
     $arrData = array(
-        'calculator' => $calculator . " " . $lang['calculator']['carats'],
+        'calculator' => number_format($calculator, 4) . " " . $lang['calculator']['carats'],
         'deptpercentage' => $dept,
         'ratio' => $Ratio,
     );
@@ -102,7 +102,7 @@ if ($callCMS->fields['type'] == 3) {
     $Ratio = $_REQUEST['diamcut'] / $_REQUEST['widecut'];
 
     $arrData = array(
-        'calculator' => $calculator . " " . $lang['calculator']['carats'],
+        'calculator' => number_format($calculator, 4) . " " . $lang['calculator']['carats'],
         'deptpercentage' => $dept,
         'ratio' => $Ratio,
     );
