@@ -38,7 +38,7 @@
           <div class="default-tab-slider default-slick" data-slick='{$initialSlide2}'>
               {foreach $arrMenu as $keyarrMenu => $valuearrMenu}
                 <div class="item">
-                    <div class="tab-block {if $callGroupActive->fields.id eq $valuearrMenu.id}active{/if}">
+                    <div class="tab-block {if $callGroupActive->fields.id eq $valuearrMenu.id}{$menuid = $valuearrMenu.id}active{/if}">
                         <a class="text-limit" href="{$ul}/{$menuActive}/{$valuearrMenu.id}">{$valuearrMenu.subject}</a>
                     </div>
                 </div>
@@ -48,6 +48,63 @@
       {/if}
       
       <div class="container">
+      <div class="default-filter">
+                <div class="container">
+                    <form action="{$ul}/{$menuActive}/{$menuid}/{$SubGroupID}"
+                        data-toggle="validator" role="form" class="form-default" method="get">
+                        <div class="row gutters-15 align-items-end">
+                            <div class="col-lg-5 col-12 mr-auto">
+                                <div class="form-group">
+                                    <div class="row no-gutters">
+                                        <div class="col">
+                                            <label class="visuallyhidden"
+                                                for="keywords">{$lang['system']['search']}</label>
+                                            <input type="search" id="keywords" name="keywords" class="form-control"
+                                                placeholder="{$lang['system']['search']}"
+                                                value="{$req_params['keywords']}">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-primary btn-search"
+                                                onclick="this.form.submit()">
+                                                <span class="feather icon-search"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label" for="contact">{$lang['system']['sort']}</label>
+                                    <div class="select-wrapper">
+                                        <select class="select-control" name="order" id="order" style="width: 100%;"
+                                            onchange="this.form.submit()">
+                                            {foreach $orderArray as $keyorderArray => $valueorderArray}
+                                                <option value="{$keyorderArray}"
+                                                    {if $req_params['order'] eq $keyorderArray}selected="selected" {/if}>
+                                                    {$valueorderArray}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                            <div class="group-list year-list">
+                                <ul class="nav-list">
+                                    {foreach $callSubGroup as $key => $value}
+                                        <li>
+                                            <a href="{$ul}/{$menuActive}/{$menuid}/{$value['id']}"
+                                                class="link {if $SubGroupID eq $value['id']}{$subgroupTitle = $value['subject']}active{/if}" data-toggle="tooltip" data-placement="top" title="{$value['subject']}">{$value['subject']}
+                                            </a>
+                                        </li>
+                                    {/foreach}
+                                </ul>
+                            </div>
+                        
+                    </form>
+                </div>
+            </div>
           <div class="row align-items-center">
               <div class="col-auto">
                   <div class="h-title">{$callGroupActive->fields.subject}</div>
