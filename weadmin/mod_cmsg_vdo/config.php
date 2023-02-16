@@ -2,6 +2,7 @@
 $array_home = array('vdo');
 ## Mod Table ###################################
 $mod_tb_root = "md_cms";
+$mod_tb_root_subgroup = "md_cmsg";
 $mod_tb_root_group = "md_cmg";
 
 $mod_tb_file = "md_cmf";

@@ -34,7 +34,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
     $sql .= "," . $mod_tb_root . "_urlcn," . $mod_tb_root . "_piccn , " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ,  " . $mod_tb_root . "_typecn ";
 }
 
-$sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin";
+$sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_pin as pin, " . $mod_tb_root . "_sid as sid";
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
@@ -83,7 +83,7 @@ $valUrlfriendly = rechangeQuot($Row[21]);
 $valLang[0] = $Row[22];
 $valLang[1] = $Row[23];
 $valLang[2] = $Row[24];
-
+$valSid = $Row['sid'];
 $valPin = $Row['pin'];
 if ($valPin == "Pin") {
     $valStatusPinClass =  "fontContantTbNew";
@@ -205,6 +205,25 @@ logs_access('3', 'View');
                         </td>
                     </tr>
                 <?php } ?>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subjectsg"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <?php
+                        $sql_group = "SELECT ";
+                        if ($_REQUEST['inputLt'] == "Thai") {
+                            $sql_group .= "  " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subject";
+                        } else {
+                            $sql_group .= " " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subjecten ";
+                        }
+
+                        $sql_group .= "  FROM " . $mod_tb_root_subgroup . " WHERE  " . $mod_tb_root_subgroup . "_masterkey ='" . $_REQUEST['masterkey'] . "' 
+                        AND  " . $mod_tb_root_subgroup . "_id ='" . $valSid . "' ORDER BY " . $mod_tb_root_subgroup . "_order DESC ";
+                        $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+                        $row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group);
+                        ?>
+                        <div class="formDivView"><?php echo $row_group[1]; ?></div>
+                    </td>
+                </tr>
                 <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subject"] ?>:<span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">

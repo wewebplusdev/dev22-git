@@ -14,15 +14,13 @@ include("config.php");
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
 <link href="../css/theme.css" rel="stylesheet"/>
-
 <title><?php echo $core_name_title?></title>
 <script language="JavaScript"  type="text/javascript" src="../js/jquery-1.9.0.js"></script>
 <script language="JavaScript"  type="text/javascript" src="../js/jquery.blockUI.js"></script>
 <script language="JavaScript"  type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
-
 <script type="text/javascript">
 	jQuery(function() {
-		boxContantLoad('../<?php echo $mod_fd_root?>/loadContant.php');
+		boxContantLoad('../<?php echo $mod_fd_root?>/loadSubGroup.php');
 	});
 </script>
 
@@ -48,11 +46,9 @@ include("config.php");
                 <input name="module_pageshow" type="hidden" id="module_pageshow" value="<?php echo $_REQUEST['module_pageshow']?>" />
                 <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo $_REQUEST['module_pagesize']?>" />
                 <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $_REQUEST['module_orderby']?>" />
-                <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
-                <input name="inputGh2" type="hidden" id="inputGh2" value="<?php echo $_REQUEST['inputGh2']?>" />
                 <input name="valEditID" type="hidden" id="valEditID" value="" />
                 <input name="inputLt" type="hidden" id="inputLt" value="" />
-                <input name="inputTh" type="hidden" id="inputTh" value="<?php echo $_REQUEST['inputTh']?>" />
+                <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
                 </form>
                 	<div class="mRightBackOffice" id="boxContantLoad">
                     			<?php include("../core/incWaitting.php")?>
@@ -61,7 +57,7 @@ include("config.php");
           </tr>
         </table>
     </div>
-    <div class="clearAll" ></div>
+    <div class="clearAll"></div>
 	<!-- #################### Footer ###############  -->
     <?php include("../core/incFooter.php");?>
     <?php include("../core/incLoderBox.php");?>

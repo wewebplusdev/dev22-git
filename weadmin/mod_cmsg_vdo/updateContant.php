@@ -82,6 +82,7 @@ include("config.php");
 		$update[] = $mod_tb_root . "_langth='" . $setLangTH . "'";
 		$update[] = $mod_tb_root . "_langen='" . $setLangEN . "'";
 		$update[] = $mod_tb_root . "_langcn='" . $setLangCN . "'";
+		$update[] = $mod_tb_root . "_sid='" . $_POST["inputSubGroupID"] . "'";
 
 
 		$update[] = $mod_tb_root . "_urlfriendly='" . changeQuot($_POST['inputUrlFriendly']) . "'";

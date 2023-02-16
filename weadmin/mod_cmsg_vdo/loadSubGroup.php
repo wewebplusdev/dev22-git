@@ -9,9 +9,10 @@ include("config.php");
 
 $valNav1 = $langTxt["nav:home2"];
 $valLinkNav1 = "../core/index.php";
-$valNav2 = getNameMenu($_REQUEST["menukeyid"]);
+$valNav2 = $langMod["meu:group"];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
+$masterkeyArr = array('news');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,17 +27,11 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
   <script language="JavaScript" type="text/javascript" src="../js/jquery-1.9.0.js"></script>
   <script language="JavaScript" type="text/javascript" src="../js/jquery.blockUI.js"></script>
   <script language="JavaScript" type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
-  <script language="JavaScript" type="text/javascript" src="./js/script.js"></script>
+  <script type="text/javascript" language="javascript">
+
+
+  </script>
 </head>
-<script>
-  jQuery(document).ready(function() {
-    var GroupID = $('#inputGhSubSel :selected').val();
-    if (GroupID > 0) {
-      onChangeSelect('openSelectSubContent.php', '#subgroup');
-    }
-    console.log(GroupID);
-  });
-</script>
 
 <body>
   <?php
@@ -66,7 +61,7 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
   }
 
   if ($_REQUEST['module_orderby'] == "") {
-    $module_orderby = $mod_tb_root . "_order";
+    $module_orderby = $mod_tb_root_subgroup . "_order";
   } else {
     $module_orderby = $_REQUEST['module_orderby'];
   }
@@ -77,6 +72,13 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     $inputSearch = $_REQUEST['inputSearch'];
   }
 
+
+  // setiing page
+  $display = "style='display:none;'";
+  if ($_REQUEST['masterkey'] == 'news') {
+    $display = "";
+  }
+
   ?>
   <form action="?" method="post" name="myForm" id="myForm">
     <input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_REQUEST['masterkey'] ?>" />
@@ -84,36 +86,33 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
     <input name="module_pageshow" type="hidden" id="module_pageshow" value="<?php echo $module_pageshow ?>" />
     <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo $module_pagesize ?>" />
     <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $module_orderby ?>" />
-    <input name="inputGh2" type="hidden" id="" value="<?php echo $_REQUEST['inputGh2'] ?>" />
 
     <div class="divRightNav">
       <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
-          <td class="divRightNavTb" align="left"><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1 ?>" target="_self"><?php echo $valNav1 ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" /> <?php echo $valNav2 ?></span></td>
+          <td class="divRightNavTb" align="left"><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1 ?>" target="_self"><?php echo $valNav1 ?></a> <img src="../img/btn/navblack.png" align="absmiddle" vspace="5" />
+              <?php echo $valNav2 ?></span></td>
           <td class="divRightNavTb" align="right">
 
             <!-- ######### Start Menu Sub Mod ########## -->
-
-            <div class="menuSubMod">
+            <div class="menuSubMod ">
               <a href="group.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                 <?php echo $langMod["meu:group"] ?>
               </a>
-              <div class="menuSubMod">
-                <a href="subgroup.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
-                  <?php echo $langMod["meu:subgroup"] ?>
-                </a>
-              </div>
             </div>
             <div class="menuSubMod active">
+              <a href="subgroup.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
+                  <?php echo $langMod["meu:subgroup"] ?>
+              </a>
+          </div>
+            <div class="menuSubMod ">
               <a href="index.php?masterkey=<?php echo $_REQUEST['masterkey'] ?>&menukeyid=<?php echo $_REQUEST['menukeyid'] ?>">
                 <?php echo $langMod["meu:contant"] ?>
               </a>
             </div>
             <!-- ######### End Menu Sub Mod ########## -->
-
           </td>
         </tr>
-
       </table>
     </div>
     <div class="divRightHeadSearch">
@@ -121,36 +120,39 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
       <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-top:20px;" align="center">
 
         <tr>
-          <td width="30%">
-            <select name="inputGh" id="inputGhSubSel" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
-              <option value="0"><?php echo $langMod["tit:selectg"] ?></option>
+        <td style="padding-right:10px;" width="30%">
+            <select name="inputGh" id="inputGhSubSel" onchange="document.myForm.submit();" class="formSelectSearchStyle">
+              <option value="0"><?php echo $langMod["tit:selectg"] ?> </option>
               <?php
-              $sql_group = "SELECT ";
-              $sql_group .= "  " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject";
-              $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
+              $sql_group = "SELECT " . $mod_tb_root_group . "_id," . $mod_tb_root_group . "_subject," . $mod_tb_root_group . "_subjecten  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_masterkey ='" . $_REQUEST['masterkey'] . "' AND ". $mod_tb_root_group ."_status !='Disable'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
               $query_group = wewebQueryDB($coreLanguageSQL, $sql_group);
+
               while ($row_group = wewebFetchArrayDB($coreLanguageSQL, $query_group)) {
                 $row_groupid = $row_group[0];
                 $row_groupname = $row_group[1];
+                $row_groupnameeng = $row_group[2];
+                if ($_SESSION[$valSiteManage . 'core_session_language'] == "Thai") {
+                  $valNameShow = $row_groupname;
+                } else if ($_SESSION[$valSiteManage . 'core_session_language'] == "Eng") {
+                  // $valNameShow=$row_groupnameeng;
+                  $valNameShow = $row_groupname;
+                }
               ?>
-                <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php } ?>><?php echo $row_groupname ?></option>
+                <option value="<?php echo $row_groupid ?>" <?php if ($_REQUEST['inputGh'] == $row_groupid) { ?> selected="selected" <?php  } ?>><?php echo $valNameShow ?></option>
               <?php } ?>
             </select>
           </td>
-          <td style="padding-right:10px;" width="30%" id="subgroup">
-            <select id="inputGh2" onchange="document.myForm.submit(); " class="formSelectSearchStyle">
-              <option value="0"><?php echo $langMod["tit:selectsg"] ?> </option>
-            </select>
-          </td>
-          <td id="boxSelectTest" width="99%">
+          <td id="boxSelectTest" style="width:100% !important;">
             <input name="inputSearch" type="text" id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch']) ?>" class="formInputSearchI" placeholder="<?php echo $langTxt["sch:search"] ?>" />
           </td>
-          <td style="padding-right:10px;" align="right" width="1%"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>
+          <td style="padding-right:10px;" align="right" width="6%"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();" type="button" class="btnSearch" value=" " /></td>
         </tr>
       </table>
 
     </div>
+
     <div class="divRightHead">
+
       <table width="96%" border="0" cellspacing="0" cellpadding="0" class="borderBottom" align="center">
         <tr>
           <td height="77" align="left"><span class="fontHeadRight"><?php echo $valNav2 ?></span></td>
@@ -159,17 +161,18 @@ $valPermissionContent = getUserPermissionOnContent($_SESSION[$valSiteManage . "c
               <tr>
                 <td align="right">
                   <?php if ($valPermission == "RW") { ?>
-                    <div class="btnAdd" title="<?php echo $langTxt["btn:add"] ?>" onclick="document.myFormHome.inputLt.value='Thai';  addContactNew('addContant.php');"></div>
+                    <div class="btnAdd" title="<?php echo $langTxt["btn:add"] ?>" onclick="document.myFormHome.inputLt.value='Thai';  addContactNew('addSubGroup.php');">
+                    </div>
                     <div class="btnDel" title="<?php echo $langTxt["btn:del"] ?>" onclick="
 if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
 	if(confirm('<?php echo $langTxt['mg:delpermis'] ?>')) {
-          delContactNew('deleteContant.php');
+          delContactNew('deleteSubGroup.php');
 	}
 } else {
-		alert('<?php echo $langTxt['mg:selpermis'] ?>');
+		alert('<?php echo $langTxt["mg:selpermis"] ?>');
 }
 				  "></div>
-                    <div class="btnSort" title="<?php echo $langTxt["btn:sortting"] ?>" onclick="sortContactNew('sortContant.php');"></div>
+                    <div class="btnSort" title="<?php echo $langTxt["btn:sortting"] ?>" onclick="sortContactNew('sortSubGroup.php');"></div>
                   <?php } ?>
                 </td>
               </tr>
@@ -186,57 +189,39 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
             <input name="CheckBoxAll" type="checkbox" id="CheckBoxAll" value="Yes" onClick="Paging_CheckAll(this,'CheckBoxID',document.myForm.TotalCheckBoxID.value)" class="formCheckboxHead" />
           </td>
 
-          <td align="left" width="22%" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span></td>
+          <td align="left" width="22%" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2) { ?>(<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span>
+          </td>
+
           <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?>(<?php echo $langTxt["lg:eng"] ?>)</span></td>
+            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?>(<?php echo $langTxt["lg:eng"] ?>)</span>
+            </td>
           <?php } ?>
           <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
-            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subject"] ?>(<?php echo $langTxt["lg:chi"] ?>)</span></td>
+            <td width="22%" align="left" valign="middle" class="divRightTitleTb"><span class="fontTitlTbRight"><?php echo $langMod["tit:subjectg"] ?>(<?php echo $langTxt["lg:chi"] ?>)</span>
+            </td>
           <?php } ?>
-          <td width="11%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langMod["tit:view"] ?></span></td>
-
-          <!-- <td width="11%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:pin"] ?></span></td> -->
-          <td width="11%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:status"] ?></span></td>
-          <!-- <td width="11%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php echo $langMod["txt:upcoming"] ?></span></td> -->
-          <td width="11%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["us:lastdate"] ?></span></td>
-          <td width="11%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:manage"] ?></span></td>
+          <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo "Group" ?></span></td>
+          <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:status"] ?></span></td>
+          <td width="12%" class="divRightTitleTb" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["us:lastdate"] ?></span></td>
+          <td width="12%" class="divRightTitleTbR" valign="middle" align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:manage"] ?></span></td>
         </tr>
         <?php
         // SQL SELECT #########################
-        $sql = "SELECT 
-        " . $mod_tb_root . "_id,
-        " . $mod_tb_root . "_subject,
-        " . $mod_tb_root . "_lastdate,
-        " . $mod_tb_root . "_status,
-        " . $mod_tb_root . "_subjecten,
-        " . $mod_tb_root . "_pic,
-        " . $mod_tb_root . "_view,
-        " . $mod_tb_root . "_pin   ,
-        " . $mod_tb_root . "_gid,
-        " . $mod_tb_root . "_subjectcn,
-        " . $mod_tb_root . "_picen,
-        " . $mod_tb_root . "_piccn 
-         FROM " . $mod_tb_root;
-        $sql = $sql . "  WHERE " . $mod_tb_root . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
-
+        $sql = "SELECT " . $mod_tb_root_subgroup . "_id," . $mod_tb_root_subgroup . "_subject," . $mod_tb_root_subgroup . "_lastdate," . $mod_tb_root_subgroup . "_status," . $mod_tb_root_subgroup . "_subjecten," . $mod_tb_root_subgroup . "_subjectcn," . $mod_tb_root_subgroup . "_pic ,".$mod_tb_root_group ."_subject as groupname FROM " . $mod_tb_root_subgroup;
+        $sql = $sql . "  INNER JOIN " . $mod_tb_root_group . " ON ". $mod_tb_root_group."_id = ".$mod_tb_root_subgroup."_gid";
+        $sql = $sql . "  WHERE " . $mod_tb_root_subgroup . "_masterkey ='" . $_REQUEST['masterkey'] . "'   ";
+        // $sql = $sql . " GROUP BY ".$mod_tb_root_subgroup."_id";
+        // print_pre($sql);
         if ($_REQUEST['inputGh'] >= 1) {
-          $sql = $sql . "  AND " . $mod_tb_root . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
+          $sql = $sql . "  AND " . $mod_tb_root_subgroup . "_gid ='" . $_REQUEST['inputGh'] . "'   ";
         }
-
-        if ($_REQUEST['inputTh'] >= 1) {
-          $sql = $sql . "  AND " . $mod_tb_root . "_tid ='" . $_REQUEST['inputTh'] . "'   ";
-        }
-
-        if ($_REQUEST['inputGh2'] >= 1) {
-          $sql = $sql . "  AND " . $mod_tb_root . "_sid ='" . $_REQUEST['inputGh2'] . "'   ";
-        }
-
         if ($inputSearch <> "") {
           $sql = $sql . "  AND  (
-		" . $mod_tb_root . "_subject LIKE '%$inputSearch%'  OR
-		" . $mod_tb_root . "_subjecten LIKE '%$inputSearch%'OR
-		" . $mod_tb_root . "_subjectcn LIKE '%$inputSearch%'   ) ";
+		" . $mod_tb_root_subgroup . "_subject LIKE '%$inputSearch%'  OR
+		" . $mod_tb_root_subgroup . "_subjecten LIKE '%$inputSearch%' OR
+		" . $mod_tb_root_subgroup . "_subjectcn LIKE '%$inputSearch%'   ) ";
         }
+
 
         $query = wewebQueryDB($coreLanguageSQL, $sql);
         $count_totalrecord = wewebNumRowsDB($coreLanguageSQL, $query);
@@ -265,7 +250,6 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
         if ($count_record > 0) {
           while ($index < $count_record + 1) {
             $row = wewebFetchArrayDB($coreLanguageSQL, $query);
-            // print_pre($row);
             $valID = $row[0];
             $valName = rechangeQuot($row[1]);
             $valDateCredate = dateFormatReal($row[2]);
@@ -273,96 +257,55 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
             $valStatus = $row[3];
             $valNameEn = rechangeQuot($row[4]);
             $valNameEn = chechNullVal($valNameEn);
-            $valPic = $mod_path_pictures . "/" . $row[5];
+            $valNameCn = rechangeQuot($row[5]);
+            $valNameCn = chechNullVal($valNameCn);
+            if ($valStatus == "Enable") {
+              $valStatusClass =    "fontContantTbEnable";
+            } elseif ($valStatus == "Home") {
+              $valStatusClass =    "fontContantTbHomeSt";
+            } else {
+              $valStatusClass =    "fontContantTbDisable";
+            }
+
+            if ($valDivTr == "divSubOverTb") {
+              $valDivTr =    "divOverTb";
+            } else {
+              $valDivTr = "divSubOverTb";
+            }
+
+            $valPic = $mod_path_office . "/" . $row[6];
             if (is_file($valPic)) {
               $valPic = $valPic;
             } else {
               $valPic = "../img/btn/nopic.jpg";
             }
-
-            $valView = number_format($row[6]);
-
-            if ($valStatus == "Enable") {
-              $valStatusClass =  "fontContantTbEnable";
-            } else if ($valStatus == "Home") {
-              $valStatusClass =  "fontContantTbHomeSt";
-            } else {
-              $valStatusClass =  "fontContantTbDisable";
-            }
-
-            // print_pre($valStatus);
-
-            if ($valDivTr == "divSubOverTb") {
-              $valDivTr =  "divOverTb";
-              $valImgCycle = "boxprofile_l.png";
-            } else {
-              $valDivTr = "divSubOverTb";
-              $valImgCycle = "boxprofile_w.png";
-            }
-
-
-            $valPin = $row[7];
-            $valGidDb = rechangeQuot($row[8]);
-            $valNameCn = rechangeQuot($row[9]);
-            $valNameCn = chechNullVal($valNameCn);
-
-            $valPicen = $mod_path_office . "/" . $row[10];
-            if (is_file($valPicen)) {
-              $valPicen = $valPicen;
-            } else {
-              $valPicen = "../img/btn/nopic.jpg";
-            }
-
-            $valPiccn = $mod_path_office . "/" . $row[11];
-            if (is_file($valPiccn)) {
-              $valPiccn = $valPiccn;
-            } else {
-              $valPiccn = "../img/btn/nopic.jpg";
-            }
-
-            if ($valPin == "Pin") {
-              $valPinClass =  "fontContantTbNew";
-            } else {
-              $valPinClass =  "fontContantTbDisable";
-            }
+            $groupName = rechangeQuot($row[7]);
         ?>
             <tr class="<?php echo $valDivTr ?>">
               <td class="divRightContantOverTbL" valign="top" align="center"><input id="CheckBoxID<?php echo $index ?>" name="CheckBoxID<?php echo $index ?>" type="checkbox" class="formCheckboxList" onClick="Paging_CheckAllHandle(document.myForm.CheckBoxAll,'CheckBoxID',document.myForm.TotalCheckBoxID.value)" value="<?php echo $valID ?>" /> </td>
               <td class="divRightContantOverTb" valign="top" align="left">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td class="displayTdImg" width="39" align="left" valign="top">
-
-                      <div class="displayClickImg" style="background:url(<?php echo $valPic ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
-                    </td>
-                    <td align="left">
-                      <!--style="padding-left:10px; "-->
-                      <div class="widthDiv">
-                        <a href="javascript:void(0)" onclick="
+                    <!-- <td class="displayTdImg" width="39" align="left" valign="top">
+                                            <div class="displayClickImg" style="background:url(<?php echo $valPic ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  ">
+                                            </div>
+                                        </td> -->
+                    <td align="left"><a href="javascript:void(0)" onclick="
     document.myFormHome.inputLt.value='Thai';
-    document.myFormHome.valEditID.value=<?php echo $valID ?>;
-    viewContactNew('viewContant.php');"><?php echo $valName ?></a>
-
-                        </span>
-                      </div>
-
+   document.myFormHome.valEditID.value=<?php echo $valID ?>;
+    viewContactNew('viewSubGroup.php');"><?php echo $valName ?></a>
                     </td>
                   </tr>
                 </table>
               </td>
-
               <?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?>
                 <td class="divRightContantOverTb" valign="top" align="left">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td class="displayTdImg" width="39" align="left" valign="top">
-
-                        <div class="displayClickImg" style="background:url(<?php echo $valPicen ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
-                      </td>
                       <td align="left"><a href="javascript:void(0)" onclick="
-    document.myFormHome.inputLt.value='Eng';
-   document.myFormHome.valEditID.value=<?php echo $valID ?>;
-    viewContactNew('viewContant.php');"><?php echo $valNameEn ?></a></td>
+        document.myFormHome.inputLt.value='Eng';
+      document.myFormHome.valEditID.value=<?php echo $valID ?>;
+        viewContactNew('viewSubGroup.php');"><?php echo $valNameEn ?></a></td>
                     </tr>
                   </table>
                 </td>
@@ -371,107 +314,72 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                 <td class="divRightContantOverTb" valign="top" align="left">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td class="displayTdImg" width="39" align="left" valign="top">
-                        <div class="displayClickImg" style="background:url(<?php echo $valPiccn ?>) center no-repeat; background-size: cover;background-repeat: no-repeat; border-radius: 50%;  "></div>
-                      </td>
                       <td align="left"><a href="javascript:void(0)" onclick="
-    document.myFormHome.inputLt.value='Chi';
-   document.myFormHome.valEditID.value=<?php echo $valID ?>;
-    viewContactNew('viewContant.php');"><?php echo $valNameCn ?></a></td>
+            document.myFormHome.inputLt.value='Chi';
+            document.myFormHome.valEditID.value=<?php echo $valID ?>;
+            viewContactNew('viewSubGroup.php');"><?php echo $valNameCn ?></a></td>
                     </tr>
                   </table>
                 </td>
               <?php } ?>
-              <td class="divRightContantOverTb" valign="top" align="center"><span class="fontContantTbupdate"><?php echo $valView ?></span></td>
-
-              <!-- <td class="divRightContantOverTb" valign="top" align="center">
+              <td class="divRightContantOverTb" valign="top" align="center">
+              <?php echo $groupName ?>
+              </td>
+              <td class="divRightContantOverTb" valign="top" align="center">
+                <?php if (in_array($_REQUEST['masterkey'], $masterkeyArr)) { ?>
                   <?php if ($valPermissionContent == "RW") { ?>
-                    <div id="load_pin<?php echo $valID ?>">
-                      <?php if ($valPin == "Pin") { ?>
-                        <a href="javascript:void(0)" onclick="changeStatusMasterkey('load_waiting_pin<?php echo $valID ?>','<?php echo $mod_tb_root ?>','<?php echo $valPin ?>','<?php echo $valID ?>','load_pin<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgP.php','<?php echo $_REQUEST['masterkey'] ?>')"><span class="<?php echo $valPinClass ?>"><?php echo $valPin ?></span></a>
+                    <div id="load_status<?php echo $valID ?>">
+                      <?php if ($valStatus == "Enable") { ?>
+
+                        <a href="javascript:void(0)" onclick="changeStatusHome('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_subgroup ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php','<?php echo $_REQUEST['masterkey'] ?>')"><span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span></a>
+
+                      <?php } elseif ($valStatus == "Home") { ?>
+                        <a href="javascript:void(0)" onclick="changeStatusHome('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_subgroup ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php','<?php echo $_REQUEST['masterkey'] ?>')">
+                          <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span> </a>
                       <?php } else { ?>
 
-                        <a href="javascript:void(0)" onclick="changeStatusMasterkey('load_waiting_pin<?php echo $valID ?>','<?php echo $mod_tb_root ?>','<?php echo $valPin ?>','<?php echo $valID ?>','load_pin<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgP.php','<?php echo $_REQUEST['masterkey'] ?>')"> <span class="<?php echo $valPinClass ?>"><?php echo $valPin ?></span> </a>
+                        <a href="javascript:void(0)" onclick="changeStatusHome('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_subgroup ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php','<?php echo $_REQUEST['masterkey'] ?>')">
+                          <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span> </a>
 
                       <?php } ?>
 
-                      <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting_pin<?php echo $valID ?>" />
+                      <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting<?php echo $valID ?>" />
                     </div>
                   <?php } else { ?>
-                    <?php if ($valPin == "Pin") { ?>
-                      <span class="<?php echo $valPinClass ?>"><?php echo $valPin ?></span>
-                    <?php } else { ?>
-                      <span class="<?php echo $valPinClass ?>"><?php echo $valPin ?></span>
-                    <?php } ?>
-
-                  <?php } ?>
-              </td> -->
-
-              <td class="divRightContantOverTb" valign="top" align="center">
-                <?php if ($valPermissionContent == "RW") { ?>
-                  <div id="load_status<?php echo $valID ?>">
                     <?php if ($valStatus == "Enable") { ?>
-                      <a href="javascript:void(0)" onclick="changeStatusMasterkey('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMg.php','<?php echo $_REQUEST['masterkey'] ?>')"><span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span></a>
-                    <?php } else if ($valStatus == "Home") { ?>
-
-                      <a href="javascript:void(0)" onclick="changeStatusMasterkey('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMg.php','<?php echo $_REQUEST['masterkey'] ?>')"><span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span></a>
+                      <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span>
                     <?php } else { ?>
-
-                      <a href="javascript:void(0)" onclick="changeStatusMasterkey('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMg.php','<?php echo $_REQUEST['masterkey'] ?>')"> <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span> </a>
-
+                      <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span>
                     <?php } ?>
 
-                    <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting<?php echo $valID ?>" />
-                  </div>
-                <?php } else { ?>
-                  <?php if ($valStatus == "Enable") { ?>
-                    <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span>
-                  <?php } else if ($valStatus == "Home") { ?>
-                    <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span>
-                  <?php } else { ?>
-                    <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span>
                   <?php } ?>
+                  <!-- else state -->
+                <?php } else { ?>
+                  <?php if ($valPermissionContent == "RW") { ?>
+                    <div id="load_status<?php echo $valID ?>">
+                      <?php if ($valStatus == "Enable") { ?>
 
+                        <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_subgroup ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php')"><span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span></a>
+
+                      <?php } else { ?>
+
+                        <a href="javascript:void(0)" onclick="changeStatus('load_waiting<?php echo $valID ?>','<?php echo $mod_tb_root_subgroup ?>','<?php echo $valStatus ?>','<?php echo $valID ?>','load_status<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgH.php')">
+                          <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span> </a>
+
+                      <?php } ?>
+
+                      <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting" style="display:none;" id="load_waiting<?php echo $valID ?>" />
+                    </div>
+                  <?php } else { ?>
+                    <?php if ($valStatus == "Enable") { ?>
+                      <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span>
+                    <?php } else { ?>
+                      <span class="<?php echo $valStatusClass ?>"><?php echo $valStatus ?></span>
+                    <?php } ?>
+
+                  <?php } ?>
                 <?php } ?>
               </td>
-
-              <!--   <td  class="divRightContantOverTb"  valign="top"  align="center">
-    <select name="inputRibbon<?php echo $valID ?>" id="inputRibbon<?php echo $valID ?>" onchange="changeRibbon('<?php echo $mod_tb_root ?>','<?php echo $valRibbon ?>','<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgR.php')">
-        <option value="" <?php if (empty($valRibbon)) {
-                            echo "selected";
-                          } ?>>-</option>
-        <option value="New" <?php if ($valRibbon == "New") {
-                              echo "selected";
-                            } ?>>New</option>
-        <option value="Hot" <?php if ($valRibbon == "Hot") {
-                              echo "selected";
-                            } ?>>Hot</option>
-
-    </select>
-    </td> -->
-
-
-              <!-- <td  class="divRightContantOverTb"  valign="top"  align="center">
-       <?php if ($valPermission == "RW") { ?>
-     <div   id="load_pin<?php echo $valID ?>" class="btnstatus" data-id="<?php echo  $valID ?>">
-    <?php if ($valPin == "Pin") { ?>
-
-<a href="javascript:void(0)"  onclick="changeStatus('load_waitingPin<?php echo $valID ?>','<?php echo $mod_tb_root ?>','<?php echo $valPin ?>','<?php echo $valID ?>','load_pin<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgP.php')" ><span class="<?php echo $valPinClass ?>"><?php echo $valPin ?></span></a>
-    <?php } else { ?>
-
-        <a href="javascript:void(0)"  onclick="changeStatus('load_waitingPin<?php echo $valID ?>','<?php echo $mod_tb_root ?>','<?php echo $valPin ?>','<?php echo $valID ?>','load_pin<?php echo $valID ?>','../<?php echo $mod_fd_root ?>/statusMgP.php')"> <span class="<?php echo $valPinClass ?>"><?php echo $valPin ?></span> </a>
-
-                <?php } ?>
-
-                <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting"  style="display:none;"  id="load_waitingPin<?php echo $valID ?>" />     </div>
-           <?php } else { ?>
-               <?php if ($valPin == "Pin") { ?>
-                   <span class="<?php echo $valPinClass ?>"><?php echo $valPin ?></span>
-               <?php } else { ?>
-                    <span class="<?php echo $valPinClass ?>"><?php echo $valPin ?></span>
-                <?php } ?>
-
-           <?php } ?>    </td> -->
               <td class="divRightContantOverTb" valign="top" align="center">
                 <span class="fontContantTbupdate"><?php echo $valDateCredate ?></span><br />
                 <span class="fontContantTbTime"><?php echo $valTimeCredate ?></span>
@@ -485,7 +393,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                         <div class="divRightManage" title="<?php echo $langTxt["btn:top"] ?>" onclick="
    document.myFormHome.inputLt.value='Thai';
    document.myFormHome.valEditID.value=<?php echo $valID ?>;
-    editContactNew('topUpdateContant.php');">
+    editContactNew('topUpdateSubGroup.php');">
                           <img src="../img/btn/topbtn.png" /><br />
                           <span class="fontContantTbManage"><?php echo $langTxt["btn:top"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?><br />
                             (<?php echo $langTxt["lg:all"] ?>)<?php } ?></span>
@@ -495,7 +403,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                         <div class="divRightManage" title="<?php echo $langTxt["btn:edit"] ?>" onclick="
    document.myFormHome.inputLt.value='Thai';
    document.myFormHome.valEditID.value=<?php echo $valID ?>;
-    editContactNew('editContant.php');">
+    editContactNew('editSubGroup.php');">
                           <img src="../img/btn/edit.png" /><br />
                           <span class="fontContantTbManage"><?php echo $langTxt["btn:edit"] ?><?php if ($_SESSION[$valSiteManage . 'core_session_languageT'] == 2 || $_SESSION[$valSiteManage . 'core_session_languageT'] == 3) { ?><br />
                             (<?php echo $langTxt["lg:thai"] ?>)<?php } ?></span>
@@ -506,7 +414,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                           <div class="divRightManage" title="<?php echo $langTxt["btn:edit"] ?>" onclick="
    document.myFormHome.inputLt.value='Eng';
    document.myFormHome.valEditID.value=<?php echo $valID ?>;
-    editContactNew('editContant.php');">
+    editContactNew('editSubGroup.php');">
                             <img src="../img/btn/edit.png" /><br />
                             <span class="fontContantTbManage"><?php echo $langTxt["btn:edit"] ?><br />
                               (<?php echo $langTxt["lg:eng"] ?>)</span>
@@ -518,7 +426,7 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                           <div class="divRightManage" title="<?php echo $langTxt["btn:edit"] ?>" onclick="
    document.myFormHome.inputLt.value='Chi';
    document.myFormHome.valEditID.value=<?php echo $valID ?>;
-    editContactNew('editContant.php');">
+    editContactNew('editSubGroup.php');">
                             <img src="../img/btn/edit.png" /><br />
                             <span class="fontContantTbManage"><?php echo $langTxt["btn:edit"] ?><br />
                               (<?php echo $langTxt["lg:chi"] ?>)</span>
@@ -527,9 +435,9 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                       <?php } ?>
                       <td valign="top" align="center" width="30">
                         <div class="divRightManage" title="<?php echo $langTxt["btn:del"] ?>" onClick="
-            if(confirm('<?php echo $langTxt['mg:delpermis'] ?>')) {
+            if(confirm('<?php echo $langTxt["mg:delpermis"] ?>')) {
             Paging_CheckedThisItem( document.myForm.CheckBoxAll, <?php echo $index ?>, 'CheckBoxID', document.myForm.TotalCheckBoxID.value );
-          delContactNew('deleteContant.php');
+          delContactNew('deleteSubGroup.php');
             }
             ">
                           <img src="../img/btn/delete.png" /><br />
@@ -548,15 +456,17 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
           }
         } else { ?>
           <tr>
-            <td colspan="7" align="center" valign="middle" class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;"><?php echo $langTxt["mg:nodate"] ?></td>
+            <td colspan="6" align="center" valign="middle" class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;"><?php echo $langTxt["mg:nodate"] ?></td>
           </tr>
         <?php } ?>
 
         <tr>
-          <td colspan="8" align="center" valign="middle" class="divRightContantTbRL">
+          <td colspan="7" align="center" valign="middle" class="divRightContantTbRL">
             <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
               <tr>
-                <td class="divRightNavTb" align="left"><span class="fontContantTbNavPage"><?php echo $langTxt["pr:All"] ?> <b><?php echo number_format($count_totalrecord) ?></b> <?php echo $langTxt["pr:record"] ?></span></td>
+                <td class="divRightNavTb" align="left"><span class="fontContantTbNavPage"><?php echo $langTxt["pr:All"] ?>
+                    <b><?php echo number_format($count_totalrecord) ?></b>
+                    <?php echo $langTxt["pr:record"] ?></span></td>
                 <td class="divRightNavTb" align="right">
                   <table width="100%" border="0" cellpadding="0" cellspacing="0">
                     <tr>
@@ -597,7 +507,8 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                           <?php } else { ?>
                             <b><?php echo $module_pageshow ?></b>
                           <?php } ?>
-                          <?php echo $langTxt["pr:of"] ?> <b><?php echo $numberofpage ?></b></span></td>
+                          <?php echo $langTxt["pr:of"] ?>
+                          <b><?php echo $numberofpage ?></b></span></td>
                       <?php if ($module_pageshow > 1) { ?>
                         <td width="21" align="center"> <img src="../img/controlpage/playset_start.gif" width="21" height="21" onmouseover="this.src='../img/controlpage/playset_start_active.gif'; this.style.cursor='hand';" onmouseout="this.src='../img/controlpage/playset_start.gif';" onclick="document.myForm.module_pageshow.value=1; document.myForm.submit();" style="cursor:pointer;" /></td>
                       <?php } else { ?>
@@ -606,7 +517,8 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                       <?php if ($module_pageshow > 1) {
                         $valPrePage = $module_pageshow - 1;
                       ?>
-                        <td width="21" align="center"> <img src="../img/controlpage/playset_backward.gif" width="21" height="21" style="cursor:pointer;" onmouseover="this.src='../img/controlpage/playset_backward_active.gif'; this.style.cursor='hand';" onmouseout="this.src='../img/controlpage/playset_backward.gif';" onclick="document.myForm.module_pageshow.value='<?php echo $valPrePage ?>'; document.myForm.submit();" /></td>
+                        <td width="21" align="center"> <img src="../img/controlpage/playset_backward.gif" width="21" height="21" style="cursor:pointer;" onmouseover="this.src='../img/controlpage/playset_backward_active.gif'; this.style.cursor='hand';" onmouseout="this.src='../img/controlpage/playset_backward.gif';" onclick="document.myForm.module_pageshow.value='<?php echo $valPrePage ?>'; document.myForm.submit();" />
+                        </td>
                       <?php } else { ?>
                         <td width="21" align="center"><img src="../img/controlpage/playset_backward_disable.gif" width="21" height="21" /></td>
                       <?php } ?>
@@ -621,12 +533,14 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
                       <?php if ($module_pageshow < $numberofpage) {
                         $valNextPage = $module_pageshow + 1;
                       ?>
-                        <td width="21" align="center"> <img src="../img/controlpage/playset_forward.gif" width="21" height="21" style="cursor:pointer;" onmouseover="this.src='../img/controlpage/playset_forward_active.gif'; this.style.cursor='hand';" onmouseout="this.src='../img/controlpage/playset_forward.gif';" onclick="document.myForm.module_pageshow.value='<?php echo $valNextPage ?>'; document.myForm.submit();" /></td>
+                        <td width="21" align="center"> <img src="../img/controlpage/playset_forward.gif" width="21" height="21" style="cursor:pointer;" onmouseover="this.src='../img/controlpage/playset_forward_active.gif'; this.style.cursor='hand';" onmouseout="this.src='../img/controlpage/playset_forward.gif';" onclick="document.myForm.module_pageshow.value='<?php echo $valNextPage ?>'; document.myForm.submit();" />
+                        </td>
                       <?php } else { ?>
                         <td width="10" align="center"><img src="../img/controlpage/playset_forward_disable.gif" width="21" height="21" /></td>
                       <?php } ?>
                       <?php if ($module_pageshow < $numberofpage) { ?>
-                        <td width="10" align="center"><img src="../img/controlpage/playset_end.gif" width="21" height="21" style="cursor:pointer;" onmouseover="this.src='../img/controlpage/playset_end_active.gif'; this.style.cursor='hand';" onmouseout="this.src='../img/controlpage/playset_end.gif';" onclick="document.myForm.module_pageshow.value='<?php echo $numberofpage ?>'; document.myForm.submit();" /></td>
+                        <td width="10" align="center"><img src="../img/controlpage/playset_end.gif" width="21" height="21" style="cursor:pointer;" onmouseover="this.src='../img/controlpage/playset_end_active.gif'; this.style.cursor='hand';" onmouseout="this.src='../img/controlpage/playset_end.gif';" onclick="document.myForm.module_pageshow.value='<?php echo $numberofpage ?>'; document.myForm.submit();" />
+                        </td>
                       <?php } else { ?>
                         <td width="10" align="center"><img src="../img/controlpage/playset_end_disable.gif" width="21" height="21" /></td>
                       <?php } ?>
@@ -636,11 +550,6 @@ if(Paging_CountChecked('CheckBoxID',document.myForm.TotalCheckBoxID.value)>0) {
               </tr>
             </table>
           </td>
-        </tr>
-      </table>
-      <table width="96%" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 20px;">
-        <tr>
-          <td>Link : <a href="<?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']]; ?>" target="_blank"><?php echo $core_full_path . "" . $urlSegment[$_REQUEST['masterkey']]; ?></a></td>
         </tr>
       </table>
       <input name="TotalCheckBoxID" type="hidden" id="TotalCheckBoxID" value="<?php echo $index - 1 ?>" />

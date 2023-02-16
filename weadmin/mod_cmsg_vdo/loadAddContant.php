@@ -33,6 +33,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
     <script language="JavaScript" type="text/javascript" src="../js/select2/js/select2.js"></script>
 
     <script language="JavaScript" type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./js/script.js"></script>
     <script language="JavaScript" type="text/javascript">
         function executeSubmit() {
             with(document.myForm) {
@@ -48,6 +49,17 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     return false;
                 } else {
                     jQuery("#inputGroupID").removeClass("formInputContantTbAlertY");
+                }
+
+                var inputSubgroup = $('input[name="inputSubType"]').val();
+                if(inputSubgroup == 1){
+                    if (inputSubGroupID.value == 0) {
+                        inputSubGroupID.focus();
+                        jQuery("#inputSubGroupID").addClass("formInputContantTbAlertY");
+                        return false;
+                    } else {
+                        jQuery("#inputSubGroupID").removeClass("formInputContantTbAlertY");
+                    }
                 }
 
                 if (isBlank(inputSubject)) {
@@ -85,6 +97,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 
         jQuery(document).ready(function() {
+
+            var GroupID = $('#inputGroupID :selected').val();
+			if (GroupID > 0) {
+				onChangeSelect('openSelectSub.php','#subgroup');
+			}
 
             jQuery('#myForm').keypress(function(e) {
                 /* Start  Enter Check CKeditor */
@@ -210,6 +227,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                             <?php } ?>
                         </select>
                     </td>
+                </tr>
+                <tr id="subgroup">
+
                 </tr>
                 <tr>
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subject"] ?><span class="fontContantAlert">*</span></td>

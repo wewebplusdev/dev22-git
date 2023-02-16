@@ -31,7 +31,7 @@ if ($_REQUEST['inputLt'] == "Thai") {
 	$sql .= " , " . $mod_tb_root . "_urlcn,    " . $mod_tb_root . "_piccn, " . $mod_tb_root . "_subjectcn  ,    " . $mod_tb_root . "_titlecn, " . $mod_tb_root . "_htmlfilenamecn   ,    " . $mod_tb_root . "_metatitlecn  	 	 ,    " . $mod_tb_root . "_descriptioncn  	 	 ,    " . $mod_tb_root . "_keywordscn    ";
 }
 
-$sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn ";
+$sql .= " , " . $mod_tb_root . "_urlfriendly , " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn , " . $mod_tb_root . "_sid ";
 $sql .= " 
 			FROM " . $mod_tb_root . " 
 			WHERE " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root . "_id 	='" . $_POST["valEditID"] . "'";
@@ -69,6 +69,7 @@ $valUrlfriendly = rechangeQuot($Row[17]);
 $valLang[0] = $Row[18];
 $valLang[1] = $Row[19];
 $valLang[2] = $Row[20];
+$valSid = $Row[21];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 
 ?>
@@ -87,6 +88,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	<script language="JavaScript" type="text/javascript" src="../js/select2/js/select2.js"></script>
 
 	<script language="JavaScript" type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
+	<script language="JavaScript" type="text/javascript" src="./js/script.js"></script>
 	<script language="JavaScript" type="text/javascript">
 		function executeSubmit() {
 			with(document.myForm) {
@@ -103,6 +105,17 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					return false;
 				} else {
 					jQuery("#inputGroupID").removeClass("formInputContantTbAlertY");
+				}
+
+				var inputSubgroup = $('input[name="inputSubType"]').val();
+				if (inputSubgroup == 1) {
+					if (inputSubGroupID.value == 0) {
+						inputSubGroupID.focus();
+						jQuery("#inputSubGroupID").addClass("formInputContantTbAlertY");
+						return false;
+					} else {
+						jQuery("#inputSubGroupID").removeClass("formInputContantTbAlertY");
+					}
 				}
 
 
@@ -139,6 +152,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 		jQuery(document).ready(function() {
 
+			var GroupID = $('#inputGroupID :selected').val();
+			if (GroupID > 0) {
+				onChangeSelect('openSelectSub.php', '#subgroup');
+			}
+
 			jQuery('#myForm').keypress(function(e) {
 				/* Start  Enter Check CKeditor */
 				// var focusManager = new CKEDITOR.focusManager(editDetail);
@@ -172,6 +190,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 		<input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo $_REQUEST['module_pagesize'] ?>" />
 		<input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $_REQUEST['module_orderby'] ?>" />
 		<input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh'] ?>" />
+		<input name="inputGh2" type="hidden" id="inputGh2" value="<?php echo $valSid ?>" />
 		<input name="valEditID" type="hidden" id="valEditID" value="<?php echo $_REQUEST['valEditID'] ?>" />
 		<input name="valDelFile" type="hidden" id="valDelFile" value="" />
 		<input name="valDelAlbum" type="hidden" id="valDelAlbum" value="" />
@@ -264,6 +283,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 							<?php } ?>
 						</select>
 					</td>
+				</tr>
+				<tr id="subgroup">
+
 				</tr>
 				<tr>
 					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:subject"] ?><span class="fontContantAlert">*</span></td>
