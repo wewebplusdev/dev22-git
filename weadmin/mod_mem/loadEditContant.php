@@ -26,16 +26,17 @@ if ($_REQUEST['inputLt'] == "Thai") {
 
 $sql .= ", " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn";
 if ($_REQUEST['inputLt'] == "Thai") {
-	$sql .= " , " . $mod_tb_root . "_sdatetxt  ,    " . $mod_tb_root . "_email , " . $mod_tb_root . "_tel ";
+	$sql .= " , " . $mod_tb_root . "_sdatetxt  ,    " . $mod_tb_root . "_email , " . $mod_tb_root . "_tel , " . $mod_tb_root . "_typec ";
 } elseif ($_REQUEST['inputLt'] == "Eng") {
-	$sql .= " , " . $mod_tb_root . "_sdatetxten  ,    " . $mod_tb_root . "_emailen , " . $mod_tb_root . "_telen ";
+	$sql .= " , " . $mod_tb_root . "_sdatetxten  ,    " . $mod_tb_root . "_emailen , " . $mod_tb_root . "_telen , " . $mod_tb_root . "_typec ";
 } else {
-	$sql .= " , " . $mod_tb_root . "_sdatetxtcn  ,    " . $mod_tb_root . "_emailcn, " . $mod_tb_root . "_telcn ";
+	$sql .= " , " . $mod_tb_root . "_sdatetxtcn  ,    " . $mod_tb_root . "_emailcn, " . $mod_tb_root . "_telcn , " . $mod_tb_root . "_typec ";
 }
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root . "_id 	='" . $_POST["valEditID"] . "'";
+// print_pre($sql);
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 $Row = wewebFetchArrayDB($coreLanguageSQL, $Query);
-// $Row=wewebNumRowsDB($coreLanguageSQL,$Query);
+
 $valid = $Row[0];
 $valcredate = DateFormatInsertRe($Row[1]);
 $valcreby = $Row[2];
@@ -69,7 +70,7 @@ $valLang[2] = $Row[21];
 $valSdatetxt = rechangeQuot($Row[22]);
 $valEmail = rechangeQuot($Row[23]);
 $valTel = rechangeQuot($Row[24]);
-
+$valTypeC = $Row[25];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_POST["menukeyid"]);
 
 ?>
@@ -91,6 +92,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 	<script language="JavaScript" type="text/javascript">
 		function executeSubmit() {
 			with(document.myForm) {
+				var checkedDetail = $('input[name="inputTypeShow"]:checked').val();
+
 				var checkbokSetLang = $('input.checkbokSetLang:checkbox:checked').length;
 				if (checkbokSetLang == 0) {
 					alert('<?php echo $langMod["set:lang:web:alert"]; ?>');
@@ -148,7 +151,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				// }
 				// }
 				// if (type == 1) {
+					
 				var alleditDetail = CKEDITOR.instances.editDetail.getData();
+				if (checkedDetail == 1) {
 				if (alleditDetail == "") {
 					jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
 					window.location.hash = '#inputEditHTML';
@@ -156,6 +161,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				} else {
 					jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
 				}
+			}
 				jQuery('#inputHtml').val(alleditDetail);
 				// }
 
@@ -276,8 +282,12 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
 			jQuery('#myForm').keypress(function(e) {
 				/* Start  Enter Check CKeditor */
+				var checkedDetail = $('input[name="inputTypeShow"]:checked').val();
+				// console.log(masterkeya);
+				if (checkedDetail == 1) {
 				var focusManager = new CKEDITOR.focusManager(editDetail);
 				var checkFocus = CKEDITOR.instances.editDetail.focusManager.hasFocus;
+				}
 				//var checkFocusTitle =jQuery("#inputDescription").is(":focus");
 
 				if (e.which == 13) {
@@ -515,6 +525,25 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputShare" id="inputShare" value="<?php echo $valShare; ?>" type="text" class="formInputContantTb" /></td>
 				</tr> -->
 
+				<tr>
+					<td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:typeshow"] ?></td>
+					<td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+						<label>
+							<div class="formDivRadioL"><input name="inputTypeShow" id="inputTypeShow" value="1" type="radio" checked="checked" class="formRadioContantTb" onclick="jQuery('.boxDetail').show();" <?php if ($valTypeC == 1) {
+																																																						echo 'checked="checked"';
+																																																					} ?> /></div>
+							<div class="formDivRadioR"><?php echo  $modType[1] ?></div>
+						</label>
+
+						<label>
+							<div class="formDivRadioL"><input name="inputTypeShow" id="inputTypeShow" value="2" type="radio" class="formRadioContantTb" onclick="jQuery('.boxDetail').hide();" <?php if ($valTypeC != 1) {
+																																																	echo 'checked="checked"';
+																																																} ?> /></div>
+							<div class="formDivRadioR"><?php echo  $modType[2] ?></div>
+						</label>
+					</td>
+				</tr>
+
 			</table>
 			<br />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
@@ -610,7 +639,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 				</tr>
 			</table>
          <br  class="ckabout" <?php if ($valTypeC == 2) { ?> style="display:none;" <?php } ?>/> -->
-			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout boxDetail">
 				<tr>
 					<td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
 						<span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />

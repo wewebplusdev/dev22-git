@@ -59,6 +59,7 @@ if ($_REQUEST['execute'] == "insert") {
     $insert[$mod_tb_root . "_sdatetxt"] = "'" . changeQuot($_POST["inputJobstartdate"]) . "'";
     $insert[$mod_tb_root . "_email"] = "'" . changeQuot($_POST["inputEmail"]) . "'";
     $insert[$mod_tb_root . "_tel"] = "'" . changeQuot($_POST["inputTel"]) . "'";
+    $insert[$mod_tb_root . "_typec"] = "'" . $_REQUEST["inputTypeShow"] . "'";
 
     $setLangTH = (!empty($_REQUEST['inputSetLang'][0])) ? $_REQUEST['inputSetLang'][0] : 0 ;
     $setLangEN = (!empty($_REQUEST['inputSetLang'][1])) ? $_REQUEST['inputSetLang'][1] : 0 ;

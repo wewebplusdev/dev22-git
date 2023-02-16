@@ -185,6 +185,28 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 						<textarea name="inputComment" id="inputComment" cols="20" rows="5" class="formTextareaContantTb"><?php echo $valTitle ?></textarea>
 					</td>
 				</tr>
+				<tr id="">
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:link"] ?><span class="fontContantAlert">*</span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><textarea name="inputurl" id="inputurl" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valUrl ?></textarea><br />
+            <span class="formFontNoteTxt"><?php echo $langMod["edit:linknote"] ?></span>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:type"] ?><span class="fontContantAlert"></span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <label>
+              <div class="formDivRadioL"><input name="inputTarget" id="inputTarget" type="radio" class="formRadioContantTb" value="1" <?php if ($valTarget == 1) { ?> checked="checked" <?php } ?> /></div>
+              <div class="formDivRadioR"><?php echo $modTxtTarget[1] ?></div>
+            </label>
+
+            <label>
+              <div class="formDivRadioL"><input name="inputTarget" id="inputTarget" type="radio" class="formRadioContantTb" value="2" <?php if ($valTarget == 2) { ?> checked="checked" <?php } ?> /></div>
+              <div class="formDivRadioR"><?php echo $modTxtTarget[2] ?></div>
+            </label>
+            </label>
+          </td>
+        </tr>
 			</table>
 			<br />
 			<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">

@@ -36,7 +36,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
     <script language="JavaScript" type="text/javascript">
         function executeSubmit() {
             with(document.myForm) {
-
+                var checkedDetail = $('input[name="inputTypeShow"]:checked').val();
                 var checkbokSetLang = $('input.checkbokSetLang:checkbox:checked').length;
                 if (checkbokSetLang == 0) {
                     alert('<?php echo $langMod["set:lang:web:alert"]; ?>');
@@ -114,6 +114,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
                 // if (type == 1) { 
                 var alleditDetail = CKEDITOR.instances.editDetail.getData();
+                if (checkedDetail == 1) {
                 if (alleditDetail == "") {
                     jQuery("#inputEditHTML").addClass("formInputContantTbAlertY");
                     window.location.hash = '#inputEditHTML';
@@ -121,7 +122,9 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                 } else {
                     jQuery("#inputEditHTML").removeClass("formInputContantTbAlertY");
                 }
+            }
                 jQuery('#inputHtml').val(alleditDetail);
+            
                 // }
 
             }
@@ -248,11 +251,14 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
             }
 
             jQuery('#myForm').keypress(function(e) {
+                var checkedDetail = $('input[name="inputTypeShow"]:checked').val();
+                // console.log(masterkeya);
+                if (checkedDetail == 1) {
                 /* Start  Enter Check CKeditor */
                 var focusManager = new CKEDITOR.focusManager(editDetail);
                 var checkFocus = CKEDITOR.instances.editDetail.focusManager.hasFocus;
                 //    var checkFocusTitle = jQuery("#inputDescription").is(":focus");
-
+                }
                 if (e.which == 13) {
                     //e.preventDefault();
                     if (!checkFocusTitle) {
@@ -444,7 +450,20 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                     <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:tel"] ?><span class="fontContantAlert"></span></td>
                     <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><input name="inputTel" id="inputTel" type="text" class="formInputContantTb" /></td>
                 </tr>
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo  $langMod["tit:typeshow"] ?></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <label>
+                            <div class="formDivRadioL"><input name="inputTypeShow" id="inputTypeShow" value="1" type="radio" checked="checked" class="formRadioContantTb" onclick="jQuery('.boxDetail').show();" /></div>
+                            <div class="formDivRadioR"><?php echo  $modType[1] ?></div>
+                        </label>
 
+                        <label>
+                            <div class="formDivRadioL"><input name="inputTypeShow" id="inputTypeShow" value="2" type="radio" class="formRadioContantTb" onclick="jQuery('.boxDetail').hide();" /></div>
+                            <div class="formDivRadioR"><?php echo  $modType[2] ?></div>
+                        </label>
+                    </td>
+                </tr>
                 <!-- <tr>
 				                    <input type="hidden" id="inputUrlcheck" name="inputUrlcheck" value="Allowed">
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" >URL Friendly<span class="fontContantAlert">*</span></td>
@@ -566,7 +585,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                                 </tr>
                             </table>
                             <br class="ckabout"/> -->
-            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout">
+            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout boxDetail">
                 <tr>
                     <td colspan="7" align="left" valign="middle" class="formTileTxt tbBoxViewBorderBottom">
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:title"] ?></span><br />

@@ -25,11 +25,11 @@ if ($_REQUEST['inputLt'] == "Thai") {
 
 $sql .= ", " . $mod_tb_root . "_langth, " . $mod_tb_root . "_langen , " . $mod_tb_root . "_langcn, " . $mod_tb_root . "_lastbyid," . $mod_tb_root . "_lastdate," . $mod_tb_root . "_view";
 if ($_REQUEST['inputLt'] == "Thai") {
-	$sql .= " , " . $mod_tb_root . "_sdatetxt  ,    " . $mod_tb_root . "_email , " . $mod_tb_root . "_tel ";
+	$sql .= " , " . $mod_tb_root . "_sdatetxt  ,    " . $mod_tb_root . "_email , " . $mod_tb_root . "_tel , " . $mod_tb_root . "_typec ";
 } elseif ($_REQUEST['inputLt'] == "Eng") {
-	$sql .= " , " . $mod_tb_root . "_sdatetxten  ,    " . $mod_tb_root . "_emailen , " . $mod_tb_root . "_telen ";
+	$sql .= " , " . $mod_tb_root . "_sdatetxten  ,    " . $mod_tb_root . "_emailen , " . $mod_tb_root . "_telen , " . $mod_tb_root . "_typec ";
 } else {
-	$sql .= " , " . $mod_tb_root . "_sdatetxtcn  ,    " . $mod_tb_root . "_emailcn, " . $mod_tb_root . "_telcn ";
+	$sql .= " , " . $mod_tb_root . "_sdatetxtcn  ,    " . $mod_tb_root . "_emailcn, " . $mod_tb_root . "_telcn , " . $mod_tb_root . "_typec ";
 }
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root . "_id 	='" . $_POST["valEditID"] . "'";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
@@ -79,9 +79,8 @@ $valview = $Row[24];
 $valSdatetxt = rechangeQuot($Row[25]);
 $valEmail = rechangeQuot($Row[26]);
 $valTel = rechangeQuot($Row[27]);
-
+$valTypeC = $Row[28];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
-
 logs_access('3', 'View');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -298,7 +297,13 @@ logs_access('3', 'View');
                         <div class="formDivView"><?php echo $valTel; ?></div>
                     </td>
                 </tr>
-
+                
+                <tr>
+                    <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:typeshow"] ?>:<span class="fontContantAlert"></span></td>
+                    <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+                        <div class="formDivView"><?php echo $modType[$valTypeC] ?></div>
+                    </td>
+                </tr>
                 <!-- <tr>
                     <td align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:education"] ?><span class="fontContantAlert"></span></td>
                     <td colspan="6" align="left" valign="top" class="formRightContantTb">

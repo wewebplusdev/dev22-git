@@ -186,7 +186,28 @@ if($_REQUEST['masterkey'] == 'news'){
                             class="formTextareaContantTb"></textarea>
                     </td>
                 </tr>
+        <tr id="boxInputlink">
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:link"] ?><span class="fontContantAlert"></span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb"><textarea name="inputurl" id="inputurl" cols="45" rows="5" class="formTextareaContantTb">http://</textarea><br />
+            <span class="formFontNoteTxt"><?php echo $langMod["edit:linknote"] ?></span>
+          </td>
+        </tr>
 
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:type"] ?><span class="fontContantAlert">*</span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <label>
+              <div class="formDivRadioL"><input name="inputTarget" id="inputTarget" type="radio" class="formRadioContantTb" value="1" checked="checked" /></div>
+              <div class="formDivRadioR"><?php echo $modTxtTarget[1] ?></div>
+            </label>
+
+            <label>
+              <div class="formDivRadioL"><input name="inputTarget" id="inputTarget" type="radio" class="formRadioContantTb" value="2" /></div>
+              <div class="formDivRadioR"><?php echo $modTxtTarget[2] ?></div>
+            </label>
+            </label>
+          </td>
+        </tr>
 
             </table>
             <br />

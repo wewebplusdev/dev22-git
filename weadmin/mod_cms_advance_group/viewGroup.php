@@ -54,8 +54,8 @@ $valHtml = $mod_path_html . "/" . $Row[8];
 $valPicName = $Row[9];
 $valPic = $mod_path_pictures . "/" . $Row[10];
 $valType = $Row[11];
-$valUrl = rechangeQuot($Row[12]);
-$valTarget = $Row[13];
+$valUrl = rechangeQuot($Row[11]);
+$valTarget = $Row[12];
 $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_session_groupid"], $_REQUEST["menukeyid"]);
 
 logs_access('3', 'View Group');
@@ -145,7 +145,18 @@ logs_access('3', 'View Group');
             <div class="formDivView"><?php echo $valTitle ?></div>
           </td>
         </tr>
-
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:link"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <div class="formDivView"><?php echo $valUrl ?></div>
+          </td>
+        </tr>
+        <tr>
+          <td width="18%" align="right" valign="top" class="formLeftContantTb"><?php echo $langMod["tit:type"] ?>:<span class="fontContantAlert"></span></td>
+          <td width="82%" colspan="6" align="left" valign="top" class="formRightContantTb">
+            <div class="formDivView"><?php echo $modTxtTarget[$valTarget] ?></div>
+          </td>
+        </tr>
 
       </table>
       <br />

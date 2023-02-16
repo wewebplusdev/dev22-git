@@ -107,12 +107,16 @@
                                                             <span class="feather icon-chevron-right"></span>
                                                             {$lang['system']['readmore2']}
                                                         </a> *}
+
+                                                        {if $valueMember.typec eq 1}
                                                         <a href="{$ul}/{$menuActive}/{$valueMember.menuid}/{$valueMember.position}/{$menuDetail}/{$valueMember.id}" class="btn modal-alert" title="{$lang['system']['readmore2']}" data-name="{$valueMember.fname} {$valueMember.lname}" data-depart="{$valueMember.depart}" 
                                                             data-sdatetxt="{$valueMember.sdatetxt}" data-email="{$valueMember.email}" data-tel="{$valueMember.tel}" 
                                                             data-pic="{$valueMember['pic']|fileinclude:"real":{$valueMember['masterkey']}:"link"}" data-txtemail="{$lang['system']['email']}" data-txttel="{$lang['system']['tel']}">
                                                             <span class="feather icon-chevron-right"></span>
                                                             {$lang['system']['readmore2']}
                                                         </a>
+                                                        {/if}
+
                                                     </div>
                                                 </div>
                                             </div>

@@ -5,12 +5,15 @@ foreach ($arrMenuFc as $keyarrMenuFc => $valuearrMenuFc) {
     $arrMenu[] = $valuearrMenuFc;
 }
 $smarty->assign("arrMenu", $arrMenu);
+if(empty($ContentID)){
+    $ContentID = "179";
+}
 
 switch ($ContentID) {
-    case('159'):
+    case('179'):
         
     $ContentID = GetContentID($url->segment[2]);
-    $callCMS = $researchPage->callCMS($MenuID,'2438',$ContentID);
+    $callCMS = $researchPage->callCMS($MenuID,'2539',$ContentID);
     if ($callCMS->_numOfRows < 1) {
         header('location:'.$linklang.'/404');
         exit(0);
@@ -38,7 +41,7 @@ switch ($ContentID) {
     $settingModulus['breadcrumb'] = $breadcrumb[0];
 
     ## menu lv 2 active
-    $menuidLv2 = $callCMS->fields['id'];
+    $menuidLv2 = $callCMS->fields['gid'];
     $smarty->assign("menuidLv2", $menuidLv2);
 
     /*## Start Update View #####*/

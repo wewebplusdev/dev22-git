@@ -34,7 +34,6 @@
     <div class="border-nav-slider"></div>
     {/if}
 
-
     {if count($arrMenu) > 0 && $showslick}
     <div class="container mt-md-5 mt-4">
       <h2 class="text-primary mb-4">{$settingModulus.breadcrumb}</h2>
@@ -42,7 +41,7 @@
         {foreach $arrMenu as $keyarrMenu => $valuearrMenu}
           <div class="item">
             <div class="tab-block {if $menuidLv2 eq $valuearrMenu.id}active{/if}">
-              <a class="text-limit" href="{str_replace("//","/","{$ul}/{$menuActive}/{$valuearrMenu.menuid}/{$valuearrMenu.id}")}">{$valuearrMenu.subject}</a>
+            <a class="text-limit" href="{if $valuearrMenu.url eq '' || $valuearrMenu.url eq '#'}{str_replace("//","/","{$ul}/{$menuActive}/{$valuearrMenu.menuid}/{$valuearrMenu.id}")}{else}{$valuearrMenu.url}{/if}" {if $valuearrMenu.target eq 2}target="_blank"{/if}>{$valuearrMenu.subject}</a>
             </div>
           </div>
         {/foreach}

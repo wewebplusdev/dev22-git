@@ -47,7 +47,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	$langMod["txt:videoDe"] = "Video information For use in video rendering of this content. In video player format on your website. ";
 	$langMod["txt:pic"] = "Image Gallery";
 	$langMod["txt:picDe"] = "Image data includes For use in displaying images of this content. ";
-
+	$langMod["tit:typeshow"] = "การแสดงผล";
 
 	$langMod["inp:seotitle"] = "Title Tag";
 	$langMod["inp:seotitlenote"] = "Note: Content will be displayed in the Search Topics section of the Search Engine (Google, Yahoo).";
@@ -139,7 +139,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
 	$langMod["txt:titleeditg"] = "แก้ไขข้อมูล" . $langMod["meu:group"];
 	$langMod["txt:titleviewg"] = "แสดงผลข้อมูล" . $langMod["meu:group"];
 	$langMod["txt:sortpermisg"] = "จัดเรียงข้อมูล" . $langMod["meu:group"];
-
+	$langMod["tit:typeshow"] = "การแสดงผล";
 
 	$langMod["txt:groupType"] = "ข้อมูลประเภทรายละเอียด";
 	$langMod["txt:groupTypeDe"] = "กรุณากรอกส่วนที่ใช้ในกำหนดรายละเอียดการแสดงผลข่าว เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์";
