@@ -36,6 +36,9 @@ $mod_url_search_cn = "cn/|page|";
 ## Mod Link ###################################
 $urlSegment = array(
     'trw_cou' => 'training',
+    'trw_couol' => 'training',
+    'trw_inh' => 'training',
+    'trw_redp' => 'training',
 );
 
 ## Size Photo ###################################

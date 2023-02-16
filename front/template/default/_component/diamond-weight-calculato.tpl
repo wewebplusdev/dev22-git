@@ -90,14 +90,14 @@
                                             step="0.1" value="10">
                                     </div>
                                 </div>
-                                <div class="form-group type-other confition-cal" style="display: none;">
+                                <div class="form-group type-other confition-cal" {if $callCMSFields.type eq 1 }style="display: none;"{/if}>
                                     <label class="control-label" for="diamcut">{$lang['calculator']['Length']}</label>
                                     <div class="block-control">
                                         <input type="number" class="form-control" name="diamcut" id="diamcut" min="0"
                                             step="0.1" value="10">
                                     </div>
                                 </div>
-                                <div class="form-group type-other confition-cal" style="display: none;">
+                                <div class="form-group type-other confition-cal" {if $callCMSFields.type eq 1 }style="display: none;"{/if}>
                                     <label class="control-label" for="widecut">{$lang['calculator']['Width']}</label>
                                     <div class="block-control">
                                         <input type="number" class="form-control" name="widecut" id="widecut" min="0" step="0.1" value="8">

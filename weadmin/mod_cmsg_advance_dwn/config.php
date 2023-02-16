@@ -47,6 +47,7 @@ $urlSegment = array(
     'ab_pap' => 'about',
     'ab_pcm' => 'about',
     'ab_hrm' => 'about',
+    'ab_nm' => 'about',
     'rs_ri' => 'research',
 );
 

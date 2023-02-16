@@ -37,7 +37,7 @@ $mod_url_search_cn = "cn/|page|";
 
 ## Mod Link ###################################
 $urlSegment = array(
-    'cod_f' => 'research',
+    'cod_f' => 'service',
 );
 ## Size Photo ###################################
 // $sizeWidthPic="380";
