@@ -501,6 +501,9 @@ $lang['calculator']['Length_to_Width_Ratio']="长宽比";
 $lang['calculator']['weighs_approximately']="重量大约";
 $lang['calculator']['Calculate']="计算";
 $lang['calculator']['Reset']="重置";
+$lang['calculator']['carats']="克拉";
+$lang['calculator']['error']="錯誤：數據不足";
+
 //
 $lang['contact']['contact_address']="地址";
 $lang['contact']['establishment_eddress']="The Gem and Jewelry Institute of Thailand (Public Organization)ITF Tower,4th Floor, Silom road, Suriyawong, Bangrak Bangkok, Thailand 10500";

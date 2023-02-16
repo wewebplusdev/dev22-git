@@ -505,6 +505,9 @@ $lang['calculator']['Length_to_Width_Ratio']="Length to Width Ratio";
 $lang['calculator']['weighs_approximately']="Weight Approximately";
 $lang['calculator']['Calculate']="Calculate";
 $lang['calculator']['Reset']="Reset";
+$lang['calculator']['carats']="carats";
+$lang['calculator']['error']="Error: Not enough data";
+
 //
 $lang['contact']['contact_address'] = "Address";
 $lang['contact']['establishment_eddress'] = "The Gem and Jewelry Institute of Thailand (Public Organization)ITF Tower,4th Floor, Silom road, Suriyawong, Bangrak Bangkok, Thailand 10500";

@@ -26,7 +26,7 @@ if ($callCMS->fields['type'] == 3) {
     //Length × Width × Depth × Adjustment Factor × GTF × WCF
     $result = ($_REQUEST['diamcut'] * $_REQUEST['widecut']) * ($_REQUEST['heightcut']);
     $cal_Factor = $result * ($factor);
-    $cal_GTF = $cal_Factor * $_REQUEST['girth'];
+    // $cal_GTF = $cal_Factor * $_REQUEST['girth'];
     $cal_WCF = $cal_Factor * ($_REQUEST['pavbul']/100);
     $calculator = $cal_Factor + $cal_GTF + $cal_WCF;
 
@@ -37,7 +37,7 @@ if ($callCMS->fields['type'] == 3) {
     $Ratio = $_REQUEST['diamcut'] / $_REQUEST['widecut'];
     
     $arrData = array(
-        'calculator' => $calculator,
+        'calculator' => $calculator . " " . $lang['calculator']['carats'],
         'deptpercentage' => $dept,
         'ratio' => $Ratio,
     );
@@ -45,7 +45,7 @@ if ($callCMS->fields['type'] == 3) {
     if (!$calculator) {
         $arrJson = array(
             'status' => false,
-            'msg' => 'Calculator Error.',
+            'msg' => $lang['calculator']['error'],
         );
     }else{
         $arrJson = array(
@@ -59,7 +59,7 @@ if ($callCMS->fields['type'] == 3) {
     //Diameter2 × Depth × factor × GTF
     $result = ($_REQUEST['diamcut1'] * $_REQUEST['diamcut1']) * ($_REQUEST['heightcut']);
     $cal_Factor = $result * ($callCMS->fields['factor']);
-    $cal_GTF = $cal_Factor * $_REQUEST['girth'];
+    // $cal_GTF = $cal_Factor * $_REQUEST['girth'];
     $cal_WCF = $cal_Factor * ($_REQUEST['pavbul']/100);
     $calculator = $cal_Factor + $cal_GTF + $cal_WCF;
 
@@ -70,7 +70,7 @@ if ($callCMS->fields['type'] == 3) {
     $Ratio = "1.00 to 1";
 
     $arrData = array(
-        'calculator' => $calculator,
+        'calculator' => $calculator . " " . $lang['calculator']['carats'],
         'deptpercentage' => $dept,
         'ratio' => $Ratio,
     );
@@ -78,7 +78,7 @@ if ($callCMS->fields['type'] == 3) {
     if (!$calculator) {
         $arrJson = array(
             'status' => false,
-            'msg' => 'Calculator Error.',
+            'msg' => $lang['calculator']['error'],
         );
     }else{
         $arrJson = array(
@@ -91,7 +91,7 @@ if ($callCMS->fields['type'] == 3) {
     //Length × Width × Depth × factor × GTF × WCF
     $result = ($_REQUEST['diamcut'] * $_REQUEST['widecut']) * ($_REQUEST['heightcut']);
     $cal_Factor = $result * ($callCMS->fields['factor']);
-    $cal_GTF = $cal_Factor * $_REQUEST['girth'];
+    // $cal_GTF = $cal_Factor * $_REQUEST['girth'];
     $cal_WCF = $cal_Factor * ($_REQUEST['pavbul']/100);
     $calculator = $cal_Factor + $cal_GTF + $cal_WCF;
     
@@ -102,7 +102,7 @@ if ($callCMS->fields['type'] == 3) {
     $Ratio = $_REQUEST['diamcut'] / $_REQUEST['widecut'];
 
     $arrData = array(
-        'calculator' => $calculator,
+        'calculator' => $calculator . " " . $lang['calculator']['carats'],
         'deptpercentage' => $dept,
         'ratio' => $Ratio,
     );
@@ -110,7 +110,7 @@ if ($callCMS->fields['type'] == 3) {
     if (!$calculator) {
         $arrJson = array(
             'status' => false,
-            'msg' => 'Calculator Error.',
+            'msg' => $lang['calculator']['error'],
         );
     }else{
         $arrJson = array(

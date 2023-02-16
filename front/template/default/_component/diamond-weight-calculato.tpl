@@ -83,7 +83,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group type-1 confition-cal">
+                                <div class="form-group type-1 confition-cal" {if $callCMSFields.type neq 1 }style="display: none;"{/if}>
                                     <label class="control-label" for="diamcut1">{$lang['calculator']['Diameter']}</label>
                                     <div class="block-control">
                                         <input type="number" class="form-control" name="diamcut1" id="diamcut1" min="0"
@@ -104,13 +104,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label" for="heightcut">{$lang['calculator']['Length']}</label>
+                                    <label class="control-label" for="heightcut">{$lang['calculator']['Depth']}</label>
                                     <div class="block-control">
                                         <input type="number" class="form-control" name="heightcut" id="heightcut"
                                             min="0" step="0.1" value="6">
                                     </div>
                                 </div>
-                                <div class="form-group has-feedback">
+                                {* <div class="form-group has-feedback">
                                     <label class="control-label" for="girth">{$lang['calculator']['Girdle_Thickness']}</label>
                                     <div class="select-wrapper">
                                         <select class="select-control select-gray" name="girth" id="girth"
@@ -122,7 +122,7 @@
                                             <option value="0.09">{$lang['calculator']['Extra_Thick']} (+9%)</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> *}
                                 <div class="form-group">
                                     <label class="control-label" for="pavbul">Corrections, %</label>
                                     <div class="block-control">
@@ -158,14 +158,14 @@
                                             <div class="col">
                                                 <div class="calc-detail">
                                                     <div class="desc -percentage">
-                                                        {$lang['calculator']['Dept_Percentage']} <span>60</span>
+                                                        {$lang['calculator']['Dept_Percentage']} <span>0</span>
                                                     </div>
                                                     <div class="desc -ratio">
-                                                        {$lang['calculator']['Length_to_Width_Ratio']}: <span>1.00</span> to 1
+                                                        {$lang['calculator']['Length_to_Width_Ratio']}: <span>-</span>
                                                     </div>
                                                     <div class="desc text-primary -weighs">
                                                         <strong>
-                                                            {$lang['calculator']['weighs_approximately']} <span>3.660</span> carats
+                                                            {$lang['calculator']['weighs_approximately']} <span>0</span>
                                                         </strong>
                                                     </div>
                                                 </div>
