@@ -53,6 +53,9 @@ switch ($PageAction) {
     break;
   default:
     ## setting list
+    $callGroup = $videoPage->callGroup($MenuID, $ContentID);
+    $smarty->assign("callGroup", $callGroup);
+    $SubGroupID = $url->segment[3];
     $limit = 10;
     $order = $req_params['order'];
     if ($order == 2) {
@@ -74,10 +77,21 @@ switch ($PageAction) {
     $callGroupActive = $videoPage->callGroup($MenuID, $groupID);
     $smarty->assign("callGroupActive", $callGroupActive);
     $ContentID = GetContentID($url->segment[3]);
-    $callCMS = $videoPage->callCMSList($MenuID, $ContentID, $callGroupActive->fields['id'], $page['on'], $limit, $sorting, intval($req_params['year']));
 
-    $smarty->assign("callCMS", $callCMS);
+    
     $smarty->assign("albumCMSImageURL", $albumCMSImageURL);
+
+    $callSubGroup = $videoPage->callSubGroup($MenuID, $groupID, $page['on'], $limit, $sorting);
+    $smarty->assign("callSubGroup", $callSubGroup);
+    // print_pre($callSubGroup);
+    $MaxRecordsubgroup = $callSubGroup->_maxRecordCount;
+    if (empty($SubGroupID) && $MaxRecordsubgroup > 0) {
+        $SubGroupID = $callSubGroup->fields['id'];
+    }
+    $smarty->assign("SubGroupID", $SubGroupID);
+    $callCMS = $videoPage->callCMSList($MenuID, 0, $groupID, $page['on'], $limit, $req_params['order'], intval($req_params['year']), $req_params['keywords'], $SubGroupID);
+    $smarty->assign("callCMS", $callCMS);
+    $smarty->assign("orderArray", $OrderArray);
     ## breadcrumb
     $breadcrumb = $callCMS->fields['menuname'];
     $settingModulus['breadcrumb'] = $breadcrumb;
