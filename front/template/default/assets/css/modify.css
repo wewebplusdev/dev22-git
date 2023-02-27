@@ -437,3 +437,38 @@
 
 
 /****/
+
+/* custom tgp resposive by ohm2 */
+@media (max-width: 1199px) {
+    .theme-3 .top-graphic .cover {
+        padding-bottom: calc(100vh - 190px);
+    }
+}
+
+@media (max-width: 991px) {
+    .theme-3 .top-graphic .cover {
+        padding-bottom: calc(100vh - 250px);
+    }
+}
+
+@media (max-width: 767px) {
+    .theme-3 .top-graphic .cover {
+        padding-bottom: calc(100vh - 330px);
+    }    
+}
+
+@media (max-width: 575px) {
+    .theme-3 .top-graphic .cover {
+        padding-bottom: calc(100vh - 390px) !important;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .theme-3 .top-graphic .cover {
+        padding-bottom: calc(100vh - 106%) !important;
+    }
+}
+
+
+/****/

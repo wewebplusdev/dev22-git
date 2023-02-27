@@ -498,3 +498,96 @@
         </div>
     </div>
 </div> -->
+
+<body>
+<div class="related-sites-block">
+            <div class="related-sites">
+              <ul class="item-list">
+                                  <li>
+                    <a href="http://www.agta.org" target="_blank" class="link" title="American Gem Trade Association  (AGTA)">
+                      <div class="row no-gutters">
+                        <div class="col">
+                          <div class="related-sites-thumbnail">
+                            <figure class="cover">
+                              <img src="https://project.wewebcloud.com/dev22-git//upload/is_rs/real/pic-20222812-1672246261-613-226.png" alt="American Gem Trade Association  (AGTA)">
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row no-gutters">
+                        <div class="col">
+                          <div class="related-sites-desc">
+                            <div class="title text-limit">
+                              American Gem Trade Association  (AGTA)
+                            </div>
+                            <div class="url text-limit">
+                              http://www.agta.org
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                                  <li>
+                    <a href="http://www.cisgem.it" target="_blank" class="link" title="CISGEM (Italy)">
+                      <div class="row no-gutters">
+                        <div class="col">
+                          <div class="related-sites-thumbnail">
+                            <figure class="cover">
+                              <img src="https://project.wewebcloud.com/dev22-git//upload/is_rs/real/pic-20221011-1668073585-979.jpg" alt="CISGEM (Italy)">
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row no-gutters">
+                        <div class="col">
+                          <div class="related-sites-desc">
+                            <div class="title text-limit">
+                              CISGEM (Italy)
+                            </div>
+                            <div class="url text-limit">
+                              http://www.cisgem.it
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                                  <li>
+                    <a href="http://www.geminterest.com" target="_blank" class="link" title="Carnet des Gemmologues,  Gemmologistes Francophones">
+                      <div class="row no-gutters">
+                        <div class="col">
+                          <div class="related-sites-thumbnail">
+                            <figure class="cover">
+                              <img src="https://project.wewebcloud.com/dev22-git//upload/is_rs/real/pic-20221011-1668073565-604.png" alt="Carnet des Gemmologues,  Gemmologistes Francophones">
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row no-gutters">
+                        <div class="col">
+                          <div class="related-sites-desc">
+                            <div class="title text-limit">
+                              Carnet des Gemmologues,  Gemmologistes Francophones
+                            </div>
+                            <div class="url text-limit">
+                              http://www.geminterest.com
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                              </ul>
+            </div>
+          </div>
+</body>
