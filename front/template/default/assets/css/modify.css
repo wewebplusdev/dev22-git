@@ -439,10 +439,8 @@
 /****/
 
 /* custom tgp resposive by ohm2 */
-@media (max-width: 1600px) {
-    .theme-3 .top-graphic .cover {
-        padding-bottom: 32% !important;
-    }
+.theme-3 .top-graphic .cover {
+    padding-bottom: 32% !important;
 }
 
 /****/
