@@ -87,6 +87,10 @@ switch ($MenuID) {
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ita.php';
         break;
 
+    case 'ab_ibdwn': // คณะกรรมการสถาบัน dwn
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_ib.php';
+        break;
+
     default: //ทิศทางองค์กร
         require_once _DIR . '/front/controller/script/' . $menuActive . '/service/ab_odc-ab_odw.php';
         break;
