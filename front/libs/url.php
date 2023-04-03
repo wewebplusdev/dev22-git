@@ -278,19 +278,21 @@ class url
                 break;
 
             default:
-                if (empty($_SESSION['intro'])) {
-                    return $pageloader = " intro";
-                } else {
-                    if (isset($_SESSION['intro']) && (time() - $_SESSION['intro'] > 1800)) {
-                        // last request was more than 30 minutes ago
-                        unset($_SESSION['intro']);     // unset $_SESSION variable for the run-time 
-                        http_response_code(302);
-                        return $pageloader = " intro";
-                    } else {
-                        http_response_code(302);
-                        header('location:' . $linklang . "/home");
-                    }
-                }
+                return $pageloader = " intro";
+
+                // if (empty($_SESSION['intro'])) {
+                //     return $pageloader = " intro";
+                // } else {
+                //     if (isset($_SESSION['intro']) && (time() - $_SESSION['intro'] > 1800)) {
+                //         // last request was more than 30 minutes ago
+                //         unset($_SESSION['intro']);     // unset $_SESSION variable for the run-time 
+                //         http_response_code(302);
+                //         return $pageloader = " intro";
+                //     } else {
+                //         http_response_code(302);
+                //         header('location:' . $linklang . "/home");
+                //     }
+                // }
                 break;
         }
     }
