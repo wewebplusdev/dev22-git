@@ -444,3 +444,8 @@
 }
 
 /****/
+
+/* 2023/04/03 */
+.site-container.intro {
+    margin-top: 0 !important;
+}
