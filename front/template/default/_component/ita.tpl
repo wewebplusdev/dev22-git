@@ -80,8 +80,8 @@
                                         <div class="card">
                                             <div class="card-header">
                                                 <h3 class="mb-0">
-                                                    <button class="btn btn-lg fluid collapsed" data-toggle="collapse"
-                                                        data-target="#oit-{$valuesub.id}" aria-expanded="false"
+                                                    <button class="btn btn-lg fluid" data-toggle="collapse"
+                                                        data-target="#oit-{$valuesub.id}" aria-expanded="true"
                                                         aria-controls="collapse">
                                                         <span class="text-limit">
                                                             {$valuesub.subject}
@@ -90,7 +90,7 @@
                                                     </button>
                                                 </h3>
                                             </div>
-                                            <div id="oit-{$valuesub.id}" class="collapse" data-parent="#accordion-oit">
+                                            <div id="oit-{$valuesub.id}" class="collapse show" >
                                                 <div class="card-body">
                                                     <table class="table" cellpadding="0">
                                                         <tbody>
