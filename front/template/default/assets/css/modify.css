@@ -444,6 +444,32 @@
 
 /****/
 
+/* start edit 31/03/23 */
+
+.default-nav-slider .item a {
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.default-nav-slider .item a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    background-color: var(--color-light);
+}
+
+.default-nav-slider .item .active::before,
+.default-nav-slider .item a:hover::before {
+    background-color: var(--color-light);
+}
+
+/* end edit 31/03/23 */
+
 /* 2023/04/03 */
 .site-container.intro {
     margin-top: 0 !important;
