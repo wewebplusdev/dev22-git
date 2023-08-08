@@ -33,9 +33,9 @@
 }
 
 @media (max-width: 1199px) {
-    .theme-3 .site-header {
+    /* .theme-3 .site-header {
         height: auto;
-    }
+    } */
 }
 
 
@@ -440,7 +440,7 @@
 
 /* custom tgp resposive by ohm2 */
 .theme-3 .top-graphic .cover {
-    padding-bottom: 32% !important;
+    padding-bottom: 32%;
 }
 
 /****/
@@ -448,4 +448,22 @@
 /* 2023/04/03 */
 .site-container.intro {
     margin-top: 0 !important;
+}
+
+/* 2023/08/08 */
+.site-header-main .main-menu-list .nav-list > li a:lang(en) {padding-left: 0.75rem;padding-right: 0.75rem;}
+@media (max-width: 1440px) {
+    .site-header-main .main-menu-list .nav-list > li a:lang(en) {padding-left: 0.5rem;padding-right: 0.5rem;}
+}
+@media (max-width: 1199px) {
+    .site-header-main .main-menu-list .nav-list > li a:lang(en) {padding-left: 0.3rem;padding-right: 0.3rem;}
+}
+@media (max-width: 1440px) and (min-width: 1200px) {
+    .site-header .brand:lang(en) {max-width: 174px;}
+}
+@media (max-width: 1199px) and (min-width: 1025px) {
+    .site-header .brand:lang(en) {max-width: 164px;}
+}
+@media (max-width: 1024px) and (min-width: 992px) {
+    .site-header .brand:lang(en) {max-width: 150px;}
 }
