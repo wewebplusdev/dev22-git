@@ -466,3 +466,4 @@
 @media (max-width: 1024px) and (min-width: 992px) {
     .site-header .brand:lang(en) {max-width: 150px;}
 }
+.default-bar .social-block .item-list li a img {height: 22px;}
